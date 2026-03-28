@@ -4,8 +4,8 @@
   "sector": "Technology",
   "exchange": "NASDAQ",
   "tradingview_symbol": "NASDAQ:MSFT",
-  "last_updated": "2025-01-15",
-  "description": "Microsoft Corporation develops, licenses, and supports software, services, devices, and solutions worldwide. Key segments: Productivity & Business Processes, Intelligent Cloud (Azure), and More Personal Computing.",
+  "last_updated": "2026-03-29",
+  "description": "Microsoft Corporation develops, licenses, and supports software, services, devices, and solutions worldwide. Key segments: Productivity & Business Processes (Office 365, LinkedIn, Dynamics), Intelligent Cloud (Azure, server products), and More Personal Computing (Windows, Xbox, Surface, Search). The dominant AI infrastructure play through OpenAI partnership and Copilot integration across all products.",
 
   "notes": [
     {
@@ -13,7 +13,7 @@
       "title": "Azure Growth & AI Monetization",
       "tags": ["azure", "cloud", "AI", "copilot"],
       "rating": 5,
-      "content": "Azure growth ยังแข็งแกร่งที่ 31% YoY โดยมี AI services เป็น tailwind สำคัญ\nCopilot 365 มีผู้ใช้งานเชิงพาณิชย์เพิ่มขึ้น 2x QoQ\n\nสิ่งที่น่าสนใจ: Satya พูดถึง AI Hyperscale Compute อย่างชัดเจน บ่งบอกว่า MSFT จะยังลงทุน capex สูงต่อเนื่อง\nMargin อาจถูกกดดันระยะสั้นจาก AI infrastructure investment แต่ long-term thesis ยังแข็งแกร่ง"
+      "content": "Azure growth ยังแข็งแกร่งที่ 31% YoY โดยมี AI services เป็น tailwind สำคัญ\nCopilot 365 มีผู้ใช้งานเชิงพาณิชย์เพิ่มขึ้น 2x QoQ\n\nสิ่งที่น่าสนใจ: Satya พูดถึง AI Hyperscale Compute อย่างชัดเจน บ่งบอกว่า MSFT จะยังลงทุน capex สูงต่อเนื่อง\nMargin อาจถูกกดดันระยะสั้นจาก AI infrastructure investment แต่ long-term thesis ยังแข็งแกร่ง\n\n$80B AI capex commitment ใน FY2025 แสดงว่า MSFT ยอมรับว่า AI race ต้องลงทุน infra ก่อน ซึ่ง short-term กระทบ FCF แต่ long-term build moat ที่คู่แข่งตามได้ยาก"
     }
   ],
 
@@ -23,6 +23,7 @@
       "source": "Q2 FY2025 Earnings Call",
       "speaker": "Satya Nadella (CEO)",
       "quote": "Microsoft Cloud revenue was $40.9 billion, up 21 percent year-over-year. We are seeing healthy growth across all of our cloud offerings and continued strong adoption of our AI services.",
+      "quote_th": "รายได้ Microsoft Cloud อยู่ที่ 40.9 พันล้านเหรียญ เพิ่มขึ้น 21 เปอร์เซ็นต์เทียบปีต่อปี เราเห็นการเติบโตที่แข็งแกร่งในบริการคลาวด์ทั้งหมดของเราและการนำ AI services ไปใช้อย่างแพร่หลายอย่างต่อเนื่อง",
       "tag": "cloud"
     },
     {
@@ -30,6 +31,7 @@
       "source": "Q2 FY2025 Earnings Call",
       "speaker": "Amy Hood (CFO)",
       "quote": "We expect Azure growth to accelerate in H2 as AI capacity becomes available and demand continues to outpace supply.",
+      "quote_th": "เราคาดว่าการเติบโตของ Azure จะเร่งตัวขึ้นในครึ่งหลัง เมื่อ AI capacity พร้อมใช้งานและความต้องการยังคงเกินกว่า supply",
       "tag": "azure"
     }
   ],
@@ -61,6 +63,111 @@
     }
   ],
 
+  "overview": {
+    "founded": "1975",
+    "headquarters": "Redmond, WA, USA",
+    "employees": "~228,000",
+    "fiscal_year_end": "June 30 (ปีบัญชีเริ่ม กรกฎาคม สิ้นสุด มิถุนายน)",
+    "business_model_summary": "Microsoft ดำเนินธุรกิจผ่าน 3 segments หลัก: (1) Intelligent Cloud — Azure cloud platform, SQL Server, Windows Server, GitHub; (2) Productivity & Business Processes — Microsoft 365 (Office, Teams, Exchange), LinkedIn, Dynamics 365; (3) More Personal Computing — Windows OEM, Xbox, Surface, Bing Search, Advertising รายได้หลักมาจาก subscription (SaaS/PaaS) ที่ predictable และ high-margin",
+    "competitive_position": "เบอร์ 1 ด้าน enterprise software ทั่วโลก เบอร์ 2 cloud provider (Azure ~22% vs AWS ~33%) และเป็น AI infrastructure play ที่แข็งแกร่งที่สุดในตลาดผ่าน OpenAI partnership ($13B+ ลงทุน) ทำให้ทุก Microsoft product มี AI-first positioning",
+    "moat_factors": [
+      "Microsoft 365 enterprise lock-in — 1.5B+ ผู้ใช้ switching cost สูงมาก เปลี่ยน productivity suite = ต้องเปลี่ยนวัฒนธรรมองค์กร",
+      "Azure sticky infrastructure — เมื่อ migrate ขึ้น Azure แล้ว ย้ายออกยากมาก (data gravity, integration cost)",
+      "GitHub developer ecosystem — 100M+ developers สร้างความผูกพันตั้งแต่เขียนโค้ด",
+      "LinkedIn professional network — 1B+ members ไม่มีคู่แข่งที่ใกล้เคียงใน B2B professional data",
+      "Enterprise trust & compliance — FedRAMP, ISO 27001, HIPAA, GDPR compliance ที่ไม่มีใครทำได้เหมือน เป็น barrier ใน regulated industries"
+    ],
+    "segments": [
+      { "name": "Intelligent Cloud",             "revenue_pct": 43, "type": "cloud",    "fy": 2024 },
+      { "name": "Productivity & Business Processes","revenue_pct": 32,"type": "services", "fy": 2024 },
+      { "name": "More Personal Computing",       "revenue_pct": 25, "type": "hardware", "fy": 2024 }
+    ],
+    "geographies": [
+      { "name": "United States", "revenue_pct": 50 },
+      { "name": "Europe",        "revenue_pct": 27 },
+      { "name": "Asia Pacific",  "revenue_pct": 14 },
+      { "name": "Other",         "revenue_pct": 9  }
+    ],
+    "timeline": [
+      { "year": 1975, "type": "founding",  "event": "Bill Gates และ Paul Allen ก่อตั้ง Microsoft ใน Albuquerque, NM เพื่อพัฒนา BASIC interpreter" },
+      { "year": 1980, "type": "milestone", "event": "ได้รับสัญญา DOS จาก IBM — จุดเริ่มต้นของการครองตลาด PC OS" },
+      { "year": 1986, "type": "financial", "event": "IPO บน NASDAQ ที่ $21/share — Bill Gates กลายเป็น billionaire อายุ 31 ปี" },
+      { "year": 1990, "type": "product",   "event": "เปิดตัว Microsoft Office — bundling ที่เปลี่ยนอุตสาหกรรม productivity software" },
+      { "year": 2001, "type": "product",   "event": "เปิดตัว Xbox — เข้าสู่ตลาด gaming console โดยตรง" },
+      { "year": 2014, "type": "milestone", "event": "Satya Nadella ขึ้นเป็น CEO — pivot สู่ cloud-first, mobile-first strategy" },
+      { "year": 2016, "type": "merger",    "event": "เข้าซื้อ LinkedIn ในราคา $26.2B — ใหญ่ที่สุดในประวัติศาสตร์ Microsoft" },
+      { "year": 2018, "type": "merger",    "event": "เข้าซื้อ GitHub ในราคา $7.5B — ครองระบบนิเวศ developer" },
+      { "year": 2019, "type": "milestone", "event": "ลงทุนใน OpenAI ครั้งแรก $1B — จุดเริ่มต้น AI partnership" },
+      { "year": 2023, "type": "product",   "event": "เปิดตัว Copilot ใน Microsoft 365, GitHub Copilot — AI monetization เริ่มต้น" },
+      { "year": 2024, "type": "merger",    "event": "ปิดดีล Activision Blizzard ที่ $68.7B — ใหญ่ที่สุดในประวัติศาสตร์ gaming" }
+    ],
+    "management": [
+      {
+        "name": "Satya Nadella",
+        "title": "Chairman & CEO",
+        "since": "2014",
+        "background": "วิศวกรด้าน Cloud และ Enterprise มาตลอดอาชีพที่ Microsoft เปลี่ยน culture จาก 'know-it-all' เป็น 'learn-it-all' ทำให้ MSFT stock เพิ่มขึ้น 10x+ ในช่วงที่เป็น CEO ถือเป็นหนึ่งใน CEOs ที่ดีที่สุดในยุคนี้"
+      },
+      {
+        "name": "Amy Hood",
+        "title": "Executive VP & CFO",
+        "since": "2013",
+        "background": "CFO มาตลอดช่วง cloud transformation ออกแบบ business model shift จาก perpetual license สู่ subscription เคยทำงานที่ Goldman Sachs มือขวาด้านการเงินของ Nadella"
+      }
+    ],
+    "bull_case": "Azure กำลัง accelerate พร้อม AI tailwind ที่ demand เกิน supply — AI capacity ที่กำลังสร้างจะ unlock growth ใน H2 FY2025 Copilot monetization เพิ่งเริ่ม — $30/user/month ถ้า attach rate เพิ่มจาก 5% เป็น 20% ใน 365 base = รายได้เพิ่ม $10B+/ปี GitHub Copilot ครอง developer market ก่อน ทำให้ developer workflow ผูกกับ MSFT ecosystem ลึกขึ้น OpenAI partnership ให้ MSFT ได้ model ที่ดีที่สุด (GPT-4o, o1) ก่อนคู่แข่ง",
+    "bear_case": "$80B+ AI capex ใน FY2025 กดดัน FCF อย่างหนัก ถ้า AI ROI ช้ากว่าที่คาด margin compression จะยาวนานกว่าที่ตลาดคาด Azure growth deceleration — ถ้า Azure ลดจาก 30%+ เป็น 20% นัก sentiment จะเปลี่ยนเร็วมาก OpenAI ไม่ exclusive กับ MSFT — Apple, Google, Amazon ก็เข้าถึง frontier models ได้ CrowdStrike-type dependency — ถ้า Azure มี major outage กระทบ trust ใน enterprise",
+    "key_risks": [
+      {
+        "risk": "AI Capex ROI Timeline",
+        "severity": "high",
+        "description": "$80B+ AI infrastructure investment ใน FY2025 กดดัน FCF และ operating margin ในระยะสั้น ถ้า AI revenue ช้ากว่า capex ramp market จะ re-rate valuation",
+        "mitigation": "Microsoft มี subscription base ที่แข็งแกร่งรองรับ — Copilot add-on เริ่ม generate revenue แล้ว Azure AI services growing >100% YoY"
+      },
+      {
+        "risk": "Azure Growth Deceleration",
+        "severity": "high",
+        "description": "Consensus คาดว่า Azure จะ accelerate ในครึ่งหลัง FY2025 ถ้าไม่เป็นไปตามที่คาด sentiment จะเสีย — stock กำลัง price ใน acceleration ที่ยังไม่เกิดขึ้น",
+        "mitigation": "Amy Hood ยืนยันใน earnings ว่า AI capacity ที่กำลังสร้างจะ enable acceleration — backlog แข็งแกร่ง"
+      },
+      {
+        "risk": "OpenAI Concentration Risk",
+        "severity": "medium",
+        "description": "Microsoft ลงทุนใน OpenAI $13B+ แต่ OpenAI ไม่ exclusive — OpenAI มีดีล partnership กับ Apple, Amazon และอื่นๆ ถ้า OpenAI shift ไปหาคู่แข่ง หรือ in-house model ของ Google/Amazon ดีพอ ข้อได้เปรียบของ MSFT จะลดลง",
+        "mitigation": "MSFT ลงทุน infrastructure ใน OpenAI ทำให้มี economic interest และ preferential access แต่ dependency ยังมีอยู่"
+      },
+      {
+        "risk": "Antitrust / Regulatory",
+        "severity": "medium",
+        "description": "การเข้าซื้อ Activision Blizzard และ GitHub ทำให้ MSFT อยู่ใน regulatory scrutiny อย่างต่อเนื่อง EU กำลังตรวจสอบ Teams bundling และ cloud market dominance",
+        "mitigation": "MSFT แยก Teams ออกจาก Microsoft 365 ใน EU เพื่อ comply กับ regulation ไม่มีดีล major acquisition ที่กำลัง pending"
+      }
+    ],
+    "ownership": {
+      "major_shareholders": [
+        { "name": "Vanguard Group",      "pct": 8.8,  "type": "institutional" },
+        { "name": "BlackRock",           "pct": 7.2,  "type": "institutional" },
+        { "name": "State Street Global", "pct": 4.1,  "type": "institutional" },
+        { "name": "Capital Group",       "pct": 3.5,  "type": "institutional" },
+        { "name": "Satya Nadella",       "pct": 0.6,  "type": "insider" },
+        { "name": "Public Float (อื่นๆ)","pct": 75.8, "type": "float" }
+      ],
+      "corporate_structure": [
+        {
+          "name": "Microsoft Corporation (NASDAQ: MSFT)",
+          "type": "parent",
+          "children": [
+            { "name": "Microsoft Azure (Cloud Division)", "ownership_pct": 100, "type": "subsidiary", "partner": null },
+            { "name": "LinkedIn Corporation",             "ownership_pct": 100, "type": "subsidiary", "partner": null },
+            { "name": "GitHub Inc.",                      "ownership_pct": 100, "type": "subsidiary", "partner": null },
+            { "name": "Activision Blizzard",              "ownership_pct": 100, "type": "subsidiary", "partner": null },
+            { "name": "OpenAI (Partnership)",             "ownership_pct": 49,  "type": "associated", "partner": "OpenAI LP (non-profit control)" }
+          ]
+        }
+      ]
+    }
+  },
+
   "financials": {
     "currency": "USD",
     "unit": "Billion",
@@ -91,14 +198,47 @@
         "url": "https://www.microsoft.com/en-us/investor"
       }
     ],
-    "years": [2022, 2023, 2024],
+    "years": [2020, 2021, 2022, 2023, 2024],
     "metrics": [
-      { "name": "Revenue",       "values": [198.3, 211.9, 245.1] },
-      { "name": "Gross Profit",  "values": [135.6, 146.1, 171.0] },
-      { "name": "Net Income",    "values": [72.7,  72.4,  88.1]  },
-      { "name": "EPS (diluted)", "values": [9.65,  9.72,  11.80] },
-      { "name": "Free Cash Flow","values": [65.1,  87.9,  74.1]  }
+      { "name": "Revenue",          "values": [143.0, 168.1, 198.3, 211.9, 245.1] },
+      { "name": "Gross Profit",     "values": [96.9,  115.9, 135.6, 146.1, 171.0] },
+      { "name": "Operating Income", "values": [53.0,  69.9,  83.4,  88.5,  109.4] },
+      { "name": "Net Income",       "values": [44.3,  61.3,  72.7,  72.4,  88.1]  },
+      { "name": "EPS (diluted)",    "values": [5.76,  8.05,  9.65,  9.72,  11.80] },
+      { "name": "Free Cash Flow",   "values": [45.2,  56.1,  65.1,  87.9,  74.1]  }
     ],
-    "notes": "ปีงบการเงินของ Microsoft สิ้นสุดในเดือนมิถุนายนของทุกปี\nหน่วย: พันล้านเหรียญสหรัฐ ยกเว้น EPS (ต่อหุ้น)"
+    "breakdown": {
+      "sankey": {
+        "year": 2024,
+        "currency": "USD",
+        "unit": "Billion",
+        "nodes": [
+          { "id": 0,  "label": "Intelligent Cloud",          "color": "#58a6ff" },
+          { "id": 1,  "label": "Productivity & Business",    "color": "#3fb950" },
+          { "id": 2,  "label": "More Personal Computing",    "color": "#bc8cff" },
+          { "id": 3,  "label": "Total Revenue $245.1B",      "color": "#f0c060" },
+          { "id": 4,  "label": "COGS $74.1B",                "color": "#f85149" },
+          { "id": 5,  "label": "Gross Profit $171.0B",       "color": "#58d68d" },
+          { "id": 6,  "label": "R&D $29.5B",                 "color": "#8b949e" },
+          { "id": 7,  "label": "SG&A $32.1B",                "color": "#aaaaaa" },
+          { "id": 8,  "label": "Operating Income $109.4B",   "color": "#58a6ff" },
+          { "id": 9,  "label": "Tax & Other $21.3B",         "color": "#f85149" },
+          { "id": 10, "label": "Net Income $88.1B",          "color": "#3fb950" }
+        ],
+        "links": [
+          { "source": 0,  "target": 3,  "value": 105.4 },
+          { "source": 1,  "target": 3,  "value": 77.4  },
+          { "source": 2,  "target": 3,  "value": 62.3  },
+          { "source": 3,  "target": 4,  "value": 74.1  },
+          { "source": 3,  "target": 5,  "value": 171.0 },
+          { "source": 5,  "target": 6,  "value": 29.5  },
+          { "source": 5,  "target": 7,  "value": 32.1  },
+          { "source": 5,  "target": 8,  "value": 109.4 },
+          { "source": 8,  "target": 9,  "value": 21.3  },
+          { "source": 8,  "target": 10, "value": 88.1  }
+        ]
+      }
+    },
+    "notes": "ปีบัญชีของ Microsoft สิ้นสุดในเดือนมิถุนายนของทุกปี (กรกฎาคม – มิถุนายน) หน่วย: พันล้านเหรียญสหรัฐ ยกเว้น EPS (ต่อหุ้น)\n\nFY2020-2021 เป็นช่วง hyper-growth ของ Azure จาก pandemic-driven cloud migration\nFY2022 Operating Income ขยับจาก $69.9B → $83.4B (+19%) สะท้อน operating leverage ของ cloud business\nFY2024 FCF ลดลง YoY เพราะ capex เพิ่มจาก AI infrastructure investment ($44.5B capex vs $29.1B ปีก่อน)\nOpenAI investment (~$13B+) บันทึกเป็น equity investment ไม่ได้รวมอยู่ใน revenue แต่ Azure OpenAI Service revenue อยู่ใน Intelligent Cloud"
   }
 }

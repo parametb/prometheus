@@ -17,6 +17,102 @@
     }
   ],
   "quotes": [],
+
+  "overview": {
+    "founded": "1999",
+    "headquarters": "Burnaby, British Columbia, Canada",
+    "employees": "~250",
+    "fiscal_year_end": "December 31",
+    "business_model_summary": "D-Wave พัฒนาและให้บริการ quantum computing เชิงพาณิชย์ผ่าน 2 รูปแบบ: (1) Leap cloud service (QCaaS) — ให้ลูกค้าเข้าถึง quantum annealers และ hybrid solvers ผ่าน API ในราคา subscription; (2) On-premise systems — ขาย/ให้เช่า quantum system โดยตรงสำหรับลูกค้าที่ต้องการ data sovereignty รายได้หลักจาก annealing-based optimization ใน logistics, finance, pharma และ materials science",
+    "competitive_position": "บริษัท quantum computing เชิงพาณิชย์รายแรกและรายเดียวที่ให้บริการ annealing-based QC ในระดับ enterprise Advantage2 มี 4,400+ qubits — ใหญ่ที่สุดในตลาด แต่ไม่ได้แข่งกับ gate-model QC ของ IBM/Google โดยตรง เพราะใช้เทคนิคต่างกัน การซื้อ Quantum Circuits (Jan 2026) เพิ่ม gate-model capability ทำให้ D-Wave กลายเป็น dual-platform QC company",
+    "moat_factors": [
+      "25+ ปีของ IP และ know-how ใน quantum annealing — barrier to entry สูงมาก ไม่มีบริษัทอื่นที่ทำ annealing ในระดับ commercial ได้",
+      "Leap cloud platform ที่ proven — 42+ ประเทศ มี customer base ที่สร้าง workflow บน D-Wave แล้ว switching cost สูง",
+      "Advantage2 quantum supremacy ใน materials simulation (ตีพิมพ์ใน Science journal) — proof point ที่ peer-reviewed",
+      "Hybrid solvers รองรับ 2M+ variables — เป็นเดียวที่ทำได้ในระดับ production",
+      "Enterprise partnerships กับ NEC, Volkswagen, Lockheed Martin, NASA — validation จาก Tier 1 customers"
+    ],
+    "segments": [
+      { "name": "QCaaS / Leap Cloud", "revenue_pct": 65, "type": "cloud",    "fy": 2024 },
+      { "name": "Professional Services", "revenue_pct": 20, "type": "services","fy": 2024 },
+      { "name": "On-Premise Systems",  "revenue_pct": 15, "type": "hardware", "fy": 2024 }
+    ],
+    "geographies": [
+      { "name": "North America", "revenue_pct": 60 },
+      { "name": "Europe",        "revenue_pct": 25 },
+      { "name": "Asia Pacific",  "revenue_pct": 15 }
+    ],
+    "timeline": [
+      { "year": 1999, "type": "founding",  "event": "ก่อตั้งในชื่อ D-Wave Systems Inc. ใน Burnaby, BC โดยทีมนักฟิสิกส์จาก University of British Columbia" },
+      { "year": 2007, "type": "milestone", "event": "Demo quantum computer ตัวแรก 16-qubit ต่อสาธารณะ — ถูก skeptics โต้แย้งหนักว่า 'ไม่ใช่ quantum จริง'" },
+      { "year": 2011, "type": "milestone", "event": "Lockheed Martin เป็นลูกค้าองค์กรรายแรก ซื้อ D-Wave One system" },
+      { "year": 2013, "type": "milestone", "event": "NASA และ Google ร่วมซื้อ D-Wave Two สำหรับวิจัยที่ Quantum Artificial Intelligence Lab" },
+      { "year": 2019, "type": "product",   "event": "เปิดตัว Leap cloud service — เข้าสู่ QCaaS model เต็มตัว" },
+      { "year": 2022, "type": "financial", "event": "IPO ผ่าน SPAC merger กับ DPCM Capital บน NYSE ใช้ ticker QBTS" },
+      { "year": 2024, "type": "product",   "event": "เปิดตัว Advantage2 — 4,400+ qubits, coherence time 2x กว่า Advantage1 พิสูจน์ quantum supremacy ในวารสาร Science" },
+      { "year": 2026, "type": "merger",    "event": "เข้าซื้อ Quantum Circuits Inc. (gate-model QC) — เป็น dual-platform quantum company เต็มตัว" }
+    ],
+    "management": [
+      {
+        "name": "Alan Baratz",
+        "title": "President & CEO",
+        "since": "2020",
+        "background": "อดีต President of Developer Products ที่ IBM มีประสบการณ์ด้าน enterprise software และ cloud มากกว่า 30 ปี เข้ามา pivot D-Wave จาก R&D-focused เป็น commercial-first company มีสไตล์การสื่อสารตรงไปตรงมา ยอมรับ risks และ limitations ของ quantum computing โดยไม่ overpromise"
+      },
+      {
+        "name": "John Markovich",
+        "title": "CFO",
+        "since": "2021",
+        "background": "มีประสบการณ์ CFO ใน tech startups หลายแห่ง เน้น capital efficiency และ investor communication รับผิดชอบ multiple rounds of equity financing ที่ช่วยให้ D-Wave มี cash runway ยาว"
+      }
+    ],
+    "bull_case": "FY2025 revenue +178% YoY ($24.6M) และ gross margin 83% แสดง scalability ของ QCaaS model bookings record ($23.9M ใน FY2024, +128%) เป็น pipeline แข็งแกร่งที่จะ convert เป็น revenue ต่อเนื่อง quantum supremacy ที่ peer-reviewed ใน Science journal เป็น credibility signal สำคัญ cash position $635M หลัง FY2025 fundraising ให้ runway ยาว 8+ ปี dual-platform (annealing + gate-model) ทำให้ address ตลาด QC ทั้งหมดได้",
+    "bear_case": "revenue ยังเล็กมาก ($24.6M ใน FY2025) เทียบกับ cash burn และ valuation ความเสี่ยงหลักคือ commercialization timeline — quantum computing อาจใช้เวลาอีก 5-10 ปีกว่าจะ mainstream dilution risk สูงจาก stock issuance เพื่อระดมทุน ($789M ใน FY2025) cash burn ~$75-100M/ปี แม้จะมี runway ยาว แต่ต้องระดมทุนซ้ำๆ การแข่งขันจาก IBM, Google, IonQ, Rigetti ที่มีทรัพยากรมากกว่ามาก",
+    "key_risks": [
+      {
+        "risk": "Commercialization Timeline Uncertainty",
+        "severity": "high",
+        "description": "บริษัทเองยอมรับว่า quantum computing market ยัง 'relatively new and unproven' Timeline ที่จะ mainstream ไม่ชัดเจน ถ้า enterprise adoption ช้ากว่าที่คาด revenue growth จะชะลอ",
+        "mitigation": "FY2025 revenue surge +178% และ gross margin 83% แสดงว่า commercial traction เริ่มเห็นแล้ว focus ที่ optimization use cases (ไม่ต้องรอ full fault-tolerant QC)"
+      },
+      {
+        "risk": "Dilution Risk จากการออกหุ้นเพิ่มทุน",
+        "severity": "high",
+        "description": "D-Wave ออกหุ้นเพิ่ม $789M ใน FY2025 เพื่อระดมทุน share count เพิ่มอย่างมีนัยสำคัญ ส่งผลให้ EPS ติดลบมากขึ้น และ per-share value ลดลงสำหรับผู้ถือหุ้นเดิม",
+        "mitigation": "Cash $635M ให้ runway ยาวพอที่จะไม่ต้องระดมทุนเร่งด่วน แต่ business model ยังต้องการ external capital จนกว่าจะ cashflow positive"
+      },
+      {
+        "risk": "Competition from Gate-Model Players",
+        "severity": "medium",
+        "description": "IBM (1,000+ qubit Eagle/Condor), Google (Willow 105 qubits error-corrected), IonQ, Rigetti มีทรัพยากรมากกว่ามาก ถ้า gate-model QC พัฒนาได้เร็วและแก้ optimization problems ได้เหมือนกัน annealing advantage จะลดลง",
+        "mitigation": "D-Wave focus ที่ optimization use cases ที่ annealing เหมาะกว่า และ dual-platform strategy ซื้อ Quantum Circuits เพื่อมี gate-model ด้วย"
+      },
+      {
+        "risk": "Bookings-to-Revenue Conversion Risk",
+        "severity": "medium",
+        "description": "Record bookings ไม่ได้รับประกันว่าจะ recognize เป็น revenue ทั้งหมด โดยเฉพาะ enterprise contracts ที่มี milestone-based billing",
+        "mitigation": "FY2025 revenue surge แสดงว่า previous bookings กำลัง convert แต่ต้องติดตามทุกไตรมาส"
+      }
+    ],
+    "ownership": {
+      "major_shareholders": [
+        { "name": "Institutional Investors", "pct": 35, "type": "institutional" },
+        { "name": "Insiders & Management",   "pct": 8,  "type": "insider" },
+        { "name": "Public Float (อื่นๆ)",    "pct": 57, "type": "float" }
+      ],
+      "corporate_structure": [
+        {
+          "name": "D-Wave Quantum Inc. (NYSE: QBTS)",
+          "type": "parent",
+          "children": [
+            { "name": "D-Wave Systems Inc. (Canada)", "ownership_pct": 100, "type": "subsidiary", "partner": null },
+            { "name": "Quantum Circuits Inc. (QCI)", "ownership_pct": 100, "type": "subsidiary", "partner": null }
+          ]
+        }
+      ]
+    }
+  },
+
   "roadmap": [
     {
       "date_said": "2025-03-13",
@@ -86,16 +182,18 @@
         "url": "https://www.sec.gov/Archives/edgar/data/1907982/000119312522076126/d366416ds4.htm"
       }
     ],
-    "years": [2021, 2022, 2023, 2024, 2025],
+    "years": [2020, 2021, 2022, 2023, 2024, 2025],
     "metrics": [
-      { "name": "Revenue",         "values": [6.28, 7.17, 8.76, 8.83, 24.59] },
-      { "name": "Gross Profit",    "values": [4.53, 4.25, 4.62, 5.56, 20.31] },
-      { "name": "Operating Income","values": [-38.95, -59.46, -80.55, -77.22, -100.37] },
-      { "name": "Net Income",      "values": [-40.97, -53.70, -82.72, -143.88, -355.06] },
-      { "name": "EPS (diluted)",   "values": [-0.33, -0.45, -0.60, -0.75, -1.11] },
-      { "name": "Free Cash Flow",  "values": [-36.57, -45.65, -61.23, -44.75, -75.84] },
-      { "name": "Total Debt",      "values": [39.38, 42.29, 72.65, 38.38, 43.46] },
-      { "name": "Cash & Equiv.",   "values": [9.48, 7.07, 41.31, 177.98, 635.35] }
+      { "name": "Revenue",         "values": [5.16, 6.28, 7.17, 8.76, 8.83, 24.59] },
+      { "name": "Gross Profit",    "values": [4.25, 4.53, 4.25, 4.62, 5.56, 20.31] },
+      { "name": "Operating Income","values": [-31.47, -38.95, -59.46, -80.55, -77.22, -100.37] },
+      { "name": "Net Income",      "values": [-21.97, -40.97, -53.70, -82.72, -143.88, -355.06] },
+      { "name": "EPS (diluted)",   "values": [null, -0.33, -0.45, -0.60, -0.75, -1.11] },
+      { "name": "EBITDA",          "values": [-14.06, -34.36, -49.03, -80.83, -138.05, -348.74] },
+      { "name": "R&D Expense",     "values": [20.41, 25.40, 32.10, 37.88, 35.30, 50.73] },
+      { "name": "Free Cash Flow",  "values": [null, -36.57, -45.65, -61.23, -44.75, -75.84] },
+      { "name": "Total Debt",      "values": [3.22, 14.35, 11.88, 65.62, 31.99, 37.41] },
+      { "name": "Cash & Equiv.",   "values": [21.34, 9.48, 7.07, 41.31, 177.98, 635.35] }
     ],
     "breakdown": {
       "sankey": null

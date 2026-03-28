@@ -4,7 +4,7 @@
   "sector": "Mining",
   "exchange": "NYSE",
   "tradingview_symbol": "NYSE:B",
-  "last_updated": "2026-03-28",
+  "last_updated": "2026-03-29",
   "description": "Barrick Mining Corporation (formerly Barrick Gold) is one of the world's largest gold and copper mining companies. Operates six Tier One gold mines across Africa, Americas, and Asia Pacific. Dual-listed NYSE (GOLD) and TSX (ABX). Increasingly positioning as a gold-copper producer.",
 
   "notes": [
@@ -340,16 +340,16 @@
         "url": "https://s25.q4cdn.com/322814910/files/doc_presentations/2025/02/Barrick_Q4_2024_Results_Presentation.pdf"
       }
     ],
-    "years": [2022, 2023, 2024],
+    "years": [2020, 2021, 2022, 2023, 2024],
     "metrics": [
-      { "name": "Revenue",                    "values": [11.01, 11.39, 12.92] },
-      { "name": "Net Earnings (attributable)", "values": [0.43,  1.27,  2.14]  },
-      { "name": "Adjusted Net Earnings",       "values": [1.33,  1.46,  2.21]  },
-      { "name": "Adjusted EPS (diluted)",      "values": [0.75,  0.83,  1.26]  },
-      { "name": "Operating Cash Flow",         "values": [2.87,  3.74,  4.49]  },
-      { "name": "Free Cash Flow",              "values": [0.50,  0.65,  1.32]  },
-      { "name": "Gold Production (Moz)",       "values": [4.14,  4.05,  4.05]  },
-      { "name": "AISC ($/oz)",                 "values": [1262,  1335,  1390]  }
+      { "name": "Revenue",                    "values": [12.59, 11.96, 11.01, 11.39, 12.92] },
+      { "name": "Net Earnings (attributable)", "values": [2.32,  1.44,  0.43,  1.27,  2.14]  },
+      { "name": "Adjusted Net Earnings",       "values": [2.04,  1.72,  1.33,  1.46,  2.21]  },
+      { "name": "Adjusted EPS (diluted)",      "values": [1.15,  0.96,  0.75,  0.83,  1.26]  },
+      { "name": "Operating Cash Flow",         "values": [5.41,  4.38,  2.87,  3.74,  4.49]  },
+      { "name": "Free Cash Flow",              "values": [1.77,  1.53,  0.50,  0.65,  1.32]  },
+      { "name": "Gold Production (Moz)",       "values": [4.76,  4.44,  4.14,  4.05,  4.05]  },
+      { "name": "AISC ($/oz)",                 "values": [966,   1045,  1262,  1335,  1390]  }
     ],
     "notes": "Barrick is a Canadian company (TSX: ABX, NYSE: GOLD). Fiscal year ends December 31. Files 20-F (not 10-K) with SEC as a foreign private issuer. Unit = Billion USD except Gold Production (Moz) and AISC ($/oz).\n\nAdjusted Net Earnings and Adjusted EPS exclude impairments, unrealized gains/losses, and other non-recurring items — this is management's preferred profitability measure.\n\nFY2022 net earnings were heavily impacted by ~$700M in impairment charges (primarily African assets). Adjusted basis better reflects operating performance. FY2023 Adjusted EPS is approximate. Operating CF and FCF for 2022 are estimates; verify against 20-F.\n\nKey mining metric to watch: AISC (All-in Sustaining Cost per ounce). Barrick's AISC has risen from $1,262 in 2022 to ~$1,390 in 2024 — cost inflation offset by gold price appreciation. Gold price realization: 2022 ~$1,803/oz, 2023 $1,948/oz, 2024 $2,397/oz."
   }

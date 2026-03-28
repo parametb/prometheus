@@ -6,7 +6,11 @@
   <title>Prometheus</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/themes/Dark.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
   <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
   <style>
@@ -160,7 +164,12 @@
     .fin-table td { border:1px solid var(--border); padding:10px 14px; text-align:right; font-family:'JetBrains Mono',monospace; }
     .fin-table td:first-child { text-align:left; color:var(--text-muted); font-size:12px; font-family:inherit; }
     .fin-table tr:hover td { background:var(--surface2); }
-    .chart-container  { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:20px; margin-bottom:14px; height:260px; }
+    .chart-container  { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:16px 20px 20px; margin-bottom:14px; }
+    .fin-metric-bar   { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:12px; }
+    .fin-metric-btn   { background:var(--surface2); border:1px solid var(--border); border-radius:20px; color:var(--text-muted); cursor:pointer; font-size:12px; padding:4px 12px; transition:all 0.18s; white-space:nowrap; }
+    .fin-metric-btn:hover  { border-color:var(--accent); color:var(--accent); }
+    .fin-metric-btn.active { background:var(--accent); border-color:var(--accent); color:#fff; }
+    #fin-chart { height:240px; width:100%; }
     .sankey-container { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:8px; margin-bottom:20px; height:460px; }
     .fin-links-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:10px; margin-bottom:4px; }
     .fin-link-card  { background:var(--surface2); border:1px solid var(--border); border-radius:10px; color:var(--text); display:flex; align-items:center; gap:10px; padding:12px 14px; text-decoration:none; transition:border-color 0.2s,background 0.2s; }
@@ -508,7 +517,7 @@ function renderOverviewPanel(ov) {
             </div>`;
           }).join('')}
         </div>
-        <div class="seg-donut-wrap"><canvas id="seg-donut" class="seg-donut-canvas"></canvas></div>
+        <div class="seg-donut-wrap"><div id="seg-donut" class="seg-donut-canvas"></div></div>
       </div>
     </div>` : '';
 
@@ -585,7 +594,7 @@ function renderOverviewPanel(ov) {
       <div class="ov-title">🏦 โครงสร้างผู้ถือหุ้น</div>
       <div class="ownership-layout">
         <div style="display:flex;flex-direction:column;align-items:center">
-          <canvas id="own-donut" class="own-donut-canvas"></canvas>
+          <div id="own-donut" class="own-donut-canvas"></div>
         </div>
         <div>
           ${ov.ownership.major_shareholders.map((sh,i)=>`<div class="sh-item">
@@ -634,37 +643,74 @@ function animateBars() {
 }
 
 /* ── SEGMENT DONUT ── */
-let segDonutChart = null;
-function drawSegmentDonut(segments) {
-  const canvas = document.getElementById('seg-donut');
-  if (!canvas || !segments.length) return;
-  if (segDonutChart) { segDonutChart.destroy(); segDonutChart = null; }
-  const isLight = document.documentElement.getAttribute('data-theme') === 'light';
-  segDonutChart = new Chart(canvas, {
-    type: 'doughnut',
-    data: {
-      labels: segments.map(s => s.name),
-      datasets: [{ data: segments.map(s => s.revenue_pct), backgroundColor: segments.map(s => SEG_TYPE_COLOR[s.type]||'#8b949e'), borderColor: isLight?'#fff':'#161b22', borderWidth: 2 }]
-    },
-    options: { responsive:true, maintainAspectRatio:true, plugins:{ legend:{display:false}, tooltip:{ callbacks:{ label: ctx => ` ${ctx.label}: ${ctx.raw}%` } } } }
-  });
+/* ── amCharts 5 helpers ── */
+function am5isLight() { return document.documentElement.getAttribute('data-theme') === 'light'; }
+function am5MakeRoot(id) {
+  const root = am5.Root.new(id);
+  const themes = [am5themes_Animated.new(root)];
+  if (!am5isLight()) themes.push(am5themes_Dark.new(root));
+  root.setThemes(themes);
+  return root;
 }
 
-/* ── OWNERSHIP DONUT ── */
-let ownDonutChart = null;
-function drawOwnershipDonut(shareholders) {
-  const canvas = document.getElementById('own-donut');
-  if (!canvas || !shareholders.length) return;
-  if (ownDonutChart) { ownDonutChart.destroy(); ownDonutChart = null; }
-  const isLight = document.documentElement.getAttribute('data-theme') === 'light';
-  ownDonutChart = new Chart(canvas, {
-    type: 'doughnut',
-    data: {
-      labels: shareholders.map(s => s.name),
-      datasets: [{ data: shareholders.map(s => s.pct), backgroundColor: shareholders.map((_,i) => OWN_COLORS[i%OWN_COLORS.length]), borderColor: isLight?'#fff':'#161b22', borderWidth: 2 }]
-    },
-    options: { responsive:true, maintainAspectRatio:true, plugins:{ legend:{display:false}, tooltip:{ callbacks:{ label: ctx => ` ${ctx.label}: ${ctx.raw}%` } } } }
+/* ── SEGMENT DONUT (amCharts 5) ── */
+let segDonutRoot = null;
+function drawSegmentDonut(segments) {
+  const el = document.getElementById('seg-donut');
+  if (!el || !segments.length) return;
+  if (segDonutRoot) { segDonutRoot.dispose(); segDonutRoot = null; }
+
+  const root = am5MakeRoot('seg-donut');
+  segDonutRoot = root;
+
+  const chart = root.container.children.push(am5percent.PieChart.new(root, {
+    innerRadius: am5.percent(62), layout: root.horizontalLayout,
+    paddingTop: 0, paddingBottom: 0, paddingLeft: 0, paddingRight: 0
+  }));
+  const series = chart.series.push(am5percent.PieSeries.new(root, {
+    valueField: 'pct', categoryField: 'name',
+    tooltip: am5.Tooltip.new(root, { labelText: '{category}: {value}%' })
+  }));
+  series.slices.template.setAll({ strokeWidth: 2, stroke: am5.color(am5isLight() ? '#ffffff' : '#161b22') });
+  series.labels.template.set('visible', false);
+  series.ticks.template.set('visible', false);
+  const data = segments.map(s => ({ name: s.name, pct: s.revenue_pct, fill: am5.color(SEG_TYPE_COLOR[s.type] || '#8b949e') }));
+  series.slices.template.adapters.add('fill', (fill, target) => {
+    const d = target.dataItem?.dataContext;
+    return d?.fill || fill;
   });
+  series.data.setAll(data);
+  series.appear(1000, 100);
+}
+
+/* ── OWNERSHIP DONUT (amCharts 5) ── */
+let ownDonutRoot = null;
+function drawOwnershipDonut(shareholders) {
+  const el = document.getElementById('own-donut');
+  if (!el || !shareholders.length) return;
+  if (ownDonutRoot) { ownDonutRoot.dispose(); ownDonutRoot = null; }
+
+  const root = am5MakeRoot('own-donut');
+  ownDonutRoot = root;
+
+  const chart = root.container.children.push(am5percent.PieChart.new(root, {
+    innerRadius: am5.percent(62), layout: root.horizontalLayout,
+    paddingTop: 0, paddingBottom: 0, paddingLeft: 0, paddingRight: 0
+  }));
+  const series = chart.series.push(am5percent.PieSeries.new(root, {
+    valueField: 'pct', categoryField: 'name',
+    tooltip: am5.Tooltip.new(root, { labelText: '{category}: {value}%' })
+  }));
+  series.slices.template.setAll({ strokeWidth: 2, stroke: am5.color(am5isLight() ? '#ffffff' : '#161b22') });
+  series.labels.template.set('visible', false);
+  series.ticks.template.set('visible', false);
+  const colors = OWN_COLORS.map(c => am5.color(c));
+  series.slices.template.adapters.add('fill', (fill, target) => {
+    const idx = target.dataItem?.index ?? 0;
+    return colors[idx % colors.length] || fill;
+  });
+  series.data.setAll(shareholders.map(s => ({ name: s.name, pct: s.pct })));
+  series.appear(1000, 100);
 }
 
 /* ── ORG CHART (Mermaid) ── */
@@ -855,7 +901,10 @@ function renderFinancials(fin) {
   return `${linksHtml}${tvFundHtml}${sankeyHtml}
     <div class="fin-section">
       <div class="fin-title">📈 แนวโน้ม Revenue</div>
-      <div class="chart-container"><canvas id="fin-chart"></canvas></div>
+      <div class="chart-container">
+        <div class="fin-metric-bar" id="fin-metric-bar"></div>
+        <div id="fin-chart"></div>
+      </div>
     </div>
     <div class="fin-section">
       <div class="fin-title">📋 ตารางข้อมูลทางการเงิน (${currency}, ${unit})</div>
@@ -918,21 +967,116 @@ function drawSankeyChart(fin) {
 }
 
 /* ── FIN CHART ── */
-let finChartInstance = null;
+/* ── FINANCIAL CHART (amCharts 5) — multi-metric selector ── */
+let finChartRoot = null;
+let _finData = null; // cache for metric switching
+
 function drawFinChart(fin) {
-  const ctx = document.getElementById('fin-chart');
-  if (!ctx) return;
-  if (finChartInstance) { finChartInstance.destroy(); finChartInstance = null; }
-  const revenueMetric = fin.metrics.find(m=>m.name.toLowerCase().includes('revenue')||m.name.toLowerCase().includes('รายได้'));
-  if (!revenueMetric) return;
-  const isLight = document.documentElement.getAttribute('data-theme')==='light';
-  const gridColor=isLight?'#e2e8f0':'#21262d', tickColor=isLight?'#64748b':'#8b949e';
-  const barColor=isLight?'rgba(37,99,235,0.2)':'rgba(88,166,255,0.25)', borderCol=isLight?'#2563eb':'#58a6ff';
-  finChartInstance = new Chart(ctx, {
-    type:'bar',
-    data:{ labels:fin.years, datasets:[{label:revenueMetric.name, data:revenueMetric.values, backgroundColor:barColor, borderColor:borderCol, borderWidth:2, borderRadius:6}] },
-    options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{labels:{color:tickColor}}}, scales:{ x:{grid:{color:gridColor},ticks:{color:tickColor}}, y:{grid:{color:gridColor},ticks:{color:tickColor}} } }
+  if (!fin.metrics?.length || !fin.years?.length) return;
+  _finData = fin;
+
+  // Build metric selector buttons
+  const bar = document.getElementById('fin-metric-bar');
+  if (bar) {
+    bar.innerHTML = fin.metrics.map((m, i) =>
+      `<button class="fin-metric-btn${i===0?' active':''}" onclick="switchFinMetric(${i})">${m.name}</button>`
+    ).join('');
+  }
+
+  renderFinMetric(0);
+}
+
+function switchFinMetric(idx) {
+  document.querySelectorAll('.fin-metric-btn').forEach((b,i) => b.classList.toggle('active', i===idx));
+  renderFinMetric(idx);
+}
+
+function renderFinMetric(idx) {
+  const fin = _finData;
+  if (!fin) return;
+  const el = document.getElementById('fin-chart');
+  if (!el) return;
+
+  if (finChartRoot) { finChartRoot.dispose(); finChartRoot = null; }
+
+  const metric = fin.metric || fin.metrics[idx];
+  const values = fin.metrics[idx].values;
+  const name   = fin.metrics[idx].name;
+  const isLight = am5isLight();
+
+  const root = am5MakeRoot('fin-chart');
+  finChartRoot = root;
+
+  // Custom colors
+  root.interfaceColors.set('grid', am5.color(isLight ? '#e2e8f0' : '#21262d'));
+
+  const chart = root.container.children.push(am5xy.XYChart.new(root, {
+    panX: false, panY: false, wheelX: 'none', wheelY: 'none',
+    paddingLeft: 0, paddingRight: 8, paddingBottom: 0
+  }));
+
+  // X axis
+  const xRenderer = am5xy.AxisRendererX.new(root, { minGridDistance: 30 });
+  xRenderer.labels.template.setAll({ fill: am5.color(isLight ? '#64748b' : '#8b949e'), fontSize: 12 });
+  xRenderer.grid.template.set('stroke', am5.color(isLight ? '#e2e8f0' : '#21262d'));
+  const xAxis = chart.xAxes.push(am5xy.CategoryAxis.new(root, {
+    categoryField: 'year', renderer: xRenderer,
+    tooltip: am5.Tooltip.new(root, {})
+  }));
+
+  // Y axis
+  const yRenderer = am5xy.AxisRendererY.new(root, {});
+  yRenderer.labels.template.setAll({ fill: am5.color(isLight ? '#64748b' : '#8b949e'), fontSize: 11 });
+  yRenderer.grid.template.set('stroke', am5.color(isLight ? '#e2e8f0' : '#21262d'));
+  const yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, { renderer: yRenderer }));
+
+  // Accent color
+  const accentHex = isLight ? '#2563eb' : '#58a6ff';
+  const accentColor = am5.color(accentHex);
+
+  // Column series
+  const series = chart.series.push(am5xy.ColumnSeries.new(root, {
+    name: name, xAxis, yAxis,
+    valueYField: 'value', categoryXField: 'year',
+    tooltip: am5.Tooltip.new(root, {
+      labelText: `{categoryX}  {valueY}\n{yoy}`
+    })
+  }));
+  series.columns.template.setAll({
+    cornerRadiusTL: 4, cornerRadiusTR: 4,
+    fill: accentColor, stroke: accentColor, fillOpacity: isLight ? 0.25 : 0.3,
+    strokeWidth: 2, width: am5.percent(60)
   });
+  series.columns.template.adapters.add('fillOpacity', (v, target) =>
+    target.dataItem?.dataContext?.highlight ? 0.85 : (isLight ? 0.25 : 0.30)
+  );
+
+  // Line overlay
+  const lineSeries = chart.series.push(am5xy.LineSeries.new(root, {
+    name, xAxis, yAxis, valueYField: 'value', categoryXField: 'year'
+  }));
+  lineSeries.strokes.template.setAll({ stroke: accentColor, strokeWidth: 2 });
+  lineSeries.bullets.push(() => am5.Bullet.new(root, {
+    sprite: am5.Circle.new(root, { radius: 4, fill: accentColor, stroke: root.interfaceColors.get('background'), strokeWidth: 2 })
+  }));
+
+  // Build data with YoY
+  const data = fin.years.map((y, i) => {
+    const v = values[i];
+    const prev = values[i-1];
+    const yoy = (prev != null && prev !== 0)
+      ? ((v - prev) / Math.abs(prev) * 100).toFixed(1)
+      : null;
+    const yoyStr = yoy != null ? (yoy > 0 ? `+${yoy}%` : `${yoy}%`) : '';
+    return { year: String(y), value: v ?? null, yoy: yoyStr, highlight: i === fin.years.length - 1 };
+  });
+
+  xAxis.data.setAll(data);
+  series.data.setAll(data);
+  lineSeries.data.setAll(data);
+
+  chart.appear(800, 50);
+  series.appear(800, 100);
 }
 
 /* ── TRADINGVIEW WIDGETS ── */
