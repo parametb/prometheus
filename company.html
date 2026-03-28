@@ -122,6 +122,9 @@
     .company-title { font-size: 26px; font-weight: 800; margin-bottom: 4px; }
     .company-meta { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
     .meta-tag { font-size: 12px; padding: 3px 10px; border-radius: 20px; }
+    .deepdive-btn { align-items: center; background: rgba(88,166,255,0.1); border: 1px solid rgba(88,166,255,0.3); border-radius: 20px; color: var(--accent); display: inline-flex; font-size: 12px; font-weight: 600; gap: 4px; padding: 3px 12px; text-decoration: none; transition: all 0.2s; }
+    .deepdive-btn:hover { background: rgba(88,166,255,0.2); border-color: var(--accent); }
+    html[data-theme="light"] .deepdive-btn { background: rgba(37,99,235,0.08); border-color: rgba(37,99,235,0.25); }
     .meta-muted { color: var(--text-muted); font-size: 13px; font-family: 'JetBrains Mono', monospace; }
     .company-desc { color: var(--text-muted); font-size: 14px; margin-top: 10px; line-height: 1.6; max-width: 700px; }
 
@@ -412,6 +415,7 @@
             <span class="meta-tag ${sectorClass}">${c.sector}</span>
             <span class="meta-muted">${ticker} · ${c.exchange || 'NASDAQ'}</span>
             <span class="meta-muted">· อัพเดท ${formatDate(c.last_updated)}</span>
+            <a class="deepdive-btn" href="overview.html?ticker=${ticker}">🔍 Deep Dive</a>
           </div>
           ${c.description ? `<div class="company-desc">${c.description}</div>` : ''}
         </div>

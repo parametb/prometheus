@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="th" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prometheus — Deep Dive</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:#0d1117; --surface:#161b22; --surface2:#21262d; --border:#30363d;
+      --text:#e6edf3; --text-muted:#8b949e; --accent:#58a6ff;
+      --green:#3fb950; --red:#f85149; --yellow:#d29922; --purple:#bc8cff;
+      --glow:rgba(88,166,255,0.05);
+    }
+    html[data-theme="light"] {
+      --bg:#f8fafc; --surface:#ffffff; --surface2:#f1f5f9; --border:#e2e8f0;
+      --text:#0f172a; --text-muted:#64748b; --accent:#2563eb;
+      --green:#16a34a; --red:#dc2626; --yellow:#d97706; --purple:#7c3aed;
+      --glow:rgba(37,99,235,0.04);
+    }
+    @keyframes fadeUp {
+      from { opacity:0; transform:translateY(14px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+    .stagger { animation:fadeUp 0.4s ease both; animation-delay:calc(var(--i,0)*0.07s); }
+
+    body { background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; min-height:100vh; position:relative; }
+    body::before { content:''; position:fixed; top:-30%; left:50%; transform:translateX(-50%); width:100vw; height:100vw; background:radial-gradient(circle,var(--glow) 0%,transparent 65%); pointer-events:none; z-index:0; }
+
+    /* ── NAV ── */
+    nav { background:var(--surface); border-bottom:1px solid var(--border); padding:0 24px; display:flex; align-items:center; justify-content:space-between; height:56px; position:sticky; top:0; z-index:100; }
+    .nav-left  { display:flex; align-items:center; gap:14px; }
+    .nav-right { display:flex; align-items:center; gap:10px; }
+    .nav-brand { display:flex; align-items:center; gap:8px; font-weight:700; font-size:17px; color:var(--text); text-decoration:none; }
+    .nav-brand svg { color:var(--accent); }
+    .back-btn  { color:var(--text-muted); text-decoration:none; font-size:14px; transition:color 0.2s; }
+    .back-btn:hover { color:var(--accent); }
+    .nav-pill  { background:rgba(88,166,255,0.12); border:1px solid rgba(88,166,255,0.25); border-radius:20px; color:var(--accent); font-family:'JetBrains Mono',monospace; font-size:11px; padding:3px 10px; }
+    .theme-toggle { align-items:center; background:var(--surface2); border:1px solid var(--border); border-radius:8px; color:var(--text-muted); cursor:pointer; display:flex; font-size:15px; height:32px; justify-content:center; transition:all 0.2s; width:32px; }
+    .theme-toggle:hover { border-color:var(--accent); color:var(--accent); }
+
+    main { max-width:1100px; margin:0 auto; padding:32px 24px; position:relative; z-index:1; }
+
+    /* ── COMPANY HEADER ── */
+    .co-header { display:flex; align-items:flex-start; gap:16px; margin-bottom:28px; }
+    .co-logo { align-items:center; background:var(--surface2); border:1px solid var(--border); border-radius:12px; color:var(--accent); display:flex; flex-shrink:0; font-family:'JetBrains Mono',monospace; font-size:18px; font-weight:800; height:56px; justify-content:center; width:56px; }
+    .co-name  { font-size:22px; font-weight:800; }
+    .co-sub   { font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--text-muted); margin-top:4px; }
+    .co-badge { display:inline-block; font-size:11px; font-weight:600; padding:3px 10px; border-radius:20px; margin-top:6px; }
+
+    /* ── SECTION ── */
+    .section { margin-bottom:36px; }
+    .section-title { font-size:15px; font-weight:700; margin-bottom:16px; display:flex; align-items:center; gap:8px; padding-bottom:10px; border-bottom:1px solid var(--border); }
+    .section-count { background:var(--surface2); border-radius:10px; font-family:'JetBrains Mono',monospace; font-size:11px; padding:1px 7px; color:var(--text-muted); }
+
+    /* ── SNAPSHOT CARDS ── */
+    .snapshot-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:12px; }
+    .snapshot-card { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:14px 16px; transition:border-color 0.2s,transform 0.2s; }
+    .snapshot-card:hover { border-color:var(--accent); transform:translateY(-2px); }
+    .snapshot-icon  { font-size:18px; margin-bottom:7px; }
+    .snapshot-label { font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--text-muted); margin-bottom:4px; }
+    .snapshot-value { font-size:13px; font-weight:700; line-height:1.3; }
+
+    /* ── BUSINESS MODEL ── */
+    .biz-text  { font-size:14px; line-height:1.8; color:var(--text-muted); margin-bottom:14px; }
+    .moat-tags { display:flex; flex-wrap:wrap; gap:8px; }
+    .moat-tag  { background:rgba(88,166,255,0.1); border:1px solid rgba(88,166,255,0.2); border-radius:20px; color:var(--accent); font-size:12px; padding:4px 12px; }
+    html[data-theme="light"] .moat-tag { background:rgba(37,99,235,0.08); border-color:rgba(37,99,235,0.2); }
+
+    /* ── SEGMENTS ── */
+    .seg-layout { display:grid; grid-template-columns:1fr 260px; gap:24px; align-items:start; }
+    @media(max-width:700px){ .seg-layout { grid-template-columns:1fr; } }
+    .seg-item   { margin-bottom:14px; cursor:pointer; }
+    .seg-header { display:flex; align-items:center; gap:10px; margin-bottom:5px; }
+    .seg-dot    { width:10px; height:10px; border-radius:50%; flex-shrink:0; }
+    .seg-name   { font-size:13px; font-weight:700; flex:1; }
+    .seg-revenue{ font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--text-muted); }
+    .seg-yoy-up { background:rgba(63,185,80,0.15); color:var(--green); font-family:'JetBrains Mono',monospace; font-size:10px; padding:1px 6px; border-radius:8px; }
+    .seg-yoy-dn { background:rgba(248,81,73,0.15); color:var(--red); font-family:'JetBrains Mono',monospace; font-size:10px; padding:1px 6px; border-radius:8px; }
+    .seg-bar-bg { height:6px; background:var(--surface2); border-radius:3px; margin-bottom:7px; overflow:hidden; }
+    .seg-bar    { height:100%; border-radius:3px; width:0; transition:width 0.9s cubic-bezier(.4,0,.2,1); }
+    .seg-detail { display:none; background:var(--surface2); border-radius:8px; padding:10px 12px; margin-bottom:6px; font-size:13px; color:var(--text-muted); line-height:1.5; }
+    .seg-item.open .seg-detail { display:block; }
+    .seg-assets { display:flex; flex-wrap:wrap; gap:5px; margin-top:8px; }
+    .seg-asset  { background:var(--surface); border:1px solid var(--border); border-radius:12px; font-size:11px; padding:2px 8px; }
+    .seg-chevron{ color:var(--text-muted); font-size:11px; margin-left:auto; transition:transform 0.2s; }
+    .seg-item.open .seg-chevron { transform:rotate(90deg); }
+    .donut-wrap { position:relative; }
+    .donut-center { position:absolute; top:50%; left:50%; transform:translate(-50%,-60%); text-align:center; pointer-events:none; }
+    .donut-center-value { font-family:'JetBrains Mono',monospace; font-size:15px; font-weight:700; }
+    .donut-center-label { font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--text-muted); margin-top:2px; }
+
+    /* ── GEOGRAPHY ── */
+    .geo-item  { display:flex; align-items:center; gap:12px; margin-bottom:12px; }
+    .geo-name  { font-size:13px; font-weight:600; width:180px; flex-shrink:0; }
+    .geo-bar-bg{ flex:1; background:var(--surface2); border-radius:3px; height:8px; overflow:hidden; }
+    .geo-bar   { height:100%; background:var(--accent); border-radius:3px; width:0; transition:width 0.9s cubic-bezier(.4,0,.2,1); opacity:0.7; }
+    .geo-pct   { font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--text-muted); width:44px; text-align:right; }
+
+    /* ── TIMELINE ── */
+    .tl-filters { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:20px; }
+    .tl-filter  { background:var(--surface2); border:1px solid var(--border); border-radius:20px; color:var(--text-muted); cursor:pointer; font-size:12px; padding:4px 12px; transition:all 0.2s; }
+    .tl-filter:hover, .tl-filter.active { border-color:var(--accent); color:var(--accent); }
+    .tl-wrap    { position:relative; padding-left:66px; }
+    .tl-spine   { position:absolute; left:34px; top:10px; bottom:0; width:2px; background:var(--border); }
+    .tl-item    { position:relative; padding-bottom:18px; cursor:pointer; }
+    .tl-item.hidden { display:none; }
+    .tl-year    { position:absolute; left:-58px; top:2px; font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--text-muted); width:50px; text-align:right; }
+    .tl-dot     { position:absolute; left:-42px; top:4px; width:14px; height:14px; border-radius:50%; border:2px solid var(--bg); z-index:1; }
+    .tl-card    { background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:10px 14px; transition:border-color 0.2s; }
+    .tl-item:hover .tl-card { border-color:var(--accent); }
+    .tl-row     { display:flex; align-items:center; gap:8px; }
+    .tl-type    { font-family:'JetBrains Mono',monospace; font-size:10px; padding:1px 7px; border-radius:10px; }
+    .tl-title   { font-size:13px; font-weight:700; flex:1; }
+    .tl-expand  { color:var(--text-muted); font-size:11px; transition:transform 0.2s; }
+    .tl-item.open .tl-expand { transform:rotate(90deg); }
+    .tl-desc    { font-size:13px; color:var(--text-muted); line-height:1.5; margin-top:8px; display:none; }
+    .tl-item.open .tl-desc { display:block; }
+
+    /* ── MANAGEMENT ── */
+    .mgmt-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:12px; }
+    .mgmt-card { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:16px; transition:border-color 0.2s; }
+    .mgmt-card:hover { border-color:var(--accent); }
+    .mgmt-name  { font-size:15px; font-weight:700; }
+    .mgmt-title { font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--accent); margin:3px 0 8px; }
+    .mgmt-since { font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--text-muted); margin-bottom:8px; }
+    .mgmt-bg    { font-size:13px; color:var(--text-muted); line-height:1.6; }
+
+    /* ── THESIS ── */
+    .thesis-grid{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    @media(max-width:600px){ .thesis-grid { grid-template-columns:1fr; } }
+    .thesis-card{ border-radius:10px; padding:16px 18px; }
+    .bull-card  { background:rgba(63,185,80,0.06); border:1px solid rgba(63,185,80,0.2); }
+    .bear-card  { background:rgba(248,81,73,0.06); border:1px solid rgba(248,81,73,0.2); }
+    .thesis-lbl { font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:700; margin-bottom:10px; }
+    .thesis-txt { font-family:'Instrument Serif',serif; font-size:15px; color:var(--text-muted); line-height:1.8; }
+
+    /* ── RISKS ── */
+    .risk-item  { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:10px; cursor:pointer; transition:border-color 0.2s; }
+    .risk-item:hover { border-color:var(--accent); }
+    .risk-row   { display:flex; align-items:center; gap:10px; }
+    .risk-name  { font-size:14px; font-weight:600; flex:1; }
+    .risk-sev   { font-family:'JetBrains Mono',monospace; font-size:10px; padding:2px 8px; border-radius:10px; white-space:nowrap; }
+    .sev-high   { background:rgba(248,81,73,0.15); color:var(--red); }
+    .sev-medium { background:rgba(210,153,34,0.15); color:var(--yellow); }
+    .sev-low    { background:rgba(63,185,80,0.15); color:var(--green); }
+    .risk-chevron{ color:var(--text-muted); font-size:11px; transition:transform 0.2s; }
+    .risk-item.open .risk-chevron { transform:rotate(90deg); }
+    .risk-body  { display:none; margin-top:10px; padding-top:10px; border-top:1px solid var(--border); }
+    .risk-item.open .risk-body { display:block; }
+    .risk-desc  { font-size:13px; color:var(--text-muted); line-height:1.5; margin-bottom:8px; }
+    .risk-mitigation { font-size:12px; color:var(--text-muted); background:var(--surface2); border-radius:6px; padding:8px 12px; }
+    .risk-mit-label { font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--accent); margin-bottom:3px; }
+
+    /* ── EMPTY / UTIL ── */
+    .empty { text-align:center; padding:48px; color:var(--text-muted); font-size:14px; }
+    .empty-sub { margin-top:8px; font-family:'JetBrains Mono',monospace; font-size:12px; opacity:0.6; }
+    .loading { text-align:center; padding:60px; color:var(--text-muted); }
+    .error   { text-align:center; padding:60px; color:var(--red); }
+    .sector-tech{background:rgba(88,166,255,.15);color:#58a6ff}
+    .sector-finance{background:rgba(63,185,80,.15);color:#3fb950}
+    .sector-health{background:rgba(248,81,73,.15);color:#f85149}
+    .sector-energy{background:rgba(210,153,34,.15);color:#d29922}
+    .sector-consumer{background:rgba(188,140,255,.15);color:#bc8cff}
+    .sector-other{background:rgba(139,148,158,.15);color:#8b949e}
+    .divider { border:none; border-top:1px solid var(--border); margin:28px 0; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-left">
+    <a class="nav-brand" href="index.html">
+      <svg width="18" height="18" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zm6-4a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zm6-3a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/>
+      </svg>
+      Prometheus
+    </a>
+    <a id="back-link" class="back-btn" href="index.html">← —</a>
+    <span class="nav-pill">Deep Dive</span>
+  </div>
+  <div class="nav-right">
+    <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn" title="Toggle theme">🌙</button>
+  </div>
+</nav>
+
+<main id="main">
+  <div class="loading">กำลังโหลดข้อมูล...</div>
+</main>
+
+<script>
+  /* ── THEME ── */
+  (function() {
+    const t = localStorage.getItem('prometheus-theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', t);
+    document.getElementById('theme-btn').textContent = t === 'dark' ? '🌙' : '☀️';
+  })();
+  window.toggleTheme = function() {
+    const n = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', n);
+    localStorage.setItem('prometheus-theme', n);
+    document.getElementById('theme-btn').textContent = n === 'dark' ? '🌙' : '☀️';
+    if (donutChartInst) { donutChartInst.destroy(); donutChartInst = null; setTimeout(drawDonut, 50); }
+  };
+
+  /* ── CONSTANTS ── */
+  const params  = new URLSearchParams(window.location.search);
+  const ticker  = params.get('ticker');
+  let companyData = null;
+  let donutChartInst = null;
+  let tlFilter = 'all';
+
+  const PALETTE = ['#58a6ff','#3fb950','#d29922','#bc8cff','#f85149','#e3663a','#56d364','#79c0ff','#ffa657'];
+  const SEG_TYPE_COLOR = { gold:'#d29922', copper:'#e3663a', silver:'#8b949e', tech:'#58a6ff', software:'#3fb950', hardware:'#bc8cff', oil:'#d29922', gas:'#f85149', service:'#bc8cff', other:'#58a6ff' };
+  const SECTOR_CLASS   = { Technology:'sector-tech', Finance:'sector-finance', Healthcare:'sector-health', Energy:'sector-energy', Consumer:'sector-consumer', Mining:'sector-energy' };
+  const TL_TYPE_META   = {
+    founding:  { color:'#3fb950', bg:'rgba(63,185,80,0.12)',  label:'🏛️ Founding' },
+    merger:    { color:'#bc8cff', bg:'rgba(188,140,255,0.12)',label:'🤝 Merger'   },
+    milestone: { color:'#58a6ff', bg:'rgba(88,166,255,0.12)', label:'⭐ Milestone' },
+    project:   { color:'#d29922', bg:'rgba(210,153,34,0.12)', label:'🔨 Project'  },
+    financial: { color:'#3fb950', bg:'rgba(63,185,80,0.12)',  label:'💰 Financial' },
+    crisis:    { color:'#f85149', bg:'rgba(248,81,73,0.12)',  label:'⚠️ Crisis'   },
+  };
+
+  /* ── LOAD ── */
+  async function load() {
+    if (!ticker) { document.getElementById('main').innerHTML = '<div class="error">ไม่พบ ticker ในลิงก์</div>'; return; }
+    try {
+      const res = await fetch(`data/${ticker}/data.json`);
+      if (!res.ok) throw new Error();
+      companyData = await res.json();
+      document.title = `${companyData.name} — Deep Dive · Prometheus`;
+      document.getElementById('back-link').href  = `company.html?ticker=${ticker}`;
+      document.getElementById('back-link').textContent = `← ${companyData.name}`;
+      render();
+    } catch {
+      document.getElementById('main').innerHTML = `<div class="error">ไม่พบข้อมูล ${ticker}</div>`;
+    }
+  }
+
+  /* ── MAIN RENDER ── */
+  function render() {
+    const c  = companyData;
+    const ov = c.overview || null;
+    const sc = SECTOR_CLASS[c.sector] || 'sector-other';
+
+    document.getElementById('main').innerHTML = `
+      <div class="co-header stagger" style="--i:0">
+        <div class="co-logo">${ticker.slice(0,3)}</div>
+        <div>
+          <div class="co-name">${c.name}</div>
+          <div class="co-sub">${ticker} · ${c.exchange || ''} · ${c.sector}</div>
+          <span class="co-badge ${sc}">${c.sector}</span>
+        </div>
+      </div>
+
+      ${ov ? renderAll(ov) : renderEmpty()}
+    `;
+
+    if (ov) {
+      requestAnimationFrame(() => {
+        animateBars();
+        if (ov.segments?.length) drawDonut();
+      });
+    }
+  }
+
+  function renderEmpty() {
+    return `
+      <div class="empty">
+        <div style="font-size:48px;margin-bottom:16px">📋</div>
+        <div>ยังไม่มีข้อมูล Deep Dive สำหรับบริษัทนี้</div>
+        <div class="empty-sub">ใช้ skill <strong>prometheus:analyze-report</strong> เพื่อวิเคราะห์ Annual Report และสร้าง overview data</div>
+      </div>`;
+  }
+
+  function renderAll(ov) {
+    return [
+      renderSnapshot(ov),
+      renderBusinessModel(ov),
+      ov.segments?.length     ? renderSegments(ov)    : '',
+      ov.geographies?.length  ? renderGeographies(ov) : '',
+      ov.timeline?.length     ? renderTimeline(ov)    : '',
+      ov.management?.length   ? renderManagement(ov)  : '',
+      (ov.bull_case || ov.bear_case) ? renderThesis(ov) : '',
+      ov.key_risks?.length    ? renderRisks(ov)       : '',
+    ].join('');
+  }
+
+  /* ── SNAPSHOT ── */
+  function renderSnapshot(ov) {
+    const items = [
+      ov.founded        && { icon:'📅', label:'FOUNDED',        value: ov.founded },
+      ov.headquarters   && { icon:'📍', label:'HEADQUARTERS',   value: ov.headquarters },
+      ov.employees      && { icon:'👥', label:'EMPLOYEES',      value: ov.employees },
+      ov.fiscal_year_end&& { icon:'📆', label:'FISCAL YEAR END',value: ov.fiscal_year_end },
+    ].filter(Boolean);
+    if (!items.length) return '';
+    return `
+      <div class="section stagger" style="--i:1">
+        <div class="section-title">🏢 Company Snapshot</div>
+        <div class="snapshot-grid">
+          ${items.map((x,i) => `
+            <div class="snapshot-card stagger" style="--i:${2+i}">
+              <div class="snapshot-icon">${x.icon}</div>
+              <div class="snapshot-label">${x.label}</div>
+              <div class="snapshot-value">${x.value}</div>
+            </div>`).join('')}
+        </div>
+      </div>`;
+  }
+
+  /* ── BUSINESS MODEL ── */
+  function renderBusinessModel(ov) {
+    if (!ov.business_model_summary && !ov.moat_factors?.length && !ov.competitive_position) return '';
+    return `
+      <div class="section stagger" style="--i:3">
+        <div class="section-title">⚙️ Business Model & Moat</div>
+        ${ov.business_model_summary ? `<p class="biz-text">${ov.business_model_summary}</p>` : ''}
+        ${ov.competitive_position   ? `<p class="biz-text" style="margin-top:-6px">${ov.competitive_position}</p>` : ''}
+        ${ov.moat_factors?.length ? `
+          <div class="moat-tags">
+            ${ov.moat_factors.map(f => `<span class="moat-tag">${f}</span>`).join('')}
+          </div>` : ''}
+      </div>`;
+  }
+
+  /* ── SEGMENTS ── */
+  function renderSegments(ov) {
+    const segs    = ov.segments;
+    const maxRev  = Math.max(...segs.map(s => s.revenue || 0));
+    const totalRev= segs.reduce((a,s) => a+(s.revenue||0), 0);
+    const segHtml = segs.map((s,i) => {
+      const color = SEG_TYPE_COLOR[s.type] || PALETTE[i % PALETTE.length];
+      const pct   = maxRev > 0 ? ((s.revenue||0)/maxRev*100).toFixed(1) : 0;
+      const yoyHtml = s.yoy_change != null
+        ? `<span class="${s.yoy_change >= 0 ? 'seg-yoy-up' : 'seg-yoy-dn'}">${s.yoy_change >= 0 ? '▲' : '▼'} ${Math.abs(s.yoy_change)}%</span>`
+        : '';
+      const assetsHtml = s.key_assets?.length
+        ? `<div class="seg-assets">${s.key_assets.map(a=>`<span class="seg-asset">${a}</span>`).join('')}</div>`
+        : '';
+      return `
+        <div class="seg-item" onclick="toggleSeg(this)">
+          <div class="seg-header">
+            <div class="seg-dot" style="background:${color}"></div>
+            <span class="seg-name">${s.name}</span>
+            ${s.revenue != null ? `<span class="seg-revenue">$${s.revenue.toFixed(2)}B</span>` : ''}
+            ${yoyHtml}
+            <span class="seg-chevron">▶</span>
+          </div>
+          <div class="seg-bar-bg">
+            <div class="seg-bar" data-pct="${pct}" style="background:${color}; width:0"></div>
+          </div>
+          <div class="seg-detail">
+            ${s.description ? `<div>${s.description}</div>` : ''}
+            ${assetsHtml}
+          </div>
+        </div>`;
+    }).join('');
+
+    return `
+      <div class="section stagger" style="--i:4">
+        <div class="section-title">📦 Revenue by Segment <span class="section-count">${segs.length} segments</span></div>
+        <div class="seg-layout">
+          <div id="seg-bars">${segHtml}</div>
+          <div class="donut-wrap">
+            <canvas id="donut-chart" height="260"></canvas>
+            <div class="donut-center">
+              <div class="donut-center-value">$${totalRev.toFixed(1)}B</div>
+              <div class="donut-center-label">TOTAL</div>
+            </div>
+          </div>
+        </div>
+      </div>`;
+  }
+  window.toggleSeg = function(el) { el.classList.toggle('open'); };
+
+  /* ── GEOGRAPHIES ── */
+  function renderGeographies(ov) {
+    const geos   = ov.geographies;
+    const maxPct = Math.max(...geos.map(g => g.revenue_pct || 0));
+    return `
+      <div class="section stagger" style="--i:5">
+        <div class="section-title">🌍 Revenue by Geography</div>
+        ${geos.map(g => `
+          <div class="geo-item">
+            <span class="geo-name">${g.region}</span>
+            <div class="geo-bar-bg">
+              <div class="geo-bar" data-pct="${(g.revenue_pct/maxPct*100).toFixed(1)}" style="width:0"></div>
+            </div>
+            <span class="geo-pct">${g.revenue_pct?.toFixed(1)}%</span>
+          </div>`).join('')}
+      </div>`;
+  }
+
+  /* ── TIMELINE ── */
+  function renderTimeline(ov) {
+    const events = [...ov.timeline].sort((a,b) => a.year - b.year);
+    const types  = [...new Set(events.map(e => e.type))].filter(Boolean);
+    const filtersHtml = `
+      <div class="tl-filters">
+        <button class="tl-filter active" onclick="filterTl(this,'all')">ทั้งหมด</button>
+        ${types.map(t => {
+          const m = TL_TYPE_META[t] || {};
+          return `<button class="tl-filter" onclick="filterTl(this,'${t}')">${m.label || t}</button>`;
+        }).join('')}
+      </div>`;
+    const itemsHtml = events.map((e,i) => {
+      const m = TL_TYPE_META[e.type] || { color:'#58a6ff', bg:'rgba(88,166,255,0.12)', label: e.type };
+      return `
+        <div class="tl-item stagger" style="--i:${i}" data-type="${e.type||''}" onclick="this.classList.toggle('open')">
+          <span class="tl-year">${e.year}</span>
+          <div class="tl-dot" style="background:${m.color}"></div>
+          <div class="tl-card">
+            <div class="tl-row">
+              <span class="tl-type" style="background:${m.bg};color:${m.color}">${m.label||e.type}</span>
+              <span class="tl-title">${e.title}</span>
+              ${e.description ? `<span class="tl-expand">▶</span>` : ''}
+            </div>
+            ${e.description ? `<div class="tl-desc">${e.description}</div>` : ''}
+          </div>
+        </div>`;
+    }).join('');
+    return `
+      <div class="section stagger" style="--i:6">
+        <div class="section-title">📅 Company Timeline <span class="section-count">${events.length} events</span></div>
+        ${filtersHtml}
+        <div class="tl-wrap">
+          <div class="tl-spine"></div>
+          <div id="tl-items">${itemsHtml}</div>
+        </div>
+      </div>`;
+  }
+  window.filterTl = function(btn, type) {
+    document.querySelectorAll('.tl-filter').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    tlFilter = type;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      item.classList.toggle('hidden', type !== 'all' && item.dataset.type !== type);
+    });
+  };
+
+  /* ── MANAGEMENT ── */
+  function renderManagement(ov) {
+    return `
+      <div class="section stagger" style="--i:7">
+        <div class="section-title">👤 Management Team <span class="section-count">${ov.management.length}</span></div>
+        <div class="mgmt-grid">
+          ${ov.management.map((m,i) => `
+            <div class="mgmt-card stagger" style="--i:${i}">
+              <div class="mgmt-name">${m.name}</div>
+              <div class="mgmt-title">${m.title}</div>
+              ${m.since ? `<div class="mgmt-since">Since ${m.since}</div>` : ''}
+              ${m.background ? `<div class="mgmt-bg">${m.background}</div>` : ''}
+            </div>`).join('')}
+        </div>
+      </div>`;
+  }
+
+  /* ── THESIS ── */
+  function renderThesis(ov) {
+    return `
+      <div class="section stagger" style="--i:8">
+        <div class="section-title">⚖️ Investment Thesis</div>
+        <div class="thesis-grid">
+          ${ov.bull_case ? `
+            <div class="thesis-card bull-card">
+              <div class="thesis-lbl" style="color:var(--green)">🐂 BULL CASE</div>
+              <div class="thesis-txt">${ov.bull_case}</div>
+            </div>` : ''}
+          ${ov.bear_case ? `
+            <div class="thesis-card bear-card">
+              <div class="thesis-lbl" style="color:var(--red)">🐻 BEAR CASE</div>
+              <div class="thesis-txt">${ov.bear_case}</div>
+            </div>` : ''}
+        </div>
+      </div>`;
+  }
+
+  /* ── RISKS ── */
+  function renderRisks(ov) {
+    const sevOrder = { high:0, medium:1, low:2 };
+    const sorted   = [...ov.key_risks].sort((a,b) => (sevOrder[a.severity]??9) - (sevOrder[b.severity]??9));
+    return `
+      <div class="section stagger" style="--i:9">
+        <div class="section-title">⚠️ Key Risks <span class="section-count">${sorted.length}</span></div>
+        ${sorted.map(r => `
+          <div class="risk-item" onclick="this.classList.toggle('open')">
+            <div class="risk-row">
+              <span class="risk-name">${r.risk}</span>
+              <span class="risk-sev sev-${r.severity||'medium'}">${(r.severity||'medium').toUpperCase()}</span>
+              <span class="risk-chevron">▶</span>
+            </div>
+            <div class="risk-body">
+              ${r.description ? `<div class="risk-desc">${r.description}</div>` : ''}
+              ${r.mitigation  ? `<div class="risk-mitigation"><div class="risk-mit-label">MITIGATION</div>${r.mitigation}</div>` : ''}
+            </div>
+          </div>`).join('')}
+      </div>`;
+  }
+
+  /* ── CHARTS ── */
+  function animateBars() {
+    document.querySelectorAll('.seg-bar, .geo-bar').forEach(bar => {
+      bar.style.width = bar.dataset.pct + '%';
+    });
+  }
+
+  function drawDonut() {
+    const ctx = document.getElementById('donut-chart');
+    if (!ctx || !companyData?.overview?.segments) return;
+    const segs  = companyData.overview.segments;
+    const theme = document.documentElement.getAttribute('data-theme');
+    const tick  = theme === 'light' ? '#64748b' : '#8b949e';
+    const border= theme === 'light' ? '#ffffff' : '#0d1117';
+    if (donutChartInst) { donutChartInst.destroy(); donutChartInst = null; }
+    donutChartInst = new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: segs.map(s => s.name),
+        datasets: [{
+          data: segs.map(s => s.revenue_pct ?? (s.revenue || 0)),
+          backgroundColor: segs.map((s,i) => SEG_TYPE_COLOR[s.type] || PALETTE[i % PALETTE.length]),
+          borderColor: border,
+          borderWidth: 2,
+          hoverOffset: 6,
+        }]
+      },
+      options: {
+        responsive: true,
+        cutout: '60%',
+        plugins: {
+          legend: { position:'bottom', labels:{ color:tick, font:{size:10}, padding:10, boxWidth:12 } },
+          tooltip: { callbacks: { label: ctx => ` ${ctx.label}: ${ctx.parsed.toFixed(1)}%` } }
+        }
+      }
+    });
+  }
+
+  load();
+</script>
+</body>
+</html>
