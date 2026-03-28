@@ -1,0 +1,157 @@
+{
+  "ticker": "B",
+  "name": "Barrick Mining Corporation",
+  "sector": "Mining",
+  "exchange": "NYSE",
+  "last_updated": "2026-03-28",
+  "description": "Barrick Mining Corporation (formerly Barrick Gold) is one of the world's largest gold and copper mining companies. Operates six Tier One gold mines across Africa, Americas, and Asia Pacific. Dual-listed NYSE (GOLD) and TSX (ABX). Increasingly positioning as a gold-copper producer.",
+
+  "notes": [
+    {
+      "date": "2026-03-28",
+      "title": "FY2024 Annual Report Analysis",
+      "tags": ["annual-report", "fy2024", "financials", "gold", "copper"],
+      "rating": 4,
+      "content": "[Financial Performance]\nRevenue grew 13.4% YoY to $12.92B (FY2023: $11.39B, FY2022: $11.01B), driven primarily by a 23% rise in realized gold price to $2,397/oz despite slightly lower gold sales volume. Net earnings attributable to shareholders surged 69% to $2.14B, the strongest since 2020. Adjusted net earnings +51% to $2.21B. Adjusted EPS $1.26 vs $0.75 in FY2022 — showing a clear earnings recovery trajectory.\n\nCash generation was exceptional: operating cash flow +20% to $4.49B (highest since 2020), and free cash flow more than doubled to $1.32B. This demonstrates improving operational leverage to gold prices. Net debt remains manageable at ~$650M. Returned ~$1.2B to shareholders in 2024 ($696M dividends + $498M buybacks).\n\nGold mineral reserves grew 23% to 89M oz — a transformational reserve replacement that extends mine life and underpins long-term thesis. The company replaced 180%+ of annual depletion since 2019.\n\n[Strategic Focus]\n1. Gold + Copper dual mandate: Copper increasingly strategic. Reko Diq (Pakistan) and Lumwana Super Pit (Zambia) are the two flagship copper growth projects — positioning Barrick as a major global copper producer.\n2. Tier One asset focus: CEO Mark Bristow consistently culls non-core assets when gold prices are high. Portfolio discipline is a defining characteristic.\n3. Balance sheet strength: No reliance on equity issuance or excessive debt. Self-funding growth through operating cash flows.\n4. Organic reserve growth: $10/equivalent oz cost to add reserves — extremely low cost of reserve replacement vs. industry average.\n5. Decadal growth target: Targeting 30%+ production growth by end of decade, anchored by Reko Diq, Lumwana, Pueblo Viejo, and Nevada.\n\n[Key Risks]\n1. Mali/Loulo situation: Three employees detained, production suspended. Represents ~400K oz/year of attributable gold. Arbitration filed. Management says balance sheet can absorb without changing 5-year plan, but prolonged suspension is a meaningful earnings risk.\n2. Geopolitical concentration: Significant operations in Mali, DR Congo, Tanzania, Pakistan — all jurisdictions with elevated political risk.\n3. Reko Diq execution risk: $5.6-6B capital commitment in Pakistan is the largest single project. Any delay or cost overrun would be material. Still in project financing stage (targeting Q3 2025 signing).\n4. Gold price dependency: Revenue leverage to gold price is high. A sustained decline from $2,400+ levels would compress margins significantly given AISC ~$1,390/oz.\n5. Safety: 3 fatalities in 2024 — acknowledged by management as unacceptable.\n\n[Management Tone]\nOverall tone is confidently bullish, with Bristow consistently framing the company as deeply undervalued. He notes that Nevada assets + copper assets alone in NAV analysis exceed total market cap, implying negative value for remaining Tier 1-2 mines. Language is assertive rather than defensive, particularly on capital allocation and reserve growth. The Mali situation is the one area where tone is measured and careful.\n\n[Investment Implications]\nBullish factors: Record gold prices + strong operational leverage = exceptional FCF generation. Reserve growth at low cost extends runway. Copper optionality (Reko Diq) not yet in market cap. Management track record on portfolio discipline is strong.\nBearish factors: Mali overhang unresolved (~8-10% of production). Pakistan execution risk on largest capex project. Valuations still subject to gold price assumptions. 3 fatalities suggests safety culture still needs work.\n\nVerdict: Conviction 4/5. Strong gold-price leveraged business with copper growth optionality. Key de-risking events: Loulo resolution + Reko Diq financing signing (Q3 2025)."
+    },
+    {
+      "date": "2026-03-28",
+      "title": "Q4 2024 Earnings Call — Key Takeaways",
+      "tags": ["earnings", "q42024", "reko-diq", "mali", "copper"],
+      "rating": 4,
+      "content": "[Q4 2024 Results]\nGold production Q4 +15% QoQ, total cash costs down 5%, operating cash flow $1.4B (+18% QoQ). Q4 dividend maintained $0.10/share. Q4 buybacks $354M — accelerated toward year-end.\n\n[Reko Diq Update]\nBoard conditionally approved bankable feasibility study. Phase 1 cost $5.6-6B. Project financing targeting Q3 2025 signing. Production target end of 2028. Projected FCF ~$74B over 36 years (pre-Pakistan taxes). AISC target below $1/pound copper — among the lowest cost globally.\n\n[Mali/Loulo]\nThree employees detained unjustly. $84M one-time payment made in Oct 2024. Production suspended, in care-and-maintenance breakeven status. Excluded from 2025 guidance. Contingency: possible restart early March 2025 if resolved. Arbitration filed.\n\n[2025 Guidance Context]\nCapex: Total project capex $1.7-1.9B. Reko Diq ~$1B (100% basis), Lumwana $600M, Fourmile $78M pre-feasibility. These are 'major capital years' before normalizing.\n\n[Valuation Thesis from Bristow]\nConsensus NAV analysis: Nevada + copper assets alone exceed Barrick's total market cap. Implies negative value assigned to all other Tier 1-2 assets. Management views this as 'standout value opportunity.'"
+    }
+  ],
+
+  "quotes": [
+    {
+      "date": "2025-02-12",
+      "source": "Q4 2024 Earnings Call",
+      "speaker": "Mark Bristow (CEO)",
+      "quote": "We are focused on delivering sustainable long-term value by owning the best gold and copper assets managed by the best people. With gold becoming more important as a safe haven in a geopolitically uncertain world, and copper being as strategic as gold is precious. I plan to show you how we are adding value and building capacity in both metals without taking an excessive amount of debt on or issuing new shares.",
+      "tag": "strategy"
+    },
+    {
+      "date": "2025-02-12",
+      "source": "Q4 2024 Earnings Call",
+      "speaker": "Mark Bristow (CEO)",
+      "quote": "Every one of our operations are independently viable, and Barrick's balance sheet is very solid. And so, with or without Loulo will not change our long-term plan, our five-year plan. And it will just be slightly smaller, but fundamentally, we can easily support the projects and the capital commitments during that period.",
+      "tag": "mali"
+    },
+    {
+      "date": "2025-02-12",
+      "source": "Q4 2024 Earnings Call",
+      "speaker": "Mark Bristow (CEO)",
+      "quote": "By any measure, Barrick Gold Corporation today presents a standout value opportunity. Consensus NAV analysis shows Nevada and copper assets alone exceed our market cap — implying negative value for all our remaining Tier 1 and Tier 2 assets.",
+      "tag": "valuation"
+    },
+    {
+      "date": "2025-02-12",
+      "source": "Q4 2024 Earnings Call",
+      "speaker": "Mark Bristow (CEO)",
+      "quote": "PV is a big value creator in Barrick. And again, you've seen I don't hesitate to clean up the portfolio at the appropriate time. And the best time is when you have higher commodity prices. So certainly, we'll continue to keep ourselves very focused and stick to our strategy of having Tier 1 assets.",
+      "tag": "portfolio"
+    },
+    {
+      "date": "2025-02-12",
+      "source": "Q4 2024 Earnings Call",
+      "speaker": "Graham Shuttleworth (CFO)",
+      "quote": "These are graphs, they're at a very small scale — there to give you directional information. The key message is that Reko Diq transforms our copper production profile from 2029 onward, and Lumwana positions us as a top-tier copper producer well before that.",
+      "tag": "copper"
+    }
+  ],
+
+  "roadmap": [
+    {
+      "date_said": "2025-02-12",
+      "source": "Q4 2024 Earnings Call",
+      "commitment": "Reko Diq Phase 1: Complete project financing by Q3 2025 and begin construction. Production target end of 2028. Cost $5.6-6B (100% basis).",
+      "status": "monitoring",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": "2025-02-12",
+      "source": "Q4 2024 Earnings Call",
+      "commitment": "Lumwana Super Pit Expansion: Deploy $600M capex in 2025. Feasibility complete, permits received, early works and long-lead fabrication underway.",
+      "status": "monitoring",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": "2025-02-12",
+      "source": "Q4 2024 Earnings Call",
+      "commitment": "Pueblo Viejo: Achieve mid-600,000 oz attributable production in 2025, then exceed 800,000 oz from 2026 onward. El Naranjo tailings relocation complete by 2029.",
+      "status": "pending",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": "2025-02-12",
+      "source": "Q4 2024 Earnings Call",
+      "commitment": "Fourmile (Nevada): Complete pre-feasibility study within 3 years. Allocate $78M in 2025 for study. Grade significantly higher than adjacent Goldrush (~12g/t vs 6g/t).",
+      "status": "pending",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": "2025-02-12",
+      "source": "Q4 2024 Earnings Call",
+      "commitment": "Resolve Mali/Loulo situation and restart production. Arbitration filed. Contingency plan for restart early March 2025 if employees released.",
+      "status": "pending",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": "2025-02-12",
+      "source": "Q4 2024 Earnings Call",
+      "commitment": "Achieve 30%+ group-wide gold equivalent production growth by end of decade (2029-2030), anchored by Reko Diq, Lumwana, Pueblo Viejo, and Nevada.",
+      "status": "monitoring",
+      "follow_up": "",
+      "follow_up_date": ""
+    }
+  ],
+
+  "financials": {
+    "currency": "USD",
+    "unit": "Billion",
+    "links": [
+      {
+        "title": "Annual Report 2024",
+        "type": "Annual Report",
+        "year": 2024,
+        "url": "https://www.barrick.com/English/investors/annual-report/default.aspx"
+      },
+      {
+        "title": "Q4 & FY2024 Results Press Release",
+        "type": "10-K",
+        "year": 2024,
+        "url": "https://www.barrick.com/English/news/news-details/2025/q4-2024-results/default.aspx"
+      },
+      {
+        "title": "20-F FY2024 (SEC Filing)",
+        "type": "10-K",
+        "year": 2024,
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000756502&type=20-F&dateb=&owner=include&count=10"
+      },
+      {
+        "title": "Q4 2024 Results Presentation",
+        "type": "Investor Day",
+        "year": 2024,
+        "url": "https://s25.q4cdn.com/322814910/files/doc_presentations/2025/02/Barrick_Q4_2024_Results_Presentation.pdf"
+      }
+    ],
+    "years": [2022, 2023, 2024],
+    "metrics": [
+      { "name": "Revenue",                    "values": [11.01, 11.39, 12.92] },
+      { "name": "Net Earnings (attributable)", "values": [0.43,  1.27,  2.14]  },
+      { "name": "Adjusted Net Earnings",       "values": [1.33,  1.46,  2.21]  },
+      { "name": "Adjusted EPS (diluted)",      "values": [0.75,  0.83,  1.26]  },
+      { "name": "Operating Cash Flow",         "values": [2.87,  3.74,  4.49]  },
+      { "name": "Free Cash Flow",              "values": [0.50,  0.65,  1.32]  },
+      { "name": "Gold Production (Moz)",       "values": [4.14,  4.05,  4.05]  },
+      { "name": "AISC ($/oz)",                 "values": [1262,  1335,  1390]  }
+    ],
+    "notes": "Barrick is a Canadian company (TSX: ABX, NYSE: GOLD). Fiscal year ends December 31. Files 20-F (not 10-K) with SEC as a foreign private issuer. Unit = Billion USD except Gold Production (Moz) and AISC ($/oz).\n\nAdjusted Net Earnings and Adjusted EPS exclude impairments, unrealized gains/losses, and other non-recurring items — this is management's preferred profitability measure.\n\nFY2022 net earnings were heavily impacted by ~$700M in impairment charges (primarily African assets). Adjusted basis better reflects operating performance. FY2023 Adjusted EPS is approximate. Operating CF and FCF for 2022 are estimates; verify against 20-F.\n\nKey mining metric to watch: AISC (All-in Sustaining Cost per ounce). Barrick's AISC has risen from $1,262 in 2022 to ~$1,390 in 2024 — cost inflation offset by gold price appreciation. Gold price realization: 2022 ~$1,803/oz, 2023 $1,948/oz, 2024 $2,397/oz."
+  }
+}
