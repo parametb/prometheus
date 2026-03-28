@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Company Research</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0d1117; --surface: #161b22; --surface2: #21262d;
+      --border: #30363d; --text: #e6edf3; --text-muted: #8b949e;
+      --accent: #58a6ff; --green: #3fb950; --red: #f85149;
+      --yellow: #d29922; --purple: #bc8cff;
+    }
+    body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; min-height: 100vh; }
+
+    /* NAV */
+    nav { background: var(--surface); border-bottom: 1px solid var(--border); padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 56px; position: sticky; top: 0; z-index: 100; }
+    .nav-brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 17px; color: var(--text); text-decoration: none; }
+    .nav-brand svg { color: var(--accent); }
+    .back-btn { display: flex; align-items: center; gap: 6px; color: var(--text-muted); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+    .back-btn:hover { color: var(--accent); }
+
+    main { max-width: 1100px; margin: 0 auto; padding: 32px 24px; }
+
+    /* COMPANY HEADER */
+    .company-header { display: flex; align-items: flex-start; gap: 20px; margin-bottom: 28px; flex-wrap: wrap; }
+    .company-logo-lg { width: 64px; height: 64px; border-radius: 14px; background: var(--surface2); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 22px; color: var(--accent); border: 1px solid var(--border); flex-shrink: 0; }
+    .company-info { flex: 1; }
+    .company-title { font-size: 26px; font-weight: 800; margin-bottom: 4px; }
+    .company-meta { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .meta-tag { font-size: 12px; padding: 3px 10px; border-radius: 20px; }
+    .meta-muted { color: var(--text-muted); font-size: 13px; }
+    .company-desc { color: var(--text-muted); font-size: 14px; margin-top: 10px; line-height: 1.6; max-width: 700px; }
+
+    /* QUICK STATS */
+    .quick-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 28px; }
+    .qs-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; }
+    .qs-label { font-size: 11px; color: var(--text-muted); margin-bottom: 5px; }
+    .qs-value { font-size: 18px; font-weight: 700; }
+    .qs-sub { font-size: 11px; color: var(--text-muted); margin-top: 3px; }
+
+    /* TABS */
+    .tabs { display: flex; gap: 0; border-bottom: 1px solid var(--border); margin-bottom: 24px; }
+    .tab-btn { background: none; border: none; color: var(--text-muted); cursor: pointer; font-size: 14px; font-weight: 500; padding: 12px 20px; position: relative; transition: color 0.2s; }
+    .tab-btn:hover { color: var(--text); }
+    .tab-btn.active { color: var(--accent); }
+    .tab-btn.active::after { content: ''; position: absolute; bottom: -1px; left: 0; right: 0; height: 2px; background: var(--accent); border-radius: 2px 2px 0 0; }
+    .tab-count { background: var(--surface2); border-radius: 10px; font-size: 11px; margin-left: 6px; padding: 1px 7px; }
+
+    /* TAB PANELS */
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* NOTES TAB */
+    .note-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px; margin-bottom: 14px; }
+    .note-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 12px; gap: 10px; flex-wrap: wrap; }
+    .note-title { font-size: 16px; font-weight: 700; }
+    .note-date { font-size: 12px; color: var(--text-muted); white-space: nowrap; }
+    .note-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+    .note-tag { background: var(--surface2); border-radius: 20px; color: var(--text-muted); font-size: 11px; padding: 2px 8px; }
+    .note-body { color: var(--text-muted); font-size: 14px; line-height: 1.7; white-space: pre-wrap; }
+    .note-rating { color: var(--yellow); font-size: 14px; margin-top: 10px; }
+
+    /* QUOTES TAB */
+    .quote-card { background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 0 10px 10px 0; padding: 18px 20px; margin-bottom: 14px; }
+    .quote-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
+    .quote-source { font-size: 12px; font-weight: 600; color: var(--accent); }
+    .quote-speaker { color: var(--text-muted); font-size: 12px; }
+    .quote-date { color: var(--text-muted); font-size: 12px; margin-left: auto; }
+    .quote-text { font-size: 15px; line-height: 1.7; font-style: italic; color: var(--text); }
+    .quote-text::before { content: '"'; font-size: 24px; color: var(--accent); line-height: 0; vertical-align: -8px; margin-right: 4px; }
+    .quote-text::after { content: '"'; font-size: 24px; color: var(--accent); line-height: 0; vertical-align: -8px; margin-left: 4px; }
+    .quote-tag { background: var(--surface2); border-radius: 20px; color: var(--text-muted); font-size: 11px; padding: 2px 8px; display: inline-block; margin-top: 10px; }
+
+    /* ROADMAP TAB */
+    .roadmap-filters { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+    .rm-filter { background: var(--surface2); border: 1px solid var(--border); border-radius: 20px; color: var(--text-muted); cursor: pointer; font-size: 12px; padding: 4px 12px; transition: all 0.2s; }
+    .rm-filter:hover, .rm-filter.active { border-color: var(--accent); color: var(--accent); }
+
+    .roadmap-item { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; margin-bottom: 12px; display: grid; grid-template-columns: auto 1fr auto; gap: 16px; align-items: start; }
+    .rm-status-dot { width: 10px; height: 10px; border-radius: 50%; margin-top: 5px; flex-shrink: 0; }
+    .status-delivered { background: var(--green); }
+    .status-pending { background: var(--yellow); }
+    .status-missed { background: var(--red); }
+    .status-partial { background: var(--purple); }
+    .status-monitoring { background: var(--accent); }
+
+    .rm-commitment { font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+    .rm-source { font-size: 12px; color: var(--text-muted); margin-bottom: 8px; }
+    .rm-followup { background: var(--surface2); border-radius: 8px; font-size: 13px; color: var(--text-muted); padding: 8px 12px; }
+    .rm-followup-label { font-size: 11px; color: var(--accent); font-weight: 600; margin-bottom: 3px; }
+    .rm-badge { font-size: 12px; font-weight: 600; padding: 4px 12px; border-radius: 20px; white-space: nowrap; }
+    .badge-delivered { background: rgba(63,185,80,0.15); color: var(--green); }
+    .badge-pending { background: rgba(210,153,34,0.15); color: var(--yellow); }
+    .badge-missed { background: rgba(248,81,73,0.15); color: var(--red); }
+    .badge-partial { background: rgba(188,140,255,0.15); color: var(--purple); }
+    .badge-monitoring { background: rgba(88,166,255,0.15); color: var(--accent); }
+
+    .roadmap-summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-bottom: 20px; }
+    .rm-sum-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 12px 16px; text-align: center; }
+    .rm-sum-num { font-size: 22px; font-weight: 800; margin-bottom: 3px; }
+    .rm-sum-label { font-size: 11px; color: var(--text-muted); }
+
+    /* FINANCIALS TAB */
+    .fin-section { margin-bottom: 28px; }
+    .fin-title { font-size: 16px; font-weight: 700; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+    .fin-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .fin-table th { background: var(--surface2); border: 1px solid var(--border); color: var(--text-muted); font-weight: 600; padding: 10px 14px; text-align: right; }
+    .fin-table th:first-child { text-align: left; }
+    .fin-table td { border: 1px solid var(--border); padding: 10px 14px; text-align: right; }
+    .fin-table td:first-child { text-align: left; color: var(--text-muted); font-size: 12px; }
+    .fin-table tr:hover td { background: var(--surface2); }
+    .chart-container { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px; margin-bottom: 14px; height: 260px; }
+
+    /* EMPTY */
+    .empty { text-align: center; padding: 40px; color: var(--text-muted); font-size: 14px; }
+
+    /* Sector colors */
+    .sector-tech { background: rgba(88,166,255,0.15); color: #58a6ff; }
+    .sector-finance { background: rgba(63,185,80,0.15); color: #3fb950; }
+    .sector-health { background: rgba(248,81,73,0.15); color: #f85149; }
+    .sector-energy { background: rgba(210,153,34,0.15); color: #d29922; }
+    .sector-consumer { background: rgba(188,140,255,0.15); color: #bc8cff; }
+    .sector-other { background: rgba(139,148,158,0.15); color: #8b949e; }
+
+    .loading { text-align: center; padding: 60px; color: var(--text-muted); }
+    .error { text-align: center; padding: 60px; color: var(--red); }
+  </style>
+</head>
+<body>
+<nav>
+  <a class="nav-brand" href="index.html">
+    <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+      <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zm6-4a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zm6-3a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/>
+    </svg>
+    Investment Research
+  </a>
+  <a class="back-btn" href="index.html">
+    ← กลับหน้าหลัก
+  </a>
+</nav>
+
+<main id="main">
+  <div class="loading">กำลังโหลดข้อมูล...</div>
+</main>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const ticker = params.get('ticker');
+  let companyData = null;
+  let rmFilter = 'all';
+
+  const SECTOR_CLASS = { Technology:'sector-tech', Finance:'sector-finance', Healthcare:'sector-health', Energy:'sector-energy', Consumer:'sector-consumer' };
+  const STATUS_LABELS = { delivered:'✅ Delivered', pending:'⏳ Pending', missed:'❌ Missed', partial:'⚠️ Partial', monitoring:'👀 Monitoring' };
+
+  function formatDate(d) {
+    if (!d) return '—';
+    return new Date(d).toLocaleDateString('th-TH', { day:'numeric', month:'short', year:'numeric' });
+  }
+
+  async function loadCompany() {
+    if (!ticker) {
+      document.getElementById('main').innerHTML = '<div class="error">ไม่พบ ticker ในลิงก์</div>';
+      return;
+    }
+    try {
+      const res = await fetch(`data/${ticker}/data.json`);
+      if (!res.ok) throw new Error('not found');
+      companyData = await res.json();
+      document.title = `${companyData.name} — Investment Research`;
+      render();
+    } catch(e) {
+      document.getElementById('main').innerHTML = `<div class="error">ไม่พบข้อมูล ${ticker}<br><small>ตรวจสอบว่ามีไฟล์ data/${ticker}/data.json</small></div>`;
+    }
+  }
+
+  function render() {
+    const c = companyData;
+    const sectorClass = SECTOR_CLASS[c.sector] || 'sector-other';
+    const notes = c.notes || [];
+    const quotes = c.quotes || [];
+    const roadmap = c.roadmap || [];
+    const fin = c.financials || {};
+
+    const rmStats = {
+      delivered: roadmap.filter(r=>r.status==='delivered').length,
+      pending: roadmap.filter(r=>r.status==='pending').length,
+      missed: roadmap.filter(r=>r.status==='missed').length,
+      partial: roadmap.filter(r=>r.status==='partial').length,
+    };
+    const deliveryRate = roadmap.length > 0
+      ? Math.round((rmStats.delivered / roadmap.length) * 100)
+      : 0;
+
+    document.getElementById('main').innerHTML = `
+      <div class="company-header">
+        <div class="company-logo-lg">${ticker.slice(0,3)}</div>
+        <div class="company-info">
+          <div class="company-title">${c.name}</div>
+          <div class="company-meta">
+            <span class="meta-tag ${sectorClass}">${c.sector}</span>
+            <span class="meta-muted">${ticker} · ${c.exchange || 'NASDAQ'}</span>
+            <span class="meta-muted">· อัพเดท ${formatDate(c.last_updated)}</span>
+          </div>
+          ${c.description ? `<div class="company-desc">${c.description}</div>` : ''}
+        </div>
+      </div>
+
+      <div class="quick-stats">
+        <div class="qs-card">
+          <div class="qs-label">Notes</div>
+          <div class="qs-value">${notes.length}</div>
+          <div class="qs-sub">บันทึกทั้งหมด</div>
+        </div>
+        <div class="qs-card">
+          <div class="qs-label">Quotes</div>
+          <div class="qs-value">${quotes.length}</div>
+          <div class="qs-sub">จาก Earnings Call</div>
+        </div>
+        <div class="qs-card">
+          <div class="qs-label">Roadmap Items</div>
+          <div class="qs-value">${roadmap.length}</div>
+          <div class="qs-sub">สิ่งที่ผู้บริหารพูด</div>
+        </div>
+        <div class="qs-card">
+          <div class="qs-label">Delivery Rate</div>
+          <div class="qs-value" style="color:${deliveryRate>=70?'var(--green)':deliveryRate>=40?'var(--yellow)':'var(--red)'}">${deliveryRate}%</div>
+          <div class="qs-sub">ทำตามที่พูดไว้</div>
+        </div>
+      </div>
+
+      <div class="tabs">
+        <button class="tab-btn active" onclick="switchTab('notes')">
+          📝 Notes <span class="tab-count">${notes.length}</span>
+        </button>
+        <button class="tab-btn" onclick="switchTab('quotes')">
+          💬 Quotes <span class="tab-count">${quotes.length}</span>
+        </button>
+        <button class="tab-btn" onclick="switchTab('roadmap')">
+          🗺️ Roadmap <span class="tab-count">${roadmap.length}</span>
+        </button>
+        <button class="tab-btn" onclick="switchTab('financials')">
+          📊 Financials
+        </button>
+      </div>
+
+      <!-- NOTES -->
+      <div class="tab-panel active" id="tab-notes">
+        ${notes.length === 0 ? '<div class="empty">ยังไม่มีบันทึก — เพิ่มใน notes array ของ data.json</div>' :
+          notes.slice().reverse().map(n => `
+            <div class="note-card">
+              <div class="note-header">
+                <div class="note-title">${n.title}</div>
+                <div class="note-date">${formatDate(n.date)}</div>
+              </div>
+              ${n.tags && n.tags.length ? `<div class="note-tags">${n.tags.map(t=>`<span class="note-tag">#${t}</span>`).join('')}</div>` : ''}
+              <div class="note-body">${n.content}</div>
+              ${n.rating ? `<div class="note-rating">${'★'.repeat(n.rating)}${'☆'.repeat(5-n.rating)} Conviction</div>` : ''}
+            </div>`).join('')}
+      </div>
+
+      <!-- QUOTES -->
+      <div class="tab-panel" id="tab-quotes">
+        ${quotes.length === 0 ? '<div class="empty">ยังไม่มี quotes — เพิ่มใน quotes array ของ data.json</div>' :
+          quotes.slice().reverse().map(q => `
+            <div class="quote-card">
+              <div class="quote-meta">
+                <span class="quote-source">${q.source}</span>
+                <span class="quote-speaker">— ${q.speaker || 'Management'}</span>
+                <span class="quote-date">${formatDate(q.date)}</span>
+              </div>
+              <div class="quote-text">${q.quote}</div>
+              ${q.tag ? `<span class="quote-tag">#${q.tag}</span>` : ''}
+            </div>`).join('')}
+      </div>
+
+      <!-- ROADMAP -->
+      <div class="tab-panel" id="tab-roadmap">
+        <div class="roadmap-summary">
+          <div class="rm-sum-card"><div class="rm-sum-num" style="color:var(--green)">${rmStats.delivered}</div><div class="rm-sum-label">Delivered ✅</div></div>
+          <div class="rm-sum-card"><div class="rm-sum-num" style="color:var(--yellow)">${rmStats.pending}</div><div class="rm-sum-label">Pending ⏳</div></div>
+          <div class="rm-sum-card"><div class="rm-sum-num" style="color:var(--red)">${rmStats.missed}</div><div class="rm-sum-label">Missed ❌</div></div>
+          <div class="rm-sum-card"><div class="rm-sum-num" style="color:var(--purple)">${rmStats.partial}</div><div class="rm-sum-label">Partial ⚠️</div></div>
+        </div>
+        <div class="roadmap-filters">
+          ${['all','delivered','pending','missed','partial','monitoring'].map(f=>`
+            <button class="rm-filter ${f==='all'?'active':''}" onclick="filterRoadmap('${f}')">${f==='all'?'ทั้งหมด':STATUS_LABELS[f]}</button>
+          `).join('')}
+        </div>
+        <div id="roadmap-list">
+          ${renderRoadmapItems(roadmap)}
+        </div>
+      </div>
+
+      <!-- FINANCIALS -->
+      <div class="tab-panel" id="tab-financials">
+        ${renderFinancials(fin)}
+      </div>
+    `;
+
+    // Draw chart after render
+    if (fin.metrics && fin.years) {
+      setTimeout(() => drawFinChart(fin), 100);
+    }
+  }
+
+  function renderRoadmapItems(items) {
+    const filtered = rmFilter === 'all' ? items : items.filter(r => r.status === rmFilter);
+    if (filtered.length === 0) return '<div class="empty">ไม่มีรายการ</div>';
+
+    const sorted = [...filtered].sort((a,b) => new Date(b.date_said) - new Date(a.date_said));
+    return sorted.map(r => `
+      <div class="roadmap-item">
+        <div class="rm-status-dot status-${r.status}"></div>
+        <div>
+          <div class="rm-commitment">${r.commitment}</div>
+          <div class="rm-source">📅 พูดเมื่อ ${formatDate(r.date_said)} · ${r.source}</div>
+          ${r.follow_up ? `
+            <div class="rm-followup">
+              <div class="rm-followup-label">ผลลัพธ์ (${formatDate(r.follow_up_date)})</div>
+              ${r.follow_up}
+            </div>` : ''}
+        </div>
+        <span class="rm-badge badge-${r.status}">${STATUS_LABELS[r.status] || r.status}</span>
+      </div>`).join('');
+  }
+
+  window.filterRoadmap = function(f) {
+    rmFilter = f;
+    document.querySelectorAll('.rm-filter').forEach(b => b.classList.toggle('active', b.textContent.includes(f==='all'?'ทั้งหมด':f)));
+    document.getElementById('roadmap-list').innerHTML = renderRoadmapItems(companyData.roadmap || []);
+  };
+
+  function renderFinancials(fin) {
+    if (!fin || !fin.metrics || fin.metrics.length === 0) {
+      return '<div class="empty">ยังไม่มีข้อมูลทางการเงิน — เพิ่มใน financials ของ data.json</div>';
+    }
+    const years = fin.years || [];
+    const currency = fin.currency || 'USD';
+    const unit = fin.unit || 'Million';
+
+    return `
+      <div class="fin-section">
+        <div class="fin-title">📈 แนวโน้ม Revenue</div>
+        <div class="chart-container"><canvas id="fin-chart"></canvas></div>
+      </div>
+      <div class="fin-section">
+        <div class="fin-title">📋 ตารางข้อมูลทางการเงิน (${currency}, ${unit})</div>
+        <div style="overflow-x:auto">
+          <table class="fin-table">
+            <thead>
+              <tr>
+                <th>Metric</th>
+                ${years.map(y=>`<th>${y}</th>`).join('')}
+              </tr>
+            </thead>
+            <tbody>
+              ${fin.metrics.map(m => `
+                <tr>
+                  <td>${m.name}</td>
+                  ${m.values.map((v,i) => {
+                    const prev = m.values[i-1];
+                    const change = prev ? ((v - prev) / Math.abs(prev) * 100).toFixed(1) : null;
+                    const color = change > 0 ? 'var(--green)' : change < 0 ? 'var(--red)' : '';
+                    return `<td>${v.toLocaleString()}${change ? `<br><small style="color:${color}">${change>0?'+':''}${change}%</small>` : ''}</td>`;
+                  }).join('')}
+                </tr>`).join('')}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      ${fin.notes ? `<div class="fin-section"><div class="fin-title">📝 หมายเหตุ</div><div style="color:var(--text-muted);font-size:13px;line-height:1.6">${fin.notes}</div></div>` : ''}
+    `;
+  }
+
+  function drawFinChart(fin) {
+    const ctx = document.getElementById('fin-chart');
+    if (!ctx) return;
+    const revenueMetric = fin.metrics.find(m => m.name.toLowerCase().includes('revenue') || m.name.toLowerCase().includes('รายได้'));
+    if (!revenueMetric) return;
+
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: fin.years,
+        datasets: [{
+          label: revenueMetric.name,
+          data: revenueMetric.values,
+          backgroundColor: 'rgba(88,166,255,0.25)',
+          borderColor: '#58a6ff',
+          borderWidth: 2,
+          borderRadius: 6,
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { labels: { color: '#8b949e' } } },
+        scales: {
+          x: { grid: { color: '#21262d' }, ticks: { color: '#8b949e' } },
+          y: { grid: { color: '#21262d' }, ticks: { color: '#8b949e' } }
+        }
+      }
+    });
+  }
+
+  window.switchTab = function(tab) {
+    document.querySelectorAll('.tab-btn').forEach((b,i) => b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    const tabs = ['notes','quotes','roadmap','financials'];
+    const idx = tabs.indexOf(tab);
+    document.querySelectorAll('.tab-btn')[idx]?.classList.add('active');
+    document.getElementById(`tab-${tab}`)?.classList.add('active');
+    if (tab === 'financials' && companyData?.financials) {
+      setTimeout(() => drawFinChart(companyData.financials), 50);
+    }
+  };
+
+  loadCompany();
+</script>
+</body>
+</html>

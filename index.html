@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Investment Research</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --surface2: #21262d;
+      --border: #30363d;
+      --text: #e6edf3;
+      --text-muted: #8b949e;
+      --accent: #58a6ff;
+      --green: #3fb950;
+      --red: #f85149;
+      --yellow: #d29922;
+      --purple: #bc8cff;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      min-height: 100vh;
+    }
+
+    /* NAV */
+    nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 17px;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .nav-brand svg { color: var(--accent); }
+    .nav-meta { font-size: 12px; color: var(--text-muted); }
+
+    /* MAIN */
+    main { max-width: 1100px; margin: 0 auto; padding: 32px 24px; }
+
+    /* HEADER SECTION */
+    .page-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .page-title { font-size: 22px; font-weight: 700; }
+    .page-sub { color: var(--text-muted); font-size: 13px; margin-top: 4px; }
+
+    .search-bar {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .search-bar input {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      padding: 8px 14px;
+      font-size: 14px;
+      width: 220px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .search-bar input:focus { border-color: var(--accent); }
+    .search-bar input::placeholder { color: var(--text-muted); }
+
+    /* STATS ROW */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 20px;
+    }
+    .stat-label { font-size: 12px; color: var(--text-muted); margin-bottom: 6px; }
+    .stat-value { font-size: 26px; font-weight: 700; }
+
+    /* FILTER TABS */
+    .filter-tabs {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .filter-tab {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 13px;
+      padding: 5px 14px;
+      transition: all 0.2s;
+    }
+    .filter-tab:hover { border-color: var(--accent); color: var(--accent); }
+    .filter-tab.active { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
+
+    /* COMPANY GRID */
+    .company-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 16px;
+    }
+
+    .company-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      cursor: pointer;
+      text-decoration: none;
+      color: var(--text);
+      display: block;
+      transition: border-color 0.2s, transform 0.15s;
+    }
+    .company-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+    .company-logo {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: var(--surface2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 16px;
+      color: var(--accent);
+      border: 1px solid var(--border);
+    }
+    .sector-badge {
+      font-size: 11px;
+      padding: 3px 9px;
+      border-radius: 20px;
+      font-weight: 600;
+    }
+
+    .company-name { font-size: 16px; font-weight: 700; margin-bottom: 2px; }
+    .company-ticker { font-size: 12px; color: var(--text-muted); }
+
+    .card-divider { border: none; border-top: 1px solid var(--border); margin: 14px 0; }
+
+    .card-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 8px;
+    }
+    .card-stat-label { font-size: 11px; color: var(--text-muted); margin-bottom: 3px; }
+    .card-stat-value { font-size: 13px; font-weight: 600; }
+
+    .card-footer {
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .card-updated { font-size: 11px; color: var(--text-muted); }
+    .card-arrow { color: var(--accent); font-size: 16px; }
+
+    /* EMPTY STATE */
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--text-muted);
+    }
+    .empty-state svg { margin-bottom: 16px; opacity: 0.4; }
+    .empty-state p { font-size: 15px; }
+
+    /* Loading */
+    .loading {
+      text-align: center;
+      padding: 60px;
+      color: var(--text-muted);
+    }
+
+    /* Sector colors */
+    .sector-tech { background: rgba(88,166,255,0.15); color: #58a6ff; }
+    .sector-finance { background: rgba(63,185,80,0.15); color: #3fb950; }
+    .sector-health { background: rgba(248,81,73,0.15); color: #f85149; }
+    .sector-energy { background: rgba(210,153,34,0.15); color: #d29922; }
+    .sector-consumer { background: rgba(188,140,255,0.15); color: #bc8cff; }
+    .sector-other { background: rgba(139,148,158,0.15); color: #8b949e; }
+
+    .rating-stars { font-size: 12px; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="index.html">
+    <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+      <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zm6-4a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zm6-3a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/>
+    </svg>
+    Investment Research
+  </a>
+  <span class="nav-meta" id="last-updated"></span>
+</nav>
+
+<main>
+  <div class="page-header">
+    <div>
+      <div class="page-title">Company Watchlist</div>
+      <div class="page-sub">ติดตามข้อมูลบริษัท · Annual Report · Earnings Call · Management Tracker</div>
+    </div>
+    <div class="search-bar">
+      <input type="text" id="search-input" placeholder="ค้นหาบริษัท..." />
+    </div>
+  </div>
+
+  <div class="stats-row" id="stats-row">
+    <div class="stat-card">
+      <div class="stat-label">บริษัททั้งหมด</div>
+      <div class="stat-value" id="stat-total">—</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">หมวดหมู่</div>
+      <div class="stat-value" id="stat-sectors">—</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">อัพเดทล่าสุด</div>
+      <div class="stat-value" style="font-size:16px;padding-top:4px" id="stat-recent">—</div>
+    </div>
+  </div>
+
+  <div class="filter-tabs" id="filter-tabs">
+    <button class="filter-tab active" data-sector="all">ทั้งหมด</button>
+  </div>
+
+  <div id="content">
+    <div class="loading">กำลังโหลดข้อมูล...</div>
+  </div>
+</main>
+
+<script>
+  let allCompanies = [];
+  let currentSector = 'all';
+  let searchQuery = '';
+
+  const SECTOR_COLORS = {
+    'Technology': 'sector-tech',
+    'Finance': 'sector-finance',
+    'Healthcare': 'sector-health',
+    'Energy': 'sector-energy',
+    'Consumer': 'sector-consumer',
+  };
+
+  function getSectorClass(sector) {
+    return SECTOR_COLORS[sector] || 'sector-other';
+  }
+
+  function formatDate(dateStr) {
+    if (!dateStr) return '—';
+    const d = new Date(dateStr);
+    return d.toLocaleDateString('th-TH', { day:'numeric', month:'short', year:'2-digit' });
+  }
+
+  async function loadCompanies() {
+    try {
+      const res = await fetch('data/companies.json');
+      allCompanies = await res.json();
+
+      // Update stats
+      document.getElementById('stat-total').textContent = allCompanies.length;
+      const sectors = [...new Set(allCompanies.map(c => c.sector))];
+      document.getElementById('stat-sectors').textContent = sectors.length;
+
+      const sorted = [...allCompanies].sort((a, b) => new Date(b.last_updated) - new Date(a.last_updated));
+      document.getElementById('stat-recent').textContent = sorted[0]?.ticker || '—';
+      document.getElementById('last-updated').textContent =
+        'อัพเดท: ' + formatDate(sorted[0]?.last_updated);
+
+      // Build sector filters
+      buildFilters(sectors);
+
+      renderCards();
+    } catch (e) {
+      document.getElementById('content').innerHTML = `
+        <div class="empty-state">
+          <svg width="48" height="48" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+          </svg>
+          <p>ไม่พบไฟล์ <code>data/companies.json</code><br>กรุณาตรวจสอบว่าไฟล์ถูกสร้างแล้ว</p>
+        </div>`;
+    }
+  }
+
+  function buildFilters(sectors) {
+    const container = document.getElementById('filter-tabs');
+    sectors.forEach(s => {
+      const btn = document.createElement('button');
+      btn.className = 'filter-tab';
+      btn.dataset.sector = s;
+      btn.textContent = s;
+      btn.addEventListener('click', () => setFilter(s));
+      container.appendChild(btn);
+    });
+    document.querySelector('[data-sector="all"]').addEventListener('click', () => setFilter('all'));
+  }
+
+  function setFilter(sector) {
+    currentSector = sector;
+    document.querySelectorAll('.filter-tab').forEach(b => {
+      b.classList.toggle('active', b.dataset.sector === sector);
+    });
+    renderCards();
+  }
+
+  function renderCards() {
+    let list = allCompanies.filter(c => {
+      const matchSector = currentSector === 'all' || c.sector === currentSector;
+      const q = searchQuery.toLowerCase();
+      const matchSearch = !q || c.name.toLowerCase().includes(q) || c.ticker.toLowerCase().includes(q);
+      return matchSector && matchSearch;
+    });
+
+    const container = document.getElementById('content');
+
+    if (list.length === 0) {
+      container.innerHTML = `
+        <div class="empty-state">
+          <svg width="48" height="48" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+          <p>ไม่พบบริษัทที่ค้นหา</p>
+        </div>`;
+      return;
+    }
+
+    container.innerHTML = `<div class="company-grid">${list.map(renderCard).join('')}</div>`;
+  }
+
+  function renderCard(c) {
+    const sectorClass = getSectorClass(c.sector);
+    const initials = c.ticker.slice(0, 3);
+    const noteCount = c.note_count || 0;
+    const quoteCount = c.quote_count || 0;
+    const roadmapCount = c.roadmap_count || 0;
+
+    return `
+      <a class="company-card" href="company.html?ticker=${c.ticker}">
+        <div class="card-top">
+          <div class="company-logo">${initials}</div>
+          <span class="sector-badge ${sectorClass}">${c.sector}</span>
+        </div>
+        <div class="company-name">${c.name}</div>
+        <div class="company-ticker">${c.ticker} · ${c.exchange || 'NASDAQ'}</div>
+        <hr class="card-divider">
+        <div class="card-stats">
+          <div>
+            <div class="card-stat-label">Notes</div>
+            <div class="card-stat-value">${noteCount}</div>
+          </div>
+          <div>
+            <div class="card-stat-label">Quotes</div>
+            <div class="card-stat-value">${quoteCount}</div>
+          </div>
+          <div>
+            <div class="card-stat-label">Roadmap</div>
+            <div class="card-stat-value">${roadmapCount}</div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="card-updated">อัพเดท ${formatDate(c.last_updated)}</span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>`;
+  }
+
+  // Search
+  document.getElementById('search-input').addEventListener('input', e => {
+    searchQuery = e.target.value;
+    renderCards();
+  });
+
+  loadCompanies();
+</script>
+</body>
+</html>

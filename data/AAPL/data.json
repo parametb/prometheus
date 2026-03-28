@@ -1,0 +1,98 @@
+{
+  "ticker": "AAPL",
+  "name": "Apple Inc.",
+  "sector": "Technology",
+  "exchange": "NASDAQ",
+  "last_updated": "2025-02-01",
+  "description": "Apple Inc. designs, manufactures, and markets smartphones, personal computers, tablets, wearables, and accessories. Known for iPhone, Mac, iPad, Apple Watch, and Services business.",
+
+  "notes": [
+    {
+      "date": "2025-02-01",
+      "title": "ภาพรวม Q1 FY2025",
+      "tags": ["earnings", "services", "iphone"],
+      "rating": 4,
+      "content": "iPhone revenue ดีกว่าที่คาด แม้จะมีความกังวลเรื่อง China\nServices segment ทำสถิติสูงสุดอีกครั้งที่ $26.3B (+14% YoY)\nGross margin ขยับขึ้นมาอยู่ที่ 46.9% สูงกว่า consensus\n\nจุดที่ต้องติดตาม: Vision Pro ยังไม่มีสัญญาณว่าจะ scale ได้จริง\nAI integration ใน iOS 18 ยังช้ากว่าคู่แข่ง แต่ Tim Cook พูดว่ากำลัง expand ฟีเจอร์ใน H2 2025"
+    },
+    {
+      "date": "2024-08-15",
+      "title": "วิเคราะห์ China Risk",
+      "tags": ["china", "risk", "geopolitics"],
+      "rating": 3,
+      "content": "ยอดขายใน Greater China ลดลง YoY ต่อเนื่อง 3 ไตรมาส\nHuawei กลับมาด้วย Mate 60 Pro กดดัน market share ใน premium segment\n\nความเสี่ยง: หากรัฐบาลจีนห้ามใช้ iPhone ในองค์กรรัฐ อาจกระทบ 15-20% ของรายได้\nApple กำลังกระจาย supply chain ไป India แต่ยังต้องใช้เวลาอีก 3-5 ปี"
+    }
+  ],
+
+  "quotes": [
+    {
+      "date": "2025-01-30",
+      "source": "Q1 FY2025 Earnings Call",
+      "speaker": "Tim Cook (CEO)",
+      "quote": "We are in the early innings of a transformative moment with Apple Intelligence. The features we're seeing resonate deeply with customers, and we're only just getting started with what we can do.",
+      "tag": "AI"
+    },
+    {
+      "date": "2025-01-30",
+      "source": "Q1 FY2025 Earnings Call",
+      "speaker": "Luca Maestri (CFO)",
+      "quote": "Services revenue set an all-time record of $26.3 billion, up 14 percent year over year, driven by growth across all categories and geographic segments.",
+      "tag": "services"
+    },
+    {
+      "date": "2024-10-31",
+      "source": "Q4 FY2024 Earnings Call",
+      "speaker": "Tim Cook (CEO)",
+      "quote": "We are very excited about the AI features we're adding, and we believe this is a significant opportunity to drive upgrades in the installed base over the coming years.",
+      "tag": "AI"
+    }
+  ],
+
+  "roadmap": [
+    {
+      "date_said": "2023-06-05",
+      "source": "WWDC 2023 Keynote",
+      "commitment": "เปิดตัว Apple Vision Pro ในต้นปี 2024",
+      "status": "delivered",
+      "follow_up": "เปิดตัวในสหรัฐฯ วันที่ 2 กุมภาพันธ์ 2024 ราคา $3,499",
+      "follow_up_date": "2024-02-02"
+    },
+    {
+      "date_said": "2024-06-10",
+      "source": "WWDC 2024 Keynote",
+      "commitment": "เปิดตัว Apple Intelligence ใน iPhone 15 Pro และ iPhone 16 series ใน Q4 2024",
+      "status": "partial",
+      "follow_up": "เปิดตัวใน US เท่านั้น บางฟีเจอร์ถูกเลื่อนออกไป ภาษาอื่นนอกจาก English ล่าช้า",
+      "follow_up_date": "2024-10-28"
+    },
+    {
+      "date_said": "2024-10-31",
+      "source": "Q4 FY2024 Earnings Call",
+      "commitment": "ขยาย Apple Intelligence ไปยังภาษาอื่นๆ ใน 2025",
+      "status": "pending",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": "2024-02-29",
+      "source": "Q1 FY2024 Earnings Call",
+      "commitment": "ขยาย Services gross margin ให้ทรงตัวในระดับสูง",
+      "status": "delivered",
+      "follow_up": "Services gross margin อยู่ที่ 75%+ ต่อเนื่องตลอด FY2024",
+      "follow_up_date": "2024-10-31"
+    }
+  ],
+
+  "financials": {
+    "currency": "USD",
+    "unit": "Billion",
+    "years": [2021, 2022, 2023, 2024],
+    "metrics": [
+      { "name": "Revenue",       "values": [365.8, 394.3, 383.3, 391.0] },
+      { "name": "Gross Profit",  "values": [152.8, 170.8, 169.1, 180.7] },
+      { "name": "Net Income",    "values": [94.7,  99.8,  97.0,  93.7]  },
+      { "name": "EPS (diluted)", "values": [5.61,  6.11,  6.13,  6.08]  },
+      { "name": "Free Cash Flow","values": [92.9,  111.4, 99.6,  108.8] }
+    ],
+    "notes": "ปีงบการเงินของ Apple สิ้นสุดในเดือนกันยายนของทุกปี (ตค - กย)\nหน่วย: พันล้านเหรียญสหรัฐ ยกเว้น EPS (ต่อหุ้น)"
+  }
+}

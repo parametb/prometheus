@@ -1,0 +1,76 @@
+{
+  "ticker": "MSFT",
+  "name": "Microsoft Corporation",
+  "sector": "Technology",
+  "exchange": "NASDAQ",
+  "last_updated": "2025-01-15",
+  "description": "Microsoft Corporation develops, licenses, and supports software, services, devices, and solutions worldwide. Key segments: Productivity & Business Processes, Intelligent Cloud (Azure), and More Personal Computing.",
+
+  "notes": [
+    {
+      "date": "2025-01-15",
+      "title": "Azure Growth & AI Monetization",
+      "tags": ["azure", "cloud", "AI", "copilot"],
+      "rating": 5,
+      "content": "Azure growth ยังแข็งแกร่งที่ 31% YoY โดยมี AI services เป็น tailwind สำคัญ\nCopilot 365 มีผู้ใช้งานเชิงพาณิชย์เพิ่มขึ้น 2x QoQ\n\nสิ่งที่น่าสนใจ: Satya พูดถึง AI Hyperscale Compute อย่างชัดเจน บ่งบอกว่า MSFT จะยังลงทุน capex สูงต่อเนื่อง\nMargin อาจถูกกดดันระยะสั้นจาก AI infrastructure investment แต่ long-term thesis ยังแข็งแกร่ง"
+    }
+  ],
+
+  "quotes": [
+    {
+      "date": "2025-01-29",
+      "source": "Q2 FY2025 Earnings Call",
+      "speaker": "Satya Nadella (CEO)",
+      "quote": "Microsoft Cloud revenue was $40.9 billion, up 21 percent year-over-year. We are seeing healthy growth across all of our cloud offerings and continued strong adoption of our AI services.",
+      "tag": "cloud"
+    },
+    {
+      "date": "2025-01-29",
+      "source": "Q2 FY2025 Earnings Call",
+      "speaker": "Amy Hood (CFO)",
+      "quote": "We expect Azure growth to accelerate in H2 as AI capacity becomes available and demand continues to outpace supply.",
+      "tag": "azure"
+    }
+  ],
+
+  "roadmap": [
+    {
+      "date_said": "2024-11-07",
+      "source": "Microsoft Ignite 2024",
+      "commitment": "เปิดตัว Copilot Actions และ autonomous agents ใน Microsoft 365 ภายใน 2025",
+      "status": "monitoring",
+      "follow_up": "เริ่ม rollout บาง features ใน Q1 2025 แต่ยังไม่ครบทุก market",
+      "follow_up_date": "2025-02-01"
+    },
+    {
+      "date_said": "2024-07-29",
+      "source": "Q4 FY2024 Earnings Call",
+      "commitment": "ลงทุน $80B+ ใน AI infrastructure ใน FY2025",
+      "status": "pending",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": "2023-01-24",
+      "source": "Q2 FY2023 Earnings Call",
+      "commitment": "ผสาน AI ลงใน Microsoft 365 ผ่าน Copilot ใน 2023",
+      "status": "delivered",
+      "follow_up": "เปิดตัว Microsoft 365 Copilot สำหรับ enterprise ในเดือนพฤศจิกายน 2023",
+      "follow_up_date": "2023-11-01"
+    }
+  ],
+
+  "financials": {
+    "currency": "USD",
+    "unit": "Billion",
+    "years": [2022, 2023, 2024],
+    "metrics": [
+      { "name": "Revenue",       "values": [198.3, 211.9, 245.1] },
+      { "name": "Gross Profit",  "values": [135.6, 146.1, 171.0] },
+      { "name": "Net Income",    "values": [72.7,  72.4,  88.1]  },
+      { "name": "EPS (diluted)", "values": [9.65,  9.72,  11.80] },
+      { "name": "Free Cash Flow","values": [65.1,  87.9,  74.1]  }
+    ],
+    "notes": "ปีงบการเงินของ Microsoft สิ้นสุดในเดือนมิถุนายนของทุกปี\nหน่วย: พันล้านเหรียญสหรัฐ ยกเว้น EPS (ต่อหุ้น)"
+  }
+}
