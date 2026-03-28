@@ -1,0 +1,105 @@
+{
+  "ticker": "QBTS",
+  "name": "D-Wave Quantum Inc.",
+  "sector": "Technology",
+  "exchange": "NYSE",
+  "tradingview_symbol": "NYSE:QBTS",
+  "last_updated": "2026-03-28",
+  "description": "ผู้พัฒนาและให้บริการระบบ quantum computing เชิงพาณิชย์รายแรกของโลก ใช้เทคโนโลยี quantum annealing สำหรับการแก้ปัญหา optimization ในอุตสาหกรรมต่างๆ",
+
+  "notes": [
+    {
+      "date": "2026-03-28",
+      "title": "FY2021–FY2025 Financial History — 5-Year Analysis",
+      "tags": ["annual-report", "financials", "fy2024", "fy2025"],
+      "rating": 3,
+      "content": "[Financial Performance]\nRevenue stagnant 2 ปีติดต่อกัน (FY2023: $8.76M → FY2024: $8.83M, +0.8% YoY) แต่พุ่งแรงในปี FY2025 ที่ $24.59M (+178% YoY) บ่งชี้ว่า bookings ที่สะสมเริ่ม convert เป็น revenue จริง Gross margin ดีขึ้นต่อเนื่อง: FY2021 72% → FY2024 63% → FY2025 83% — เป็น high-margin SaaS/QCaaS model ที่ scale ได้ดี\n\nNet loss ดูเหมือนพุ่งสูง (FY2024: -$143.9M, FY2025: -$355M) แต่ส่วนใหญ่เป็น non-cash warrant revaluation charges — operating loss จริงอยู่ที่ -$77M (FY2024) และ -$100M (FY2025) ซึ่งควบคุมได้ดีกว่ามาก Record Bookings FY2024: $23.9M (+128% YoY) เป็น leading indicator ที่แข็งแกร่ง\n\nCash position เปลี่ยนแปลงมาก: FY2022 $7M → FY2023 $41M → FY2024 $178M → FY2025 $635M บ่งชี้การระดมทุนเชิงรุก ($789M จาก stock issuance ใน FY2025) runway ดีมาก แต่ dilution risk สูง\n\n[Strategic Focus]\n3 เรื่องหลัก: (1) Advantage2 annealing platform — calibration เสร็จ Nov 2024 มี 4,400+ qubits, coherence time เพิ่ม 2x, พิสูจน์ quantum supremacy ในวารสาร Science บน real-world material simulation (2) Dual-platform strategy — ซื้อ Quantum Circuits (Jan 2026) เพิ่ม gate-model capability เพื่อ compete กับ IBM/Google/IonQ ในตลาด error-corrected QC (3) QCaaS expansion — Leap cloud service ใน 42+ ประเทศ มุ่งเพิ่ม enterprise customers และ SaaS recurring revenue\n\n[Key Risks]\nRevenue conversion จาก bookings ยังไม่แน่นอน — bookings ≠ revenue recognize ทันที / ตลาด quantum computing ยัง 'relatively new and unproven' ตามที่บริษัทยอมรับเอง / cash burn ~$44-72M/ปี ต้องพึ่ง capital markets / integration risk จาก Quantum Circuits acquisition / dilution risk สูงจากการออกหุ้นเพิ่มทุนต่อเนื่อง / การแข่งขันจาก IBM, Google, IonQ, Rigetti ที่มีทรัพยากรมากกว่ามาก\n\n[Management Tone]\nCautiously optimistic — มั่นใจในเทคโนโลยีแต่ hedge ด้วยคำว่า 'believe' และ 'expect' ตลอด acknowledge losses และ risks ตรงไปตรงมา ไม่ overpromise ทำให้ความน่าเชื่อถือสูง\n\n[Investment Implications]\nBull: record bookings = revenue pipeline แข็ง, gross margin 83% ใน FY2025 แสดง scalability, quantum supremacy proof point ในวารสาร peer-reviewed, cash runway ดี, dual-platform ปิด capability gap กับ competitor\nBear: revenue stagnant 2 ปีก่อน FY2025, commercialization timeline ไม่ชัด, dilution risk สูงมากจากการออกหุ้น, ตลาด QC อาจใช้เวลาอีก 5-10 ปีกว่าจะ mainstream"
+    }
+  ],
+  "quotes": [],
+  "roadmap": [
+    {
+      "date_said": "2025-03-13",
+      "source": "FY2024 10-K / Q4 2024 Earnings",
+      "commitment": "เปิดตัว Advantage2 processor เชิงพาณิชย์ (4,400+ qubits) หลังจาก calibration เสร็จสมบูรณ์ใน Nov 2024",
+      "status": "monitoring",
+      "follow_up": "Calibration และ benchmarking เสร็จแล้ว พบ coherence time เพิ่ม 2x และ energy scale เพิ่ม 40% เทียบ Advantage1 — รอ commercial GA date",
+      "follow_up_date": "2026-03-28"
+    },
+    {
+      "date_said": "2025-03-13",
+      "source": "FY2024 10-K",
+      "commitment": "เปิดตัว initial dual-rail gate-model quantum system ในปี 2026 (หลังซื้อ Quantum Circuits, Jan 2026)",
+      "status": "pending",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": "2025-03-13",
+      "source": "FY2024 10-K",
+      "commitment": "เปิดตัว 17-qubit, 49-qubit และ 181-qubit dual-rail error-corrected systems ภายในปี 2028",
+      "status": "pending",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": "2025-03-13",
+      "source": "FY2024 10-K",
+      "commitment": "รักษา Leap cloud service uptime ที่ 99.9% และขยายฐานลูกค้าใน 42+ ประเทศ",
+      "status": "monitoring",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": "2025-03-13",
+      "source": "FY2024 10-K",
+      "commitment": "Hybrid solver รองรับปัญหาที่มีตัวแปรสูงถึง 2 ล้านตัวแปร (hybrid quantum-classical optimization)",
+      "status": "monitoring",
+      "follow_up": "",
+      "follow_up_date": ""
+    }
+  ],
+
+  "financials": {
+    "currency": "USD",
+    "unit": "Million",
+    "links": [
+      {
+        "title": "10-K FY2024 (SEC EDGAR)",
+        "type": "10-K",
+        "year": 2024,
+        "quarter": null,
+        "url": "https://www.sec.gov/Archives/edgar/data/1907982/000190798225000060/qbts-20241231.htm"
+      },
+      {
+        "title": "10-K FY2022 (SEC EDGAR)",
+        "type": "10-K",
+        "year": 2022,
+        "quarter": null,
+        "url": "https://www.sec.gov/Archives/edgar/data/1907982/000190798223000011/qbts-20221231.htm"
+      },
+      {
+        "title": "S-4 SPAC Merger Filing (Pre-IPO Financials)",
+        "type": "Annual Report",
+        "year": 2022,
+        "quarter": null,
+        "url": "https://www.sec.gov/Archives/edgar/data/1907982/000119312522076126/d366416ds4.htm"
+      }
+    ],
+    "years": [2021, 2022, 2023, 2024, 2025],
+    "metrics": [
+      { "name": "Revenue",         "values": [6.28, 7.17, 8.76, 8.83, 24.59] },
+      { "name": "Gross Profit",    "values": [4.53, 4.25, 4.62, 5.56, 20.31] },
+      { "name": "Operating Income","values": [-38.95, -59.46, -80.55, -77.22, -100.37] },
+      { "name": "Net Income",      "values": [-40.97, -53.70, -82.72, -143.88, -355.06] },
+      { "name": "EPS (diluted)",   "values": [-0.33, -0.45, -0.60, -0.75, -1.11] },
+      { "name": "Free Cash Flow",  "values": [-36.57, -45.65, -61.23, -44.75, -75.84] },
+      { "name": "Total Debt",      "values": [39.38, 42.29, 72.65, 38.38, 43.46] },
+      { "name": "Cash & Equiv.",   "values": [9.48, 7.07, 41.31, 177.98, 635.35] }
+    ],
+    "breakdown": {
+      "sankey": null
+    },
+    "notes": "Net Loss FY2024 ($143.9M) และ FY2025 ($355M) สูงกว่า Operating Loss มากเพราะมี non-cash warrant revaluation charges — ควรดู Operating Loss เป็นหลักในการประเมิน cash burn จริง FY2025 cash เพิ่มจาก $789M stock issuance (dilution สูงมาก)"
+  }
+}

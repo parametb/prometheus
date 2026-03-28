@@ -28,5 +28,15 @@
     "note_count": 2,
     "quote_count": 5,
     "roadmap_count": 6
+  },
+  {
+    "ticker": "QBTS",
+    "name": "D-Wave Quantum Inc.",
+    "sector": "Technology",
+    "exchange": "NYSE",
+    "last_updated": "2026-03-28",
+    "note_count": 1,
+    "quote_count": 0,
+    "roadmap_count": 5
   }
 ]
