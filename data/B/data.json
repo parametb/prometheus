@@ -3,6 +3,7 @@
   "name": "Barrick Mining Corporation",
   "sector": "Mining",
   "exchange": "NYSE",
+  "tradingview_symbol": "NYSE:GOLD",
   "last_updated": "2026-03-28",
   "description": "Barrick Mining Corporation (formerly Barrick Gold) is one of the world's largest gold and copper mining companies. Operates six Tier One gold mines across Africa, Americas, and Asia Pacific. Dual-listed NYSE (GOLD) and TSX (ABX). Increasingly positioning as a gold-copper producer.",
 
@@ -29,6 +30,7 @@
       "source": "Q4 2024 Earnings Call",
       "speaker": "Mark Bristow (CEO)",
       "quote": "We are focused on delivering sustainable long-term value by owning the best gold and copper assets managed by the best people. With gold becoming more important as a safe haven in a geopolitically uncertain world, and copper being as strategic as gold is precious. I plan to show you how we are adding value and building capacity in both metals without taking an excessive amount of debt on or issuing new shares.",
+      "quote_th": "เรามุ่งมั่นสร้างมูลค่าระยะยาวอย่างยั่งยืนจากการถือครองสินทรัพย์ทองคำและทองแดงที่ดีที่สุด บริหารโดยบุคลากรที่ดีที่สุด ทองคำกำลังมีความสำคัญมากขึ้นในฐานะสินทรัพย์ปลอดภัยในโลกที่ไม่แน่นอนทางภูมิรัฐศาสตร์ ขณะที่ทองแดงมีความสำคัญเชิงยุทธศาสตร์เทียบเท่ากับความล้ำค่าของทองคำ ฉันจะแสดงให้เห็นว่าเราสร้างมูลค่าและเพิ่มศักยภาพในโลหะทั้งสองได้อย่างไร โดยไม่ต้องก่อหนี้มากเกินไปหรือออกหุ้นใหม่",
       "tag": "strategy"
     },
     {
@@ -36,6 +38,7 @@
       "source": "Q4 2024 Earnings Call",
       "speaker": "Mark Bristow (CEO)",
       "quote": "Every one of our operations are independently viable, and Barrick's balance sheet is very solid. And so, with or without Loulo will not change our long-term plan, our five-year plan. And it will just be slightly smaller, but fundamentally, we can easily support the projects and the capital commitments during that period.",
+      "quote_th": "ทุกหน่วยงานของเราสามารถดำรงอยู่ได้อย่างเป็นอิสระ และงบดุลของ Barrick แข็งแกร่งมาก ไม่ว่าจะมีหรือไม่มี Loulo จะไม่เปลี่ยนแผนระยะยาวหรือแผน 5 ปีของเรา อาจจะเล็กลงเล็กน้อย แต่โดยพื้นฐานแล้วเราสนับสนุนโครงการและภาระทางการเงินทั้งหมดได้อย่างสบาย",
       "tag": "mali"
     },
     {
@@ -43,6 +46,7 @@
       "source": "Q4 2024 Earnings Call",
       "speaker": "Mark Bristow (CEO)",
       "quote": "By any measure, Barrick Gold Corporation today presents a standout value opportunity. Consensus NAV analysis shows Nevada and copper assets alone exceed our market cap — implying negative value for all our remaining Tier 1 and Tier 2 assets.",
+      "quote_th": "ด้วยทุกมาตรวัด Barrick Gold Corporation ในวันนี้นำเสนอโอกาสสร้างมูลค่าที่โดดเด่น การวิเคราะห์ NAV ของตลาดแสดงให้เห็นว่าสินทรัพย์ Nevada และทองแดงเพียงอย่างเดียวก็เกินมูลค่าตลาดรวมของเราแล้ว ซึ่งหมายความว่าตลาดกำหนดมูลค่าติดลบให้กับสินทรัพย์ Tier 1 และ Tier 2 ที่เหลือทั้งหมด",
       "tag": "valuation"
     },
     {
@@ -50,6 +54,7 @@
       "source": "Q4 2024 Earnings Call",
       "speaker": "Mark Bristow (CEO)",
       "quote": "PV is a big value creator in Barrick. And again, you've seen I don't hesitate to clean up the portfolio at the appropriate time. And the best time is when you have higher commodity prices. So certainly, we'll continue to keep ourselves very focused and stick to our strategy of having Tier 1 assets.",
+      "quote_th": "Pueblo Viejo เป็นตัวสร้างมูลค่าสำคัญใน Barrick และอีกครั้ง คุณเห็นแล้วว่าฉันไม่ลังเลในการปรับพอร์ตโฟลิโอในเวลาที่เหมาะสม ช่วงที่ดีที่สุดคือเมื่อราคาสินค้าโภคภัณฑ์สูง เราจะยังคงมุ่งเน้นและยึดมั่นในกลยุทธ์การถือครองสินทรัพย์ Tier 1",
       "tag": "portfolio"
     },
     {
@@ -57,6 +62,7 @@
       "source": "Q4 2024 Earnings Call",
       "speaker": "Graham Shuttleworth (CFO)",
       "quote": "These are graphs, they're at a very small scale — there to give you directional information. The key message is that Reko Diq transforms our copper production profile from 2029 onward, and Lumwana positions us as a top-tier copper producer well before that.",
+      "quote_th": "กราฟเหล่านี้อยู่ในมาตราส่วนเล็กมาก มีไว้เพื่อให้ข้อมูลทิศทางเท่านั้น ข้อความสำคัญคือ Reko Diq จะเปลี่ยนโฉมโปรไฟล์การผลิตทองแดงของเราจากปี 2029 เป็นต้นไป และ Lumwana จะวางตำแหน่งเราให้เป็นผู้ผลิตทองแดงชั้นนำก่อนหน้านั้นมาก",
       "tag": "copper"
     }
   ],
@@ -208,6 +214,33 @@
     ],
     "bull_case": "Gold price tailwinds from central bank buying, dedollarization trends, and persistent geopolitical instability support $2,000–$2,500+ gold long-term. Exceptional operational leverage — each $100/oz rise in gold price adds ~$400M FCF annually. Reko Diq copper project (Pakistan) provides decades of tier-one copper growth not yet priced into market cap. Organic reserve replacement at ~$10/oz is industry-leading and extends asset longevity. Balance sheet strong enough to self-fund all major capex without equity dilution. Bristow's track record on portfolio discipline and value creation is exceptional.",
     "bear_case": "AISC creep ($1,262 → $1,390 over 3 years) narrows margin expansion narrative if gold plateaus. Mali/Loulo dispute (~10% of production) remains unresolved — prolonged suspension materially impairs 2025 targets. Reko Diq execution risk is the single biggest concern: $5.6-6B capex in Pakistan is the largest project in Barrick's history; delay, overrun, or political shift in Balochistan would be material. Gold price mean-reversion from $2,400+ would significantly compress FCF and re-rate the stock.",
+    "ownership": {
+      "major_shareholders": [
+        { "name": "Vanguard Group",        "pct": 7.8,  "type": "institutional" },
+        { "name": "BlackRock",             "pct": 6.5,  "type": "institutional" },
+        { "name": "Capital Group",         "pct": 5.2,  "type": "institutional" },
+        { "name": "State Street Global",   "pct": 3.8,  "type": "institutional" },
+        { "name": "Norges Bank",           "pct": 2.1,  "type": "sovereign fund" },
+        { "name": "Public Float (อื่นๆ)", "pct": 74.6, "type": "float" }
+      ],
+      "corporate_structure": [
+        {
+          "name": "Barrick Mining Corp (TSX: ABX / NYSE: GOLD)",
+          "type": "parent",
+          "children": [
+            { "name": "Nevada Gold Mines JV",    "ownership_pct": 61.5, "type": "jv",         "partner": "Newmont 38.5%" },
+            { "name": "Lumwana (Zambia)",         "ownership_pct": 100,  "type": "subsidiary", "partner": "" },
+            { "name": "Pueblo Viejo JV (DR)",     "ownership_pct": 60.0, "type": "jv",         "partner": "Newmont 40%" },
+            { "name": "Loulo-Gounkoto (Mali)",    "ownership_pct": 80.0, "type": "jv",         "partner": "Mali Govt 20%" },
+            { "name": "Kibali JV (DRC)",          "ownership_pct": 45.0, "type": "jv",         "partner": "AngloGold 45%, DRC 10%" },
+            { "name": "Reko Diq JV (Pakistan)",   "ownership_pct": 50.0, "type": "jv",         "partner": "Pakistan 50%" },
+            { "name": "Zaldivar JV (Chile)",      "ownership_pct": 50.0, "type": "jv",         "partner": "Antofagasta 50%" },
+            { "name": "Porgera JV (PNG)",         "ownership_pct": 47.5, "type": "jv",         "partner": "PNG Govt 52.5%" },
+            { "name": "Hemlo (Canada)",           "ownership_pct": 100,  "type": "subsidiary", "partner": "" }
+          ]
+        }
+      ]
+    },
     "key_risks": [
       {
         "risk": "Mali / Loulo-Gounkoto Dispute",
@@ -245,6 +278,42 @@
   "financials": {
     "currency": "USD",
     "unit": "Billion",
+    "breakdown": {
+      "sankey": {
+        "year": 2024,
+        "currency": "USD",
+        "unit": "Billion",
+        "nodes": [
+          { "id": 0,  "label": "Nevada Gold Mines",          "color": "#d29922" },
+          { "id": 1,  "label": "Latin America & Caribbean",  "color": "#3fb950" },
+          { "id": 2,  "label": "Africa & Middle East",       "color": "#e3663a" },
+          { "id": 3,  "label": "Copper (Global)",            "color": "#58a6ff" },
+          { "id": 4,  "label": "Asia Pacific & N. America",  "color": "#bc8cff" },
+          { "id": 5,  "label": "Total Revenue $12.92B",      "color": "#f0c060" },
+          { "id": 6,  "label": "Cost of Sales $8.50B",       "color": "#f85149" },
+          { "id": 7,  "label": "Gross Profit $4.42B",        "color": "#58d68d" },
+          { "id": 8,  "label": "D&A & Depreciation $1.40B",  "color": "#8b949e" },
+          { "id": 9,  "label": "G&A & Exploration $0.48B",   "color": "#aaaaaa" },
+          { "id": 10, "label": "Operating Income $2.54B",    "color": "#58a6ff" },
+          { "id": 11, "label": "Tax & Minority Int. $0.40B", "color": "#f85149" },
+          { "id": 12, "label": "Net Earnings $2.14B",        "color": "#3fb950" }
+        ],
+        "links": [
+          { "source": 0, "target": 5, "value": 3.84 },
+          { "source": 1, "target": 5, "value": 2.56 },
+          { "source": 2, "target": 5, "value": 3.36 },
+          { "source": 3, "target": 5, "value": 2.14 },
+          { "source": 4, "target": 5, "value": 1.02 },
+          { "source": 5, "target": 6, "value": 8.50 },
+          { "source": 5, "target": 7, "value": 4.42 },
+          { "source": 7, "target": 8, "value": 1.40 },
+          { "source": 7, "target": 9, "value": 0.48 },
+          { "source": 7, "target": 10,"value": 2.54 },
+          { "source": 10,"target": 11,"value": 0.40 },
+          { "source": 10,"target": 12,"value": 2.14 }
+        ]
+      }
+    },
     "links": [
       {
         "title": "Annual Report 2024",

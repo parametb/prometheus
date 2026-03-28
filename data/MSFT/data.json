@@ -3,6 +3,7 @@
   "name": "Microsoft Corporation",
   "sector": "Technology",
   "exchange": "NASDAQ",
+  "tradingview_symbol": "NASDAQ:MSFT",
   "last_updated": "2025-01-15",
   "description": "Microsoft Corporation develops, licenses, and supports software, services, devices, and solutions worldwide. Key segments: Productivity & Business Processes, Intelligent Cloud (Azure), and More Personal Computing.",
 

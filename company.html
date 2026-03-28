@@ -8,275 +8,280 @@
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    /* ── DARK THEME (default) ── */
     :root {
       --bg: #0d1117; --surface: #161b22; --surface2: #21262d;
       --border: #30363d; --text: #e6edf3; --text-muted: #8b949e;
       --accent: #58a6ff; --green: #3fb950; --red: #f85149;
       --yellow: #d29922; --purple: #bc8cff;
       --glow: rgba(88,166,255,0.05);
-      --chart-grid: #21262d; --chart-tick: #8b949e;
     }
-
-    /* ── LIGHT THEME ── */
     html[data-theme="light"] {
       --bg: #f8fafc; --surface: #ffffff; --surface2: #f1f5f9;
       --border: #e2e8f0; --text: #0f172a; --text-muted: #64748b;
       --accent: #2563eb; --green: #16a34a; --red: #dc2626;
       --yellow: #d97706; --purple: #7c3aed;
       --glow: rgba(37,99,235,0.04);
-      --chart-grid: #e2e8f0; --chart-tick: #64748b;
     }
 
-    /* ── STAGGER ANIMATION ── */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(16px); }
       to   { opacity: 1; transform: translateY(0); }
     }
-    .stagger {
-      animation: fadeUp 0.4s ease both;
-      animation-delay: calc(var(--i, 0) * 0.06s);
-    }
+    .stagger { animation: fadeUp 0.4s ease both; animation-delay: calc(var(--i,0)*0.06s); }
 
-    /* ── BASE ── */
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      min-height: 100vh;
-      position: relative;
-    }
-    body::before {
-      content: '';
-      position: fixed;
-      top: -30%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100vw;
-      height: 100vw;
-      background: radial-gradient(circle, var(--glow) 0%, transparent 65%);
-      pointer-events: none;
-      z-index: 0;
-    }
+    body { background: var(--bg); color: var(--text); font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; min-height: 100vh; position: relative; }
+    body::before { content:''; position:fixed; top:-30%; left:50%; transform:translateX(-50%); width:100vw; height:100vw; background:radial-gradient(circle,var(--glow) 0%,transparent 65%); pointer-events:none; z-index:0; }
     main { max-width: 1100px; margin: 0 auto; padding: 32px 24px; position: relative; z-index: 1; }
 
-    /* ── NAV ── */
-    nav {
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
-      padding: 0 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 56px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    .nav-left  { display: flex; align-items: center; gap: 16px; }
-    .nav-right { display: flex; align-items: center; gap: 12px; }
-    .nav-brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 17px; color: var(--text); text-decoration: none; }
-    .nav-brand svg { color: var(--accent); }
-    .back-btn  { display: flex; align-items: center; gap: 6px; color: var(--text-muted); text-decoration: none; font-size: 14px; transition: color 0.2s; }
-    .back-btn:hover { color: var(--accent); }
+    /* NAV */
+    nav { background:var(--surface); border-bottom:1px solid var(--border); padding:0 24px; display:flex; align-items:center; justify-content:space-between; height:56px; position:sticky; top:0; z-index:100; }
+    .nav-left  { display:flex; align-items:center; gap:16px; }
+    .nav-right { display:flex; align-items:center; gap:12px; }
+    .nav-brand { display:flex; align-items:center; gap:10px; font-weight:700; font-size:17px; color:var(--text); text-decoration:none; }
+    .nav-brand svg { color:var(--accent); }
+    .back-btn  { display:flex; align-items:center; gap:6px; color:var(--text-muted); text-decoration:none; font-size:14px; transition:color 0.2s; }
+    .back-btn:hover { color:var(--accent); }
+    .theme-toggle { align-items:center; background:var(--surface2); border:1px solid var(--border); border-radius:8px; color:var(--text-muted); cursor:pointer; display:flex; font-size:15px; height:32px; justify-content:center; transition:border-color 0.2s,color 0.2s; width:32px; }
+    .theme-toggle:hover { border-color:var(--accent); color:var(--accent); }
 
-    /* ── THEME TOGGLE ── */
-    .theme-toggle {
-      align-items: center;
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      color: var(--text-muted);
-      cursor: pointer;
-      display: flex;
-      font-size: 15px;
-      height: 32px;
-      justify-content: center;
-      transition: border-color 0.2s, color 0.2s;
-      width: 32px;
-    }
-    .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+    /* COMPANY HEADER */
+    .company-header { display:flex; align-items:flex-start; gap:20px; margin-bottom:28px; flex-wrap:wrap; }
+    .company-logo-lg { align-items:center; background:var(--surface2); border:1px solid var(--border); border-radius:14px; color:var(--accent); display:flex; flex-shrink:0; font-family:'JetBrains Mono',monospace; font-size:20px; font-weight:800; height:64px; justify-content:center; letter-spacing:-1px; width:64px; }
+    .company-info { flex:1; }
+    .company-title { font-size:26px; font-weight:800; margin-bottom:4px; }
+    .company-meta  { display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
+    .meta-tag      { font-size:12px; padding:3px 10px; border-radius:20px; }
+    .meta-muted    { color:var(--text-muted); font-size:13px; font-family:'JetBrains Mono',monospace; }
+    .company-desc  { color:var(--text-muted); font-size:14px; margin-top:10px; line-height:1.6; max-width:700px; }
 
-    /* ── COMPANY HEADER ── */
-    .company-header { display: flex; align-items: flex-start; gap: 20px; margin-bottom: 28px; flex-wrap: wrap; }
-    .company-logo-lg {
-      align-items: center;
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      color: var(--accent);
-      display: flex;
-      flex-shrink: 0;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 20px;
-      font-weight: 800;
-      height: 64px;
-      justify-content: center;
-      letter-spacing: -1px;
-      width: 64px;
-    }
-    .company-info { flex: 1; }
-    .company-title { font-size: 26px; font-weight: 800; margin-bottom: 4px; }
-    .company-meta { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
-    .meta-tag { font-size: 12px; padding: 3px 10px; border-radius: 20px; }
-    .deepdive-btn { align-items: center; background: rgba(88,166,255,0.1); border: 1px solid rgba(88,166,255,0.3); border-radius: 20px; color: var(--accent); display: inline-flex; font-size: 12px; font-weight: 600; gap: 4px; padding: 3px 12px; text-decoration: none; transition: all 0.2s; }
-    .deepdive-btn:hover { background: rgba(88,166,255,0.2); border-color: var(--accent); }
-    html[data-theme="light"] .deepdive-btn { background: rgba(37,99,235,0.08); border-color: rgba(37,99,235,0.25); }
-    .meta-muted { color: var(--text-muted); font-size: 13px; font-family: 'JetBrains Mono', monospace; }
-    .company-desc { color: var(--text-muted); font-size: 14px; margin-top: 10px; line-height: 1.6; max-width: 700px; }
+    /* QUICK STATS */
+    .quick-stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; margin-bottom:28px; }
+    .qs-card { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:14px 18px; transition:border-color 0.2s,transform 0.2s; }
+    .qs-card:hover { border-color:var(--accent); transform:translateY(-2px); }
+    .qs-label { font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--text-muted); margin-bottom:5px; }
+    .qs-value { font-size:18px; font-weight:700; }
+    .qs-sub   { font-size:11px; color:var(--text-muted); margin-top:3px; }
 
-    /* ── QUICK STATS ── */
-    .quick-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 28px; }
-    .qs-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 14px 18px;
-      transition: border-color 0.2s, transform 0.2s;
-    }
-    .qs-card:hover { border-color: var(--accent); transform: translateY(-2px); }
-    .qs-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-muted); margin-bottom: 5px; }
-    .qs-value { font-size: 18px; font-weight: 700; }
-    .qs-sub { font-size: 11px; color: var(--text-muted); margin-top: 3px; }
+    /* TABS */
+    .tabs { display:flex; gap:0; border-bottom:1px solid var(--border); margin-bottom:24px; overflow-x:auto; }
+    .tab-btn { background:none; border:none; color:var(--text-muted); cursor:pointer; font-size:14px; font-weight:500; padding:12px 18px; position:relative; transition:color 0.2s; white-space:nowrap; }
+    .tab-btn:hover { color:var(--text); }
+    .tab-btn.active { color:var(--accent); }
+    .tab-btn.active::after { content:''; position:absolute; bottom:-1px; left:0; right:0; height:2px; background:var(--accent); border-radius:2px 2px 0 0; }
+    .tab-count { background:var(--surface2); border-radius:10px; font-family:'JetBrains Mono',monospace; font-size:11px; margin-left:6px; padding:1px 7px; }
+    .tab-panel { display:none; }
+    .tab-panel.active { display:block; }
 
-    /* ── TABS ── */
-    .tabs { display: flex; gap: 0; border-bottom: 1px solid var(--border); margin-bottom: 24px; }
-    .tab-btn { background: none; border: none; color: var(--text-muted); cursor: pointer; font-size: 14px; font-weight: 500; padding: 12px 20px; position: relative; transition: color 0.2s; }
-    .tab-btn:hover { color: var(--text); }
-    .tab-btn.active { color: var(--accent); }
-    .tab-btn.active::after { content: ''; position: absolute; bottom: -1px; left: 0; right: 0; height: 2px; background: var(--accent); border-radius: 2px 2px 0 0; }
-    .tab-count { background: var(--surface2); border-radius: 10px; font-family: 'JetBrains Mono', monospace; font-size: 11px; margin-left: 6px; padding: 1px 7px; }
+    /* TAG FILTER */
+    .tag-filter-bar { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:12px 16px; margin-bottom:16px; display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+    .tag-filter-label { font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--text-muted); white-space:nowrap; }
+    .tag-chip { background:var(--surface2); border:1px solid var(--border); border-radius:20px; color:var(--text-muted); cursor:pointer; font-family:'JetBrains Mono',monospace; font-size:12px; padding:3px 10px; transition:all 0.15s; }
+    .tag-chip:hover { border-color:var(--accent); color:var(--accent); }
+    .tag-chip.active { background:rgba(88,166,255,0.15); border-color:var(--accent); color:var(--accent); font-weight:600; }
+    html[data-theme="light"] .tag-chip.active { background:rgba(37,99,235,0.1); }
+    .tag-chip-clear { background:none; border:none; color:var(--red); cursor:pointer; font-size:12px; margin-left:auto; padding:3px 8px; display:none; }
+    .tag-chip-clear.visible { display:inline; }
+    .tag-filter-empty { font-size:13px; color:var(--text-muted); padding:24px; text-align:center; }
 
-    /* ── TAB PANELS ── */
-    .tab-panel { display: none; }
-    .tab-panel.active { display: block; }
+    /* NOTES */
+    .note-card { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:20px; margin-bottom:14px; transition:border-color 0.2s; }
+    .note-card:hover { border-color:var(--accent); }
+    .note-card.hidden { display:none; }
+    .note-header { display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:12px; gap:10px; flex-wrap:wrap; }
+    .note-title { font-size:16px; font-weight:700; }
+    .note-date  { font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--text-muted); white-space:nowrap; }
+    .note-tags  { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:10px; }
+    .note-tag   { background:var(--surface2); border:1px solid transparent; border-radius:20px; color:var(--text-muted); cursor:pointer; font-family:'JetBrains Mono',monospace; font-size:11px; padding:2px 9px; transition:all 0.15s; }
+    .note-tag:hover { color:var(--accent); border-color:var(--accent); }
+    .note-tag.active { background:rgba(88,166,255,0.15); color:var(--accent); border-color:var(--accent); font-weight:600; }
+    .note-body   { color:var(--text-muted); font-size:14px; line-height:1.7; white-space:pre-wrap; }
+    .note-rating { color:var(--yellow); font-size:14px; margin-top:10px; font-family:'JetBrains Mono',monospace; }
 
-    /* ── TAG FILTER BAR ── */
-    .tag-filter-bar { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 12px 16px; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-    .tag-filter-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-muted); white-space: nowrap; }
-    .tag-chip { background: var(--surface2); border: 1px solid var(--border); border-radius: 20px; color: var(--text-muted); cursor: pointer; font-family: 'JetBrains Mono', monospace; font-size: 12px; padding: 3px 10px; transition: all 0.15s; }
-    .tag-chip:hover { border-color: var(--accent); color: var(--accent); }
-    .tag-chip.active { background: rgba(88,166,255,0.15); border-color: var(--accent); color: var(--accent); font-weight: 600; }
-    html[data-theme="light"] .tag-chip.active { background: rgba(37,99,235,0.1); }
-    .tag-chip-clear { background: none; border: none; color: var(--red); cursor: pointer; font-size: 12px; margin-left: auto; padding: 3px 8px; display: none; }
-    .tag-chip-clear.visible { display: inline; }
-    .tag-filter-empty { font-size: 13px; color: var(--text-muted); padding: 24px; text-align: center; }
+    /* QUOTES */
+    .quote-card { background:var(--surface); border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:0 10px 10px 0; padding:18px 20px; margin-bottom:14px; }
+    .quote-card.hidden { display:none; }
+    .quote-meta   { display:flex; align-items:center; gap:10px; margin-bottom:10px; flex-wrap:wrap; }
+    .quote-source { font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:600; color:var(--accent); }
+    .quote-speaker{ color:var(--text-muted); font-size:12px; }
+    .quote-date   { font-family:'JetBrains Mono',monospace; color:var(--text-muted); font-size:12px; margin-left:auto; }
+    .quote-text   { font-family:'Instrument Serif',serif; font-size:16px; line-height:1.7; font-style:italic; color:var(--text); }
+    .quote-text::before { content:'\201C'; font-size:28px; color:var(--accent); line-height:0; vertical-align:-9px; margin-right:4px; }
+    .quote-text::after  { content:'\201D'; font-size:28px; color:var(--accent); line-height:0; vertical-align:-9px; margin-left:4px; }
+    .quote-th       { color:var(--text-muted); font-size:13px; line-height:1.6; margin-top:10px; padding:10px 14px; background:var(--surface2); border-radius:8px; border-left:2px solid var(--border); }
+    .quote-th-label { font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--text-muted); opacity:0.7; margin-bottom:4px; }
+    .quote-tag-link { background:var(--surface2); border:1px solid transparent; border-radius:20px; color:var(--text-muted); cursor:pointer; font-family:'JetBrains Mono',monospace; font-size:11px; padding:2px 9px; display:inline-block; margin-top:10px; transition:all 0.15s; }
+    .quote-tag-link:hover { color:var(--accent); border-color:var(--accent); }
+    .quote-tag-link.active { background:rgba(88,166,255,0.15); color:var(--accent); border-color:var(--accent); }
 
-    /* ── NOTES TAB ── */
-    .note-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px; margin-bottom: 14px; transition: border-color 0.2s; }
-    .note-card:hover { border-color: var(--accent); }
-    .note-card.hidden { display: none; }
-    .note-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 12px; gap: 10px; flex-wrap: wrap; }
-    .note-title { font-size: 16px; font-weight: 700; }
-    .note-date { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--text-muted); white-space: nowrap; }
-    .note-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
-    .note-tag { background: var(--surface2); border: 1px solid transparent; border-radius: 20px; color: var(--text-muted); cursor: pointer; font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 2px 9px; transition: all 0.15s; }
-    .note-tag:hover { color: var(--accent); border-color: var(--accent); }
-    .note-tag.active { background: rgba(88,166,255,0.15); color: var(--accent); border-color: var(--accent); font-weight: 600; }
-    .note-body { color: var(--text-muted); font-size: 14px; line-height: 1.7; white-space: pre-wrap; }
-    .note-rating { color: var(--yellow); font-size: 14px; margin-top: 10px; font-family: 'JetBrains Mono', monospace; }
+    /* ROADMAP */
+    .roadmap-filters { display:flex; gap:8px; margin-bottom:16px; flex-wrap:wrap; }
+    .rm-filter { background:var(--surface2); border:1px solid var(--border); border-radius:20px; color:var(--text-muted); cursor:pointer; font-size:12px; padding:4px 12px; transition:all 0.2s; }
+    .rm-filter:hover,.rm-filter.active { border-color:var(--accent); color:var(--accent); }
+    .roadmap-item { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:18px 20px; margin-bottom:12px; display:grid; grid-template-columns:auto 1fr auto; gap:16px; align-items:start; transition:border-color 0.2s; }
+    .roadmap-item:hover { border-color:var(--accent); }
+    .rm-status-dot { width:10px; height:10px; border-radius:50%; margin-top:5px; flex-shrink:0; }
+    .status-delivered  { background:var(--green); }
+    .status-pending    { background:var(--yellow); }
+    .status-missed     { background:var(--red); }
+    .status-partial    { background:var(--purple); }
+    .status-monitoring { background:var(--accent); }
+    .rm-commitment { font-size:14px; font-weight:600; margin-bottom:6px; }
+    .rm-source { font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--text-muted); margin-bottom:8px; }
+    .rm-followup { background:var(--surface2); border-radius:8px; font-size:13px; color:var(--text-muted); padding:8px 12px; }
+    .rm-followup-label { font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--accent); font-weight:600; margin-bottom:3px; }
+    .rm-badge { font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:600; padding:4px 12px; border-radius:20px; white-space:nowrap; }
+    .badge-delivered  { background:rgba(63,185,80,0.15);   color:var(--green); }
+    .badge-pending    { background:rgba(210,153,34,0.15);  color:var(--yellow); }
+    .badge-missed     { background:rgba(248,81,73,0.15);   color:var(--red); }
+    .badge-partial    { background:rgba(188,140,255,0.15); color:var(--purple); }
+    .badge-monitoring { background:rgba(88,166,255,0.15);  color:var(--accent); }
+    .roadmap-summary { display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:10px; margin-bottom:20px; }
+    .rm-sum-card  { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:12px 16px; text-align:center; }
+    .rm-sum-num   { font-family:'JetBrains Mono',monospace; font-size:22px; font-weight:800; margin-bottom:3px; }
+    .rm-sum-label { font-size:11px; color:var(--text-muted); }
 
-    /* ── QUOTES TAB ── */
-    .quote-card { background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 0 10px 10px 0; padding: 18px 20px; margin-bottom: 14px; }
-    .quote-card.hidden { display: none; }
-    .quote-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
-    .quote-source { font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600; color: var(--accent); }
-    .quote-speaker { color: var(--text-muted); font-size: 12px; }
-    .quote-date { font-family: 'JetBrains Mono', monospace; color: var(--text-muted); font-size: 12px; margin-left: auto; }
-    .quote-text { font-family: 'Instrument Serif', serif; font-size: 16px; line-height: 1.7; font-style: italic; color: var(--text); }
-    .quote-text::before { content: '\201C'; font-size: 28px; color: var(--accent); line-height: 0; vertical-align: -9px; margin-right: 4px; }
-    .quote-text::after  { content: '\201D'; font-size: 28px; color: var(--accent); line-height: 0; vertical-align: -9px; margin-left: 4px; }
-    .quote-tag-link { background: var(--surface2); border: 1px solid transparent; border-radius: 20px; color: var(--text-muted); cursor: pointer; font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 2px 9px; display: inline-block; margin-top: 10px; transition: all 0.15s; }
-    .quote-tag-link:hover { color: var(--accent); border-color: var(--accent); }
-    .quote-tag-link.active { background: rgba(88,166,255,0.15); color: var(--accent); border-color: var(--accent); }
+    /* GANTT */
+    .gantt-section { background:var(--surface); border:1px solid var(--border); border-radius:10px; margin-bottom:20px; overflow:hidden; }
+    .gantt-title   { align-items:center; border-bottom:1px solid var(--border); display:flex; font-size:13px; font-weight:600; gap:8px; padding:12px 16px; color:var(--text-muted); }
+    .gantt-body    { padding:16px; overflow-x:auto; }
+    .gantt-body svg { max-width:100%; height:auto; }
+    .gantt-loading { font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--text-muted); padding:20px; text-align:center; }
 
-    /* ── ROADMAP TAB ── */
-    .roadmap-filters { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
-    .rm-filter { background: var(--surface2); border: 1px solid var(--border); border-radius: 20px; color: var(--text-muted); cursor: pointer; font-size: 12px; padding: 4px 12px; transition: all 0.2s; }
-    .rm-filter:hover, .rm-filter.active { border-color: var(--accent); color: var(--accent); }
-    .roadmap-item { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; margin-bottom: 12px; display: grid; grid-template-columns: auto 1fr auto; gap: 16px; align-items: start; transition: border-color 0.2s; }
-    .roadmap-item:hover { border-color: var(--accent); }
-    .rm-status-dot { width: 10px; height: 10px; border-radius: 50%; margin-top: 5px; flex-shrink: 0; }
-    .status-delivered { background: var(--green); }
-    .status-pending   { background: var(--yellow); }
-    .status-missed    { background: var(--red); }
-    .status-partial   { background: var(--purple); }
-    .status-monitoring{ background: var(--accent); }
-    .rm-commitment { font-size: 14px; font-weight: 600; margin-bottom: 6px; }
-    .rm-source { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--text-muted); margin-bottom: 8px; }
-    .rm-followup { background: var(--surface2); border-radius: 8px; font-size: 13px; color: var(--text-muted); padding: 8px 12px; }
-    .rm-followup-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--accent); font-weight: 600; margin-bottom: 3px; }
-    .rm-badge { font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600; padding: 4px 12px; border-radius: 20px; white-space: nowrap; }
-    .badge-delivered  { background: rgba(63,185,80,0.15);  color: var(--green); }
-    .badge-pending    { background: rgba(210,153,34,0.15); color: var(--yellow); }
-    .badge-missed     { background: rgba(248,81,73,0.15);  color: var(--red); }
-    .badge-partial    { background: rgba(188,140,255,0.15);color: var(--purple); }
-    .badge-monitoring { background: rgba(88,166,255,0.15); color: var(--accent); }
-    .roadmap-summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-bottom: 20px; }
-    .rm-sum-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 12px 16px; text-align: center; }
-    .rm-sum-num { font-family: 'JetBrains Mono', monospace; font-size: 22px; font-weight: 800; margin-bottom: 3px; }
-    .rm-sum-label { font-size: 11px; color: var(--text-muted); }
+    /* FINANCIALS */
+    .fin-section { margin-bottom:28px; }
+    .fin-title   { font-size:16px; font-weight:700; margin-bottom:14px; display:flex; align-items:center; gap:8px; }
+    .fin-table   { width:100%; border-collapse:collapse; font-size:13px; }
+    .fin-table th { background:var(--surface2); border:1px solid var(--border); color:var(--text-muted); font-family:'JetBrains Mono',monospace; font-weight:600; padding:10px 14px; text-align:right; }
+    .fin-table th:first-child { text-align:left; }
+    .fin-table td { border:1px solid var(--border); padding:10px 14px; text-align:right; font-family:'JetBrains Mono',monospace; }
+    .fin-table td:first-child { text-align:left; color:var(--text-muted); font-size:12px; font-family:inherit; }
+    .fin-table tr:hover td { background:var(--surface2); }
+    .chart-container  { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:20px; margin-bottom:14px; height:260px; }
+    .sankey-container { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:8px; margin-bottom:20px; height:460px; }
+    .fin-links-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:10px; margin-bottom:4px; }
+    .fin-link-card  { background:var(--surface2); border:1px solid var(--border); border-radius:10px; color:var(--text); display:flex; align-items:center; gap:10px; padding:12px 14px; text-decoration:none; transition:border-color 0.2s,background 0.2s; }
+    .fin-link-card:hover { background:var(--surface); border-color:var(--accent); }
+    .fin-link-icon  { align-items:center; border-radius:8px; display:flex; flex-shrink:0; font-size:18px; height:34px; justify-content:center; width:34px; }
+    .fin-link-icon.type-10k    { background:rgba(88,166,255,0.15); }
+    .fin-link-icon.type-10q    { background:rgba(63,185,80,0.15); }
+    .fin-link-icon.type-annual { background:rgba(210,153,34,0.15); }
+    .fin-link-icon.type-other  { background:rgba(139,148,158,0.15); }
+    .fin-link-info  { flex:1; min-width:0; }
+    .fin-link-title { font-size:13px; font-weight:600; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+    .fin-link-type  { font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--text-muted); margin-top:2px; }
+    .fin-link-arrow { color:var(--text-muted); font-size:14px; }
 
-    /* ── MERMAID GANTT ── */
-    .gantt-section {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      margin-bottom: 20px;
-      overflow: hidden;
-    }
-    .gantt-title {
-      align-items: center;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      font-size: 13px;
-      font-weight: 600;
-      gap: 8px;
-      padding: 12px 16px;
-      color: var(--text-muted);
-    }
-    .gantt-body { padding: 16px; overflow-x: auto; }
-    .gantt-body svg { max-width: 100%; height: auto; }
-    .gantt-loading { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--text-muted); padding: 20px; text-align: center; }
+    /* OVERVIEW TAB */
+    .ov-section { margin-bottom:32px; }
+    .ov-title   { font-size:16px; font-weight:700; margin-bottom:16px; display:flex; align-items:center; gap:8px; padding-bottom:10px; border-bottom:1px solid var(--border); }
+    .snapshot-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; }
+    .snap-card  { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:14px 16px; }
+    .snap-label { font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--text-muted); margin-bottom:6px; }
+    .snap-value { font-size:14px; font-weight:600; line-height:1.4; }
+    .moat-list  { display:flex; flex-wrap:wrap; gap:8px; }
+    .moat-chip  { background:var(--surface); border:1px solid var(--border); border-radius:8px; color:var(--text-muted); font-size:13px; padding:6px 12px; line-height:1.4; }
 
-    /* ── FINANCIALS TAB ── */
-    .fin-section { margin-bottom: 28px; }
-    .fin-title { font-size: 16px; font-weight: 700; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
-    .fin-table { width: 100%; border-collapse: collapse; font-size: 13px; }
-    .fin-table th { background: var(--surface2); border: 1px solid var(--border); color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-weight: 600; padding: 10px 14px; text-align: right; }
-    .fin-table th:first-child { text-align: left; }
-    .fin-table td { border: 1px solid var(--border); padding: 10px 14px; text-align: right; font-family: 'JetBrains Mono', monospace; }
-    .fin-table td:first-child { text-align: left; color: var(--text-muted); font-size: 12px; font-family: inherit; }
-    .fin-table tr:hover td { background: var(--surface2); }
-    .chart-container { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px; margin-bottom: 14px; height: 260px; }
+    /* SEGMENTS */
+    .seg-layout { display:grid; grid-template-columns:1fr 200px; gap:20px; align-items:start; }
+    @media(max-width:640px){ .seg-layout { grid-template-columns:1fr; } }
+    .seg-bar-item   { margin-bottom:14px; }
+    .seg-bar-header { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px; font-size:13px; }
+    .seg-bar-name   { font-weight:600; }
+    .seg-bar-nums   { font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--text-muted); }
+    .seg-bar-track  { background:var(--surface2); border-radius:4px; height:8px; overflow:hidden; }
+    .seg-bar-fill   { height:100%; border-radius:4px; width:0; transition:width 0.8s ease; }
+    .seg-bar-assets { font-size:11px; color:var(--text-muted); margin-top:4px; }
+    .seg-donut-wrap { display:flex; flex-direction:column; align-items:center; }
+    .seg-donut-canvas { width:180px; height:180px; }
 
-    /* ── FINANCIAL LINKS ── */
-    .fin-links-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; margin-bottom: 4px; }
-    .fin-link-card { background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; color: var(--text); display: flex; align-items: center; gap: 10px; padding: 12px 14px; text-decoration: none; transition: border-color 0.2s, background 0.2s; }
-    .fin-link-card:hover { background: var(--surface); border-color: var(--accent); }
-    .fin-link-icon { align-items: center; border-radius: 8px; display: flex; flex-shrink: 0; font-size: 18px; height: 34px; justify-content: center; width: 34px; }
-    .fin-link-icon.type-10k    { background: rgba(88,166,255,0.15); }
-    .fin-link-icon.type-10q    { background: rgba(63,185,80,0.15); }
-    .fin-link-icon.type-annual { background: rgba(210,153,34,0.15); }
-    .fin-link-icon.type-other  { background: rgba(139,148,158,0.15); }
-    .fin-link-info { flex: 1; min-width: 0; }
-    .fin-link-title { font-size: 13px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-    .fin-link-type  { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-muted); margin-top: 2px; }
-    .fin-link-arrow { color: var(--text-muted); font-size: 14px; }
+    /* GEO */
+    .geo-item   { margin-bottom:12px; }
+    .geo-header { display:flex; justify-content:space-between; font-size:13px; margin-bottom:5px; }
+    .geo-track  { background:var(--surface2); border-radius:4px; height:6px; overflow:hidden; }
+    .geo-fill   { height:100%; border-radius:4px; background:var(--accent); width:0; transition:width 0.8s ease; }
 
-    /* ── MISC ── */
-    .empty { text-align: center; padding: 40px; color: var(--text-muted); font-size: 14px; }
-    .loading { text-align: center; padding: 60px; color: var(--text-muted); }
-    .error { text-align: center; padding: 60px; color: var(--red); }
-    .sector-tech     { background: rgba(88,166,255,0.15);  color: #58a6ff; }
-    .sector-finance  { background: rgba(63,185,80,0.15);   color: #3fb950; }
-    .sector-health   { background: rgba(248,81,73,0.15);   color: #f85149; }
-    .sector-energy   { background: rgba(210,153,34,0.15);  color: #d29922; }
-    .sector-consumer { background: rgba(188,140,255,0.15); color: #bc8cff; }
-    .sector-other    { background: rgba(139,148,158,0.15); color: #8b949e; }
+    /* TIMELINE */
+    .tl-filters { display:flex; gap:8px; margin-bottom:20px; flex-wrap:wrap; }
+    .tl-filter  { background:var(--surface2); border:1px solid var(--border); border-radius:20px; color:var(--text-muted); cursor:pointer; font-size:12px; padding:4px 12px; transition:all 0.2s; }
+    .tl-filter:hover,.tl-filter.active { border-color:var(--accent); color:var(--accent); }
+    .timeline-wrap { position:relative; padding-left:28px; }
+    .timeline-wrap::before { content:''; position:absolute; left:8px; top:0; bottom:0; width:2px; background:var(--border); }
+    .tl-item { position:relative; margin-bottom:20px; }
+    .tl-item.hidden { display:none; }
+    .tl-dot  { position:absolute; left:-24px; top:4px; width:12px; height:12px; border-radius:50%; border:2px solid var(--bg); }
+    .tl-year { font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--accent); font-weight:700; margin-bottom:3px; }
+    .tl-evtitle { font-size:14px; font-weight:700; margin-bottom:4px; }
+    .tl-desc { font-size:13px; color:var(--text-muted); line-height:1.5; }
+
+    /* MANAGEMENT */
+    .mgmt-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:14px; }
+    .mgmt-card  { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:18px; transition:border-color 0.2s; }
+    .mgmt-card:hover { border-color:var(--accent); }
+    .mgmt-name  { font-size:15px; font-weight:700; margin-bottom:2px; }
+    .mgmt-title { font-size:12px; color:var(--accent); font-family:'JetBrains Mono',monospace; margin-bottom:6px; }
+    .mgmt-since { font-size:11px; color:var(--text-muted); font-family:'JetBrains Mono',monospace; margin-bottom:8px; }
+    .mgmt-bio   { font-size:13px; color:var(--text-muted); line-height:1.5; }
+
+    /* THESIS */
+    .thesis-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    @media(max-width:640px){ .thesis-grid { grid-template-columns:1fr; } }
+    .thesis-card  { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:18px; }
+    .thesis-label { font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; margin-bottom:10px; }
+    .thesis-label.bull { color:var(--green); }
+    .thesis-label.bear { color:var(--red); }
+    .thesis-text  { font-size:13px; color:var(--text-muted); line-height:1.6; }
+
+    /* RISKS */
+    .risk-item   { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:16px 18px; margin-bottom:10px; cursor:pointer; transition:border-color 0.2s; }
+    .risk-item:hover { border-color:var(--accent); }
+    .risk-header { display:flex; align-items:center; gap:10px; }
+    .risk-severity { font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; padding:2px 8px; border-radius:4px; white-space:nowrap; }
+    .sev-high   { background:rgba(248,81,73,0.15);  color:var(--red); }
+    .sev-medium { background:rgba(210,153,34,0.15); color:var(--yellow); }
+    .sev-low    { background:rgba(63,185,80,0.15);  color:var(--green); }
+    .risk-name   { font-size:14px; font-weight:600; flex:1; }
+    .risk-toggle { color:var(--text-muted); font-size:12px; }
+    .risk-body   { display:none; padding-top:12px; }
+    .risk-body.open { display:block; }
+    .risk-desc   { font-size:13px; color:var(--text-muted); line-height:1.5; margin-bottom:8px; }
+    .risk-mitigation { font-size:12px; background:var(--surface2); border-radius:6px; padding:8px 12px; color:var(--text-muted); border-left:2px solid var(--green); }
+    .risk-mit-label  { font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--green); margin-bottom:3px; }
+
+    /* OWNERSHIP */
+    .ownership-layout { display:grid; grid-template-columns:200px 1fr; gap:20px; align-items:start; }
+    @media(max-width:640px){ .ownership-layout { grid-template-columns:1fr; } }
+    .own-donut-canvas { width:180px; height:180px; }
+    .sh-item  { display:flex; align-items:center; gap:10px; padding:8px 0; border-bottom:1px solid var(--border); }
+    .sh-item:last-child { border-bottom:none; }
+    .sh-dot  { width:10px; height:10px; border-radius:50%; flex-shrink:0; }
+    .sh-name { font-size:13px; flex:1; }
+    .sh-type { font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--text-muted); }
+    .sh-pct  { font-family:'JetBrains Mono',monospace; font-size:13px; font-weight:600; color:var(--accent); }
+
+    /* ORG CHART */
+    .org-wrap { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:16px; overflow-x:auto; }
+    .org-wrap svg { max-width:100%; }
+
+    /* TRADINGVIEW */
+    .tv-section { margin-bottom:28px; }
+    .tv-chart-wrap { height:500px; border-radius:10px; overflow:hidden; border:1px solid var(--border); background:var(--surface); }
+    .tv-fund-wrap  { height:560px; border-radius:10px; overflow:hidden; border:1px solid var(--border); background:var(--surface); }
+    .tv-chart-wrap iframe, .tv-fund-wrap iframe { border:none !important; }
+
+    /* MISC */
+    .empty   { text-align:center; padding:40px; color:var(--text-muted); font-size:14px; }
+    .loading { text-align:center; padding:60px; color:var(--text-muted); }
+    .error   { text-align:center; padding:60px; color:var(--red); }
+    .sector-tech     { background:rgba(88,166,255,0.15);  color:#58a6ff; }
+    .sector-finance  { background:rgba(63,185,80,0.15);   color:#3fb950; }
+    .sector-health   { background:rgba(248,81,73,0.15);   color:#f85149; }
+    .sector-energy   { background:rgba(210,153,34,0.15);  color:#d29922; }
+    .sector-consumer { background:rgba(188,140,255,0.15); color:#bc8cff; }
+    .sector-other    { background:rgba(139,148,158,0.15); color:#8b949e; }
   </style>
 </head>
 <body>
@@ -301,443 +306,735 @@
 </main>
 
 <script>
-  /* ── THEME ── */
-  (function initTheme() {
-    const saved = localStorage.getItem('prometheus-theme') || 'dark';
-    document.documentElement.setAttribute('data-theme', saved);
-    document.getElementById('theme-btn').textContent = saved === 'dark' ? '🌙' : '☀️';
-  })();
+/* ── THEME ── */
+(function initTheme() {
+  const saved = localStorage.getItem('prometheus-theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', saved);
+  document.getElementById('theme-btn').textContent = saved === 'dark' ? '🌙' : '☀️';
+})();
 
-  window.toggleTheme = function() {
-    const current = document.documentElement.getAttribute('data-theme');
-    const next = current === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', next);
-    localStorage.setItem('prometheus-theme', next);
-    document.getElementById('theme-btn').textContent = next === 'dark' ? '🌙' : '☀️';
-    // re-render chart if on financials
-    if (companyData?.financials) {
-      const finPanel = document.getElementById('tab-financials');
-      if (finPanel?.classList.contains('active')) {
-        setTimeout(() => drawFinChart(companyData.financials), 50);
-      }
-    }
-  };
-
-  /* ── MERMAID INIT ── */
-  mermaid.initialize({ startOnLoad: false, theme: 'dark', securityLevel: 'loose' });
-
-  /* ── APP STATE ── */
-  const params = new URLSearchParams(window.location.search);
-  const ticker = params.get('ticker');
-  let companyData = null;
-  let rmFilter = 'all';
-  let activeNoteTag = null;
-  let activeQuoteTag = null;
-
-  const SECTOR_CLASS  = { Technology:'sector-tech', Finance:'sector-finance', Healthcare:'sector-health', Energy:'sector-energy', Consumer:'sector-consumer' };
-  const STATUS_LABELS = { delivered:'✅ Delivered', pending:'⏳ Pending', missed:'❌ Missed', partial:'⚠️ Partial', monitoring:'👀 Monitoring' };
-  const LINK_ICONS    = {
-    '10-K':          { icon: '📄', cls: 'type-10k' },
-    '10-Q':          { icon: '📋', cls: 'type-10q' },
-    'Annual Report': { icon: '📑', cls: 'type-annual' },
-    'Proxy Statement':{ icon: '🗳️', cls: 'type-other' },
-    'Investor Day':  { icon: '🎤', cls: 'type-other' },
-  };
-
-  function formatDate(d) {
-    if (!d) return '—';
-    return new Date(d).toLocaleDateString('th-TH', { day:'numeric', month:'short', year:'numeric' });
-  }
-
-  /* ── LOAD ── */
-  async function loadCompany() {
-    if (!ticker) { document.getElementById('main').innerHTML = '<div class="error">ไม่พบ ticker ในลิงก์</div>'; return; }
-    try {
-      const res = await fetch(`data/${ticker}/data.json`);
-      if (!res.ok) throw new Error('not found');
-      companyData = await res.json();
-      document.title = `${companyData.name} — Prometheus`;
-      render();
-    } catch(e) {
-      document.getElementById('main').innerHTML = `<div class="error">ไม่พบข้อมูล ${ticker}<br><small>ตรวจสอบว่ามีไฟล์ data/${ticker}/data.json</small></div>`;
+window.toggleTheme = function() {
+  const current = document.documentElement.getAttribute('data-theme');
+  const next = current === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('prometheus-theme', next);
+  document.getElementById('theme-btn').textContent = next === 'dark' ? '🌙' : '☀️';
+  if (companyData?.financials) {
+    const fp = document.getElementById('tab-financials');
+    if (fp?.classList.contains('active')) {
+      setTimeout(() => { drawFinChart(companyData.financials); drawSankeyChart(companyData.financials); }, 50);
     }
   }
-
-  /* ── COLLECT TAGS ── */
-  function collectTags(items, field) {
-    const set = new Set();
-    items.forEach(item => {
-      const val = item[field];
-      if (Array.isArray(val)) val.forEach(t => set.add(t));
-      else if (val) set.add(val);
-    });
-    return [...set].sort();
+  const op = document.getElementById('tab-overview');
+  if (op?.classList.contains('active') && companyData?.overview) {
+    setTimeout(() => {
+      drawSegmentDonut(companyData.overview.segments || []);
+      drawOwnershipDonut(companyData.overview.ownership?.major_shareholders || []);
+      renderTVChart(companyData.tradingview_symbol);
+    }, 50);
   }
-
-  /* ── TAG FILTER BAR ── */
-  function tagFilterBar(tags, activeTag, onClickFn, clearFn) {
-    if (!tags.length) return '';
-    const chips = tags.map(t => `
-      <button class="tag-chip ${activeTag===t?'active':''}" onclick="${onClickFn}('${t}')">#${t}</button>
-    `).join('');
-    return `
-      <div class="tag-filter-bar">
-        <span class="tag-filter-label">tag:</span>
-        ${chips}
-        <button class="tag-chip-clear ${activeTag?'visible':''}" onclick="${clearFn}()">✕ ล้าง</button>
-      </div>`;
+  const fp2 = document.getElementById('tab-financials');
+  if (fp2?.classList.contains('active')) {
+    setTimeout(() => renderTVFundamentals(companyData?.tradingview_symbol), 150);
   }
+};
 
-  /* ── RENDER ── */
-  function render() {
-    const c = companyData;
-    const sectorClass = SECTOR_CLASS[c.sector] || 'sector-other';
-    const notes   = c.notes   || [];
-    const quotes  = c.quotes  || [];
-    const roadmap = c.roadmap || [];
-    const fin     = c.financials || {};
+mermaid.initialize({ startOnLoad: false, theme: 'dark', securityLevel: 'loose' });
 
-    const rmStats = {
-      delivered: roadmap.filter(r=>r.status==='delivered').length,
-      pending:   roadmap.filter(r=>r.status==='pending').length,
-      missed:    roadmap.filter(r=>r.status==='missed').length,
-      partial:   roadmap.filter(r=>r.status==='partial').length,
-    };
-    const concluded  = rmStats.delivered + rmStats.missed + rmStats.partial;
-    const deliveryRate = concluded > 0 ? Math.round((rmStats.delivered / concluded) * 100) : 0;
+const params = new URLSearchParams(window.location.search);
+const ticker = params.get('ticker');
+let companyData = null;
+let rmFilter = 'all';
+let activeNoteTag = null;
+let activeQuoteTag = null;
 
-    document.getElementById('main').innerHTML = `
-      <div class="company-header stagger" style="--i:0">
-        <div class="company-logo-lg">${ticker.slice(0,3)}</div>
-        <div class="company-info">
-          <div class="company-title">${c.name}</div>
-          <div class="company-meta">
-            <span class="meta-tag ${sectorClass}">${c.sector}</span>
-            <span class="meta-muted">${ticker} · ${c.exchange || 'NASDAQ'}</span>
-            <span class="meta-muted">· อัพเดท ${formatDate(c.last_updated)}</span>
-            <a class="deepdive-btn" href="overview.html?ticker=${ticker}">🔍 Deep Dive</a>
-          </div>
-          ${c.description ? `<div class="company-desc">${c.description}</div>` : ''}
+const SECTOR_CLASS  = { Technology:'sector-tech', Finance:'sector-finance', Healthcare:'sector-health', Energy:'sector-energy', Consumer:'sector-consumer' };
+const STATUS_LABELS = { delivered:'✅ สำเร็จ', pending:'⏳ รอดำเนินการ', missed:'❌ พลาด', partial:'⚠️ บางส่วน', monitoring:'👀 ติดตาม' };
+const LINK_ICONS    = { '10-K':{icon:'📄',cls:'type-10k'}, '10-Q':{icon:'📋',cls:'type-10q'}, 'Annual Report':{icon:'📑',cls:'type-annual'}, 'Proxy Statement':{icon:'🗳️',cls:'type-other'}, 'Investor Day':{icon:'🎤',cls:'type-other'} };
+const SEG_TYPE_COLOR = { gold:'#d29922', copper:'#e3663a', silver:'#9eaab7', software:'#58a6ff', hardware:'#bc8cff', services:'#3fb950', cloud:'#58d68d', energy:'#ff9900', other:'#8b949e' };
+const TL_TYPE_COLOR  = { founding:'#58a6ff', merger:'#bc8cff', milestone:'#d29922', project:'#3fb950', financial:'#58d68d', crisis:'#f85149', product:'#e3663a' };
+const OWN_COLORS     = ['#58a6ff','#3fb950','#d29922','#bc8cff','#e3663a','#9eaab7','#58d68d','#f85149'];
+const TAB_ORDER      = ['overview','notes','quotes','roadmap','financials'];
+
+function formatDate(d) {
+  if (!d) return '—';
+  return new Date(d).toLocaleDateString('th-TH', { day:'numeric', month:'short', year:'numeric' });
+}
+
+async function loadCompany() {
+  if (!ticker) { document.getElementById('main').innerHTML = '<div class="error">ไม่พบ ticker ในลิงก์</div>'; return; }
+  try {
+    const res = await fetch(`data/${ticker}/data.json`);
+    if (!res.ok) throw new Error('not found');
+    companyData = await res.json();
+    document.title = `${companyData.name} — Prometheus`;
+    render();
+  } catch(e) {
+    document.getElementById('main').innerHTML = `<div class="error">ไม่พบข้อมูล ${ticker}<br><small>ตรวจสอบว่ามีไฟล์ data/${ticker}/data.json</small></div>`;
+  }
+}
+
+function collectTags(items, field) {
+  const set = new Set();
+  items.forEach(item => {
+    const val = item[field];
+    if (Array.isArray(val)) val.forEach(t => set.add(t));
+    else if (val) set.add(val);
+  });
+  return [...set].sort();
+}
+
+function tagFilterBar(tags, activeTag, onClickFn, clearFn) {
+  if (!tags.length) return '';
+  const chips = tags.map(t => `<button class="tag-chip ${activeTag===t?'active':''}" onclick="${onClickFn}('${t}')">#${t}</button>`).join('');
+  return `<div class="tag-filter-bar"><span class="tag-filter-label">แท็ก:</span>${chips}<button class="tag-chip-clear ${activeTag?'visible':''}" onclick="${clearFn}()">✕ ล้าง</button></div>`;
+}
+
+/* ── RENDER ── */
+function render() {
+  const c = companyData;
+  const sectorClass = SECTOR_CLASS[c.sector] || 'sector-other';
+  const notes   = c.notes   || [];
+  const quotes  = c.quotes  || [];
+  const roadmap = c.roadmap || [];
+  const fin     = c.financials || {};
+  const ov      = c.overview || null;
+
+  const rmStats = {
+    delivered: roadmap.filter(r=>r.status==='delivered').length,
+    pending:   roadmap.filter(r=>r.status==='pending').length,
+    missed:    roadmap.filter(r=>r.status==='missed').length,
+    partial:   roadmap.filter(r=>r.status==='partial').length,
+  };
+  const concluded    = rmStats.delivered + rmStats.missed + rmStats.partial;
+  const deliveryRate = concluded > 0 ? Math.round((rmStats.delivered / concluded) * 100) : 0;
+
+  document.getElementById('main').innerHTML = `
+    <div class="company-header stagger" style="--i:0">
+      <div class="company-logo-lg">${ticker.slice(0,3)}</div>
+      <div class="company-info">
+        <div class="company-title">${c.name}</div>
+        <div class="company-meta">
+          <span class="meta-tag ${sectorClass}">${c.sector}</span>
+          <span class="meta-muted">${ticker} · ${c.exchange || 'NASDAQ'}</span>
+          <span class="meta-muted">· อัพเดท ${formatDate(c.last_updated)}</span>
         </div>
+        ${c.description ? `<div class="company-desc">${c.description}</div>` : ''}
       </div>
+    </div>
 
-      <div class="quick-stats">
-        <div class="qs-card stagger" style="--i:1"><div class="qs-label">NOTES</div><div class="qs-value">${notes.length}</div><div class="qs-sub">บันทึกทั้งหมด</div></div>
-        <div class="qs-card stagger" style="--i:2"><div class="qs-label">QUOTES</div><div class="qs-value">${quotes.length}</div><div class="qs-sub">จาก Earnings Call</div></div>
-        <div class="qs-card stagger" style="--i:3"><div class="qs-label">ROADMAP</div><div class="qs-value">${roadmap.length}</div><div class="qs-sub">สิ่งที่ผู้บริหารพูด</div></div>
-        <div class="qs-card stagger" style="--i:4"><div class="qs-label">DELIVERY</div>
-          <div class="qs-value" style="color:${deliveryRate>=70?'var(--green)':deliveryRate>=40?'var(--yellow)':'var(--red)'}">${concluded>0?deliveryRate+'%':'—'}</div>
-          <div class="qs-sub">${concluded>0?`${concluded} concluded items`:'no concluded items yet'}</div>
-        </div>
+    <div class="quick-stats">
+      <div class="qs-card stagger" style="--i:1"><div class="qs-label">NOTES</div><div class="qs-value">${notes.length}</div><div class="qs-sub">บันทึกทั้งหมด</div></div>
+      <div class="qs-card stagger" style="--i:2"><div class="qs-label">QUOTES</div><div class="qs-value">${quotes.length}</div><div class="qs-sub">จาก Earnings Call</div></div>
+      <div class="qs-card stagger" style="--i:3"><div class="qs-label">ROADMAP</div><div class="qs-value">${roadmap.length}</div><div class="qs-sub">สิ่งที่ผู้บริหารพูด</div></div>
+      <div class="qs-card stagger" style="--i:4"><div class="qs-label">DELIVERY</div>
+        <div class="qs-value" style="color:${deliveryRate>=70?'var(--green)':deliveryRate>=40?'var(--yellow)':'var(--red)'}">${concluded>0?deliveryRate+'%':'—'}</div>
+        <div class="qs-sub">${concluded>0?concluded+' รายการที่สรุปแล้ว':'ยังไม่มีรายการสรุป'}</div>
       </div>
+    </div>
 
-      <div class="tabs stagger" style="--i:5">
-        <button class="tab-btn active" onclick="switchTab('notes')">📝 Notes <span class="tab-count">${notes.length}</span></button>
-        <button class="tab-btn" onclick="switchTab('quotes')">💬 Quotes <span class="tab-count">${quotes.length}</span></button>
-        <button class="tab-btn" onclick="switchTab('roadmap')">🗺️ Roadmap <span class="tab-count">${roadmap.length}</span></button>
-        <button class="tab-btn" onclick="switchTab('financials')">📊 Financials</button>
+    <div class="tabs stagger" style="--i:5">
+      <button class="tab-btn active" onclick="switchTab('overview')">🔍 ภาพรวม</button>
+      <button class="tab-btn" onclick="switchTab('notes')">📝 บันทึก <span class="tab-count">${notes.length}</span></button>
+      <button class="tab-btn" onclick="switchTab('quotes')">💬 คำพูด <span class="tab-count">${quotes.length}</span></button>
+      <button class="tab-btn" onclick="switchTab('roadmap')">🗺️ แผนงาน <span class="tab-count">${roadmap.length}</span></button>
+      <button class="tab-btn" onclick="switchTab('financials')">📊 การเงิน</button>
+    </div>
+
+    <div class="tab-panel active" id="tab-overview">${renderOverviewPanel(ov)}</div>
+    <div class="tab-panel" id="tab-notes">${renderNotesPanel(notes)}</div>
+    <div class="tab-panel" id="tab-quotes">${renderQuotesPanel(quotes)}</div>
+    <div class="tab-panel" id="tab-roadmap">${renderRoadmapPanel(roadmap, rmStats)}</div>
+    <div class="tab-panel" id="tab-financials">${renderFinancials(fin)}</div>
+  `;
+
+  if (fin.metrics && fin.years)    setTimeout(() => drawFinChart(fin), 100);
+  if (fin.breakdown?.sankey)       setTimeout(() => drawSankeyChart(fin), 150);
+  if (roadmap.length)              setTimeout(() => renderGanttChart(roadmap), 200);
+  if (ov?.segments?.length)        setTimeout(() => drawSegmentDonut(ov.segments), 120);
+  if (ov?.ownership?.major_shareholders?.length) setTimeout(() => drawOwnershipDonut(ov.ownership.major_shareholders), 130);
+  if (ov?.ownership?.corporate_structure?.length) setTimeout(() => renderOrgChart(ov.ownership.corporate_structure), 250);
+  setTimeout(() => animateBars(), 150);
+  if (c.tradingview_symbol) setTimeout(() => renderTVChart(c.tradingview_symbol), 300);
+}
+
+/* ── OVERVIEW PANEL ── */
+function renderOverviewPanel(ov) {
+  if (!ov) return '<div class="empty">ยังไม่มีข้อมูลภาพรวม — ใช้ skill analyze-report เพื่อเพิ่มข้อมูล</div>';
+
+  const tvSymbol = companyData?.tradingview_symbol;
+  const tvChartHtml = tvSymbol ? `
+    <div class="tv-section">
+      <div class="ov-title">📈 ราคาหุ้น</div>
+      <div class="tv-chart-wrap" id="tv-chart-outer"></div>
+    </div>` : '';
+
+  const snapshotHtml = `
+    <div class="ov-section">
+      <div class="ov-title">🏢 ข้อมูลบริษัท</div>
+      <div class="snapshot-grid">
+        ${ov.founded       ? `<div class="snap-card"><div class="snap-label">ก่อตั้ง</div><div class="snap-value">${ov.founded}</div></div>` : ''}
+        ${ov.headquarters  ? `<div class="snap-card"><div class="snap-label">สำนักงานใหญ่</div><div class="snap-value">${ov.headquarters}</div></div>` : ''}
+        ${ov.employees     ? `<div class="snap-card"><div class="snap-label">พนักงาน</div><div class="snap-value">${ov.employees}</div></div>` : ''}
+        ${ov.fiscal_year_end ? `<div class="snap-card"><div class="snap-label">สิ้นปีบัญชี</div><div class="snap-value">${ov.fiscal_year_end}</div></div>` : ''}
       </div>
+      ${ov.business_model_summary ? `<div style="margin-top:16px"><div class="snap-label" style="margin-bottom:8px">รูปแบบธุรกิจ</div><div style="font-size:13px;color:var(--text-muted);line-height:1.7">${ov.business_model_summary}</div></div>` : ''}
+      ${ov.competitive_position ? `<div style="margin-top:14px"><div class="snap-label" style="margin-bottom:8px">ตำแหน่งการแข่งขัน</div><div style="font-size:13px;color:var(--text-muted);line-height:1.6">${ov.competitive_position}</div></div>` : ''}
+    </div>`;
 
-      <div class="tab-panel active" id="tab-notes">${renderNotesPanel(notes)}</div>
-      <div class="tab-panel" id="tab-quotes">${renderQuotesPanel(quotes)}</div>
-      <div class="tab-panel" id="tab-roadmap">${renderRoadmapPanel(roadmap, rmStats)}</div>
-      <div class="tab-panel" id="tab-financials">${renderFinancials(fin)}</div>
-    `;
+  const moatHtml = ov.moat_factors?.length ? `
+    <div class="ov-section">
+      <div class="ov-title">🏰 จุดแข็งทางการแข่งขัน (Moat)</div>
+      <div class="moat-list">${ov.moat_factors.map(f=>`<div class="moat-chip">✓ ${f}</div>`).join('')}</div>
+    </div>` : '';
 
-    if (fin.metrics && fin.years) setTimeout(() => drawFinChart(fin), 100);
-    if (roadmap.length)           setTimeout(() => renderGanttChart(roadmap), 150);
-  }
-
-  /* ── NOTES PANEL ── */
-  function renderNotesPanel(notes) {
-    if (!notes.length) return '<div class="empty">ยังไม่มีบันทึก — เพิ่มใน notes array ของ data.json</div>';
-    const allTags = collectTags(notes, 'tags');
-    const filterBar = tagFilterBar(allTags, activeNoteTag, 'setNoteTag', 'clearNoteTag');
-    const cards = notes.slice().reverse().map((n, i) => {
-      const hidden = activeNoteTag && !(n.tags||[]).includes(activeNoteTag) ? 'hidden' : '';
-      return `
-        <div class="note-card stagger ${hidden}" style="--i:${i}" data-tags='${JSON.stringify(n.tags||[])}'>
-          <div class="note-header">
-            <div class="note-title">${n.title}</div>
-            <div class="note-date">${formatDate(n.date)}</div>
-          </div>
-          ${(n.tags||[]).length ? `<div class="note-tags">${n.tags.map(t=>`
-            <button class="note-tag ${activeNoteTag===t?'active':''}" onclick="setNoteTag('${t}')">#${t}</button>
-          `).join('')}</div>` : ''}
-          <div class="note-body">${n.content}</div>
-          ${n.rating ? `<div class="note-rating">${'★'.repeat(n.rating)}${'☆'.repeat(5-n.rating)} Conviction</div>` : ''}
-        </div>`;
-    }).join('');
-    const emptyMsg = activeNoteTag ? `<div class="tag-filter-empty">ไม่มี Note ที่มี tag #${activeNoteTag}</div>` : '';
-    return filterBar + cards + emptyMsg;
-  }
-
-  /* ── QUOTES PANEL ── */
-  function renderQuotesPanel(quotes) {
-    if (!quotes.length) return '<div class="empty">ยังไม่มี quotes — เพิ่มใน quotes array ของ data.json</div>';
-    const allTags = collectTags(quotes, 'tag');
-    const filterBar = tagFilterBar(allTags, activeQuoteTag, 'setQuoteTag', 'clearQuoteTag');
-    const cards = quotes.slice().reverse().map((q, i) => {
-      const hidden = activeQuoteTag && q.tag !== activeQuoteTag ? 'hidden' : '';
-      return `
-        <div class="quote-card stagger ${hidden}" style="--i:${i}">
-          <div class="quote-meta">
-            <span class="quote-source">${q.source}</span>
-            <span class="quote-speaker">— ${q.speaker || 'Management'}</span>
-            <span class="quote-date">${formatDate(q.date)}</span>
-          </div>
-          <div class="quote-text">${q.quote}</div>
-          ${q.tag ? `<button class="quote-tag-link ${activeQuoteTag===q.tag?'active':''}" onclick="setQuoteTag('${q.tag}')">#${q.tag}</button>` : ''}
-        </div>`;
-    }).join('');
-    const emptyMsg = activeQuoteTag ? `<div class="tag-filter-empty">ไม่มี Quote ที่มี tag #${activeQuoteTag}</div>` : '';
-    return filterBar + cards + emptyMsg;
-  }
-
-  /* ── TAG ACTIONS ── */
-  window.setNoteTag = function(tag) {
-    activeNoteTag = (activeNoteTag === tag) ? null : tag;
-    document.getElementById('tab-notes').innerHTML = renderNotesPanel(companyData.notes || []);
-  };
-  window.clearNoteTag = function() {
-    activeNoteTag = null;
-    document.getElementById('tab-notes').innerHTML = renderNotesPanel(companyData.notes || []);
-  };
-  window.setQuoteTag = function(tag) {
-    activeQuoteTag = (activeQuoteTag === tag) ? null : tag;
-    document.getElementById('tab-quotes').innerHTML = renderQuotesPanel(companyData.quotes || []);
-  };
-  window.clearQuoteTag = function() {
-    activeQuoteTag = null;
-    document.getElementById('tab-quotes').innerHTML = renderQuotesPanel(companyData.quotes || []);
-  };
-
-  /* ── ROADMAP PANEL ── */
-  function renderRoadmapPanel(roadmap, rmStats) {
-    return `
-      <div class="roadmap-summary">
-        <div class="rm-sum-card stagger" style="--i:0"><div class="rm-sum-num" style="color:var(--green)">${rmStats.delivered}</div><div class="rm-sum-label">Delivered ✅</div></div>
-        <div class="rm-sum-card stagger" style="--i:1"><div class="rm-sum-num" style="color:var(--yellow)">${rmStats.pending}</div><div class="rm-sum-label">Pending ⏳</div></div>
-        <div class="rm-sum-card stagger" style="--i:2"><div class="rm-sum-num" style="color:var(--red)">${rmStats.missed}</div><div class="rm-sum-label">Missed ❌</div></div>
-        <div class="rm-sum-card stagger" style="--i:3"><div class="rm-sum-num" style="color:var(--purple)">${rmStats.partial}</div><div class="rm-sum-label">Partial ⚠️</div></div>
-      </div>
-
-      <!-- Mermaid Gantt Chart -->
-      <div class="gantt-section">
-        <div class="gantt-title">📅 Timeline Overview</div>
-        <div class="gantt-body" id="gantt-container">
-          <div class="gantt-loading">กำลังสร้าง timeline...</div>
-        </div>
-      </div>
-
-      <div class="roadmap-filters">
-        ${['all','delivered','pending','missed','partial','monitoring'].map(f=>`
-          <button class="rm-filter ${f==='all'?'active':''}" onclick="filterRoadmap('${f}')">${f==='all'?'ทั้งหมด':STATUS_LABELS[f]}</button>
-        `).join('')}
-      </div>
-      <div id="roadmap-list">${renderRoadmapItems(roadmap)}</div>
-    `;
-  }
-
-  function renderRoadmapItems(items) {
-    const filtered = rmFilter === 'all' ? items : items.filter(r => r.status === rmFilter);
-    if (!filtered.length) return '<div class="empty">ไม่มีรายการ</div>';
-    return [...filtered].sort((a,b)=>new Date(b.date_said)-new Date(a.date_said)).map((r, i) => `
-      <div class="roadmap-item stagger" style="--i:${i}">
-        <div class="rm-status-dot status-${r.status}"></div>
+  const maxRev = ov.segments?.length ? Math.max(...ov.segments.map(s=>s.revenue||0)) : 1;
+  const segmentsHtml = ov.segments?.length ? `
+    <div class="ov-section">
+      <div class="ov-title">📊 รายได้แยกตามกลุ่มธุรกิจ</div>
+      <div class="seg-layout">
         <div>
-          <div class="rm-commitment">${r.commitment}</div>
-          <div class="rm-source">📅 พูดเมื่อ ${formatDate(r.date_said)} · ${r.source}</div>
-          ${r.follow_up ? `<div class="rm-followup"><div class="rm-followup-label">ผลลัพธ์ (${formatDate(r.follow_up_date)})</div>${r.follow_up}</div>` : ''}
+          ${ov.segments.map(s => {
+            const color   = SEG_TYPE_COLOR[s.type] || '#8b949e';
+            const barPct  = maxRev > 0 ? (s.revenue / maxRev * 100).toFixed(1) : 0;
+            const yoyCol  = s.yoy_change > 0 ? 'var(--green)' : s.yoy_change < 0 ? 'var(--red)' : 'var(--text-muted)';
+            return `<div class="seg-bar-item">
+              <div class="seg-bar-header">
+                <span class="seg-bar-name">${s.name}</span>
+                <span class="seg-bar-nums">$${s.revenue}B · ${s.revenue_pct}%${s.yoy_change!=null?' <span style="color:'+yoyCol+'">('+( s.yoy_change>0?'+':'')+s.yoy_change+'%)</span>':''}</span>
+              </div>
+              <div class="seg-bar-track"><div class="seg-bar-fill" data-pct="${barPct}" style="background:${color}"></div></div>
+              ${s.key_assets?.length ? `<div class="seg-bar-assets">📍 ${s.key_assets.join(' · ')}</div>` : ''}
+            </div>`;
+          }).join('')}
         </div>
-        <span class="rm-badge badge-${r.status}">${STATUS_LABELS[r.status]||r.status}</span>
-      </div>`).join('');
-  }
-
-  window.filterRoadmap = function(f) {
-    rmFilter = f;
-    document.querySelectorAll('.rm-filter').forEach(b => {
-      const label = b.textContent.trim();
-      b.classList.toggle('active', f==='all' ? label==='ทั้งหมด' : label.includes(f));
-    });
-    document.getElementById('roadmap-list').innerHTML = renderRoadmapItems(companyData.roadmap||[]);
-  };
-
-  /* ── MERMAID GANTT ── */
-  function extractEndDate(text, dateSaid) {
-    const qm = text.match(/Q([1-4])\s+(20\d\d)/);
-    if (qm) {
-      const endMonth = parseInt(qm[1]) * 3;
-      return `${qm[2]}-${String(endMonth).padStart(2,'0')}-28`;
-    }
-    const ym = text.match(/\b(20\d\d)[-–]?(20\d\d)?\b/);
-    if (ym) return `${ym[2]||ym[1]}-12-31`;
-    const d = new Date(dateSaid);
-    d.setFullYear(d.getFullYear() + 1);
-    return d.toISOString().split('T')[0];
-  }
-
-  function buildGanttSyntax(roadmap) {
-    const theme = document.documentElement.getAttribute('data-theme');
-    const sorted = [...roadmap].sort((a,b) => new Date(a.date_said) - new Date(b.date_said));
-    const sections = {
-      delivered:  sorted.filter(r => r.status === 'delivered'),
-      monitoring: sorted.filter(r => r.status === 'monitoring'),
-      pending:    sorted.filter(r => r.status === 'pending'),
-      partial:    sorted.filter(r => r.status === 'partial'),
-      missed:     sorted.filter(r => r.status === 'missed'),
-    };
-    const modifiers = { delivered:'done, ', monitoring:'active, ', pending:'', partial:'crit, ', missed:'crit, ' };
-    const sectionLabels = { delivered:'✅ Delivered', monitoring:'👀 Monitoring', pending:'⏳ Pending', partial:'⚠️ Partial', missed:'❌ Missed' };
-
-    let syntax = `gantt\n    dateFormat  YYYY-MM-DD\n    axisFormat  %b %Y\n`;
-    let hasContent = false;
-
-    Object.entries(sections).forEach(([status, items]) => {
-      if (!items.length) return;
-      hasContent = true;
-      syntax += `    section ${sectionLabels[status]}\n`;
-      items.forEach((r, i) => {
-        const shortText = r.commitment.split(' ').slice(0, 6).join(' ').replace(/[:#]/g, '') + '...';
-        const endDate   = extractEndDate(r.commitment, r.date_said);
-        const modifier  = modifiers[status];
-        syntax += `    ${shortText} :${modifier}rm${status}${i}, ${r.date_said}, ${endDate}\n`;
-      });
-    });
-
-    return hasContent ? syntax : null;
-  }
-
-  async function renderGanttChart(roadmap) {
-    const container = document.getElementById('gantt-container');
-    if (!container) return;
-    const syntax = buildGanttSyntax(roadmap);
-    if (!syntax) { container.innerHTML = '<div class="gantt-loading">ไม่มีข้อมูล roadmap</div>'; return; }
-
-    const theme = document.documentElement.getAttribute('data-theme') === 'light' ? 'default' : 'dark';
-    mermaid.initialize({ startOnLoad: false, theme, securityLevel: 'loose' });
-
-    try {
-      const id = 'gantt-' + Date.now();
-      const { svg } = await mermaid.render(id, syntax);
-      container.innerHTML = svg;
-    } catch(e) {
-      container.innerHTML = '<div class="gantt-loading">ไม่สามารถแสดง timeline ได้</div>';
-    }
-  }
-
-  /* ── FINANCIALS ── */
-  function renderFinancials(fin) {
-    if (!fin || !fin.metrics || !fin.metrics.length) {
-      return '<div class="empty">ยังไม่มีข้อมูลทางการเงิน — เพิ่มใน financials ของ data.json</div>';
-    }
-    const years    = fin.years    || [];
-    const currency = fin.currency || 'USD';
-    const unit     = fin.unit     || 'Million';
-    const linksHtml = renderFinLinks(fin.links || []);
-    return `
-      ${linksHtml}
-      <div class="fin-section">
-        <div class="fin-title">📈 แนวโน้ม Revenue</div>
-        <div class="chart-container"><canvas id="fin-chart"></canvas></div>
+        <div class="seg-donut-wrap"><canvas id="seg-donut" class="seg-donut-canvas"></canvas></div>
       </div>
-      <div class="fin-section">
-        <div class="fin-title">📋 ตารางข้อมูลทางการเงิน (${currency}, ${unit})</div>
-        <div style="overflow-x:auto">
-          <table class="fin-table">
-            <thead>
-              <tr><th>Metric</th>${years.map(y=>`<th>${y}</th>`).join('')}</tr>
-            </thead>
-            <tbody>
-              ${fin.metrics.map(m => `
-                <tr>
-                  <td>${m.name}</td>
-                  ${m.values.map((v,i) => {
-                    const prev = m.values[i-1];
-                    const change = prev!=null ? ((v-prev)/Math.abs(prev)*100).toFixed(1) : null;
-                    const color = change>0 ? 'var(--green)' : change<0 ? 'var(--red)' : '';
-                    return `<td>${v.toLocaleString()}${change!=null?`<br><small style="color:${color};font-family:'JetBrains Mono',monospace">${change>0?'+':''}${change}%</small>`:''}</td>`;
-                  }).join('')}
-                </tr>`).join('')}
-            </tbody>
-          </table>
+    </div>` : '';
+
+  const geoHtml = ov.geographies?.length ? `
+    <div class="ov-section">
+      <div class="ov-title">🌍 รายได้แยกตามภูมิภาค</div>
+      ${ov.geographies.map(g=>`<div class="geo-item">
+        <div class="geo-header"><span>${g.region}</span><span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--text-muted)">${g.revenue_pct}%</span></div>
+        <div class="geo-track"><div class="geo-fill" data-pct="${g.revenue_pct}"></div></div>
+      </div>`).join('')}
+    </div>` : '';
+
+  const typeLabels = { founding:'ก่อตั้ง', merger:'M&A', milestone:'เหตุการณ์', project:'โครงการ', financial:'การเงิน', crisis:'วิกฤต', product:'ผลิตภัณฑ์' };
+  const timelineHtml = ov.timeline?.length ? `
+    <div class="ov-section">
+      <div class="ov-title">📅 ประวัติและเหตุการณ์สำคัญ</div>
+      <div class="tl-filters">
+        <button class="tl-filter active" onclick="filterTl(this,'all')">ทั้งหมด</button>
+        ${['founding','merger','milestone','project','financial','crisis','product'].filter(t=>ov.timeline.some(i=>i.type===t)).map(t=>`<button class="tl-filter" onclick="filterTl(this,'${t}')">${typeLabels[t]||t}</button>`).join('')}
+      </div>
+      <div class="timeline-wrap">
+        ${[...ov.timeline].sort((a,b)=>b.year-a.year).map(ev => {
+          const color = TL_TYPE_COLOR[ev.type] || '#8b949e';
+          return `<div class="tl-item" data-type="${ev.type}">
+            <div class="tl-dot" style="background:${color}"></div>
+            <div class="tl-year">${ev.year} · <span style="color:${color};text-transform:uppercase;font-size:10px">${typeLabels[ev.type]||ev.type}</span></div>
+            <div class="tl-evtitle">${ev.title}</div>
+            <div class="tl-desc">${ev.description}</div>
+          </div>`;
+        }).join('')}
+      </div>
+    </div>` : '';
+
+  const mgmtHtml = ov.management?.length ? `
+    <div class="ov-section">
+      <div class="ov-title">👔 ทีมผู้บริหาร</div>
+      <div class="mgmt-grid">
+        ${ov.management.map(m=>`<div class="mgmt-card">
+          <div class="mgmt-name">${m.name}</div>
+          <div class="mgmt-title">${m.title}</div>
+          ${m.since ? `<div class="mgmt-since">ดำรงตำแหน่งตั้งแต่ปี ${m.since}</div>` : ''}
+          <div class="mgmt-bio">${m.background}</div>
+        </div>`).join('')}
+      </div>
+    </div>` : '';
+
+  const thesisHtml = (ov.bull_case || ov.bear_case) ? `
+    <div class="ov-section">
+      <div class="ov-title">⚖️ วิเคราะห์การลงทุน (Bull vs Bear)</div>
+      <div class="thesis-grid">
+        ${ov.bull_case ? `<div class="thesis-card"><div class="thesis-label bull">🐂 Bull Case — เหตุผลในการถือ</div><div class="thesis-text">${ov.bull_case}</div></div>` : ''}
+        ${ov.bear_case ? `<div class="thesis-card"><div class="thesis-label bear">🐻 Bear Case — ความเสี่ยงหลัก</div><div class="thesis-text">${ov.bear_case}</div></div>` : ''}
+      </div>
+    </div>` : '';
+
+  const risksHtml = ov.key_risks?.length ? `
+    <div class="ov-section">
+      <div class="ov-title">⚠️ ความเสี่ยงสำคัญ (คลิกเพื่อดูรายละเอียด)</div>
+      ${ov.key_risks.map((r,i)=>`<div class="risk-item" onclick="toggleRisk(${i})">
+        <div class="risk-header">
+          <span class="risk-severity sev-${r.severity}">${r.severity==='high'?'สูง':r.severity==='medium'?'กลาง':'ต่ำ'}</span>
+          <span class="risk-name">${r.risk}</span>
+          <span class="risk-toggle" id="risk-tog-${i}">▼</span>
+        </div>
+        <div class="risk-body" id="risk-body-${i}">
+          <div class="risk-desc">${r.description}</div>
+          ${r.mitigation ? `<div class="risk-mitigation"><div class="risk-mit-label">การรับมือ</div>${r.mitigation}</div>` : ''}
+        </div>
+      </div>`).join('')}
+    </div>` : '';
+
+  const ownershipHtml = ov.ownership?.major_shareholders?.length ? `
+    <div class="ov-section">
+      <div class="ov-title">🏦 โครงสร้างผู้ถือหุ้น</div>
+      <div class="ownership-layout">
+        <div style="display:flex;flex-direction:column;align-items:center">
+          <canvas id="own-donut" class="own-donut-canvas"></canvas>
+        </div>
+        <div>
+          ${ov.ownership.major_shareholders.map((sh,i)=>`<div class="sh-item">
+            <div class="sh-dot" style="background:${OWN_COLORS[i%OWN_COLORS.length]}"></div>
+            <div class="sh-name">${sh.name}</div>
+            <div class="sh-type">${sh.type||''}</div>
+            <div class="sh-pct">${sh.pct}%</div>
+          </div>`).join('')}
         </div>
       </div>
-      ${fin.notes ? `<div class="fin-section"><div class="fin-title">📝 หมายเหตุ</div><div style="color:var(--text-muted);font-size:13px;line-height:1.6">${fin.notes}</div></div>` : ''}
-    `;
-  }
+    </div>` : '';
 
-  function renderFinLinks(links) {
-    if (!links || !links.length) return '';
-    const cards = links.map(lk => {
-      const info  = LINK_ICONS[lk.type] || { icon: '🔗', cls: 'type-other' };
-      const label = [lk.type, lk.year, lk.quarter].filter(Boolean).join(' ');
-      return `
-        <a class="fin-link-card" href="${lk.url}" target="_blank" rel="noopener">
-          <div class="fin-link-icon ${info.cls}">${info.icon}</div>
-          <div class="fin-link-info">
-            <div class="fin-link-title">${lk.title}</div>
-            <div class="fin-link-type">${label}</div>
-          </div>
-          <span class="fin-link-arrow">↗</span>
-        </a>`;
-    }).join('');
-    return `
-      <div class="fin-section">
-        <div class="fin-title">🔗 เอกสารทางการ</div>
-        <div class="fin-links-grid">${cards}</div>
-      </div>`;
-  }
+  const corpHtml = ov.ownership?.corporate_structure?.length ? `
+    <div class="ov-section">
+      <div class="ov-title">🏗️ โครงสร้างกลุ่มบริษัทและบริษัทร่วม</div>
+      <div class="org-wrap" id="org-chart-wrap">
+        <div class="gantt-loading">กำลังสร้างแผนผัง...</div>
+      </div>
+    </div>` : '';
 
-  let finChartInstance = null;
-  function drawFinChart(fin) {
-    const ctx = document.getElementById('fin-chart');
-    if (!ctx) return;
-    if (finChartInstance) { finChartInstance.destroy(); finChartInstance = null; }
-    const revenueMetric = fin.metrics.find(m => m.name.toLowerCase().includes('revenue') || m.name.toLowerCase().includes('รายได้'));
-    if (!revenueMetric) return;
-    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
-    const gridColor = isLight ? '#e2e8f0' : '#21262d';
-    const tickColor = isLight ? '#64748b' : '#8b949e';
-    const barColor  = isLight ? 'rgba(37,99,235,0.2)'  : 'rgba(88,166,255,0.25)';
-    const borderCol = isLight ? '#2563eb' : '#58a6ff';
-    finChartInstance = new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: fin.years,
-        datasets: [{
-          label: revenueMetric.name, data: revenueMetric.values,
-          backgroundColor: barColor, borderColor: borderCol,
-          borderWidth: 2, borderRadius: 6,
-        }]
-      },
-      options: {
-        responsive: true, maintainAspectRatio: false,
-        plugins: { legend: { labels: { color: tickColor } } },
-        scales: {
-          x: { grid: { color: gridColor }, ticks: { color: tickColor } },
-          y: { grid: { color: gridColor }, ticks: { color: tickColor } }
-        }
-      }
+  return tvChartHtml + snapshotHtml + moatHtml + segmentsHtml + geoHtml + timelineHtml + mgmtHtml + thesisHtml + risksHtml + ownershipHtml + corpHtml;
+}
+
+window.filterTl = function(btn, type) {
+  document.querySelectorAll('.tl-filter').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.tl-item').forEach(item => {
+    item.classList.toggle('hidden', type !== 'all' && item.dataset.type !== type);
+  });
+};
+
+window.toggleRisk = function(i) {
+  const body = document.getElementById('risk-body-' + i);
+  const tog  = document.getElementById('risk-tog-' + i);
+  if (!body) return;
+  body.classList.toggle('open');
+  if (tog) tog.textContent = body.classList.contains('open') ? '▲' : '▼';
+};
+
+function animateBars() {
+  requestAnimationFrame(() => {
+    document.querySelectorAll('.seg-bar-fill,.geo-fill').forEach(bar => {
+      bar.style.width = (bar.dataset.pct || 0) + '%';
     });
+  });
+}
+
+/* ── SEGMENT DONUT ── */
+let segDonutChart = null;
+function drawSegmentDonut(segments) {
+  const canvas = document.getElementById('seg-donut');
+  if (!canvas || !segments.length) return;
+  if (segDonutChart) { segDonutChart.destroy(); segDonutChart = null; }
+  const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+  segDonutChart = new Chart(canvas, {
+    type: 'doughnut',
+    data: {
+      labels: segments.map(s => s.name),
+      datasets: [{ data: segments.map(s => s.revenue_pct), backgroundColor: segments.map(s => SEG_TYPE_COLOR[s.type]||'#8b949e'), borderColor: isLight?'#fff':'#161b22', borderWidth: 2 }]
+    },
+    options: { responsive:true, maintainAspectRatio:true, plugins:{ legend:{display:false}, tooltip:{ callbacks:{ label: ctx => ` ${ctx.label}: ${ctx.raw}%` } } } }
+  });
+}
+
+/* ── OWNERSHIP DONUT ── */
+let ownDonutChart = null;
+function drawOwnershipDonut(shareholders) {
+  const canvas = document.getElementById('own-donut');
+  if (!canvas || !shareholders.length) return;
+  if (ownDonutChart) { ownDonutChart.destroy(); ownDonutChart = null; }
+  const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+  ownDonutChart = new Chart(canvas, {
+    type: 'doughnut',
+    data: {
+      labels: shareholders.map(s => s.name),
+      datasets: [{ data: shareholders.map(s => s.pct), backgroundColor: shareholders.map((_,i) => OWN_COLORS[i%OWN_COLORS.length]), borderColor: isLight?'#fff':'#161b22', borderWidth: 2 }]
+    },
+    options: { responsive:true, maintainAspectRatio:true, plugins:{ legend:{display:false}, tooltip:{ callbacks:{ label: ctx => ` ${ctx.label}: ${ctx.raw}%` } } } }
+  });
+}
+
+/* ── ORG CHART (Mermaid) ── */
+async function renderOrgChart(corpStructure) {
+  const wrap = document.getElementById('org-chart-wrap');
+  if (!wrap || !corpStructure?.length) return;
+  const parent = corpStructure[0];
+  if (!parent) return;
+
+  function safeId(str) { return 'n' + str.replace(/[^a-zA-Z0-9]/g, '_').substring(0, 18); }
+
+  let syntax = 'flowchart TD\n';
+  const parentId = safeId(parent.name);
+  syntax += `    ${parentId}["${parent.name}"]\n`;
+
+  (parent.children || []).forEach(child => {
+    const childId = safeId(child.name);
+    const pct = child.ownership_pct != null ? child.ownership_pct + '%' : '';
+    const partner = child.partner ? ' | ' + child.partner : '';
+    syntax += `    ${parentId} --> ${childId}["${child.name} ${pct}${partner}"]\n`;
+  });
+
+  const theme = document.documentElement.getAttribute('data-theme') === 'light' ? 'default' : 'dark';
+  mermaid.initialize({ startOnLoad: false, theme, securityLevel: 'loose' });
+  try {
+    const { svg } = await mermaid.render('org-' + Date.now(), syntax);
+    wrap.innerHTML = svg;
+  } catch(e) {
+    wrap.innerHTML = '<div class="gantt-loading">ไม่สามารถแสดงแผนผังได้</div>';
   }
+}
 
-  /* ── TAB SWITCH ── */
-  window.switchTab = function(tab) {
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-    const tabs = ['notes','quotes','roadmap','financials'];
-    document.querySelectorAll('.tab-btn')[tabs.indexOf(tab)]?.classList.add('active');
-    document.getElementById(`tab-${tab}`)?.classList.add('active');
-    if (tab === 'financials' && companyData?.financials) {
-      setTimeout(() => drawFinChart(companyData.financials), 50);
-    }
-    if (tab === 'roadmap' && companyData?.roadmap?.length) {
-      setTimeout(() => renderGanttChart(companyData.roadmap), 50);
-    }
-  };
+/* ── NOTES PANEL ── */
+function renderNotesPanel(notes) {
+  if (!notes.length) return '<div class="empty">ยังไม่มีบันทึก — เพิ่มใน notes array ของ data.json</div>';
+  const allTags  = collectTags(notes, 'tags');
+  const filterBar = tagFilterBar(allTags, activeNoteTag, 'setNoteTag', 'clearNoteTag');
+  const cards = notes.slice().reverse().map((n, i) => {
+    const hidden = activeNoteTag && !(n.tags||[]).includes(activeNoteTag) ? 'hidden' : '';
+    return `<div class="note-card stagger ${hidden}" style="--i:${i}">
+      <div class="note-header">
+        <div class="note-title">${n.title}</div>
+        <div class="note-date">${formatDate(n.date)}</div>
+      </div>
+      ${(n.tags||[]).length ? `<div class="note-tags">${n.tags.map(t=>`<button class="note-tag ${activeNoteTag===t?'active':''}" onclick="setNoteTag('${t}')">#${t}</button>`).join('')}</div>` : ''}
+      <div class="note-body">${n.content}</div>
+      ${n.rating ? `<div class="note-rating">${'★'.repeat(n.rating)}${'☆'.repeat(5-n.rating)} Conviction</div>` : ''}
+    </div>`;
+  }).join('');
+  const emptyMsg = activeNoteTag ? `<div class="tag-filter-empty">ไม่มี Note ที่มี tag #${activeNoteTag}</div>` : '';
+  return filterBar + cards + emptyMsg;
+}
 
-  loadCompany();
+/* ── QUOTES PANEL ── */
+function renderQuotesPanel(quotes) {
+  if (!quotes.length) return '<div class="empty">ยังไม่มี quotes — เพิ่มใน quotes array ของ data.json</div>';
+  const allTags   = collectTags(quotes, 'tag');
+  const filterBar = tagFilterBar(allTags, activeQuoteTag, 'setQuoteTag', 'clearQuoteTag');
+  const cards = quotes.slice().reverse().map((q, i) => {
+    const hidden = activeQuoteTag && q.tag !== activeQuoteTag ? 'hidden' : '';
+    return `<div class="quote-card stagger ${hidden}" style="--i:${i}">
+      <div class="quote-meta">
+        <span class="quote-source">${q.source}</span>
+        <span class="quote-speaker">— ${q.speaker||'Management'}</span>
+        <span class="quote-date">${formatDate(q.date)}</span>
+      </div>
+      <div class="quote-text">${q.quote}</div>
+      ${q.quote_th ? `<div class="quote-th"><div class="quote-th-label">🇹🇭 คำแปลภาษาไทย</div>${q.quote_th}</div>` : ''}
+      ${q.tag ? `<button class="quote-tag-link ${activeQuoteTag===q.tag?'active':''}" onclick="setQuoteTag('${q.tag}')">#${q.tag}</button>` : ''}
+    </div>`;
+  }).join('');
+  const emptyMsg = activeQuoteTag ? `<div class="tag-filter-empty">ไม่มี Quote ที่มี tag #${activeQuoteTag}</div>` : '';
+  return filterBar + cards + emptyMsg;
+}
+
+window.setNoteTag  = function(tag) { activeNoteTag  = activeNoteTag===tag?null:tag; document.getElementById('tab-notes').innerHTML  = renderNotesPanel(companyData.notes||[]); };
+window.clearNoteTag= function()    { activeNoteTag  = null; document.getElementById('tab-notes').innerHTML  = renderNotesPanel(companyData.notes||[]); };
+window.setQuoteTag = function(tag) { activeQuoteTag = activeQuoteTag===tag?null:tag; document.getElementById('tab-quotes').innerHTML = renderQuotesPanel(companyData.quotes||[]); };
+window.clearQuoteTag=function()    { activeQuoteTag = null; document.getElementById('tab-quotes').innerHTML = renderQuotesPanel(companyData.quotes||[]); };
+
+/* ── ROADMAP PANEL ── */
+function renderRoadmapPanel(roadmap, rmStats) {
+  return `
+    <div class="roadmap-summary">
+      <div class="rm-sum-card stagger" style="--i:0"><div class="rm-sum-num" style="color:var(--green)">${rmStats.delivered}</div><div class="rm-sum-label">สำเร็จ ✅</div></div>
+      <div class="rm-sum-card stagger" style="--i:1"><div class="rm-sum-num" style="color:var(--yellow)">${rmStats.pending}</div><div class="rm-sum-label">รอดำเนินการ ⏳</div></div>
+      <div class="rm-sum-card stagger" style="--i:2"><div class="rm-sum-num" style="color:var(--red)">${rmStats.missed}</div><div class="rm-sum-label">พลาด ❌</div></div>
+      <div class="rm-sum-card stagger" style="--i:3"><div class="rm-sum-num" style="color:var(--purple)">${rmStats.partial}</div><div class="rm-sum-label">บางส่วน ⚠️</div></div>
+    </div>
+    <div class="gantt-section">
+      <div class="gantt-title">📅 แผนผัง Timeline</div>
+      <div class="gantt-body" id="gantt-container"><div class="gantt-loading">กำลังสร้าง timeline...</div></div>
+    </div>
+    <div class="roadmap-filters">
+      <button class="rm-filter active" onclick="filterRoadmap('all',this)">ทั้งหมด</button>
+      <button class="rm-filter" onclick="filterRoadmap('delivered',this)">✅ สำเร็จ</button>
+      <button class="rm-filter" onclick="filterRoadmap('pending',this)">⏳ รอดำเนินการ</button>
+      <button class="rm-filter" onclick="filterRoadmap('missed',this)">❌ พลาด</button>
+      <button class="rm-filter" onclick="filterRoadmap('partial',this)">⚠️ บางส่วน</button>
+      <button class="rm-filter" onclick="filterRoadmap('monitoring',this)">👀 ติดตาม</button>
+    </div>
+    <div id="roadmap-list">${renderRoadmapItems(roadmap)}</div>`;
+}
+
+function renderRoadmapItems(items) {
+  const filtered = rmFilter==='all' ? items : items.filter(r=>r.status===rmFilter);
+  if (!filtered.length) return '<div class="empty">ไม่มีรายการ</div>';
+  return [...filtered].sort((a,b)=>new Date(b.date_said)-new Date(a.date_said)).map((r,i)=>`
+    <div class="roadmap-item stagger" style="--i:${i}">
+      <div class="rm-status-dot status-${r.status}"></div>
+      <div>
+        <div class="rm-commitment">${r.commitment}</div>
+        <div class="rm-source">📅 พูดเมื่อ ${formatDate(r.date_said)} · ${r.source}</div>
+        ${r.follow_up ? `<div class="rm-followup"><div class="rm-followup-label">ผลลัพธ์ (${formatDate(r.follow_up_date)})</div>${r.follow_up}</div>` : ''}
+      </div>
+      <span class="rm-badge badge-${r.status}">${STATUS_LABELS[r.status]||r.status}</span>
+    </div>`).join('');
+}
+
+window.filterRoadmap = function(f, btn) {
+  rmFilter = f;
+  document.querySelectorAll('.rm-filter').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  document.getElementById('roadmap-list').innerHTML = renderRoadmapItems(companyData.roadmap||[]);
+};
+
+/* ── MERMAID GANTT ── */
+function extractEndDate(text, dateSaid) {
+  const qm = text.match(/Q([1-4])\s+(20\d\d)/);
+  if (qm) { const em = parseInt(qm[1])*3; return `${qm[2]}-${String(em).padStart(2,'0')}-28`; }
+  const ym = text.match(/\b(20\d\d)[-–]?(20\d\d)?\b/);
+  if (ym) return `${ym[2]||ym[1]}-12-31`;
+  const d = new Date(dateSaid); d.setFullYear(d.getFullYear()+1);
+  return d.toISOString().split('T')[0];
+}
+
+function buildGanttSyntax(roadmap) {
+  const sorted = [...roadmap].sort((a,b)=>new Date(a.date_said)-new Date(b.date_said));
+  const sections  = { delivered:sorted.filter(r=>r.status==='delivered'), monitoring:sorted.filter(r=>r.status==='monitoring'), pending:sorted.filter(r=>r.status==='pending'), partial:sorted.filter(r=>r.status==='partial'), missed:sorted.filter(r=>r.status==='missed') };
+  const modifiers = { delivered:'done, ', monitoring:'active, ', pending:'', partial:'crit, ', missed:'crit, ' };
+  const labels    = { delivered:'Delivered', monitoring:'Monitoring', pending:'Pending', partial:'Partial', missed:'Missed' };
+  let syntax = `gantt\n    dateFormat  YYYY-MM-DD\n    axisFormat  %b %Y\n`;
+  let hasContent = false;
+  Object.entries(sections).forEach(([status, items]) => {
+    if (!items.length) return;
+    hasContent = true;
+    syntax += `    section ${labels[status]}\n`;
+    items.forEach((r, i) => {
+      const shortText = r.commitment.split(' ').slice(0,6).join(' ').replace(/[:#]/g,'')+' ...';
+      syntax += `    ${shortText} :${modifiers[status]}rm${status}${i}, ${r.date_said}, ${extractEndDate(r.commitment, r.date_said)}\n`;
+    });
+  });
+  return hasContent ? syntax : null;
+}
+
+async function renderGanttChart(roadmap) {
+  const container = document.getElementById('gantt-container');
+  if (!container) return;
+  const syntax = buildGanttSyntax(roadmap);
+  if (!syntax) { container.innerHTML = '<div class="gantt-loading">ไม่มีข้อมูล roadmap</div>'; return; }
+  const theme = document.documentElement.getAttribute('data-theme') === 'light' ? 'default' : 'dark';
+  mermaid.initialize({ startOnLoad:false, theme, securityLevel:'loose' });
+  try {
+    const { svg } = await mermaid.render('gantt-'+Date.now(), syntax);
+    container.innerHTML = svg;
+  } catch(e) {
+    container.innerHTML = '<div class="gantt-loading">ไม่สามารถแสดง timeline ได้</div>';
+  }
+}
+
+/* ── FINANCIALS ── */
+function renderFinancials(fin) {
+  if (!fin || !fin.metrics || !fin.metrics.length) return '<div class="empty">ยังไม่มีข้อมูลทางการเงิน — เพิ่มใน financials ของ data.json</div>';
+  const years    = fin.years    || [];
+  const currency = fin.currency || 'USD';
+  const unit     = fin.unit     || 'Million';
+  const linksHtml  = renderFinLinks(fin.links || []);
+  const tvFundHtml = companyData?.tradingview_symbol ? `
+    <div class="fin-section">
+      <div class="fin-title">📊 ข้อมูลพื้นฐาน — TradingView Financials</div>
+      <div class="tv-fund-wrap" id="tv-fundamentals-outer"></div>
+    </div>` : '';
+  const sankeyHtml = fin.breakdown?.sankey ? `
+    <div class="fin-section">
+      <div class="fin-title">🌊 Revenue Breakdown — Sankey Diagram (${fin.breakdown.sankey.year||''})</div>
+      <div class="sankey-container" id="sankey-chart"></div>
+    </div>` : '';
+  return `${linksHtml}${tvFundHtml}${sankeyHtml}
+    <div class="fin-section">
+      <div class="fin-title">📈 แนวโน้ม Revenue</div>
+      <div class="chart-container"><canvas id="fin-chart"></canvas></div>
+    </div>
+    <div class="fin-section">
+      <div class="fin-title">📋 ตารางข้อมูลทางการเงิน (${currency}, ${unit})</div>
+      <div style="overflow-x:auto">
+        <table class="fin-table">
+          <thead><tr><th>รายการ</th>${years.map(y=>`<th>${y}</th>`).join('')}</tr></thead>
+          <tbody>${fin.metrics.map(m=>`<tr><td>${m.name}</td>${m.values.map((v,i)=>{
+            const prev=m.values[i-1];
+            const ch=prev!=null?((v-prev)/Math.abs(prev)*100).toFixed(1):null;
+            const col=ch>0?'var(--green)':ch<0?'var(--red)':'';
+            return `<td>${v.toLocaleString()}${ch!=null?`<br><small style="color:${col};font-family:'JetBrains Mono',monospace">${ch>0?'+':''}${ch}%</small>`:''}</td>`;
+          }).join('')}</tr>`).join('')}</tbody>
+        </table>
+      </div>
+    </div>
+    ${fin.notes ? `<div class="fin-section"><div class="fin-title">📝 หมายเหตุ</div><div style="color:var(--text-muted);font-size:13px;line-height:1.6">${fin.notes}</div></div>` : ''}`;
+}
+
+function renderFinLinks(links) {
+  if (!links?.length) return '';
+  const cards = links.map(lk=>{
+    const info = LINK_ICONS[lk.type]||{icon:'🔗',cls:'type-other'};
+    const label= [lk.type,lk.year,lk.quarter].filter(Boolean).join(' ');
+    return `<a class="fin-link-card" href="${lk.url}" target="_blank" rel="noopener">
+      <div class="fin-link-icon ${info.cls}">${info.icon}</div>
+      <div class="fin-link-info"><div class="fin-link-title">${lk.title}</div><div class="fin-link-type">${label}</div></div>
+      <span class="fin-link-arrow">↗</span></a>`;
+  }).join('');
+  return `<div class="fin-section"><div class="fin-title">🔗 เอกสารทางการ</div><div class="fin-links-grid">${cards}</div></div>`;
+}
+
+/* ── SANKEY (Plotly) ── */
+function drawSankeyChart(fin) {
+  const el = document.getElementById('sankey-chart');
+  if (!el || !fin.breakdown?.sankey) return;
+  const sk = fin.breakdown.sankey;
+  const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+  const bg   = isLight ? '#ffffff' : '#161b22';
+  const fc   = isLight ? '#0f172a' : '#e6edf3';
+  Plotly.newPlot(el, [{
+    type: 'sankey',
+    orientation: 'h',
+    node: {
+      pad: 15, thickness: 20,
+      line: { color: isLight?'#e2e8f0':'#30363d', width: 0.5 },
+      label: sk.nodes.map(n=>n.label),
+      color: sk.nodes.map(n=>n.color),
+    },
+    link: {
+      source: sk.links.map(l=>l.source),
+      target: sk.links.map(l=>l.target),
+      value:  sk.links.map(l=>l.value),
+      color:  sk.links.map(l=>(sk.nodes[l.source]?.color||'#888')+'55'),
+    }
+  }], {
+    paper_bgcolor: bg, plot_bgcolor: bg,
+    font: { size:11, color:fc, family:"'JetBrains Mono',monospace" },
+    margin: { l:10, r:10, t:10, b:10 },
+  }, { responsive:true, displayModeBar:false });
+}
+
+/* ── FIN CHART ── */
+let finChartInstance = null;
+function drawFinChart(fin) {
+  const ctx = document.getElementById('fin-chart');
+  if (!ctx) return;
+  if (finChartInstance) { finChartInstance.destroy(); finChartInstance = null; }
+  const revenueMetric = fin.metrics.find(m=>m.name.toLowerCase().includes('revenue')||m.name.toLowerCase().includes('รายได้'));
+  if (!revenueMetric) return;
+  const isLight = document.documentElement.getAttribute('data-theme')==='light';
+  const gridColor=isLight?'#e2e8f0':'#21262d', tickColor=isLight?'#64748b':'#8b949e';
+  const barColor=isLight?'rgba(37,99,235,0.2)':'rgba(88,166,255,0.25)', borderCol=isLight?'#2563eb':'#58a6ff';
+  finChartInstance = new Chart(ctx, {
+    type:'bar',
+    data:{ labels:fin.years, datasets:[{label:revenueMetric.name, data:revenueMetric.values, backgroundColor:barColor, borderColor:borderCol, borderWidth:2, borderRadius:6}] },
+    options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{labels:{color:tickColor}}}, scales:{ x:{grid:{color:gridColor},ticks:{color:tickColor}}, y:{grid:{color:gridColor},ticks:{color:tickColor}} } }
+  });
+}
+
+/* ── TRADINGVIEW WIDGETS ── */
+function injectTVWidget(containerId, scriptSrc, config) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  container.innerHTML = '';
+  const wrap = document.createElement('div');
+  wrap.className = 'tradingview-widget-container';
+  wrap.style.cssText = 'height:100%;width:100%';
+  const wdiv = document.createElement('div');
+  wdiv.className = 'tradingview-widget-container__widget';
+  wdiv.style.cssText = 'height:calc(100% - 28px);width:100%';
+  wrap.appendChild(wdiv);
+  const copy = document.createElement('div');
+  copy.style.cssText = 'font-size:10px;padding:4px 8px;color:var(--text-muted)';
+  copy.innerHTML = 'ข้อมูลโดย <a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank" style="color:var(--accent)">TradingView</a>';
+  wrap.appendChild(copy);
+  const script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src = scriptSrc;
+  script.async = true;
+  script.textContent = JSON.stringify(config);
+  wrap.appendChild(script);
+  container.appendChild(wrap);
+}
+
+function renderTVChart(symbol) {
+  if (!symbol || !document.getElementById('tv-chart-outer')) return;
+  const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+  injectTVWidget('tv-chart-outer',
+    'https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js',
+    {
+      allow_symbol_change: true,
+      calendar: false,
+      details: false,
+      hide_side_toolbar: true,
+      hide_top_toolbar: false,
+      hide_legend: false,
+      hide_volume: false,
+      hotlist: false,
+      interval: 'D',
+      locale: 'en',
+      save_image: true,
+      style: '1',
+      symbol: symbol,
+      theme: isLight ? 'light' : 'dark',
+      timezone: 'Etc/UTC',
+      backgroundColor: isLight ? '#ffffff' : '#0d1117',
+      gridColor: isLight ? 'rgba(0,0,0,0.05)' : 'rgba(242,242,242,0.06)',
+      watchlist: [],
+      withdateranges: true,
+      compareSymbols: [],
+      studies: [],
+      autosize: true
+    }
+  );
+}
+
+function renderTVFundamentals(symbol) {
+  if (!symbol || !document.getElementById('tv-fundamentals-outer')) return;
+  const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+  injectTVWidget('tv-fundamentals-outer',
+    'https://s3.tradingview.com/external-embedding/embed-widget-financials.js',
+    {
+      symbol: symbol,
+      colorTheme: isLight ? 'light' : 'dark',
+      displayMode: 'regular',
+      isTransparent: true,
+      locale: 'en',
+      width: '100%',
+      height: 530
+    }
+  );
+}
+
+/* ── TAB SWITCH ── */
+window.switchTab = function(tab) {
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn')[TAB_ORDER.indexOf(tab)]?.classList.add('active');
+  document.getElementById('tab-'+tab)?.classList.add('active');
+  if (tab==='financials' && companyData?.financials) {
+    setTimeout(()=>{ drawFinChart(companyData.financials); drawSankeyChart(companyData.financials); }, 50);
+  }
+  if (tab==='roadmap' && companyData?.roadmap?.length) {
+    setTimeout(()=>renderGanttChart(companyData.roadmap), 50);
+  }
+  if (tab==='overview' && companyData?.overview) {
+    setTimeout(()=>{
+      drawSegmentDonut(companyData.overview.segments||[]);
+      drawOwnershipDonut(companyData.overview.ownership?.major_shareholders||[]);
+      animateBars();
+      renderTVChart(companyData.tradingview_symbol);
+    }, 50);
+  }
+  if (tab==='financials') {
+    setTimeout(()=>renderTVFundamentals(companyData?.tradingview_symbol), 150);
+  }
+};
+
+loadCompany();
 </script>
 </body>
 </html>
