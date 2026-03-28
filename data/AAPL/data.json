@@ -85,6 +85,33 @@
   "financials": {
     "currency": "USD",
     "unit": "Billion",
+    "links": [
+      {
+        "title": "Annual Report FY2024",
+        "type": "Annual Report",
+        "year": 2024,
+        "url": "https://investor.apple.com/sec-filings/annual-reports/default.aspx"
+      },
+      {
+        "title": "10-K FY2024",
+        "type": "10-K",
+        "year": 2024,
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000320193&type=10-K&dateb=&owner=include&count=10"
+      },
+      {
+        "title": "10-Q Q1 FY2025",
+        "type": "10-Q",
+        "year": 2025,
+        "quarter": "Q1",
+        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000320193&type=10-Q&dateb=&owner=include&count=10"
+      },
+      {
+        "title": "Investor Relations",
+        "type": "Investor Day",
+        "year": 2024,
+        "url": "https://investor.apple.com"
+      }
+    ],
     "years": [2021, 2022, 2023, 2024],
     "metrics": [
       { "name": "Revenue",       "values": [365.8, 394.3, 383.3, 391.0] },

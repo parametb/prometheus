@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Company Research</title>
+  <title>Prometheus</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -53,18 +53,74 @@
     .tab-panel { display: none; }
     .tab-panel.active { display: block; }
 
+    /* ===== TAG FILTER BAR ===== */
+    .tag-filter-bar {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 16px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .tag-filter-label { font-size: 12px; color: var(--text-muted); white-space: nowrap; }
+    .tag-chip {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 12px;
+      padding: 3px 10px;
+      transition: all 0.15s;
+    }
+    .tag-chip:hover { border-color: var(--accent); color: var(--accent); }
+    .tag-chip.active {
+      background: rgba(88,166,255,0.15);
+      border-color: var(--accent);
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .tag-chip-clear {
+      background: none;
+      border: none;
+      color: var(--red);
+      cursor: pointer;
+      font-size: 12px;
+      margin-left: auto;
+      padding: 3px 8px;
+      display: none;
+    }
+    .tag-chip-clear.visible { display: inline; }
+    .tag-filter-empty { font-size: 13px; color: var(--text-muted); padding: 24px; text-align: center; }
+
     /* NOTES TAB */
     .note-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px; margin-bottom: 14px; }
+    .note-card.hidden { display: none; }
     .note-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 12px; gap: 10px; flex-wrap: wrap; }
     .note-title { font-size: 16px; font-weight: 700; }
     .note-date { font-size: 12px; color: var(--text-muted); white-space: nowrap; }
     .note-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
-    .note-tag { background: var(--surface2); border-radius: 20px; color: var(--text-muted); font-size: 11px; padding: 2px 8px; }
+    .note-tag {
+      background: var(--surface2);
+      border: 1px solid transparent;
+      border-radius: 20px;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 11px;
+      padding: 2px 9px;
+      transition: all 0.15s;
+    }
+    .note-tag:hover { color: var(--accent); border-color: var(--accent); }
+    .note-tag.active { background: rgba(88,166,255,0.15); color: var(--accent); border-color: var(--accent); font-weight: 600; }
     .note-body { color: var(--text-muted); font-size: 14px; line-height: 1.7; white-space: pre-wrap; }
     .note-rating { color: var(--yellow); font-size: 14px; margin-top: 10px; }
 
     /* QUOTES TAB */
     .quote-card { background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 0 10px 10px 0; padding: 18px 20px; margin-bottom: 14px; }
+    .quote-card.hidden { display: none; }
     .quote-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
     .quote-source { font-size: 12px; font-weight: 600; color: var(--accent); }
     .quote-speaker { color: var(--text-muted); font-size: 12px; }
@@ -72,13 +128,25 @@
     .quote-text { font-size: 15px; line-height: 1.7; font-style: italic; color: var(--text); }
     .quote-text::before { content: '"'; font-size: 24px; color: var(--accent); line-height: 0; vertical-align: -8px; margin-right: 4px; }
     .quote-text::after { content: '"'; font-size: 24px; color: var(--accent); line-height: 0; vertical-align: -8px; margin-left: 4px; }
-    .quote-tag { background: var(--surface2); border-radius: 20px; color: var(--text-muted); font-size: 11px; padding: 2px 8px; display: inline-block; margin-top: 10px; }
+    .quote-tag-link {
+      background: var(--surface2);
+      border: 1px solid transparent;
+      border-radius: 20px;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 11px;
+      padding: 2px 9px;
+      display: inline-block;
+      margin-top: 10px;
+      transition: all 0.15s;
+    }
+    .quote-tag-link:hover { color: var(--accent); border-color: var(--accent); }
+    .quote-tag-link.active { background: rgba(88,166,255,0.15); color: var(--accent); border-color: var(--accent); }
 
     /* ROADMAP TAB */
     .roadmap-filters { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
     .rm-filter { background: var(--surface2); border: 1px solid var(--border); border-radius: 20px; color: var(--text-muted); cursor: pointer; font-size: 12px; padding: 4px 12px; transition: all 0.2s; }
     .rm-filter:hover, .rm-filter.active { border-color: var(--accent); color: var(--accent); }
-
     .roadmap-item { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; margin-bottom: 12px; display: grid; grid-template-columns: auto 1fr auto; gap: 16px; align-items: start; }
     .rm-status-dot { width: 10px; height: 10px; border-radius: 50%; margin-top: 5px; flex-shrink: 0; }
     .status-delivered { background: var(--green); }
@@ -86,7 +154,6 @@
     .status-missed { background: var(--red); }
     .status-partial { background: var(--purple); }
     .status-monitoring { background: var(--accent); }
-
     .rm-commitment { font-size: 14px; font-weight: 600; margin-bottom: 6px; }
     .rm-source { font-size: 12px; color: var(--text-muted); margin-bottom: 8px; }
     .rm-followup { background: var(--surface2); border-radius: 8px; font-size: 13px; color: var(--text-muted); padding: 8px 12px; }
@@ -97,7 +164,6 @@
     .badge-missed { background: rgba(248,81,73,0.15); color: var(--red); }
     .badge-partial { background: rgba(188,140,255,0.15); color: var(--purple); }
     .badge-monitoring { background: rgba(88,166,255,0.15); color: var(--accent); }
-
     .roadmap-summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-bottom: 20px; }
     .rm-sum-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 12px 16px; text-align: center; }
     .rm-sum-num { font-size: 22px; font-weight: 800; margin-bottom: 3px; }
@@ -113,6 +179,45 @@
     .fin-table td:first-child { text-align: left; color: var(--text-muted); font-size: 12px; }
     .fin-table tr:hover td { background: var(--surface2); }
     .chart-container { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px; margin-bottom: 14px; height: 260px; }
+
+    /* ===== FINANCIAL LINKS ===== */
+    .fin-links-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 10px;
+      margin-bottom: 4px;
+    }
+    .fin-link-card {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      text-decoration: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .fin-link-card:hover { background: var(--surface); border-color: var(--accent); }
+    .fin-link-icon {
+      align-items: center;
+      border-radius: 8px;
+      display: flex;
+      flex-shrink: 0;
+      font-size: 18px;
+      height: 34px;
+      justify-content: center;
+      width: 34px;
+    }
+    .fin-link-icon.type-10k { background: rgba(88,166,255,0.15); }
+    .fin-link-icon.type-10q { background: rgba(63,185,80,0.15); }
+    .fin-link-icon.type-annual { background: rgba(210,153,34,0.15); }
+    .fin-link-icon.type-other { background: rgba(139,148,158,0.15); }
+    .fin-link-info { flex: 1; min-width: 0; }
+    .fin-link-title { font-size: 13px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .fin-link-type { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+    .fin-link-arrow { color: var(--text-muted); font-size: 14px; }
 
     /* EMPTY */
     .empty { text-align: center; padding: 40px; color: var(--text-muted); font-size: 14px; }
@@ -135,11 +240,9 @@
     <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
       <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zm6-4a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zm6-3a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/>
     </svg>
-    Investment Research
+    Prometheus
   </a>
-  <a class="back-btn" href="index.html">
-    ← กลับหน้าหลัก
-  </a>
+  <a class="back-btn" href="index.html">← กลับหน้าหลัก</a>
 </nav>
 
 <main id="main">
@@ -151,9 +254,19 @@
   const ticker = params.get('ticker');
   let companyData = null;
   let rmFilter = 'all';
+  let activeNoteTag = null;
+  let activeQuoteTag = null;
 
   const SECTOR_CLASS = { Technology:'sector-tech', Finance:'sector-finance', Healthcare:'sector-health', Energy:'sector-energy', Consumer:'sector-consumer' };
   const STATUS_LABELS = { delivered:'✅ Delivered', pending:'⏳ Pending', missed:'❌ Missed', partial:'⚠️ Partial', monitoring:'👀 Monitoring' };
+
+  const LINK_ICONS = {
+    '10-K':  { icon: '📄', cls: 'type-10k' },
+    '10-Q':  { icon: '📋', cls: 'type-10q' },
+    'Annual Report': { icon: '📑', cls: 'type-annual' },
+    'Proxy Statement': { icon: '🗳️', cls: 'type-other' },
+    'Investor Day':   { icon: '🎤', cls: 'type-other' },
+  };
 
   function formatDate(d) {
     if (!d) return '—';
@@ -161,38 +274,58 @@
   }
 
   async function loadCompany() {
-    if (!ticker) {
-      document.getElementById('main').innerHTML = '<div class="error">ไม่พบ ticker ในลิงก์</div>';
-      return;
-    }
+    if (!ticker) { document.getElementById('main').innerHTML = '<div class="error">ไม่พบ ticker ในลิงก์</div>'; return; }
     try {
       const res = await fetch(`data/${ticker}/data.json`);
       if (!res.ok) throw new Error('not found');
       companyData = await res.json();
-      document.title = `${companyData.name} — Investment Research`;
+      document.title = `${companyData.name} — Prometheus`;
       render();
     } catch(e) {
       document.getElementById('main').innerHTML = `<div class="error">ไม่พบข้อมูล ${ticker}<br><small>ตรวจสอบว่ามีไฟล์ data/${ticker}/data.json</small></div>`;
     }
   }
 
+  /* ── Collect all unique tags from notes or quotes ── */
+  function collectTags(items, field) {
+    const set = new Set();
+    items.forEach(item => {
+      const val = item[field];
+      if (Array.isArray(val)) val.forEach(t => set.add(t));
+      else if (val) set.add(val);
+    });
+    return [...set].sort();
+  }
+
+  /* ── Tag filter bar HTML ── */
+  function tagFilterBar(tags, activeTag, onClickFn, clearFn) {
+    if (!tags.length) return '';
+    const chips = tags.map(t => `
+      <button class="tag-chip ${activeTag===t?'active':''}" onclick="${onClickFn}('${t}')">#${t}</button>
+    `).join('');
+    return `
+      <div class="tag-filter-bar">
+        <span class="tag-filter-label">กรองด้วย tag:</span>
+        ${chips}
+        <button class="tag-chip-clear ${activeTag?'visible':''}" onclick="${clearFn}()">✕ ล้าง</button>
+      </div>`;
+  }
+
   function render() {
     const c = companyData;
     const sectorClass = SECTOR_CLASS[c.sector] || 'sector-other';
-    const notes = c.notes || [];
-    const quotes = c.quotes || [];
+    const notes   = c.notes   || [];
+    const quotes  = c.quotes  || [];
     const roadmap = c.roadmap || [];
-    const fin = c.financials || {};
+    const fin     = c.financials || {};
 
     const rmStats = {
       delivered: roadmap.filter(r=>r.status==='delivered').length,
-      pending: roadmap.filter(r=>r.status==='pending').length,
-      missed: roadmap.filter(r=>r.status==='missed').length,
-      partial: roadmap.filter(r=>r.status==='partial').length,
+      pending:   roadmap.filter(r=>r.status==='pending').length,
+      missed:    roadmap.filter(r=>r.status==='missed').length,
+      partial:   roadmap.filter(r=>r.status==='partial').length,
     };
-    const deliveryRate = roadmap.length > 0
-      ? Math.round((rmStats.delivered / roadmap.length) * 100)
-      : 0;
+    const deliveryRate = roadmap.length > 0 ? Math.round((rmStats.delivered/roadmap.length)*100) : 0;
 
     document.getElementById('main').innerHTML = `
       <div class="company-header">
@@ -209,71 +342,29 @@
       </div>
 
       <div class="quick-stats">
-        <div class="qs-card">
-          <div class="qs-label">Notes</div>
-          <div class="qs-value">${notes.length}</div>
-          <div class="qs-sub">บันทึกทั้งหมด</div>
-        </div>
-        <div class="qs-card">
-          <div class="qs-label">Quotes</div>
-          <div class="qs-value">${quotes.length}</div>
-          <div class="qs-sub">จาก Earnings Call</div>
-        </div>
-        <div class="qs-card">
-          <div class="qs-label">Roadmap Items</div>
-          <div class="qs-value">${roadmap.length}</div>
-          <div class="qs-sub">สิ่งที่ผู้บริหารพูด</div>
-        </div>
-        <div class="qs-card">
-          <div class="qs-label">Delivery Rate</div>
+        <div class="qs-card"><div class="qs-label">Notes</div><div class="qs-value">${notes.length}</div><div class="qs-sub">บันทึกทั้งหมด</div></div>
+        <div class="qs-card"><div class="qs-label">Quotes</div><div class="qs-value">${quotes.length}</div><div class="qs-sub">จาก Earnings Call</div></div>
+        <div class="qs-card"><div class="qs-label">Roadmap Items</div><div class="qs-value">${roadmap.length}</div><div class="qs-sub">สิ่งที่ผู้บริหารพูด</div></div>
+        <div class="qs-card"><div class="qs-label">Delivery Rate</div>
           <div class="qs-value" style="color:${deliveryRate>=70?'var(--green)':deliveryRate>=40?'var(--yellow)':'var(--red)'}">${deliveryRate}%</div>
-          <div class="qs-sub">ทำตามที่พูดไว้</div>
-        </div>
+          <div class="qs-sub">ทำตามที่พูดไว้</div></div>
       </div>
 
       <div class="tabs">
-        <button class="tab-btn active" onclick="switchTab('notes')">
-          📝 Notes <span class="tab-count">${notes.length}</span>
-        </button>
-        <button class="tab-btn" onclick="switchTab('quotes')">
-          💬 Quotes <span class="tab-count">${quotes.length}</span>
-        </button>
-        <button class="tab-btn" onclick="switchTab('roadmap')">
-          🗺️ Roadmap <span class="tab-count">${roadmap.length}</span>
-        </button>
-        <button class="tab-btn" onclick="switchTab('financials')">
-          📊 Financials
-        </button>
+        <button class="tab-btn active" onclick="switchTab('notes')">📝 Notes <span class="tab-count">${notes.length}</span></button>
+        <button class="tab-btn" onclick="switchTab('quotes')">💬 Quotes <span class="tab-count">${quotes.length}</span></button>
+        <button class="tab-btn" onclick="switchTab('roadmap')">🗺️ Roadmap <span class="tab-count">${roadmap.length}</span></button>
+        <button class="tab-btn" onclick="switchTab('financials')">📊 Financials</button>
       </div>
 
       <!-- NOTES -->
       <div class="tab-panel active" id="tab-notes">
-        ${notes.length === 0 ? '<div class="empty">ยังไม่มีบันทึก — เพิ่มใน notes array ของ data.json</div>' :
-          notes.slice().reverse().map(n => `
-            <div class="note-card">
-              <div class="note-header">
-                <div class="note-title">${n.title}</div>
-                <div class="note-date">${formatDate(n.date)}</div>
-              </div>
-              ${n.tags && n.tags.length ? `<div class="note-tags">${n.tags.map(t=>`<span class="note-tag">#${t}</span>`).join('')}</div>` : ''}
-              <div class="note-body">${n.content}</div>
-              ${n.rating ? `<div class="note-rating">${'★'.repeat(n.rating)}${'☆'.repeat(5-n.rating)} Conviction</div>` : ''}
-            </div>`).join('')}
+        ${renderNotesPanel(notes)}
       </div>
 
       <!-- QUOTES -->
       <div class="tab-panel" id="tab-quotes">
-        ${quotes.length === 0 ? '<div class="empty">ยังไม่มี quotes — เพิ่มใน quotes array ของ data.json</div>' :
-          quotes.slice().reverse().map(q => `
-            <div class="quote-card">
-              <div class="quote-meta">
-                <span class="quote-source">${q.source}</span>
-                <span class="quote-speaker">— ${q.speaker || 'Management'}</span>
-                <span class="quote-date">${formatDate(q.date)}</span>
-              </div>
-              <div class="quote-text">${q.quote}</div>
-              ${q.tag ? `<span class="quote-tag">#${q.tag}</span>` : ''}
-            </div>`).join('')}
+        ${renderQuotesPanel(quotes)}
       </div>
 
       <!-- ROADMAP -->
@@ -289,9 +380,7 @@
             <button class="rm-filter ${f==='all'?'active':''}" onclick="filterRoadmap('${f}')">${f==='all'?'ทั้งหมด':STATUS_LABELS[f]}</button>
           `).join('')}
         </div>
-        <div id="roadmap-list">
-          ${renderRoadmapItems(roadmap)}
-        </div>
+        <div id="roadmap-list">${renderRoadmapItems(roadmap)}</div>
       </div>
 
       <!-- FINANCIALS -->
@@ -300,48 +389,112 @@
       </div>
     `;
 
-    // Draw chart after render
-    if (fin.metrics && fin.years) {
-      setTimeout(() => drawFinChart(fin), 100);
-    }
+    if (fin.metrics && fin.years) setTimeout(() => drawFinChart(fin), 100);
   }
 
+  /* ── NOTES PANEL ── */
+  function renderNotesPanel(notes) {
+    if (!notes.length) return '<div class="empty">ยังไม่มีบันทึก — เพิ่มใน notes array ของ data.json</div>';
+    const allTags = collectTags(notes, 'tags');
+    const filterBar = tagFilterBar(allTags, activeNoteTag, 'setNoteTag', 'clearNoteTag');
+    const cards = notes.slice().reverse().map(n => {
+      const hidden = activeNoteTag && !(n.tags||[]).includes(activeNoteTag) ? 'hidden' : '';
+      return `
+        <div class="note-card ${hidden}" data-tags='${JSON.stringify(n.tags||[])}'>
+          <div class="note-header">
+            <div class="note-title">${n.title}</div>
+            <div class="note-date">${formatDate(n.date)}</div>
+          </div>
+          ${(n.tags||[]).length ? `<div class="note-tags">${n.tags.map(t=>`
+            <button class="note-tag ${activeNoteTag===t?'active':''}" onclick="setNoteTag('${t}')">#${t}</button>
+          `).join('')}</div>` : ''}
+          <div class="note-body">${n.content}</div>
+          ${n.rating ? `<div class="note-rating">${'★'.repeat(n.rating)}${'☆'.repeat(5-n.rating)} Conviction</div>` : ''}
+        </div>`;
+    }).join('');
+    const emptyMsg = activeNoteTag ? `<div class="tag-filter-empty">ไม่มี Note ที่มี tag #${activeNoteTag}</div>` : '';
+    return filterBar + cards + emptyMsg;
+  }
+
+  /* ── QUOTES PANEL ── */
+  function renderQuotesPanel(quotes) {
+    if (!quotes.length) return '<div class="empty">ยังไม่มี quotes — เพิ่มใน quotes array ของ data.json</div>';
+    const allTags = collectTags(quotes, 'tag');
+    const filterBar = tagFilterBar(allTags, activeQuoteTag, 'setQuoteTag', 'clearQuoteTag');
+    const cards = quotes.slice().reverse().map(q => {
+      const hidden = activeQuoteTag && q.tag !== activeQuoteTag ? 'hidden' : '';
+      return `
+        <div class="quote-card ${hidden}">
+          <div class="quote-meta">
+            <span class="quote-source">${q.source}</span>
+            <span class="quote-speaker">— ${q.speaker || 'Management'}</span>
+            <span class="quote-date">${formatDate(q.date)}</span>
+          </div>
+          <div class="quote-text">${q.quote}</div>
+          ${q.tag ? `<button class="quote-tag-link ${activeQuoteTag===q.tag?'active':''}" onclick="setQuoteTag('${q.tag}')">#${q.tag}</button>` : ''}
+        </div>`;
+    }).join('');
+    const emptyMsg = activeQuoteTag ? `<div class="tag-filter-empty">ไม่มี Quote ที่มี tag #${activeQuoteTag}</div>` : '';
+    return filterBar + cards + emptyMsg;
+  }
+
+  /* ── TAG ACTIONS ── */
+  window.setNoteTag = function(tag) {
+    activeNoteTag = (activeNoteTag === tag) ? null : tag;
+    document.getElementById('tab-notes').innerHTML = renderNotesPanel(companyData.notes || []);
+  };
+  window.clearNoteTag = function() {
+    activeNoteTag = null;
+    document.getElementById('tab-notes').innerHTML = renderNotesPanel(companyData.notes || []);
+  };
+  window.setQuoteTag = function(tag) {
+    activeQuoteTag = (activeQuoteTag === tag) ? null : tag;
+    document.getElementById('tab-quotes').innerHTML = renderQuotesPanel(companyData.quotes || []);
+  };
+  window.clearQuoteTag = function() {
+    activeQuoteTag = null;
+    document.getElementById('tab-quotes').innerHTML = renderQuotesPanel(companyData.quotes || []);
+  };
+
+  /* ── ROADMAP ── */
   function renderRoadmapItems(items) {
     const filtered = rmFilter === 'all' ? items : items.filter(r => r.status === rmFilter);
-    if (filtered.length === 0) return '<div class="empty">ไม่มีรายการ</div>';
-
-    const sorted = [...filtered].sort((a,b) => new Date(b.date_said) - new Date(a.date_said));
-    return sorted.map(r => `
+    if (!filtered.length) return '<div class="empty">ไม่มีรายการ</div>';
+    return [...filtered].sort((a,b)=>new Date(b.date_said)-new Date(a.date_said)).map(r => `
       <div class="roadmap-item">
         <div class="rm-status-dot status-${r.status}"></div>
         <div>
           <div class="rm-commitment">${r.commitment}</div>
           <div class="rm-source">📅 พูดเมื่อ ${formatDate(r.date_said)} · ${r.source}</div>
-          ${r.follow_up ? `
-            <div class="rm-followup">
-              <div class="rm-followup-label">ผลลัพธ์ (${formatDate(r.follow_up_date)})</div>
-              ${r.follow_up}
-            </div>` : ''}
+          ${r.follow_up ? `<div class="rm-followup"><div class="rm-followup-label">ผลลัพธ์ (${formatDate(r.follow_up_date)})</div>${r.follow_up}</div>` : ''}
         </div>
-        <span class="rm-badge badge-${r.status}">${STATUS_LABELS[r.status] || r.status}</span>
+        <span class="rm-badge badge-${r.status}">${STATUS_LABELS[r.status]||r.status}</span>
       </div>`).join('');
   }
 
   window.filterRoadmap = function(f) {
     rmFilter = f;
-    document.querySelectorAll('.rm-filter').forEach(b => b.classList.toggle('active', b.textContent.includes(f==='all'?'ทั้งหมด':f)));
-    document.getElementById('roadmap-list').innerHTML = renderRoadmapItems(companyData.roadmap || []);
+    document.querySelectorAll('.rm-filter').forEach(b => {
+      const label = b.textContent.trim();
+      b.classList.toggle('active', f==='all' ? label==='ทั้งหมด' : label.includes(f));
+    });
+    document.getElementById('roadmap-list').innerHTML = renderRoadmapItems(companyData.roadmap||[]);
   };
 
+  /* ── FINANCIALS ── */
   function renderFinancials(fin) {
-    if (!fin || !fin.metrics || fin.metrics.length === 0) {
+    if (!fin || !fin.metrics || !fin.metrics.length) {
       return '<div class="empty">ยังไม่มีข้อมูลทางการเงิน — เพิ่มใน financials ของ data.json</div>';
     }
     const years = fin.years || [];
     const currency = fin.currency || 'USD';
     const unit = fin.unit || 'Million';
 
+    /* Financial Document Links */
+    const linksHtml = renderFinLinks(fin.links || []);
+
     return `
+      ${linksHtml}
       <div class="fin-section">
         <div class="fin-title">📈 แนวโน้ม Revenue</div>
         <div class="chart-container"><canvas id="fin-chart"></canvas></div>
@@ -351,10 +504,7 @@
         <div style="overflow-x:auto">
           <table class="fin-table">
             <thead>
-              <tr>
-                <th>Metric</th>
-                ${years.map(y=>`<th>${y}</th>`).join('')}
-              </tr>
+              <tr><th>Metric</th>${years.map(y=>`<th>${y}</th>`).join('')}</tr>
             </thead>
             <tbody>
               ${fin.metrics.map(m => `
@@ -362,9 +512,9 @@
                   <td>${m.name}</td>
                   ${m.values.map((v,i) => {
                     const prev = m.values[i-1];
-                    const change = prev ? ((v - prev) / Math.abs(prev) * 100).toFixed(1) : null;
-                    const color = change > 0 ? 'var(--green)' : change < 0 ? 'var(--red)' : '';
-                    return `<td>${v.toLocaleString()}${change ? `<br><small style="color:${color}">${change>0?'+':''}${change}%</small>` : ''}</td>`;
+                    const change = prev!=null ? ((v-prev)/Math.abs(prev)*100).toFixed(1) : null;
+                    const color = change>0 ? 'var(--green)' : change<0 ? 'var(--red)' : '';
+                    return `<td>${v.toLocaleString()}${change!=null?`<br><small style="color:${color}">${change>0?'+':''}${change}%</small>`:''}</td>`;
                   }).join('')}
                 </tr>`).join('')}
             </tbody>
@@ -375,28 +525,46 @@
     `;
   }
 
+  /* ── FINANCIAL LINKS ── */
+  function renderFinLinks(links) {
+    if (!links || !links.length) return '';
+    const cards = links.map(lk => {
+      const info = LINK_ICONS[lk.type] || { icon: '🔗', cls: 'type-other' };
+      const label = [lk.type, lk.year, lk.quarter].filter(Boolean).join(' ');
+      return `
+        <a class="fin-link-card" href="${lk.url}" target="_blank" rel="noopener">
+          <div class="fin-link-icon ${info.cls}">${info.icon}</div>
+          <div class="fin-link-info">
+            <div class="fin-link-title">${lk.title}</div>
+            <div class="fin-link-type">${label}</div>
+          </div>
+          <span class="fin-link-arrow">↗</span>
+        </a>`;
+    }).join('');
+    return `
+      <div class="fin-section">
+        <div class="fin-title">🔗 เอกสารทางการ</div>
+        <div class="fin-links-grid">${cards}</div>
+      </div>`;
+  }
+
   function drawFinChart(fin) {
     const ctx = document.getElementById('fin-chart');
     if (!ctx) return;
     const revenueMetric = fin.metrics.find(m => m.name.toLowerCase().includes('revenue') || m.name.toLowerCase().includes('รายได้'));
     if (!revenueMetric) return;
-
     new Chart(ctx, {
       type: 'bar',
       data: {
         labels: fin.years,
         datasets: [{
-          label: revenueMetric.name,
-          data: revenueMetric.values,
-          backgroundColor: 'rgba(88,166,255,0.25)',
-          borderColor: '#58a6ff',
-          borderWidth: 2,
-          borderRadius: 6,
+          label: revenueMetric.name, data: revenueMetric.values,
+          backgroundColor: 'rgba(88,166,255,0.25)', borderColor: '#58a6ff',
+          borderWidth: 2, borderRadius: 6,
         }]
       },
       options: {
-        responsive: true,
-        maintainAspectRatio: false,
+        responsive: true, maintainAspectRatio: false,
         plugins: { legend: { labels: { color: '#8b949e' } } },
         scales: {
           x: { grid: { color: '#21262d' }, ticks: { color: '#8b949e' } },
@@ -407,15 +575,12 @@
   }
 
   window.switchTab = function(tab) {
-    document.querySelectorAll('.tab-btn').forEach((b,i) => b.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
     document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
     const tabs = ['notes','quotes','roadmap','financials'];
-    const idx = tabs.indexOf(tab);
-    document.querySelectorAll('.tab-btn')[idx]?.classList.add('active');
+    document.querySelectorAll('.tab-btn')[tabs.indexOf(tab)]?.classList.add('active');
     document.getElementById(`tab-${tab}`)?.classList.add('active');
-    if (tab === 'financials' && companyData?.financials) {
-      setTimeout(() => drawFinChart(companyData.financials), 50);
-    }
+    if (tab === 'financials' && companyData?.financials) setTimeout(() => drawFinChart(companyData.financials), 50);
   };
 
   loadCompany();
