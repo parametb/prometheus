@@ -1,35 +1,65 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="th" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Prometheus</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
+    /* ── DARK THEME (default) ── */
     :root {
-      --bg: #0d1117;
-      --surface: #161b22;
-      --surface2: #21262d;
-      --border: #30363d;
-      --text: #e6edf3;
-      --text-muted: #8b949e;
-      --accent: #58a6ff;
-      --green: #3fb950;
-      --red: #f85149;
-      --yellow: #d29922;
-      --purple: #bc8cff;
+      --bg: #0d1117; --surface: #161b22; --surface2: #21262d;
+      --border: #30363d; --text: #e6edf3; --text-muted: #8b949e;
+      --accent: #58a6ff; --green: #3fb950; --red: #f85149;
+      --yellow: #d29922; --purple: #bc8cff;
+      --glow: rgba(88,166,255,0.05);
     }
 
+    /* ── LIGHT THEME ── */
+    html[data-theme="light"] {
+      --bg: #f8fafc; --surface: #ffffff; --surface2: #f1f5f9;
+      --border: #e2e8f0; --text: #0f172a; --text-muted: #64748b;
+      --accent: #2563eb; --green: #16a34a; --red: #dc2626;
+      --yellow: #d97706; --purple: #7c3aed;
+      --glow: rgba(37,99,235,0.04);
+    }
+
+    /* ── STAGGER ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .stagger {
+      animation: fadeUp 0.4s ease both;
+      animation-delay: calc(var(--i, 0) * 0.06s);
+    }
+
+    /* ── BASE ── */
     body {
       background: var(--bg);
       color: var(--text);
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       min-height: 100vh;
+      position: relative;
     }
+    body::before {
+      content: '';
+      position: fixed;
+      top: -30%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100vw;
+      height: 100vw;
+      background: radial-gradient(circle, var(--glow) 0%, transparent 65%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    main { max-width: 1100px; margin: 0 auto; padding: 32px 24px; position: relative; z-index: 1; }
 
-    /* NAV */
+    /* ── NAV ── */
     nav {
       background: var(--surface);
       border-bottom: 1px solid var(--border);
@@ -42,22 +72,34 @@
       top: 0;
       z-index: 100;
     }
+    .nav-left  { display: flex; align-items: center; gap: 16px; }
+    .nav-right { display: flex; align-items: center; gap: 12px; }
     .nav-brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 700;
-      font-size: 17px;
-      color: var(--text);
-      text-decoration: none;
+      display: flex; align-items: center; gap: 10px;
+      font-weight: 700; font-size: 17px;
+      color: var(--text); text-decoration: none;
     }
     .nav-brand svg { color: var(--accent); }
-    .nav-meta { font-size: 12px; color: var(--text-muted); }
+    .nav-meta { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--text-muted); }
 
-    /* MAIN */
-    main { max-width: 1100px; margin: 0 auto; padding: 32px 24px; }
+    /* ── THEME TOGGLE ── */
+    .theme-toggle {
+      align-items: center;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text-muted);
+      cursor: pointer;
+      display: flex;
+      font-size: 15px;
+      height: 32px;
+      justify-content: center;
+      transition: border-color 0.2s, color 0.2s;
+      width: 32px;
+    }
+    .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
 
-    /* HEADER SECTION */
+    /* ── PAGE HEADER ── */
     .page-header {
       display: flex;
       align-items: flex-end;
@@ -68,12 +110,7 @@
     }
     .page-title { font-size: 22px; font-weight: 700; }
     .page-sub { color: var(--text-muted); font-size: 13px; margin-top: 4px; }
-
-    .search-bar {
-      display: flex;
-      gap: 8px;
-      align-items: center;
-    }
+    .search-bar { display: flex; gap: 8px; align-items: center; }
     .search-bar input {
       background: var(--surface2);
       border: 1px solid var(--border);
@@ -88,7 +125,7 @@
     .search-bar input:focus { border-color: var(--accent); }
     .search-bar input::placeholder { color: var(--text-muted); }
 
-    /* STATS ROW */
+    /* ── STATS ROW ── */
     .stats-row {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -100,37 +137,28 @@
       border: 1px solid var(--border);
       border-radius: 10px;
       padding: 16px 20px;
+      transition: border-color 0.2s, transform 0.2s;
     }
-    .stat-label { font-size: 12px; color: var(--text-muted); margin-bottom: 6px; }
+    .stat-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-muted); margin-bottom: 6px; }
     .stat-value { font-size: 26px; font-weight: 700; }
 
-    /* FILTER TABS */
-    .filter-tabs {
-      display: flex;
-      gap: 6px;
-      margin-bottom: 20px;
-      flex-wrap: wrap;
-    }
+    /* ── FILTER TABS ── */
+    .filter-tabs { display: flex; gap: 6px; margin-bottom: 20px; flex-wrap: wrap; }
     .filter-tab {
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      color: var(--text-muted);
-      cursor: pointer;
-      font-size: 13px;
-      padding: 5px 14px;
-      transition: all 0.2s;
+      background: var(--surface2); border: 1px solid var(--border);
+      border-radius: 20px; color: var(--text-muted); cursor: pointer;
+      font-size: 13px; padding: 5px 14px; transition: all 0.2s;
     }
     .filter-tab:hover { border-color: var(--accent); color: var(--accent); }
     .filter-tab.active { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
 
-    /* COMPANY GRID */
+    /* ── COMPANY GRID ── */
     .company-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       gap: 16px;
     }
-
     .company-card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -142,100 +170,71 @@
       display: block;
       transition: border-color 0.2s, transform 0.15s;
     }
-    .company-card:hover {
-      border-color: var(--accent);
-      transform: translateY(-2px);
-    }
+    .company-card:hover { border-color: var(--accent); transform: translateY(-3px); }
 
-    .card-top {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      margin-bottom: 14px;
-    }
+    .card-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 14px; }
     .company-logo {
-      width: 44px;
-      height: 44px;
-      border-radius: 10px;
+      align-items: center;
       background: var(--surface2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      font-size: 16px;
-      color: var(--accent);
       border: 1px solid var(--border);
-    }
-    .sector-badge {
-      font-size: 11px;
-      padding: 3px 9px;
-      border-radius: 20px;
-      font-weight: 600;
-    }
-
-    .company-name { font-size: 16px; font-weight: 700; margin-bottom: 2px; }
-    .company-ticker { font-size: 12px; color: var(--text-muted); }
-
-    .card-divider { border: none; border-top: 1px solid var(--border); margin: 14px 0; }
-
-    .card-stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 8px;
-    }
-    .card-stat-label { font-size: 11px; color: var(--text-muted); margin-bottom: 3px; }
-    .card-stat-value { font-size: 13px; font-weight: 600; }
-
-    .card-footer {
-      margin-top: 14px;
+      border-radius: 10px;
+      color: var(--accent);
       display: flex;
-      align-items: center;
-      justify-content: space-between;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      font-weight: 800;
+      height: 44px;
+      justify-content: center;
+      letter-spacing: -0.5px;
+      width: 44px;
     }
-    .card-updated { font-size: 11px; color: var(--text-muted); }
-    .card-arrow { color: var(--accent); font-size: 16px; }
+    .sector-badge { font-size: 11px; padding: 3px 9px; border-radius: 20px; font-weight: 600; }
+    .company-name   { font-size: 16px; font-weight: 700; margin-bottom: 2px; }
+    .company-ticker { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--text-muted); }
+    .card-divider   { border: none; border-top: 1px solid var(--border); margin: 14px 0; }
 
-    /* EMPTY STATE */
-    .empty-state {
-      text-align: center;
-      padding: 60px 20px;
-      color: var(--text-muted);
-    }
+    .card-stats { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+    .card-stat-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--text-muted); margin-bottom: 3px; }
+    .card-stat-value { font-family: 'JetBrains Mono', monospace; font-size: 14px; font-weight: 600; }
+
+    .card-footer { margin-top: 14px; display: flex; align-items: center; justify-content: space-between; }
+    .card-updated { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-muted); }
+    .card-arrow   { color: var(--accent); font-size: 16px; }
+
+    /* ── EMPTY STATE ── */
+    .empty-state { text-align: center; padding: 60px 20px; color: var(--text-muted); }
     .empty-state svg { margin-bottom: 16px; opacity: 0.4; }
     .empty-state p { font-size: 15px; }
+    .loading { text-align: center; padding: 60px; color: var(--text-muted); }
 
-    /* Loading */
-    .loading {
-      text-align: center;
-      padding: 60px;
-      color: var(--text-muted);
-    }
-
-    /* Sector colors */
-    .sector-tech { background: rgba(88,166,255,0.15); color: #58a6ff; }
-    .sector-finance { background: rgba(63,185,80,0.15); color: #3fb950; }
-    .sector-health { background: rgba(248,81,73,0.15); color: #f85149; }
-    .sector-energy { background: rgba(210,153,34,0.15); color: #d29922; }
+    /* ── SECTOR COLORS ── */
+    .sector-tech     { background: rgba(88,166,255,0.15);  color: #58a6ff; }
+    .sector-finance  { background: rgba(63,185,80,0.15);   color: #3fb950; }
+    .sector-health   { background: rgba(248,81,73,0.15);   color: #f85149; }
+    .sector-energy   { background: rgba(210,153,34,0.15);  color: #d29922; }
     .sector-consumer { background: rgba(188,140,255,0.15); color: #bc8cff; }
-    .sector-other { background: rgba(139,148,158,0.15); color: #8b949e; }
-
-    .rating-stars { font-size: 12px; }
+    .sector-other    { background: rgba(139,148,158,0.15); color: #8b949e; }
   </style>
 </head>
 <body>
 
 <nav>
-  <a class="nav-brand" href="index.html">
-    <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
-      <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zm6-4a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zm6-3a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/>
-    </svg>
-    Prometheus
-  </a>
-  <span class="nav-meta" id="last-updated"></span>
+  <div class="nav-left">
+    <a class="nav-brand" href="index.html">
+      <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zm6-4a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zm6-3a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/>
+      </svg>
+      Prometheus
+    </a>
+    <span class="nav-meta" id="last-updated"></span>
+  </div>
+  <div class="nav-right">
+    <button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme" id="theme-btn">🌙</button>
+  </div>
 </nav>
 
 <main>
-  <div class="page-header">
+  <div class="page-header stagger" style="--i:0">
     <div>
       <div class="page-title">Company Watchlist</div>
       <div class="page-sub">Prometheus · ติดตามข้อมูลบริษัท · Annual Report · Earnings Call · Management Tracker</div>
@@ -246,21 +245,21 @@
   </div>
 
   <div class="stats-row" id="stats-row">
-    <div class="stat-card">
-      <div class="stat-label">บริษัททั้งหมด</div>
+    <div class="stat-card stagger" style="--i:1">
+      <div class="stat-label">COMPANIES</div>
       <div class="stat-value" id="stat-total">—</div>
     </div>
-    <div class="stat-card">
-      <div class="stat-label">หมวดหมู่</div>
+    <div class="stat-card stagger" style="--i:2">
+      <div class="stat-label">SECTORS</div>
       <div class="stat-value" id="stat-sectors">—</div>
     </div>
-    <div class="stat-card">
-      <div class="stat-label">อัพเดทล่าสุด</div>
+    <div class="stat-card stagger" style="--i:3">
+      <div class="stat-label">LATEST UPDATE</div>
       <div class="stat-value" style="font-size:16px;padding-top:4px" id="stat-recent">—</div>
     </div>
   </div>
 
-  <div class="filter-tabs" id="filter-tabs">
+  <div class="filter-tabs stagger" style="--i:4" id="filter-tabs">
     <button class="filter-tab active" data-sector="all">ทั้งหมด</button>
   </div>
 
@@ -270,48 +269,54 @@
 </main>
 
 <script>
+  /* ── THEME ── */
+  (function initTheme() {
+    const saved = localStorage.getItem('prometheus-theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', saved);
+    document.getElementById('theme-btn').textContent = saved === 'dark' ? '🌙' : '☀️';
+  })();
+
+  window.toggleTheme = function() {
+    const current = document.documentElement.getAttribute('data-theme');
+    const next = current === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('prometheus-theme', next);
+    document.getElementById('theme-btn').textContent = next === 'dark' ? '🌙' : '☀️';
+  };
+
+  /* ── APP STATE ── */
   let allCompanies = [];
   let currentSector = 'all';
   let searchQuery = '';
 
   const SECTOR_COLORS = {
-    'Technology': 'sector-tech',
-    'Finance': 'sector-finance',
-    'Healthcare': 'sector-health',
-    'Energy': 'sector-energy',
-    'Consumer': 'sector-consumer',
+    'Technology': 'sector-tech', 'Finance': 'sector-finance',
+    'Healthcare': 'sector-health', 'Energy': 'sector-energy', 'Consumer': 'sector-consumer',
   };
-
-  function getSectorClass(sector) {
-    return SECTOR_COLORS[sector] || 'sector-other';
-  }
+  function getSectorClass(sector) { return SECTOR_COLORS[sector] || 'sector-other'; }
 
   function formatDate(dateStr) {
     if (!dateStr) return '—';
-    const d = new Date(dateStr);
-    return d.toLocaleDateString('th-TH', { day:'numeric', month:'short', year:'2-digit' });
+    return new Date(dateStr).toLocaleDateString('th-TH', { day:'numeric', month:'short', year:'2-digit' });
   }
 
+  /* ── LOAD ── */
   async function loadCompanies() {
     try {
       const res = await fetch('data/companies.json');
       allCompanies = await res.json();
 
-      // Update stats
       document.getElementById('stat-total').textContent = allCompanies.length;
       const sectors = [...new Set(allCompanies.map(c => c.sector))];
       document.getElementById('stat-sectors').textContent = sectors.length;
 
-      const sorted = [...allCompanies].sort((a, b) => new Date(b.last_updated) - new Date(a.last_updated));
+      const sorted = [...allCompanies].sort((a,b) => new Date(b.last_updated) - new Date(a.last_updated));
       document.getElementById('stat-recent').textContent = sorted[0]?.ticker || '—';
-      document.getElementById('last-updated').textContent =
-        'อัพเดท: ' + formatDate(sorted[0]?.last_updated);
+      document.getElementById('last-updated').textContent = 'อัพเดท: ' + formatDate(sorted[0]?.last_updated);
 
-      // Build sector filters
       buildFilters(sectors);
-
       renderCards();
-    } catch (e) {
+    } catch(e) {
       document.getElementById('content').innerHTML = `
         <div class="empty-state">
           <svg width="48" height="48" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -352,8 +357,7 @@
     });
 
     const container = document.getElementById('content');
-
-    if (list.length === 0) {
+    if (!list.length) {
       container.innerHTML = `
         <div class="empty-state">
           <svg width="48" height="48" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -363,19 +367,17 @@
         </div>`;
       return;
     }
-
-    container.innerHTML = `<div class="company-grid">${list.map(renderCard).join('')}</div>`;
+    container.innerHTML = `<div class="company-grid">${list.map((c, i) => renderCard(c, i)).join('')}</div>`;
   }
 
-  function renderCard(c) {
-    const sectorClass = getSectorClass(c.sector);
-    const initials = c.ticker.slice(0, 3);
-    const noteCount = c.note_count || 0;
-    const quoteCount = c.quote_count || 0;
+  function renderCard(c, i) {
+    const sectorClass  = getSectorClass(c.sector);
+    const initials     = c.ticker.slice(0, 3);
+    const noteCount    = c.note_count    || 0;
+    const quoteCount   = c.quote_count   || 0;
     const roadmapCount = c.roadmap_count || 0;
-
     return `
-      <a class="company-card" href="company.html?ticker=${c.ticker}">
+      <a class="company-card stagger" style="--i:${i}" href="company.html?ticker=${c.ticker}">
         <div class="card-top">
           <div class="company-logo">${initials}</div>
           <span class="sector-badge ${sectorClass}">${c.sector}</span>
@@ -385,15 +387,15 @@
         <hr class="card-divider">
         <div class="card-stats">
           <div>
-            <div class="card-stat-label">Notes</div>
+            <div class="card-stat-label">NOTES</div>
             <div class="card-stat-value">${noteCount}</div>
           </div>
           <div>
-            <div class="card-stat-label">Quotes</div>
+            <div class="card-stat-label">QUOTES</div>
             <div class="card-stat-value">${quoteCount}</div>
           </div>
           <div>
-            <div class="card-stat-label">Roadmap</div>
+            <div class="card-stat-label">ROADMAP</div>
             <div class="card-stat-value">${roadmapCount}</div>
           </div>
         </div>
@@ -404,7 +406,6 @@
       </a>`;
   }
 
-  // Search
   document.getElementById('search-input').addEventListener('input', e => {
     searchQuery = e.target.value;
     renderCards();
