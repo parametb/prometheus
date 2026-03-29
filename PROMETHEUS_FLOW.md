@@ -7,9 +7,9 @@
 ## API Keys
 
 ```bash
-export DEEPSEEK_API_KEY="sk-fc1a294b7f3743dca8253b2e197ca401"           # platform.deepseek.com
-export AV_API_KEY="Y4564XYFOAAMXZV6"                    # alphavantage.co (US stocks เท่านั้น)
-export SEC_API_KEY="6568a8ded63452e93dba027dc029b09ebdfded7bfb852f0f84f4c93d467819ae"  # sec-api.io
+export DEEPSEEK_API_KEY="sk"           # platform.deepseek.com
+export AV_API_KEY=""                    # alphavantage.co (US stocks เท่านั้น)
+export SEC_API_KEY=""  # sec-api.io
 ```
 
 **sec-api.io ช่วยอะไรได้:**
