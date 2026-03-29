@@ -6,11 +6,14 @@
 
 ## API Keys
 
+Keys อยู่ในไฟล์ `.env` (ไม่เก็บใน Git) — โหลดก่อนรัน script ทุกครั้ง:
+
 ```bash
-export DEEPSEEK_API_KEY="sk"           # platform.deepseek.com
-export AV_API_KEY=""                    # alphavantage.co (US stocks เท่านั้น)
-export SEC_API_KEY=""  # sec-api.io
+source .env
 ```
+
+สร้าง / แก้ `.env` ได้ที่ไฟล์ `investment-research/.env`
+(ดูตัวอย่าง format ในไฟล์นั้นได้เลย — มี `.gitignore` คุ้มกันแล้ว)
 
 **sec-api.io ช่วยอะไรได้:**
 
@@ -26,24 +29,43 @@ export SEC_API_KEY=""  # sec-api.io
 ## ⚡ Token-Efficient Save Protocol (อ่านก่อนทุกครั้ง)
 
 > **กฎข้อเดียว: ห้าม Read + Write `data.json` ทั้งไฟล์เพื่อแก้ไขข้อมูล**
-> ใช้ `patch.py` และ `apply_analysis.py` แทนเสมอ
+> ใช้ scripts ด้านล่างแทนเสมอ
+
+### Partial Update System (ใหม่ — ใช้สำหรับอัปเดตด้วยมือ)
+
+Claude สร้าง JSON patch file → บันทึกใน `data/[TICKER]/patches/` → รัน `merge_patches.py` apply
+
+```bash
+# ดูสถานะปัจจุบัน
+python scripts/apply_patch.py QUBT --info
+
+# apply patch file เดียว
+python scripts/apply_patch.py QUBT data/QUBT/patches/2026-03-29_note.json
+
+# apply ทุก patch ที่รออยู่
+python scripts/merge_patches.py QUBT
+
+# preview ก่อน apply
+python scripts/merge_patches.py QUBT --dry-run
+```
+
+→ ดูตัวอย่าง patch format และ prompt examples เพิ่มเติมได้ที่ **`CLAUDE_DATA_FLOW.md`**
+
+### Automated Pipeline (ใช้กับ DeepSeek)
 
 | งาน | วิธีที่ถูก | วิธีที่ผิด (ห้ามทำ) |
 |-----|-----------|-------------------|
-| เพิ่ม note | `patch.py [T] --append-note '...'` | Read data.json → แก้ → Write |
-| เพิ่ม quote | `patch.py [T] --append-quote '...'` | Read data.json → แก้ → Write |
-| เพิ่ม roadmap | `patch.py [T] --append-roadmap '...'` | Read data.json → แก้ → Write |
-| เพิ่มปีการเงิน | `patch.py [T] --add-year Y --values '{...}'` | Read data.json → แก้ → Write |
-| อัปเดต roadmap status | `patch.py [T] --update-roadmap "..." --status ...` | Read data.json → แก้ → Write |
 | Apply ผล DeepSeek ทั้งหมด | `apply_analysis.py [T] --input file.json` | Read+parse JSON → Read data.json → Write |
-| ดู roadmap สำหรับ track-delivery | `patch.py [T] --extract-roadmap pending` | Read data.json ทั้งไฟล์ |
-| ตรวจสอบสถานะปัจจุบัน | `patch.py [T] --info` | Read data.json ทั้งไฟล์ |
+| ตรวจสอบสถานะ | `patch.py [T] --info` | Read data.json ทั้งไฟล์ |
+| ดู roadmap (track-delivery) | `patch.py [T] --extract-roadmap pending` | Read data.json ทั้งไฟล์ |
 
-**Path ของ scripts** (ใช้ Glob ถ้าไม่แน่ใจ path):
+**Path ของ scripts:**
 ```
-patch.py          → **/investment-research/.claude/scripts/patch.py
-apply_analysis.py → **/investment-research/.claude/scripts/apply_analysis.py
-fetch_analyze.py  → **/analyze-with-deepseek/scripts/fetch_analyze.py
+scripts/apply_patch.py    → investment-research/scripts/apply_patch.py
+scripts/merge_patches.py  → investment-research/scripts/merge_patches.py
+patch.py                  → **/investment-research/.claude/scripts/patch.py
+apply_analysis.py         → **/investment-research/.claude/scripts/apply_analysis.py
+fetch_analyze.py          → **/analyze-with-deepseek/scripts/fetch_analyze.py
 ```
 
 ---
