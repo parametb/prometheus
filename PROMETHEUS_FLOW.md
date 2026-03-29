@@ -4,15 +4,61 @@
 
 ---
 
+## API Keys
+
+```bash
+export DEEPSEEK_API_KEY="sk-..."           # platform.deepseek.com
+export AV_API_KEY="..."                    # alphavantage.co (US stocks เท่านั้น)
+export SEC_API_KEY="6568a8ded63452e93dba027dc029b09ebdfded7bfb852f0f84f4c93d467819ae"  # sec-api.io
+```
+
+**sec-api.io ช่วยอะไรได้:**
+
+| ฟีเจอร์ | US stocks (10-K) | Canadian (40-F) | หมายเหตุ |
+|---------|:---:|:---:|---------|
+| Auto-find filing URL | ✅ | ✅ | ระบุแค่ ticker + form type |
+| Executive compensation | ✅ | ❌ | DEF 14A filers เท่านั้น |
+| Subsidiaries (Exhibit 21) | ✅ | ❌ | 10-K filers เท่านั้น |
+| Section Extractor | ✅ | ❌ | 10-K/10-Q เท่านั้น |
+
+---
+
+## ⚡ Token-Efficient Save Protocol (อ่านก่อนทุกครั้ง)
+
+> **กฎข้อเดียว: ห้าม Read + Write `data.json` ทั้งไฟล์เพื่อแก้ไขข้อมูล**
+> ใช้ `patch.py` และ `apply_analysis.py` แทนเสมอ
+
+| งาน | วิธีที่ถูก | วิธีที่ผิด (ห้ามทำ) |
+|-----|-----------|-------------------|
+| เพิ่ม note | `patch.py [T] --append-note '...'` | Read data.json → แก้ → Write |
+| เพิ่ม quote | `patch.py [T] --append-quote '...'` | Read data.json → แก้ → Write |
+| เพิ่ม roadmap | `patch.py [T] --append-roadmap '...'` | Read data.json → แก้ → Write |
+| เพิ่มปีการเงิน | `patch.py [T] --add-year Y --values '{...}'` | Read data.json → แก้ → Write |
+| อัปเดต roadmap status | `patch.py [T] --update-roadmap "..." --status ...` | Read data.json → แก้ → Write |
+| Apply ผล DeepSeek ทั้งหมด | `apply_analysis.py [T] --input file.json` | Read+parse JSON → Read data.json → Write |
+| ดู roadmap สำหรับ track-delivery | `patch.py [T] --extract-roadmap pending` | Read data.json ทั้งไฟล์ |
+| ตรวจสอบสถานะปัจจุบัน | `patch.py [T] --info` | Read data.json ทั้งไฟล์ |
+
+**Path ของ scripts** (ใช้ Glob ถ้าไม่แน่ใจ path):
+```
+patch.py          → **/investment-research/.claude/scripts/patch.py
+apply_analysis.py → **/investment-research/.claude/scripts/apply_analysis.py
+fetch_analyze.py  → **/analyze-with-deepseek/scripts/fetch_analyze.py
+```
+
+---
+
 ## ภาพรวม Flow ทั้งหมด
 
 ```
-Step 1  →  เพิ่มบริษัทใหม่ (add-company)
-Step 2  →  เพิ่มข้อมูลเชิงลึก (overview, ownership, structure)
-Step 3  →  วิเคราะห์ Annual Report / 10-K ย้อนหลัง 5 ปี (analyze-report)
-Step 4  →  วิเคราะห์ Earnings Call (analyze-earnings)
-Step 5  →  อัปเดต Roadmap เมื่อมีข้อมูลใหม่ (track-delivery)
-Step 6  →  บำรุงรักษาข้อมูลรายไตรมาส (maintenance)
+Step 1   →  เพิ่มบริษัทใหม่ (add-company)
+Step 2   →  เพิ่มข้อมูลเชิงลึก (overview, ownership, structure)
+Step 3   →  วิเคราะห์ Annual Report / 10-K ย้อนหลัง 5 ปี (DeepSeek pipeline)
+Step 3b  →  เปรียบเทียบ Annual Report ข้ามปี — Narrative & Accounting Evolution
+Step 4   →  วิเคราะห์ Earnings Call (DeepSeek pipeline)
+Step 4b  →  ติดตาม Tone Drift ข้าม Earnings Call หลายไตรมาส
+Step 5   →  อัปเดต Roadmap เมื่อมีข้อมูลใหม่ (track-delivery)
+Step 6   →  บำรุงรักษาข้อมูลรายไตรมาส (maintenance)
 ```
 
 ---
@@ -151,9 +197,7 @@ Bear Case: [ความเสี่ยงหลัก 2-3 ประโยค]
 
 ## STEP 3 — วิเคราะห์ Annual Report / 10-K (Automated Pipeline)
 
-### วิธีหลัก — Automated: Alpha Vantage + DeepSeek (แนะนำ)
-
-ระบบ Parallel Agent จะดึงข้อมูลและวิเคราะห์อัตโนมัติใน ~20-40 วินาที:
+### วิธีหลัก — Zero-Token Pipeline: DeepSeek → apply_analysis.py (แนะนำ)
 
 **Prompt:**
 ```
@@ -162,30 +206,49 @@ URL: [URL ของ .htm filing จาก SEC EDGAR หรือ IR website]
 ```
 
 > **หา URL ได้ที่:** SEC EDGAR → ค้นหา ticker → เลือก 10-K → คลิกไฟล์ `.htm` (ไม่ใช่ PDF)
-> ตัวอย่าง: `https://www.sec.gov/Archives/edgar/data/.../[ticker]-YYYYMMDD.htm`
 
-ระบบจะรัน **4 agents ขนาน**:
-| Agent | งาน | Token/call |
-|-------|-----|-----------|
+ระบบรัน **Parallel Agents + Auto-Apply** ใน 3 ขั้นตอน:
+
+```
+fetch_analyze.py             →  บันทึกผลลง /tmp/  →  apply_analysis.py
+(DeepSeek 4 agents ขนาน)                          (patch.py ทีละรายการ)
+~20-40 วินาที                                      ~1 วินาที, ~50 tokens
+```
+
+**Command ที่ระบบรัน (มี SEC_API_KEY — ไม่ต้องหา URL เอง):**
+```bash
+# ง่ายที่สุด — ระบุแค่ ticker + doc-type
+python3 fetch_analyze.py \
+  --ticker [TICKER] \
+  --sec-key $SEC_API_KEY \
+  --ds-key $DEEPSEEK_API_KEY \
+  --doc-type "10-K" \
+  > /tmp/prometheus_analysis.json
+
+python3 apply_analysis.py [TICKER] --input /tmp/prometheus_analysis.json
+```
+
+**หรือถ้าไม่มี SEC_API_KEY:**
+```bash
+python3 fetch_analyze.py --ticker [TICKER] --ds-key $DEEPSEEK_API_KEY \
+  --url "[URL]" --doc-type "10-K" \
+  > /tmp/prometheus_analysis.json
+```
+
+**4 DeepSeek agents ขนาน:**
+| Agent | งาน | DeepSeek tokens |
+|-------|-----|----------------|
 | A — Financials | Revenue, margin, cash commentary | ~2,500 |
-| B — Roadmap | Forward-looking commitments ทั้งหมด | ~2,000 |
+| B — Roadmap | Forward-looking commitments | ~2,000 |
 | C — Quotes | Executive quotes 5-10 รายการ | ~2,000 |
 | D — Risks | Risk factors + mitigation | ~2,000 |
 
-และดึง **Alpha Vantage** (3 API calls ขนาน) สำหรับ financial metrics แบบ structured อัตโนมัติ
+**Alpha Vantage** (3 calls ขนาน): financial metrics structured — เฉพาะ US stocks (10-K filers)
 
-> ⚠️ **Alpha Vantage ครอบคลุมเฉพาะ US stocks (10-K filers) เป็นหลัก**
-> บริษัทต่างชาติที่ file 20-F (เช่น Barrick = ABX/TSX) จะไม่มีข้อมูลใน AV
-> ในกรณีนั้นระบบจะข้าม Phase 1 ให้อัตโนมัติ และต้องใส่ตัวเลขการเงินเองผ่าน Manual Prompt
+> ⚠️ **บริษัทต่างชาติที่ file 40-F/20-F** (เช่น Barrick) ไม่มีใน AV — ระบบข้าม Phase 1 อัตโนมัติ
+> ตัวเลขการเงินต้องใส่เองด้วย `patch.py [T] --add-year [Y] --values '{...}'`
 
-**ผลลัพธ์ที่ได้โดยอัตโนมัติ:**
-- ตาราง financial metrics ย้อนหลัง 5-10 ปี (Revenue, Gross Profit, Op. Income, Net Income, EPS, EBITDA, R&D, Debt, Cash)
-- Note สรุปการวิเคราะห์ annual report พร้อม rating
-- Roadmap commitments จาก forward-looking statements
-- Key executive quotes
-- Risk analysis
-
-**ถ้า URL ถูก block (403):** ให้หา URL จาก IR website ของบริษัท หรือ stockanalysis.com แทน
+**ถ้า URL ถูก block (403):** หา URL จาก IR website หรือ stockanalysis.com
 
 ---
 
@@ -239,6 +302,70 @@ Flow:
 
 ---
 
+## STEP 3b — เปรียบเทียบ Annual Report ข้ามปี (Evolution Analysis)
+
+> **แนวคิด:** การอ่าน Annual Report แต่ละปีแบบ standalone มักพลาด "สิ่งที่เปลี่ยนไป" เพราะภาษาผู้บริหารวิวัฒน์อย่างช้าๆ ทีละน้อย Step นี้ใช้ AI เปรียบเทียบ 2 รายงานข้ามปีโดยตรง เพื่อจับ narrative drift, การเปลี่ยน accounting policy, และ risk ที่ถูกเพิ่ม/ลบออก — สิ่งที่นักวิเคราะห์มักมองข้าม
+
+### Trigger Prompt
+
+```
+เปรียบเทียบ evolution ของ [TICKER]:
+URL ปัจจุบัน: [URL ของ Annual Report / 10-K ปีล่าสุด] ปี [YEAR_NEW]
+URL เก่า: [URL ของ Annual Report / 10-K ปีก่อนหน้า] ปี [YEAR_OLD]
+doc-type: Annual Report
+```
+
+**ตัวอย่าง (Apple):**
+```
+เปรียบเทียบ evolution ของ AAPL:
+URL ปัจจุบัน: https://www.sec.gov/Archives/edgar/data/320193/000032019324000123/aapl-20240928.htm ปี 2024
+URL เก่า: https://www.sec.gov/Archives/edgar/data/320193/000032019322000108/aapl-20220924.htm ปี 2022
+doc-type: Annual Report
+```
+
+> 💡 **แนะนำ:** เปรียบเทียบห่างกัน 2-3 ปี เพื่อให้เห็น shift ที่ชัดเจน (เช่น 2024 vs 2022 หรือ 2024 vs 2021)
+
+### สิ่งที่ระบบทำโดยอัตโนมัติ
+
+ระบบดึง 2 URLs ขนาน แล้วรัน **4 Comparison Agents ขนาน**:
+
+| Agent | โฟกัส | สิ่งที่วิเคราะห์ |
+|-------|--------|-----------------|
+| E — Narrative Drift | MD&A ทั้ง 2 ปี | ภาษา/tone/ความมั่นใจเปลี่ยนไปอย่างไร? คำที่หายไป/เพิ่มขึ้น? |
+| F — Business Evolution | Business Overview ทั้ง 2 ปี | กลยุทธ์เปลี่ยนทิศไหม? segment ใหม่/ยุบไป? ลำดับความสำคัญเปลี่ยน? |
+| G — Accounting Watch | Critical Accounting ทั้ง 2 ปี | policy เปลี่ยน? revenue recognition เปลี่ยน? goodwill impairment? |
+| H — Risk Evolution | Risk Factors ทั้ง 2 ปี | risk ใหม่ที่เพิ่มมา? risk ที่หายไป? ภาษาที่ escalate/de-escalate? |
+
+### ผลลัพธ์ที่ได้
+
+บันทึกเป็น **Note** ใน Prometheus พร้อม tags:
+```json
+{
+  "tags": ["narrative-evolution", "accounting-watch", "multi-year", "[TICKER]"],
+  "title": "Evolution Analysis: FY[YEAR_OLD] → FY[YEAR_NEW]",
+  "sections": {
+    "narrative_drift":    "...",
+    "business_evolution": "...",
+    "accounting_watch":   "...",
+    "risk_evolution":     "..."
+  }
+}
+```
+
+### เมื่อไรควรรัน Step 3b
+
+- หลังจากทำ Step 3 ครั้งแรก (มีข้อมูล 2 ปีขึ้นไปแล้ว)
+- ทุกปีหลังจากออก Annual Report ใหม่ — เปรียบเทียบกับรายงาน 2 ปีก่อน
+- เมื่อสงสัยว่าผู้บริหาร "เปลี่ยนเรื่องเล่า" หลังเกิดเหตุการณ์สำคัญ
+
+### ข้อจำกัด
+
+- ต้องการ URL ที่เข้าถึงได้ (ไม่ใช่ PDF กั้น) ทั้ง 2 รายงาน
+- บริษัทที่ file 20-F (ต่างชาติ เช่น Barrick) ให้ใช้ URL จาก IR website หรือ SEC EDGAR โดยตรง
+- Token ต่อ call ~6,000-8,000 tokens (รัน 4 agents ขนาน รวมเวลา ~40-60 วินาที)
+
+---
+
 ## STEP 4 — วิเคราะห์ Earnings Call
 
 **Prompt (ส่ง URL — แนะนำ):**
@@ -267,6 +394,52 @@ doc-type: Earnings Call
 
 ---
 
+## STEP 4b — Earnings Call Tone Tracker (ข้าม Quarter)
+
+> **แนวคิด:** ฟัง Earnings Call ทีละ quarter อาจพลาด "tone shift" ที่สะสมมาหลายไตรมาส เช่น CEO เริ่มพูดน้อยลงเรื่อง margin expansion, CFO เริ่มย้ายโฟกัสจาก growth ไป cost discipline — สัญญาณเหล่านี้มักปรากฏก่อน guidance cut หลายไตรมาส
+
+### Trigger Prompt
+
+```
+เปรียบเทียบ tone ของ earnings call [TICKER]:
+URL ล่าสุด: [URL Q[X] FY[ปี]] ปี [YEAR_NEW] Q[X]
+URL เก่า: [URL Q[X] FY[ปี]] ปี [YEAR_OLD] Q[X]
+doc-type: Earnings Call
+```
+
+**ตัวอย่าง (Microsoft Q2 FY2025 vs Q2 FY2024):**
+```
+เปรียบเทียบ tone ของ earnings call MSFT:
+URL ล่าสุด: https://seekingalpha.com/article/msft-q2-fy2025-earnings ปี 2025 Q2
+URL เก่า: https://seekingalpha.com/article/msft-q2-fy2024-earnings ปี 2024 Q2
+doc-type: Earnings Call
+```
+
+> 💡 **แนะนำ:** เปรียบเทียบ quarter เดียวกัน (Q2 vs Q2) เพื่อตัด seasonality — หรือเปรียบเทียบ Q ต่อเนื่อง 3-4 ไตรมาสถ้าต้องการดู trend
+
+### สิ่งที่ระบบวิเคราะห์
+
+ใช้ Agent เดียวกับ Step 3b (E–H) แต่โฟกัสไปที่ Earnings Call dynamics:
+
+| มิติ | สัญญาณที่จับ |
+|------|------------|
+| **Narrative Drift** | คำที่หายไป/เพิ่ม, metric ที่ถูก highlight เปลี่ยน |
+| **Confidence Shift** | ภาษา hedging เพิ่มขึ้น? ("we expect" → "we hope"?) |
+| **Topic Priority** | หัวข้อที่ใช้เวลาพูดมากขึ้น/น้อยลง |
+| **Analyst Questions** | นักวิเคราะห์ถามเรื่องอะไรมากขึ้น? (มักสะท้อน concern) |
+
+### ผลลัพธ์
+
+บันทึกเป็น Note พร้อม tags `["tone-tracker", "earnings-evolution", "multi-quarter", "[TICKER]"]`
+
+### เมื่อไรควรรัน Step 4b
+
+- ทุก 2 ไตรมาส เป็น routine — เปรียบเทียบ YoY (Q2 ปีนี้ vs Q2 ปีก่อน)
+- ทันทีเมื่อสังเกตว่า stock ขยับผิดปกติหลัง Earnings แต่ตัวเลขดูปกติ
+- ก่อนตัดสินใจเพิ่ม/ลด position — ใช้ยืนยัน thesis
+
+---
+
 ## STEP 5 — ติดตาม Delivery Rate
 
 **Prompt (ทำหลัง Earnings แต่ละไตรมาส):**
@@ -282,6 +455,38 @@ Commitment: "[ข้อความ commitment]"
 Status: delivered / partial / missed
 Follow-up: [สิ่งที่เกิดขึ้นจริง]
 Follow-up date: [YYYY-MM-DD]
+```
+
+### วิธีที่ถูกต้องสำหรับ Track-Delivery (Token-Efficient)
+
+**อ่าน roadmap:** ใช้ `--extract-roadmap` แทน Read ทั้งไฟล์
+
+```bash
+# ดู roadmap ทั้งหมด (compact JSON — ไม่โหลด data.json เข้า context)
+python3 patch.py [TICKER] --extract-roadmap
+
+# เฉพาะ pending items (ที่ยังต้องตรวจสอบ)
+python3 patch.py [TICKER] --extract-roadmap pending
+```
+
+**อัปเดต status หลังตรวจสอบ:**
+```bash
+python3 patch.py [TICKER] \
+  --update-roadmap "[substring ของ commitment]" \
+  --status delivered \
+  --follow-up "[สิ่งที่เกิดขึ้นจริง]" \
+  --follow-up-date YYYY-MM-DD
+```
+
+**บันทึก delivery analysis เป็น Note:**
+```bash
+python3 patch.py [TICKER] --append-note '{
+  "date": "YYYY-MM-DD",
+  "title": "Management Delivery Assessment Q[X] FY[YEAR]",
+  "tags": ["management", "delivery-analysis", "[ticker_lower]"],
+  "rating": [1-5],
+  "content": "Delivery Rate: X% ([Y] delivered / [Z] concluded)..."
+}'
 ```
 
 ---
@@ -305,6 +510,142 @@ Quarterly update ของ [TICKER] Q[X] FY[ปี]:
 2. อัปเดต roadmap items ที่ pending ให้ตามข้อมูลล่าสุด
 3. เพิ่มลิงก์ 10-Q: [URL]
 ```
+
+---
+
+## patch.py — อัปเดต data.json แบบ Zero-Context-Cost
+
+> **ทำไมต้องใช้:** การแก้ไข data.json แบบปกติต้องโหลดไฟล์ทั้งหมดเข้า LLM context ก่อน (~3,000 tokens สำหรับ B/data.json) `patch.py` แก้ไข JSON โดยตรงโดยไม่ต้องโหลดไฟล์ — ลด token cost เกือบ 100%
+
+**ไฟล์อยู่ที่:** `investment-research/.claude/scripts/patch.py`
+
+### Commands ที่ใช้บ่อย
+
+```bash
+# ดูสรุปข้อมูลปัจจุบัน (ไม่แก้ไข)
+python .claude/scripts/patch.py [TICKER] --info
+
+# เพิ่ม Note ใหม่
+python .claude/scripts/patch.py [TICKER] --append-note '{
+  "date": "YYYY-MM-DD",
+  "title": "...",
+  "tags": ["earnings", "q12026"],
+  "rating": 4,
+  "content": "..."
+}'
+
+# เพิ่ม Roadmap item ใหม่
+python .claude/scripts/patch.py [TICKER] --append-roadmap '{
+  "date_said": "YYYY-MM-DD",
+  "source": "Q1 2026 Earnings",
+  "commitment": "...",
+  "status": "pending",
+  "follow_up": "",
+  "follow_up_date": ""
+}'
+
+# เพิ่ม Quote ใหม่
+python .claude/scripts/patch.py [TICKER] --append-quote '{
+  "date": "YYYY-MM-DD",
+  "source": "Q1 2026 Earnings Call",
+  "speaker": "CEO Name",
+  "quote": "...",
+  "quote_th": "...",
+  "tag": "strategy"
+}'
+
+# เพิ่มปีใหม่ในตาราง financials (ต้องระบุทุก metric ที่มี)
+python .claude/scripts/patch.py [TICKER] --add-year 2026 --values '{
+  "Revenue": 18.5,
+  "Net Earnings (attributable)": 3.2,
+  "Operating Cash Flow": 5.1,
+  "Free Cash Flow": 2.4,
+  "Gold Production (Moz)": 3.8,
+  "AISC ($/oz)": 1690
+}'
+
+# อัปเดต status ของ roadmap item (match by substring)
+python .claude/scripts/patch.py [TICKER] --update-roadmap "Reko Diq Phase 1" \
+  --status delivered \
+  --follow-up "Construction started, first gold target 2028" \
+  --follow-up-date 2026-06-30
+
+# Set ค่า field ใดก็ได้ (dot notation)
+python .claude/scripts/patch.py [TICKER] --set "last_updated=2026-03-29"
+python .claude/scripts/patch.py [TICKER] --set "overview.employees=~19000"
+
+# Extract roadmap เป็น JSON (สำหรับ track-delivery หรือส่งให้ DeepSeek — ไม่ต้องโหลดไฟล์ทั้งหมด)
+python .claude/scripts/patch.py [TICKER] --extract-roadmap            # ทุก item
+python .claude/scripts/patch.py [TICKER] --extract-roadmap pending    # เฉพาะ pending
+
+# Extract notes ล่าสุดเป็น JSON (สำหรับดู context ก่อน update)
+python .claude/scripts/patch.py [TICKER] --extract-notes              # 5 notes ล่าสุด
+python .claude/scripts/patch.py [TICKER] --extract-notes 3           # 3 notes ล่าสุด
+
+# Preview ก่อน save จริง
+python .claude/scripts/patch.py [TICKER] --dry-run --append-note '...'
+```
+
+### Token Savings เทียบกับวิธีเดิม
+
+| วิธี | Token ที่ใช้ (B/data.json) | เวลา |
+|------|---------------------------|------|
+| Read + Edit (เดิม) | ~3,000–5,000 tokens | ~2-3 ขั้นตอน |
+| patch.py append-note | ~200 tokens (JSON ของ note เท่านั้น) | 1 Bash call |
+| patch.py add-year | ~300 tokens (values dict เท่านั้น) | 1 Bash call |
+| patch.py extract-roadmap | ~300 tokens (roadmap JSON เท่านั้น) | 1 Bash call |
+
+> 💡 **Prompt ที่ใช้ trigger:** "เพิ่ม note ให้ [TICKER]" หรือ "อัปเดต roadmap [TICKER]" — ให้ใช้ patch.py แทนการ Read+Edit ทุกครั้ง
+
+---
+
+## apply_analysis.py — Zero-Token Pipeline จาก DeepSeek ถึง data.json
+
+> **ปัญหาที่แก้:** หลังจาก `fetch_analyze.py` รันเสร็จ Claude ต้องอ่าน JSON output ทั้งก้อน (~2,000-4,000 tokens) แล้วตัดสินใจว่าจะ patch อะไร — `apply_analysis.py` ทำส่วนนี้อัตโนมัติ โดย Claude ไม่ต้องอ่านอะไรเลย
+
+**ไฟล์อยู่ที่:** `investment-research/.claude/scripts/apply_analysis.py`
+
+### วิธีใช้ (Zero-Token Flow)
+
+```bash
+# Pipeline ครบวงจร — DeepSeek วิเคราะห์ แล้ว auto-apply เข้า data.json ทันที
+python .claude/scripts/fetch_analyze.py \
+  --ticker B \
+  --ds-key sk-... \
+  --url https://... \
+  --doc-type "Annual Report" \
+  | python .claude/scripts/apply_analysis.py B
+
+# หรือบันทึก JSON ก่อน แล้วค่อย apply
+python .claude/scripts/fetch_analyze.py --ticker B ... > /tmp/analysis.json
+python .claude/scripts/apply_analysis.py B --input /tmp/analysis.json
+
+# Preview โดยไม่ save จริง
+python .claude/scripts/apply_analysis.py B --input /tmp/analysis.json --dry-run
+
+# Skip บางส่วน (เช่น roadmap ถ้าต้องการ QC ก่อน)
+python .claude/scripts/apply_analysis.py B --input /tmp/analysis.json --skip-roadmap
+```
+
+### สิ่งที่ apply_analysis.py ทำอัตโนมัติ
+
+| ข้อมูล | วิธีที่ใช้ | หมายเหตุ |
+|--------|-----------|---------|
+| Note สรุป | `patch.py --append-note` | ✓ auto |
+| Roadmap items | `patch.py --append-roadmap` (ทีละ item) | ✓ auto |
+| Quotes | `patch.py --append-quote` (ทีละ item) | ✓ auto |
+| Evolution Note (3b) | `patch.py --append-note` | ✓ auto |
+| Financial metrics (AV) | **ข้าม** — พิมพ์ตัวเลขออกมาให้ดู | ต้องใช้ `--add-year` เอง (metric ต่างกันแต่ละบริษัท) |
+
+### เปรียบเทียบ Token Cost
+
+| วิธี | Claude token cost ต่อ session | หมายเหตุ |
+|------|------------------------------|---------|
+| **เดิม**: Claude อ่าน+แก้ data.json เอง | ~5,000–8,000 tokens | อ่าน JSON output + อ่าน data.json + เขียน |
+| **กลาง**: patch.py (session ก่อน) | ~2,000–3,000 tokens | อ่าน JSON output เพื่อรู้ว่าจะ patch อะไร |
+| **ใหม่**: apply_analysis.py | **~50 tokens** | แค่ command บรรทัดเดียว — script ทำทุกอย่าง |
+
+> 💡 **สำหรับ Step 3b (Evolution):** ใช้ `--phase compare` กับ `fetch_analyze.py` แล้วไปต่อที่ `apply_analysis.py` — evolution note จะถูก append อัตโนมัติ
 
 ---
 
@@ -439,8 +780,13 @@ Quarterly update ของ [TICKER] Q[X] FY[ปี]:
 | เพิ่มบริษัทใหม่ | `เพิ่มบริษัทใหม่เข้า Prometheus: [TICKER] - [ชื่อ] - [Sector] - [Exchange]` |
 | วิเคราะห์ 10-K (อัตโนมัติ) | `ส่งให้ DeepSeek วิเคราะห์ 10-K ของ [TICKER]: URL: [URL .htm]` |
 | วิเคราะห์ Earnings (อัตโนมัติ) | `ส่งให้ DeepSeek วิเคราะห์ earnings call ของ [TICKER] Q[X]: URL: [URL] doc-type: Earnings Call` |
-| วิเคราะห์ 10-K (manual) | `วิเคราะห์ 10-K ของ [TICKER] FY[ปี]: [paste]` |
+| **เปรียบเทียบ Annual Report ข้ามปี** | `เปรียบเทียบ evolution ของ [TICKER]: URL ปัจจุบัน: [URL] ปี [YEAR_NEW] / URL เก่า: [URL] ปี [YEAR_OLD]` |
+| **เปรียบเทียบ Earnings Call ข้าม Quarter** | `เปรียบเทียบ tone ของ earnings call [TICKER]: URL ล่าสุด: [URL] ปี [Y] Q[X] / URL เก่า: [URL] ปี [Y] Q[X]` |
+| วิเคราะห์ 10-K (manual paste) | `วิเคราะห์ 10-K ของ [TICKER] FY[ปี]: [paste]` |
 | แปล quotes เป็นไทย | `เพิ่มคำแปลภาษาไทย (quote_th) ให้ทุก quote ใน [TICKER]` |
 | ติดตาม roadmap | `วิเคราะห์ management delivery rate ของ [TICKER]` |
 | อัปเดต roadmap item | `อัปเดต roadmap [TICKER]: "[commitment]" → status: delivered, follow-up: [สิ่งที่เกิดขึ้น]` |
+| ดูสรุปข้อมูลปัจจุบัน | `python patch.py [TICKER] --info` |
+| ดู roadmap pending | `python patch.py [TICKER] --extract-roadmap pending` |
+| Apply ผล DeepSeek ลง data | `python apply_analysis.py [TICKER] --input /tmp/prometheus_analysis.json` |
 | เปิดดูบริษัท | เปิด `index.html` → กดชื่อบริษัท (URL: `company.html?ticker=[TICKER]`) |

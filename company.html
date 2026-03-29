@@ -912,8 +912,9 @@ function renderFinancials(fin) {
         <table class="fin-table">
           <thead><tr><th>รายการ</th>${years.map(y=>`<th>${y}</th>`).join('')}</tr></thead>
           <tbody>${fin.metrics.map(m=>`<tr><td>${m.name}</td>${m.values.map((v,i)=>{
+            if (v == null) return `<td style="color:var(--text-muted);font-size:11px">—</td>`;
             const prev=m.values[i-1];
-            const ch=prev!=null?((v-prev)/Math.abs(prev)*100).toFixed(1):null;
+            const ch=(prev!=null && prev!==0 && v!=null)?((v-prev)/Math.abs(prev)*100).toFixed(1):null;
             const col=ch>0?'var(--green)':ch<0?'var(--red)':'';
             return `<td>${v.toLocaleString()}${ch!=null?`<br><small style="color:${col};font-family:'JetBrains Mono',monospace">${ch>0?'+':''}${ch}%</small>`:''}</td>`;
           }).join('')}</tr>`).join('')}</tbody>
@@ -1064,7 +1065,7 @@ function renderFinMetric(idx) {
   const data = fin.years.map((y, i) => {
     const v = values[i];
     const prev = values[i-1];
-    const yoy = (prev != null && prev !== 0)
+    const yoy = (v != null && prev != null && prev !== 0)
       ? ((v - prev) / Math.abs(prev) * 100).toFixed(1)
       : null;
     const yoyStr = yoy != null ? (yoy > 0 ? `+${yoy}%` : `${yoy}%`) : '';
