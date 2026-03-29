@@ -48,5 +48,15 @@
     "note_count": 3,
     "quote_count": 20,
     "roadmap_count": 26
+  },
+  {
+    "ticker": "NVDA",
+    "name": "NVIDIA Corporation",
+    "sector": "Semiconductors",
+    "exchange": "NASDAQ",
+    "last_updated": "2026-03-30",
+    "note_count": 1,
+    "quote_count": 8,
+    "roadmap_count": 14
   }
 ]
