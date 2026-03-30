@@ -1,10 +1,86 @@
-# Prometheus — Flow สำหรับเพิ่มบริษัทใหม่
+# PROMETHEUS_FLOW.md — คู่มือหลัก
 
-คู่มือนี้แสดง prompt ที่พิมพ์ได้ทีละขั้น เรียงตามลำดับที่ควรทำ โดยใช้บริษัท **B (Barrick Mining)** เป็น template อ้างอิง
+คู่มือหลักสำหรับการเพิ่มและบำรุงรักษาข้อมูลบริษัทในโครงการ **Prometheus**
+
+**เป้าหมายหลัก:**
+- สร้างฐานข้อมูลบริษัทที่มีคุณภาพสูง
+- ประหยัด token สูงสุด (Token-Efficient)
+- ใช้งานง่ายสำหรับคนที่เขียนโค้ดไม่เป็น
+- รองรับการทำงานแบบ Hybrid AI (Claude + DeepSeek)
 
 ---
 
-## API Keys
+## ⚡ Core Principles (กฎสำคัญ)
+
+1. **Token-Efficient** — ห้ามให้ Claude/DeepSeek อ่านหรือเขียน `data/[TICKER]/data.json` ทั้งไฟล์
+2. **Partial Update** — ใช้ JSON Patch + `merge_patches.py` เท่านั้น
+3. **Hybrid AI** — ใช้ DeepSeek สำหรับงาน routine, ใช้ Claude สำหรับงานซับซ้อน
+4. **Backup & Safety** — ทุกการอัปเดตต้องมี backup อัตโนมัติ
+5. **Frontend Safe** — ข้อมูลต้องไม่ทำให้หน้าเว็บแสดง "$undefinedB" หรือ error
+
+---
+
+## Hybrid AI Agent Strategy
+
+| ประเภทงาน | แนะนำใช้โมเดล | เหตุผล |
+|-----------|-------------|--------|
+| สร้าง JSON Patch (Note, Roadmap, Segment, Timeline) | **DeepSeek V3** | ถูกมาก + เร็ว |
+| ดึงข้อมูลจาก EDGAR / วิเคราะห์ Financials | **DeepSeek V3/R1** | ประหยัดสูง |
+| ออกแบบ Workflow, Prompt Engineering | **Claude Sonnet** | เก่งเรื่องโครงสร้าง |
+| แก้ไขโค้ดซับซ้อน / Debug สคริปต์ | **Claude Sonnet** | คุณภาพสูงกว่า |
+| ตรวจโค้ดละเอียด, ออกแบบ UI | **Claude** | แม่นยำสูง |
+| งาน routine ซ้ำๆ (เพิ่ม note, update segment) | **DeepSeek** | ถูกที่สุด |
+
+> 💡 ใช้ DeepSeek สำหรับ ~80% ของงานประจำวัน เพื่อประหยัด token และงบ Claude Pro
+
+---
+
+## โครงสร้าง Repository
+
+```
+data/
+├── companies.json
+└── [TICKER]/
+    ├── data.json
+    ├── patches/              ← วาง JSON Patch ที่รอ merge
+    └── history/
+        └── applied_patches/  ← Patch ที่ใช้แล้ว
+
+scripts/
+├── apply_patch.py
+├── merge_patches.py
+└── ...
+
+.claude/scripts/
+├── patch.py                  ← อัปเดต data.json แบบ zero-context-cost
+├── apply_analysis.py         ← auto-apply ผลจาก DeepSeek pipeline
+└── analyze-with-deepseek/scripts/fetch_analyze.py
+
+CLAUDE_DATA_FLOW.md           ← สำหรับคุยสร้าง Patch
+FRONTEND.md                   ← สำหรับแก้หน้าเว็บ
+```
+
+---
+
+## ภาพรวม Flow ทั้งหมด
+
+```
+Step 0   →  Hybrid AI Setup (API Keys + Token-Efficient Protocol)
+Step 1   →  เพิ่มบริษัทใหม่
+Step 2   →  สร้าง Overview Panel (ทีละส่วน)
+Step 3   →  วิเคราะห์ Annual Report / 10-K (DeepSeek pipeline)
+Step 3b  →  Evolution Analysis (เปรียบเทียบข้ามปี)
+Step 4   →  วิเคราะห์ Earnings Call (DeepSeek)
+Step 4b  →  Tone Drift Tracker
+Step 5   →  อัปเดต Roadmap & Track Delivery
+Step 6   →  Maintenance & Quarterly Update
+```
+
+---
+
+## STEP 0 — Hybrid AI Setup
+
+### API Keys
 
 Keys อยู่ในไฟล์ `.env` (ไม่เก็บใน Git) — โหลดก่อนรัน script ทุกครั้ง:
 
@@ -13,7 +89,7 @@ source .env
 ```
 
 สร้าง / แก้ `.env` ได้ที่ไฟล์ `investment-research/.env`
-(ดูตัวอย่าง format ในไฟล์นั้นได้เลย — มี `.gitignore` คุ้มกันแล้ว)
+(มี `.gitignore` คุ้มกันแล้ว — ไม่ถูก commit เข้า Git)
 
 **sec-api.io ช่วยอะไรได้:**
 
@@ -24,14 +100,12 @@ source .env
 | Subsidiaries (Exhibit 21) | ✅ | ❌ | 10-K filers เท่านั้น |
 | Section Extractor | ✅ | ❌ | 10-K/10-Q เท่านั้น |
 
----
-
-## ⚡ Token-Efficient Save Protocol (อ่านก่อนทุกครั้ง)
+### ⚡ Token-Efficient Save Protocol (อ่านก่อนทุกครั้ง)
 
 > **กฎข้อเดียว: ห้าม Read + Write `data.json` ทั้งไฟล์เพื่อแก้ไขข้อมูล**
 > ใช้ scripts ด้านล่างแทนเสมอ
 
-### Partial Update System (ใหม่ — ใช้สำหรับอัปเดตด้วยมือ)
+#### Partial Update System (ใช้สำหรับอัปเดตด้วยมือ)
 
 Claude สร้าง JSON patch file → บันทึกใน `data/[TICKER]/patches/` → รัน `merge_patches.py` apply
 
@@ -51,7 +125,7 @@ python scripts/merge_patches.py QUBT --dry-run
 
 → ดูตัวอย่าง patch format และ prompt examples เพิ่มเติมได้ที่ **`CLAUDE_DATA_FLOW.md`**
 
-### Automated Pipeline (ใช้กับ DeepSeek)
+#### Automated Pipeline (ใช้กับ DeepSeek)
 
 | งาน | วิธีที่ถูก | วิธีที่ผิด (ห้ามทำ) |
 |-----|-----------|-------------------|
@@ -63,24 +137,9 @@ python scripts/merge_patches.py QUBT --dry-run
 ```
 scripts/apply_patch.py    → investment-research/scripts/apply_patch.py
 scripts/merge_patches.py  → investment-research/scripts/merge_patches.py
-patch.py                  → **/investment-research/.claude/scripts/patch.py
-apply_analysis.py         → **/investment-research/.claude/scripts/apply_analysis.py
-fetch_analyze.py          → **/analyze-with-deepseek/scripts/fetch_analyze.py
-```
-
----
-
-## ภาพรวม Flow ทั้งหมด
-
-```
-Step 1   →  เพิ่มบริษัทใหม่ (add-company)
-Step 2   →  เพิ่มข้อมูลเชิงลึก (overview, ownership, structure)
-Step 3   →  วิเคราะห์ Annual Report / 10-K ย้อนหลัง 5 ปี (DeepSeek pipeline)
-Step 3b  →  เปรียบเทียบ Annual Report ข้ามปี — Narrative & Accounting Evolution
-Step 4   →  วิเคราะห์ Earnings Call (DeepSeek pipeline)
-Step 4b  →  ติดตาม Tone Drift ข้าม Earnings Call หลายไตรมาส
-Step 5   →  อัปเดต Roadmap เมื่อมีข้อมูลใหม่ (track-delivery)
-Step 6   →  บำรุงรักษาข้อมูลรายไตรมาส (maintenance)
+patch.py                  → investment-research/.claude/scripts/patch.py
+apply_analysis.py         → investment-research/.claude/scripts/apply_analysis.py
+fetch_analyze.py          → investment-research/.claude/analyze-with-deepseek/scripts/fetch_analyze.py
 ```
 
 ---
@@ -201,18 +260,22 @@ Bear Case: [ความเสี่ยงหลัก 2-3 ประโยค]
 
 ### 2f — โครงสร้างผู้ถือหุ้น
 
-**Prompt:**
-```
-เพิ่มข้อมูลผู้ถือหุ้น [TICKER]:
+## STEP 2f — Parse Corporate Structure (Exhibit 21) ← เพิ่มใหม่
 
-ผู้ถือหุ้นหลัก:
-- [ชื่อกองทุน]: [X]% — ประเภท: [institutional/insider/retail]
-- [ชื่อกองทุน]: [X]%
-- Float: [X]%  ← รวมแล้วต้องได้ 100%
+**วัตถุประสงค์**: ดึงข้อมูลบริษัทย่อย (Subsidiaries), บริษัทร่วมทุน (Joint Ventures) และบริษัทในเครือ เพื่อใส่ใน `structure` ของ data.json
 
-โครงสร้างบริษัทย่อย/Associated/JV:
-- [ชื่อบริษัท]: ถือ [X]% — ประเภท: [subsidiary/associated/jv] — partner: [ชื่อคู่ค้า ถ้ามี]
-- [ชื่อบริษัท]: ถือ [X]%
+**วิธีทำ (Hybrid AI):**
+1. ดึง Exhibit 21 จาก 10-K ล่าสุด (ใช้ sec-api.io หรือดาวน์โหลดจาก EDGAR)
+2. ส่งให้ **DeepSeek V3.2** ด้วย Prompt “Parse Exhibit 21”
+3. นำ JSON ที่ได้ไปสร้าง Patch เพื่อเพิ่มใน `/structure`
+
+**Prompt สำหรับ DeepSeek** → ดูรายละเอียดที่ `CLAUDE_DATA_FLOW.md` ในส่วน **Skill: Parse Exhibit 21**
+
+**Output ที่ต้องการ**:
+- `structure.subsidiaries[]`
+- `structure.joint_ventures[]`
+- `structure.affiliates[]`
+- `structure.source` และ `last_updated`
 ```
 
 ---

@@ -1,0 +1,565 @@
+{
+  "ticker": "RGTI",
+  "name": "Rigetti Computing, Inc.",
+  "sector": "Technology",
+  "exchange": "NASDAQ",
+  "tradingview_symbol": "NASDAQ:RGTI",
+  "last_updated": "2026-03-30",
+  "description": "Rigetti Computing พัฒนา quantum computers แบบ superconducting qubit ให้บริการผ่าน cloud (QCS — Quantum Cloud Services) ร่วมกับ hybrid classical-quantum algorithms เน้นตลาด enterprise และ government ในสหรัฐฯ และยุโรป",
+  "notes": [
+    {
+      "date": "2026-03-30",
+      "title": "10-K Analysis",
+      "tags": [
+        "10-k",
+        "rgti"
+      ],
+      "rating": 3,
+      "content": "[Financial Performance]\nRigetti is transitioning from R&D to initial commercialization, marked by its first QPU sales and growing purchase orders, though revenue remains concentrated in public sector contracts. The company emphasizes technological progress, with improvements in qubit count and gate fidelity, but faces significant cash needs and execution risks in a competitive, emerging market. Strategic partnerships and vertical integration aim to accelerate path to quantum advantage, yet financial sustainability hinges on scaling commercial adoption and managing burn rate.\n\n[Performance Drivers]\nGrowth was driven by commercialization of quantum processing units (QPUs), particularly the Novera QPU launch in December 2023, which generated $5.7 million in purchase orders in 2025. The company also benefited from technological advancements including the 84-qubit Ankaa-3 system launch and achievement of key fidelity milestones (99.0% median two-qubit gate fidelity), enhancing product competitiveness.\n\n[Strategic Priorities]\n• Advance quantum computing technology — focus on scaling qubit counts and improving gate fidelity through proprietary chiplet architecture\n• Expand commercial sales — increase QPU deployments to academic, government, and enterprise customers\n• Strengthen partnerships — leverage collaborations with entities like Quanta Computer for manufacturing and Innovate UK for quantum error correction\n\n[Competitive Position]\nRigetti differentiates through its vertically integrated model, including Fab-1 wafer fabrication facility and proprietary superconducting qubit technology with fast gate speeds (50-70 nanoseconds). The company claims a moat in modular chip architecture, demonstrated with the Cepheus-1-36Q multi-chip quantum computer. Competitive threats include global quantum computing rivals and technological hurdles in achieving quantum advantage.\n\n[Management Quality]\nExecution score: MEDIUM\nManagement delivered on key technological milestones, such as launching the 84-qubit Ankaa-3 system and achieving improved gate fidelities, but the company remains in early stages with ongoing cash burn and dependence on future capital raises, as noted in risk factors.\n\n[Outlook]\nManagement signals continued focus on scaling quantum systems, with specific guidance on deploying a 108-qubit quantum computer to C-DAC in India in second half of 2026 and ongoing investments in partnerships like the Quanta collaboration.\n\n[Key Risks]\nRGTI faces a high-risk profile characterized by its early-stage operations, significant funding requirements, and substantial technical challenges in quantum computing development. The company's heavy dependence on limited customers and public sector contracts creates revenue concentration risks, while intense global competition and intellectual property concerns add further uncertainty. Material weaknesses in financial controls and supply chain dependencies present additional operational vulnerabilities that could impact growth and stability.\n\n[Management Tone]\nBullish"
+    },
+    {
+      "date": "2026-03-30",
+      "title": "Earnings Call Analysis",
+      "tags": [
+        "earnings-call",
+        "rgti"
+      ],
+      "rating": 3,
+      "content": "[Financial Performance]\nRigetti continues to invest heavily in R&D while building commercial momentum, with FY2025 revenue of $7.1 million overshadowed by substantial operating and net losses. The company maintains a strong cash position of $589.8 million to fund its ambitious roadmap. Key themes include the transition from pure research to commercial deployments, with government and research institutions emerging as early adopters of on-premises systems. Management's confidence stems from technological breakthroughs in fidelity and scaling, though the path to profitability remains distant as the quantum computing market develops.\n\n[Performance Drivers]\nRevenue growth was driven by increasing demand for on-premises quantum systems from government and research institutions, particularly through large orders like the $8.4 million C-DAC system. The company's chiplet-based architecture and proprietary manufacturing capabilities enabled continued technology scaling and fidelity improvements, supporting customer adoption.\n\n[Strategic Priorities]\n• Achieving practical quantum advantage through fidelity and scaling improvements\n• Expanding on-premises system deployments to government and research customers\n• Advancing chiplet architecture for scalable quantum systems\n• Maintaining vertical integration through Fab-1 manufacturing facility\n\n[Competitive Position]\nRigetti's open modular architecture and chiplet-based approach provide differentiation in scalability, while their vertically integrated Fab-1 facility creates manufacturing advantages. Their superconducting qubits offer 1000x faster gate speeds than trapped ion alternatives, though competition in quantum computing remains intense with multiple modalities vying for leadership.\n\n[Management Quality]\nExecution score: MEDIUM\nManagement delivered on technology milestones including 99.9% two-qubit gate fidelity and progress toward 108-qubit system deployment, though financial losses remain substantial. They secured significant new orders (C-DAC, Novera systems) demonstrating commercial traction.\n\n[Outlook]\nManagement anticipates significant Q1 year-over-year revenue growth from shipping $5.7 million in Novera system orders. They remain focused on deploying the 108-qubit system at 99.5% median fidelity and advancing toward larger-scale systems.\n\n[Key Risks]\nRGTI faces significant technological and execution risks as it pursues quantum computing leadership, with high-severity concerns around achieving technological milestones, product delivery, and financial sustainability. The company operates in an emerging market with substantial competitive and economic uncertainties, though it maintains strong cash reserves and strategic partnerships to mitigate some risks. Overall, the risk profile reflects a pre-revenue technology company in a capital-intensive, rapidly evolving industry.\n\n[Management Tone]\nBullish"
+    }
+  ],
+  "quotes": [
+    {
+      "date": "2026-03-30",
+      "source": "10-K",
+      "speaker": "Management (Overview)",
+      "quote": "Our mission is to build the world's most powerful computers to help solve humanity's most important and pressing problems. Our strategy is to be at the forefront of superconducting quantum computing.",
+      "quote_th": "",
+      "tag": "strategy"
+    },
+    {
+      "date": "2026-03-30",
+      "source": "10-K",
+      "speaker": "Management (Overview)",
+      "quote": "We believe quantum computing represents one of the most transformative emerging capabilities in the world today. By leveraging quantum mechanics, our quantum computers process information in fundamentally new, more powerful ways compared to classical computing with meaningful power efficiency.",
+      "quote_th": "",
+      "tag": "technology"
+    },
+    {
+      "date": "2026-03-30",
+      "source": "10-K",
+      "speaker": "Management (Overview)",
+      "quote": "We expect this patented and patent pending modular chip architecture to be the building block for new generations of quantum processors that we expect to achieve an advantage over classical computers.",
+      "quote_th": "",
+      "tag": "technology"
+    },
+    {
+      "date": "2026-03-30",
+      "source": "10-K",
+      "speaker": "Management (Overview)",
+      "quote": "In 2025, we received purchase orders for two Novera systems totaling approximately $5.7 million. Both systems are upgradeable, allowing the customers to increase the system qubit count for more complex computations and research.",
+      "quote_th": "",
+      "tag": "revenue"
+    },
+    {
+      "date": "2026-03-30",
+      "source": "10-K",
+      "speaker": "Management (Overview)",
+      "quote": "We achieved a key two-qubit gate fidelity milestone with Ankaa-3: successfully halving error rates in 2024 to achieve a 99.0% median two-qubit gate fidelity based on our internal testing.",
+      "quote_th": "",
+      "tag": "technology"
+    },
+    {
+      "date": "2026-03-30",
+      "source": "10-K",
+      "speaker": "Management (Overview)",
+      "quote": "As of January 2026, we achieved a 99.6% median two-qubit gate fidelity (based on internal testing) with Cepheus-1-36Q, successfully halving our error rate from our previous, single-chip 84-qubit Ankaa-3 system.",
+      "quote_th": "",
+      "tag": "technology"
+    },
+    {
+      "date": "2026-03-30",
+      "source": "10-K",
+      "speaker": "Management (Overview)",
+      "quote": "Leveraging our full-stack platform and in-house quantum foundry capabilities, we believe that Cepheus-1-36Q demonstrates our ability to deliver increasingly higher performance quantum computers with larger qubit counts using our proprietary chiplet-based architecture.",
+      "quote_th": "",
+      "tag": "growth"
+    },
+    {
+      "date": "2026-03-30",
+      "source": "10-K",
+      "speaker": "Management (Risk Factors)",
+      "quote": "We are in our early stages and have a limited operating history, which makes it difficult to forecast our future results of operations. We have in the past failed to meet publicly announced milestones and may fail to meet projected technological milestones in the future.",
+      "quote_th": "",
+      "tag": "risk"
+    },
+    {
+      "date": "2026-03-30",
+      "source": "10-K",
+      "speaker": "Management (Risk Factors)",
+      "quote": "We will require a significant amount of cash for expenditures as we invest in ongoing research and development and business operations and may need additional capital sooner than planned. If we are unable to raise additional funding when needed, we may be required to delay, limit or substantially reduce our quantum computing development efforts.",
+      "quote_th": "",
+      "tag": "risk"
+    },
+    {
+      "date": "2026-03-30",
+      "source": "10-K",
+      "speaker": "Management (Risk Factors)",
+      "quote": "We may not be able to scale our business quickly enough to meet customer and market demand, which would result in lower profitability or cause us to fail to execute on our business strategies.",
+      "quote_th": "",
+      "tag": "risk"
+    },
+    {
+      "date": "2026-03-30",
+      "source": "Earnings Call",
+      "speaker": "Dr. Subodh Kulkarni (CEO)",
+      "quote": "In 2025, we made great progress across fidelity, scale, and system architecture.",
+      "quote_th": "",
+      "tag": "growth"
+    },
+    {
+      "date": "2026-03-30",
+      "source": "Earnings Call",
+      "speaker": "Dr. Subodh Kulkarni (CEO)",
+      "quote": "Our focus continues to be on achieving practical quantum advantage, and over the past year we validated key elements of our strategy, including improved two-qubit gate fidelity across both monolithic and chiplet-based systems and continued momentum in scaling our superconducting quantum technology.",
+      "quote_th": "",
+      "tag": "strategy"
+    },
+    {
+      "date": "2026-03-30",
+      "source": "Earnings Call",
+      "speaker": "Dr. Subodh Kulkarni (CEO)",
+      "quote": "Demand for on-premises quantum systems from government and research institutions continues to grow.",
+      "quote_th": "",
+      "tag": "revenue"
+    },
+    {
+      "date": "2026-03-30",
+      "source": "Earnings Call",
+      "speaker": "Dr. Subodh Kulkarni (CEO)",
+      "quote": "Rigetti's open and modular architecture remains a core differentiator.",
+      "quote_th": "",
+      "tag": "technology"
+    },
+    {
+      "date": "2026-03-30",
+      "source": "Earnings Call",
+      "speaker": "Dr. Subodh Kulkarni (CEO)",
+      "quote": "Our chiplet-based approach provides a practical and scalable path toward large-scale quantum systems, while our ecosystem of partners, including Riverlane, NVIDIA, Quanta Computer, and QphoX, allows us to innovate across the stack.",
+      "quote_th": "",
+      "tag": "strategy"
+    },
+    {
+      "date": "2026-03-30",
+      "source": "Earnings Call",
+      "speaker": "Dr. Subodh Kulkarni (CEO)",
+      "quote": "Looking ahead, we remain focused on executing our roadmap, including the deployment of our 108-qubit system at 99.5% median two-qubit gate fidelity and advancing toward larger-scale systems as we work steadily toward quantum advantage.",
+      "quote_th": "",
+      "tag": "guidance"
+    },
+    {
+      "date": "2026-03-30",
+      "source": "Earnings Call",
+      "speaker": "Dr. Subodh Kulkarni (CEO)",
+      "quote": "We anticipate significant first-quarter year-over-year revenue growth driven by a portion of the previously announced $5.7 million Novera on-premises system purchase orders expected to ship in Q1.",
+      "quote_th": "",
+      "tag": "revenue"
+    },
+    {
+      "date": "2026-03-30",
+      "source": "Earnings Call",
+      "speaker": "Document (Business Update)",
+      "quote": "Rigetti announced an approximately $8.4 million purchase order from India's Centre for Development of Advanced Computing (C-DAC) for a 108-qubit on-premises superconducting quantum computer.",
+      "quote_th": "",
+      "tag": "revenue"
+    },
+    {
+      "date": "2026-03-30",
+      "source": "Earnings Call",
+      "speaker": "Document (Technology Milestones)",
+      "quote": "Rigetti recently achieved a two-qubit gate fidelity as high as 99.9% at 28 nanosecond gate speed on a prototype platform using its new proprietary adiabatic CZ scheme.",
+      "quote_th": "",
+      "tag": "technology"
+    },
+    {
+      "date": "2026-03-30",
+      "source": "Earnings Call",
+      "speaker": "Document (Technology Milestones)",
+      "quote": "Chiplet-based systems enable Rigetti to increase qubit counts while maintaining control over chip uniformity, reducing manufacturing complexity, and improving fabrication yield, an approach the Company believes represents the most viable path toward large-scale quantum systems.",
+      "quote_th": "",
+      "tag": "technology"
+    }
+  ],
+  "roadmap": [
+    {
+      "date_said": "2026-03-30",
+      "source": "10-K",
+      "commitment": "Achieve milestones and technological advancements, including executing on technology roadmap and developing practical applications",
+      "status": "pending",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": "2026-03-30",
+      "source": "10-K",
+      "commitment": "Monetize investments in quantum computing",
+      "status": "pending",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": "2026-03-30",
+      "source": "10-K",
+      "commitment": "Accelerate development of multiple generations of quantum processors",
+      "status": "pending",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": "2026-03-30",
+      "source": "10-K",
+      "commitment": "Execute on business strategy, including monetization of products",
+      "status": "pending",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": "2026-03-30",
+      "source": "10-K",
+      "commitment": "Grow and manage growth profitably",
+      "status": "pending",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": "2026-03-30",
+      "source": "10-K",
+      "commitment": "Implement strategic initiatives, expansion plans and continue to innovate existing products and services",
+      "status": "pending",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": "2026-03-30",
+      "source": "10-K",
+      "commitment": "Expand or maintain existing customer base",
+      "status": "pending",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": "2026-03-30",
+      "source": "10-K",
+      "commitment": "Scale business quickly enough to meet customer and market demand",
+      "status": "pending",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": "2026-03-30",
+      "source": "10-K",
+      "commitment": "Complete development of quantum computers, produce quantum computers at scale, achieve targeted performance milestones and realize quantum advantage",
+      "status": "pending",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": "2026-03-30",
+      "source": "10-K",
+      "commitment": "Compete successfully through continuous innovation, timely execution of strategy and achieving cost reduction",
+      "status": "pending",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": "2026-03-30",
+      "source": "10-K",
+      "commitment": "Attract and retain senior executive leadership and other key employees such as quantum physicists, software engineers and other key technical employees",
+      "status": "pending",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": "2026-03-30",
+      "source": "10-K",
+      "commitment": "Deploy 108-qubit quantum computer to C-DAC in Bengaluru in second half of 2026",
+      "status": "pending",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": "2026-03-30",
+      "source": "10-K",
+      "commitment": "Continue to improve system performance",
+      "status": "pending",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": "2026-03-04",
+      "source": "Earnings Call",
+      "commitment": "Deploy 108-qubit system at 99.5% median two-qubit gate fidelity",
+      "status": "pending",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": "2026-03-04",
+      "source": "Earnings Call",
+      "commitment": "Advance toward larger-scale systems as we work steadily toward quantum advantage",
+      "status": "pending",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": "2026-03-04",
+      "source": "Earnings Call",
+      "commitment": "Anticipate significant first-quarter year-over-year revenue growth driven by a portion of the previously announced $5.7 million Novera on-premises system purchase orders expected to ship in Q1",
+      "status": "pending",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": "2026-03-04",
+      "source": "Earnings Call",
+      "commitment": "108-qubit on-premises superconducting quantum computer for C-DAC expected to be deployed in the second half of 2026",
+      "status": "pending",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": "2026-03-04",
+      "source": "Earnings Call",
+      "commitment": "Novera QPU from Japanese research organization delivery expected in April 2026",
+      "status": "pending",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": "2026-03-04",
+      "source": "Earnings Call",
+      "commitment": "Novera on-premises systems will be upgradeable, enabling customers to scale system capabilities over time",
+      "status": "pending",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": "2026-03-04",
+      "source": "Earnings Call",
+      "commitment": "Chiplet tiling represents the most viable path toward large-scale quantum systems",
+      "status": "pending",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": "2026-03-04",
+      "source": "Earnings Call",
+      "commitment": "Enhancements to 108-qubit chiplet-based system bolster confidence in deploying the 108-qubit system and reinforce path toward customer readiness",
+      "status": "pending",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": "2026-03-04",
+      "source": "Earnings Call",
+      "commitment": "Continued progress on fidelity, speed, and error mitigation techniques is critical to achieving practical quantum advantage",
+      "status": "pending",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": "2026-03-04",
+      "source": "Earnings Call",
+      "commitment": "Fab-1 will accelerate our roadmap, support proprietary innovation, and create a durable competitive advantage as systems grow in scale and complexity",
+      "status": "pending",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": "2026-03-04",
+      "source": "Earnings Call",
+      "commitment": "Chiplet-based approach provides a practical and scalable path toward large-scale quantum systems",
+      "status": "pending",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": "2026-03-04",
+      "source": "Earnings Call",
+      "commitment": "Ecosystem of partners (Riverlane, NVIDIA, Quanta Computer, and QphoX) allows us to innovate across the stack",
+      "status": "pending",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": "2026-03-04",
+      "source": "Earnings Call",
+      "commitment": "Focus on achieving practical quantum advantage",
+      "status": "pending",
+      "follow_up": "",
+      "follow_up_date": ""
+    }
+  ],
+  "financials": {
+    "currency": "USD",
+    "unit": "Million",
+    "links": [],
+    "years": [
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "metrics": [
+      {
+        "name": "Revenue",
+        "values": [
+          null,
+          null,
+          8.2,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "Gross Profit",
+        "values": [
+          null,
+          null,
+          6.57,
+          10.23,
+          9.21,
+          5.7
+        ]
+      },
+      {
+        "name": "Operating Income",
+        "values": [
+          null,
+          -0.01,
+          -34.13,
+          -109.08,
+          -72.3,
+          -68.51
+        ]
+      },
+      {
+        "name": "Net Income",
+        "values": [
+          null,
+          -0.01,
+          -38.24,
+          -71.52,
+          -75.11,
+          -200.99
+        ]
+      },
+      {
+        "name": "EPS (diluted)",
+        "values": [
+          null,
+          null,
+          -1.64,
+          -0.7,
+          -0.57,
+          -1.09
+        ]
+      },
+      {
+        "name": "EPS (basic)",
+        "values": [
+          null,
+          null,
+          -1.64,
+          -0.7,
+          -0.57,
+          -1.09
+        ]
+      },
+      {
+        "name": "R&D Expense",
+        "values": [
+          null,
+          null,
+          26.93,
+          59.95,
+          52.77,
+          49.75
+        ]
+      },
+      {
+        "name": "Op. Cash Flow",
+        "values": [
+          null,
+          -0.96,
+          -29.04,
+          -62.69,
+          -50.58,
+          -50.63
+        ]
+      },
+      {
+        "name": "Free Cash Flow",
+        "values": [
+          null,
+          -0.96,
+          -36.05,
+          -85.43,
+          -59.64,
+          -61.73
+        ]
+      },
+      {
+        "name": "CapEx",
+        "values": [
+          null,
+          null,
+          7.01,
+          22.74,
+          9.06,
+          11.1
+        ]
+      },
+      {
+        "name": "Cash & Equiv.",
+        "values": [
+          null,
+          null,
+          11.73,
+          57.89,
+          21.39,
+          67.67
+        ]
+      },
+      {
+        "name": "Total Assets",
+        "values": [
+          null,
+          0.04,
+          46.43,
+          203.44,
+          159.91,
+          284.79
+        ]
+      },
+      {
+        "name": "Total Equity",
+        "values": [
+          null,
+          0.0,
+          -35.42,
+          -71.53,
+          150.22,
+          109.59
+        ]
+      }
+    ],
+    "notes": "",
+    "breakdown": {
+      "sankey": null
+    }
+  }
+}

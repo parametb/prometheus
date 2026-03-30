@@ -399,6 +399,56 @@ function tagFilterBar(tags, activeTag, onClickFn, clearFn) {
   return `<div class="tag-filter-bar"><span class="tag-filter-label">แท็ก:</span>${chips}<button class="tag-chip-clear ${activeTag?'visible':''}" onclick="${clearFn}()">✕ ล้าง</button></div>`;
 }
 
+/* ── Segment / Geo enrichment ──────────────────────────────────────────────
+   JSON stores revenue_share as a human-readable string (e.g. "~88% (FY2026)")
+   and geographies.share as "~45%".  These helpers parse them into numbers so
+   the bar-chart / donut rendering code gets clean revenue_pct + revenue values.
+   Revenue in $B is derived from EDGAR financials when available.              */
+
+function parsePct(str) {
+  if (str == null) return null;
+  const s = String(str).replace(/,/g, '');
+  const isLessThan = s.includes('<');
+  const m = s.match(/(\d+(?:\.\d+)?)\s*%/);
+  if (!m) return null;
+  const v = parseFloat(m[1]);
+  // "<1%" → treat as 0.5 (midpoint of 0-1 range)
+  return isLessThan ? Math.round(v * 0.5 * 10) / 10 : v;
+}
+
+function enrichSegments(segs) {
+  // Get latest non-null total revenue (in $B) from EDGAR financials
+  let totalRevB = null;
+  const fin = companyData?.financials;
+  if (fin?.metrics && fin?.years) {
+    const rm = fin.metrics.find(m => m.name === 'Revenue');
+    if (rm) {
+      for (let i = rm.values.length - 1; i >= 0; i--) {
+        if (rm.values[i] != null) {
+          // EDGAR stores in Millions → convert to Billions
+          totalRevB = Math.round(rm.values[i] / 100) / 10;
+          break;
+        }
+      }
+    }
+  }
+  return segs.map(s => {
+    if (s.revenue != null && s.revenue_pct != null) return s; // already numeric
+    const pct = s.revenue_pct ?? parsePct(s.revenue_share);
+    const rev = (totalRevB != null && pct != null)
+      ? Math.round(totalRevB * pct / 100 * 10) / 10
+      : s.revenue ?? null;
+    return { ...s, revenue_pct: pct, revenue: rev };
+  });
+}
+
+function enrichGeos(geos) {
+  return geos.map(g => {
+    if (g.revenue_pct != null) return g;
+    return { ...g, revenue_pct: parsePct(g.share ?? g.revenue_share) };
+  });
+}
+
 /* ── RENDER ── */
 function render() {
   const c = companyData;
@@ -408,6 +458,8 @@ function render() {
   const roadmap = c.roadmap || [];
   const fin     = c.financials || {};
   const ov      = c.overview || null;
+  if (ov?.segments?.length)    ov.segments    = enrichSegments(ov.segments);
+  if (ov?.geographies?.length) ov.geographies = enrichGeos(ov.geographies);
 
   const rmStats = {
     delivered: roadmap.filter(r=>r.status==='delivered').length,
@@ -505,12 +557,19 @@ function renderOverviewPanel(ov) {
         <div>
           ${ov.segments.map(s => {
             const color   = SEG_TYPE_COLOR[s.type] || '#8b949e';
-            const barPct  = maxRev > 0 ? (s.revenue / maxRev * 100).toFixed(1) : 0;
+            // Bar width: relative to largest segment by $revenue if available, else by %
+            const barPct  = s.revenue != null && maxRev > 0
+              ? (s.revenue / maxRev * 100).toFixed(1)
+              : (s.revenue_pct ?? 0);
+            // Display: "$53.6B · 88%"  or fall back to raw revenue_share string
+            const revAmt  = s.revenue != null ? `$${s.revenue}B` : (s.revenue_share || '');
+            const revPct  = s.revenue_pct != null ? `${s.revenue_pct}%` : '';
+            const revLabel = [revAmt, revPct].filter(Boolean).join(' · ');
             const yoyCol  = s.yoy_change > 0 ? 'var(--green)' : s.yoy_change < 0 ? 'var(--red)' : 'var(--text-muted)';
             return `<div class="seg-bar-item">
               <div class="seg-bar-header">
                 <span class="seg-bar-name">${s.name}</span>
-                <span class="seg-bar-nums">$${s.revenue}B · ${s.revenue_pct}%${s.yoy_change!=null?' <span style="color:'+yoyCol+'">('+( s.yoy_change>0?'+':'')+s.yoy_change+'%)</span>':''}</span>
+                <span class="seg-bar-nums">${revLabel}${s.yoy_change!=null?' <span style="color:'+yoyCol+'">('+( s.yoy_change>0?'+':'')+s.yoy_change+'%)</span>':''}</span>
               </div>
               <div class="seg-bar-track"><div class="seg-bar-fill" data-pct="${barPct}" style="background:${color}"></div></div>
               ${s.key_assets?.length ? `<div class="seg-bar-assets">📍 ${s.key_assets.join(' · ')}</div>` : ''}

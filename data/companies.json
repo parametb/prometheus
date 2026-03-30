@@ -58,5 +58,15 @@
     "note_count": 1,
     "quote_count": 8,
     "roadmap_count": 14
+  },
+  {
+    "ticker": "RGTI",
+    "name": "Rigetti Computing, Inc.",
+    "sector": "Technology",
+    "exchange": "NASDAQ",
+    "last_updated": "2026-03-30",
+    "note_count": 2,
+    "quote_count": 20,
+    "roadmap_count": 26
   }
 ]

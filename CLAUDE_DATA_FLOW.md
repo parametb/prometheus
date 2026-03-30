@@ -140,7 +140,8 @@ QUBT — LSI acquisition สำเร็จแล้ว (Feb 2026)
 - EPS (diluted): -0.11
 ```
 
----
+
+> 📄 **Parse Exhibit 21** (corporate structure) → ดู `EXHIBIT21_SKILL.md`
 
 ## ระบบ Backup อัตโนมัติ
 

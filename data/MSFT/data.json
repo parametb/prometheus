@@ -6,17 +6,20 @@
   "tradingview_symbol": "NASDAQ:MSFT",
   "last_updated": "2026-03-29",
   "description": "Microsoft Corporation develops, licenses, and supports software, services, devices, and solutions worldwide. Key segments: Productivity & Business Processes (Office 365, LinkedIn, Dynamics), Intelligent Cloud (Azure, server products), and More Personal Computing (Windows, Xbox, Surface, Search). The dominant AI infrastructure play through OpenAI partnership and Copilot integration across all products.",
-
   "notes": [
     {
       "date": "2025-01-15",
       "title": "Azure Growth & AI Monetization",
-      "tags": ["azure", "cloud", "AI", "copilot"],
+      "tags": [
+        "azure",
+        "cloud",
+        "AI",
+        "copilot"
+      ],
       "rating": 5,
       "content": "Azure growth ยังแข็งแกร่งที่ 31% YoY โดยมี AI services เป็น tailwind สำคัญ\nCopilot 365 มีผู้ใช้งานเชิงพาณิชย์เพิ่มขึ้น 2x QoQ\n\nสิ่งที่น่าสนใจ: Satya พูดถึง AI Hyperscale Compute อย่างชัดเจน บ่งบอกว่า MSFT จะยังลงทุน capex สูงต่อเนื่อง\nMargin อาจถูกกดดันระยะสั้นจาก AI infrastructure investment แต่ long-term thesis ยังแข็งแกร่ง\n\n$80B AI capex commitment ใน FY2025 แสดงว่า MSFT ยอมรับว่า AI race ต้องลงทุน infra ก่อน ซึ่ง short-term กระทบ FCF แต่ long-term build moat ที่คู่แข่งตามได้ยาก"
     }
   ],
-
   "quotes": [
     {
       "date": "2025-01-29",
@@ -35,7 +38,6 @@
       "tag": "azure"
     }
   ],
-
   "roadmap": [
     {
       "date_said": "2024-11-07",
@@ -62,7 +64,6 @@
       "follow_up_date": "2023-11-01"
     }
   ],
-
   "overview": {
     "founded": "1975",
     "headquarters": "Redmond, WA, USA",
@@ -78,28 +79,170 @@
       "Enterprise trust & compliance — FedRAMP, ISO 27001, HIPAA, GDPR compliance ที่ไม่มีใครทำได้เหมือน เป็น barrier ใน regulated industries"
     ],
     "segments": [
-      { "name": "Intelligent Cloud",             "revenue_pct": 43, "type": "cloud",    "fy": 2024 },
-      { "name": "Productivity & Business Processes","revenue_pct": 32,"type": "services", "fy": 2024 },
-      { "name": "More Personal Computing",       "revenue_pct": 25, "type": "hardware", "fy": 2024 }
+      {
+        "name": "Intelligent Cloud",
+        "revenue_pct": 43,
+        "type": "cloud",
+        "fy": 2024
+      },
+      {
+        "name": "Productivity & Business Processes",
+        "revenue_pct": 32,
+        "type": "services",
+        "fy": 2024
+      },
+      {
+        "name": "More Personal Computing",
+        "revenue_pct": 25,
+        "type": "hardware",
+        "fy": 2024
+      }
     ],
     "geographies": [
-      { "name": "United States", "revenue_pct": 50 },
-      { "name": "Europe",        "revenue_pct": 27 },
-      { "name": "Asia Pacific",  "revenue_pct": 14 },
-      { "name": "Other",         "revenue_pct": 9  }
+      {
+        "name": "United States",
+        "revenue_pct": 50
+      },
+      {
+        "name": "Europe",
+        "revenue_pct": 27
+      },
+      {
+        "name": "Asia Pacific",
+        "revenue_pct": 14
+      },
+      {
+        "name": "Other",
+        "revenue_pct": 9
+      }
     ],
     "timeline": [
-      { "year": 1975, "type": "founding",  "event": "Bill Gates และ Paul Allen ก่อตั้ง Microsoft ใน Albuquerque, NM เพื่อพัฒนา BASIC interpreter" },
-      { "year": 1980, "type": "milestone", "event": "ได้รับสัญญา DOS จาก IBM — จุดเริ่มต้นของการครองตลาด PC OS" },
-      { "year": 1986, "type": "financial", "event": "IPO บน NASDAQ ที่ $21/share — Bill Gates กลายเป็น billionaire อายุ 31 ปี" },
-      { "year": 1990, "type": "product",   "event": "เปิดตัว Microsoft Office — bundling ที่เปลี่ยนอุตสาหกรรม productivity software" },
-      { "year": 2001, "type": "product",   "event": "เปิดตัว Xbox — เข้าสู่ตลาด gaming console โดยตรง" },
-      { "year": 2014, "type": "milestone", "event": "Satya Nadella ขึ้นเป็น CEO — pivot สู่ cloud-first, mobile-first strategy" },
-      { "year": 2016, "type": "merger",    "event": "เข้าซื้อ LinkedIn ในราคา $26.2B — ใหญ่ที่สุดในประวัติศาสตร์ Microsoft" },
-      { "year": 2018, "type": "merger",    "event": "เข้าซื้อ GitHub ในราคา $7.5B — ครองระบบนิเวศ developer" },
-      { "year": 2019, "type": "milestone", "event": "ลงทุนใน OpenAI ครั้งแรก $1B — จุดเริ่มต้น AI partnership" },
-      { "year": 2023, "type": "product",   "event": "เปิดตัว Copilot ใน Microsoft 365, GitHub Copilot — AI monetization เริ่มต้น" },
-      { "year": 2024, "type": "merger",    "event": "ปิดดีล Activision Blizzard ที่ $68.7B — ใหญ่ที่สุดในประวัติศาสตร์ gaming" }
+      {
+        "year": 1975,
+        "type": "founding",
+        "title": "ก่อตั้ง Microsoft",
+        "description": "Bill Gates และ Paul Allen ก่อตั้ง Microsoft ใน Albuquerque, NM เพื่อพัฒนา BASIC interpreter สำหรับ Altair 8800 — ด้วยวิสัยทัศน์ 'a computer on every desk and in every home'"
+      },
+      {
+        "year": 1980,
+        "type": "milestone",
+        "title": "สัญญา DOS กับ IBM",
+        "description": "IBM เลือก Microsoft เพื่อจัดหา OS สำหรับ IBM PC — Microsoft ซื้อ QDOS ในราคา $50,000 แล้วขาย license ให้ IBM ในชื่อ PC-DOS จุดเริ่มต้นของการครองตลาด PC OS"
+      },
+      {
+        "year": 1986,
+        "type": "financial",
+        "title": "IPO บน NASDAQ",
+        "description": "IPO ที่ $21/share มูลค่าบริษัท ~$520M — Bill Gates กลายเป็น millionaire อายุ 31 ปี และต่อมาเป็น billionaire ภายใน 1 ปี"
+      },
+      {
+        "year": 1990,
+        "type": "product",
+        "title": "เปิดตัว Microsoft Office",
+        "description": "Bundle Word, Excel, PowerPoint เป็น suite เดียว — เปลี่ยนวิธีทำงานของ office ทั่วโลกและสร้าง recurring revenue จาก productivity software ที่ยั่งยืนหลายทศวรรษ"
+      },
+      {
+        "year": 1995,
+        "type": "product",
+        "title": "เปิดตัว Windows 95",
+        "description": "Windows 95 launch มีผู้ซื้อ 7 ล้านชุดใน 5 สัปดาห์แรก — นำ Start Menu, Taskbar และ 32-bit computing มาสู่ผู้ใช้ทั่วไป เป็น milestone ที่ทำให้ PC กลายเป็น mainstream"
+      },
+      {
+        "year": 1996,
+        "type": "milestone",
+        "title": "เปิดตัว MSN และ Internet Explorer",
+        "description": "Microsoft เข้าสู่ยุค internet ด้วย IE 3.0 และ MSN portal — เริ่มต้น Browser Wars กับ Netscape Navigator นำไปสู่การสอบสวน antitrust ของรัฐบาลสหรัฐฯ"
+      },
+      {
+        "year": 2001,
+        "type": "product",
+        "title": "เปิดตัว Xbox และ Windows XP",
+        "description": "Xbox console เปิดตัวพร้อม Halo: Combat Evolved — เข้าสู่ตลาด gaming ที่ Sony ครองอยู่ ในปีเดียวกัน Windows XP วางจำหน่ายและกลายเป็น OS ที่ได้รับความนิยมมากที่สุดตลอดกาล"
+      },
+      {
+        "year": 2008,
+        "type": "milestone",
+        "title": "เปิดตัว Azure Cloud Platform",
+        "description": "Microsoft Azure (ชื่อเดิม 'Windows Azure') เปิดตัว — เป็น turning point สำคัญสู่ cloud computing ที่ต่อมากลายเป็น revenue engine หลักของบริษัท"
+      },
+      {
+        "year": 2011,
+        "type": "merger",
+        "title": "เข้าซื้อ Skype $8.5B",
+        "description": "Microsoft เข้าซื้อ Skype ในราคา $8.5B — deal ใหญ่ที่สุดในขณะนั้น เพื่อเสริมความสามารถด้าน communications และ enterprise collaboration ก่อนยุค Teams"
+      },
+      {
+        "year": 2013,
+        "type": "merger",
+        "title": "เข้าซื้อ Nokia Devices $7.2B",
+        "description": "Microsoft เข้าซื้อแผนก mobile ของ Nokia เพื่อแข่งกับ Apple iPhone — ต่อมาเป็น deal ที่ไม่ประสบความสำเร็จ Satya Nadella ตัดขาดทุน $7.6B ในปี 2015"
+      },
+      {
+        "year": 2014,
+        "type": "milestone",
+        "title": "Satya Nadella ขึ้นเป็น CEO",
+        "description": "Satya Nadella เข้ามาแทน Steve Ballmer — pivot สู่ 'cloud-first, mobile-first' strategy เปลี่ยน culture จาก Windows-centric สู่ platform-agnostic และ open source"
+      },
+      {
+        "year": 2016,
+        "type": "merger",
+        "title": "เข้าซื้อ LinkedIn $26.2B",
+        "description": "ซื้อกิจการใหญ่ที่สุดในประวัติศาสตร์ Microsoft ณ เวลานั้น — LinkedIn กลายเป็น talent data platform ที่ integrate กับ Microsoft 365 และ Dynamics CRM ทำรายได้ $16B+/ปีในปัจจุบัน"
+      },
+      {
+        "year": 2018,
+        "type": "merger",
+        "title": "เข้าซื้อ GitHub $7.5B",
+        "description": "ซื้อ platform ของ developer 28M คน — เสริม Azure และ developer ecosystem สร้างโอกาส monetize ผ่าน GitHub Copilot ที่เปิดตัวในปี 2022"
+      },
+      {
+        "year": 2019,
+        "type": "financial",
+        "title": "Market Cap แตะ $1 Trillion",
+        "description": "Microsoft เป็นบริษัทสหรัฐฯ บริษัทที่ 3 ที่มีมูลค่าแตะ $1T — ยืนยัน cloud transformation ที่ประสบความสำเร็จ Azure กลายเป็น #2 cloud platform รองจาก AWS"
+      },
+      {
+        "year": 2019,
+        "type": "milestone",
+        "title": "ลงทุนใน OpenAI ครั้งแรก $1B",
+        "description": "Microsoft ลงทุน $1B ใน OpenAI เพื่อสร้าง exclusive partnership — AI infrastructure บน Azure และ rights to commercialize GPT models จุดเริ่มต้น AI strategy ที่เปลี่ยน trajectory บริษัท"
+      },
+      {
+        "year": 2021,
+        "type": "product",
+        "title": "เปิดตัว Microsoft Teams 270M Users",
+        "description": "Teams เติบโตจาก 32M users (2019) → 270M DAU ในช่วง pandemic — กลายเป็น enterprise collaboration platform ที่ challenge Slack โดยตรง และ bundle กับ Microsoft 365"
+      },
+      {
+        "year": 2022,
+        "type": "merger",
+        "title": "ประกาศซื้อ Activision Blizzard $68.7B",
+        "description": "ประกาศ deal ใหญ่ที่สุดในประวัติศาสตร์ gaming industry — รวม IP อย่าง Call of Duty, World of Warcraft, Candy Crush เพื่อเสริม Xbox Game Pass และ cloud gaming"
+      },
+      {
+        "year": 2023,
+        "type": "product",
+        "title": "เปิดตัว Copilot ทั่ว Microsoft 365",
+        "description": "Microsoft 365 Copilot ($30/user/เดือน) และ GitHub Copilot ($19-39/เดือน) เปิดตัว commercial — เริ่มต้น AI monetization wave ที่คาดว่าจะเพิ่ม ARPU ได้ $10B+ ต่อปีในระยะกลาง"
+      },
+      {
+        "year": 2023,
+        "type": "merger",
+        "title": "ปิดดีล Activision Blizzard $68.7B",
+        "description": "หลังสู้กับ FTC และ CMA ในสหราชอาณาจักรนาน 21 เดือน ดีลปิดสำเร็จในเดือน ต.ค. 2023 — Xbox กลายเป็น #3 gaming company ระดับโลก Microsoft Gaming มีรายได้ ~$21B/ปี"
+      },
+      {
+        "year": 2024,
+        "type": "financial",
+        "title": "Azure AI Growth 33% YoY — ลงทุน OpenAI รวม $13B",
+        "description": "Azure เติบโต 33% YoY ขับเคลื่อนโดย AI services — Microsoft ลงทุนใน OpenAI รวมสะสม $13B เป็น largest AI bet จาก Big Tech บริษัทมีมูลค่าสูงสุดในโลกช่วงต้นปี 2024"
+      },
+      {
+        "year": 2025,
+        "type": "product",
+        "title": "Copilot+ PCs และ Agentic AI Platform",
+        "description": "เปิดตัว Copilot+ PC spec ที่ต้องการ NPU 40 TOPS สร้าง ecosystem ใหม่สำหรับ on-device AI — Microsoft Copilot Studio ขยายสู่ agentic workflows ที่ทำงานอัตโนมัติแทน human"
+      }
     ],
     "management": [
       {
@@ -145,29 +288,77 @@
     ],
     "ownership": {
       "major_shareholders": [
-        { "name": "Vanguard Group",      "pct": 8.8,  "type": "institutional" },
-        { "name": "BlackRock",           "pct": 7.2,  "type": "institutional" },
-        { "name": "State Street Global", "pct": 4.1,  "type": "institutional" },
-        { "name": "Capital Group",       "pct": 3.5,  "type": "institutional" },
-        { "name": "Satya Nadella",       "pct": 0.6,  "type": "insider" },
-        { "name": "Public Float (อื่นๆ)","pct": 75.8, "type": "float" }
+        {
+          "name": "Vanguard Group",
+          "pct": 8.8,
+          "type": "institutional"
+        },
+        {
+          "name": "BlackRock",
+          "pct": 7.2,
+          "type": "institutional"
+        },
+        {
+          "name": "State Street Global",
+          "pct": 4.1,
+          "type": "institutional"
+        },
+        {
+          "name": "Capital Group",
+          "pct": 3.5,
+          "type": "institutional"
+        },
+        {
+          "name": "Satya Nadella",
+          "pct": 0.6,
+          "type": "insider"
+        },
+        {
+          "name": "Public Float (อื่นๆ)",
+          "pct": 75.8,
+          "type": "float"
+        }
       ],
       "corporate_structure": [
         {
           "name": "Microsoft Corporation (NASDAQ: MSFT)",
           "type": "parent",
           "children": [
-            { "name": "Microsoft Azure (Cloud Division)", "ownership_pct": 100, "type": "subsidiary", "partner": null },
-            { "name": "LinkedIn Corporation",             "ownership_pct": 100, "type": "subsidiary", "partner": null },
-            { "name": "GitHub Inc.",                      "ownership_pct": 100, "type": "subsidiary", "partner": null },
-            { "name": "Activision Blizzard",              "ownership_pct": 100, "type": "subsidiary", "partner": null },
-            { "name": "OpenAI (Partnership)",             "ownership_pct": 49,  "type": "associated", "partner": "OpenAI LP (non-profit control)" }
+            {
+              "name": "Microsoft Azure (Cloud Division)",
+              "ownership_pct": 100,
+              "type": "subsidiary",
+              "partner": null
+            },
+            {
+              "name": "LinkedIn Corporation",
+              "ownership_pct": 100,
+              "type": "subsidiary",
+              "partner": null
+            },
+            {
+              "name": "GitHub Inc.",
+              "ownership_pct": 100,
+              "type": "subsidiary",
+              "partner": null
+            },
+            {
+              "name": "Activision Blizzard",
+              "ownership_pct": 100,
+              "type": "subsidiary",
+              "partner": null
+            },
+            {
+              "name": "OpenAI (Partnership)",
+              "ownership_pct": 49,
+              "type": "associated",
+              "partner": "OpenAI LP (non-profit control)"
+            }
           ]
         }
       ]
     }
   },
-
   "financials": {
     "currency": "USD",
     "unit": "Billion",
@@ -198,14 +389,74 @@
         "url": "https://www.microsoft.com/en-us/investor"
       }
     ],
-    "years": [2020, 2021, 2022, 2023, 2024],
+    "years": [
+      2020,
+      2021,
+      2022,
+      2023,
+      2024
+    ],
     "metrics": [
-      { "name": "Revenue",          "values": [143.0, 168.1, 198.3, 211.9, 245.1] },
-      { "name": "Gross Profit",     "values": [96.9,  115.9, 135.6, 146.1, 171.0] },
-      { "name": "Operating Income", "values": [53.0,  69.9,  83.4,  88.5,  109.4] },
-      { "name": "Net Income",       "values": [44.3,  61.3,  72.7,  72.4,  88.1]  },
-      { "name": "EPS (diluted)",    "values": [5.76,  8.05,  9.65,  9.72,  11.80] },
-      { "name": "Free Cash Flow",   "values": [45.2,  56.1,  65.1,  87.9,  74.1]  }
+      {
+        "name": "Revenue",
+        "values": [
+          143.0,
+          168.1,
+          198.3,
+          211.9,
+          245.1
+        ]
+      },
+      {
+        "name": "Gross Profit",
+        "values": [
+          96.9,
+          115.9,
+          135.6,
+          146.1,
+          171.0
+        ]
+      },
+      {
+        "name": "Operating Income",
+        "values": [
+          53.0,
+          69.9,
+          83.4,
+          88.5,
+          109.4
+        ]
+      },
+      {
+        "name": "Net Income",
+        "values": [
+          44.3,
+          61.3,
+          72.7,
+          72.4,
+          88.1
+        ]
+      },
+      {
+        "name": "EPS (diluted)",
+        "values": [
+          5.76,
+          8.05,
+          9.65,
+          9.72,
+          11.8
+        ]
+      },
+      {
+        "name": "Free Cash Flow",
+        "values": [
+          45.2,
+          56.1,
+          65.1,
+          87.9,
+          74.1
+        ]
+      }
     ],
     "breakdown": {
       "sankey": {
@@ -213,29 +464,113 @@
         "currency": "USD",
         "unit": "Billion",
         "nodes": [
-          { "id": 0,  "label": "Intelligent Cloud",          "color": "#58a6ff" },
-          { "id": 1,  "label": "Productivity & Business",    "color": "#3fb950" },
-          { "id": 2,  "label": "More Personal Computing",    "color": "#bc8cff" },
-          { "id": 3,  "label": "Total Revenue $245.1B",      "color": "#f0c060" },
-          { "id": 4,  "label": "COGS $74.1B",                "color": "#f85149" },
-          { "id": 5,  "label": "Gross Profit $171.0B",       "color": "#58d68d" },
-          { "id": 6,  "label": "R&D $29.5B",                 "color": "#8b949e" },
-          { "id": 7,  "label": "SG&A $32.1B",                "color": "#aaaaaa" },
-          { "id": 8,  "label": "Operating Income $109.4B",   "color": "#58a6ff" },
-          { "id": 9,  "label": "Tax & Other $21.3B",         "color": "#f85149" },
-          { "id": 10, "label": "Net Income $88.1B",          "color": "#3fb950" }
+          {
+            "id": 0,
+            "label": "Intelligent Cloud",
+            "color": "#58a6ff"
+          },
+          {
+            "id": 1,
+            "label": "Productivity & Business",
+            "color": "#3fb950"
+          },
+          {
+            "id": 2,
+            "label": "More Personal Computing",
+            "color": "#bc8cff"
+          },
+          {
+            "id": 3,
+            "label": "Total Revenue $245.1B",
+            "color": "#f0c060"
+          },
+          {
+            "id": 4,
+            "label": "COGS $74.1B",
+            "color": "#f85149"
+          },
+          {
+            "id": 5,
+            "label": "Gross Profit $171.0B",
+            "color": "#58d68d"
+          },
+          {
+            "id": 6,
+            "label": "R&D $29.5B",
+            "color": "#8b949e"
+          },
+          {
+            "id": 7,
+            "label": "SG&A $32.1B",
+            "color": "#aaaaaa"
+          },
+          {
+            "id": 8,
+            "label": "Operating Income $109.4B",
+            "color": "#58a6ff"
+          },
+          {
+            "id": 9,
+            "label": "Tax & Other $21.3B",
+            "color": "#f85149"
+          },
+          {
+            "id": 10,
+            "label": "Net Income $88.1B",
+            "color": "#3fb950"
+          }
         ],
         "links": [
-          { "source": 0,  "target": 3,  "value": 105.4 },
-          { "source": 1,  "target": 3,  "value": 77.4  },
-          { "source": 2,  "target": 3,  "value": 62.3  },
-          { "source": 3,  "target": 4,  "value": 74.1  },
-          { "source": 3,  "target": 5,  "value": 171.0 },
-          { "source": 5,  "target": 6,  "value": 29.5  },
-          { "source": 5,  "target": 7,  "value": 32.1  },
-          { "source": 5,  "target": 8,  "value": 109.4 },
-          { "source": 8,  "target": 9,  "value": 21.3  },
-          { "source": 8,  "target": 10, "value": 88.1  }
+          {
+            "source": 0,
+            "target": 3,
+            "value": 105.4
+          },
+          {
+            "source": 1,
+            "target": 3,
+            "value": 77.4
+          },
+          {
+            "source": 2,
+            "target": 3,
+            "value": 62.3
+          },
+          {
+            "source": 3,
+            "target": 4,
+            "value": 74.1
+          },
+          {
+            "source": 3,
+            "target": 5,
+            "value": 171.0
+          },
+          {
+            "source": 5,
+            "target": 6,
+            "value": 29.5
+          },
+          {
+            "source": 5,
+            "target": 7,
+            "value": 32.1
+          },
+          {
+            "source": 5,
+            "target": 8,
+            "value": 109.4
+          },
+          {
+            "source": 8,
+            "target": 9,
+            "value": 21.3
+          },
+          {
+            "source": 8,
+            "target": 10,
+            "value": 88.1
+          }
         ]
       }
     },
