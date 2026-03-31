@@ -1,0 +1,112 @@
+{
+  "ticker": "BRBY",
+  "name": "Burberry Group plc",
+  "sector": "Consumer",
+  "exchange": "LSE",
+  "last_updated": "2026-03-31",
+  "description": "British luxury fashion house founded in 1856, renowned for its iconic trench coats and distinctive tartan pattern. Listed on the London Stock Exchange, Burberry designs, sources, and sells luxury ready-to-wear, leather goods, accessories, and beauty products globally.",
+
+  "notes": [
+    {
+      "date": "2026-03-31",
+      "title": "FY2025 Annual Report Analysis",
+      "tags": ["annual-report", "fy2025", "financials", "burberry-forward"],
+      "rating": 2,
+      "content": "[Financial Performance]\nRevenue fell 17% to £2.46B (from £2.97B), with operating income turning negative (-£3M) versus £418M in FY2024. Net loss of -£75M vs. net profit of £270M prior year. Gross margin compressed to 62.5% from the 67.7% FY2024 peak — though still above the 59.6% seen in FY2022/23. Free cash flow held at £278M (vs. £294M), the key bright spot. The company raised a £450M bond in FY2025, pushing total debt to £1.92B and net debt to £1.1B. Dividend suspended for FY2025 — first time since the pandemic. Debt/Equity ratio deteriorated to 2.1x.\n\n[Strategic Focus — Burberry Forward]\nNew CEO Joshua Schulman (appointed July 2024) launched the 'Burberry Forward' transformation plan — repositioning the brand around timeless British luxury anchored in outerwear (trench coats, scarves, leather goods). Five pillars: 1) Elevate outerwear as primary brand identity 2) Reduce and restructure wholesale channel 3) Achieve £100M annualised cost savings by FY27 4) Streamline SKU count and price architecture 5) Rebuild brand desirability with long-term marketing investment. H2 comparable retail sales -5% versus H1 -20% — trajectory improving sharply, validating early strategy execution.\n\n[Key Risks]\nLuxury demand slowdown in Asia Pacific (comps -16% FY25, China -15%) with no clear inflection timeline. Execution risk remains high — Burberry has undergone multiple strategic resets in the past decade. Elevated leverage (Net Debt £1.1B, Net Debt/EBITDA 2.6x) limits financial flexibility. Wholesale restructuring will create near-term revenue headwinds (-35% wholesale in FY25). Currency: GBP appreciation vs. USD/EUR/CNY could create reported-rate headwinds.\n\n[Management Tone]\nCautiously optimistic. Schulman acknowledges the severity of the downturn plainly while framing H2 improvement as proof of concept for Burberry Forward. Language is direct and pragmatic — positions the strategy as a return to brand roots, not a radical reinvention. Notably avoids prior management's aggressive growth targets.\n\n[Investment Implications]\nBull: iconic heritage brand, improving H2 trajectory (-5% vs. -20% H1), £100M cost savings catalyst, low valuation (P/S 1.1x, EV/EBITDA 9x), FCF yield ~10%, ESG Leader (score 69). Bear: China luxury cycle uncertainty, execution risk on repositioning, debt elevated, dividend suspended, gross margin still below peak, analysts project only modest recovery (FY2026E revenue £2.43B, EPS £0.21)."
+    }
+  ],
+
+  "quotes": [
+    {
+      "speaker": "Joshua Schulman (CEO)",
+      "quote": "Burberry Forward is about returning the brand to its core — outerwear, British heritage, and the things that made Burberry great.",
+      "tag": "strategy",
+      "source": "FY2025 Preliminary Results",
+      "date": "2025-05-14"
+    },
+    {
+      "speaker": "Joshua Schulman (CEO)",
+      "quote": "Our second half performance, with comparable retail sales down 5%, gives us confidence that Burberry Forward is working.",
+      "tag": "guidance",
+      "source": "FY2025 Preliminary Results",
+      "date": "2025-05-14"
+    },
+    {
+      "speaker": "Burberry Management",
+      "quote": "We are targeting £100 million of annualised cost savings by FY27, with £24 million already delivered in FY25.",
+      "tag": "cost-savings",
+      "source": "FY2025 Preliminary Results",
+      "date": "2025-05-14"
+    }
+  ],
+
+  "roadmap": [
+    {
+      "commitment": "Achieve £100M total annualised cost savings by FY2027 (£24M delivered in FY25, £60M incremental from restructuring)",
+      "date_said": "2025-05-14",
+      "source": "FY2025 Preliminary Results",
+      "status": "in_progress"
+    },
+    {
+      "commitment": "Reposition Burberry as outerwear-led luxury brand — increase outerwear % of total sales as part of Burberry Forward",
+      "date_said": "2025-05-14",
+      "source": "FY2025 Preliminary Results",
+      "status": "in_progress"
+    },
+    {
+      "commitment": "Complete strategic review and restructuring of wholesale partner network",
+      "date_said": "2025-05-14",
+      "source": "FY2025 Preliminary Results",
+      "status": "in_progress"
+    },
+    {
+      "commitment": "Resume dividend payments once business performance supports it (suspended FY2025)",
+      "date_said": "2025-05-14",
+      "source": "FY2025 Preliminary Results",
+      "status": "pending"
+    }
+  ],
+
+  "financials": {
+    "currency": "GBP",
+    "unit": "Billion",
+    "links": [
+      {
+        "label": "Annual Report FY2025 (PDF)",
+        "url": "https://www.burberryplc.com/content/dam/burberryplc/corporate/oar/oar-2024-2025/burberry_annual_report_and_accounts_2024_25_accessibility.pdf.downloadasset.pdf",
+        "type": "annual_report",
+        "year": 2025
+      },
+      {
+        "label": "FY2025 Preliminary Results Press Release",
+        "url": "https://www.burberryplc.com/content/dam/burberryplc/corporate/documents/investors/results-reports/2025/prelims-/Burberry%20FY25%20Preliminary%20Results%20Press%20Release.pdf.downloadasset.pdf",
+        "type": "press_release",
+        "year": 2025
+      },
+      {
+        "label": "FY2025 Earnings Call Transcript",
+        "url": "https://www.burberryplc.com/content/dam/burberryplc/corporate/documents/investors/results-reports/2025/Burberry%20FY25%20Preliminary%20Results%20Transcript%20v2.pdf.downloadasset.pdf",
+        "type": "earnings_transcript",
+        "year": 2025
+      },
+      {
+        "label": "Investor Relations — Results & Reports",
+        "url": "https://www.burberryplc.com/investors/results-reports-presentations",
+        "type": "ir_page",
+        "year": null
+      }
+    ],
+    "years": [2022, 2023, 2024, 2025],
+    "metrics": [
+      { "name": "Revenue",        "values": [2.83,   3.09,   2.97,   2.46]  },
+      { "name": "Gross Profit",   "values": [1.68,   1.84,   2.01,   1.54]  },
+      { "name": "Operating Income","values": [0.514,  0.640,  0.418, -0.003] },
+      { "name": "Net Income",     "values": [0.396,  0.490,  0.270, -0.075] },
+      { "name": "EPS (diluted)",  "values": [0.98,   1.26,   0.74,  -0.21]  },
+      { "name": "Free Cash Flow", "values": [0.534,  0.571,  0.294,  0.278] },
+      { "name": "Cash",           "values": [1.22,   1.03,   0.441,  0.813] },
+      { "name": "Total Debt",     "values": [1.40,   1.49,   1.57,   1.92]  }
+    ],
+    "notes": "Fiscal year ends late March. EPS in GBP (not billions). FY2025 = 52 weeks ended 29 March 2025. Operating Income = Reported (not adjusted). Adjusted operating profit FY2025 was £26M (1% margin). Source: FMP via BigData tearsheet."
+  }
+}
