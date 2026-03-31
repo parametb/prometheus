@@ -14,7 +14,9 @@
         "nvda"
       ],
       "rating": 3,
-      "content": "[Financial Performance]\nNVIDIA has successfully transitioned from a GPU company to a data center-scale AI infrastructure leader, with the Data Center platform now representing the core growth engine. The company's full-stack innovation approach across silicon, systems, networking, and software has created significant competitive advantages in AI infrastructure. Strategic expansion into automotive, healthcare, and professional visualization markets provides diversified growth opportunities beyond core data center business. The accelerated release cadence of open AI models and platforms demonstrates management's focus on ecosystem development and market expansion.\n\n[Performance Drivers]\nGrowth was driven by strong demand for AI infrastructure, particularly data center-scale accelerated computing platforms. The launch of the Blackwell architecture and expansion into agentic and physical AI applications created new market opportunities. Gaming growth was supported by new Blackwell GeForce RTX GPUs with neural graphics capabilities.\n\n[Strategic Priorities]\n• Advancing accelerated computing platform — full-stack innovation across architecture, chip design, systems, and software\n• Extending AI leadership — end-to-end platform for training and inference with NVIDIA AI Enterprise software suite\n• Expanding computer graphics with AI — neural rendering and Omniverse for virtual world simulation\n• Advancing autonomous vehicle platform — comprehensive AI-based hardware/software solution for AV/EV market\n\n[Competitive Position]\nNVIDIA maintains a strong moat through its full-stack platform approach combining hardware, software, and ecosystem. Differentiation comes from CUDA developer platform with 7.5M developers, data center-scale co-design, and leadership in AI infrastructure. Competitive threats include custom ASIC development by hyperscalers, though NVIDIA's NVLink Fusion addresses this by enabling integration with custom CPUs/XPUs.\n\n[Management Quality]\nExecution score: HIGH\nManagement delivered on innovation promises with successful launch of Blackwell architecture in FY2025 and Blackwell Ultra platform in FY2026, demonstrating consistent execution of product roadmap. The acquisition of Mellanox in 2020 has been successfully integrated to create data center-scale offerings.\n\n[Outlook]\nManagement signals continued strong demand for AI infrastructure with Rubin platform expected to commence production in second half of FY2027. Guidance suggests expansion into agentic AI and reasoning applications with focus on cost-per-token reduction.\n\n[Key Risks]\nNVIDIA faces a high-risk profile dominated by technological and competitive pressures in fast-evolving AI and computing markets. Key risks include cybersecurity threats, legal exposures, and supply chain vulnerabilities, though the company mitigates some through heavy R&D investment and market diversification. Overall, NVIDIA's success hinges on maintaining innovation leadership amid intense competition and regulatory uncertainties.\n\n[Management Tone]\nBullish"
+      "content": "[Financial Performance]\nNVIDIA has successfully transitioned from a GPU company to a data center-scale AI infrastructure leader, with the Data Center platform now representing the core growth engine. The company's full-stack innovation approach across silicon, systems, networking, and software has created significant competitive advantages in AI infrastructure. Strategic expansion into automotive, healthcare, and professional visualization markets provides diversified growth opportunities beyond core data center business. The accelerated release cadence of open AI models and platforms demonstrates management's focus on ecosystem development and market expansion.\n\n[Performance Drivers]\nGrowth was driven by strong demand for AI infrastructure, particularly data center-scale accelerated computing platforms. The launch of the Blackwell architecture and expansion into agentic and physical AI applications created new market opportunities. Gaming growth was supported by new Blackwell GeForce RTX GPUs with neural graphics capabilities.\n\n[Strategic Priorities]\n• Advancing accelerated computing platform — full-stack innovation across architecture, chip design, systems, and software\n• Extending AI leadership — end-to-end platform for training and inference with NVIDIA AI Enterprise software suite\n• Expanding computer graphics with AI — neural rendering and Omniverse for virtual world simulation\n• Advancing autonomous vehicle platform — comprehensive AI-based hardware/software solution for AV/EV market\n\n[Competitive Position]\nNVIDIA maintains a strong moat through its full-stack platform approach combining hardware, software, and ecosystem. Differentiation comes from CUDA developer platform with 7.5M developers, data center-scale co-design, and leadership in AI infrastructure. Competitive threats include custom ASIC development by hyperscalers, though NVIDIA's NVLink Fusion addresses this by enabling integration with custom CPUs/XPUs.\n\n[Management Quality]\nExecution score: HIGH\nManagement delivered on innovation promises with successful launch of Blackwell architecture in FY2025 and Blackwell Ultra platform in FY2026, demonstrating consistent execution of product roadmap. The acquisition of Mellanox in 2020 has been successfully integrated to create data center-scale offerings.\n\n[Outlook]\nManagement signals continued strong demand for AI infrastructure with Rubin platform expected to commence production in second half of FY2027. Guidance suggests expansion into agentic AI and reasoning applications with focus on cost-per-token reduction.\n\n[Key Risks]\nNVIDIA faces a high-risk profile dominated by technological and competitive pressures in fast-evolving AI and computing markets. Key risks include cybersecurity threats, legal exposures, and supply chain vulnerabilities, though the company mitigates some through heavy R&D investment and market diversification. Overall, NVIDIA's success hinges on maintaining innovation leadership amid intense competition and regulatory uncertainties.\n\n[Management Tone]\nBullish",
+      "title_th": "10-K Analysis",
+      "content_th": "[Financial Performance]\nNVIDIA ได้เปลี่ยนผ่านจากบริษัท GPU ไปสู่ผู้นำโครงสร้างพื้นฐาน AI ขนาดศูนย์ข้อมูลได้สำเร็จ โดยแพลตฟอร์ม Data Center ในปัจจุบันเป็นเครื่องจักรหลักของการเติบโต แนวทางการสร้างนวัตกรรมแบบเต็มสแต็กของบริษัทครอบคลุมตั้งแต่ชิป ระบบ เครือข่าย และซอฟต์แวร์ สร้างข้อได้เปรียบทางการแข่งขันที่สำคัญในโครงสร้างพื้นฐาน AI การขยายตัวอย่างมีกลยุทธ์เข้าสู่ตลาดยานยนต์ การดูแลสุขภาพ และการสร้างภาพมืออาชีพ สร้างโอกาสการเติบโตที่หลากหลายนอกเหนือจากธุรกิจศูนย์ข้อมูลหลัก การปล่อยโมเดลและแพลตฟอร์ม AI แบบเปิดที่เร่งความถี่ แสดงให้เห็นถึงความมุ่งมั่นของฝ่ายบริหารในการพัฒนาระบบนิเวศและการขยายตลาด\n\n[Performance Drivers]\nการเติบโตขับเคลื่อนโดยความต้องการที่แข็งแกร่งสำหรับโครงสร้างพื้นฐาน AI โดยเฉพาะแพลตฟอร์มการประมวลผลแบบเร่งความเร็วขนาดศูนย์ข้อมูล การเปิดตัวสถาปัตยกรรม Blackwell และการขยายเข้าสู่แอปพลิเคชัน AI แบบเอเจนต์และทางกายภาพ สร้างโอกาสทางการตลาดใหม่ การเติบโตในส่วนเกมได้รับการสนับสนุนโดยการ์ดจอ GeForce RTX รุ่นใหม่จาก Blackwell ที่มีความสามารถกราฟิกประสาท\n\n[Strategic Priorities]\n• การพัฒนาแพลตฟอร์มการประมวลผลแบบเร่งความเร็ว — นวัตกรรมเต็มสแต็กครอบคลุมสถาปัตยกรรม การออกแบบชิป ระบบ และซอฟต์แวร์\n• การขยายความเป็นผู้นำด้าน AI — แพลตฟอร์มแบบครบวงจรสำหรับการฝึกฝนและการอนุมานด้วยชุดซอฟต์แวร์ NVIDIA AI Enterprise\n• การขยายกราฟิกคอมพิวเตอร์ด้วย AI — การเรนเดอร์ประสาทและ Omniverse สำหรับการจำลองโลกเสมือน\n• การพัฒนาแพลตฟอร์มยานยนต์อัตโนมัติ — โซลูชันฮาร์ดแวร์/ซอฟต์แวร์แบบครบวงจรบนพื้นฐาน AI สำหรับตลาด AV/EV\n\n[Competitive Position]\nNVIDIA รักษาความได้เปรียบทางการแข่งขันที่แข็งแกร่งผ่านแนวทางแพลตฟอร์มเต็มสแต็กที่ผสานฮาร์ดแวร์ ซอฟต์แวร์ และระบบนิเวศ การสร้างความแตกต่างมาจากแพลตฟอร์มนักพัฒนา CUDA ที่มีนักพัฒนา 7.5 ล้านคน การออกแบบร่วมขนาดศูนย์ข้อมูล และความเป็นผู้นำในโครงสร้างพื้นฐาน AI ภัยคุกคามทางการแข่งขันรวมถึงการพัฒนา ASIC แบบกำหนดเองโดยผู้ให้บริการไฮเปอร์สเกล แม้ว่า NVLink Fusion ของ NVIDIA จะจัดการกับเรื่องนี้โดยเปิดให้สามารถบูรณาการกับ CPU/XPU แบบกำหนดเองได้\n\n[Management Quality]\nExecution score: HIGH\nฝ่ายบริหารส่งมอบตามคำสัญญาด้านนวัตกรรมด้วยการเปิดตัวสถาปัตยกรรม Blackwell ใน FY2025 และแพลตฟอร์ม Blackwell Ultra ใน FY2026 ได้สำเร็จ แสดงให้เห็นถึงการดำเนินการตามแผนงานผลิตภัณฑ์อย่างสม่ำเสมอ การเข้าซื้อกิจการ Mellanox ในปี 2020 ได้รับการบูรณาการอย่างประสบความสำเร็จเพื่อสร้างข้อเสนอขนาดศูนย์ข้อมูล\n\n[Outlook]\nฝ่ายบริหารส่งสัญญาณถึงความต้องการที่แข็งแกร่งอย่างต่อเนื่องสำหรับโครงสร้างพื้นฐาน AI โดยคาดว่าแพลตฟอร์ม Rubin จะเริ่มการผลิตในครึ่งหลังของ FY2027 แนวทางแนะนำการขยายเข้าสู่แอปพลิเคชัน AI แบบเอเจนต์และการให้เหตุผล โดยมุ่งเน้นที่การลดต้นทุนต่อโทเคน\n\n[Key Risks]\nNVIDIA เผชิญกับโปรไฟล์ความเสี่ยงสูงซึ่งครอบงำโดยแรงกดดันด้านเทคโนโลยีและการแข่งขันในตลาด AI และการประมวลผลที่พัฒนาอย่างรวดเร็ว ความเสี่ยงหลักรวมถึงภัยคุกคามด้านความปลอดภัยทางไซเบอร์ การเปิดเผยทางกฎหมาย และความเปราะบางของห่วงโซ่อุปทาน แม้ว่าบริษัทจะบรรเทาบางส่วนผ่านการลงทุนด้าน R&D อย่างหนักและการกระจายตลาด โดยรวมแล้ว ความสำเร็จของ NVIDIA ขึ้นอยู่กับการรักษาความเป็นผู้นำด้านนวัตกรรมท่ามกลางการแข่งขันที่รุนแรงและความไม่แน่นอนด้านกฎระเบียบ\n\n[Management Tone]\nBullish"
     }
   ],
   "quotes": [
@@ -23,7 +25,7 @@
       "source": "10-K",
       "speaker": "NVIDIA Management",
       "quote": "NVIDIA is now a data center scale AI infrastructure company reshaping all industries.",
-      "quote_th": "",
+      "quote_th": "NVIDIA ได้กลายเป็นบริษัทโครงสร้างพื้นฐาน AI ขนาดศูนย์ข้อมูลที่กำลังปรับเปลี่ยนอุตสาหกรรมทั้งหมด",
       "tag": "strategy"
     },
     {
@@ -31,7 +33,7 @@
       "source": "10-K",
       "speaker": "NVIDIA Management",
       "quote": "We expect a broader set of PC users to choose NVIDIA GPUs for running these applications locally on their PC, which is critical for privacy, latency, and cost-sensitive AI applications.",
-      "quote_th": "",
+      "quote_th": "เราคาดว่าผู้ใช้ PC ที่หลากหลายมากขึ้นจะเลือกใช้ GPU ของ NVIDIA เพื่อรันแอปพลิเคชันเหล่านี้บนเครื่อง PC ของพวกเขาโดยตรง ซึ่งมีความสำคัญต่อแอปพลิเคชัน AI ที่อ่อนไหวต่อความเป็นส่วนตัว ความหน่วงเวลา และต้นทุน",
       "tag": "growth"
     },
     {
@@ -39,7 +41,7 @@
       "source": "10-K",
       "speaker": "NVIDIA Management",
       "quote": "In fiscal year 2026, we unveiled the NVIDIA Rubin platform, which is expected to commence production shipments in the second half of fiscal year 2027.",
-      "quote_th": "",
+      "quote_th": "ในปีงบประมาณ 2026 เราได้เปิดตัวแพลตฟอร์ม NVIDIA Rubin ซึ่งคาดว่าจะเริ่มจัดส่งการผลิตในครึ่งหลังของปีงบประมาณ 2027",
       "tag": "guidance"
     },
     {
@@ -47,7 +49,7 @@
       "source": "10-K",
       "speaker": "NVIDIA Management",
       "quote": "Our accelerated computing platform can solve complex problems in significantly less time and with lower power consumption than alternative computational approaches.",
-      "quote_th": "",
+      "quote_th": "แพลตฟอร์มการประมวลผลแบบเร่งความเร็วของเราสามารถแก้ปัญหาที่ซับซ้อนได้ในเวลาที่น้อยกว่าอย่างมีนัยสำคัญและด้วยการใช้พลังงานที่ต่ำกว่าเมื่อเทียบกับแนวทางการคำนวณทางเลือกอื่น",
       "tag": "technology"
     },
     {
@@ -55,7 +57,7 @@
       "source": "10-K",
       "speaker": "NVIDIA Management",
       "quote": "We work to deliver continued performance leaps that outpace Moore's Law by leveraging innovation across the architecture, chip design, system, interconnect, algorithm, and software layers.",
-      "quote_th": "",
+      "quote_th": "เราทำงานเพื่อส่งมอบความก้าวหน้าทางประสิทธิภาพอย่างต่อเนื่องที่แซงหน้ากฎของมัวร์ โดยใช้ประโยชน์จากนวัตกรรมในทุกชั้น ตั้งแต่สถาปัตยกรรม การออกแบบชิป ระบบ การเชื่อมต่อ อัลกอริทึม และชั้นซอฟต์แวร์",
       "tag": "strategy"
     },
     {
@@ -63,7 +65,7 @@
       "source": "10-K",
       "speaker": "NVIDIA Management",
       "quote": "We provide a complete, end-to-end accelerated computing platform for AI, addressing both training and inferencing.",
-      "quote_th": "",
+      "quote_th": "เราจัดหาแพลตฟอร์มการประมวลผลแบบเร่งความเร็วแบบครบวงจรตั้งแต่ต้นจนจบสำหรับ AI ซึ่งครอบคลุมทั้งการฝึกฝนและการอนุมาน",
       "tag": "strategy"
     },
     {
@@ -71,7 +73,7 @@
       "source": "10-K",
       "speaker": "NVIDIA Management",
       "quote": "Our compute solutions include all three major processing units in AI servers – GPUs, CPUs, and DPUs.",
-      "quote_th": "",
+      "quote_th": "โซลูชันการประมวลผลของเรารวมถึงหน่วยประมวลผลหลักทั้งสามประเภทในเซิร์ฟเวอร์ AI ได้แก่ GPU, CPU และ DPU",
       "tag": "technology"
     },
     {
@@ -79,7 +81,7 @@
       "source": "10-K",
       "speaker": "NVIDIA Management",
       "quote": "Our AI technology leadership is reinforced by our large and expanding ecosystem.",
-      "quote_th": "",
+      "quote_th": "ความเป็นผู้นำด้านเทคโนโลยี AI ของเราได้รับการเสริมความแข็งแกร่งจากระบบนิเวศขนาดใหญ่และขยายตัวของเรา",
       "tag": "growth"
     }
   ],
@@ -516,5 +518,6 @@
       "float": "~97% (Jensen Huang ถือ ~3.5% ณ ต้นปี 2026)",
       "insider_ownership": "~3.5% (ลดลงจาก ~5% เมื่อ 2 ปีก่อนเนื่องจาก planned selling)"
     }
-  }
+  },
+  "name_th": "บริษัท เอ็นวีไอเดีย คอร์ปอเรชั่น"
 }

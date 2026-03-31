@@ -17,7 +17,9 @@
         "copilot"
       ],
       "rating": 5,
-      "content": "Azure growth ยังแข็งแกร่งที่ 31% YoY โดยมี AI services เป็น tailwind สำคัญ\nCopilot 365 มีผู้ใช้งานเชิงพาณิชย์เพิ่มขึ้น 2x QoQ\n\nสิ่งที่น่าสนใจ: Satya พูดถึง AI Hyperscale Compute อย่างชัดเจน บ่งบอกว่า MSFT จะยังลงทุน capex สูงต่อเนื่อง\nMargin อาจถูกกดดันระยะสั้นจาก AI infrastructure investment แต่ long-term thesis ยังแข็งแกร่ง\n\n$80B AI capex commitment ใน FY2025 แสดงว่า MSFT ยอมรับว่า AI race ต้องลงทุน infra ก่อน ซึ่ง short-term กระทบ FCF แต่ long-term build moat ที่คู่แข่งตามได้ยาก"
+      "content": "Azure growth ยังแข็งแกร่งที่ 31% YoY โดยมี AI services เป็น tailwind สำคัญ\nCopilot 365 มีผู้ใช้งานเชิงพาณิชย์เพิ่มขึ้น 2x QoQ\n\nสิ่งที่น่าสนใจ: Satya พูดถึง AI Hyperscale Compute อย่างชัดเจน บ่งบอกว่า MSFT จะยังลงทุน capex สูงต่อเนื่อง\nMargin อาจถูกกดดันระยะสั้นจาก AI infrastructure investment แต่ long-term thesis ยังแข็งแกร่ง\n\n$80B AI capex commitment ใน FY2025 แสดงว่า MSFT ยอมรับว่า AI race ต้องลงทุน infra ก่อน ซึ่ง short-term กระทบ FCF แต่ long-term build moat ที่คู่แข่งตามได้ยาก",
+      "title_th": "การเติบโตของ Azure และการสร้างรายได้จาก AI",
+      "content_th": "การเติบโตของ Azure ยังคงแข็งแกร่งที่ 31% YoY โดยมีบริการ AI เป็นปัจจัยสนับสนุนสำคัญ\nCopilot 365 มีผู้ใช้งานเชิงพาณิชย์เพิ่มขึ้น 2 เท่า QoQ\n\nสิ่งที่น่าสนใจ: Satya พูดถึง AI Hyperscale Compute อย่างชัดเจน บ่งบอกว่า MSFT จะยังคงลงทุน capex สูงอย่างต่อเนื่อง\nMargin อาจถูกกดดันในระยะสั้นจากการลงทุนโครงสร้างพื้นฐาน AI แต่แนวคิดการลงทุนระยะยาวยังแข็งแกร่ง\n\nการลงทุน capex AI $80B ใน FY2025 แสดงว่า MSFT ยอมรับว่าการแข่งขันด้าน AI ต้องลงทุนโครงสร้างพื้นฐานก่อน ซึ่งส่งผลกระทบต่อ FCF ในระยะสั้น แต่สร้างกำแพงป้องกันในระยะยาวที่คู่แข่งตามได้ยาก"
     }
   ],
   "quotes": [
@@ -575,5 +577,6 @@
       }
     },
     "notes": "ปีบัญชีของ Microsoft สิ้นสุดในเดือนมิถุนายนของทุกปี (กรกฎาคม – มิถุนายน) หน่วย: พันล้านเหรียญสหรัฐ ยกเว้น EPS (ต่อหุ้น)\n\nFY2020-2021 เป็นช่วง hyper-growth ของ Azure จาก pandemic-driven cloud migration\nFY2022 Operating Income ขยับจาก $69.9B → $83.4B (+19%) สะท้อน operating leverage ของ cloud business\nFY2024 FCF ลดลง YoY เพราะ capex เพิ่มจาก AI infrastructure investment ($44.5B capex vs $29.1B ปีก่อน)\nOpenAI investment (~$13B+) บันทึกเป็น equity investment ไม่ได้รวมอยู่ใน revenue แต่ Azure OpenAI Service revenue อยู่ใน Intelligent Cloud"
-  }
+  },
+  "name_th": "บริษัทไมโครซอฟท์คอร์ปอเรชั่น"
 }
