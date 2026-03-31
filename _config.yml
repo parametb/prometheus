@@ -1,5 +1,4 @@
 exclude:
   - prompts/
   - scripts/
-  - data/
   - .claude/
