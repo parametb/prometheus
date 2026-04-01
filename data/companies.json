@@ -78,5 +78,15 @@
     "note_count": 2,
     "quote_count": 13,
     "roadmap_count": 17
+  },
+  {
+    "ticker": "NEM",
+    "name": "Newmont Corporation",
+    "sector": "Mining",
+    "exchange": "NYSE",
+    "last_updated": "2026-04-02",
+    "note_count": 0,
+    "quote_count": 0,
+    "roadmap_count": 0
   }
 ]

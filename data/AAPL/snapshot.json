@@ -1,0 +1,39 @@
+{
+  "ticker": "AAPL",
+  "name": "Apple Inc.",
+  "name_th": "Apple Inc.",
+  "sector": "Technology",
+  "exchange": "NASDAQ",
+  "currency": "USD",
+  "last_updated": "2026-03-29",
+  "generated_at": "2026-04-02",
+  "latest_year": 2024,
+  "financials": {
+    "unit": "Billion",
+    "currency": "USD",
+    "revenue_B": 391.0,
+    "net_income_B": 93.7,
+    "fcf_B": 108.8,
+    "op_income_B": 123.2,
+    "eps": 6.08,
+    "gross_margin_pct": 46.2
+  },
+  "counts": {
+    "notes": 2,
+    "quotes": 3,
+    "roadmap_total": 4,
+    "roadmap_pending": 1,
+    "roadmap_progress": 0,
+    "roadmap_delivered": 2
+  },
+  "latest_note": {
+    "date": "2025-02-01",
+    "title": "ภาพรวม Q1 FY2025",
+    "title_th": "ภาพรวมไตรมาส 1 ปีงบประมาณ 2025",
+    "rating": 4,
+    "summary": "iPhone revenue ดีกว่าที่คาด แม้จะมีความกังวลเรื่อง China Services segment ทำสถิติสูงสุดอีกครั้งที่ $26.3B (+14% YoY) Gross margin ขยับขึ้นมาอยู่ที่ 46.9% สูงกว่า consensus  จุดที่ต้องติดตาม: Vision Pr…"
+  },
+  "top_risks": [],
+  "management_tone": null,
+  "one_liner": "iPhone revenue ดีกว่าที่คาด แม้จะมีความกังวลเรื่อง China"
+}

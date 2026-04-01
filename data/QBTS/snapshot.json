@@ -1,0 +1,42 @@
+{
+  "ticker": "QBTS",
+  "name": "D-Wave Quantum Inc.",
+  "name_th": "D-Wave Quantum Inc.",
+  "sector": "Technology",
+  "exchange": "NYSE",
+  "currency": "USD",
+  "last_updated": "2026-03-29",
+  "generated_at": "2026-04-02",
+  "latest_year": 2025,
+  "financials": {
+    "unit": "Billion",
+    "currency": "USD",
+    "revenue_B": 0.025,
+    "net_income_B": -0.355,
+    "fcf_B": -0.076,
+    "op_income_B": -0.1,
+    "eps": -1.11,
+    "total_debt_B": 0.037,
+    "gross_margin_pct": 82.6
+  },
+  "counts": {
+    "notes": 1,
+    "quotes": 0,
+    "roadmap_total": 5,
+    "roadmap_pending": 2,
+    "roadmap_progress": 0,
+    "roadmap_delivered": 0
+  },
+  "latest_note": {
+    "date": "2026-03-28",
+    "title": "FY2021–FY2025 Financial History — 5-Year Analysis",
+    "title_th": "ประวัติทางการเงินปีงบประมาณ 2021–2025 — การวิเคราะห์ 5 ปี",
+    "rating": 3,
+    "summary": "[Financial Performance] Revenue stagnant 2 ปีติดต่อกัน (FY2023: $8.76M → FY2024: $8.83M, +0.8% YoY) แต่พุ่งแรงในปี FY2025 ที่ $24.59M (+178% YoY) บ่งชี้ว่า bookings ที่สะสมเริ่ม convert เป็น revenue จ…"
+  },
+  "top_risks": [
+    "Revenue conversion จาก bookings ยังไม่แน่นอน — bookings ≠ revenue recognize ทันที / ตลาด quantum computing ยัง 'relatively new and unproven' ตามที่บริษัทยอมรับเอง / cash burn ~$44-72M/ปี ต้องพึ่ง capital markets / integration risk จาก Quantum Circuits acquisition / dilution risk สูงจากการออกหุ้นเพิ่มทุนต่อเนื่อง / การแข่งขันจาก IBM, Google, IonQ, Rigetti ที่มีทรัพยากรมากกว่ามาก"
+  ],
+  "management_tone": "cautious",
+  "one_liner": "Revenue stagnant 2 ปีติดต่อกัน (FY2023: $8.76M → FY2024: $8.83M, +0.8% YoY) แต่พุ่งแรงในปี FY2025 ที่ $24.59M (+178% YoY) บ่งชี้ว่า bookings ที่สะสมเริ่ม convert เป็น revenue จริง "
+}

@@ -240,6 +240,18 @@ def main():
         bak = backup(ticker)
         print(f"  💾  Backup: history/{os.path.basename(bak)}")
         save_data(ticker, data)
+        # Auto-regenerate snapshot after every successful patch
+        try:
+            import importlib.util
+            snap_path = os.path.join(os.path.dirname(__file__), "generate_snapshot.py")
+            spec = importlib.util.spec_from_file_location("generate_snapshot", snap_path)
+            mod  = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(mod)
+            snap = mod.generate_snapshot(ticker)
+            mod.save_snapshot(ticker, snap)
+            print(f"  📸  Snapshot updated → data/{ticker}/snapshot.json")
+        except Exception as e:
+            print(f"  ⚠️   Snapshot generation skipped: {e}")
     elif args.dry_run:
         print("  [ไม่มีการเปลี่ยนแปลง — dry run]")
 

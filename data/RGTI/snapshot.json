@@ -1,0 +1,43 @@
+{
+  "ticker": "RGTI",
+  "name": "Rigetti Computing, Inc.",
+  "name_th": "Rigetti Computing, Inc.",
+  "sector": "Technology",
+  "exchange": "NASDAQ",
+  "currency": "USD",
+  "last_updated": "2026-03-30",
+  "generated_at": "2026-04-02",
+  "latest_year": 2025,
+  "financials": {
+    "unit": "Billion",
+    "currency": "USD",
+    "revenue_B": 0.008,
+    "net_income_B": -0.201,
+    "fcf_B": -0.062,
+    "op_income_B": -0.069,
+    "eps": -1.09,
+    "gross_margin_pct": 69.5
+  },
+  "counts": {
+    "notes": 2,
+    "quotes": 20,
+    "roadmap_total": 26,
+    "roadmap_pending": 26,
+    "roadmap_progress": 0,
+    "roadmap_delivered": 0
+  },
+  "latest_note": {
+    "date": "2026-03-30",
+    "title": "10-K Analysis",
+    "title_th": "10-K Analysis",
+    "rating": 3,
+    "summary": "[Financial Performance] Rigetti is transitioning from R&D to initial commercialization, marked by its first QPU sales and growing purchase orders, though revenue remains concentrated in public sector…"
+  },
+  "top_risks": [
+    "RGTI faces a high-risk profile characterized by its early-stage operations, significant funding requirements, and substantial technical challenges in quantum computing development",
+    "The company's heavy dependence on limited customers and public sector contracts creates revenue concentration risks, while intense global competition and intellectual property concerns add further uncertainty",
+    "Material weaknesses in financial controls and supply chain dependencies present additional operational vulnerabilities that could impact growth and stability"
+  ],
+  "management_tone": "bullish",
+  "one_liner": "Rigetti is transitioning from R&D to initial commercialization, marked by its first QPU sales and growing purchase orders, though revenue remains concentrated in public sector cont"
+}

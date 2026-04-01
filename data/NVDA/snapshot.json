@@ -1,0 +1,44 @@
+{
+  "ticker": "NVDA",
+  "name": "NVIDIA Corporation",
+  "name_th": "บริษัท เอ็นวีไอเดีย คอร์ปอเรชั่น",
+  "sector": "Semiconductors",
+  "exchange": "NASDAQ",
+  "currency": "USD",
+  "last_updated": "2026-03-30",
+  "generated_at": "2026-04-02",
+  "latest_year": 2026,
+  "financials": {
+    "unit": "Billion",
+    "currency": "USD",
+    "revenue_B": 60.922,
+    "net_income_B": 29.76,
+    "fcf_B": 28.09,
+    "op_income_B": 32.972,
+    "eps": 1.19,
+    "total_debt_B": 8.463,
+    "gross_margin_pct": 72.7
+  },
+  "counts": {
+    "notes": 1,
+    "quotes": 8,
+    "roadmap_total": 14,
+    "roadmap_pending": 14,
+    "roadmap_progress": 0,
+    "roadmap_delivered": 0
+  },
+  "latest_note": {
+    "date": "2026-03-30",
+    "title": "10-K Analysis",
+    "title_th": "10-K Analysis",
+    "rating": 3,
+    "summary": "[Financial Performance] NVIDIA has successfully transitioned from a GPU company to a data center-scale AI infrastructure leader, with the Data Center platform now representing the core growth engine.…"
+  },
+  "top_risks": [
+    "NVIDIA faces a high-risk profile dominated by technological and competitive pressures in fast-evolving AI and computing markets",
+    "Key risks include cybersecurity threats, legal exposures, and supply chain vulnerabilities, though the company mitigates some through heavy R&D investment and market diversification",
+    "Overall, NVIDIA's success hinges on maintaining innovation leadership amid intense competition and regulatory uncertainties"
+  ],
+  "management_tone": "bullish",
+  "one_liner": "NVIDIA has successfully transitioned from a GPU company to a data center-scale AI infrastructure leader, with the Data Center platform now representing the core growth engine."
+}

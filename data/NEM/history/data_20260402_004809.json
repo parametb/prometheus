@@ -1,0 +1,89 @@
+{
+  "ticker": "NEM",
+  "name": "Newmont Corporation",
+  "sector": "Mining",
+  "exchange": "NYSE",
+  "last_updated": "2026-04-02",
+  "description": "World's largest gold mining company, founded in 1921 and headquartered in Denver, Colorado. Newmont operates mines and projects across North America, South America, Australia, and Africa, producing gold, silver, copper, zinc, and lead.",
+  "notes": [],
+  "quotes": [],
+  "roadmap": [],
+  "financials": {
+    "currency": "USD",
+    "unit": "Billion",
+    "links": [
+      {
+        "label": "10-K FY2025 (filed 2026-02-19)",
+        "url": "https://www.sec.gov/Archives/edgar/data/1164727/000116472726000010/nem-20251231.htm"
+      },
+      {
+        "label": "10-K FY2024 (filed 2025-02-20)",
+        "url": "https://www.sec.gov/Archives/edgar/data/1164727/000116472725000011/nem-20241231.htm"
+      },
+      {
+        "label": "10-K FY2023 (filed 2024-02-29)",
+        "url": "https://www.sec.gov/Archives/edgar/data/1164727/000116472724000016/nem-20231231.htm"
+      },
+      {
+        "label": "10-K FY2022 (filed 2023-02-23)",
+        "url": "https://www.sec.gov/Archives/edgar/data/1164727/000116472723000011/nem-20221231.htm"
+      }
+    ],
+    "years": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "metrics": [
+      {
+        "name": "Revenue",
+        "values": [
+          11.95,
+          11.78,
+          18.56,
+          22.1
+        ]
+      },
+      {
+        "name": "Gross Profit",
+        "values": [
+          2.14,
+          1.17,
+          6.42,
+          11.0
+        ]
+      },
+      {
+        "name": "Net Income",
+        "values": [
+          -0.459,
+          -2.52,
+          3.35,
+          7.08
+        ]
+      },
+      {
+        "name": "EPS (diluted)",
+        "values": [
+          -0.58,
+          -3.0,
+          2.86,
+          6.41
+        ]
+      },
+      {
+        "name": "Free Cash Flow",
+        "values": [
+          1.09,
+          0.097,
+          2.96,
+          7.3
+        ]
+      }
+    ],
+    "notes": "Revenue = total sales per FMP/EDGAR. Gross Profit = Revenue - Cost of Revenue. Net Income = attributable to Newmont shareholders. FCF = Operating CF - CapEx. FY2023 NI impacted by ~$3.2B impairment charges (Ahafo, Cerro Negro) and Newcrest acquisition costs. FY2024 marked first full year post-Newcrest consolidation (acquired Nov 2023). FY2025 benefited from record gold prices (~$2,650/oz avg). Source: FMP annual, EDGAR 10-K."
+  },
+  "ceo": "Natascha Viljoen",
+  "employees": 44100
+}
