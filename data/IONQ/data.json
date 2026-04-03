@@ -1,0 +1,284 @@
+{
+  "ticker": "IONQ",
+  "name": "IonQ, Inc.",
+  "sector": "Technology",
+  "exchange": "NYSE",
+  "last_updated": "2026-04-03",
+  "description": "IonQ is a quantum computing company that develops trapped-ion quantum computers and cloud-accessible quantum hardware/software systems. Founded in 2015 by Chris Monroe and Jungsang Kim, it was the first pure-play quantum computing company to go public (2021). Competes with D-Wave (QBTS), Rigetti (RGTI), and IBM in the quantum computing space.",
+  "notes": [
+    {
+      "date": "2026-04-03",
+      "title": "FY2025 10-K Analysis",
+      "title_th": "การวิเคราะห์รายงานประจำปี FY2025",
+      "tags": [
+        "annual-report",
+        "fy2025",
+        "quantum-computing",
+        "growth-stage"
+      ],
+      "rating": 3,
+      "content": "[Financial Performance]\nIONQ is in a high-growth, pre-profitability phase, focusing on scaling its quantum computing and platform ecosystem through strategic acquisitions and cloud-based service expansion. The company emphasizes technological leadership in trapped-ion qubits and a roadmap toward fault-tolerant systems, while diversifying into adjacent quantum areas like networking and sensing. Financials reflect significant R&D investments and operating losses as they build out infrastructure and commercialize early products, with revenue growth tied to QCaaS adoption and hardware sales. The narrative centers on capturing long-term market opportunities in quantum simulations and optimization, despite near-term profitability challenges.\n\n[Performance Drivers]\nGrowth driven by strategic acquisitions (e.g., Oxford Ionics, Lightsynq Technologies) to accelerate quantum computing roadmap and expand into quantum networking, sensing, and security. Expansion of QCaaS through cloud partnerships (AWS, Azure, Google) and direct hardware sales to select customers.\n\n[Strategic Priorities]\n• Leverage technology advantages — proprietary trapped-ion qubits and architecture for fault-tolerant computing\n• Accelerate roadmap via acquisitions — integrate complementary tech like Electronic Qubit Control and photonic interconnects\n• Expand quantum ecosystem — develop networking, sensing, security products to complement computing\n\n[Competitive Position]\nPositioned as the only quantum platform company with a trapped-ion architecture, claiming clearest path to fault tolerance. Differentiation through proprietary tech and exclusive licenses; competitive threats from superconducting qubit players. Market share trend not specified, but expanding via acquisitions and cloud partnerships.\n\n[Management Quality]\nExecution score: MEDIUM\nManagement delivered on acquisition strategy to broaden platform, but remains in early commercial stage with significant losses; no specific prior-year promises cited in excerpt.\n\n[Outlook]\nManagement expects continued losses as they prioritize technical milestones for higher qubit counts and performance; pending SkyWater acquisition aims to accelerate roadmap with secure quantum foundry access.\n\n[Key Risks]\nIONQ faces significant risks typical of an early-stage quantum computing company, including substantial ongoing losses, unproven technology commercialization, and intense competition. The company is addressing these through aggressive acquisition strategy, IP protection, and technical roadmap execution, but faces uncertainty in achieving quantum advantage and sustainable profitability. Macroeconomic factors and integration challenges from recent acquisitions add to the risk profile.\n\n[Management Tone]\nBullish",
+      "content_th": ""
+    },
+    {
+      "date": "2026-04-03",
+      "title": "FY2025 vs FY2024 — Narrative Evolution Analysis",
+      "title_th": "วิเคราะห์การเปลี่ยนแปลงเชิงกลยุทธ์ FY2025 เทียบ FY2024",
+      "tags": [
+        "narrative-evolution",
+        "accounting-watch",
+        "multi-year",
+        "ionq"
+      ],
+      "rating": 3,
+      "content": "[Management Narrative Drift (2024 → 2025)]\nIONQ's narrative evolved from a focused quantum computing company to positioning itself as a comprehensive 'quantum platform company' operating across computing, networking, sensing and security domains. The 2025 filing introduces significant new business lines including satellite-based services and quantum sensing/security products, while deprecating some technical quantum computing terminology from the previous year. Most notably, the company's losses increased substantially ($510.4M in 2025 vs $331.6M in 2024), and the narrative now emphasizes acquisitions and investments as a growth strategy while expanding risk disclosures to include customer concentration, supply chain, and regulatory concerns.\nTone: cautious→cautious\nDisappeared topics: Algorithmic Qubit metric definition, Error-Corrected Qubit terminology, Photonic interconnect as remote connection between qubits, Quantum algorithm definition, Quantum circuit definition, Quantum logic gates definition, Selling direct access to quantum computers as separate strategy point\nNew topics: Electronic Qubit Control (EQC) technology, Logical Qubit terminology replacing Error-Corrected Qubit, Pending acquisition of SkyWater Technology, Inc., Quantum sensing products, Quantum security products, Satellite-based data-as-a-service products, Quantum positioning, navigation and timing services, On premises quantum systems (replacing 'local access'), Future trading prices of common stock, Efficacy of internal controls, Product development timeline, Dependence on limited number of customers, Third-party supplier relationships, Export control and technology export restrictions, Effects of existing and developing laws and regulations\n\n[Business & Reporting Evolution]\nIONQ transformed from a quantum computing hardware and services company in 2024 to a comprehensive quantum platform company in 2025, expanding into quantum sensing, security, and satellite data services. The company adopted an aggressive acquisition strategy to accelerate its roadmap, acquiring multiple complementary businesses. Reporting shifted to reflect this broader platform approach, with new KPIs tracking acquisition impacts and different technical milestones.\nNew KPIs introduced: Net losses attributable to IonQ, Inc. (vs. just net losses), Acquisition metrics (pending SkyWater acquisition mentioned), Physical and logical qubits (vs. algorithmic qubits and fidelity)\nKPIs quietly dropped: Algorithmic qubits and fidelity levels (replaced by physical/logical qubits)\n\n[Accounting Watch]\nReporting quality shows mixed signals. Transparency decreased with removal of quantum systems capitalization disclosures, while complexity increased with business combinations accounting. The addition of satellite revenue and massive cash infusion from acquisitions creates comparability challenges. While controls remain effective, the exclusion of acquired entities from assessment and expanded revenue recognition judgments introduce new risks.\n\n[Risk Evolution — ?]\nThe risk profile has meaningfully deteriorated from 2024 to 2025, with five new material risks added including acquisition integration, customer concentration, and supply chain dependence. Financial risks escalated substantially with net losses increasing by 54% and accumulated deficit growing by 75%. The company is facing broader operational, regulatory, and execution risks as it expands its business model beyond pure quantum computing into networking, sensing, security, and M&A activities. No risks appear to have been genuinely de-escalated or resolved.\nNew risks: Acquisition integration risk, Customer concentration risk, Supply chain dependence risk, Export control restrictions, Internal controls efficacy\nRemoved risks: Algorithmic Qubit metric risk, Error-Corrected Qubit terminology\n\n[Red Flags & Optical Improvements]\n⚠️ Algorithmic Qubit metric no longer emphasized in glossary\n⚠️ Error correction terminology changed from 'Error-Corrected Qubit' to 'Logical Qubit'\n⚠️ Removal of specific quantum computing definitions (algorithm, circuit, gates)\n⚠️ Increased emphasis on acquisitions and investments as growth strategy\n⚠️ Significantly higher net losses ($510.4M in 2025 vs $331.6M in 2024)\n⚠️ Cash and equivalents increased dramatically from $363.8M (2024) to $3,336.8M (2025) - 9x growth likely from acquisitions/financing, not operational improvement.\n⚠️ Addition of satellite imagery revenue stream creates new revenue category that may boost top-line numbers without core quantum business improvement.\n⚠️ Removal of quantum systems capitalization disclosure reduces transparency about asset valuation judgments that could affect depreciation expenses.",
+      "content_th": ""
+    }
+  ],
+  "quotes": [
+    {
+      "speaker": "IonQ Management",
+      "quote": "We expect to continue to incur significant losses for the foreseeable future as we prioritize reaching the technical milestones necessary to achieve an increasingly higher number of physical and logical qubits and higher levels of qubit performance than presently exists—prerequisites for quantum computing to reach broad quantum advantage.",
+      "quote_th": "",
+      "tag": "guidance",
+      "source": "FY2025 10-K",
+      "date": "2026-02-25"
+    },
+    {
+      "speaker": "IonQ Management",
+      "quote": "We believe that we have the clearest path to fault-tolerant quantum computing, and a repertoire of networking, sensing and security products that will form the backbone of a global quantum infrastructure.",
+      "quote_th": "",
+      "tag": "strategy",
+      "source": "FY2025 10-K",
+      "date": "2026-02-25"
+    },
+    {
+      "speaker": "IonQ Management",
+      "quote": "We are developing quantum computers designed to solve some of the world's most complex problems and transform business, society and the planet for the better.",
+      "quote_th": "",
+      "tag": "strategy",
+      "source": "FY2025 10-K",
+      "date": "2026-02-25"
+    },
+    {
+      "speaker": "IonQ Management",
+      "quote": "We believe that our proprietary technology, our architecture and the technology exclusively available to us through license agreements will offer us advantages both in research and development and in the commercial value of our product offerings.",
+      "quote_th": "",
+      "tag": "technology",
+      "source": "FY2025 10-K",
+      "date": "2026-02-25"
+    },
+    {
+      "speaker": "IonQ Management",
+      "quote": "We intend to fulfill our mission by: Leveraging Our Technology... Accelerating Our Roadmap by Acquiring the Best Minds and Technologies... Selling Direct Access to Quantum Computers... Offering QCaaS... Continuing to Enhance Our Proprietary Position... Developing a Worldwide Quantum Ecosystem.",
+      "quote_th": "",
+      "tag": "strategy",
+      "source": "FY2025 10-K",
+      "date": "2026-02-25"
+    },
+    {
+      "speaker": "IonQ Management",
+      "quote": "We believe that by offering QCaaS, we can accelerate the adoption of our quantum computing solutions, while efficiently promoting quantum computing across our partner ecosystems.",
+      "quote_th": "",
+      "tag": "growth",
+      "source": "FY2025 10-K",
+      "date": "2026-02-25"
+    },
+    {
+      "speaker": "IonQ Management",
+      "quote": "We believe that by offering direct access to quantum computing, supplemented by our professional services, we can assist select customers in deepening their application of quantum solutions.",
+      "quote_th": "",
+      "tag": "revenue",
+      "source": "FY2025 10-K",
+      "date": "2026-02-25"
+    },
+    {
+      "speaker": "IonQ Management",
+      "quote": "We intend to continue to drive innovation in quantum and seek intellectual property protection where appropriate to enhance our proprietary technology position.",
+      "quote_th": "",
+      "tag": "strategy",
+      "source": "FY2025 10-K",
+      "date": "2026-02-25"
+    },
+    {
+      "speaker": "IonQ Management",
+      "quote": "We believe that a quantum computer currently offers the best possibility for computational power that could be used to solve [problems classical computing may never solve].",
+      "quote_th": "",
+      "tag": "technology",
+      "source": "FY2025 10-K",
+      "date": "2026-02-25"
+    },
+    {
+      "speaker": "IonQ Management",
+      "quote": "We envision a future powered by quantum computing and believe the 21st century is poised to be the dawn of this era.",
+      "quote_th": "",
+      "tag": "growth",
+      "source": "FY2025 10-K",
+      "date": "2026-02-25"
+    }
+  ],
+  "roadmap": [
+    {
+      "commitment": "Complete and realize benefits of pending acquisition of SkyWater Technology, Inc.",
+      "date_said": null,
+      "source": "FY2025 10-K",
+      "status": "pending"
+    },
+    {
+      "commitment": "Effectively integrate operations of entities we have acquired or may acquire and achieve synergies",
+      "date_said": null,
+      "source": "FY2025 10-K",
+      "status": "pending"
+    },
+    {
+      "commitment": "Implement, gain market acceptance and succeed with our business model and growth strategy",
+      "date_said": null,
+      "source": "FY2025 10-K",
+      "status": "pending"
+    },
+    {
+      "commitment": "Sell full quantum technologies to customers, either over the cloud or on premises",
+      "date_said": null,
+      "source": "FY2025 10-K",
+      "status": "pending"
+    },
+    {
+      "commitment": "Meet customers' compliance and regulatory needs with our products and services",
+      "date_said": null,
+      "source": "FY2025 10-K",
+      "status": "pending"
+    },
+    {
+      "commitment": "Adapt to changes in customer preferences and develop/expand product offerings in new geographies",
+      "date_said": null,
+      "source": "FY2025 10-K",
+      "status": "pending"
+    },
+    {
+      "commitment": "Develop and maintain our brand and reputation",
+      "date_said": null,
+      "source": "FY2025 10-K",
+      "status": "pending"
+    },
+    {
+      "commitment": "Obtain and maintain intellectual property protection and not infringe on others' rights",
+      "date_said": null,
+      "source": "FY2025 10-K",
+      "status": "pending"
+    },
+    {
+      "commitment": "Obtain funding for our operations and future growth",
+      "date_said": null,
+      "source": "FY2025 10-K",
+      "status": "pending"
+    },
+    {
+      "commitment": "Continue to incur significant losses for the foreseeable future while prioritizing technical milestones",
+      "date_said": null,
+      "source": "FY2025 10-K",
+      "status": "pending"
+    },
+    {
+      "commitment": "Continue to consider making acquisitions and investments in complementary businesses",
+      "date_said": null,
+      "source": "FY2025 10-K",
+      "status": "pending"
+    },
+    {
+      "commitment": "Offer advanced quantum positioning, navigation and timing services in the future by combining satellite platform with quantum sensing products",
+      "date_said": null,
+      "source": "FY2025 10-K",
+      "status": "pending"
+    },
+    {
+      "commitment": "Continue to drive innovation in quantum and seek intellectual property protection to enhance proprietary technology position",
+      "date_said": null,
+      "source": "FY2025 10-K",
+      "status": "pending"
+    },
+    {
+      "commitment": "Establish a global quantum ecosystem by developing/acquiring quantum networking, sensing, security products and partnering with universities, enterprises, governmental agencies and non-profits",
+      "date_said": null,
+      "source": "FY2025 10-K",
+      "status": "pending"
+    }
+  ],
+  "financials": {
+    "currency": "USD",
+    "unit": "Million",
+    "links": [
+      {
+        "label": "10-K FY2025 (filed 2026-02-25)",
+        "url": "https://www.sec.gov/Archives/edgar/data/1824920/000119312526071562/ionq-20251231.htm"
+      },
+      {
+        "label": "10-K FY2024 (filed 2025-02-26)",
+        "url": "https://www.sec.gov/Archives/edgar/data/1824920/000095017025027722/ionq-20241231.htm"
+      },
+      {
+        "label": "10-K FY2023 (filed 2024-02-28)",
+        "url": "https://www.sec.gov/Archives/edgar/data/1824920/000095017024022072/ionq-20231231.htm"
+      },
+      {
+        "label": "10-K FY2022 (filed 2023-03-30)",
+        "url": "https://www.sec.gov/Archives/edgar/data/1824920/000119312523085558/d424437d10k.htm"
+      }
+    ],
+    "years": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "metrics": [
+      {
+        "name": "Revenue",
+        "values": [
+          11.13,
+          22.04,
+          43.07,
+          130.02
+        ]
+      },
+      {
+        "name": "Gross Profit",
+        "values": [
+          2.58,
+          13.93,
+          3.82,
+          52.53
+        ]
+      },
+      {
+        "name": "Net Income",
+        "values": [
+          -48.51,
+          -157.77,
+          -331.65,
+          -510.38
+        ]
+      },
+      {
+        "name": "EPS (diluted)",
+        "values": [
+          -0.25,
+          -0.78,
+          -1.56,
+          -1.82
+        ]
+      },
+      {
+        "name": "Free Cash Flow",
+        "values": [
+          -57.26,
+          -98.36,
+          -129.25,
+          -299.6
+        ]
+      }
+    ],
+    "notes": "Unit = Million USD. Revenue = total contract revenue per EDGAR/FMP. Gross Profit = Revenue - COR. Net Income = GAAP attributable to common shareholders. FCF = Operating CF - CapEx. All years are loss-making; stock-based compensation is the largest non-cash item (~$312M in FY2025). FY2025 revenue +202% YoY driven by US Government contracts, hyperscaler partnerships (AWS, Azure, Google), and Ansys acquisition. FY2025 EPS GAAP -$1.82; non-GAAP adjusted EPS +$1.93 (includes fair-value gains on warrants/convertibles). Source: EDGAR 10-K, FMP annual."
+  },
+  "ceo": "Niccolo de Masi",
+  "employees": 407
+}

@@ -1,0 +1,42 @@
+{
+  "ticker": "TSLA",
+  "name": "Tesla, Inc.",
+  "name_th": "เทสลา",
+  "sector": "Consumer",
+  "exchange": "NASDAQ",
+  "currency": "USD",
+  "last_updated": "2026-04-03",
+  "generated_at": "2026-04-03",
+  "latest_year": 2025,
+  "financials": {
+    "unit": "Billion",
+    "currency": "USD",
+    "revenue_B": 94.83,
+    "net_income_B": 3.79,
+    "fcf_B": 6.22,
+    "eps": 1.08,
+    "gross_margin_pct": 18.0
+  },
+  "counts": {
+    "notes": 2,
+    "quotes": 9,
+    "roadmap_total": 15,
+    "roadmap_pending": 15,
+    "roadmap_progress": 0,
+    "roadmap_delivered": 0
+  },
+  "latest_note": {
+    "date": null,
+    "title": "10-K Analysis",
+    "title_th": "",
+    "rating": 3,
+    "summary": "[Financial Performance] Tesla is pivoting from a pure automotive play to an AI and energy ecosystem, with financial themes centered on service revenue growth via Robotaxi and FSD subscriptions. Energy…"
+  },
+  "top_risks": [
+    "Tesla faces significant operational and technological risks centered around supply chain vulnerabilities, autonomous technology development, and manufacturing execution",
+    "The company's aggressive growth strategy across multiple product lines (vehicles, energy storage, AI robots) creates complex execution challenges",
+    "While Tesla mitigates risks through vertical integration, AI development, and software security measures, its forward-looking business model remains exposed to competitive, regulatory, and economic uncertainties"
+  ],
+  "management_tone": "bullish",
+  "one_liner": "Tesla is pivoting from a pure automotive play to an AI and energy ecosystem, with financial themes centered on service revenue growth via Robotaxi and FSD subscriptions."
+}

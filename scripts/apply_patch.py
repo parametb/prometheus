@@ -26,7 +26,7 @@ Operations:
   delete  — remove items from array whose text contains 'match'
 """
 
-import argparse, json, os, sys, shutil
+import argparse, json, os, sys, shutil, importlib.util
 from datetime import datetime
 
 # Base directory = parent of scripts/
@@ -198,6 +198,8 @@ def main():
     p.add_argument("patch_file", nargs="?", help="Path ของ patch JSON file")
     p.add_argument("--dry-run",  action="store_true", help="Preview — ไม่บันทึกจริง")
     p.add_argument("--info",     action="store_true", help="แสดงสถานะปัจจุบันของ ticker")
+    p.add_argument("--no-heal",  action="store_true", help="ปิด auto-healing (report errors only)")
+    p.add_argument("--force",    action="store_true", help="ข้าม validation errors (อันตราย)")
     args = p.parse_args()
 
     ticker = args.ticker.upper()
@@ -217,6 +219,39 @@ def main():
     with open(args.patch_file, encoding="utf-8") as f:
         patch = json.load(f)
 
+    data = load_data(ticker)
+
+    # ── Pre-flight: Self-Healing Validation ─────────────────────────────────
+    _validator_path = os.path.join(os.path.dirname(__file__), "validate_patch.py")
+    if os.path.exists(_validator_path):
+        _spec = importlib.util.spec_from_file_location("validate_patch", _validator_path)
+        _vmod = importlib.util.module_from_spec(_spec)
+        _spec.loader.exec_module(_vmod)
+
+        healed_patch, issues = _vmod.validate_and_heal(patch, data, heal=not args.no_heal)
+
+        _errors  = [i for i in issues if i["level"] == "error"]
+        _warns   = [i for i in issues if i["level"] == "warn"]
+        _healed  = [i for i in issues if i["level"] == "healed"]
+
+        if issues:
+            print(f"\n  🔍  Validation:  "
+                  f"{len(_errors)} error(s)  {len(_warns)} warning(s)  {len(_healed)} healed")
+            for iss in issues:
+                icon = {"error": "  ❌ ", "warn": "  ⚠️  ", "healed": "  🔧 "}[iss["level"]]
+                print(f"{icon} [{iss['code']}] {iss['msg']}")
+            print()
+
+        if _errors and not args.force:
+            print(f"  ❌  Patch blocked by {len(_errors)} validation error(s). Use --force to override.")
+            sys.exit(2)
+
+        if _errors and args.force:
+            print(f"  ⚠️   --force: skipping {len(_errors)} validation error(s)")
+
+        patch = healed_patch  # use healed version going forward
+    # ────────────────────────────────────────────────────────────────────────
+
     operations  = patch.get("operations", [])
     description = patch.get("description", os.path.basename(args.patch_file))
 
@@ -224,8 +259,6 @@ def main():
     print(f"    Ticker: {ticker}  |  {len(operations)} operations")
     if args.dry_run:
         print("    [DRY RUN — ไม่มีการบันทึก]\n")
-
-    data    = load_data(ticker)
     ok      = 0
     for i, op_def in enumerate(operations, 1):
         success, msg = apply_op(data, op_def)
@@ -242,7 +275,6 @@ def main():
         save_data(ticker, data)
         # Auto-regenerate snapshot after every successful patch
         try:
-            import importlib.util
             snap_path = os.path.join(os.path.dirname(__file__), "generate_snapshot.py")
             spec = importlib.util.spec_from_file_location("generate_snapshot", snap_path)
             mod  = importlib.util.module_from_spec(spec)

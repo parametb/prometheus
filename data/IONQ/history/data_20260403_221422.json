@@ -1,0 +1,89 @@
+{
+  "ticker": "IONQ",
+  "name": "IonQ, Inc.",
+  "sector": "Technology",
+  "exchange": "NYSE",
+  "last_updated": "2026-04-03",
+  "description": "IonQ is a quantum computing company that develops trapped-ion quantum computers and cloud-accessible quantum hardware/software systems. Founded in 2015 by Chris Monroe and Jungsang Kim, it was the first pure-play quantum computing company to go public (2021). Competes with D-Wave (QBTS), Rigetti (RGTI), and IBM in the quantum computing space.",
+  "notes": [],
+  "quotes": [],
+  "roadmap": [],
+  "financials": {
+    "currency": "USD",
+    "unit": "Million",
+    "links": [
+      {
+        "label": "10-K FY2025 (filed 2026-02-25)",
+        "url": "https://www.sec.gov/Archives/edgar/data/1824920/000119312526071562/ionq-20251231.htm"
+      },
+      {
+        "label": "10-K FY2024 (filed 2025-02-26)",
+        "url": "https://www.sec.gov/Archives/edgar/data/1824920/000095017025027722/ionq-20241231.htm"
+      },
+      {
+        "label": "10-K FY2023 (filed 2024-02-28)",
+        "url": "https://www.sec.gov/Archives/edgar/data/1824920/000095017024022072/ionq-20231231.htm"
+      },
+      {
+        "label": "10-K FY2022 (filed 2023-03-30)",
+        "url": "https://www.sec.gov/Archives/edgar/data/1824920/000119312523085558/d424437d10k.htm"
+      }
+    ],
+    "years": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "metrics": [
+      {
+        "name": "Revenue",
+        "values": [
+          11.13,
+          22.04,
+          43.07,
+          130.02
+        ]
+      },
+      {
+        "name": "Gross Profit",
+        "values": [
+          2.58,
+          13.93,
+          3.82,
+          52.53
+        ]
+      },
+      {
+        "name": "Net Income",
+        "values": [
+          -48.51,
+          -157.77,
+          -331.65,
+          -510.38
+        ]
+      },
+      {
+        "name": "EPS (diluted)",
+        "values": [
+          -0.25,
+          -0.78,
+          -1.56,
+          -1.82
+        ]
+      },
+      {
+        "name": "Free Cash Flow",
+        "values": [
+          -57.26,
+          -98.36,
+          -129.25,
+          -299.6
+        ]
+      }
+    ],
+    "notes": "Unit = Million USD. Revenue = total contract revenue per EDGAR/FMP. Gross Profit = Revenue - COR. Net Income = GAAP attributable to common shareholders. FCF = Operating CF - CapEx. All years are loss-making; stock-based compensation is the largest non-cash item (~$312M in FY2025). FY2025 revenue +202% YoY driven by US Government contracts, hyperscaler partnerships (AWS, Azure, Google), and Ansys acquisition. FY2025 EPS GAAP -$1.82; non-GAAP adjusted EPS +$1.93 (includes fair-value gains on warrants/convertibles). Source: EDGAR 10-K, FMP annual."
+  },
+  "ceo": "Niccolo de Masi",
+  "employees": 407
+}
