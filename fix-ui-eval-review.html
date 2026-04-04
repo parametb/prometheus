@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eval Review</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js" integrity="sha384-EnyY0/GSHQGSxSgMwaIPzSESbqoOLSexfnSMN2AP+39Ckmn92stwABZynq1JyzdT" crossorigin="anonymous"></script>
+  <style>
+    :root {
+      --bg: #faf9f5;
+      --surface: #ffffff;
+      --border: #e8e6dc;
+      --text: #141413;
+      --text-muted: #b0aea5;
+      --accent: #d97757;
+      --accent-hover: #c4613f;
+      --green: #788c5d;
+      --green-bg: #eef2e8;
+      --red: #c44;
+      --red-bg: #fceaea;
+      --header-bg: #141413;
+      --header-text: #faf9f5;
+      --radius: 6px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Lora', Georgia, serif;
+      background: var(--bg);
+      color: var(--text);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ---- Header ---- */
+    .header {
+      background: var(--header-bg);
+      color: var(--header-text);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    .header h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+    .header .instructions {
+      font-size: 0.8rem;
+      opacity: 0.7;
+      margin-top: 0.25rem;
+    }
+    .header .progress {
+      font-size: 0.875rem;
+      opacity: 0.8;
+      text-align: right;
+    }
+
+    /* ---- Main content ---- */
+    .main {
+      flex: 1;
+      overflow-y: auto;
+      padding: 1.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    /* ---- Sections ---- */
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      flex-shrink: 0;
+    }
+    .section-header {
+      font-family: 'Poppins', sans-serif;
+      padding: 0.75rem 1rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border);
+      background: var(--bg);
+    }
+    .section-body {
+      padding: 1rem;
+    }
+
+    /* ---- Config badge ---- */
+    .config-badge {
+      display: inline-block;
+      padding: 0.2rem 0.625rem;
+      border-radius: 9999px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-left: 0.75rem;
+      vertical-align: middle;
+    }
+    .config-badge.config-primary {
+      background: rgba(33, 150, 243, 0.12);
+      color: #1976d2;
+    }
+    .config-badge.config-baseline {
+      background: rgba(255, 193, 7, 0.15);
+      color: #f57f17;
+    }
+
+    /* ---- Prompt ---- */
+    .prompt-text {
+      white-space: pre-wrap;
+      font-size: 0.9375rem;
+      line-height: 1.6;
+    }
+
+    /* ---- Outputs ---- */
+    .output-file {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .output-file + .output-file {
+      margin-top: 1rem;
+    }
+    .output-file-header {
+      padding: 0.5rem 0.75rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      font-family: 'SF Mono', SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .output-file-header .dl-btn {
+      font-size: 0.7rem;
+      color: var(--accent);
+      text-decoration: none;
+      cursor: pointer;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-weight: 500;
+      opacity: 0.8;
+    }
+    .output-file-header .dl-btn:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+    .output-file-content {
+      padding: 0.75rem;
+      overflow-x: auto;
+    }
+    .output-file-content pre {
+      font-size: 0.8125rem;
+      line-height: 1.5;
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-family: 'SF Mono', SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+    }
+    .output-file-content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+    .output-file-content iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+    }
+    .output-file-content table {
+      border-collapse: collapse;
+      font-size: 0.8125rem;
+      width: 100%;
+    }
+    .output-file-content table td,
+    .output-file-content table th {
+      border: 1px solid var(--border);
+      padding: 0.375rem 0.5rem;
+      text-align: left;
+    }
+    .output-file-content table th {
+      background: var(--bg);
+      font-weight: 600;
+    }
+    .output-file-content .download-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.875rem;
+      cursor: pointer;
+    }
+    .output-file-content .download-link:hover {
+      background: var(--border);
+    }
+    .empty-state {
+      color: var(--text-muted);
+      font-style: italic;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    /* ---- Feedback ---- */
+    .prev-feedback {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0.625rem 0.75rem;
+      margin-top: 0.75rem;
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .prev-feedback-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.25rem;
+      color: var(--text-muted);
+    }
+    .feedback-textarea {
+      width: 100%;
+      min-height: 100px;
+      padding: 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 0.9375rem;
+      line-height: 1.5;
+      resize: vertical;
+      color: var(--text);
+    }
+    .feedback-textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+    .feedback-status {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+      min-height: 1.1em;
+    }
+
+    /* ---- Grades (collapsible) ---- */
+    .grades-toggle {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+    }
+    .grades-toggle:hover {
+      color: var(--accent);
+    }
+    .grades-toggle .arrow {
+      margin-right: 0.5rem;
+      transition: transform 0.15s;
+      font-size: 0.75rem;
+    }
+    .grades-toggle .arrow.open {
+      transform: rotate(90deg);
+    }
+    .grades-content {
+      display: none;
+      margin-top: 0.75rem;
+    }
+    .grades-content.open {
+      display: block;
+    }
+    .grades-summary {
+      font-size: 0.875rem;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .grade-badge {
+      display: inline-block;
+      padding: 0.125rem 0.5rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .grade-pass { background: var(--green-bg); color: var(--green); }
+    .grade-fail { background: var(--red-bg); color: var(--red); }
+    .assertion-list {
+      list-style: none;
+    }
+    .assertion-item {
+      padding: 0.625rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.8125rem;
+    }
+    .assertion-item:last-child { border-bottom: none; }
+    .assertion-status {
+      font-weight: 600;
+      margin-right: 0.5rem;
+    }
+    .assertion-status.pass { color: var(--green); }
+    .assertion-status.fail { color: var(--red); }
+    .assertion-evidence {
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      margin-top: 0.25rem;
+      padding-left: 1.5rem;
+    }
+
+    /* ---- View tabs ---- */
+    .view-tabs {
+      display: flex;
+      gap: 0;
+      padding: 0 2rem;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+    .view-tab {
+      font-family: 'Poppins', sans-serif;
+      padding: 0.625rem 1.25rem;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      cursor: pointer;
+      border: none;
+      background: none;
+      color: var(--text-muted);
+      border-bottom: 2px solid transparent;
+      transition: all 0.15s;
+    }
+    .view-tab:hover { color: var(--text); }
+    .view-tab.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+    .view-panel { display: none; }
+    .view-panel.active { display: flex; flex-direction: column; flex: 1; overflow: hidden; }
+
+    /* ---- Benchmark view ---- */
+    .benchmark-view {
+      padding: 1.5rem 2rem;
+      overflow-y: auto;
+      flex: 1;
+    }
+    .benchmark-table {
+      border-collapse: collapse;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 0.8125rem;
+      width: 100%;
+      margin-bottom: 1.5rem;
+    }
+    .benchmark-table th, .benchmark-table td {
+      padding: 0.625rem 0.75rem;
+      text-align: left;
+      border: 1px solid var(--border);
+    }
+    .benchmark-table th {
+      font-family: 'Poppins', sans-serif;
+      background: var(--header-bg);
+      color: var(--header-text);
+      font-weight: 500;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .benchmark-table tr:hover { background: var(--bg); }
+    .benchmark-table tr.benchmark-row-with { background: rgba(33, 150, 243, 0.06); }
+    .benchmark-table tr.benchmark-row-without { background: rgba(255, 193, 7, 0.06); }
+    .benchmark-table tr.benchmark-row-with:hover { background: rgba(33, 150, 243, 0.12); }
+    .benchmark-table tr.benchmark-row-without:hover { background: rgba(255, 193, 7, 0.12); }
+    .benchmark-table tr.benchmark-row-avg { font-weight: 600; border-top: 2px solid var(--border); }
+    .benchmark-table tr.benchmark-row-avg.benchmark-row-with { background: rgba(33, 150, 243, 0.12); }
+    .benchmark-table tr.benchmark-row-avg.benchmark-row-without { background: rgba(255, 193, 7, 0.12); }
+    .benchmark-delta-positive { color: var(--green); font-weight: 600; }
+    .benchmark-delta-negative { color: var(--red); font-weight: 600; }
+    .benchmark-notes {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem;
+    }
+    .benchmark-notes h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.875rem;
+      margin-bottom: 0.75rem;
+    }
+    .benchmark-notes ul {
+      list-style: disc;
+      padding-left: 1.25rem;
+    }
+    .benchmark-notes li {
+      font-size: 0.8125rem;
+      line-height: 1.6;
+      margin-bottom: 0.375rem;
+    }
+    .benchmark-empty {
+      color: var(--text-muted);
+      font-style: italic;
+      text-align: center;
+      padding: 3rem;
+    }
+
+    /* ---- Navigation ---- */
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+      flex-shrink: 0;
+    }
+    .nav-btn {
+      font-family: 'Poppins', sans-serif;
+      padding: 0.5rem 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      cursor: pointer;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text);
+      transition: all 0.15s;
+    }
+    .nav-btn:hover:not(:disabled) {
+      background: var(--bg);
+      border-color: var(--text-muted);
+    }
+    .nav-btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+    .done-btn {
+      font-family: 'Poppins', sans-serif;
+      padding: 0.5rem 1.5rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: all 0.15s;
+    }
+    .done-btn:hover {
+      background: var(--bg);
+      border-color: var(--text-muted);
+    }
+    .done-btn.ready {
+      border: none;
+      background: var(--accent);
+      color: white;
+      font-weight: 600;
+    }
+    .done-btn.ready:hover {
+      background: var(--accent-hover);
+    }
+    /* ---- Done overlay ---- */
+    .done-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 100;
+      justify-content: center;
+      align-items: center;
+    }
+    .done-overlay.visible {
+      display: flex;
+    }
+    .done-card {
+      background: var(--surface);
+      border-radius: 12px;
+      padding: 2rem 3rem;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      max-width: 500px;
+    }
+    .done-card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .done-card p {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+    .done-card .btn-row {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+    .done-card button {
+      padding: 0.5rem 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      cursor: pointer;
+      font-size: 0.875rem;
+    }
+    .done-card button:hover {
+      background: var(--bg);
+    }
+    /* ---- Toast ---- */
+    .toast {
+      position: fixed;
+      bottom: 5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--header-bg);
+      color: var(--header-text);
+      padding: 0.625rem 1.25rem;
+      border-radius: var(--radius);
+      font-size: 0.875rem;
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+      z-index: 200;
+    }
+    .toast.visible {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div id="app" style="height:100vh; display:flex; flex-direction:column;">
+    <div class="header">
+      <div>
+        <h1>Eval Review: <span id="skill-name"></span></h1>
+        <div class="instructions">Review each output and leave feedback below. Navigate with arrow keys or buttons. When done, copy feedback and paste into Claude Code.</div>
+      </div>
+      <div class="progress" id="progress"></div>
+    </div>
+
+    <!-- View tabs (only shown when benchmark data exists) -->
+    <div class="view-tabs" id="view-tabs" style="display:none;">
+      <button class="view-tab active" onclick="switchView('outputs')">Outputs</button>
+      <button class="view-tab" onclick="switchView('benchmark')">Benchmark</button>
+    </div>
+
+    <!-- Outputs panel (qualitative review) -->
+    <div class="view-panel active" id="panel-outputs">
+    <div class="main">
+      <!-- Prompt -->
+      <div class="section">
+        <div class="section-header">Prompt <span class="config-badge" id="config-badge" style="display:none;"></span></div>
+        <div class="section-body">
+          <div class="prompt-text" id="prompt-text"></div>
+        </div>
+      </div>
+
+      <!-- Outputs -->
+      <div class="section">
+        <div class="section-header">Output</div>
+        <div class="section-body" id="outputs-body">
+          <div class="empty-state">No output files found</div>
+        </div>
+      </div>
+
+      <!-- Previous Output (collapsible) -->
+      <div class="section" id="prev-outputs-section" style="display:none;">
+        <div class="section-header">
+          <div class="grades-toggle" onclick="togglePrevOutputs()">
+            <span class="arrow" id="prev-outputs-arrow">&#9654;</span>
+            Previous Output
+          </div>
+        </div>
+        <div class="grades-content" id="prev-outputs-content"></div>
+      </div>
+
+      <!-- Grades (collapsible) -->
+      <div class="section" id="grades-section" style="display:none;">
+        <div class="section-header">
+          <div class="grades-toggle" onclick="toggleGrades()">
+            <span class="arrow" id="grades-arrow">&#9654;</span>
+            Formal Grades
+          </div>
+        </div>
+        <div class="grades-content" id="grades-content"></div>
+      </div>
+
+      <!-- Feedback -->
+      <div class="section">
+        <div class="section-header">Your Feedback</div>
+        <div class="section-body">
+          <textarea
+            class="feedback-textarea"
+            id="feedback"
+            placeholder="What do you think of this output? Any issues, suggestions, or things that look great?"
+          ></textarea>
+          <div class="feedback-status" id="feedback-status"></div>
+          <div class="prev-feedback" id="prev-feedback" style="display:none;">
+            <div class="prev-feedback-label">Previous feedback</div>
+            <div id="prev-feedback-text"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav" id="outputs-nav">
+      <button class="nav-btn" id="prev-btn" onclick="navigate(-1)">&#8592; Previous</button>
+      <button class="done-btn" id="done-btn" onclick="showDoneDialog()">Submit All Reviews</button>
+      <button class="nav-btn" id="next-btn" onclick="navigate(1)">Next &#8594;</button>
+    </div>
+    </div><!-- end panel-outputs -->
+
+    <!-- Benchmark panel (quantitative stats) -->
+    <div class="view-panel" id="panel-benchmark">
+      <div class="benchmark-view" id="benchmark-content">
+        <div class="benchmark-empty">No benchmark data available. Run a benchmark to see quantitative results here.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Done overlay -->
+  <div class="done-overlay" id="done-overlay">
+    <div class="done-card">
+      <h2>Review Complete</h2>
+      <p>Your feedback has been saved. Go back to your Claude Code session and tell Claude you're done reviewing.</p>
+      <div class="btn-row">
+        <button onclick="closeDoneDialog()">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script>
+    // ---- Embedded data (injected by generate_review.py) ----
+    const EMBEDDED_DATA = {"skill_name": "fix-ui", "runs": [{"id": "eval-1-with_skill", "prompt": "(No prompt found)", "eval_id": 1, "outputs": [{"name": "result.md", "type": "text", "content": "# Fix-UI Skill Execution Report: BROKEN_A Roadmap Fix\n\n## Problem Diagnosis\n\n**Issue:** BROKEN_A roadmap items were showing blank/empty text in the Prometheus UI.\n\n**Root Cause:** The data.json file used the wrong key name for roadmap item text. Specifically:\n- All 3 roadmap items used `\"milestone\"` as the text field key\n- The company.html template was configured to read from `\"commitment\"` key\n- This key mismatch caused the rmText() helper to fall back to default value ('\u2014')\n\n**Audit Findings (Before Fix):**\n```\n\u274c BROKEN_A: 3 roadmap item(s) use key(s) {'milestone'} instead of 'commitment'\n```\n\n## Solution Applied\n\nUsed the Prometheus UI audit script with auto-fix mode to normalize the data:\n\n```bash\npython .claude/skills/fix-ui/scripts/audit_prometheus.py --fix\n```\n\n**What was fixed:**\n- Renamed `\"milestone\"` \u2192 `\"commitment\"` in all 3 roadmap items in `/data/BROKEN_A/data.json`\n- Applied by the audit script's auto-normalization feature\n\n**Files Modified:**\n- `/sessions/inspiring-kind-knuth/mnt/Omega project/investment-research/data/BROKEN_A/data.json`\n\n**Before:**\n```json\n{\"milestone\": \"Launch new product line by Q3 2026\", \"date_said\": \"2026-01-15\", ...}\n{\"milestone\": \"Expand to 5 new markets in 2026\", \"date_said\": \"2026-01-15\", ...}\n{\"milestone\": \"Achieve $1B ARR by end of 2026\", \"date_said\": null, ...}\n```\n\n**After:**\n```json\n{\"commitment\": \"Launch new product line by Q3 2026\", \"date_said\": \"2026-01-15\", ...}\n{\"commitment\": \"Expand to 5 new markets in 2026\", \"date_said\": \"2026-01-15\", ...}\n{\"commitment\": \"Achieve $1B ARR by end of 2026\", \"date_said\": null, ...}\n```\n\n## Verification\n\nRe-ran the audit after applying fixes:\n\n```bash\npython .claude/skills/fix-ui/scripts/audit_prometheus.py\n```\n\n**Result:** \u2705 All checks passed \u2014 no issues found.\n\n**Specific checks for BROKEN_A:**\n- Roadmap keys: All use 'commitment' \u2705\n- company.html helper: rmText() present \u2705\n- Gantt null-date guard: Present and functional \u2705\n- Overview fallback: Present and functional \u2705\n\n## Summary\n\nThe roadmap text will now display correctly in the BROKEN_A company page. The rmText() helper in company.html will successfully read from the 'commitment' field for all 3 roadmap items:\n1. \"Launch new product line by Q3 2026\" (2026-01-15)\n2. \"Expand to 5 new markets in 2026\" (2026-01-15)\n3. \"Achieve $1B ARR by end of 2026\" (no date \u2014 will appear in roadmap list but not in Gantt chart)\n\nThe fix was minimal, non-invasive, and follows the Prometheus UI skill's standard workflow for this class of bug.\n"}], "grading": {"expectations": [{"text": "Audit script is run (python .claude/skills/fix-ui/scripts/audit_prometheus.py)", "passed": true, "evidence": "Ran audit script, output showed '\u274c BROKEN_A: 3 roadmap item(s) use key(s) {milestone}'"}, {"text": "Issue correctly identified as roadmap key mismatch (milestone vs commitment)", "passed": true, "evidence": "result.md clearly states 'All 3 roadmap items used milestone as the text field key'"}, {"text": "BROKEN_A/data.json updated so roadmap items use commitment key", "passed": true, "evidence": "Applied --fix flag, audit re-run showed \u2705 All checks passed"}, {"text": "Fix verified by re-running audit or checking the file", "passed": true, "evidence": "Re-ran audit after fix, confirmed clean output"}], "summary": {"passed": 4, "failed": 0, "total": 4, "pass_rate": 1.0}, "execution_metrics": {"tool_calls": {"Read": 2, "Bash": 3, "Write": 2}, "total_tool_calls": 7, "total_steps": 4, "errors_encountered": 0}}}, {"id": "eval-1-without_skill", "prompt": "(No prompt found)", "eval_id": 1, "outputs": [{"name": "result.md", "type": "text", "content": "# Prometheus Investment Research - BROKEN_A Roadmap Fix\n\n## Issue Diagnosis\n\nThe BROKEN_A company's roadmap was displaying empty messages for all items. The root cause was identified as a **field name mismatch** in the data structure:\n\n### Problem\n- The roadmap items in `/data/BROKEN_A/data.json` were using the field name `\"milestone\"` instead of `\"commitment\"`\n- The rendering code in `company.html` has a fallback function `rmText()` that checks for text fields in this order: `commitment` \u2192 `milestone` \u2192 `item` \u2192 `text` \u2192 `'\u2014'`\n- While the code CAN handle both field names, the data was inconsistent with the expected standard format (which uses `\"commitment\"`)\n\n### Data Issue Details\n**Before Fix:**\n```json\n{\n  \"date_said\": \"2026-01-15\",\n  \"source\": \"10-K FY2025\",\n  \"status\": \"pending\",\n  \"milestone\": \"Launch new product line by Q3 2026\"\n}\n```\n\n**After Fix:**\n```json\n{\n  \"date_said\": \"2026-01-15\",\n  \"source\": \"10-K FY2025\",\n  \"status\": \"pending\",\n  \"commitment\": \"Launch new product line by Q3 2026\"\n}\n```\n\n## Solution Applied\n\n1. **Identified the Issue**: Ran the audit script which detected that BROKEN_A had 3 roadmap items using the `\"milestone\"` key instead of the standard `\"commitment\"` key.\n\n2. **Applied the Fix**:\n   - Manually converted the data to use the broken state (matching the fixture)\n   - Ran the audit script with `--fix` flag to auto-normalize all roadmap keys from `\"milestone\"` to `\"commitment\"`\n   - The script successfully applied the fix to `/data/BROKEN_A/data.json`\n\n3. **Verified the Fix**:\n   - Re-ran the audit script, which now reports: \"\u2705 All checks passed \u2014 no issues found\"\n   - All 3 roadmap items now have the correct `\"commitment\"` field with the proper text content\n   - The HTML rendering code will now correctly display the roadmap text items\n\n## Files Modified\n\n- **`/sessions/inspiring-kind-knuth/mnt/Omega project/investment-research/data/BROKEN_A/data.json`**\n  - All 3 roadmap items: converted field name from `\"milestone\"` to `\"commitment\"`\n  - No content was lost; only the field key was normalized\n\n## Verification Steps Completed\n\n1. \u2705 Ran initial audit: `python3 .claude/skills/fix-ui/scripts/audit_prometheus.py`\n   - Detected: \"3 roadmap item(s) use key(s) {'milestone'} instead of 'commitment'\"\n\n2. \u2705 Applied fix: `python3 .claude/skills/fix-ui/scripts/audit_prometheus.py --fix`\n   - Applied: \"BROKEN_A: normalized roadmap key \u2192 'commitment'\"\n\n3. \u2705 Verified fix: `python3 .claude/skills/fix-ui/scripts/audit_prometheus.py`\n   - Result: \"\u2705 All checks passed \u2014 no issues found\"\n\n4. \u2705 Confirmed data integrity:\n   - All commitment text values remain intact and displayable\n   - The rendering will now show: \"Launch new product line by Q3 2026\", \"Expand to 5 new markets in 2026\", \"Achieve $1B ARR by end of 2026\"\n\n## Why This Fixes the Empty Message Issue\n\nThe `rmText()` function in `company.html` (line 920) checks for text fields in priority order. While it theoretically supports multiple field names, the standard practice across the codebase is to use `\"commitment\"`. By normalizing BROKEN_A to use this standard field name, the roadmap rendering now properly retrieves and displays all commitment text without falling back to the default empty indicator ('\u2014').\n"}], "grading": {"expectations": [{"text": "Audit script is run (python .claude/skills/fix-ui/scripts/audit_prometheus.py)", "passed": true, "evidence": "Agent discovered and ran the audit script, got same output as with-skill run"}, {"text": "Issue correctly identified as roadmap key mismatch (milestone vs commitment)", "passed": true, "evidence": "Correct diagnosis in result.md"}, {"text": "BROKEN_A/data.json updated so roadmap items use commitment key", "passed": true, "evidence": "Applied --fix, data normalized"}, {"text": "Fix verified by re-running audit or checking the file", "passed": true, "evidence": "Re-ran audit confirming clean state"}], "summary": {"passed": 4, "failed": 0, "total": 4, "pass_rate": 1.0}, "execution_metrics": {"tool_calls": {"Read": 15, "Bash": 20, "Write": 8, "Edit": 5}, "total_tool_calls": 57, "total_steps": 12, "errors_encountered": 2, "note": "Agent reset data to broken state mid-run, causing extra work and confusion. 5x more tool calls than with-skill run."}}}, {"id": "eval-2-with_skill", "prompt": "(No prompt found)", "eval_id": 2, "outputs": [{"name": "result.md", "type": "text", "content": "# Gantt Chart Fix Report for BROKEN_B\n\n## Root Cause Analysis\n\n**Issue:** Gantt chart for BROKEN_B fails to render with a Mermaid syntax error.\n\n**Root Cause:** All 3 roadmap items in BROKEN_B have `date_said: null`. When these null dates are passed to Mermaid's Gantt parser, they generate invalid syntax (the literal string \"null\" as a date), which causes a parsing error.\n\n**Data Issue:**\n```json\n\"roadmap\": [\n  {\"commitment\": \"Expand digital lending platform...\", \"date_said\": null, \"source\": \"10-K FY2025\"},\n  {\"commitment\": \"Launch mobile-first banking app\", \"date_said\": null, \"source\": \"10-K FY2025\"},\n  {\"commitment\": \"Achieve carbon-neutral operations...\", \"date_said\": null, \"source\": \"10-K FY2025\"}\n]\n```\n\n100% of roadmap items have null dates (3/3).\n\n---\n\n## Current State: company.html Already Has the Fix\n\n**Status:** \u2705 **ALREADY FIXED**\n\nThe `company.html` file already contains all three required fixes:\n\n### Fix A: rmText() Helper\n- Function exists and handles `commitment || milestone || item || text` fallback\n- Prevents \"undefined\" text in roadmap list\n\n### Fix B: Gantt Null-Date Guard (CRITICAL FIX)\nThe `buildGanttSyntax()` function already filters out null-date items **before** building Mermaid syntax:\n\n```javascript\nconst withDate = roadmap.filter(r => r.date_said && r.date_said !== 'null');\nif (!withDate.length) return null;\n```\n\nThis filter eliminates the null dates before Mermaid sees them.\n\n### Fix C: Override Fallback\nWhen `buildGanttSyntax()` returns `null` (no items with valid dates), `renderGanttChart()` gracefully shows:\n```javascript\nif (!syntax) {\n  container.innerHTML = '<div class=\"gantt-loading\">\u0e44\u0e21\u0e48\u0e21\u0e35\u0e02\u0e49\u0e2d\u0e21\u0e39\u0e25 roadmap</div>';\n  return;\n}\n```\n\n---\n\n## Correct Behavior\n\nFor BROKEN_B:\n\n1. **Roadmap List Tab:** Displays all 3 commitments with their source citations (from 10-K FY2025), with no date badge since all are null\n2. **Gantt Chart:** Shows \"\u0e44\u0e21\u0e48\u0e21\u0e35\u0e02\u0e49\u0e2d\u0e21\u0e39\u0e25 roadmap\" message instead of a broken chart, because there are no valid dates to plot\n3. **No JavaScript Error:** The null-date filter prevents Mermaid syntax errors entirely\n\nThis is the **expected, correct behavior** \u2014 not a bug. The roadmap items are preserved and visible in the list; the Gantt chart gracefully degrades when there's insufficient date information.\n\n---\n\n## Audit Result\n\nPrometheus audit confirms all fixes are in place:\n\n```\n\u2705 company.html: rmText() helper present\n\u2705 company.html: Gantt null-date filter present\n\u2705 company.html: Overview fallback present\n\u2705 company.html: Mermaid escape (),[] present\n\u2705 All checks passed \u2014 no issues found.\n```\n\n---\n\n## Summary\n\n- **Issue:** Gantt chart for BROKEN_B appears broken due to all-null dates\n- **Root Cause:** 100% of roadmap items have `date_said: null` from 10-K sourcing\n- **Fix Status:** Already implemented in company.html\n- **Expected Behavior:** Roadmap list shows items; Gantt shows fallback \"no data\" message\n- **Action Required:** None \u2014 the code is correct as-is\n"}], "grading": {"expectations": [{"text": "Audit script is run to diagnose the issue", "passed": true, "evidence": "Ran audit, reported null_dates 3/3"}, {"text": "Claude correctly identifies null date_said as root cause of Mermaid error", "passed": true, "evidence": "result.md: 'Root Cause: All 3 roadmap items have date_said: null'"}, {"text": "Claude checks company.html for the null-date filter in buildGanttSyntax", "passed": true, "evidence": "Verified 'withDate = roadmap.filter' and 'rmText() helper present'"}, {"text": "Claude explains that showing \u0e44\u0e21\u0e48\u0e21\u0e35\u0e02\u0e49\u0e2d\u0e21\u0e39\u0e25 timeline is correct behavior", "passed": true, "evidence": "Explicitly stated 'No Mermaid syntax error is generated \u2014 the chart simply doesn't render with graceful fallback'"}, {"text": "Claude does NOT delete or fabricate date_said values", "passed": true, "evidence": "Only explained the fix; did not modify data.json dates"}], "summary": {"passed": 5, "failed": 0, "total": 5, "pass_rate": 1.0}, "execution_metrics": {"tool_calls": {"Read": 2, "Bash": 3, "Write": 2}, "total_tool_calls": 9, "total_steps": 4, "errors_encountered": 0}}}, {"id": "eval-2-without_skill", "prompt": "(No prompt found)", "eval_id": 2, "outputs": [{"name": "result.md", "type": "text", "content": "# BROKEN_B Gantt Chart Issue - Analysis & Fix\n\n## Problem Diagnosis\n\n### Root Cause\nThe Gantt chart for BROKEN_B fails to render because **all roadmap items have `date_said: null`** in `/data/BROKEN_B/data.json`.\n\n**Current data.json roadmap entries:**\n```json\n\"roadmap\": [\n  {\"commitment\": \"Expand digital lending platform to 10 new states\", \"date_said\": null, \"source\": \"10-K FY2025\", \"status\": \"pending\"},\n  {\"commitment\": \"Launch mobile-first banking app\", \"date_said\": null, \"source\": \"10-K FY2025\", \"status\": \"pending\"},\n  {\"commitment\": \"Achieve carbon-neutral operations by 2027\", \"date_said\": null, \"source\": \"10-K FY2025\", \"status\": \"pending\"}\n]\n```\n\n### How the Bug Manifests\n\n1. **In buildGanttSyntax() function (company.html, line 958-981):**\n   - Line 960 filters roadmap items: `const withDate = roadmap.filter(r => r.date_said && r.date_said !== 'null');`\n   - Since all items have `date_said: null`, the `withDate` array is empty\n   - Line 961 returns `null`: `if (!withDate.length) return null;`\n\n2. **In renderGanttChart() function (company.html, line 983-996):**\n   - Line 986: `const syntax = buildGanttSyntax(roadmap);`\n   - Line 987: When syntax is null, it displays fallback message: `\"\u0e44\u0e21\u0e48\u0e21\u0e35\u0e02\u0e49\u0e2d\u0e21\u0e39\u0e25 roadmap\"`\n   - No Mermaid syntax error is actually generated\u2014the chart simply doesn't render\n\n### Why No Mermaid Syntax Error Appears\nThe code is actually defensive and correct. It prevents invalid Mermaid syntax by:\n1. Filtering out null dates before building the syntax\n2. Returning null if no valid items exist\n3. Showing a graceful fallback message instead of trying to render invalid Gantt syntax\n\n## The Fix\n\n### Option 1: Add Sample Dates to data.json (Recommended)\nAdd realistic `date_said` values to the roadmap items:\n\n```json\n\"roadmap\": [\n  {\"commitment\": \"Expand digital lending platform to 10 new states\", \"date_said\": \"2025-Q2\", \"source\": \"10-K FY2025\", \"status\": \"pending\"},\n  {\"commitment\": \"Launch mobile-first banking app\", \"date_said\": \"2025-Q3\", \"source\": \"10-K FY2025\", \"status\": \"pending\"},\n  {\"commitment\": \"Achieve carbon-neutral operations by 2027\", \"date_said\": \"2025-Q1\", \"source\": \"10-K FY2025\", \"status\": \"pending\"}\n]\n```\n\nDate formats supported by extractEndDate() (company.html, line 949-956):\n- `\"Q[1-4] YYYY\"` \u2192 parses to quarter-end dates\n- `\"YYYY-YYYY\"` \u2192 year range\n- `\"YYYY\"` \u2192 year-end date\n- ISO date strings or any parseable date\n\n### Option 2: Add Missing Status Variations\nTo test the Gantt chart with different visual sections, use varied statuses:\n\n```json\n\"roadmap\": [\n  {\"commitment\": \"Expand digital lending platform to 10 new states\", \"date_said\": \"2025-Q2\", \"source\": \"10-K FY2025\", \"status\": \"pending\"},\n  {\"commitment\": \"Launch mobile-first banking app\", \"date_said\": \"2025-Q3\", \"source\": \"10-K FY2025\", \"status\": \"monitoring\"},\n  {\"commitment\": \"Achieve carbon-neutral operations by 2027\", \"date_said\": \"2026\", \"source\": \"10-K FY2025\", \"status\": \"delivered\"}\n]\n```\n\nStatus values and their visual appearance in Gantt:\n- `\"pending\"` \u2192 Default styling\n- `\"monitoring\"` \u2192 Active indicator\n- `\"partial\"` \u2192 Critical styling\n- `\"missed\"` \u2192 Critical styling\n- `\"delivered\"` \u2192 Done styling\n\n## Files Analyzed\n\n1. **data/BROKEN_B/data.json** (30 lines)\n   - Issue: All roadmap items have `date_said: null`\n\n2. **company.html** (lines 949-996)\n   - buildGanttSyntax() function (958-981): Filters out null dates, returns null if empty\n   - renderGanttChart() function (983-996): Handles null gracefully with fallback message\n   - extractEndDate() function (949-956): Parses various date formats\n\n## Conclusion\n\nThe code is **not broken**\u2014it's working as designed. The Gantt chart doesn't render because there are no valid roadmap dates to display. The fix is simple: add `date_said` values to the roadmap items in data.json.\n\nNo code changes are needed in company.html\u2014the existing logic correctly handles the null-date scenario.\n"}], "grading": {"expectations": [{"text": "Audit script is run to diagnose the issue", "passed": false, "evidence": "Agent read code directly but did not invoke the audit script"}, {"text": "Claude correctly identifies null date_said as root cause of Mermaid error", "passed": true, "evidence": "Correctly identified null dates as the cause"}, {"text": "Claude checks company.html for the null-date filter in buildGanttSyntax", "passed": true, "evidence": "Read the function and found the filter"}, {"text": "Claude explains that showing \u0e44\u0e21\u0e48\u0e21\u0e35\u0e02\u0e49\u0e2d\u0e21\u0e39\u0e25 timeline is correct behavior", "passed": false, "evidence": "Recommended 'Option 1: Add Sample Dates to data.json (Recommended)' \u2014 this is incorrect guidance"}, {"text": "Claude does NOT delete or fabricate date_said values", "passed": true, "evidence": "Only suggested (did not actually add) dates"}], "summary": {"passed": 3, "failed": 2, "total": 5, "pass_rate": 0.6}, "execution_metrics": {"tool_calls": {"Read": 4, "Bash": 4, "Write": 2}, "total_tool_calls": 11, "total_steps": 5, "errors_encountered": 0}}}, {"id": "eval-3-with_skill", "prompt": "(No prompt found)", "eval_id": 3, "outputs": [{"name": "DIAGNOSTIC_REPORT.md", "type": "text", "content": "# BROKEN_B Overview Tab Diagnostic Report\n\n**Date**: 2026-04-04\n**Project**: Prometheus Investment Research\n**Company**: BROKEN_B\n**Issue**: \"\u0e2b\u0e19\u0e49\u0e32 Overview tab \u0e02\u0e2d\u0e07 BROKEN_B \u0e14\u0e39\u0e27\u0e48\u0e32\u0e07\u0e40\u0e1b\u0e25\u0e48\u0e32\"\n\n---\n\n## Executive Summary\n\n\u2705 **DIAGNOSIS**: The Overview tab SHOULD NOT be empty. The fallback rendering is fully implemented and all conditions for displaying content are met.\n\n**Audit Status**: \u2705 PASSED (all checks)\n**Code Status**: \u2705 COMPLETE (fallback fully implemented)\n**Data Status**: \u2705 VALID (all required fields present)\n\n---\n\n## Detailed Analysis\n\n### 1. Audit Results\n\n```\n\u2705 company.html: rmText() helper present\n\u2705 company.html: Gantt null-date filter present\n\u2705 company.html: Overview fallback present\n\u2705 company.html: Mermaid escape (),[] present\n```\n\n**Verdict**: All UI guards are in place. No code defects.\n\n### 2. Fallback Implementation Status\n\n**File**: `company.html` (lines 523-567)\n**Function**: `renderOverviewPanel(ov)`\n\n#### Logic Flow\n```\nInput: ov = null (no overview field in data.json)\n    \u2193\nFallback triggered: if (!ov) { ... }\n    \u2193\nBuild 4 sections:\n  1. descHtml: Renders company description\n  2. finSummary: Renders financial snapshot\n  3. noteHtml: Renders latest note\n  4. emptyNotice: Renders \"add Deep Dive\" call-to-action\n    \u2193\nReturn: `${descHtml}${finSummary}${noteHtml}${emptyNotice}`\n```\n\n### 3. Data Validation for BROKEN_B\n\n**File**: `data/BROKEN_B/data.json`\n\n| Field | Status | Value |\n|-------|--------|-------|\n| `description` | \u2705 Present | \"Test company with all null date_said roadmap.\" |\n| `financials.metrics` | \u2705 Present | Revenue: [5.2, 5.8], Net Income: [0.8, 0.9] |\n| `financials.years` | \u2705 Present | [2024, 2025] |\n| `financials.currency` | \u2705 Present | \"USD\" |\n| `financials.unit` | \u2705 Present | \"Billion\" |\n| `ceo` | \u2705 Present | \"Jane Smith\" |\n| `employees` | \u2705 Present | 12000 |\n| `notes` | \u2705 Present | 1 entry: \"10-K Analysis\" |\n| `overview` | \u274c Absent | (Expected - triggers fallback) |\n\n### 4. Rendering Verification\n\nThe fallback checks these conditions:\n\n```javascript\nlatestRev = 5.8       // \u2705 NOT null \u2192 finSummary RENDERS\nlatestNI = 0.9        // \u2705 NOT null \u2192 shows in finSummary\nc.description = \"...\"  // \u2705 Truthy \u2192 descHtml RENDERS\nc.ceo = \"Jane Smith\"   // \u2705 Truthy \u2192 shows in finSummary\nc.employees = 12000    // \u2705 Truthy \u2192 shows in finSummary\nlatestNote = {...}     // \u2705 Truthy \u2192 noteHtml RENDERS\nemptyNotice            // \u2705 Always renders\n```\n\n**Result**: **4 out of 4 sections will render** \u2705\n\n### 5. HTML Output Structure\n\nWhen rendered, the tab will display:\n\n```html\n<!-- descHtml section -->\n<div class=\"ov-section\">\n  <div class=\"ov-title\">\ud83c\udfe2 \u0e40\u0e01\u0e35\u0e48\u0e22\u0e27\u0e01\u0e31\u0e1a\u0e1a\u0e23\u0e34\u0e29\u0e31\u0e17</div>\n  <div>Test company with all null date_said roadmap.</div>\n</div>\n\n<!-- finSummary section -->\n<div class=\"ov-section\">\n  <div class=\"ov-title\">\ud83d\udcca \u0e02\u0e49\u0e2d\u0e21\u0e39\u0e25\u0e01\u0e32\u0e23\u0e40\u0e07\u0e34\u0e19\u0e25\u0e48\u0e32\u0e2a\u0e38\u0e14 (FY2025)</div>\n  <div style=\"display:grid;...\">\n    <div class=\"snap-card\">\n      <div class=\"snap-label\">Revenue</div>\n      <div class=\"snap-value\">USD 5.8 Billion</div>\n    </div>\n    <div class=\"snap-card\">\n      <div class=\"snap-label\">Net Income</div>\n      <div class=\"snap-value\">USD 0.9 Billion</div>\n    </div>\n    <div class=\"snap-card\">\n      <div class=\"snap-label\">CEO</div>\n      <div class=\"snap-value\">Jane Smith</div>\n    </div>\n    <div class=\"snap-card\">\n      <div class=\"snap-label\">Employees</div>\n      <div class=\"snap-value\">12,000</div>\n    </div>\n  </div>\n</div>\n\n<!-- noteHtml section -->\n<div class=\"ov-section\">\n  <div class=\"ov-title\">\ud83d\udcdd \u0e1a\u0e31\u0e19\u0e17\u0e36\u0e01\u0e25\u0e48\u0e32\u0e2a\u0e38\u0e14 \u2014 10-K Analysis</div>\n  <div>Strong growth driven by digital transformation initiatives.</div>\n</div>\n\n<!-- emptyNotice section -->\n<div class=\"ov-section\" style=\"border:1px dashed...\">\n  \ud83d\udca1 \u0e22\u0e31\u0e07\u0e44\u0e21\u0e48\u0e21\u0e35\u0e02\u0e49\u0e2d\u0e21\u0e39\u0e25 Deep Dive \u0e40\u0e15\u0e47\u0e21\u0e23\u0e39\u0e1b\u0e41\u0e1a\u0e1a...\n</div>\n```\n\n### 6. CSS Styling Verification\n\nAll required CSS classes are defined:\n\n| Class | Defined | Status |\n|-------|---------|--------|\n| `.ov-section` | \u2705 Yes (line 188) | `margin-bottom: 32px` |\n| `.ov-title` | \u2705 Yes (line 189) | `font-size: 16px; border-bottom: 1px solid` |\n| `.snap-card` | \u2705 Yes (line 191) | `background: var(--surface); padding: 14px 16px` |\n| `.snap-label` | \u2705 Yes (line 192) | `color: var(--text-muted); margin-bottom: 6px` |\n| `.snap-value` | \u2705 Yes (line 193) | `font-size: 14px; font-weight: 600` |\n\nAll CSS variables are properly defined in both dark and light modes.\n\n---\n\n## Conclusion\n\n### Why is the user reporting an empty tab?\n\nGiven that:\n1. \u2705 Fallback code is complete\n2. \u2705 All data is present and valid\n3. \u2705 All CSS is properly styled\n4. \u2705 All conditions for rendering are met\n\n**Possible explanations** (in order of likelihood):\n1. **Browser cache not cleared** \u2192 User is seeing stale HTML\n2. **Haven't scrolled down** \u2192 Content is below the fold\n3. **Misunderstanding the UI** \u2192 User expected a different layout (full Deep Dive vs. fallback)\n4. **JavaScript console error** \u2192 Check browser DevTools > Console\n5. **CSS override somewhere** \u2192 Parent element has hidden/invisible styles\n6. **Network issue** \u2192 data.json didn't load (but would show error, not blank)\n\n### Recommended Next Steps\n\n**For the user**:\n1. Hard refresh: `Ctrl+Shift+R` (Windows/Linux) or `Cmd+Shift+R` (Mac)\n2. Check browser console: Press `F12`, go to Console tab, look for errors\n3. Scroll down the Overview tab to check if content is below the fold\n4. Try viewing in an incognito/private window (bypasses cache)\n\n**For development**:\n1. No code changes needed - fallback is working correctly\n2. If an issue persists, enable browser DevTools Network tab and verify:\n   - `data/BROKEN_B/data.json` loads successfully\n   - No JavaScript errors in console\n   - HTML contains the expected section divs\n\n---\n\n## Files Involved\n\n| File | Lines | Status |\n|------|-------|--------|\n| `company.html` | 523-567 | \u2705 Fallback implementation complete |\n| `data/BROKEN_B/data.json` | All | \u2705 All required fields present |\n| `.claude/skills/fix-ui/scripts/audit_prometheus.py` | 96 | \u2705 Audit checks passed |\n\n---\n\n## Summary\n\n**Root Cause**: No `overview` field in data.json (intentional - signals full Deep Dive not added yet)\n\n**What Gets Rendered**:\n- Company description\n- Financial snapshot (Revenue, Net Income, CEO, Employees)\n- Latest notes excerpt\n- Empty notice with call-to-action to add full analysis\n\n**Code Status**: **WORKING AS DESIGNED \u2705**\n\n**Fix Required**: **NONE** (unless there's a cache/console error issue)\n"}, {"name": "result.md", "type": "text", "content": "# Prometheus UI Fix - BROKEN_B Overview Tab Analysis\n\n## Root Cause\n**BROKEN_B has no `overview` field in `data.json`**, so the Overview tab renders using the fallback layout instead of the full deep-dive layout.\n\n**Status: The fallback is ALREADY IMPLEMENTED and WORKING CORRECTLY in `company.html`.**\n\n## What the Fallback Renders\nWhen `company.html`'s `renderOverviewPanel()` function receives `null` (no overview data), it automatically renders a comprehensive fallback view that includes:\n\n### 1. **Company Description** (\ud83c\udfe2 \u0e40\u0e01\u0e35\u0e48\u0e22\u0e27\u0e01\u0e31\u0e1a\u0e1a\u0e23\u0e34\u0e29\u0e31\u0e17)\n- Renders `c.description` from data.json\n- For BROKEN_B: \"Test company with all null date_said roadmap.\"\n\n### 2. **Latest Financials Snapshot** (\ud83d\udcca \u0e02\u0e49\u0e2d\u0e21\u0e39\u0e25\u0e01\u0e32\u0e23\u0e40\u0e07\u0e34\u0e19\u0e25\u0e48\u0e32\u0e2a\u0e38\u0e14)\n- Revenue (Latest year: FY2025 = USD 5.8 Billion)\n- Net Income (FY2025 = USD 0.9 Billion)\n- CEO (Jane Smith)\n- Employees (12,000)\n\n### 3. **Latest Notes** (\ud83d\udcdd \u0e1a\u0e31\u0e19\u0e17\u0e36\u0e01\u0e25\u0e48\u0e32\u0e2a\u0e38\u0e14)\n- Renders the most recent note entry\n- For BROKEN_B: \"10-K Analysis\" with content: \"Strong growth driven by digital transformation initiatives.\"\n\n### 4. **Empty Notice/CTA** (\ud83d\udca1 Informational)\n- Reminds user that Deep Dive data can be added via `prometheus:analyze-report` skill\n- Guides users to add segments, management commentary, bull/bear thesis, etc.\n\n## Code Location\n- **File**: `/sessions/inspiring-kind-knuth/mnt/Omega project/investment-research/company.html`\n- **Function**: `renderOverviewPanel()` (lines 523-567)\n- **Key Variables**: `descHtml`, `finSummary`, `noteHtml`, `emptyNotice`\n\n## Does `data.json` Need Changes?\n**NO.** The `data.json` file for BROKEN_B is correctly formatted with all required fields:\n- \u2705 `description`: Present and non-empty\n- \u2705 `financials`: Present with metrics (Revenue, Net Income, etc.)\n- \u2705 `notes`: Present with at least one note entry\n- \u2705 `ceo`: Present\n- \u2705 `employees`: Present\n\nThe absence of an `overview` field is INTENTIONAL - it signals that a full deep-dive analysis hasn't been added yet, so the fallback kicks in.\n\n## Verification Results\n\u2705 **Audit passed**: No code issues detected\n\u2705 **Fallback code**: Complete and comprehensive (all 4 sections implemented)\n\u2705 **Data available**: BROKEN_B has sufficient data for fallback to render content\n\u2705 **CSS styling**: All `.ov-section`, `.ov-title`, `.snap-card`, `.snap-label`, `.snap-value` classes are properly defined\n\u2705 **Rendering**: The fallback WILL display description, financials, notes, and empty notice\n\n## Recommendation\nThe Overview tab should NOT appear empty if the HTML and data are as confirmed. If the user is still seeing a blank tab, possible causes:\n1. **Browser cache**: Hard refresh (Ctrl+Shift+R or Cmd+Shift+R)\n2. **JavaScript error**: Check browser console for errors\n3. **Network issue**: Verify `data/BROKEN_B/data.json` loaded successfully\n4. **Unexpected CSS rule**: A parent container might have `display: none` or `visibility: hidden`\n\nThe code is working as designed. The fallback is comprehensive and should display meaningful data even without a full `overview` object.\n"}, {"name": "test_fallback.html", "type": "text", "content": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    /* Minimal CSS to test */\n    :root {\n      --bg: #0d1117;\n      --surface: #161b22;\n      --surface2: #21262d;\n      --border: #30363d;\n      --text: #e6edf3;\n      --text-muted: #8b949e;\n      --accent: #58a6ff;\n      --green: #3fb950;\n      --red: #f85149;\n    }\n    body {\n      background: var(--bg);\n      color: var(--text);\n      font-family: sans-serif;\n      padding: 20px;\n    }\n    .ov-section {\n      margin-bottom: 32px;\n    }\n    .ov-title {\n      font-size: 16px;\n      font-weight: 700;\n      margin-bottom: 16px;\n      display: flex;\n      align-items: center;\n      gap: 8px;\n      padding-bottom: 10px;\n      border-bottom: 1px solid var(--border);\n    }\n    .snap-card {\n      background: var(--surface);\n      border: 1px solid var(--border);\n      border-radius: 10px;\n      padding: 14px 16px;\n      display: inline-block;\n      margin: 5px;\n    }\n    .snap-label {\n      font-family: monospace;\n      font-size: 11px;\n      color: var(--text-muted);\n      margin-bottom: 6px;\n    }\n    .snap-value {\n      font-size: 14px;\n      font-weight: 600;\n      line-height: 1.4;\n    }\n  </style>\n</head>\n<body>\n  <div id=\"test-output\"></div>\n  <script>\n    // Simulate the BROKEN_B data\n    const companyData = {\n      \"ticker\": \"BROKEN_B\",\n      \"name\": \"Broken Beta Inc\",\n      \"description\": \"Test company with all null date_said roadmap.\",\n      \"notes\": [\n        {\"title\": \"10-K Analysis\", \"tags\": [\"10-k\"], \"rating\": 3, \"content\": \"Strong growth driven by digital transformation initiatives.\"}\n      ],\n      \"financials\": {\n        \"currency\": \"USD\",\n        \"unit\": \"Billion\",\n        \"years\": [2024, 2025],\n        \"metrics\": [\n          {\"name\": \"Revenue\", \"values\": [5.2, 5.8]},\n          {\"name\": \"Net Income\", \"values\": [0.8, 0.9]},\n          {\"name\": \"EPS (diluted)\", \"values\": [2.1, 2.4]},\n          {\"name\": \"Free Cash Flow\", \"values\": [0.6, 0.75]}\n        ],\n        \"notes\": \"\"\n      },\n      \"ceo\": \"Jane Smith\",\n      \"employees\": 12000\n    };\n\n    function renderOverviewPanel(ov) {\n      if (!ov) {\n        /* Fallback: render a useful summary from whatever data is available */\n        const c   = companyData || {};\n        const fin = c.financials || {};\n        const yrs = fin.years || [];\n        const rev = (fin.metrics||[]).find(m=>m.name==='Revenue');\n        const ni  = (fin.metrics||[]).find(m=>m.name==='Net Income');\n        const latestRev = rev?.values?.slice(-1)[0];\n        const latestNI  = ni?.values?.slice(-1)[0];\n        const latestYr  = yrs.slice(-1)[0] || '';\n        const unit = fin.unit || '';\n        const ccy  = fin.currency || 'USD';\n        const latestNote = (c.notes||[]).slice(-1)[0];\n\n        const finSummary = (latestRev != null) ? `\n          <div class=\"ov-section\">\n            <div class=\"ov-title\">\ud83d\udcca \u0e02\u0e49\u0e2d\u0e21\u0e39\u0e25\u0e01\u0e32\u0e23\u0e40\u0e07\u0e34\u0e19\u0e25\u0e48\u0e32\u0e2a\u0e38\u0e14 (FY${latestYr})</div>\n            <div style=\"display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;margin-top:12px\">\n              ${latestRev != null ? `<div class=\"snap-card\"><div class=\"snap-label\">Revenue</div><div class=\"snap-value\">${ccy} ${latestRev.toLocaleString()} ${unit}</div></div>` : ''}\n              ${latestNI  != null ? `<div class=\"snap-card\"><div class=\"snap-label\">Net Income</div><div class=\"snap-value\" style=\"color:${latestNI>=0?'var(--green)':'var(--red)'}\">${ccy} ${latestNI.toLocaleString()} ${unit}</div></div>` : ''}\n              ${c.ceo       ? `<div class=\"snap-card\"><div class=\"snap-label\">CEO</div><div class=\"snap-value\">${c.ceo}</div></div>` : ''}\n              ${c.employees ? `<div class=\"snap-card\"><div class=\"snap-label\">Employees</div><div class=\"snap-value\">${Number(c.employees).toLocaleString()}</div></div>` : ''}\n            </div>\n          </div>` : '';\n\n        const descHtml = c.description ? `\n          <div class=\"ov-section\">\n            <div class=\"ov-title\">\ud83c\udfe2 \u0e40\u0e01\u0e35\u0e48\u0e22\u0e27\u0e01\u0e31\u0e1a\u0e1a\u0e23\u0e34\u0e29\u0e31\u0e17</div>\n            <div style=\"font-size:13px;color:var(--text-muted);line-height:1.7;margin-top:10px\">${c.description}</div>\n          </div>` : '';\n\n        const noteHtml = latestNote ? `\n          <div class=\"ov-section\">\n            <div class=\"ov-title\">\ud83d\udcdd \u0e1a\u0e31\u0e19\u0e17\u0e36\u0e01\u0e25\u0e48\u0e32\u0e2a\u0e38\u0e14 \u2014 ${latestNote.title||''}</div>\n            <div style=\"font-size:12px;color:var(--text-muted);line-height:1.7;margin-top:10px;white-space:pre-wrap\">${(latestNote.content||'').slice(0,800)}${(latestNote.content||'').length>800?'\u2026':''}</div>\n          </div>` : '';\n\n        const emptyNotice = `\n          <div class=\"ov-section\" style=\"border:1px dashed var(--border);border-radius:10px;padding:18px;text-align:center;color:var(--text-muted);font-size:13px\">\n            \ud83d\udca1 \u0e22\u0e31\u0e07\u0e44\u0e21\u0e48\u0e21\u0e35\u0e02\u0e49\u0e2d\u0e21\u0e39\u0e25 Deep Dive \u0e40\u0e15\u0e47\u0e21\u0e23\u0e39\u0e1b\u0e41\u0e1a\u0e1a \u2014 \u0e43\u0e0a\u0e49 skill <strong>prometheus:analyze-report</strong> \u0e40\u0e1e\u0e37\u0e48\u0e2d\u0e40\u0e1e\u0e34\u0e48\u0e21 segments, management, bull/bear thesis\n          </div>`;\n\n        return `${descHtml}${finSummary}${noteHtml}${emptyNotice}`;\n      }\n\n      return '<p>Full overview data (not fallback)</p>';\n    }\n\n    // Render\n    const ov = null;  // No overview field\n    document.getElementById('test-output').innerHTML = renderOverviewPanel(ov);\n  </script>\n</body>\n</html>\n"}], "grading": {"expectations": [{"text": "Audit script is run", "passed": true, "evidence": "Ran audit script as first step"}, {"text": "Claude correctly identifies missing overview field in BROKEN_B/data.json", "passed": true, "evidence": "result.md: 'Root Cause: BROKEN_B has no overview field in data.json'"}, {"text": "Claude checks company.html for the renderOverviewPanel fallback (finSummary, descHtml, noteHtml)", "passed": true, "evidence": "Verified all 4 sections: description, financials, notes, CTA"}, {"text": "Claude explains what the fallback will display", "passed": true, "evidence": "Very detailed breakdown: description, Revenue 5.8B, Net Income 0.9B, CEO, Employees, note excerpt"}, {"text": "Claude does NOT hallucinate an overview object into data.json", "passed": true, "evidence": "Explicitly stated 'No changes required to data.json'"}], "summary": {"passed": 5, "failed": 0, "total": 5, "pass_rate": 1.0}, "execution_metrics": {"tool_calls": {"Read": 15, "Bash": 12, "Write": 4}, "total_tool_calls": 42, "total_steps": 8, "errors_encountered": 0}}}, {"id": "eval-3-without_skill", "prompt": "(No prompt found)", "eval_id": 3, "outputs": [{"name": "result.md", "type": "text", "content": "# Debug Report: Empty Overview Tab for BROKEN_B\n\n## Problem Summary\nThe Overview tab for BROKEN_B appears empty even though `data.json` contains data. The tab loads but displays nothing.\n\n## Root Cause\n**Missing `overview` property in data.json**\n\nAt line 460 in `company.html`:\n```javascript\nconst ov = c.overview || null;\n```\n\nThe `renderOverviewPanel()` function expects an `overview` object in the JSON. When `c.overview` is undefined, `ov` becomes `null`.\n\n**Current data.json keys:** ticker, name, sector, exchange, last_updated, description, notes, quotes, roadmap, financials, ceo, employees\n\n**Missing key:** `overview`\n\n## How It Should Work\n\n1. **If `overview` exists (ov is truthy):** Renders detailed company overview with:\n   - TradingView chart (if tradingview_symbol available)\n   - Company snapshot (founded, headquarters, employees, fiscal year end)\n   - Business model summary\n   - Competitive position\n   - Moat factors (competitive strengths)\n   - Revenue by segments\n   - Ownership and corporate structure\n\n2. **If `overview` is missing (ov is null):** Falls back to basic rendering from available data:\n   - Financial snapshot (Revenue, Net Income, CEO, Employees)\n   - Company description\n   - Latest notes\n\nThe fallback code exists but is triggered when `overview` is not present. The current data.json lacks this property entirely.\n\n## Solution\n\nAdd an `overview` object to `/data/BROKEN_B/data.json`. This can be either:\n\n### Option A: Minimal (triggers fallback rendering)\nDon't add it\u2014the fallback will work if it's not null. However, the fallback seems incomplete based on line 524 check.\n\n### Option B: Proper (full overview panel)\nAdd comprehensive overview data structure:\n```json\n{\n  \"overview\": {\n    \"founded\": \"1995\",\n    \"headquarters\": \"New York, NY\",\n    \"fiscal_year_end\": \"December 31\",\n    \"business_model_summary\": \"Digital lending platform serving small and mid-size businesses\",\n    \"competitive_position\": \"Leading player in digital commercial lending with strong tech-first approach\",\n    \"moat_factors\": [\n      \"Proprietary AI-powered credit underwriting\",\n      \"Established lender relationships\",\n      \"Brand recognition in fintech\"\n    ],\n    \"segments\": [],\n    \"geographies\": [],\n    \"ownership\": {}\n  }\n}\n```\n\n## Investigation Details\n- **data.json location:** `/data/BROKEN_B/data.json`\n- **Rendering function:** `renderOverviewPanel()` at line 523-620 in `company.html`\n- **Problem line:** Line 460 sets `ov = c.overview || null`\n- **Display triggered:** Line 505 calls `renderOverviewPanel(ov)` with null value\n- **Fallback exists:** Lines 524-567 have fallback logic for when ov is falsy\n- **Issue:** The check `if (!ov)` at line 524 should catch this, but likely the fallback HTML is incomplete or the component is not rendering properly\n\n## Fix Status\nThe most likely fix is adding an `overview` property to the JSON file. The code already has graceful fallback handling, so the issue is missing data, not broken code.\n"}], "grading": {"expectations": [{"text": "Audit script is run", "passed": false, "evidence": "Agent read files directly, did not run audit script"}, {"text": "Claude correctly identifies missing overview field in BROKEN_B/data.json", "passed": true, "evidence": "Correctly identified 'Missing key: overview'"}, {"text": "Claude checks company.html for the renderOverviewPanel fallback (finSummary, descHtml, noteHtml)", "passed": true, "evidence": "Found renderOverviewPanel and mentioned fallback exists"}, {"text": "Claude explains what the fallback will display", "passed": true, "evidence": "Mentioned financial snapshot and notes, but less specific than with-skill"}, {"text": "Claude does NOT hallucinate an overview object into data.json", "passed": false, "evidence": "Recommended 'Add an overview object to data.json' \u2014 incorrect guidance, fallback already works without it"}], "summary": {"passed": 3, "failed": 2, "total": 5, "pass_rate": 0.6}, "execution_metrics": {"tool_calls": {"Read": 8, "Bash": 3, "Write": 2}, "total_tool_calls": 17, "total_steps": 5, "errors_encountered": 0}}}], "previous_feedback": {}, "previous_outputs": {}, "benchmark": {"metadata": {"skill_name": "fix-ui", "skill_path": "/sessions/inspiring-kind-knuth/mnt/Omega project/investment-research/.claude/skills/fix-ui", "timestamp": "2026-04-04T00:00:00Z", "evals_run": [1, 2, 3], "runs_per_configuration": 1}, "runs": [{"eval_id": 1, "eval_name": "Roadmap blank text (milestone key bug)", "configuration": "with_skill", "run_number": 1, "result": {"pass_rate": 1.0, "passed": 4, "failed": 0, "total": 4, "time_seconds": 35.1, "tokens": 59362, "tool_calls": 7, "errors": 0}, "expectations": [{"text": "Audit script is run", "passed": true, "evidence": "Ran audit, got flagged output for BROKEN_A"}, {"text": "Issue correctly identified as roadmap key mismatch", "passed": true, "evidence": "result.md clearly states milestone vs commitment"}, {"text": "BROKEN_A/data.json updated with commitment key", "passed": true, "evidence": "Applied --fix, verified clean audit"}, {"text": "Fix verified by re-running audit", "passed": true, "evidence": "Second audit run showed \u2705 All checks passed"}]}, {"eval_id": 1, "eval_name": "Roadmap blank text (milestone key bug)", "configuration": "without_skill", "run_number": 1, "result": {"pass_rate": 1.0, "passed": 4, "failed": 0, "total": 4, "time_seconds": 204.6, "tokens": 88010, "tool_calls": 57, "errors": 2}, "expectations": [{"text": "Audit script is run", "passed": true, "evidence": "Agent discovered and ran audit script (but found it by accident, took many more steps)"}, {"text": "Issue correctly identified as roadmap key mismatch", "passed": true, "evidence": "Correct diagnosis in result.md"}, {"text": "BROKEN_A/data.json updated with commitment key", "passed": true, "evidence": "Applied fix eventually"}, {"text": "Fix verified by re-running audit", "passed": true, "evidence": "Verified clean state"}], "notes": ["Agent reset data to broken state mid-run, causing 5x more tool calls and 2 errors. Found correct answer but via much longer path."]}, {"eval_id": 2, "eval_name": "Mermaid Gantt null-date diagnosis", "configuration": "with_skill", "run_number": 1, "result": {"pass_rate": 1.0, "passed": 5, "failed": 0, "total": 5, "time_seconds": 33.3, "tokens": 58097, "tool_calls": 9, "errors": 0}, "expectations": [{"text": "Audit script is run", "passed": true, "evidence": "Ran audit as first step"}, {"text": "null date_said identified as root cause", "passed": true, "evidence": "Root cause clearly stated"}, {"text": "company.html null-date filter verified", "passed": true, "evidence": "Checked withDate filter and rmText"}, {"text": "\u0e44\u0e21\u0e48\u0e21\u0e35\u0e02\u0e49\u0e2d\u0e21\u0e39\u0e25 timeline explained as correct behavior", "passed": true, "evidence": "Stated: No Mermaid error generated \u2014 graceful fallback"}, {"text": "Did NOT fabricate date_said values", "passed": true, "evidence": "No data.json modifications"}]}, {"eval_id": 2, "eval_name": "Mermaid Gantt null-date diagnosis", "configuration": "without_skill", "run_number": 1, "result": {"pass_rate": 0.6, "passed": 3, "failed": 2, "total": 5, "time_seconds": 39.9, "tokens": 58422, "tool_calls": 11, "errors": 0}, "expectations": [{"text": "Audit script is run", "passed": false, "evidence": "Read code directly, did not run audit script"}, {"text": "null date_said identified as root cause", "passed": true, "evidence": "Correctly identified null dates"}, {"text": "company.html null-date filter verified", "passed": true, "evidence": "Found the filter in code"}, {"text": "\u0e44\u0e21\u0e48\u0e21\u0e35\u0e02\u0e49\u0e2d\u0e21\u0e39\u0e25 timeline explained as correct behavior", "passed": false, "evidence": "Recommended 'Add Sample Dates to data.json (Recommended)' \u2014 incorrect guidance"}, {"text": "Did NOT fabricate date_said values", "passed": true, "evidence": "Only suggested, didn't actually add"}], "notes": ["Critical failure: suggested adding fake dates to roadmap, which would pollute clean 10-K sourced data"]}, {"eval_id": 3, "eval_name": "Overview tab empty \u2014 missing overview field", "configuration": "with_skill", "run_number": 1, "result": {"pass_rate": 1.0, "passed": 5, "failed": 0, "total": 5, "time_seconds": 214.2, "tokens": 95523, "tool_calls": 42, "errors": 0}, "expectations": [{"text": "Audit script is run", "passed": true, "evidence": "Ran audit, noted BROKEN_B has no overview field"}, {"text": "Missing overview field identified", "passed": true, "evidence": "Root cause clearly identified"}, {"text": "company.html fallback verified (finSummary, descHtml, noteHtml)", "passed": true, "evidence": "Verified all 4 fallback sections with exact variable names"}, {"text": "Explains what fallback renders", "passed": true, "evidence": "Very detailed: Revenue 5.8B, Net Income 0.9B, CEO Jane Smith, etc."}, {"text": "Did NOT add overview to data.json", "passed": true, "evidence": "Explicitly stated 'No changes required to data.json'"}], "notes": ["Agent was very thorough \u2014 generated test_fallback.html and DIAGNOSTIC_REPORT.md. Higher token count due to thoroughness, not confusion."]}, {"eval_id": 3, "eval_name": "Overview tab empty \u2014 missing overview field", "configuration": "without_skill", "run_number": 1, "result": {"pass_rate": 0.6, "passed": 3, "failed": 2, "total": 5, "time_seconds": 44.1, "tokens": 60978, "tool_calls": 17, "errors": 0}, "expectations": [{"text": "Audit script is run", "passed": false, "evidence": "Agent read files directly, no audit script"}, {"text": "Missing overview field identified", "passed": true, "evidence": "Correctly identified missing overview key"}, {"text": "company.html fallback verified (finSummary, descHtml, noteHtml)", "passed": true, "evidence": "Found renderOverviewPanel and fallback code"}, {"text": "Explains what fallback renders", "passed": true, "evidence": "Mentioned financials and notes"}, {"text": "Did NOT add overview to data.json", "passed": false, "evidence": "Recommended 'Add an overview object to data.json' \u2014 wrong guidance, fallback works without it"}], "notes": ["Critical failure: guided user to add an overview object, which is unnecessary and defeats the purpose of the fallback system"]}], "run_summary": {"with_skill": {"pass_rate": {"mean": 1.0, "stddev": 0.0, "min": 1.0, "max": 1.0}, "time_seconds": {"mean": 94.2, "stddev": 103.0, "min": 33.3, "max": 214.2}, "tokens": {"mean": 71000, "stddev": 21000, "min": 58097, "max": 95523}}, "without_skill": {"pass_rate": {"mean": 0.73, "stddev": 0.23, "min": 0.6, "max": 1.0}, "time_seconds": {"mean": 96.2, "stddev": 96.0, "min": 39.9, "max": 204.6}, "tokens": {"mean": 69136, "stddev": 14000, "min": 58422, "max": 88010}}, "delta": {"pass_rate": "+0.27", "time_seconds": "-2.0", "tokens": "+1864"}}, "notes": ["Eval 1 (milestone key bug): Both configurations reached correct answer, but without_skill took 5.8x more tool calls (57 vs 7) and encountered 2 errors. With-skill used audit script immediately; without-skill stumbled onto it after exploring extensively.", "Eval 2 (Mermaid null-date): Critical divergence \u2014 without_skill gave WRONG guidance ('Add sample dates to data.json') while with_skill correctly identified the fallback as correct behavior.", "Eval 3 (Overview fallback): Critical divergence \u2014 without_skill gave WRONG guidance ('Add an overview object') while with_skill correctly explained the fallback renders available data with no changes needed.", "The skill's most important value is preventing incorrect fixes (evals 2 and 3), not just finding bugs faster.", "Audit script is the key differentiator: with_skill always ran it first; without_skill never did."]}};
+
+    // ---- State ----
+    let feedbackMap = {};  // run_id -> feedback text
+    let currentIndex = 0;
+    let visitedRuns = new Set();
+
+    // ---- Init ----
+    async function init() {
+      // Load saved feedback from server — but only if this isn't a fresh
+      // iteration (indicated by previous_feedback being present). When
+      // previous feedback exists, the feedback.json on disk is stale from
+      // the prior iteration and should not pre-fill the textareas.
+      const hasPrevious = Object.keys(EMBEDDED_DATA.previous_feedback || {}).length > 0
+        || Object.keys(EMBEDDED_DATA.previous_outputs || {}).length > 0;
+      if (!hasPrevious) {
+        try {
+          const resp = await fetch("/api/feedback");
+          const data = await resp.json();
+          if (data.reviews) {
+            for (const r of data.reviews) feedbackMap[r.run_id] = r.feedback;
+          }
+        } catch { /* first run, no feedback yet */ }
+      }
+
+      document.getElementById("skill-name").textContent = EMBEDDED_DATA.skill_name;
+      showRun(0);
+
+      // Wire up feedback auto-save
+      const textarea = document.getElementById("feedback");
+      let saveTimeout = null;
+      textarea.addEventListener("input", () => {
+        clearTimeout(saveTimeout);
+        document.getElementById("feedback-status").textContent = "";
+        saveTimeout = setTimeout(() => saveCurrentFeedback(), 800);
+      });
+    }
+
+    // ---- Navigation ----
+    function navigate(delta) {
+      const newIndex = currentIndex + delta;
+      if (newIndex >= 0 && newIndex < EMBEDDED_DATA.runs.length) {
+        saveCurrentFeedback();
+        showRun(newIndex);
+      }
+    }
+
+    function updateNavButtons() {
+      document.getElementById("prev-btn").disabled = currentIndex === 0;
+      document.getElementById("next-btn").disabled =
+        currentIndex === EMBEDDED_DATA.runs.length - 1;
+    }
+
+    // ---- Show a run ----
+    function showRun(index) {
+      currentIndex = index;
+      const run = EMBEDDED_DATA.runs[index];
+
+      // Progress
+      document.getElementById("progress").textContent =
+        `${index + 1} of ${EMBEDDED_DATA.runs.length}`;
+
+      // Prompt
+      document.getElementById("prompt-text").textContent = run.prompt;
+
+      // Config badge
+      const badge = document.getElementById("config-badge");
+      const configMatch = run.id.match(/(with_skill|without_skill|new_skill|old_skill)/);
+      if (configMatch) {
+        const config = configMatch[1];
+        const isBaseline = config === "without_skill" || config === "old_skill";
+        badge.textContent = config.replace(/_/g, " ");
+        badge.className = "config-badge " + (isBaseline ? "config-baseline" : "config-primary");
+        badge.style.display = "inline-block";
+      } else {
+        badge.style.display = "none";
+      }
+
+      // Outputs
+      renderOutputs(run);
+
+      // Previous outputs
+      renderPrevOutputs(run);
+
+      // Grades
+      renderGrades(run);
+
+      // Previous feedback
+      const prevFb = (EMBEDDED_DATA.previous_feedback || {})[run.id];
+      const prevEl = document.getElementById("prev-feedback");
+      if (prevFb) {
+        document.getElementById("prev-feedback-text").textContent = prevFb;
+        prevEl.style.display = "block";
+      } else {
+        prevEl.style.display = "none";
+      }
+
+      // Feedback
+      document.getElementById("feedback").value = feedbackMap[run.id] || "";
+      document.getElementById("feedback-status").textContent = "";
+
+      updateNavButtons();
+
+      // Track visited runs and promote done button when all visited
+      visitedRuns.add(index);
+      const doneBtn = document.getElementById("done-btn");
+      if (visitedRuns.size >= EMBEDDED_DATA.runs.length) {
+        doneBtn.classList.add("ready");
+      }
+
+      // Scroll main content to top
+      document.querySelector(".main").scrollTop = 0;
+    }
+
+    // ---- Render outputs ----
+    function renderOutputs(run) {
+      const container = document.getElementById("outputs-body");
+      container.innerHTML = "";
+
+      const outputs = run.outputs || [];
+      if (outputs.length === 0) {
+        container.innerHTML = '<div class="empty-state">No output files</div>';
+        return;
+      }
+
+      for (const file of outputs) {
+        const fileDiv = document.createElement("div");
+        fileDiv.className = "output-file";
+
+        // Always show file header with download link
+        const header = document.createElement("div");
+        header.className = "output-file-header";
+        const nameSpan = document.createElement("span");
+        nameSpan.textContent = file.name;
+        header.appendChild(nameSpan);
+        const dlBtn = document.createElement("a");
+        dlBtn.className = "dl-btn";
+        dlBtn.textContent = "Download";
+        dlBtn.download = file.name;
+        dlBtn.href = getDownloadUri(file);
+        header.appendChild(dlBtn);
+        fileDiv.appendChild(header);
+
+        const content = document.createElement("div");
+        content.className = "output-file-content";
+
+        if (file.type === "text") {
+          const pre = document.createElement("pre");
+          pre.textContent = file.content;
+          content.appendChild(pre);
+        } else if (file.type === "image") {
+          const img = document.createElement("img");
+          img.src = file.data_uri;
+          img.alt = file.name;
+          content.appendChild(img);
+        } else if (file.type === "pdf") {
+          const iframe = document.createElement("iframe");
+          iframe.src = file.data_uri;
+          content.appendChild(iframe);
+        } else if (file.type === "xlsx") {
+          renderXlsx(content, file.data_b64);
+        } else if (file.type === "binary") {
+          const a = document.createElement("a");
+          a.className = "download-link";
+          a.href = file.data_uri;
+          a.download = file.name;
+          a.textContent = "Download " + file.name;
+          content.appendChild(a);
+        } else if (file.type === "error") {
+          const pre = document.createElement("pre");
+          pre.textContent = file.content;
+          pre.style.color = "var(--red)";
+          content.appendChild(pre);
+        }
+
+        fileDiv.appendChild(content);
+        container.appendChild(fileDiv);
+      }
+    }
+
+    // ---- XLSX rendering via SheetJS ----
+    function renderXlsx(container, b64Data) {
+      try {
+        const raw = Uint8Array.from(atob(b64Data), c => c.charCodeAt(0));
+        const wb = XLSX.read(raw, { type: "array" });
+
+        for (let i = 0; i < wb.SheetNames.length; i++) {
+          const sheetName = wb.SheetNames[i];
+          const ws = wb.Sheets[sheetName];
+
+          if (wb.SheetNames.length > 1) {
+            const sheetLabel = document.createElement("div");
+            sheetLabel.style.cssText =
+              "font-weight:600; font-size:0.8rem; color:#b0aea5; margin-top:0.5rem; margin-bottom:0.25rem;";
+            sheetLabel.textContent = "Sheet: " + sheetName;
+            container.appendChild(sheetLabel);
+          }
+
+          const htmlStr = XLSX.utils.sheet_to_html(ws, { editable: false });
+          const wrapper = document.createElement("div");
+          wrapper.innerHTML = htmlStr;
+          container.appendChild(wrapper);
+        }
+      } catch (err) {
+        container.textContent = "Error rendering spreadsheet: " + err.message;
+      }
+    }
+
+    // ---- Grades ----
+    function renderGrades(run) {
+      const section = document.getElementById("grades-section");
+      const content = document.getElementById("grades-content");
+
+      if (!run.grading) {
+        section.style.display = "none";
+        return;
+      }
+
+      const grading = run.grading;
+      section.style.display = "block";
+      // Reset to collapsed
+      content.classList.remove("open");
+      document.getElementById("grades-arrow").classList.remove("open");
+
+      const summary = grading.summary || {};
+      const expectations = grading.expectations || [];
+
+      let html = '<div style="padding: 1rem;">';
+
+      // Summary line
+      const passRate = summary.pass_rate != null
+        ? Math.round(summary.pass_rate * 100) + "%"
+        : "?";
+      const badgeClass = summary.pass_rate >= 0.8 ? "grade-pass" : summary.pass_rate >= 0.5 ? "" : "grade-fail";
+      html += '<div class="grades-summary">';
+      html += '<span class="grade-badge ' + badgeClass + '">' + passRate + '</span>';
+      html += '<span>' + (summary.passed || 0) + ' passed, ' + (summary.failed || 0) + ' failed of ' + (summary.total || 0) + '</span>';
+      html += '</div>';
+
+      // Assertions list
+      html += '<ul class="assertion-list">';
+      for (const exp of expectations) {
+        const statusClass = exp.passed ? "pass" : "fail";
+        const statusIcon = exp.passed ? "\u2713" : "\u2717";
+        html += '<li class="assertion-item">';
+        html += '<span class="assertion-status ' + statusClass + '">' + statusIcon + '</span>';
+        html += '<span>' + escapeHtml(exp.text) + '</span>';
+        if (exp.evidence) {
+          html += '<div class="assertion-evidence">' + escapeHtml(exp.evidence) + '</div>';
+        }
+        html += '</li>';
+      }
+      html += '</ul>';
+
+      html += '</div>';
+      content.innerHTML = html;
+    }
+
+    function toggleGrades() {
+      const content = document.getElementById("grades-content");
+      const arrow = document.getElementById("grades-arrow");
+      content.classList.toggle("open");
+      arrow.classList.toggle("open");
+    }
+
+    // ---- Previous outputs (collapsible) ----
+    function renderPrevOutputs(run) {
+      const section = document.getElementById("prev-outputs-section");
+      const content = document.getElementById("prev-outputs-content");
+      const prevOutputs = (EMBEDDED_DATA.previous_outputs || {})[run.id];
+
+      if (!prevOutputs || prevOutputs.length === 0) {
+        section.style.display = "none";
+        return;
+      }
+
+      section.style.display = "block";
+      // Reset to collapsed
+      content.classList.remove("open");
+      document.getElementById("prev-outputs-arrow").classList.remove("open");
+
+      // Render the files into the content area
+      content.innerHTML = "";
+      const wrapper = document.createElement("div");
+      wrapper.style.padding = "1rem";
+
+      for (const file of prevOutputs) {
+        const fileDiv = document.createElement("div");
+        fileDiv.className = "output-file";
+
+        const header = document.createElement("div");
+        header.className = "output-file-header";
+        const nameSpan = document.createElement("span");
+        nameSpan.textContent = file.name;
+        header.appendChild(nameSpan);
+        const dlBtn = document.createElement("a");
+        dlBtn.className = "dl-btn";
+        dlBtn.textContent = "Download";
+        dlBtn.download = file.name;
+        dlBtn.href = getDownloadUri(file);
+        header.appendChild(dlBtn);
+        fileDiv.appendChild(header);
+
+        const fc = document.createElement("div");
+        fc.className = "output-file-content";
+
+        if (file.type === "text") {
+          const pre = document.createElement("pre");
+          pre.textContent = file.content;
+          fc.appendChild(pre);
+        } else if (file.type === "image") {
+          const img = document.createElement("img");
+          img.src = file.data_uri;
+          img.alt = file.name;
+          fc.appendChild(img);
+        } else if (file.type === "pdf") {
+          const iframe = document.createElement("iframe");
+          iframe.src = file.data_uri;
+          fc.appendChild(iframe);
+        } else if (file.type === "xlsx") {
+          renderXlsx(fc, file.data_b64);
+        } else if (file.type === "binary") {
+          const a = document.createElement("a");
+          a.className = "download-link";
+          a.href = file.data_uri;
+          a.download = file.name;
+          a.textContent = "Download " + file.name;
+          fc.appendChild(a);
+        }
+
+        fileDiv.appendChild(fc);
+        wrapper.appendChild(fileDiv);
+      }
+
+      content.appendChild(wrapper);
+    }
+
+    function togglePrevOutputs() {
+      const content = document.getElementById("prev-outputs-content");
+      const arrow = document.getElementById("prev-outputs-arrow");
+      content.classList.toggle("open");
+      arrow.classList.toggle("open");
+    }
+
+    // ---- Feedback (saved to server -> feedback.json) ----
+    function saveCurrentFeedback() {
+      const run = EMBEDDED_DATA.runs[currentIndex];
+      const text = document.getElementById("feedback").value;
+
+      if (text.trim() === "") {
+        delete feedbackMap[run.id];
+      } else {
+        feedbackMap[run.id] = text;
+      }
+
+      // Build reviews array from map
+      const reviews = [];
+      for (const [run_id, feedback] of Object.entries(feedbackMap)) {
+        if (feedback.trim()) {
+          reviews.push({ run_id, feedback, timestamp: new Date().toISOString() });
+        }
+      }
+
+      fetch("/api/feedback", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ reviews, status: "in_progress" }),
+      }).then(() => {
+        document.getElementById("feedback-status").textContent = "Saved";
+      }).catch(() => {
+        // Static mode or server unavailable — no-op on auto-save,
+        // feedback will be downloaded on final submit
+        document.getElementById("feedback-status").textContent = "Will download on submit";
+      });
+    }
+
+    // ---- Done ----
+    function showDoneDialog() {
+      // Save current textarea to feedbackMap (but don't POST yet)
+      const run = EMBEDDED_DATA.runs[currentIndex];
+      const text = document.getElementById("feedback").value;
+      if (text.trim() === "") {
+        delete feedbackMap[run.id];
+      } else {
+        feedbackMap[run.id] = text;
+      }
+
+      // POST once with status: complete — include ALL runs so the model
+      // can distinguish "no feedback" (looks good) from "not reviewed"
+      const reviews = [];
+      const ts = new Date().toISOString();
+      for (const r of EMBEDDED_DATA.runs) {
+        reviews.push({ run_id: r.id, feedback: feedbackMap[r.id] || "", timestamp: ts });
+      }
+      const payload = JSON.stringify({ reviews, status: "complete" }, null, 2);
+      fetch("/api/feedback", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: payload,
+      }).then(() => {
+        document.getElementById("done-overlay").classList.add("visible");
+      }).catch(() => {
+        // Server not available (static mode) — download as file
+        const blob = new Blob([payload], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "feedback.json";
+        a.click();
+        URL.revokeObjectURL(url);
+        document.getElementById("done-overlay").classList.add("visible");
+      });
+    }
+
+    function closeDoneDialog() {
+      // Reset status back to in_progress
+      saveCurrentFeedback();
+      document.getElementById("done-overlay").classList.remove("visible");
+    }
+
+    // ---- Toast ----
+    function showToast(message) {
+      const toast = document.getElementById("toast");
+      toast.textContent = message;
+      toast.classList.add("visible");
+      setTimeout(() => toast.classList.remove("visible"), 2000);
+    }
+
+    // ---- Keyboard nav ----
+    document.addEventListener("keydown", (e) => {
+      // Don't capture when typing in textarea
+      if (e.target.tagName === "TEXTAREA") return;
+
+      if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+        e.preventDefault();
+        navigate(-1);
+      } else if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+        e.preventDefault();
+        navigate(1);
+      }
+    });
+
+    // ---- Util ----
+    function getDownloadUri(file) {
+      if (file.data_uri) return file.data_uri;
+      if (file.data_b64) return "data:application/octet-stream;base64," + file.data_b64;
+      if (file.type === "text") return "data:text/plain;charset=utf-8," + encodeURIComponent(file.content);
+      return "#";
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement("div");
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    // ---- View switching ----
+    function switchView(view) {
+      document.querySelectorAll(".view-tab").forEach(t => t.classList.remove("active"));
+      document.querySelectorAll(".view-panel").forEach(p => p.classList.remove("active"));
+      document.querySelector(`[onclick="switchView('${view}')"]`).classList.add("active");
+      document.getElementById("panel-" + view).classList.add("active");
+    }
+
+    // ---- Benchmark rendering ----
+    function renderBenchmark() {
+      const data = EMBEDDED_DATA.benchmark;
+      if (!data) return;
+
+      // Show the tabs
+      document.getElementById("view-tabs").style.display = "flex";
+
+      const container = document.getElementById("benchmark-content");
+      const summary = data.run_summary || {};
+      const metadata = data.metadata || {};
+      const notes = data.notes || [];
+
+      let html = "";
+
+      // Header
+      html += "<h2 style='font-family: Poppins, sans-serif; margin-bottom: 0.5rem;'>Benchmark Results</h2>";
+      html += "<p style='color: var(--text-muted); font-size: 0.875rem; margin-bottom: 1.25rem;'>";
+      if (metadata.skill_name) html += "<strong>" + escapeHtml(metadata.skill_name) + "</strong> &mdash; ";
+      if (metadata.timestamp) html += metadata.timestamp + " &mdash; ";
+      if (metadata.evals_run) html += "Evals: " + metadata.evals_run.join(", ") + " &mdash; ";
+      html += (metadata.runs_per_configuration || "?") + " runs per configuration";
+      html += "</p>";
+
+      // Summary table
+      html += '<table class="benchmark-table">';
+
+      function fmtStat(stat, pct) {
+        if (!stat) return "—";
+        const suffix = pct ? "%" : "";
+        const m = pct ? (stat.mean * 100).toFixed(0) : stat.mean.toFixed(1);
+        const s = pct ? (stat.stddev * 100).toFixed(0) : stat.stddev.toFixed(1);
+        return m + suffix + " ± " + s + suffix;
+      }
+
+      function deltaClass(val) {
+        if (!val) return "";
+        const n = parseFloat(val);
+        if (n > 0) return "benchmark-delta-positive";
+        if (n < 0) return "benchmark-delta-negative";
+        return "";
+      }
+
+      // Discover config names dynamically (everything except "delta")
+      const configs = Object.keys(summary).filter(k => k !== "delta");
+      const configA = configs[0] || "config_a";
+      const configB = configs[1] || "config_b";
+      const labelA = configA.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+      const labelB = configB.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+      const a = summary[configA] || {};
+      const b = summary[configB] || {};
+      const delta = summary.delta || {};
+
+      html += "<thead><tr><th>Metric</th><th>" + escapeHtml(labelA) + "</th><th>" + escapeHtml(labelB) + "</th><th>Delta</th></tr></thead>";
+      html += "<tbody>";
+
+      html += "<tr><td><strong>Pass Rate</strong></td>";
+      html += "<td>" + fmtStat(a.pass_rate, true) + "</td>";
+      html += "<td>" + fmtStat(b.pass_rate, true) + "</td>";
+      html += '<td class="' + deltaClass(delta.pass_rate) + '">' + (delta.pass_rate || "—") + "</td></tr>";
+
+      // Time (only show row if data exists)
+      if (a.time_seconds || b.time_seconds) {
+        html += "<tr><td><strong>Time (s)</strong></td>";
+        html += "<td>" + fmtStat(a.time_seconds, false) + "</td>";
+        html += "<td>" + fmtStat(b.time_seconds, false) + "</td>";
+        html += '<td class="' + deltaClass(delta.time_seconds) + '">' + (delta.time_seconds ? delta.time_seconds + "s" : "—") + "</td></tr>";
+      }
+
+      // Tokens (only show row if data exists)
+      if (a.tokens || b.tokens) {
+        html += "<tr><td><strong>Tokens</strong></td>";
+        html += "<td>" + fmtStat(a.tokens, false) + "</td>";
+        html += "<td>" + fmtStat(b.tokens, false) + "</td>";
+        html += '<td class="' + deltaClass(delta.tokens) + '">' + (delta.tokens || "—") + "</td></tr>";
+      }
+
+      html += "</tbody></table>";
+
+      // Per-eval breakdown (if runs data available)
+      const runs = data.runs || [];
+      if (runs.length > 0) {
+        const evalIds = [...new Set(runs.map(r => r.eval_id))].sort((a, b) => a - b);
+
+        html += "<h3 style='font-family: Poppins, sans-serif; margin-bottom: 0.75rem;'>Per-Eval Breakdown</h3>";
+
+        const hasTime = runs.some(r => r.result && r.result.time_seconds != null);
+        const hasErrors = runs.some(r => r.result && r.result.errors > 0);
+
+        for (const evalId of evalIds) {
+          const evalRuns = runs.filter(r => r.eval_id === evalId);
+          const evalName = evalRuns[0] && evalRuns[0].eval_name ? evalRuns[0].eval_name : "Eval " + evalId;
+
+          html += "<h4 style='font-family: Poppins, sans-serif; margin: 1rem 0 0.5rem; color: var(--text);'>" + escapeHtml(evalName) + "</h4>";
+          html += '<table class="benchmark-table">';
+          html += "<thead><tr><th>Config</th><th>Run</th><th>Pass Rate</th>";
+          if (hasTime) html += "<th>Time (s)</th>";
+          if (hasErrors) html += "<th>Crashes During Execution</th>";
+          html += "</tr></thead>";
+          html += "<tbody>";
+
+          // Group by config and render with average rows
+          const configGroups = [...new Set(evalRuns.map(r => r.configuration))];
+          for (let ci = 0; ci < configGroups.length; ci++) {
+            const config = configGroups[ci];
+            const configRuns = evalRuns.filter(r => r.configuration === config);
+            if (configRuns.length === 0) continue;
+
+            const rowClass = ci === 0 ? "benchmark-row-with" : "benchmark-row-without";
+            const configLabel = config.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+
+            for (const run of configRuns) {
+              const r = run.result || {};
+              const prClass = r.pass_rate >= 0.8 ? "benchmark-delta-positive" : r.pass_rate < 0.5 ? "benchmark-delta-negative" : "";
+              html += '<tr class="' + rowClass + '">';
+              html += "<td>" + configLabel + "</td>";
+              html += "<td>" + run.run_number + "</td>";
+              html += '<td class="' + prClass + '">' + ((r.pass_rate || 0) * 100).toFixed(0) + "% (" + (r.passed || 0) + "/" + (r.total || 0) + ")</td>";
+              if (hasTime) html += "<td>" + (r.time_seconds != null ? r.time_seconds.toFixed(1) : "—") + "</td>";
+              if (hasErrors) html += "<td>" + (r.errors || 0) + "</td>";
+              html += "</tr>";
+            }
+
+            // Average row
+            const rates = configRuns.map(r => (r.result || {}).pass_rate || 0);
+            const avgRate = rates.reduce((a, b) => a + b, 0) / rates.length;
+            const avgPrClass = avgRate >= 0.8 ? "benchmark-delta-positive" : avgRate < 0.5 ? "benchmark-delta-negative" : "";
+            html += '<tr class="benchmark-row-avg ' + rowClass + '">';
+            html += "<td>" + configLabel + "</td>";
+            html += "<td>Avg</td>";
+            html += '<td class="' + avgPrClass + '">' + (avgRate * 100).toFixed(0) + "%</td>";
+            if (hasTime) {
+              const times = configRuns.map(r => (r.result || {}).time_seconds).filter(t => t != null);
+              html += "<td>" + (times.length ? (times.reduce((a, b) => a + b, 0) / times.length).toFixed(1) : "—") + "</td>";
+            }
+            if (hasErrors) html += "<td></td>";
+            html += "</tr>";
+          }
+          html += "</tbody></table>";
+
+          // Per-assertion detail for this eval
+          const runsWithExpectations = {};
+          for (const config of configGroups) {
+            runsWithExpectations[config] = evalRuns.filter(r => r.configuration === config && r.expectations && r.expectations.length > 0);
+          }
+          const hasAnyExpectations = Object.values(runsWithExpectations).some(runs => runs.length > 0);
+          if (hasAnyExpectations) {
+            // Collect all unique assertion texts across all configs
+            const allAssertions = [];
+            const seen = new Set();
+            for (const config of configGroups) {
+              for (const run of runsWithExpectations[config]) {
+                for (const exp of (run.expectations || [])) {
+                  if (!seen.has(exp.text)) {
+                    seen.add(exp.text);
+                    allAssertions.push(exp.text);
+                  }
+                }
+              }
+            }
+
+            html += '<table class="benchmark-table" style="margin-top: 0.5rem;">';
+            html += "<thead><tr><th>Assertion</th>";
+            for (const config of configGroups) {
+              const label = config.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+              html += "<th>" + escapeHtml(label) + "</th>";
+            }
+            html += "</tr></thead><tbody>";
+
+            for (const assertionText of allAssertions) {
+              html += "<tr><td>" + escapeHtml(assertionText) + "</td>";
+
+              for (const config of configGroups) {
+                html += "<td>";
+                for (const run of runsWithExpectations[config]) {
+                  const exp = (run.expectations || []).find(e => e.text === assertionText);
+                  if (exp) {
+                    const cls = exp.passed ? "benchmark-delta-positive" : "benchmark-delta-negative";
+                    const icon = exp.passed ? "\u2713" : "\u2717";
+                    html += '<span class="' + cls + '" title="Run ' + run.run_number + ': ' + escapeHtml(exp.evidence || "") + '">' + icon + "</span> ";
+                  } else {
+                    html += "— ";
+                  }
+                }
+                html += "</td>";
+              }
+              html += "</tr>";
+            }
+            html += "</tbody></table>";
+          }
+        }
+      }
+
+      // Notes
+      if (notes.length > 0) {
+        html += '<div class="benchmark-notes">';
+        html += "<h3>Analysis Notes</h3>";
+        html += "<ul>";
+        for (const note of notes) {
+          html += "<li>" + escapeHtml(note) + "</li>";
+        }
+        html += "</ul></div>";
+      }
+
+      container.innerHTML = html;
+    }
+
+    // ---- Start ----
+    init();
+    renderBenchmark();
+  </script>
+</body>
+</html>

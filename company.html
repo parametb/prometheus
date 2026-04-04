@@ -521,7 +521,50 @@ function render() {
 
 /* ── OVERVIEW PANEL ── */
 function renderOverviewPanel(ov) {
-  if (!ov) return '<div class="empty">ยังไม่มีข้อมูลภาพรวม — ใช้ skill analyze-report เพื่อเพิ่มข้อมูล</div>';
+  if (!ov) {
+    /* Fallback: render a useful summary from whatever data is available */
+    const c   = companyData || {};
+    const fin = c.financials || {};
+    const yrs = fin.years || [];
+    const rev = (fin.metrics||[]).find(m=>m.name==='Revenue');
+    const ni  = (fin.metrics||[]).find(m=>m.name==='Net Income');
+    const latestRev = rev?.values?.slice(-1)[0];
+    const latestNI  = ni?.values?.slice(-1)[0];
+    const latestYr  = yrs.slice(-1)[0] || '';
+    const unit = fin.unit || '';
+    const ccy  = fin.currency || 'USD';
+    const latestNote = (c.notes||[]).slice(-1)[0];
+
+    const finSummary = (latestRev != null) ? `
+      <div class="ov-section">
+        <div class="ov-title">📊 ข้อมูลการเงินล่าสุด (FY${latestYr})</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;margin-top:12px">
+          ${latestRev != null ? `<div class="snap-card"><div class="snap-label">Revenue</div><div class="snap-value">${ccy} ${latestRev.toLocaleString()} ${unit}</div></div>` : ''}
+          ${latestNI  != null ? `<div class="snap-card"><div class="snap-label">Net Income</div><div class="snap-value" style="color:${latestNI>=0?'var(--green)':'var(--red)'}">${ccy} ${latestNI.toLocaleString()} ${unit}</div></div>` : ''}
+          ${c.ceo       ? `<div class="snap-card"><div class="snap-label">CEO</div><div class="snap-value">${c.ceo}</div></div>` : ''}
+          ${c.employees ? `<div class="snap-card"><div class="snap-label">Employees</div><div class="snap-value">${Number(c.employees).toLocaleString()}</div></div>` : ''}
+        </div>
+      </div>` : '';
+
+    const descHtml = c.description ? `
+      <div class="ov-section">
+        <div class="ov-title">🏢 เกี่ยวกับบริษัท</div>
+        <div style="font-size:13px;color:var(--text-muted);line-height:1.7;margin-top:10px">${c.description}</div>
+      </div>` : '';
+
+    const noteHtml = latestNote ? `
+      <div class="ov-section">
+        <div class="ov-title">📝 บันทึกล่าสุด — ${latestNote.title||''}</div>
+        <div style="font-size:12px;color:var(--text-muted);line-height:1.7;margin-top:10px;white-space:pre-wrap">${(latestNote.content||'').slice(0,800)}${(latestNote.content||'').length>800?'…':''}</div>
+      </div>` : '';
+
+    const emptyNotice = `
+      <div class="ov-section" style="border:1px dashed var(--border);border-radius:10px;padding:18px;text-align:center;color:var(--text-muted);font-size:13px">
+        💡 ยังไม่มีข้อมูล Deep Dive เต็มรูปแบบ — ใช้ skill <strong>prometheus:analyze-report</strong> เพื่อเพิ่ม segments, management, bull/bear thesis
+      </div>`;
+
+    return `${descHtml}${finSummary}${noteHtml}${emptyNotice}`;
+  }
 
   const tvSymbol = companyData?.tradingview_symbol;
   const tvChartHtml = tvSymbol ? `
@@ -874,15 +917,21 @@ function renderRoadmapPanel(roadmap, rmStats) {
     <div id="roadmap-list">${renderRoadmapItems(roadmap)}</div>`;
 }
 
+function rmText(r) { return r.commitment || r.milestone || r.item || r.text || '—'; }
+
 function renderRoadmapItems(items) {
   const filtered = rmFilter==='all' ? items : items.filter(r=>r.status===rmFilter);
   if (!filtered.length) return '<div class="empty">ไม่มีรายการ</div>';
-  return [...filtered].sort((a,b)=>new Date(b.date_said)-new Date(a.date_said)).map((r,i)=>`
+  return [...filtered].sort((a,b)=>{
+    const da = a.date_said ? new Date(a.date_said) : new Date(0);
+    const db = b.date_said ? new Date(b.date_said) : new Date(0);
+    return db - da;
+  }).map((r,i)=>`
     <div class="roadmap-item stagger" style="--i:${i}">
       <div class="rm-status-dot status-${r.status}"></div>
       <div>
-        <div class="rm-commitment">${r.commitment}</div>
-        <div class="rm-source">📅 พูดเมื่อ ${formatDate(r.date_said)} · ${r.source}</div>
+        <div class="rm-commitment">${rmText(r)}</div>
+        <div class="rm-source">${r.date_said ? `📅 พูดเมื่อ ${formatDate(r.date_said)} · ` : ''}${r.source||''}</div>
         ${r.follow_up ? `<div class="rm-followup"><div class="rm-followup-label">ผลลัพธ์ (${formatDate(r.follow_up_date)})</div>${r.follow_up}</div>` : ''}
       </div>
       <span class="rm-badge badge-${r.status}">${STATUS_LABELS[r.status]||r.status}</span>
@@ -907,7 +956,10 @@ function extractEndDate(text, dateSaid) {
 }
 
 function buildGanttSyntax(roadmap) {
-  const sorted = [...roadmap].sort((a,b)=>new Date(a.date_said)-new Date(b.date_said));
+  /* Only include items that have a valid date_said — null dates break Mermaid */
+  const withDate = roadmap.filter(r => r.date_said && r.date_said !== 'null');
+  if (!withDate.length) return null;
+  const sorted = [...withDate].sort((a,b)=>new Date(a.date_said)-new Date(b.date_said));
   const sections  = { delivered:sorted.filter(r=>r.status==='delivered'), monitoring:sorted.filter(r=>r.status==='monitoring'), pending:sorted.filter(r=>r.status==='pending'), partial:sorted.filter(r=>r.status==='partial'), missed:sorted.filter(r=>r.status==='missed') };
   const modifiers = { delivered:'done, ', monitoring:'active, ', pending:'', partial:'crit, ', missed:'crit, ' };
   const labels    = { delivered:'Delivered', monitoring:'Monitoring', pending:'Pending', partial:'Partial', missed:'Missed' };
@@ -918,8 +970,11 @@ function buildGanttSyntax(roadmap) {
     hasContent = true;
     syntax += `    section ${labels[status]}\n`;
     items.forEach((r, i) => {
-      const shortText = r.commitment.split(' ').slice(0,6).join(' ').replace(/[:#]/g,'')+' ...';
-      syntax += `    ${shortText} :${modifiers[status]}rm${status}${i}, ${r.date_said}, ${extractEndDate(r.commitment, r.date_said)}\n`;
+      /* Escape chars that break Mermaid 10.x Gantt parser */
+      const text = rmText(r);
+      const shortText = text.split(' ').slice(0,5).join(' ').replace(/[:#,\[\]"'\\()/]/g,'').trim() || 'Item';
+      const endDate = extractEndDate(text, r.date_said);
+      syntax += `    ${shortText} :${modifiers[status]}rm${status}${i}, ${r.date_said}, ${endDate}\n`;
     });
   });
   return hasContent ? syntax : null;

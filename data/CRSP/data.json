@@ -1,0 +1,278 @@
+{
+  "ticker": "CRSP",
+  "name": "CRISPR Therapeutics AG",
+  "sector": "Healthcare",
+  "exchange": "NASDAQ",
+  "last_updated": "2026-04-04",
+  "description": "CRISPR Therapeutics is a gene editing company focused on developing transformative gene-based medicines for serious diseases using its proprietary CRISPR/Cas9 platform. Its lead product Casgevy (exa-cel) became the world's first CRISPR-based therapy approved by the FDA (Dec 2023) for sickle cell disease and transfusion-dependent beta-thalassemia, co-developed with Vertex Pharmaceuticals.",
+  "notes": [
+    {
+      "date": "2026-04-04",
+      "title": "FY2025 10-K Analysis",
+      "title_th": "การวิเคราะห์รายงานประจำปี FY2025",
+      "tags": [
+        "annual-report",
+        "fy2025",
+        "gene-editing",
+        "crispr",
+        "clinical-stage"
+      ],
+      "rating": 3,
+      "content": "[Financial Performance]\nCRISPR Therapeutics is a pre-profitability gene editing biotech with lumpy milestone-based revenue. FY2025 revenue was $3.5M (near-zero, no major milestones triggered), while the company burned $345.9M in cash (FCF). The key financial metric is the $1.98B cash & investments balance providing multi-year runway despite ongoing R&D burn. R&D spend declined to $265.3M (from $320.7M in FY2024) as the pipeline matured post-discovery. Net loss deepened to $581.6M ($6.47/share) partly due to share issuances (dilution). Casgevy commercial royalties (from Vertex) are modest and will grow only as patient volumes ramp.\n\n[Performance Drivers]\nProgress was driven by positive clinical milestones, including Phase 1 data for CTX310 showing durable reductions in ANGPTL3, triglycerides, and LDL-C, and pediatric data for CASGEVY demonstrating efficacy in children ages 5-11. Limited by minimal product revenue from CASGEVY (only $3.5M), as commercialization is led by Vertex, and continued high R&D investment across a broad pipeline.\n\n[Strategic Priorities]\n• Advance in vivo liver editing pipeline — CTX310 Phase 1b trials in severe hypertriglyceridemia and refractory hypercholesterolemia, plus IND-enabling studies for CTX340 (hypertension) and CTX321 (Lp(a))\n• Expand CAR T platform — Progress zugocabtagene geleucel in autoimmune diseases (SLE, systemic sclerosis) and oncology, with RMAT designation for lymphoma\n• Develop next-generation technologies — Leverage SyNTase editing platform (e.g., CTX460 for alpha-1 antitrypsin deficiency) and delivery innovations for extrahepatic tissues\n\n[Competitive Position]\nCRISPR maintains a strong CRISPR/Cas9 moat with foundational IP and platform expertise, evidenced by the first-ever approved CRISPR therapy (CASGEVY). CASGEVY competes with lentiviral gene therapies (e.g., Lyfgenia, Zynteglo) but offers a non-viral editing approach with a differentiated safety profile. Pipeline is diversified across in vivo editing, CAR T, and regenerative medicine, leveraging proprietary tech like SyNTase for precision correction.\n\n[Management Quality]\nExecution score: HIGH\nManagement delivered on key clinical milestones, including CTX310 Phase 1 data published in NEJM and positive pediatric CASGEVY data at ASH, while advancing a diversified pipeline across four franchises.\n\n[Outlook]\nKey near-term catalysts include CTX310 Phase 1b data, CTX340/CTX321 IND submissions, and zugocabtagene geleucel clinical updates. CASGEVY commercial trajectory depends on Vertex's execution; cash runway appears robust with ~$2B on hand.\n\n[Key Risks]\nCRISPR Therapeutics faces a high-risk profile typical of pre-commercial biotech companies, with particular concentration in regulatory, manufacturing, and intellectual property challenges specific to novel gene editing technology. The company's dependence on its Vertex partnership for its only approved therapy (CASGEVY) creates additional concentration risk, while the inherent complexity of gene editing presents ongoing clinical, manufacturing, and market acceptance uncertainties.\n\n[Management Tone]\nBullish",
+      "content_th": ""
+    },
+    {
+      "date": "2026-04-04",
+      "title": "FY2025 vs FY2024 — Narrative Evolution Analysis",
+      "title_th": "วิเคราะห์การเปลี่ยนแปลงเชิงกลยุทธ์ FY2025 เทียบ FY2024",
+      "tags": [
+        "narrative-evolution",
+        "accounting-watch",
+        "multi-year",
+        "crsp"
+      ],
+      "rating": 3,
+      "content": "[Management Narrative Drift (2024 → 2025)]\nCRISPR Therapeutics evolved from a gene editing pioneer with a broad pipeline to a more focused biopharmaceutical company with commercial execution. The narrative shifted from establishing proof-of-concept across multiple platforms to prioritizing advanced programs with clearer paths to market, particularly in in vivo liver editing and autoimmune CAR T. The company now emphasizes platform diversification beyond CRISPR/Cas9 to include siRNA and SyNTase technologies while streamlining its pipeline by deprioritizing certain earlier-stage oncology programs.\nTone: cautious→bullish\nDisappeared topics: CTX131 (CD70 CAR T program), CTX320 (Lp(a) program), CTX211 (encapsulated diabetes therapy), CRISPR-X research team, Glypican-3 (GPC3) CAR T program\nNew topics: siRNA-based programs (CTX611/FXI), SyNTase editing technology, CTX321 (next-generation Lp(a) program), CTX460 (SERPINA1 program), Eli Lilly collaboration for zugocabtagene geleucel, Sirius Therapeutics partnership, Regenerative medicine franchise, Macroeconomic risk factors\n\n[Business & Reporting Evolution]\nCRISPR Therapeutics evolved from a gene editing company to a broader biopharmaceutical company, expanding beyond CRISPR/Cas9 to include siRNA-based therapeutics through the Sirius partnership. The pipeline shifted with increased focus on in vivo liver editing programs and regenerative medicine, while CAR T programs consolidated around zugocabtagene geleucel (formerly CTX112) with expanded autoimmune and oncology indications.\nNew KPIs introduced: CTX611 (siRNA-based program) Phase 2 clinical trial progress, CTX321 (next-generation LPA program) development, CTX460 (SERPINA1 targeting with SyNTase) advancement, zugocabtagene geleucel (formerly CTX112) RMAT designation for follicular lymphoma and marginal zone lymphoma, Sirius partnership for siRNA co-development and co-commercialization\nKPIs quietly dropped: CTX131 (CD70-targeting CAR T) clinical progress emphasis, CTX211 (encapsulated beta cell replacement) clinical trial focus, CTX320 (Lp(a) targeting) as separate in vivo program\nProgram changes: The company reorganized its core franchises from 'hemoglobinopathies, CAR T, in vivo approaches and type 1 diabetes' to 'hemoglobinopathies, in vivo, CAR T approaches and regenerative medicine.' Type 1 diabetes was folded into regenerative medicine with CTX213 as the lead deviceless beta cell replacement candidate. In vivo approaches expanded to include siRNA programs, and CAR T focus narrowed with CTX131 no longer emphasized while zugocabtagene geleucel gained prominence across autoimmune and oncology indications.\n\n[Accounting Watch]\nCRISPR Therapeutics maintains stable accounting and reporting quality between FY2024 and FY2025, with consistent revenue recognition from collaborations and R&D expense treatment. The company continues to provide comprehensive risk disclosures, with FY2025 adding broader macroeconomic risks. No material changes in accounting policies or concerning reporting practices were identified in the provided business sections.\nNo material changes in accounting policies, revenue recognition methods, or significant estimates reported between FY2024 and FY2025 10-K filings. Both years maintain consistent accounting frameworks for revenue recognition from collaborations, R&D expenses, and clinical trial accruals.\n\n[Risk Evolution — Deteriorating]\nCRISPR Therapeutics' risk profile expanded in FY2025 with the addition of significant macroeconomic and geopolitical risks, including market volatility, inflation, trade tensions, and geopolitical conflicts. While core operational risks related to gene editing technology, clinical development, and intellectual property remain largely unchanged, the company now faces broader external economic uncertainties that could impact funding, operations, and market conditions.\nNew risks: Volatility of capital markets and unfavorable macroeconomic conditions resulting from factors including rising inflation, changes in or disruptions of U.S. governmental agencies, new or increased international tariffs and retaliatory tariffs, interest rate and currency rate fluctuations, new laws and regulations or amendments to existing laws and regulations in the U.S. and foreign countries, trade protection measures, economic sanctions and economic slowdowns or recessions, banking instability, monetary policy changes, geopolitical tensions or the outbreak of hostilities or war\nRemoved risks: None identified\n\n[Red Flags & Optical Improvements]\n⚠️ No specific concerning accounting changes or optical improvements identified in the provided excerpts. Both filings show consistent risk disclosures and accounting treatment. However, the FY2025 filing expands risk factors to include macroeconomic conditions (inflation, geopolitical tensions, banking instability) which could impact financial projections.",
+      "content_th": ""
+    }
+  ],
+  "quotes": [
+    {
+      "speaker": "CRISPR Therapeutics Management",
+      "quote": "CASGEVY has been approved in the United States, European Union, Great Britain, Canada, Switzerland and certain countries in the Middle East for the treatment of eligible patients 12 years and older with SCD or TDT.",
+      "quote_th": "",
+      "tag": "clinical",
+      "source": "FY2025 10-K",
+      "date": "2026-02-12"
+    },
+    {
+      "speaker": "CRISPR Therapeutics Management",
+      "quote": "Efficacy data presented to date support the profile of CASGEVY as a potential one-time functional cure for people with severe SCD and TDT.",
+      "quote_th": "",
+      "tag": "clinical",
+      "source": "FY2025 10-K",
+      "date": "2026-02-12"
+    },
+    {
+      "speaker": "CRISPR Therapeutics Management",
+      "quote": "In SCD, 100% of patients (45/45) achieved VF12 in either CLIMB-121 or the long-term follow-up study CLIMB-131, with a mean duration of VOC-free for 35.3 months.",
+      "quote_th": "",
+      "tag": "clinical",
+      "source": "FY2025 10-K",
+      "date": "2026-02-12"
+    },
+    {
+      "speaker": "CRISPR Therapeutics Management",
+      "quote": "In TDT, 98.2% of patients (55/56) achieved TI12 in either CLIMB-111 or CLIMB-131 with a mean duration of transfusion independence of 41.4 months.",
+      "quote_th": "",
+      "tag": "clinical",
+      "source": "FY2025 10-K",
+      "date": "2026-02-12"
+    },
+    {
+      "speaker": "CRISPR Therapeutics Management",
+      "quote": "We have established a portfolio of therapeutic programs spanning four core franchises: hemoglobinopathies, in vivo, CAR T approaches and regenerative medicine.",
+      "quote_th": "",
+      "tag": "strategy",
+      "source": "FY2025 10-K",
+      "date": "2026-02-12"
+    },
+    {
+      "speaker": "CRISPR Therapeutics Management",
+      "quote": "We aim to transform the treatment paradigm for CVD by developing one-time in vivo editing therapies that can durably lower levels of atherogenic lipoproteins for a patient's lifetime.",
+      "quote_th": "",
+      "tag": "strategy",
+      "source": "FY2025 10-K",
+      "date": "2026-02-12"
+    },
+    {
+      "speaker": "CRISPR Therapeutics Management",
+      "quote": "CTX310 is currently being investigated in an ongoing Phase 1b clinical trial in patients with heterozygous familial hypercholesterolemia, homozygous familial hypercholesterolemia, mixed dyslipidemias, or severe hypertriglyceridemia.",
+      "quote_th": "",
+      "tag": "pipeline",
+      "source": "FY2025 10-K",
+      "date": "2026-02-12"
+    },
+    {
+      "speaker": "CRISPR Therapeutics Management",
+      "quote": "Zugo-cel continues to advance in both autoimmune disease and hematologic malignancies.",
+      "quote_th": "",
+      "tag": "pipeline",
+      "source": "FY2025 10-K",
+      "date": "2026-02-12"
+    },
+    {
+      "speaker": "CRISPR Therapeutics Management",
+      "quote": "We have partnered with Vertex Pharmaceuticals Incorporated, or Vertex, on our lead program CASGEVY; Vertex has significant control over the CASGEVY program.",
+      "quote_th": "",
+      "tag": "risk",
+      "source": "FY2025 10-K",
+      "date": "2026-02-12"
+    },
+    {
+      "speaker": "CRISPR Therapeutics Management",
+      "quote": "We have incurred significant operating losses since our inception and anticipate that we will incur continued losses for the foreseeable future.",
+      "quote_th": "",
+      "tag": "risk",
+      "source": "FY2025 10-K",
+      "date": "2026-02-12"
+    }
+  ],
+  "roadmap": [
+    {
+      "commitment": "Advance CTX310 into Phase 1b clinical trials, prioritizing development in severe hypertriglyceridemia and refractory hypercholesterolemia",
+      "date_said": null,
+      "source": "FY2025 10-K",
+      "status": "pending"
+    },
+    {
+      "commitment": "Continue to advance CTX213, a deviceless beta cell replacement product candidate for Type 1 diabetes, through preclinical studies",
+      "date_said": null,
+      "source": "FY2025 10-K",
+      "status": "pending"
+    },
+    {
+      "commitment": "Advance CTX340 (targeting angiotensinogen for refractory hypertension) through IND-enabling studies",
+      "date_said": null,
+      "source": "FY2025 10-K",
+      "status": "pending"
+    },
+    {
+      "commitment": "Advance CTX460 (targeting SERPINA1 for alpha-1 antitrypsin deficiency using SyNTase editing platform) through preclinical studies",
+      "date_said": null,
+      "source": "FY2025 10-K",
+      "status": "pending"
+    },
+    {
+      "commitment": "Advance CTX321 (targeting LPA for elevated lipoprotein(a)) through IND-enabling studies",
+      "date_said": null,
+      "source": "FY2025 10-K",
+      "status": "pending"
+    },
+    {
+      "commitment": "Continue investigation of CTX611 in ongoing Phase 2 clinical trial for preventing venous thromboembolism in patients undergoing total knee arthroplasty",
+      "date_said": null,
+      "source": "FY2025 10-K",
+      "status": "pending"
+    },
+    {
+      "commitment": "Continue to advance zugocabtagene geleucel (zugo-cel) in ongoing clinical trials for autoimmune diseases (SLE, systemic sclerosis, inflammatory myositis, immune thrombocytopenia purpura, warm autoimmune hemolytic anemia)",
+      "date_said": null,
+      "source": "FY2025 10-K",
+      "status": "pending"
+    },
+    {
+      "commitment": "Continue to advance zugocabtagene geleucel (zugo-cel) in ongoing Phase 1/2 clinical trial for relapsed or refractory B-cell malignancies",
+      "date_said": null,
+      "source": "FY2025 10-K",
+      "status": "pending"
+    },
+    {
+      "commitment": "Evaluate zugocabtagene geleucel together with pirtobrutinib in aggressive B-cell lymphomas through collaboration with Eli Lilly",
+      "date_said": null,
+      "source": "FY2025 10-K",
+      "status": "pending"
+    },
+    {
+      "commitment": "Continue to advance internally developed targeted conditioning program for hemoglobinopathies through preclinical studies",
+      "date_said": null,
+      "source": "FY2025 10-K",
+      "status": "pending"
+    },
+    {
+      "commitment": "Continue to advance in vivo hematopoietic stem cell editing approaches for hemoglobinopathies using lipid nanoparticle-mediated delivery through preclinical studies",
+      "date_said": null,
+      "source": "FY2025 10-K",
+      "status": "pending"
+    },
+    {
+      "commitment": "Continue long-term follow-up clinical trials for CASGEVY designed to follow participants for up to 15 years after infusion",
+      "date_said": null,
+      "source": "FY2025 10-K",
+      "status": "pending"
+    },
+    {
+      "commitment": "Co-develop and co-commercialize CTX611 with Sirius Therapeutics under the Sirius Agreement",
+      "date_said": null,
+      "source": "FY2025 10-K",
+      "status": "pending"
+    }
+  ],
+  "financials": {
+    "currency": "USD",
+    "unit": "Million",
+    "links": [
+      {
+        "label": "10-K FY2022 (filed 2023-02-21)",
+        "url": "https://www.sec.gov/Archives/edgar/data/1674416/000095017023003441/crsp-20221231.htm"
+      },
+      {
+        "label": "10-K FY2023 (filed 2024-02-21)",
+        "url": "https://www.sec.gov/Archives/edgar/data/1674416/000095017024017571/crsp-20231231.htm"
+      },
+      {
+        "label": "10-K FY2024 (filed 2025-02-11)",
+        "url": "https://www.sec.gov/Archives/edgar/data/1674416/000095017025017899/crsp-20241231.htm"
+      },
+      {
+        "label": "10-K FY2025 (filed 2026-02-12)",
+        "url": "https://www.sec.gov/Archives/edgar/data/1674416/000119312526048957/crsp-20251231.htm"
+      }
+    ],
+    "years": [
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "metrics": [
+      {
+        "name": "Revenue (milestone/collab)",
+        "values": [
+          0.4,
+          370.0,
+          35.0,
+          3.5
+        ]
+      },
+      {
+        "name": "R&D Expenses",
+        "values": [
+          461.6,
+          387.3,
+          320.7,
+          265.3
+        ]
+      },
+      {
+        "name": "Net Income",
+        "values": [
+          -650.2,
+          -153.6,
+          -366.3,
+          -581.6
+        ]
+      },
+      {
+        "name": "EPS (diluted)",
+        "values": [
+          -8.36,
+          -1.94,
+          -4.34,
+          -6.47
+        ]
+      },
+      {
+        "name": "Cash & Investments",
+        "values": [
+          1820.0,
+          1693.0,
+          1905.0,
+          1984.0
+        ]
+      }
+    ],
+    "notes": "Pre-profitability biotech — revenue is lumpy milestone/collaboration payments, not product sales. FY2023 $370M spike = Casgevy FDA approval milestone from Vertex Pharmaceuticals. FY2022 near-zero revenue = no milestone events. FCF is ongoing cash burn from R&D. Cash & Investments is the key survival metric (runway). CEO: Samarth Kulkarni. Employees: 393. CIK: 1674416."
+  },
+  "management_tone": "bullish"
+}

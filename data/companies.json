@@ -24,8 +24,8 @@
     "name": "Barrick Mining Corporation",
     "sector": "Mining",
     "exchange": "NYSE",
-    "last_updated": "2026-03-29",
-    "note_count": 4,
+    "last_updated": "2026-04-04",
+    "note_count": 8,
     "quote_count": 5,
     "roadmap_count": 10
   },
@@ -108,5 +108,25 @@
     "note_count": 2,
     "quote_count": 9,
     "roadmap_count": 15
+  },
+  {
+    "ticker": "KEYS",
+    "name": "Keysight Technologies, Inc.",
+    "sector": "Technology",
+    "exchange": "NYSE",
+    "last_updated": "2026-04-04",
+    "note_count": 2,
+    "quote_count": 9,
+    "roadmap_count": 14
+  },
+  {
+    "ticker": "CRSP",
+    "name": "CRISPR Therapeutics AG",
+    "sector": "Healthcare",
+    "exchange": "NASDAQ",
+    "last_updated": "2026-04-04",
+    "note_count": 2,
+    "quote_count": 10,
+    "roadmap_count": 13
   }
 ]

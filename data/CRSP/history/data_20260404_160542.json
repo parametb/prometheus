@@ -1,0 +1,28 @@
+{
+  "ticker": "CRSP",
+  "name": "CRISPR Therapeutics AG",
+  "sector": "Healthcare",
+  "exchange": "NASDAQ",
+  "last_updated": "2026-04-04",
+  "description": "CRISPR Therapeutics is a gene editing company focused on developing transformative gene-based medicines for serious diseases using its proprietary CRISPR/Cas9 platform. Its lead product Casgevy (exa-cel) became the world's first CRISPR-based therapy approved by the FDA (Dec 2023) for sickle cell disease and transfusion-dependent beta-thalassemia, co-developed with Vertex Pharmaceuticals.",
+
+  "notes": [],
+  "quotes": [],
+
+  "roadmap": [],
+
+  "financials": {
+    "currency": "USD",
+    "unit": "Million",
+    "links": [],
+    "years": [],
+    "metrics": [
+      { "name": "Revenue",       "values": [] },
+      { "name": "Gross Profit",  "values": [] },
+      { "name": "Net Income",    "values": [] },
+      { "name": "EPS (diluted)", "values": [] },
+      { "name": "Free Cash Flow","values": [] }
+    ],
+    "notes": ""
+  }
+}

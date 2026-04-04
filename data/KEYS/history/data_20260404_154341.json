@@ -1,0 +1,28 @@
+{
+  "ticker": "KEYS",
+  "name": "Keysight Technologies, Inc.",
+  "sector": "Technology",
+  "exchange": "NYSE",
+  "last_updated": "2026-04-04",
+  "description": "Keysight Technologies is a leading technology company that provides electronic design and test solutions to communications, aerospace & defense, automotive, energy, semiconductor, and general electronics markets.",
+
+  "notes": [],
+  "quotes": [],
+
+  "roadmap": [],
+
+  "financials": {
+    "currency": "USD",
+    "unit": "Billion",
+    "links": [],
+    "years": [],
+    "metrics": [
+      { "name": "Revenue",       "values": [] },
+      { "name": "Gross Profit",  "values": [] },
+      { "name": "Net Income",    "values": [] },
+      { "name": "EPS (diluted)", "values": [] },
+      { "name": "Free Cash Flow","values": [] }
+    ],
+    "notes": ""
+  }
+}
