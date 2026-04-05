@@ -422,7 +422,7 @@ function enrichSegments(segs) {
   const fin = companyData?.financials;
   if (fin?.metrics && fin?.years) {
     const rm = fin.metrics.find(m => m.name === 'Revenue');
-    if (rm) {452
+    if (rm) {
   
       for (let i = rm.values.length - 1; i >= 0; i--) {
         if (rm.values[i] != null) {
@@ -628,8 +628,8 @@ function renderOverviewPanel(ov) {
     <div class="ov-section">
       <div class="ov-title">🌍 รายได้แยกตามภูมิภาค</div>
       ${ov.geographies.map(g=>`<div class="geo-item">
-        <div class="geo-header"><span>${g.region || g.name}</span><span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--text-muted)">${g.revenue_pct}%</span></div>
-        <div class="geo-track"><div class="geo-fill" data-pct="${g.revenue_pct}"></div></div>
+        <div class="geo-header"><span>${g.region || g.name}</span><span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--text-muted)">${g.revenue_pct != null ? g.revenue_pct + '%' : '—'}</span></div>
+        <div class="geo-track"><div class="geo-fill" data-pct="${g.revenue_pct ?? 0}"></div></div>
       </div>`).join('')}
     </div>` : '';
 
