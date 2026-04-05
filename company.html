@@ -304,7 +304,7 @@
       </svg>
       Prometheus
     </a>
-    <a class="back-btn" href="index.html">← กลับหน้าหลัก</a>
+    <a class="back-btn" href="index.html" id="nav-back">← กลับหน้าหลัก</a>
   </div>
   <div class="nav-right">
     <button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme" id="theme-btn">🌙</button>
@@ -360,7 +360,8 @@ let activeNoteTag = null;
 let activeQuoteTag = null;
 
 const SECTOR_CLASS  = { Technology:'sector-tech', Finance:'sector-finance', Healthcare:'sector-health', Energy:'sector-energy', Consumer:'sector-consumer' };
-const STATUS_LABELS = { delivered:'✅ สำเร็จ', pending:'⏳ รอดำเนินการ', missed:'❌ พลาด', partial:'⚠️ บางส่วน', monitoring:'👀 ติดตาม' };
+/* STATUS_LABELS: use t() at render time via getStatusLabel() */
+function getStatusLabel(status) { return t('status.' + status) || status; }
 const LINK_ICONS    = { '10-K':{icon:'📄',cls:'type-10k'}, '10-Q':{icon:'📋',cls:'type-10q'}, 'Annual Report':{icon:'📑',cls:'type-annual'}, 'Proxy Statement':{icon:'🗳️',cls:'type-other'}, 'Investor Day':{icon:'🎤',cls:'type-other'} };
 const SEG_TYPE_COLOR = { gold:'#d29922', copper:'#e3663a', silver:'#9eaab7', software:'#58a6ff', hardware:'#bc8cff', services:'#3fb950', cloud:'#58d68d', energy:'#ff9900', other:'#8b949e' };
 const TL_TYPE_COLOR  = { founding:'#58a6ff', merger:'#bc8cff', milestone:'#d29922', project:'#3fb950', financial:'#58d68d', crisis:'#f85149', product:'#e3663a' };
@@ -369,7 +370,8 @@ const TAB_ORDER      = ['overview','notes','quotes','roadmap','financials'];
 
 function formatDate(d) {
   if (!d) return '—';
-  return new Date(d).toLocaleDateString('th-TH', { day:'numeric', month:'short', year:'numeric' });
+  const locale = window.currentLang === 'en' ? 'en-US' : 'th-TH';
+  return new Date(d).toLocaleDateString(locale, { day:'numeric', month:'short', year:'numeric' });
 }
 
 async function loadCompany() {
@@ -398,7 +400,7 @@ function collectTags(items, field) {
 function tagFilterBar(tags, activeTag, onClickFn, clearFn) {
   if (!tags.length) return '';
   const chips = tags.map(t => `<button class="tag-chip ${activeTag===t?'active':''}" onclick="${onClickFn}('${t}')">#${t}</button>`).join('');
-  return `<div class="tag-filter-bar"><span class="tag-filter-label">แท็ก:</span>${chips}<button class="tag-chip-clear ${activeTag?'visible':''}" onclick="${clearFn}()">✕ ล้าง</button></div>`;
+  return `<div class="tag-filter-bar"><span class="tag-filter-label">${t('filter.tag_label')}</span>${chips}<button class="tag-chip-clear ${activeTag?'visible':''}" onclick="${clearFn}()">${t('filter.clear')}</button></div>`;
 }
 
 /* ── Segment / Geo enrichment ──────────────────────────────────────────────
@@ -481,28 +483,28 @@ function render() {
         <div class="company-meta">
           <span class="meta-tag ${sectorClass}">${c.sector}</span>
           <span class="meta-muted">${ticker} · ${c.exchange || 'NASDAQ'}</span>
-          <span class="meta-muted">· อัพเดท ${formatDate(c.last_updated)}</span>
+          <span class="meta-muted">· ${t('company.updated')} ${formatDate(c.last_updated)}</span>
         </div>
         ${c.description ? `<div class="company-desc">${c.description}</div>` : ''}
       </div>
     </div>
 
     <div class="quick-stats">
-      <div class="qs-card stagger" style="--i:1"><div class="qs-label">NOTES</div><div class="qs-value">${notes.length}</div><div class="qs-sub">บันทึกทั้งหมด</div></div>
-      <div class="qs-card stagger" style="--i:2"><div class="qs-label">QUOTES</div><div class="qs-value">${quotes.length}</div><div class="qs-sub">จาก Earnings Call</div></div>
-      <div class="qs-card stagger" style="--i:3"><div class="qs-label">ROADMAP</div><div class="qs-value">${roadmap.length}</div><div class="qs-sub">สิ่งที่ผู้บริหารพูด</div></div>
+      <div class="qs-card stagger" style="--i:1"><div class="qs-label">NOTES</div><div class="qs-value">${notes.length}</div><div class="qs-sub">${t('qs.notes_sub')}</div></div>
+      <div class="qs-card stagger" style="--i:2"><div class="qs-label">QUOTES</div><div class="qs-value">${quotes.length}</div><div class="qs-sub">${t('qs.quotes_sub')}</div></div>
+      <div class="qs-card stagger" style="--i:3"><div class="qs-label">ROADMAP</div><div class="qs-value">${roadmap.length}</div><div class="qs-sub">${t('qs.roadmap_sub')}</div></div>
       <div class="qs-card stagger" style="--i:4"><div class="qs-label">DELIVERY</div>
         <div class="qs-value" style="color:${deliveryRate>=70?'var(--green)':deliveryRate>=40?'var(--yellow)':'var(--red)'}">${concluded>0?deliveryRate+'%':'—'}</div>
-        <div class="qs-sub">${concluded>0?concluded+' รายการที่สรุปแล้ว':'ยังไม่มีรายการสรุป'}</div>
+        <div class="qs-sub">${concluded>0?concluded+' '+t('qs.delivery_concluded'):t('qs.delivery_none')}</div>
       </div>
     </div>
 
     <div class="tabs stagger" style="--i:5">
-      <button class="tab-btn active" onclick="switchTab('overview')">🔍 ภาพรวม</button>
-      <button class="tab-btn" onclick="switchTab('notes')">📝 บันทึก <span class="tab-count">${notes.length}</span></button>
-      <button class="tab-btn" onclick="switchTab('quotes')">💬 คำพูด <span class="tab-count">${quotes.length}</span></button>
-      <button class="tab-btn" onclick="switchTab('roadmap')">🗺️ แผนงาน <span class="tab-count">${roadmap.length}</span></button>
-      <button class="tab-btn" onclick="switchTab('financials')">📊 การเงิน</button>
+      <button class="tab-btn active" onclick="switchTab('overview')">${t('tab.overview')}</button>
+      <button class="tab-btn" onclick="switchTab('notes')">${t('tab.notes')} <span class="tab-count">${notes.length}</span></button>
+      <button class="tab-btn" onclick="switchTab('quotes')">${t('tab.quotes')} <span class="tab-count">${quotes.length}</span></button>
+      <button class="tab-btn" onclick="switchTab('roadmap')">${t('tab.roadmap')} <span class="tab-count">${roadmap.length}</span></button>
+      <button class="tab-btn" onclick="switchTab('financials')">${t('tab.financials')}</button>
     </div>
 
     <div class="tab-panel active" id="tab-overview">${renderOverviewPanel(ov)}</div>
@@ -540,7 +542,7 @@ function renderOverviewPanel(ov) {
 
     const finSummary = (latestRev != null) ? `
       <div class="ov-section">
-        <div class="ov-title">📊 ข้อมูลการเงินล่าสุด (FY${latestYr})</div>
+        <div class="ov-title">${t('ov.latest_fin')} (FY${latestYr})</div>
         <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;margin-top:12px">
           ${latestRev != null ? `<div class="snap-card"><div class="snap-label">Revenue</div><div class="snap-value">${ccy} ${latestRev.toLocaleString()} ${unit}</div></div>` : ''}
           ${latestNI  != null ? `<div class="snap-card"><div class="snap-label">Net Income</div><div class="snap-value" style="color:${latestNI>=0?'var(--green)':'var(--red)'}">${ccy} ${latestNI.toLocaleString()} ${unit}</div></div>` : ''}
@@ -551,19 +553,19 @@ function renderOverviewPanel(ov) {
 
     const descHtml = c.description ? `
       <div class="ov-section">
-        <div class="ov-title">🏢 เกี่ยวกับบริษัท</div>
+        <div class="ov-title">${t('ov.about')}</div>
         <div style="font-size:13px;color:var(--text-muted);line-height:1.7;margin-top:10px">${c.description}</div>
       </div>` : '';
 
     const noteHtml = latestNote ? `
       <div class="ov-section">
-        <div class="ov-title">📝 บันทึกล่าสุด — ${latestNote.title||''}</div>
+        <div class="ov-title">${t('ov.latest_note')} — ${latestNote.title||''}</div>
         <div style="font-size:12px;color:var(--text-muted);line-height:1.7;margin-top:10px;white-space:pre-wrap">${(latestNote.content||'').slice(0,800)}${(latestNote.content||'').length>800?'…':''}</div>
       </div>` : '';
 
     const emptyNotice = `
       <div class="ov-section" style="border:1px dashed var(--border);border-radius:10px;padding:18px;text-align:center;color:var(--text-muted);font-size:13px">
-        💡 ยังไม่มีข้อมูล Deep Dive เต็มรูปแบบ — ใช้ skill <strong>prometheus:analyze-report</strong> เพื่อเพิ่ม segments, management, bull/bear thesis
+        ${t('ov.empty_notice')}
       </div>`;
 
     return `${descHtml}${finSummary}${noteHtml}${emptyNotice}`;
@@ -572,33 +574,33 @@ function renderOverviewPanel(ov) {
   const tvSymbol = companyData?.tradingview_symbol;
   const tvChartHtml = tvSymbol ? `
     <div class="tv-section">
-      <div class="ov-title">📈 ราคาหุ้น</div>
+      <div class="ov-title">${t('ov.stock_price')}</div>
       <div class="tv-chart-wrap" id="tv-chart-outer"></div>
     </div>` : '';
 
   const snapshotHtml = `
     <div class="ov-section">
-      <div class="ov-title">🏢 ข้อมูลบริษัท</div>
+      <div class="ov-title">${t('ov.company_info')}</div>
       <div class="snapshot-grid">
-        ${ov.founded       ? `<div class="snap-card"><div class="snap-label">ก่อตั้ง</div><div class="snap-value">${ov.founded}</div></div>` : ''}
-        ${ov.headquarters  ? `<div class="snap-card"><div class="snap-label">สำนักงานใหญ่</div><div class="snap-value">${ov.headquarters}</div></div>` : ''}
-        ${ov.employees     ? `<div class="snap-card"><div class="snap-label">พนักงาน</div><div class="snap-value">${ov.employees}</div></div>` : ''}
-        ${ov.fiscal_year_end ? `<div class="snap-card"><div class="snap-label">สิ้นปีบัญชี</div><div class="snap-value">${ov.fiscal_year_end}</div></div>` : ''}
+        ${ov.founded       ? `<div class="snap-card"><div class="snap-label">${t('snap.founded')}</div><div class="snap-value">${ov.founded}</div></div>` : ''}
+        ${ov.headquarters  ? `<div class="snap-card"><div class="snap-label">${t('snap.hq')}</div><div class="snap-value">${ov.headquarters}</div></div>` : ''}
+        ${ov.employees     ? `<div class="snap-card"><div class="snap-label">${t('snap.employees')}</div><div class="snap-value">${ov.employees}</div></div>` : ''}
+        ${ov.fiscal_year_end ? `<div class="snap-card"><div class="snap-label">${t('snap.fiscal_year_end')}</div><div class="snap-value">${ov.fiscal_year_end}</div></div>` : ''}
       </div>
-      ${ov.business_model_summary ? `<div style="margin-top:16px"><div class="snap-label" style="margin-bottom:8px">รูปแบบธุรกิจ</div><div style="font-size:13px;color:var(--text-muted);line-height:1.7">${ov.business_model_summary}</div></div>` : ''}
-      ${ov.competitive_position ? `<div style="margin-top:14px"><div class="snap-label" style="margin-bottom:8px">ตำแหน่งการแข่งขัน</div><div style="font-size:13px;color:var(--text-muted);line-height:1.6">${ov.competitive_position}</div></div>` : ''}
+      ${ov.business_model_summary ? `<div style="margin-top:16px"><div class="snap-label" style="margin-bottom:8px">${t('snap.biz_model')}</div><div style="font-size:13px;color:var(--text-muted);line-height:1.7">${ov.business_model_summary}</div></div>` : ''}
+      ${ov.competitive_position ? `<div style="margin-top:14px"><div class="snap-label" style="margin-bottom:8px">${t('snap.competitive_pos')}</div><div style="font-size:13px;color:var(--text-muted);line-height:1.6">${ov.competitive_position}</div></div>` : ''}
     </div>`;
 
   const moatHtml = ov.moat_factors?.length ? `
     <div class="ov-section">
-      <div class="ov-title">🏰 จุดแข็งทางการแข่งขัน (Moat)</div>
+      <div class="ov-title">${t('ov.moat')}</div>
       <div class="moat-list">${ov.moat_factors.map(f=>`<div class="moat-chip">✓ ${f}</div>`).join('')}</div>
     </div>` : '';
 
   const maxRev = ov.segments?.length ? Math.max(...ov.segments.map(s=>s.revenue||0)) : 1;
   const segmentsHtml = ov.segments?.length ? `
     <div class="ov-section">
-      <div class="ov-title">📊 รายได้แยกตามกลุ่มธุรกิจ</div>
+      <div class="ov-title">${t('ov.segments')}</div>
       <div class="seg-layout">
         <div>
           ${ov.segments.map(s => {
@@ -628,19 +630,19 @@ function renderOverviewPanel(ov) {
 
   const geoHtml = ov.geographies?.length ? `
     <div class="ov-section">
-      <div class="ov-title">🌍 รายได้แยกตามภูมิภาค</div>
+      <div class="ov-title">${t('ov.geography')}</div>
       ${ov.geographies.map(g=>`<div class="geo-item">
         <div class="geo-header"><span>${g.region || g.name}</span><span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--text-muted)">${g.revenue_pct != null ? g.revenue_pct + '%' : '—'}</span></div>
         <div class="geo-track"><div class="geo-fill" data-pct="${g.revenue_pct ?? 0}"></div></div>
       </div>`).join('')}
     </div>` : '';
 
-  const typeLabels = { founding:'ก่อตั้ง', merger:'M&A', milestone:'เหตุการณ์', project:'โครงการ', financial:'การเงิน', crisis:'วิกฤต', product:'ผลิตภัณฑ์' };
+  const typeLabels = { founding:t('tl_type.founding'), merger:t('tl_type.merger'), milestone:t('tl_type.milestone'), project:t('tl_type.project'), financial:t('tl_type.financial'), crisis:t('tl_type.crisis'), product:t('tl_type.product') };
   const timelineHtml = ov.timeline?.length ? `
     <div class="ov-section">
-      <div class="ov-title">📅 ประวัติและเหตุการณ์สำคัญ</div>
+      <div class="ov-title">${t('ov.timeline')}</div>
       <div class="tl-filters">
-        <button class="tl-filter active" onclick="filterTl(this,'all')">ทั้งหมด</button>
+        <button class="tl-filter active" onclick="filterTl(this,'all')">${t('filter.all')}</button>
         ${['founding','merger','milestone','project','financial','crisis','product'].filter(t=>ov.timeline.some(i=>i.type===t)).map(t=>`<button class="tl-filter" onclick="filterTl(this,'${t}')">${typeLabels[t]||t}</button>`).join('')}
       </div>
       <div class="timeline-wrap">
@@ -658,12 +660,12 @@ function renderOverviewPanel(ov) {
 
   const mgmtHtml = ov.management?.length ? `
     <div class="ov-section">
-      <div class="ov-title">👔 ทีมผู้บริหาร</div>
+      <div class="ov-title">${t('ov.management')}</div>
       <div class="mgmt-grid">
         ${ov.management.map(m=>`<div class="mgmt-card">
           <div class="mgmt-name">${m.name}</div>
           <div class="mgmt-title">${m.title}</div>
-          ${m.since ? `<div class="mgmt-since">ดำรงตำแหน่งตั้งแต่ปี ${m.since}</div>` : ''}
+          ${m.since ? `<div class="mgmt-since">${t('mgmt.since')} ${m.since}</div>` : ''}
           <div class="mgmt-bio">${m.background}</div>
         </div>`).join('')}
       </div>
@@ -671,32 +673,32 @@ function renderOverviewPanel(ov) {
 
   const thesisHtml = (ov.bull_case || ov.bear_case) ? `
     <div class="ov-section">
-      <div class="ov-title">⚖️ วิเคราะห์การลงทุน (Bull vs Bear)</div>
+      <div class="ov-title">${t('ov.thesis')}</div>
       <div class="thesis-grid">
-        ${ov.bull_case ? `<div class="thesis-card"><div class="thesis-label bull">🐂 Bull Case — เหตุผลในการถือ</div><div class="thesis-text">${ov.bull_case}</div></div>` : ''}
-        ${ov.bear_case ? `<div class="thesis-card"><div class="thesis-label bear">🐻 Bear Case — ความเสี่ยงหลัก</div><div class="thesis-text">${ov.bear_case}</div></div>` : ''}
+        ${ov.bull_case ? `<div class="thesis-card"><div class="thesis-label bull">${t('thesis.bull')}</div><div class="thesis-text">${ov.bull_case}</div></div>` : ''}
+        ${ov.bear_case ? `<div class="thesis-card"><div class="thesis-label bear">${t('thesis.bear')}</div><div class="thesis-text">${ov.bear_case}</div></div>` : ''}
       </div>
     </div>` : '';
 
   const risksHtml = ov.key_risks?.length ? `
     <div class="ov-section">
-      <div class="ov-title">⚠️ ความเสี่ยงสำคัญ (คลิกเพื่อดูรายละเอียด)</div>
+      <div class="ov-title">${t('ov.risks')}</div>
       ${ov.key_risks.map((r,i)=>`<div class="risk-item" onclick="toggleRisk(${i})">
         <div class="risk-header">
-          <span class="risk-severity sev-${r.severity}">${r.severity==='high'?'สูง':r.severity==='medium'?'กลาง':'ต่ำ'}</span>
+          <span class="risk-severity sev-${r.severity}">${t('sev.'+(r.severity||'medium'))}</span>
           <span class="risk-name">${r.risk}</span>
           <span class="risk-toggle" id="risk-tog-${i}">▼</span>
         </div>
         <div class="risk-body" id="risk-body-${i}">
           <div class="risk-desc">${r.description}</div>
-          ${r.mitigation ? `<div class="risk-mitigation"><div class="risk-mit-label">การรับมือ</div>${r.mitigation}</div>` : ''}
+          ${r.mitigation ? `<div class="risk-mitigation"><div class="risk-mit-label">${t('risk.mitigation')}</div>${r.mitigation}</div>` : ''}
         </div>
       </div>`).join('')}
     </div>` : '';
 
   const ownershipHtml = ov.ownership?.major_shareholders?.length ? `
     <div class="ov-section">
-      <div class="ov-title">🏦 โครงสร้างผู้ถือหุ้น</div>
+      <div class="ov-title">${t('ov.ownership')}</div>
       <div class="ownership-layout">
         <div style="display:flex;flex-direction:column;align-items:center">
           <div id="own-donut" class="own-donut-canvas"></div>
@@ -714,9 +716,9 @@ function renderOverviewPanel(ov) {
 
   const corpHtml = ov.ownership?.corporate_structure?.length ? `
     <div class="ov-section">
-      <div class="ov-title">🏗️ โครงสร้างกลุ่มบริษัทและบริษัทร่วม</div>
+      <div class="ov-title">${t('ov.corp_structure')}</div>
       <div class="org-wrap" id="org-chart-wrap">
-        <div class="gantt-loading">กำลังสร้างแผนผัง...</div>
+        <div class="gantt-loading">${t('loading.chart')}</div>
       </div>
     </div>` : '';
 
@@ -844,13 +846,13 @@ async function renderOrgChart(corpStructure) {
     const { svg } = await mermaid.render('org-' + Date.now(), syntax);
     wrap.innerHTML = svg;
   } catch(e) {
-    wrap.innerHTML = '<div class="gantt-loading">ไม่สามารถแสดงแผนผังได้</div>';
+    wrap.innerHTML = `<div class="gantt-loading">${t('error.chart')}</div>`;
   }
 }
 
 /* ── NOTES PANEL ── */
 function renderNotesPanel(notes) {
-  if (!notes.length) return '<div class="empty">ยังไม่มีบันทึก — เพิ่มใน notes array ของ data.json</div>';
+  if (!notes.length) return `<div class="empty">${t('empty.notes')}</div>`;
   const allTags  = collectTags(notes, 'tags');
   const filterBar = tagFilterBar(allTags, activeNoteTag, 'setNoteTag', 'clearNoteTag');
   const cards = notes.slice().reverse().map((n, i) => {
@@ -865,13 +867,13 @@ function renderNotesPanel(notes) {
       ${n.rating ? `<div class="note-rating">${'★'.repeat(n.rating)}${'☆'.repeat(5-n.rating)} Conviction</div>` : ''}
     </div>`;
   }).join('');
-  const emptyMsg = activeNoteTag ? `<div class="tag-filter-empty">ไม่มี Note ที่มี tag #${activeNoteTag}</div>` : '';
+  const emptyMsg = activeNoteTag ? `<div class="tag-filter-empty">${t('empty.notes_tag')}${activeNoteTag}</div>` : '';
   return filterBar + cards + emptyMsg;
 }
 
 /* ── QUOTES PANEL ── */
 function renderQuotesPanel(quotes) {
-  if (!quotes.length) return '<div class="empty">ยังไม่มี quotes — เพิ่มใน quotes array ของ data.json</div>';
+  if (!quotes.length) return `<div class="empty">${t('empty.quotes')}</div>`;
   const allTags   = collectTags(quotes, 'tag');
   const filterBar = tagFilterBar(allTags, activeQuoteTag, 'setQuoteTag', 'clearQuoteTag');
   const cards = quotes.slice().reverse().map((q, i) => {
@@ -883,11 +885,11 @@ function renderQuotesPanel(quotes) {
         <span class="quote-date">${formatDate(q.date)}</span>
       </div>
       <div class="quote-text">${q.quote}</div>
-      ${q.quote_th ? `<div class="quote-th"><div class="quote-th-label">🇹🇭 คำแปลภาษาไทย</div>${q.quote_th}</div>` : ''}
+      ${q.quote_th ? `<div class="quote-th"><div class="quote-th-label">${t('quote.th_label')}</div>${q.quote_th}</div>` : ''}
       ${q.tag ? `<button class="quote-tag-link ${activeQuoteTag===q.tag?'active':''}" onclick="setQuoteTag('${q.tag}')">#${q.tag}</button>` : ''}
     </div>`;
   }).join('');
-  const emptyMsg = activeQuoteTag ? `<div class="tag-filter-empty">ไม่มี Quote ที่มี tag #${activeQuoteTag}</div>` : '';
+  const emptyMsg = activeQuoteTag ? `<div class="tag-filter-empty">${t('empty.quotes_tag')}${activeQuoteTag}</div>` : '';
   return filterBar + cards + emptyMsg;
 }
 
@@ -900,22 +902,22 @@ window.clearQuoteTag=function()    { activeQuoteTag = null; document.getElementB
 function renderRoadmapPanel(roadmap, rmStats) {
   return `
     <div class="roadmap-summary">
-      <div class="rm-sum-card stagger" style="--i:0"><div class="rm-sum-num" style="color:var(--green)">${rmStats.delivered}</div><div class="rm-sum-label">สำเร็จ ✅</div></div>
-      <div class="rm-sum-card stagger" style="--i:1"><div class="rm-sum-num" style="color:var(--yellow)">${rmStats.pending}</div><div class="rm-sum-label">รอดำเนินการ ⏳</div></div>
-      <div class="rm-sum-card stagger" style="--i:2"><div class="rm-sum-num" style="color:var(--red)">${rmStats.missed}</div><div class="rm-sum-label">พลาด ❌</div></div>
-      <div class="rm-sum-card stagger" style="--i:3"><div class="rm-sum-num" style="color:var(--purple)">${rmStats.partial}</div><div class="rm-sum-label">บางส่วน ⚠️</div></div>
+      <div class="rm-sum-card stagger" style="--i:0"><div class="rm-sum-num" style="color:var(--green)">${rmStats.delivered}</div><div class="rm-sum-label">${t('rm.summary.delivered')}</div></div>
+      <div class="rm-sum-card stagger" style="--i:1"><div class="rm-sum-num" style="color:var(--yellow)">${rmStats.pending}</div><div class="rm-sum-label">${t('rm.summary.pending')}</div></div>
+      <div class="rm-sum-card stagger" style="--i:2"><div class="rm-sum-num" style="color:var(--red)">${rmStats.missed}</div><div class="rm-sum-label">${t('rm.summary.missed')}</div></div>
+      <div class="rm-sum-card stagger" style="--i:3"><div class="rm-sum-num" style="color:var(--purple)">${rmStats.partial}</div><div class="rm-sum-label">${t('rm.summary.partial')}</div></div>
     </div>
     <div class="gantt-section">
-      <div class="gantt-title">📅 แผนผัง Timeline</div>
-      <div class="gantt-body" id="gantt-container"><div class="gantt-loading">กำลังสร้าง timeline...</div></div>
+      <div class="gantt-title">${t('rm.timeline_chart')}</div>
+      <div class="gantt-body" id="gantt-container"><div class="gantt-loading">${t('loading.timeline')}</div></div>
     </div>
     <div class="roadmap-filters">
-      <button class="rm-filter active" onclick="filterRoadmap('all',this)">ทั้งหมด</button>
-      <button class="rm-filter" onclick="filterRoadmap('delivered',this)">✅ สำเร็จ</button>
-      <button class="rm-filter" onclick="filterRoadmap('pending',this)">⏳ รอดำเนินการ</button>
-      <button class="rm-filter" onclick="filterRoadmap('missed',this)">❌ พลาด</button>
-      <button class="rm-filter" onclick="filterRoadmap('partial',this)">⚠️ บางส่วน</button>
-      <button class="rm-filter" onclick="filterRoadmap('monitoring',this)">👀 ติดตาม</button>
+      <button class="rm-filter active" onclick="filterRoadmap('all',this)">${t('filter.all')}</button>
+      <button class="rm-filter" onclick="filterRoadmap('delivered',this)">${t('status.delivered')}</button>
+      <button class="rm-filter" onclick="filterRoadmap('pending',this)">${t('status.pending')}</button>
+      <button class="rm-filter" onclick="filterRoadmap('missed',this)">${t('status.missed')}</button>
+      <button class="rm-filter" onclick="filterRoadmap('partial',this)">${t('status.partial')}</button>
+      <button class="rm-filter" onclick="filterRoadmap('monitoring',this)">${t('status.monitoring')}</button>
     </div>
     <div id="roadmap-list">${renderRoadmapItems(roadmap)}</div>`;
 }
@@ -924,7 +926,7 @@ function rmText(r) { return r.commitment || r.milestone || r.item || r.text || '
 
 function renderRoadmapItems(items) {
   const filtered = rmFilter==='all' ? items : items.filter(r=>r.status===rmFilter);
-  if (!filtered.length) return '<div class="empty">ไม่มีรายการ</div>';
+  if (!filtered.length) return `<div class="empty">${t('empty.items')}</div>`;
   return [...filtered].sort((a,b)=>{
     const da = a.date_said ? new Date(a.date_said) : new Date(0);
     const db = b.date_said ? new Date(b.date_said) : new Date(0);
@@ -934,10 +936,10 @@ function renderRoadmapItems(items) {
       <div class="rm-status-dot status-${r.status}"></div>
       <div>
         <div class="rm-commitment">${rmText(r)}</div>
-        <div class="rm-source">${r.date_said ? `📅 พูดเมื่อ ${formatDate(r.date_said)} · ` : ''}${r.source||''}</div>
-        ${r.follow_up ? `<div class="rm-followup"><div class="rm-followup-label">ผลลัพธ์ (${formatDate(r.follow_up_date)})</div>${r.follow_up}</div>` : ''}
+        <div class="rm-source">${r.date_said ? `${t('rm.said_on')} ${formatDate(r.date_said)} · ` : ''}${r.source||''}</div>
+        ${r.follow_up ? `<div class="rm-followup"><div class="rm-followup-label">${t('rm.outcome')} (${formatDate(r.follow_up_date)})</div>${r.follow_up}</div>` : ''}
       </div>
-      <span class="rm-badge badge-${r.status}">${STATUS_LABELS[r.status]||r.status}</span>
+      <span class="rm-badge badge-${r.status}">${getStatusLabel(r.status)}</span>
     </div>`).join('');
 }
 
@@ -987,47 +989,47 @@ async function renderGanttChart(roadmap) {
   const container = document.getElementById('gantt-container');
   if (!container) return;
   const syntax = buildGanttSyntax(roadmap);
-  if (!syntax) { container.innerHTML = '<div class="gantt-loading">ไม่มีข้อมูล roadmap</div>'; return; }
+  if (!syntax) { container.innerHTML = `<div class="gantt-loading">${t('empty.roadmap')}</div>`; return; }
   const theme = document.documentElement.getAttribute('data-theme') === 'light' ? 'default' : 'dark';
   mermaid.initialize({ startOnLoad:false, theme, securityLevel:'loose' });
   try {
     const { svg } = await mermaid.render('gantt-'+Date.now(), syntax);
     container.innerHTML = svg;
   } catch(e) {
-    container.innerHTML = '<div class="gantt-loading">ไม่สามารถแสดง timeline ได้</div>';
+    container.innerHTML = `<div class="gantt-loading">${t('error.timeline')}</div>`;
   }
 }
 
 /* ── FINANCIALS ── */
 function renderFinancials(fin) {
-  if (!fin || !fin.metrics || !fin.metrics.length) return '<div class="empty">ยังไม่มีข้อมูลทางการเงิน — เพิ่มใน financials ของ data.json</div>';
+  if (!fin || !fin.metrics || !fin.metrics.length) return `<div class="empty">${t('empty.financials')}</div>`;
   const years    = fin.years    || [];
   const currency = fin.currency || 'USD';
   const unit     = fin.unit     || 'Million';
   const linksHtml  = renderFinLinks(fin.links || []);
   const tvFundHtml = companyData?.tradingview_symbol ? `
     <div class="fin-section">
-      <div class="fin-title">📊 ข้อมูลพื้นฐาน — TradingView Financials</div>
+      <div class="fin-title">${t('fin.tv_fundamentals')}</div>
       <div class="tv-fund-wrap" id="tv-fundamentals-outer"></div>
     </div>` : '';
   const sankeyHtml = fin.breakdown?.sankey ? `
     <div class="fin-section">
-      <div class="fin-title">🌊 Revenue Breakdown — Sankey Diagram (${fin.breakdown.sankey.year||''})</div>
+      <div class="fin-title">${t('fin.sankey')} (${fin.breakdown.sankey.year||''})</div>
       <div class="sankey-container" id="sankey-chart"></div>
     </div>` : '';
   return `${linksHtml}${tvFundHtml}${sankeyHtml}
     <div class="fin-section">
-      <div class="fin-title">📈 แนวโน้ม Revenue</div>
+      <div class="fin-title">${t('fin.revenue_trend')}</div>
       <div class="chart-container">
         <div class="fin-metric-bar" id="fin-metric-bar"></div>
         <div id="fin-chart"></div>
       </div>
     </div>
     <div class="fin-section">
-      <div class="fin-title">📋 ตารางข้อมูลทางการเงิน (${currency}, ${unit})</div>
+      <div class="fin-title">${t('fin.table_title')} (${currency}, ${unit})</div>
       <div style="overflow-x:auto">
         <table class="fin-table">
-          <thead><tr><th>รายการ</th>${years.map(y=>`<th>${y}</th>`).join('')}</tr></thead>
+          <thead><tr><th>${t('fin.table_metric')}</th>${years.map(y=>`<th>${y}</th>`).join('')}</tr></thead>
           <tbody>${fin.metrics.map(m=>`<tr><td>${m.name}</td>${m.values.map((v,i)=>{
             if (v == null) return `<td style="color:var(--text-muted);font-size:11px">—</td>`;
             const prev=m.values[i-1];
@@ -1038,7 +1040,7 @@ function renderFinancials(fin) {
         </table>
       </div>
     </div>
-    ${fin.notes ? `<div class="fin-section"><div class="fin-title">📝 หมายเหตุ</div><div style="color:var(--text-muted);font-size:13px;line-height:1.6">${fin.notes}</div></div>` : ''}`;
+    ${fin.notes ? `<div class="fin-section"><div class="fin-title">${t('fin.notes')}</div><div style="color:var(--text-muted);font-size:13px;line-height:1.6">${fin.notes}</div></div>` : ''}`;
 }
 
 function renderFinLinks(links) {
@@ -1051,7 +1053,7 @@ function renderFinLinks(links) {
       <div class="fin-link-info"><div class="fin-link-title">${lk.title}</div><div class="fin-link-type">${label}</div></div>
       <span class="fin-link-arrow">↗</span></a>`;
   }).join('');
-  return `<div class="fin-section"><div class="fin-title">🔗 เอกสารทางการ</div><div class="fin-links-grid">${cards}</div></div>`;
+  return `<div class="fin-section"><div class="fin-title">${t('fin.docs')}</div><div class="fin-links-grid">${cards}</div></div>`;
 }
 
 /* ── SANKEY (Plotly) ── */
@@ -1297,6 +1299,15 @@ window.switchTab = function(tab) {
 };
 
 loadCompany();
+
+/* ── i18n re-render hook ── */
+window.rerenderPage = function() {
+  /* Update static nav elements that don't go through render() */
+  const navBack = document.getElementById('nav-back');
+  if (navBack) navBack.textContent = t('nav.back');
+  /* Re-render all dynamic content */
+  if (companyData) render();
+};
 </script>
 </body>
 </html>

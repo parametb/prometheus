@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <script src="i18n.js"></script>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -184,11 +185,12 @@
   </div>
   <div class="nav-right">
     <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn" title="Toggle theme">🌙</button>
+    <button class="theme-toggle" onclick="setLang(window.currentLang==='th'?'en':'th')" title="Switch language" id="lang-btn">🇹🇭</button>
   </div>
 </nav>
 
 <main id="main">
-  <div class="loading">กำลังโหลดข้อมูล...</div>
+  <div class="loading" id="main-loading">กำลังโหลดข้อมูล...</div>
 </main>
 
 <script>
@@ -293,15 +295,15 @@
   /* ── SNAPSHOT ── */
   function renderSnapshot(ov) {
     const items = [
-      ov.founded        && { icon:'📅', label:'FOUNDED',        value: ov.founded },
-      ov.headquarters   && { icon:'📍', label:'HEADQUARTERS',   value: ov.headquarters },
-      ov.employees      && { icon:'👥', label:'EMPLOYEES',      value: ov.employees },
-      ov.fiscal_year_end&& { icon:'📆', label:'FISCAL YEAR END',value: ov.fiscal_year_end },
+      ov.founded        && { icon:'📅', label:t('snap2.founded'),        value: ov.founded },
+      ov.headquarters   && { icon:'📍', label:t('snap2.hq'),             value: ov.headquarters },
+      ov.employees      && { icon:'👥', label:t('snap2.employees'),      value: ov.employees },
+      ov.fiscal_year_end&& { icon:'📆', label:t('snap2.fiscal_year_end'),value: ov.fiscal_year_end },
     ].filter(Boolean);
     if (!items.length) return '';
     return `
       <div class="section stagger" style="--i:1">
-        <div class="section-title">🏢 Company Snapshot</div>
+        <div class="section-title">${t('ov2.snapshot')}</div>
         <div class="snapshot-grid">
           ${items.map((x,i) => `
             <div class="snapshot-card stagger" style="--i:${2+i}">
@@ -318,7 +320,7 @@
     if (!ov.business_model_summary && !ov.moat_factors?.length && !ov.competitive_position) return '';
     return `
       <div class="section stagger" style="--i:3">
-        <div class="section-title">⚙️ Business Model & Moat</div>
+        <div class="section-title">${t('ov2.biz_model')}</div>
         ${ov.business_model_summary ? `<p class="biz-text">${ov.business_model_summary}</p>` : ''}
         ${ov.competitive_position   ? `<p class="biz-text" style="margin-top:-6px">${ov.competitive_position}</p>` : ''}
         ${ov.moat_factors?.length ? `
@@ -363,7 +365,7 @@
 
     return `
       <div class="section stagger" style="--i:4">
-        <div class="section-title">📦 Revenue by Segment <span class="section-count">${segs.length} segments</span></div>
+        <div class="section-title">${t('ov2.segments')} <span class="section-count">${segs.length} ${t('seg.segments_count')}</span></div>
         <div class="seg-layout">
           <div id="seg-bars">${segHtml}</div>
           <div class="donut-wrap">
@@ -384,7 +386,7 @@
     const maxPct = Math.max(...geos.map(g => g.revenue_pct || 0));
     return `
       <div class="section stagger" style="--i:5">
-        <div class="section-title">🌍 Revenue by Geography</div>
+        <div class="section-title">${t('ov2.geography')}</div>
         ${geos.map(g => `
           <div class="geo-item">
             <span class="geo-name">${g.region}</span>
@@ -402,7 +404,7 @@
     const types  = [...new Set(events.map(e => e.type))].filter(Boolean);
     const filtersHtml = `
       <div class="tl-filters">
-        <button class="tl-filter active" onclick="filterTl(this,'all')">ทั้งหมด</button>
+        <button class="tl-filter active" onclick="filterTl(this,'all')">${t('filter.all')}</button>
         ${types.map(t => {
           const m = TL_TYPE_META[t] || {};
           return `<button class="tl-filter" onclick="filterTl(this,'${t}')">${m.label || t}</button>`;
@@ -426,7 +428,7 @@
     }).join('');
     return `
       <div class="section stagger" style="--i:6">
-        <div class="section-title">📅 Company Timeline <span class="section-count">${events.length} events</span></div>
+        <div class="section-title">${t('ov2.timeline')} <span class="section-count">${events.length}</span></div>
         ${filtersHtml}
         <div class="tl-wrap">
           <div class="tl-spine"></div>
@@ -447,13 +449,13 @@
   function renderManagement(ov) {
     return `
       <div class="section stagger" style="--i:7">
-        <div class="section-title">👤 Management Team <span class="section-count">${ov.management.length}</span></div>
+        <div class="section-title">${t('ov2.management')} <span class="section-count">${ov.management.length}</span></div>
         <div class="mgmt-grid">
           ${ov.management.map((m,i) => `
             <div class="mgmt-card stagger" style="--i:${i}">
               <div class="mgmt-name">${m.name}</div>
               <div class="mgmt-title">${m.title}</div>
-              ${m.since ? `<div class="mgmt-since">Since ${m.since}</div>` : ''}
+              ${m.since ? `<div class="mgmt-since">${t('mgmt.since2')} ${m.since}</div>` : ''}
               ${m.background ? `<div class="mgmt-bg">${m.background}</div>` : ''}
             </div>`).join('')}
         </div>
@@ -464,16 +466,16 @@
   function renderThesis(ov) {
     return `
       <div class="section stagger" style="--i:8">
-        <div class="section-title">⚖️ Investment Thesis</div>
+        <div class="section-title">${t('ov2.thesis')}</div>
         <div class="thesis-grid">
           ${ov.bull_case ? `
             <div class="thesis-card bull-card">
-              <div class="thesis-lbl" style="color:var(--green)">🐂 BULL CASE</div>
+              <div class="thesis-lbl" style="color:var(--green)">${t('thesis2.bull')}</div>
               <div class="thesis-txt">${ov.bull_case}</div>
             </div>` : ''}
           ${ov.bear_case ? `
             <div class="thesis-card bear-card">
-              <div class="thesis-lbl" style="color:var(--red)">🐻 BEAR CASE</div>
+              <div class="thesis-lbl" style="color:var(--red)">${t('thesis2.bear')}</div>
               <div class="thesis-txt">${ov.bear_case}</div>
             </div>` : ''}
         </div>
@@ -486,7 +488,7 @@
     const sorted   = [...ov.key_risks].sort((a,b) => (sevOrder[a.severity]??9) - (sevOrder[b.severity]??9));
     return `
       <div class="section stagger" style="--i:9">
-        <div class="section-title">⚠️ Key Risks <span class="section-count">${sorted.length}</span></div>
+        <div class="section-title">${t('ov2.risks')} <span class="section-count">${sorted.length}</span></div>
         ${sorted.map(r => `
           <div class="risk-item" onclick="this.classList.toggle('open')">
             <div class="risk-row">
@@ -496,7 +498,7 @@
             </div>
             <div class="risk-body">
               ${r.description ? `<div class="risk-desc">${r.description}</div>` : ''}
-              ${r.mitigation  ? `<div class="risk-mitigation"><div class="risk-mit-label">MITIGATION</div>${r.mitigation}</div>` : ''}
+              ${r.mitigation  ? `<div class="risk-mitigation"><div class="risk-mit-label">${t('risk.mitigation2')}</div>${r.mitigation}</div>` : ''}
             </div>
           </div>`).join('')}
       </div>`;
@@ -541,6 +543,11 @@
   }
 
   load();
+
+  /* ── i18n re-render hook ── */
+  window.rerenderPage = function() {
+    if (companyData) render();
+  };
 </script>
 </body>
 </html>
