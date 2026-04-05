@@ -426,7 +426,7 @@ function enrichSegments(segs) {
       for (let i = rm.values.length - 1; i >= 0; i--) {
         if (rm.values[i] != null) {
           // EDGAR stores in Millions → convert to Billions
-          totalRevB = Math.round(rm.values[i] / 100) / 10;
+          const divisor = (fin.unit === 'Billion') ? 1 : 1000; totalRevB = Math.round(rm.values[i] / divisor * 10) / 10;
           break;
         }
       }
