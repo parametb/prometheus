@@ -4,169 +4,219 @@
   "name_th": "เทสลา",
   "sector": "Consumer",
   "exchange": "NASDAQ",
-  "last_updated": "2026-04-03",
+  "tradingview_symbol": "NASDAQ:TSLA",
+  "last_updated": "2026-04-05",
   "description": "Tesla designs, develops, manufactures, and sells electric vehicles, energy storage systems, and solar products. Founded in 2003 and headquartered in Austin, Texas, it operates factories globally including Gigafactories in Nevada, Texas, Shanghai, and Berlin.",
+  "ceo": "Elon Musk",
+  "employees": 125665,
+  "management_tone": "bullish",
+
   "notes": [
     {
-      "title": "10-K Analysis",
-      "tags": [
-        "10-k",
-        "tsla"
-      ],
+      "date": "2026-01-28",
+      "title": "FY2025 10-K Analysis",
+      "tags": ["10-k", "fy2025", "annual-report", "tsla"],
       "rating": 3,
       "content": "[Financial Performance]\nTesla is pivoting from a pure automotive play to an AI and energy ecosystem, with financial themes centered on service revenue growth via Robotaxi and FSD subscriptions. Energy storage is becoming a significant contributor, driven by Megapack demand from AI infrastructure. While regulatory credits face headwinds from the OBBBA, vertical integration and cost optimization efforts aim to sustain margins. The narrative is one of transformation, leveraging core EV manufacturing to fund ambitious AI and autonomy bets that could redefine long-term profitability.\n\n[Performance Drivers]\nGrowth was driven by expansion into AI-driven services like Robotaxi (launched June 2025) and FSD subscriptions, which aim to shift toward a service-based model. Energy storage (Megapack) benefited from AI infrastructure demand, while vehicle volume grew with Cybertruck and Semi production ramps. Pricing strategies evolved with in-app upgrades and subscription offerings.\n\n[Strategic Priorities]\n• AI and autonomy — scaling Robotaxi service and FSD to transition to software/service profits\n• Vertical integration — expanding in-house capabilities like lithium refining and semiconductor manufacturing with Samsung\n• Product diversification — ramping Cybertruck, Semi, Bots (Optimus), and new solar panels\n• Infrastructure expansion — building Cortex 2 AI training cluster and six new production lines in 2026\n• Cost optimization — leveraging manufacturing efficiencies and localizing supply chains to reduce costs\n\n[Competitive Position]\nTesla's moat lies in its vertically integrated AI/software stack, proprietary battery tech, and Supercharger network (now open to non-Tesla vehicles). Differentiation comes from real-world AI applications like FSD and Optimus robots. Competitive threats include regulatory changes (OBBBA curtailing EV credits) and traditional automakers adopting NACS. Market share is expanding into new segments like pickup trucks and energy storage.\n\n[Management Quality]\nExecution score: HIGH\nManagement delivered on prior-year promises by launching Robotaxi in 2025, expanding AI training capacity with Cortex, and beginning lithium refinery operations in January 2026. They also advanced vertical integration and new product ramps as planned.\n\n[Outlook]\nManagement signals strong growth in AI-driven services and energy storage, with plans to ramp six new production lines in 2026 and expand Robotaxi with Cybercab. They emphasize leveraging AI infrastructure demand and vertical integration to offset regulatory headwinds.\n\n[Key Risks]\nTesla faces significant operational and technological risks centered around supply chain vulnerabilities, autonomous technology development, and manufacturing execution. The company's aggressive growth strategy across multiple product lines (vehicles, energy storage, AI robots) creates complex execution challenges. While Tesla mitigates risks through vertical integration, AI development, and software security measures, its forward-looking business model remains exposed to competitive, regulatory, and economic uncertainties.\n\n[Management Tone]\nBullish"
     },
     {
-      "title": "Evolution Analysis: 2024 vs 2025",
-      "tags": [
-        "narrative-evolution",
-        "accounting-watch",
-        "multi-year",
-        "tsla"
-      ],
+      "date": "2026-01-28",
+      "title": "Evolution Analysis: FY2024 vs FY2025 10-K",
+      "tags": ["narrative-evolution", "accounting-watch", "multi-year", "tsla"],
       "rating": null,
-      "content": "[Management Narrative Drift (2024 → 2025)]\nTesla's narrative shifted significantly from electric vehicle and energy company to an AI-first company. The 2025 filing emphasizes artificial intelligence as the core business focus, with launched Robotaxi service, AI robots (Optimus), and expanded AI infrastructure (Cortex clusters, Samsung collaboration). The mission statement changed from accelerating sustainable energy transition to building 'a world of amazing abundance,' reflecting broader ambitions beyond transportation and energy. Management maintains bullish tone while expanding into new business models (subscriptions, Robotaxi, energy financing) and physical infrastructure (Tesla Diner, Supercharger for Business).\nTone: bullish→bullish\nDisappeared topics: Purpose-built Robotaxi product - Cybercab (mentioned as future in 2024), Mobile Service technicians, Insurance services revenue (now called automotive insurance business revenue), Separate discussion of solar energy systems vs energy generation systems, Specific mention of 'FSD (Supervised) subscriptions' as future potential (now implemented)\nNew topics: Artificial intelligence (AI) as core focus, Robotaxi service launched in June 2025, AI robots (Bots) including Optimus as commercial development, New residential retrofit solar panel manufacturing in 2025, Cortex 2 AI training cluster, Samsung semiconductor collaboration, Six new production lines in 2026, Tesla Diner with Supercharging, Supercharger for Business program, Mission changed to 'building a world of amazing abundance'\n\n[Business & Reporting Evolution]\nTesla's business model evolved from electric vehicle and energy company to an AI-driven technology platform. The 2025 filing shows launch of Robotaxi service, increased focus on AI infrastructure and robotics, and strategic pivot toward service/software revenue streams. While maintaining core automotive and energy segments, the company now emphasizes AI applications across all operations with new revenue opportunities from autonomous services and energy software platforms.\nNew KPIs introduced: AI training compute capacity (Cortex expansion), Robotaxi service metrics, Bots production lines, Energy storage software platform metrics (Powerhub, Autobidder)\nKPIs quietly dropped: —\n\n[Accounting Watch]\nTesla made several accounting policy refinements in 2025, primarily around revenue recognition for subscriptions and financing arrangements, and enhanced stock-based compensation methodologies. While most changes appear to reflect business evolution, some (like warranty period reduction and shipping policy changes) could optically improve reported metrics without genuine operational improvement. Overall reporting quality shows increased complexity but potential comparability issues between periods.\n\n[Risk Evolution — ?]\nTesla's risk profile has expanded significantly with the company's strategic shift toward AI, robotics, and autonomous services. The 2025 filing introduces multiple new risks related to AI infrastructure development, Robotaxi operations, and robotics commercialization while escalating existing technology risks. Although some manufacturing timelines have been de-escalated through achievement, the overall risk trajectory is deteriorating due to increased complexity, new dependencies, and expansion into unproven markets beyond core automotive and energy businesses.\nNew risks: AI Infrastructure and Compute Capacity Risks, Robotaxi Service Launch and Autonomous Operations, Bot Development and Commercialization, Semiconductor Manufacturing Collaboration\nRemoved risks: Traditional Advertising and Marketing Strategy, Specific Solar Component Sourcing\n\n[Red Flags & Optical Improvements]\n⚠️ Reduced emphasis on specific future product timelines (Cybercab timeline less specific)\n⚠️ Less detailed discussion of service infrastructure (Mobile Service)\n⚠️ Shift from 'accelerate world's transition to sustainable energy' mission to broader 'amazing abundance' mission\n⚠️ Shipping/handling policy change increases both revenue and costs equally, potentially making revenue growth appear stronger without improving profitability\n⚠️ Warranty period reduction from 10-25 years to 1-25 years may reduce warranty reserves and improve current period earnings without operational improvement\n⚠️ Subscription revenue recognition policy could allow more aggressive revenue timing for post-delivery services"
+      "content": "[Management Narrative Drift (2024 → 2025)]\nTesla's narrative shifted significantly from electric vehicle and energy company to an AI-first company. The 2025 filing emphasizes artificial intelligence as the core business focus, with launched Robotaxi service, AI robots (Optimus), and expanded AI infrastructure (Cortex clusters, Samsung collaboration). The mission statement changed from accelerating sustainable energy transition to building 'a world of amazing abundance,' reflecting broader ambitions beyond transportation and energy. Management maintains bullish tone while expanding into new business models (subscriptions, Robotaxi, energy financing) and physical infrastructure (Tesla Diner, Supercharger for Business).\nTone: bullish→bullish\nDisappeared topics: Purpose-built Robotaxi product - Cybercab (mentioned as future in 2024), Mobile Service technicians, Insurance services revenue (now called automotive insurance business revenue), Separate discussion of solar energy systems vs energy generation systems, Specific mention of 'FSD (Supervised) subscriptions' as future potential (now implemented)\nNew topics: Artificial intelligence (AI) as core focus, Robotaxi service launched in June 2025, AI robots (Bots) including Optimus as commercial development, New residential retrofit solar panel manufacturing in 2025, Cortex 2 AI training cluster, Samsung semiconductor collaboration, Six new production lines in 2026, Tesla Diner with Supercharging, Supercharger for Business program, Mission changed to 'building a world of amazing abundance'\n\n[Business & Reporting Evolution]\nTesla's business model evolved from electric vehicle and energy company to an AI-driven technology platform. The 2025 filing shows launch of Robotaxi service, increased focus on AI infrastructure and robotics, and strategic pivot toward service/software revenue streams. While maintaining core automotive and energy segments, the company now emphasizes AI applications across all operations with new revenue opportunities from autonomous services and energy software platforms.\nNew KPIs introduced: AI training compute capacity (Cortex expansion), Robotaxi service metrics, Bots production lines, Energy storage software platform metrics (Powerhub, Autobidder)\nKPIs quietly dropped: —\n\n[Accounting Watch]\nTesla made several accounting policy refinements in 2025, primarily around revenue recognition for subscriptions and financing arrangements, and enhanced stock-based compensation methodologies. While most changes appear to reflect business evolution, some (like warranty period reduction and shipping policy changes) could optically improve reported metrics without genuine operational improvement. Overall reporting quality shows increased complexity but potential comparability issues between periods.\n\n[Risk Evolution]\nTesla's risk profile has expanded significantly with the company's strategic shift toward AI, robotics, and autonomous services. The 2025 filing introduces multiple new risks related to AI infrastructure development, Robotaxi operations, and robotics commercialization while escalating existing technology risks. Although some manufacturing timelines have been de-escalated through achievement, the overall risk trajectory is deteriorating due to increased complexity, new dependencies, and expansion into unproven markets beyond core automotive and energy businesses.\nNew risks: AI Infrastructure and Compute Capacity Risks, Robotaxi Service Launch and Autonomous Operations, Bot Development and Commercialization, Semiconductor Manufacturing Collaboration\nRemoved risks: Traditional Advertising and Marketing Strategy, Specific Solar Component Sourcing\n\n[Red Flags & Optical Improvements]\n⚠️ Reduced emphasis on specific future product timelines (Cybercab timeline less specific)\n⚠️ Less detailed discussion of service infrastructure (Mobile Service)\n⚠️ Shift from 'accelerate world's transition to sustainable energy' mission to broader 'amazing abundance' mission\n⚠️ Shipping/handling policy change increases both revenue and costs equally, potentially making revenue growth appear stronger without improving profitability\n⚠️ Warranty period reduction from 10-25 years to 1-25 years may reduce warranty reserves and improve current period earnings without operational improvement\n⚠️ Subscription revenue recognition policy could allow more aggressive revenue timing for post-delivery services"
     }
   ],
+
   "quotes": [
     {
+      "date": "2026-01-28",
+      "source": "FY2025 10-K",
       "speaker": "Management (Overview)",
       "quote": "We are focused on bringing artificial intelligence ('AI') into the real world, through products and services like Full Self-Driving ('FSD') (Supervised) and Robotaxi, as well as working to develop and commercialize AI robots ('Bots') (including Optimus).",
       "tag": "strategy"
     },
     {
+      "date": "2026-01-28",
+      "source": "FY2025 10-K",
       "speaker": "Management (Overview)",
       "quote": "We intend to leverage our current operations, in which we design, develop, manufacture, sell and lease high-performance fully electric vehicles and energy generation and storage systems that increasingly deliver AI-related and enhanced software and services to our customers, to achieve that objective.",
       "tag": "strategy"
     },
     {
+      "date": "2026-01-28",
+      "source": "FY2025 10-K",
       "speaker": "Management (Automotive)",
       "quote": "In June 2025, we launched our Robotaxi service, an autonomous ride-hailing platform that harnesses our technology and vehicles. We expect this service will open access to an expanded customer base as modes of transportation evolve, and, along with products such as FSD (Supervised) subscriptions, unlock the potential to advance a service-driven business model based on AI, software and fleet-based profits.",
       "tag": "growth"
     },
     {
+      "date": "2026-01-28",
+      "source": "FY2025 10-K",
       "speaker": "Management (Infrastructure)",
       "quote": "In 2026, we will be ramping six new production lines across vehicle, Bots, energy storage and battery manufacturing, while further leveraging our existing factory, charging and service center footprints to support future growth.",
       "tag": "growth"
     },
     {
+      "date": "2026-01-28",
+      "source": "FY2025 10-K",
       "speaker": "Management (Energy Generation and Storage)",
       "quote": "As AI infrastructure drives rapid load growth, Megapack helps to, among other things, increase utilization of existing generation and transmission capacity, resulting in a more efficient use of the electric grid.",
       "tag": "technology"
     },
     {
+      "date": "2026-01-28",
+      "source": "FY2025 10-K",
       "speaker": "Management (Technology)",
       "quote": "Every Tesla vehicle delivered today is designed for autonomy, and we believe our capabilities and advancements in AI differentiate us from our competitors.",
       "tag": "technology"
     },
     {
+      "date": "2026-01-28",
+      "source": "FY2025 10-K",
       "speaker": "Management (Sales and Marketing)",
       "quote": "We continue to monitor and increase our network of Tesla Superchargers in anticipation of future demand, including with respect to our Robotaxi services.",
       "tag": "strategy"
     },
     {
+      "date": "2026-01-28",
+      "source": "FY2025 10-K",
       "speaker": "Management (Insurance)",
       "quote": "Our insurance products are currently available in 13 states and we plan to expand the markets in which we offer insurance products, as part of our ongoing effort to decrease the total cost of ownership for our customers.",
       "tag": "growth"
     },
     {
+      "date": "2026-01-28",
+      "source": "FY2025 10-K",
       "speaker": "Management (Manufacturing)",
       "quote": "Generally, we continue to expand production capacity at our existing facilities, and strive to increase cost-competitiveness in our significant markets by strategically adding local manufacturing, including through partnerships with suppliers.",
       "tag": "strategy"
     }
   ],
+
   "roadmap": [
     {
-      "date_said": "2025-06-01",
-      "source": "10-K",
-      "status": "pending",
-      "commitment": "Launch Robotaxi service, an autonomous ride-hailing platform"
+      "date_said": "2026-01-28",
+      "source": "FY2025 10-K",
+      "status": "delivered",
+      "commitment": "Launch Robotaxi service, an autonomous ride-hailing platform",
+      "follow_up": "Launched in Austin, Texas in June 2025",
+      "follow_up_date": "2025-06-01"
     },
     {
-      "date_said": null,
-      "source": "10-K",
+      "date_said": "2026-01-28",
+      "source": "FY2025 10-K",
       "status": "pending",
-      "commitment": "Include Cybercab, purpose-built autonomous vehicle, in Robotaxi business over time"
+      "commitment": "Include Cybercab, purpose-built autonomous vehicle, in Robotaxi business over time",
+      "follow_up": "",
+      "follow_up_date": ""
     },
     {
-      "date_said": "2025-01-01",
-      "source": "10-K",
-      "status": "pending",
-      "commitment": "Launch new residential retrofit solar panel"
+      "date_said": "2026-01-28",
+      "source": "FY2025 10-K",
+      "status": "delivered",
+      "commitment": "Launch new residential retrofit solar panel manufacturing",
+      "follow_up": "New residential retrofit solar panels launched in 2025",
+      "follow_up_date": "2025-01-01"
     },
     {
-      "date_said": "2026-01-01",
-      "source": "10-K",
+      "date_said": "2026-01-28",
+      "source": "FY2025 10-K",
       "status": "pending",
-      "commitment": "Begin initial customer deliveries of new residential retrofit solar panel"
+      "commitment": "Begin initial customer deliveries of new residential retrofit solar panel",
+      "follow_up": "",
+      "follow_up_date": ""
     },
     {
-      "date_said": "2025-01-01",
-      "source": "10-K",
-      "status": "pending",
-      "commitment": "Further expand Cortex training cluster at Gigafactory Texas"
+      "date_said": "2026-01-28",
+      "source": "FY2025 10-K",
+      "status": "delivered",
+      "commitment": "Further expand Cortex training cluster at Gigafactory Texas",
+      "follow_up": "Cortex expansion completed; Cortex 2 cluster now under development",
+      "follow_up_date": "2025-12-31"
     },
     {
-      "date_said": null,
-      "source": "10-K",
+      "date_said": "2026-01-28",
+      "source": "FY2025 10-K",
       "status": "pending",
-      "commitment": "Build Cortex 2 at Gigafactory Texas to increase AI training compute capacity"
+      "commitment": "Build Cortex 2 at Gigafactory Texas to increase AI training compute capacity",
+      "follow_up": "",
+      "follow_up_date": ""
     },
     {
-      "date_said": "2026-01-01",
-      "source": "10-K",
-      "status": "pending",
-      "commitment": "Ramp six new production lines across vehicle, Bots, energy storage and battery manufacturing"
+      "date_said": "2026-01-28",
+      "source": "FY2025 10-K",
+      "status": "monitoring",
+      "commitment": "Ramp six new production lines across vehicle, Bots, energy storage and battery manufacturing in 2026",
+      "follow_up": "",
+      "follow_up_date": ""
     },
     {
-      "date_said": null,
-      "source": "10-K",
+      "date_said": "2026-01-28",
+      "source": "FY2025 10-K",
       "status": "pending",
-      "commitment": "Expand insurance products to additional markets beyond current 13 states"
+      "commitment": "Expand insurance products to additional markets beyond current 13 states",
+      "follow_up": "",
+      "follow_up_date": ""
     },
     {
-      "date_said": "2025-10-01",
-      "source": "10-K",
-      "status": "pending",
-      "commitment": "Launch new lease product for residential energy systems"
+      "date_said": "2026-01-28",
+      "source": "FY2025 10-K",
+      "status": "delivered",
+      "commitment": "Launch new lease product for residential energy systems",
+      "follow_up": "New residential energy lease product launched October 2025",
+      "follow_up_date": "2025-10-01"
     },
     {
-      "date_said": null,
-      "source": "10-K",
-      "status": "pending",
-      "commitment": "Continue to develop full self-driving technology for improved safety"
+      "date_said": "2026-01-28",
+      "source": "FY2025 10-K",
+      "status": "monitoring",
+      "commitment": "Continue to develop full self-driving technology for improved safety",
+      "follow_up": "",
+      "follow_up_date": ""
     },
     {
-      "date_said": null,
-      "source": "10-K",
-      "status": "pending",
-      "commitment": "Develop and commercialize AI robots (Bots) including Optimus"
+      "date_said": "2026-01-28",
+      "source": "FY2025 10-K",
+      "status": "monitoring",
+      "commitment": "Develop and commercialize AI robots (Bots) including Optimus",
+      "follow_up": "",
+      "follow_up_date": ""
     },
     {
-      "date_said": null,
-      "source": "10-K",
-      "status": "pending",
-      "commitment": "Continue to grow global retail, service and charging footprint"
+      "date_said": "2026-01-28",
+      "source": "FY2025 10-K",
+      "status": "monitoring",
+      "commitment": "Continue to grow global retail, service and charging footprint",
+      "follow_up": "",
+      "follow_up_date": ""
     },
     {
-      "date_said": null,
-      "source": "10-K",
-      "status": "pending",
-      "commitment": "Continue to monitor and increase Supercharger network in anticipation of future demand"
+      "date_said": "2026-01-28",
+      "source": "FY2025 10-K",
+      "status": "monitoring",
+      "commitment": "Continue to monitor and increase Supercharger network in anticipation of future demand",
+      "follow_up": "",
+      "follow_up_date": ""
     },
     {
-      "date_said": null,
-      "source": "10-K",
-      "status": "pending",
-      "commitment": "Continue to expand production capacity at existing manufacturing facilities"
+      "date_said": "2026-01-28",
+      "source": "FY2025 10-K",
+      "status": "monitoring",
+      "commitment": "Continue to expand production capacity at existing manufacturing facilities",
+      "follow_up": "",
+      "follow_up_date": ""
     },
     {
-      "date_said": null,
-      "source": "10-K",
-      "status": "pending",
-      "commitment": "Continue to localize and de-risk supply chains across regions"
+      "date_said": "2026-01-28",
+      "source": "FY2025 10-K",
+      "status": "monitoring",
+      "commitment": "Continue to localize and de-risk supply chains across regions",
+      "follow_up": "",
+      "follow_up_date": ""
     }
   ],
+
   "financials": {
     "currency": "USD",
     "unit": "Billion",
@@ -196,62 +246,250 @@
         "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026003952/tsla-20251231.htm"
       }
     ],
-    "years": [
-      2022,
-      2023,
-      2024,
-      2025
-    ],
+    "years": [2022, 2023, 2024, 2025],
     "metrics": [
       {
         "name": "Revenue",
-        "values": [
-          81.46,
-          96.77,
-          97.69,
-          94.83
-        ]
+        "values": [81.46, 96.77, 97.69, 94.83]
       },
       {
         "name": "Gross Profit",
-        "values": [
-          20.85,
-          17.66,
-          17.45,
-          17.09
-        ]
+        "values": [20.85, 17.66, 17.45, 17.09]
+      },
+      {
+        "name": "Operating Income",
+        "values": [13.66, 8.89, 7.08, 4.36]
       },
       {
         "name": "Net Income",
-        "values": [
-          12.56,
-          15.0,
-          7.09,
-          3.79
-        ]
+        "values": [12.56, 15.0, 7.09, 3.79]
       },
       {
         "name": "EPS (diluted)",
-        "values": [
-          3.62,
-          4.31,
-          2.04,
-          1.08
-        ]
+        "values": [3.62, 4.31, 2.04, 1.08]
       },
       {
         "name": "Free Cash Flow",
-        "values": [
-          7.57,
-          4.36,
-          3.58,
-          6.22
-        ]
+        "values": [7.57, 4.36, 3.58, 6.22]
+      },
+      {
+        "name": "Segment: Automotive",
+        "values": [71.46, 82.42, 77.07, 69.53]
+      },
+      {
+        "name": "Segment: Energy & Storage",
+        "values": [3.91, 6.04, 10.09, 12.77]
+      },
+      {
+        "name": "Segment: Services & Other",
+        "values": [6.09, 8.32, 10.53, 12.53]
+      },
+      {
+        "name": "Geo: United States",
+        "values": [40.55, 45.24, 47.73, 47.63]
+      },
+      {
+        "name": "Geo: China",
+        "values": [18.15, 21.75, 20.94, 20.96]
+      },
+      {
+        "name": "Geo: Other",
+        "values": [22.76, 29.79, 29.02, 26.24]
       }
     ],
-    "notes": "Revenue declined in FY2025 ($94.8B vs $97.7B in FY2024) — first YoY revenue decline. Net Income fell sharply to $3.8B from $7.1B due to price cuts & margin compression. FCF recovered to $6.2B as CapEx dropped from $11.3B to $8.5B. EPS diluted: FY2022 $3.62, FY2023 $4.31, FY2024 $2.04, FY2025 $1.08. Sources: EDGAR XBRL (CIK 0001318605) + BigData tearsheet."
+    "notes": "FY2025: Revenue $94.83B (-2.9% YoY) — first YoY revenue decline. Automotive down to $69.53B (-9.8%) as EV competition intensified; Energy & Storage surged to $12.77B (+26.6%) on AI-driven Megapack demand; Services grew to $12.53B (+19.0%). Operating Income $4.36B (4.6% margin vs 7.2% in FY2024). Net Income fell sharply to $3.79B from $7.09B. FCF recovered to $6.22B as CapEx dropped from $11.3B to $8.5B. Geographic mix stable: US 50%, China 22%, Other 28%. Sources: EDGAR SEC filings (CIK 0001318605) + Bullfincher + StockAnalysis."
   },
-  "ceo": "Elon Musk",
-  "employees": 125665,
-  "management_tone": "bullish"
+
+  "overview": {
+    "founded": "2003",
+    "headquarters": "Austin, Texas, USA",
+    "employees": "125,665",
+    "fiscal_year_end": "December 31",
+    "business_model_summary": "Tesla generates revenue across three segments: Automotive (vehicle sales, leasing, FSD software, insurance, used vehicles), Energy Generation & Storage (Megapack grid batteries, Powerwall home batteries, solar products), and Services & Other (servicing, body shops, Supercharging). The company is pivoting toward an AI-driven services model through Robotaxi (launched June 2025), FSD subscriptions, and Optimus robots, aiming to shift from hardware margins to high-margin software and fleet-based revenues.",
+    "competitive_position": "Tesla holds the #1 position in US EV market share but was surpassed globally by BYD in total EV unit sales in 2024-2025. Its primary moat is the vertically integrated AI/software stack — FSD/Autopilot trained on the largest real-world fleet dataset — combined with the Supercharger network (now opened to competitors). In energy storage, Megapack holds a leading position in utility-scale deployments, benefiting from AI data center demand. The brand remains aspirational but has faced polarization headwinds in 2024-2025.",
+    "moat_factors": [
+      "Largest real-world autonomous driving dataset (FSD fleet data)",
+      "Supercharger network — largest DC fast charging network in North America",
+      "Vertical integration: batteries, chips (Dojo AI computer), software, manufacturing",
+      "Direct-to-consumer sales model (no dealer markup)",
+      "Gigafactory scale and manufacturing cost advantages",
+      "Energy storage software platform (Autobidder, Powerhub) with recurring revenue"
+    ],
+    "segments": [
+      {
+        "name": "Automotive",
+        "revenue_pct": 73,
+        "description": "Design, manufacture, and sale of EVs (Model 3, Y, S, X, Cybertruck, Semi). Includes vehicle leasing, FSD (Supervised) software packages, FSD subscription, in-app upgrades, automotive insurance, and used vehicle sales. Robotaxi service (launched June 2025) is reported within this segment."
+      },
+      {
+        "name": "Energy Generation & Storage",
+        "revenue_pct": 13,
+        "description": "Megapack utility-scale battery systems (primary growth driver, benefiting from AI data center demand), Powerwall residential battery storage, and solar products including solar panels and Solar Roof. Revenue up 27% YoY in FY2025 to $12.77B with gross margins approaching 30%."
+      },
+      {
+        "name": "Services & Other",
+        "revenue_pct": 13,
+        "description": "Vehicle servicing and repairs, body shops, used vehicle sales, non-warranty after-sales, Supercharging revenue, and Tesla merchandise. Growing 17-19% annually as installed base expands. Supercharger for Business program launched in 2025."
+      }
+    ],
+    "geographies": [
+      {
+        "region": "United States",
+        "revenue_pct": 50,
+        "notes": "Largest market. Home to Gigafactory Nevada (battery/drive unit), Gigafactory Texas (Model Y, Cybertruck, Semi, AI training), and HQ in Austin. Benefits from Inflation Reduction Act EV credits (threatened by OBBBA)."
+      },
+      {
+        "region": "China",
+        "revenue_pct": 22,
+        "notes": "Second largest market. Gigafactory Shanghai produces Model 3 and Model Y for domestic sales and export to Europe/Asia. Faces intense competition from BYD, Nio, Li Auto. Revenue roughly flat YoY at $20.96B."
+      },
+      {
+        "region": "Other (Europe, APAC, RoW)",
+        "revenue_pct": 28,
+        "notes": "Gigafactory Berlin serves European market (Model Y). Revenue declined from $29.02B (FY2024) to $26.24B (FY2025) reflecting softer European EV demand and competitive pressures."
+      }
+    ],
+    "timeline": [
+      {
+        "year": "2003",
+        "type": "founding",
+        "event": "Tesla Motors founded by Martin Eberhard and Marc Tarpenning in San Carlos, California"
+      },
+      {
+        "year": "2004",
+        "type": "milestone",
+        "event": "Elon Musk leads $7.5M Series A funding round and joins as Chairman of the Board"
+      },
+      {
+        "year": "2008",
+        "type": "product",
+        "event": "First Roadster delivered to customers; Elon Musk becomes CEO after co-founders depart"
+      },
+      {
+        "year": "2010",
+        "type": "financial",
+        "event": "IPO on NASDAQ at $17/share, raising $226M — first US automaker to go public since Ford in 1956"
+      },
+      {
+        "year": "2012",
+        "type": "product",
+        "event": "Model S launched; wins Motor Trend Car of the Year. Roadster production ends"
+      },
+      {
+        "year": "2015",
+        "type": "product",
+        "event": "Model X SUV launched; Powerwall home battery announced, entering energy storage market"
+      },
+      {
+        "year": "2016",
+        "type": "merger",
+        "event": "Acquired SolarCity for $2.6B, becoming an integrated clean energy company; Model 3 revealed"
+      },
+      {
+        "year": "2017",
+        "type": "milestone",
+        "event": "Model 3 mass-market sedan enters production; Gigafactory Nevada opens"
+      },
+      {
+        "year": "2019",
+        "type": "milestone",
+        "event": "Gigafactory Shanghai breaks ground and reaches production in record 10 months; Cybertruck unveiled"
+      },
+      {
+        "year": "2020",
+        "type": "financial",
+        "event": "First full profitable year; added to S&P 500 in December; market cap surpasses $700B"
+      },
+      {
+        "year": "2021",
+        "type": "milestone",
+        "event": "Relocated HQ from Palo Alto to Austin, TX; Gigafactory Berlin and Texas under construction"
+      },
+      {
+        "year": "2022",
+        "type": "financial",
+        "event": "Record revenue $81.5B; Gigafactory Berlin and Texas open; NACS connector announced"
+      },
+      {
+        "year": "2023",
+        "type": "milestone",
+        "event": "Supercharger network opened to other EV brands; Ford and GM adopt NACS standard; FSD v12 released"
+      },
+      {
+        "year": "2024",
+        "type": "milestone",
+        "event": "Cybertruck production ramp; CFO Zachary Kirkhorn and SVP Drew Baglino depart; first YoY revenue decline"
+      },
+      {
+        "year": "2025",
+        "type": "product",
+        "event": "Robotaxi service launched in Austin (June 2025); AI-first strategic pivot; Optimus robot production begins; Cortex 2 AI cluster announced"
+      }
+    ],
+    "management": [
+      {
+        "name": "Elon Musk",
+        "title": "Technoking & Chief Executive Officer",
+        "since": "2008",
+        "notes": "Co-led Series A in 2004; became CEO in 2008. Also CEO of SpaceX and owner of X (Twitter). Key architect of Tesla's AI and autonomy strategy. Board member since 2004."
+      },
+      {
+        "name": "Vaibhav Taneja",
+        "title": "Chief Financial Officer",
+        "since": "2023",
+        "notes": "Appointed CFO in August 2023 after Zachary Kirkhorn's departure. Previously Tesla's Chief Accounting Officer (2019–2023) and Corporate Controller (2018–2019). Deep institutional knowledge of Tesla's financials."
+      },
+      {
+        "name": "Tom Zhu",
+        "title": "Senior Vice President, APAC & Global Manufacturing",
+        "since": "2023",
+        "notes": "Joined Tesla in 2014; led Gigafactory Shanghai build-out. Appointed SVP in April 2023; expanded role to SVP APAC in January 2025. Considered the #2 operational executive."
+      },
+      {
+        "name": "Robyn Denholm",
+        "title": "Chair of the Board of Directors",
+        "since": "2018",
+        "notes": "Independent board chair since November 2018. Former CFO of Juniper Networks and Telstra. Leads board oversight of executive compensation and governance."
+      }
+    ],
+    "bull_case": "Tesla's transformation into an AI-first company could unlock step-change economics: Robotaxi and FSD subscriptions offer software-like margins on a fleet of millions of vehicles already deployed. Energy & Storage is on a steep growth trajectory (27% YoY, 30% gross margins) driven by structural AI data center demand — this alone could be a multi-hundred-billion business. Optimus robot, if commercially successful, represents a market potentially larger than automotive. The Supercharger network and vertical integration create compounding moats. If Robotaxi scales nationally and autonomy regulation progresses, Tesla could generate $20–30B+ in services revenue by 2028.",
+    "bear_case": "Core automotive revenue is declining — down 9.8% in FY2025 — and BYD has surpassed Tesla in global EV sales, signaling competitive erosion. Operating margins compressed to 4.6% as price cuts failed to stimulate volume. FSD/Robotaxi faces significant regulatory, safety, and liability hurdles that could delay or constrain national rollout. Elon Musk's political controversies and time split across SpaceX, X, and DOGE create execution and brand risk. The OBBBA threatens EV tax credits, reducing US demand tailwinds. Tesla is simultaneously betting on multiple unproven markets (autonomous vehicles, humanoid robots, energy software) — any execution stumble could be costly. At current margins, the stock price prices in near-perfect execution of all these bets.",
+    "key_risks": [
+      {
+        "risk": "Autonomous driving regulatory and liability risk",
+        "severity": "high",
+        "description": "Robotaxi operations face uncertain federal and state regulation. Any serious accident could trigger regulatory restrictions, lawsuits, and reputational damage that halt or roll back autonomous operations."
+      },
+      {
+        "risk": "Elon Musk key person risk",
+        "severity": "high",
+        "description": "Musk's attention is split across Tesla, SpaceX, X (Twitter), and the US DOGE advisory role. His public political polarization has materially damaged the Tesla brand in Europe and among some US consumers. His departure or distraction could be severely disruptive."
+      },
+      {
+        "risk": "EV market competition and margin pressure",
+        "severity": "high",
+        "description": "BYD surpassed Tesla in global EV unit sales. Chinese OEMs offer comparable technology at lower prices. Continued price competition compresses automotive margins — Automotive gross margin fell from ~25% (2022) to ~14% (FY2025)."
+      },
+      {
+        "risk": "Regulatory changes to EV incentives (OBBBA)",
+        "severity": "medium",
+        "description": "The One Big Beautiful Budget Act threatens to eliminate the $7,500 EV tax credit in the US, which has been a key demand driver. This could reduce addressable US market size and force further price cuts."
+      },
+      {
+        "risk": "Supply chain and manufacturing execution",
+        "severity": "medium",
+        "description": "Simultaneous ramp of six new production lines in 2026, plus Cybercab, Semi, and Optimus, creates significant execution complexity. Supply chain disruptions (lithium, semiconductors) could delay production and increase costs."
+      },
+      {
+        "risk": "AI and compute infrastructure dependency",
+        "severity": "medium",
+        "description": "FSD and Optimus require massive AI training compute. Cortex clusters and Samsung semiconductor collaboration create new supply dependencies. Any failure in AI training infrastructure could delay key product rollouts."
+      },
+      {
+        "risk": "Brand and geopolitical risk in China",
+        "severity": "medium",
+        "description": "China represents 22% of revenue. Geopolitical tensions between US and China, potential retaliatory tariffs, or data security regulations could restrict Tesla's operations or sales in its second-largest market."
+      }
+    ]
+  }
 }
