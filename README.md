@@ -1,6 +1,8 @@
-# 📈 Investment Research Website
+# 📈 Prometheus — Investment Research
 
-เว็บไซต์ส่วนตัวสำหรับติดตามข้อมูลบริษัทเพื่อการลงทุน รวบรวม Notes, Quotes จาก Earnings Call, Roadmap Tracker และตัวเลขทางการเงิน
+เว็บไซต์ส่วนตัวสำหรับติดตามข้อมูลบริษัทเพื่อการลงทุน รวบรวม Notes, Quotes จาก Earnings Call, Roadmap Tracker, ข้อมูลทางการเงิน และ Deep Dive Analysis
+
+**Repository:** https://github.com/parametb/prometheus
 
 ---
 
@@ -9,94 +11,124 @@
 ```
 investment-research/
 ├── index.html              ← หน้าหลัก (รายชื่อบริษัททั้งหมด)
-├── company.html            ← หน้าข้อมูลรายบริษัท
+├── company.html            ← หน้าข้อมูลรายบริษัท (tabs: Overview, Notes, Quotes, Roadmap, Financials)
+├── overview.html           ← หน้า Deep Dive (Segments, Geography, Timeline, Management, Thesis, Risks)
+├── i18n.js                 ← ระบบ 2 ภาษา ไทย/อังกฤษ (ใหม่)
 ├── README.md               ← ไฟล์นี้
-└── data/
-    ├── companies.json      ← รายชื่อบริษัททั้งหมด (index)
-    ├── AAPL/
-    │   └── data.json       ← ข้อมูล Apple
-    ├── MSFT/
-    │   └── data.json       ← ข้อมูล Microsoft
-    └── [TICKER]/
-        └── data.json       ← เพิ่มบริษัทใหม่ตามรูปแบบนี้
+├── data/
+│   ├── companies.json      ← รายชื่อบริษัททั้งหมด (index)
+│   └── [TICKER]/
+│       ├── data.json       ← ข้อมูลหลักของบริษัท
+│       ├── snapshot.json   ← snapshot สำหรับ overview
+│       └── history/        ← ประวัติ patch ทั้งหมด
+├── scripts/
+│   ├── apply_patch.py      ← apply JSON patch เข้า data.json
+│   ├── validate_patch.py   ← ตรวจสอบความถูกต้องของ patch
+│   └── generate_snapshot.py← สร้าง snapshot.json
+└── .claude/
+    └── skills/             ← Prometheus skills สำหรับ Cowork/Claude
 ```
 
 ---
 
-## 🚀 วิธี Deploy บน GitHub Pages (ใช้งานออนไลน์ได้ทุกที่)
+## 🌐 ระบบ 2 ภาษา (i18n)
 
-### ขั้นตอนที่ 1: สร้าง GitHub Account
-1. ไปที่ https://github.com → คลิก Sign up
-2. สร้าง account ฟรี
+ทุกหน้ารองรับการสลับภาษาไทย ↔ อังกฤษ ผ่านปุ่ม 🇹🇭 / 🇺🇸 ในแถบ nav
 
-### ขั้นตอนที่ 2: สร้าง Repository ใหม่
-1. คลิกปุ่ม **+** มุมขวาบน → **New repository**
-2. ตั้งชื่อ: `investment-research` (หรือชื่อที่ชอบ)
-3. เลือก **Public** (จำเป็นสำหรับ GitHub Pages ฟรี)
-4. คลิก **Create repository**
+**หลักการทำงาน:**
+- `i18n.js` เก็บ translation dictionary ทั้ง `th` และ `en`
+- `t('key')` คืน string ตาม `currentLang` ปัจจุบัน
+- `setLang('en')` สลับภาษา → save ใน localStorage → re-render ทุก label ทันที
+- ข้อมูลจาก data.json (quotes, notes, roadmap) แสดงเป็นภาษาต้นฉบับเสมอ — เฉพาะ UI label เท่านั้นที่แปล
 
-### ขั้นตอนที่ 3: อัปโหลดไฟล์
-1. ในหน้า repository → คลิก **uploading an existing file**
-2. ลากโฟลเดอร์ทั้งหมดใส่ หรือเลือกทีละไฟล์
-3. คลิก **Commit changes**
-
-### ขั้นตอนที่ 4: เปิด GitHub Pages
-1. ไปที่ **Settings** → **Pages** (เมนูซ้าย)
-2. Source: เลือก **Deploy from a branch**
-3. Branch: เลือก **main** → **/ (root)**
-4. คลิก **Save**
-5. รอ 2-3 นาที → เว็บจะพร้อมใช้งานที่ `https://[username].github.io/investment-research`
+**เพิ่ม key ใหม่:** แก้ไข `i18n.js` section `th` และ `en` แล้วใช้ `t('key')` ในโค้ด
 
 ---
 
-## ✏️ วิธีเพิ่มและแก้ไขข้อมูล
+## 🗂️ บริษัทที่ติดตามอยู่ (13 บริษัท)
 
-### เพิ่มบริษัทใหม่
+| Ticker | บริษัท | Sector | อัพเดทล่าสุด |
+|--------|--------|--------|-------------|
+| AAPL | Apple Inc. | Technology | 2026-03-29 |
+| MSFT | Microsoft Corporation | Technology | 2026-03-29 |
+| NVDA | NVIDIA Corporation | Semiconductors | 2026-03-30 |
+| TSLA | Tesla, Inc. | Consumer | 2026-04-03 |
+| IONQ | IonQ, Inc. | Technology | 2026-04-03 |
+| RGTI | Rigetti Computing | Technology | 2026-03-30 |
+| QUBT | Quantum Computing Inc. | Technology | 2026-03-29 |
+| QBTS | D-Wave Quantum | Technology | 2026-03-29 |
+| KEYS | Keysight Technologies | Technology | 2026-04-04 |
+| CRSP | CRISPR Therapeutics | Healthcare | 2026-04-04 |
+| B | Barrick Mining | Mining | 2026-04-04 |
+| NEM | Newmont Corporation | Mining | 2026-04-02 |
+| BRBY | Burberry Group | Consumer | 2026-03-31 |
 
-**ขั้นตอนที่ 1:** สร้างโฟลเดอร์ใน `data/` โดยใช้ชื่อ Ticker เป็นชื่อโฟลเดอร์ เช่น `data/NVDA/`
+---
 
-**ขั้นตอนที่ 2:** สร้างไฟล์ `data.json` ในโฟลเดอร์นั้น โดยใช้ template ด้านล่าง
+## 🔄 Workflow: GitHub เป็น Source of Truth
 
-**ขั้นตอนที่ 3:** เพิ่มบริษัทเข้าไปใน `data/companies.json`
+**แก้ไขใน GitHub โดยตรง** (Perplexity หรือ browser):
+1. ไปที่ https://github.com/parametb/prometheus
+2. แก้ไขไฟล์ที่ต้องการ → Commit changes
+3. บอก Claude ให้ sync มา → Claude จะ clone และ copy เฉพาะไฟล์ที่ใหม่กว่า
 
-### Template สำหรับบริษัทใหม่ (data/[TICKER]/data.json)
+**แก้ไขผ่าน Claude (Cowork)**:
+- ใช้ skills เช่น `prometheus:analyze-earnings`, `prometheus:analyze-report`
+- Claude แก้ไข data.json ใน local folder โดยตรง
+- Push ขึ้น GitHub ทีหลัง (manual หรือขอให้ Claude ทำ)
+
+**หมายเหตุ:** เมื่อแก้ทั้งสองที่พร้อมกัน ให้ดูเวลา commit เป็นหลัก — ไฟล์ที่ commit ล่าสุดคือ version ที่ควรใช้
+
+---
+
+## ✏️ วิธีเพิ่มบริษัทใหม่
+
+ใช้ skill **`prometheus:add-company`** ใน Cowork หรือทำเองดังนี้:
+
+**ขั้นตอนที่ 1:** สร้างโฟลเดอร์ `data/[TICKER]/` และไฟล์ `data.json` ตาม template ด้านล่าง
+
+**ขั้นตอนที่ 2:** เพิ่ม entry ใน `data/companies.json`
+
+### Template: `data/[TICKER]/data.json`
 
 ```json
 {
   "ticker": "TICKER",
-  "name": "ชื่อบริษัท",
+  "name": "Company Name",
   "sector": "Technology",
   "exchange": "NASDAQ",
-  "last_updated": "2025-01-01",
-  "description": "คำอธิบายสั้นๆ เกี่ยวกับบริษัท",
+  "last_updated": "2026-01-01",
+  "description": "Short description of the company.",
+  "tradingview_symbol": "NASDAQ:TICKER",
 
   "notes": [
     {
-      "date": "2025-01-01",
-      "title": "หัวข้อบันทึก",
+      "date": "2026-01-01",
+      "title": "Note title",
       "tags": ["tag1", "tag2"],
       "rating": 4,
-      "content": "เนื้อหาบันทึกของเรา..."
+      "content": "Note content..."
     }
   ],
 
   "quotes": [
     {
-      "date": "2025-01-30",
-      "source": "Q1 FY2025 Earnings Call",
+      "date": "2026-01-30",
+      "source": "Q1 FY2026 Earnings Call",
       "speaker": "CEO Name",
-      "quote": "คำพูดที่น่าสนใจจากผู้บริหาร",
+      "quote": "Exact quote from management.",
+      "quote_th": "คำแปลภาษาไทย (optional)",
       "tag": "growth"
     }
   ],
 
   "roadmap": [
     {
-      "date_said": "2024-06-01",
-      "source": "ที่มา เช่น Earnings Call, Investor Day",
-      "commitment": "สิ่งที่ผู้บริหารสัญญาหรือบอกว่าจะทำ",
+      "date_said": "2026-01-30",
+      "source": "Q1 FY2026 Earnings Call",
+      "commitment": "What management committed to do.",
       "status": "pending",
-      "follow_up": "ผลลัพธ์ที่เกิดขึ้นจริง (ถ้ามี)",
+      "follow_up": "Actual outcome (if any)",
       "follow_up_date": ""
     }
   ],
@@ -104,19 +136,40 @@ investment-research/
   "financials": {
     "currency": "USD",
     "unit": "Billion",
-    "years": [2022, 2023, 2024],
+    "years": [2023, 2024, 2025],
     "metrics": [
-      { "name": "Revenue",       "values": [0, 0, 0] },
-      { "name": "Net Income",    "values": [0, 0, 0] },
-      { "name": "EPS (diluted)", "values": [0, 0, 0] },
-      { "name": "Free Cash Flow","values": [0, 0, 0] }
+      { "name": "Revenue",        "values": [0, 0, 0] },
+      { "name": "Net Income",     "values": [0, 0, 0] },
+      { "name": "EPS (diluted)",  "values": [0, 0, 0] },
+      { "name": "Free Cash Flow", "values": [0, 0, 0] }
     ],
-    "notes": "หมายเหตุเพิ่มเติมเกี่ยวกับตัวเลข"
+    "notes": "Additional financial notes"
+  },
+
+  "overview": {
+    "founded": "2000",
+    "headquarters": "City, Country",
+    "employees": "10,000",
+    "fiscal_year_end": "December 31",
+    "business_model_summary": "How the company makes money.",
+    "competitive_position": "Market position description.",
+    "moat_factors": ["Factor 1", "Factor 2"],
+    "segments": [],
+    "geographies": [],
+    "timeline": [],
+    "management": [],
+    "bull_case": "Reasons to be bullish.",
+    "bear_case": "Risks and bear case.",
+    "key_risks": []
   }
 }
 ```
 
-### ค่า status สำหรับ Roadmap
+---
+
+## 📊 ค่าที่รองรับ
+
+### Roadmap status
 
 | status | ความหมาย |
 |--------|----------|
@@ -126,29 +179,40 @@ investment-research/
 | `missed` | ❌ ไม่ได้ทำตามที่พูดไว้ |
 | `monitoring` | 👀 กำลังติดตาม |
 
-### ค่า sector ที่รองรับ
+### Sector
 
-- `Technology`
-- `Finance`
-- `Healthcare`
-- `Energy`
-- `Consumer`
-- หรือใส่ค่าอื่นได้เลย (จะแสดงสีเทา)
+`Technology` · `Finance` · `Healthcare` · `Energy` · `Consumer` · `Mining` · หรือค่าอื่น (จะแสดงสีเทา)
+
+### Timeline event type
+
+`founding` · `merger` · `milestone` · `project` · `financial` · `crisis` · `product`
 
 ---
 
-## 🔄 วิธีอัปเดตข้อมูลหลัง Deploy
+## 🤖 Prometheus Skills (Cowork)
 
-1. ไปที่ GitHub repository → ไปที่ไฟล์ที่ต้องการแก้ (เช่น `data/AAPL/data.json`)
-2. คลิกไอคอน ✏️ (Edit) มุมขวาบน
-3. แก้ไขข้อมูลตรงๆ ใน browser
-4. คลิก **Commit changes** → เว็บจะอัปเดตอัตโนมัติภายใน 1-2 นาที
+| Skill | ใช้เมื่อ |
+|-------|---------|
+| `prometheus:add-company` | เพิ่มบริษัทใหม่เข้าระบบ |
+| `prometheus:analyze-report` | วิเคราะห์ Annual Report / 10-K → เพิ่ม overview data |
+| `prometheus:analyze-earnings` | วิเคราะห์ Earnings Call transcript → เพิ่ม quotes + roadmap |
+| `prometheus:track-delivery` | ประเมิน delivery rate ของผู้บริหาร |
+| `fix-ui` | แก้ UI bugs เมื่อหน้าว่างหรือแสดงผิด |
 
 ---
 
 ## 💡 Tips
 
-- **Rating** (1-5 ดาว): ใส่ตัวเลข 1-5 ใน `rating` field ของ notes เพื่อระบุ conviction level
-- **Tags**: ใส่ tag ได้หลายอัน ใช้สำหรับค้นหา/จัดหมวดหมู่ในอนาคต
-- **note_count / quote_count / roadmap_count** ใน `companies.json`: อัปเดตด้วยตนเองเพื่อให้หน้า dashboard แสดงจำนวนที่ถูกต้อง
-- **last_updated**: อัปเดตทุกครั้งที่เพิ่มข้อมูลใหม่
+- **Rating (1-5 ดาว):** ใส่ใน `rating` field ของ notes เพื่อระบุ conviction level
+- **quote_th:** เพิ่มคำแปลไทยให้ quotes — จะแสดงใต้ original quote เมื่ออยู่ในโหมดภาษาไทย
+- **tradingview_symbol:** ใส่เพื่อแสดง stock chart และ fundamentals จาก TradingView เช่น `"NASDAQ:AAPL"`
+- **companies.json counts:** อัปเดต `note_count`, `quote_count`, `roadmap_count` ให้ตรงกับข้อมูลจริงเพื่อให้ dashboard แสดงถูกต้อง
+- **last_updated:** อัปเดตทุกครั้งที่เพิ่มข้อมูลใหม่
+
+---
+
+## 🚀 Deploy บน GitHub Pages
+
+1. Push ทุกไฟล์ขึ้น repository `parametb/prometheus`
+2. ไปที่ **Settings → Pages** → Source: **Deploy from branch** → branch: **main**
+3. เว็บจะพร้อมใช้งานที่ `https://parametb.github.io/prometheus`
