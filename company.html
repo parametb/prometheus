@@ -627,7 +627,7 @@ function renderOverviewPanel(ov) {
     <div class="ov-section">
       <div class="ov-title">🌍 รายได้แยกตามภูมิภาค</div>
       ${ov.geographies.map(g=>`<div class="geo-item">
-        <div class="geo-header"><span>${g.region}</span><span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--text-muted)">${g.revenue_pct}%</span></div>
+        <div class="geo-header"><span>${g.region || g.name}</span><span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--text-muted)">${g.revenue_pct}%</span></div>
         <div class="geo-track"><div class="geo-fill" data-pct="${g.revenue_pct}"></div></div>
       </div>`).join('')}
     </div>` : '';
@@ -646,8 +646,8 @@ function renderOverviewPanel(ov) {
           return `<div class="tl-item" data-type="${ev.type}">
             <div class="tl-dot" style="background:${color}"></div>
             <div class="tl-year">${ev.year} · <span style="color:${color};text-transform:uppercase;font-size:10px">${typeLabels[ev.type]||ev.type}</span></div>
-            <div class="tl-evtitle">${ev.title}</div>
-            <div class="tl-desc">${ev.description}</div>
+            <div class="tl-evtitle">${ev.title || ev.event?.split(' ').slice(0,8).join(' ') || ''}</div>
+<div class="tl-desc">${ev.description || ev.event || ''}</div>
           </div>`;
         }).join('')}
       </div>
