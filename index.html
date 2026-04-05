@@ -3,217 +3,417 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prometheus</title>
+  <title>Prometheus · Company Watchlist</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    /* ── DARK THEME (default) ── */
+    /* ── TOKENS ── */
     :root {
-      --bg: #0d1117; --surface: #161b22; --surface2: #21262d;
-      --border: #30363d; --text: #e6edf3; --text-muted: #8b949e;
-      --accent: #58a6ff; --green: #3fb950; --red: #f85149;
-      --yellow: #d29922; --purple: #bc8cff;
-      --glow: rgba(88,166,255,0.05);
+      --bg:       #0a0c0f;
+      --surface:  #111418;
+      --surface2: #181c22;
+      --surface3: #1e242d;
+      --border:   rgba(255,255,255,0.07);
+      --border-strong: rgba(255,255,255,0.13);
+      --text:       #e8edf3;
+      --text-muted: #7a8694;
+      --text-faint: #404a57;
+      --accent:       #3b82f6;
+      --accent-hover: #60a5fa;
+      --accent-glow:  rgba(59,130,246,0.15);
+      --accent-dim:   rgba(59,130,246,0.08);
+      --green:  #22c55e;
+      --red:    #ef4444;
+      --yellow: #f59e0b;
+      --purple: #a78bfa;
+      --sp1: 4px; --sp2: 8px; --sp3: 12px; --sp4: 16px;
+      --sp5: 20px; --sp6: 24px; --sp8: 32px; --sp10: 40px; --sp12: 48px;
+      --r-sm: 6px; --r-md: 10px; --r-lg: 14px; --r-xl: 20px; --r-full: 9999px;
+      --ease: cubic-bezier(0.16, 1, 0.3, 1);
+      --t: 200ms var(--ease);
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.2);
+      --shadow-md: 0 4px 16px rgba(0,0,0,0.4), 0 2px 4px rgba(0,0,0,0.2);
+      --shadow-lg: 0 12px 40px rgba(0,0,0,0.5);
     }
 
-    /* ── LIGHT THEME ── */
     html[data-theme="light"] {
-      --bg: #f8fafc; --surface: #ffffff; --surface2: #f1f5f9;
-      --border: #e2e8f0; --text: #0f172a; --text-muted: #64748b;
-      --accent: #2563eb; --green: #16a34a; --red: #dc2626;
-      --yellow: #d97706; --purple: #7c3aed;
-      --glow: rgba(37,99,235,0.04);
+      --bg:       #f4f6f9;
+      --surface:  #ffffff;
+      --surface2: #f0f3f7;
+      --surface3: #e8ecf2;
+      --border:   rgba(0,0,0,0.07);
+      --border-strong: rgba(0,0,0,0.13);
+      --text:       #0f1923;
+      --text-muted: #5a6778;
+      --text-faint: #b0bac7;
+      --accent:       #2563eb;
+      --accent-hover: #1d4ed8;
+      --accent-glow:  rgba(37,99,235,0.12);
+      --accent-dim:   rgba(37,99,235,0.07);
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.07), 0 1px 2px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 16px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+      --shadow-lg: 0 12px 40px rgba(0,0,0,0.1);
     }
 
-    /* ── STAGGER ── */
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(16px); }
+      from { opacity: 0; transform: translateY(12px); }
       to   { opacity: 1; transform: translateY(0); }
     }
-    .stagger {
-      animation: fadeUp 0.4s ease both;
-      animation-delay: calc(var(--i, 0) * 0.06s);
+    @keyframes shimmer {
+      0%   { background-position: -400px 0; }
+      100% { background-position: 400px 0; }
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0.3; }
     }
 
-    /* ── BASE ── */
+    .stagger {
+      animation: fadeUp 0.45s var(--ease) both;
+      animation-delay: calc(var(--i, 0) * 0.07s);
+    }
+
+    html { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
     body {
       background: var(--bg);
       color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      min-height: 100vh;
-      position: relative;
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+      min-height: 100dvh;
     }
+    a { text-decoration: none; color: inherit; }
+
     body::before {
       content: '';
       position: fixed;
-      top: -30%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100vw;
-      height: 100vw;
-      background: radial-gradient(circle, var(--glow) 0%, transparent 65%);
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80vw 60vh at 20% -10%, rgba(59,130,246,0.04) 0%, transparent 60%),
+        radial-gradient(ellipse 60vw 80vh at 90% 110%, rgba(167,139,250,0.03) 0%, transparent 60%);
       pointer-events: none;
       z-index: 0;
     }
-    main { max-width: 1100px; margin: 0 auto; padding: 32px 24px; position: relative; z-index: 1; }
 
-    /* ── NAV ── */
     nav {
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
-      padding: 0 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 56px;
       position: sticky;
       top: 0;
       z-index: 100;
-    }
-    .nav-left  { display: flex; align-items: center; gap: 16px; }
-    .nav-right { display: flex; align-items: center; gap: 12px; }
-    .nav-brand {
-      display: flex; align-items: center; gap: 10px;
-      font-weight: 700; font-size: 17px;
-      color: var(--text); text-decoration: none;
-    }
-    .nav-brand svg { color: var(--accent); }
-    .nav-meta { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--text-muted); }
-
-    /* ── THEME TOGGLE ── */
-    .theme-toggle {
+      background: rgba(10,12,15,0.85);
+      backdrop-filter: blur(16px) saturate(1.5);
+      -webkit-backdrop-filter: blur(16px) saturate(1.5);
+      border-bottom: 1px solid var(--border);
+      padding: 0 var(--sp6);
+      height: 58px;
+      display: flex;
       align-items: center;
+      justify-content: space-between;
+    }
+    html[data-theme="light"] nav { background: rgba(244,246,249,0.88); }
+
+    .nav-left  { display: flex; align-items: center; gap: var(--sp4); }
+    .nav-right { display: flex; align-items: center; gap: var(--sp3); }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: var(--sp2);
+      font-weight: 700;
+      font-size: 16px;
+      letter-spacing: -0.3px;
+      color: var(--text);
+    }
+    .nav-logo {
+      width: 28px; height: 28px;
+      background: linear-gradient(135deg, var(--accent), #8b5cf6);
+      border-radius: var(--r-sm);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .nav-logo svg { color: white; }
+    .nav-divider { width: 1px; height: 20px; background: var(--border-strong); }
+    .nav-meta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--text-faint);
+      display: flex; align-items: center; gap: var(--sp1);
+    }
+    .nav-meta .dot {
+      width: 6px; height: 6px;
+      border-radius: var(--r-full);
+      background: var(--green);
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+
+    .theme-toggle {
+      width: 34px; height: 34px;
+      border-radius: var(--r-md);
       background: var(--surface2);
       border: 1px solid var(--border);
-      border-radius: 8px;
       color: var(--text-muted);
       cursor: pointer;
-      display: flex;
+      display: flex; align-items: center; justify-content: center;
+      transition: var(--t);
       font-size: 15px;
-      height: 32px;
-      justify-content: center;
-      transition: border-color 0.2s, color 0.2s;
-      width: 32px;
     }
-    .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+    .theme-toggle:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--accent-dim);
+    }
 
-    /* ── PAGE HEADER ── */
+    main {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: var(--sp8) var(--sp6);
+      position: relative;
+      z-index: 1;
+    }
+
     .page-header {
       display: flex;
       align-items: flex-end;
       justify-content: space-between;
-      margin-bottom: 24px;
+      gap: var(--sp4);
+      margin-bottom: var(--sp8);
       flex-wrap: wrap;
-      gap: 12px;
     }
-    .page-title { font-size: 22px; font-weight: 700; }
-    .page-sub { color: var(--text-muted); font-size: 13px; margin-top: 4px; }
-    .search-bar { display: flex; gap: 8px; align-items: center; }
+    .page-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: var(--sp2);
+      display: flex; align-items: center; gap: var(--sp2);
+    }
+    .page-eyebrow::before {
+      content: ''; display: block;
+      width: 16px; height: 1.5px;
+      background: var(--accent);
+    }
+    .page-title {
+      font-size: 26px; font-weight: 700;
+      letter-spacing: -0.5px; color: var(--text); line-height: 1.2;
+    }
+    .page-sub { color: var(--text-muted); font-size: 13px; margin-top: var(--sp1); }
+
+    .search-wrap { display: flex; align-items: center; gap: var(--sp2); }
+    .search-input-wrap { position: relative; }
+    .search-input-wrap svg {
+      position: absolute; left: 11px; top: 50%; transform: translateY(-50%);
+      color: var(--text-faint); pointer-events: none;
+    }
     .search-bar input {
       background: var(--surface2);
       border: 1px solid var(--border);
-      border-radius: 8px;
+      border-radius: var(--r-md);
       color: var(--text);
-      padding: 8px 14px;
-      font-size: 14px;
-      width: 220px;
+      padding: 9px 14px 9px 36px;
+      font-size: 13px;
+      font-family: 'Inter', sans-serif;
+      width: 240px;
       outline: none;
-      transition: border-color 0.2s;
+      transition: var(--t);
     }
-    .search-bar input:focus { border-color: var(--accent); }
-    .search-bar input::placeholder { color: var(--text-muted); }
+    .search-bar input:focus {
+      border-color: var(--accent);
+      background: var(--surface);
+      box-shadow: 0 0 0 3px var(--accent-glow);
+    }
+    .search-bar input::placeholder { color: var(--text-faint); }
 
-    /* ── STATS ROW ── */
     .stats-row {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 12px;
-      margin-bottom: 28px;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: var(--sp3);
+      margin-bottom: var(--sp6);
     }
     .stat-card {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 16px 20px;
-      transition: border-color 0.2s, transform 0.2s;
+      border-radius: var(--r-lg);
+      padding: var(--sp5) var(--sp6);
+      position: relative; overflow: hidden;
+      transition: border-color var(--t), box-shadow var(--t), transform var(--t);
     }
-    .stat-card:hover { border-color: var(--accent); transform: translateY(-2px); }
-    .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-muted); margin-bottom: 6px; }
-    .stat-value { font-size: 26px; font-weight: 700; }
+    .stat-card::before {
+      content: ''; position: absolute;
+      top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+      opacity: 0; transition: opacity var(--t);
+    }
+    .stat-card:hover { border-color: var(--border-strong); box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .stat-card:hover::before { opacity: 1; }
+    .stat-icon {
+      width: 32px; height: 32px;
+      border-radius: var(--r-sm);
+      background: var(--accent-dim); color: var(--accent);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: var(--sp3);
+    }
+    .stat-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px; color: var(--text-faint);
+      text-transform: uppercase; letter-spacing: 1px; margin-bottom: var(--sp1);
+    }
+    .stat-value { font-size: 28px; font-weight: 700; letter-spacing: -1px; line-height: 1; color: var(--text); }
+    .stat-value.small { font-size: 16px; letter-spacing: -0.3px; padding-top: 4px; }
 
-    /* ── FILTER TABS ── */
-    .filter-tabs { display: flex; gap: 6px; margin-bottom: 20px; flex-wrap: wrap; }
+    .filter-row {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: var(--sp5); gap: var(--sp4); flex-wrap: wrap;
+    }
+    .filter-tabs { display: flex; gap: var(--sp2); flex-wrap: wrap; }
     .filter-tab {
-      background: var(--surface2); border: 1px solid var(--border);
-      border-radius: 20px; color: var(--text-muted); cursor: pointer;
-      font-size: 13px; padding: 5px 14px; transition: all 0.2s;
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: var(--r-full);
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 12px; font-family: 'Inter', sans-serif; font-weight: 500;
+      padding: 5px 14px;
+      transition: var(--t);
     }
-    .filter-tab:hover { border-color: var(--accent); color: var(--accent); }
-    .filter-tab.active { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
+    .filter-tab:hover { border-color: var(--border-strong); color: var(--text); }
+    .filter-tab.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .results-count {
+      font-size: 12px; color: var(--text-faint);
+      font-family: 'JetBrains Mono', monospace; white-space: nowrap;
+    }
 
-    /* ── COMPANY GRID ── */
     .company-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 16px;
+      grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+      gap: var(--sp4);
     }
     .company-card {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 20px;
+      border-radius: var(--r-xl);
+      padding: var(--sp5);
+      display: flex; flex-direction: column; gap: var(--sp3);
+      transition: border-color var(--t), box-shadow var(--t), transform var(--t);
+      position: relative; overflow: hidden;
       cursor: pointer;
-      text-decoration: none;
-      color: var(--text);
-      display: block;
-      transition: border-color 0.2s, transform 0.15s;
     }
-    .company-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+    .company-card::after {
+      content: ''; position: absolute; inset: 0; border-radius: inherit;
+      background: linear-gradient(135deg, var(--accent-dim) 0%, transparent 60%);
+      opacity: 0; transition: opacity var(--t); pointer-events: none;
+    }
+    .company-card:hover {
+      border-color: rgba(59,130,246,0.3);
+      box-shadow: var(--shadow-md), 0 0 0 1px rgba(59,130,246,0.1);
+      transform: translateY(-3px);
+    }
+    .company-card:hover::after { opacity: 1; }
 
-    .card-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 14px; }
+    .card-top { display: flex; align-items: flex-start; justify-content: space-between; }
     .company-logo {
-      align-items: center;
+      width: 44px; height: 44px;
+      border-radius: var(--r-md);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px; font-weight: 700;
+      flex-shrink: 0; position: relative; overflow: hidden;
+    }
+    .logo-tech     { background: linear-gradient(135deg, #1e40af, #3b82f6); color: #bfdbfe; }
+    .logo-finance  { background: linear-gradient(135deg, #064e3b, #10b981); color: #a7f3d0; }
+    .logo-health   { background: linear-gradient(135deg, #701a75, #e879f9); color: #f5d0fe; }
+    .logo-energy   { background: linear-gradient(135deg, #7c2d12, #f97316); color: #fed7aa; }
+    .logo-consumer { background: linear-gradient(135deg, #1e3a5f, #0ea5e9); color: #bae6fd; }
+    .logo-other    { background: linear-gradient(135deg, #1e1b2e, #7c3aed); color: #ddd6fe; }
+
+    .sector-badge {
+      font-size: 10px; font-weight: 600;
+      font-family: 'JetBrains Mono', monospace;
+      padding: 3px 8px; border-radius: var(--r-full);
+      text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    .badge-tech     { background: rgba(59,130,246,0.1);  color: #93c5fd; border: 1px solid rgba(59,130,246,0.2); }
+    .badge-finance  { background: rgba(16,185,129,0.1);  color: #6ee7b7; border: 1px solid rgba(16,185,129,0.2); }
+    .badge-health   { background: rgba(232,121,249,0.1); color: #f0abfc; border: 1px solid rgba(232,121,249,0.2); }
+    .badge-energy   { background: rgba(249,115,22,0.1);  color: #fdba74; border: 1px solid rgba(249,115,22,0.2); }
+    .badge-consumer { background: rgba(14,165,233,0.1);  color: #7dd3fc; border: 1px solid rgba(14,165,233,0.2); }
+    .badge-other    { background: rgba(124,58,237,0.1);  color: #c4b5fd; border: 1px solid rgba(124,58,237,0.2); }
+
+    html[data-theme="light"] .badge-tech     { color: #1d4ed8; border-color: rgba(29,78,216,0.3); }
+    html[data-theme="light"] .badge-finance  { color: #065f46; border-color: rgba(6,95,70,0.3); }
+    html[data-theme="light"] .badge-health   { color: #86198f; border-color: rgba(134,25,143,0.3); }
+    html[data-theme="light"] .badge-energy   { color: #c2410c; border-color: rgba(194,65,12,0.3); }
+    html[data-theme="light"] .badge-consumer { color: #0369a1; border-color: rgba(3,105,161,0.3); }
+    html[data-theme="light"] .badge-other    { color: #5b21b6; border-color: rgba(91,33,182,0.3); }
+
+    .company-name { font-size: 15px; font-weight: 600; letter-spacing: -0.2px; color: var(--text); line-height: 1.3; }
+    .company-ticker { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-muted); }
+    .card-divider { border: none; border-top: 1px solid var(--border); }
+    .card-stats { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: var(--sp2); }
+    .card-stat-item { text-align: center; padding: var(--sp2) 0; }
+    .card-stat-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px; color: var(--text-faint);
+      text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 3px;
+    }
+    .card-stat-value { font-size: 18px; font-weight: 700; letter-spacing: -0.5px; color: var(--text); line-height: 1; }
+    .card-stat-value.has-data { color: var(--accent); }
+    .card-footer { display: flex; align-items: center; justify-content: space-between; margin-top: auto; }
+    .card-updated { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--text-faint); }
+    .card-arrow {
+      width: 26px; height: 26px;
+      border-radius: var(--r-sm);
       background: var(--surface2);
       border: 1px solid var(--border);
-      border-radius: 10px;
-      color: var(--accent);
-      display: flex;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 14px;
-      font-weight: 800;
-      height: 44px;
-      justify-content: center;
-      letter-spacing: -0.5px;
-      width: 44px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; color: var(--text-muted);
+      transition: var(--t);
     }
-    .sector-badge { font-size: 11px; padding: 3px 9px; border-radius: 20px; font-weight: 600; }
-    .company-name   { font-size: 16px; font-weight: 700; margin-bottom: 2px; }
-    .company-ticker { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--text-muted); }
-    .card-divider   { border: none; border-top: 1px solid var(--border); margin: 14px 0; }
+    .company-card:hover .card-arrow { background: var(--accent); border-color: var(--accent); color: white; }
 
-    .card-stats { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
-    .card-stat-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--text-muted); margin-bottom: 3px; }
-    .card-stat-value { font-family: 'JetBrains Mono', monospace; font-size: 14px; font-weight: 600; }
+    .skeleton {
+      background: linear-gradient(90deg, var(--surface2) 25%, var(--surface3) 50%, var(--surface2) 75%);
+      background-size: 400px 100%;
+      animation: shimmer 1.5s ease-in-out infinite;
+      border-radius: var(--r-sm);
+    }
+    .skeleton-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--r-xl); padding: var(--sp5);
+      display: flex; flex-direction: column; gap: var(--sp3);
+    }
+    .empty-state {
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      padding: var(--sp12) var(--sp8); text-align: center;
+      color: var(--text-muted); gap: var(--sp4);
+    }
+    .empty-state svg { color: var(--text-faint); }
+    .empty-state p { font-size: 14px; max-width: 36ch; }
+    .empty-state code {
+      font-family: 'JetBrains Mono', monospace; font-size: 12px;
+      background: var(--surface2); padding: 2px 6px;
+      border-radius: var(--r-sm); border: 1px solid var(--border);
+    }
+    .loading-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+      gap: var(--sp4);
+    }
 
-    .card-footer { margin-top: 14px; display: flex; align-items: center; justify-content: space-between; }
-    .card-updated { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-muted); }
-    .card-arrow   { color: var(--accent); font-size: 16px; }
-
-    /* ── EMPTY STATE ── */
-    .empty-state { text-align: center; padding: 60px 20px; color: var(--text-muted); }
-    .empty-state svg { margin-bottom: 16px; opacity: 0.4; }
-    .empty-state p { font-size: 15px; }
-    .loading { text-align: center; padding: 60px; color: var(--text-muted); }
-
-    /* ── SECTOR COLORS ── */
-    .sector-tech     { background: rgba(88,166,255,0.15);  color: #58a6ff; }
-    .sector-finance  { background: rgba(63,185,80,0.15);   color: #3fb950; }
-    .sector-health   { background: rgba(248,81,73,0.15);   color: #f85149; }
-    .sector-energy   { background: rgba(210,153,34,0.15);  color: #d29922; }
-    .sector-consumer { background: rgba(188,140,255,0.15); color: #bc8cff; }
-    .sector-other    { background: rgba(139,148,158,0.15); color: #8b949e; }
+    @media (max-width: 640px) {
+      main { padding: var(--sp6) var(--sp4); }
+      .page-header { flex-direction: column; align-items: flex-start; }
+      .page-title { font-size: 22px; }
+      .search-bar input { width: 100%; }
+      .search-wrap { width: 100%; }
+      .search-input-wrap { width: 100%; }
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+      .filter-row { flex-direction: column; align-items: flex-start; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .stagger, .skeleton { animation: none !important; }
+    }
   </style>
 </head>
 <body>
@@ -221,12 +421,18 @@
 <nav>
   <div class="nav-left">
     <a class="nav-brand" href="index.html">
-      <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
-        <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zm6-4a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zm6-3a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/>
-      </svg>
+      <div class="nav-logo">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M3 13V7M8 13V3M13 13V9" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
       Prometheus
     </a>
-    <span class="nav-meta" id="last-updated"></span>
+    <div class="nav-divider"></div>
+    <div class="nav-meta">
+      <span class="dot"></span>
+      <span id="last-updated">—</span>
+    </div>
   </div>
   <div class="nav-right">
     <button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme" id="theme-btn">🌙</button>
@@ -235,92 +441,137 @@
 
 <main>
   <div class="page-header stagger" style="--i:0">
-    <div>
-      <div class="page-title">Company Watchlist</div>
-      <div class="page-sub">Prometheus · ติดตามข้อมูลบริษัท · Annual Report · Earnings Call · Management Tracker</div>
+    <div class="page-title-group">
+      <div class="page-eyebrow">Watchlist</div>
+      <div class="page-title">Company Tracker</div>
+      <div class="page-sub">Annual Report · Earnings Call · Management</div>
     </div>
-    <div class="search-bar">
-      <input type="text" id="search-input" placeholder="ค้นหาบริษัท..." />
+    <div class="search-wrap">
+      <div class="search-bar">
+        <div class="search-input-wrap">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+          </svg>
+          <input type="text" id="search-input" placeholder="ค้นหาบริษัท..." />
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="stats-row" id="stats-row">
+  <div class="stats-row">
     <div class="stat-card stagger" style="--i:1">
-      <div class="stat-label">COMPANIES</div>
+      <div class="stat-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+        </svg>
+      </div>
+      <div class="stat-label">Companies</div>
       <div class="stat-value" id="stat-total">—</div>
     </div>
     <div class="stat-card stagger" style="--i:2">
-      <div class="stat-label">SECTORS</div>
+      <div class="stat-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+        </svg>
+      </div>
+      <div class="stat-label">Sectors</div>
       <div class="stat-value" id="stat-sectors">—</div>
     </div>
     <div class="stat-card stagger" style="--i:3">
-      <div class="stat-label">LATEST UPDATE</div>
-      <div class="stat-value" style="font-size:16px;padding-top:4px" id="stat-recent">—</div>
+      <div class="stat-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+        </svg>
+      </div>
+      <div class="stat-label">Latest Update</div>
+      <div class="stat-value small" id="stat-recent">—</div>
     </div>
   </div>
 
-  <div class="filter-tabs stagger" style="--i:4" id="filter-tabs">
-    <button class="filter-tab active" data-sector="all">ทั้งหมด</button>
+  <div class="filter-row stagger" style="--i:4">
+    <div class="filter-tabs" id="filter-tabs">
+      <button class="filter-tab active" data-sector="all">ทั้งหมด</button>
+    </div>
+    <div class="results-count" id="results-count"></div>
   </div>
 
   <div id="content">
-    <div class="loading">กำลังโหลดข้อมูล...</div>
+    <div class="loading-grid" id="skeleton-grid">
+    </div>
   </div>
 </main>
 
 <script>
-  /* ── THEME ── */
-  (function initTheme() {
-    const saved = localStorage.getItem('prometheus-theme') || 'dark';
-    document.documentElement.setAttribute('data-theme', saved);
-    document.getElementById('theme-btn').textContent = saved === 'dark' ? '🌙' : '☀️';
+  /* Build skeleton loading cards */
+  (function buildSkeleton() {
+    const grid = document.getElementById('skeleton-grid');
+    for (let i = 0; i < 6; i++) {
+      grid.innerHTML += `
+        <div class="skeleton-card">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <div class="skeleton" style="width:44px;height:44px;border-radius:10px"></div>
+            <div class="skeleton" style="width:70px;height:20px;border-radius:99px"></div>
+          </div>
+          <div class="skeleton" style="height:15px;width:75%"></div>
+          <div class="skeleton" style="height:11px;width:50%"></div>
+          <div style="border-top:1px solid var(--border);margin:4px 0"></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px">
+            <div class="skeleton" style="height:32px"></div>
+            <div class="skeleton" style="height:32px"></div>
+            <div class="skeleton" style="height:32px"></div>
+          </div>
+        </div>`;
+    }
   })();
 
-  window.toggleTheme = function() {
-    const current = document.documentElement.getAttribute('data-theme');
-    const next = current === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', next);
-    localStorage.setItem('prometheus-theme', next);
-    document.getElementById('theme-btn').textContent = next === 'dark' ? '🌙' : '☀️';
-  };
-
-  /* ── APP STATE ── */
-  let allCompanies = [];
-  let currentSector = 'all';
-  let searchQuery = '';
-
-  const SECTOR_COLORS = {
-    'Technology': 'sector-tech', 'Finance': 'sector-finance',
-    'Healthcare': 'sector-health', 'Energy': 'sector-energy', 'Consumer': 'sector-consumer',
-  };
-  function getSectorClass(sector) { return SECTOR_COLORS[sector] || 'sector-other'; }
+  /* ── SECTOR MAPPINGS ── */
+  const SECTOR_LOGO  = { Technology:'logo-tech', Finance:'logo-finance', Healthcare:'logo-health', Energy:'logo-energy', Consumer:'logo-consumer' };
+  const SECTOR_BADGE = { Technology:'badge-tech', Finance:'badge-finance', Healthcare:'badge-health', Energy:'badge-energy', Consumer:'badge-consumer' };
+  function getLogoClass(sector)  { return SECTOR_LOGO[sector]  || 'logo-other';  }
+  function getBadgeClass(sector) { return SECTOR_BADGE[sector] || 'badge-other'; }
 
   function formatDate(dateStr) {
     if (!dateStr) return '—';
     return new Date(dateStr).toLocaleDateString('th-TH', { day:'numeric', month:'short', year:'2-digit' });
   }
 
-  /* ── LOAD ── */
+  /* ── THEME ── */
+  (function initTheme() {
+    const saved = (() => { try { return localStorage.getItem('prometheus-theme'); } catch(e) { return null; } })();
+    const theme = saved || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+    document.getElementById('theme-btn').textContent = theme === 'dark' ? '🌙' : '☀️';
+  })();
+
+  window.toggleTheme = function() {
+    const cur  = document.documentElement.getAttribute('data-theme');
+    const next = cur === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    try { localStorage.setItem('prometheus-theme', next); } catch(e) {}
+    document.getElementById('theme-btn').textContent = next === 'dark' ? '🌙' : '☀️';
+  };
+
+  let allCompanies  = [];
+  let currentSector = 'all';
+  let searchQuery   = '';
+
   async function loadCompanies() {
     try {
-      const res = await fetch('data/companies.json');
+      const res  = await fetch('data/companies.json');
       allCompanies = await res.json();
-
-      document.getElementById('stat-total').textContent = allCompanies.length;
+      document.getElementById('stat-total').textContent   = allCompanies.length;
       const sectors = [...new Set(allCompanies.map(c => c.sector))];
       document.getElementById('stat-sectors').textContent = sectors.length;
-
       const sorted = [...allCompanies].sort((a,b) => new Date(b.last_updated) - new Date(a.last_updated));
-      document.getElementById('stat-recent').textContent = sorted[0]?.ticker || '—';
-      document.getElementById('last-updated').textContent = 'อัพเดท: ' + formatDate(sorted[0]?.last_updated);
-
+      document.getElementById('stat-recent').textContent  = sorted[0]?.ticker || '—';
+      document.getElementById('last-updated').textContent = 'อัพเดท ' + formatDate(sorted[0]?.last_updated);
       buildFilters(sectors);
       renderCards();
     } catch(e) {
       document.getElementById('content').innerHTML = `
         <div class="empty-state">
-          <svg width="48" height="48" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+          <svg width="48" height="48" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
           </svg>
           <p>ไม่พบไฟล์ <code>data/companies.json</code><br>กรุณาตรวจสอบว่าไฟล์ถูกสร้างแล้ว</p>
         </div>`;
@@ -349,19 +600,20 @@
   }
 
   function renderCards() {
-    let list = allCompanies.filter(c => {
+    const list = allCompanies.filter(c => {
       const matchSector = currentSector === 'all' || c.sector === currentSector;
       const q = searchQuery.toLowerCase();
       const matchSearch = !q || c.name.toLowerCase().includes(q) || c.ticker.toLowerCase().includes(q);
       return matchSector && matchSearch;
     });
-
+    const countEl = document.getElementById('results-count');
+    if (countEl) countEl.textContent = list.length + ' บริษัท';
     const container = document.getElementById('content');
     if (!list.length) {
       container.innerHTML = `
         <div class="empty-state">
-          <svg width="48" height="48" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          <svg width="48" height="48" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
           </svg>
           <p>ไม่พบบริษัทที่ค้นหา</p>
         </div>`;
@@ -371,32 +623,35 @@
   }
 
   function renderCard(c, i) {
-    const sectorClass  = getSectorClass(c.sector);
-    const initials     = c.ticker.slice(0, 3);
+    const logoClass  = getLogoClass(c.sector);
+    const badgeClass = getBadgeClass(c.sector);
+    const initials   = c.ticker.slice(0, 3);
     const noteCount    = c.note_count    || 0;
     const quoteCount   = c.quote_count   || 0;
     const roadmapCount = c.roadmap_count || 0;
     return `
-      <a class="company-card stagger" style="--i:${i}" href="company.html?ticker=${c.ticker}">
+      <a class="company-card stagger" style="--i:${Math.min(i, 10)}" href="company.html?ticker=${c.ticker}">
         <div class="card-top">
-          <div class="company-logo">${initials}</div>
-          <span class="sector-badge ${sectorClass}">${c.sector}</span>
+          <div class="company-logo ${logoClass}">${initials}</div>
+          <span class="sector-badge ${badgeClass}">${c.sector}</span>
         </div>
-        <div class="company-name">${c.name}</div>
-        <div class="company-ticker">${c.ticker} · ${c.exchange || 'NASDAQ'}</div>
-        <hr class="card-divider">
+        <div>
+          <div class="company-name">${c.name}</div>
+          <div class="company-ticker">${c.ticker} · ${c.exchange || 'NASDAQ'}</div>
+        </div>
+        <div class="card-divider"></div>
         <div class="card-stats">
-          <div>
-            <div class="card-stat-label">NOTES</div>
-            <div class="card-stat-value">${noteCount}</div>
+          <div class="card-stat-item">
+            <div class="card-stat-label">Notes</div>
+            <div class="card-stat-value${noteCount > 0 ? ' has-data' : ''}">${noteCount}</div>
           </div>
-          <div>
-            <div class="card-stat-label">QUOTES</div>
-            <div class="card-stat-value">${quoteCount}</div>
+          <div class="card-stat-item">
+            <div class="card-stat-label">Quotes</div>
+            <div class="card-stat-value${quoteCount > 0 ? ' has-data' : ''}">${quoteCount}</div>
           </div>
-          <div>
-            <div class="card-stat-label">ROADMAP</div>
-            <div class="card-stat-value">${roadmapCount}</div>
+          <div class="card-stat-item">
+            <div class="card-stat-label">Roadmap</div>
+            <div class="card-stat-value${roadmapCount > 0 ? ' has-data' : ''}">${roadmapCount}</div>
           </div>
         </div>
         <div class="card-footer">
