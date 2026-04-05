@@ -563,7 +563,7 @@
       const sectors = [...new Set(allCompanies.map(c => c.sector))];
       document.getElementById('stat-sectors').textContent = sectors.length;
       const sorted = [...allCompanies].sort((a,b) => new Date(b.last_updated) - new Date(a.last_updated));
-      document.getElementById('stat-recent').textContent  = sorted[0]?.ticker || '—';
+      document.getElementById('stat-recent').textContent  = formatDate(sorted[0]?.last_updated) || '—';
       document.getElementById('last-updated').textContent = 'อัพเดท ' + formatDate(sorted[0]?.last_updated);
       buildFilters(sectors);
       renderCards();
