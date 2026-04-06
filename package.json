@@ -1,0 +1,17 @@
+{
+  "name": "prometheus-investment-research",
+  "version": "1.0.0",
+  "description": "Prometheus – personal investment research dashboard synced from Notion",
+  "private": true,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "sync": "node scripts/notion-sync.js",
+    "migrate": "node scripts/migrate-to-notion.js",
+    "migrate:dry": "node scripts/migrate-to-notion.js --dry-run"
+  },
+  "dependencies": {
+    "@notionhq/client": "^2.2.15"
+  }
+}
