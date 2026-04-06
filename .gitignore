@@ -1,0 +1,7 @@
+# MacOS junk files
+.DS_Store
+**/.DS_Store
+
+# Optional
+node_modules/
+quartz/public/
