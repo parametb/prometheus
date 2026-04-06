@@ -428,7 +428,7 @@ function collectTags(items,field){
 }
 function tagFilterBar(tags,activeTag,onClickFn,clearFn){
   if(!tags.length)return'';
-  const chips=tags.map(tg=>`<button class="tag-chip ${activeTag===tg?'active':''}" onclick="${onClickFn}('${tg}')">#${tg}`</button>`).join('');
+  const chips=tags.map(tg=>`<button class="tag-chip ${activeTag===tg?'active':''}" onclick="${onClickFn}('${tg}')">#${tg}</button>`).join('');
   return `<div class="tag-filter-bar"><span class="tag-filter-label">TAG</span>${chips}<button class="tag-chip-clear ${activeTag?'visible':''}" onclick="${clearFn}()">✕ clear</button></div>`;
 }
 
@@ -858,7 +858,7 @@ async function renderGanttChart(roadmap){
   mermaid.initialize({startOnLoad:false,theme,securityLevel:'loose'});
   try{const{svg}=await mermaid.render('gantt-'+Date.now(),syntax);container.innerHTML=svg;}
   catch(e){container.innerHTML=`<div class="gantt-loading">${t('error.timeline')}</div>`;}
-}
+}431
 
 /* ── FINANCIALS ── */
 function renderFinancials(fin){
@@ -892,6 +892,7 @@ function renderFinLinks(links){
   const cards=links.map(lk=>{
     const info=LINK_ICONS[lk.type]||{icon:'🔗',cls:'type-other'};
     const label=[lk.type,lk.year,lk.quarter].filter(Boolean).join(' ');
+
     return`<a class="fin-link-card" href="${lk.url}" target="_blank" rel="noopener"><div class="fin-link-icon ${info.cls}">${info.icon}</div><div class="fin-link-info"><div class="fin-link-title">${lk.title}</div><div class="fin-link-type">${label}</div></div><span class="fin-link-arrow">↗</span></a>`;
   }).join('');
   return`<div class="fin-section"><div class="fin-title">${t('fin.docs')}</div><div class="fin-links-grid">${cards}</div></div>`;
@@ -902,4 +903,98 @@ function drawSankeyChart(fin){
   const el=document.getElementById('sankey-chart'); if(!el||!fin.breakdown?.sankey)return;
   const sk=fin.breakdown.sankey;
   const isLight=am5isLight();
-  const bg=isLight?'#ffffff':'#161b22'; const
+  const bg=isLight?'#ffffff':'#161b22'; const paperColor=isLight?'rgba(0,0,0,0.05)':'rgba(255,255,255,0.05)';
+  const nodeColors=['#58a6ff','#3fb950','#d29922','#bc8cff','#e3663a','#f85149','#58d68d','#9eaab7'];
+  const allNodes=[];
+  const nodeIndex={};
+  function ni(name){if(nodeIndex[name]==null){nodeIndex[name]=allNodes.length;allNodes.push(name);}return nodeIndex[name];}
+  sk.nodes.forEach(n=>ni(n.name||n));
+  const links=sk.links.map(l=>({source:ni(l.source),target:ni(l.target),value:l.value}));
+  const data=[{type:'sankey',orientation:'h',node:{pad:12,thickness:18,line:{color:bg,width:0.5},label:allNodes,color:allNodes.map((_,i)=>nodeColors[i%nodeColors.length])},link:{source:links.map(l=>l.source),target:links.map(l=>l.target),value:links.map(l=>l.value),color:links.map(l=>nodeColors[l.source%nodeColors.length].replace(')',',0.3)').replace('rgb(','rgba('))}}];
+  const layout={paper_bgcolor:bg,plot_bgcolor:bg,font:{color:isLight?'#0f172a':'#e6edf3',size:11,family:"'JetBrains Mono',monospace"},margin:{l:10,r:10,t:10,b:10}};
+  Plotly.react(el,data,layout,{displayModeBar:false,responsive:true});
+}
+/* ── FIN CHART ── */
+let finChartRoot=null;
+function drawFinChart(fin){
+  if(finChartRoot){finChartRoot.dispose();finChartRoot=null;}
+  const el=document.getElementById('fin-chart');
+  if(!el||!fin.metrics||!fin.years)return;
+  const root=am5MakeRoot('fin-chart');
+  finChartRoot=root;
+  const chart=root.container.children.push(am5xy.XYChart.new(root,{panX:false,panY:false,wheelX:'none',wheelY:'none',layout:root.verticalLayout}));
+  const xAxis=chart.xAxes.push(am5xy.CategoryAxis.new(root,{categoryField:'year',renderer:am5xy.AxisRendererX.new(root,{minGridDistance:20})}));
+  const yAxis=chart.yAxes.push(am5xy.ValueAxis.new(root,{renderer:am5xy.AxisRendererY.new(root,{})}));
+  const metrics=fin.metrics.filter(m=>m.chart!==false);
+  const activeMetric=metrics[0];
+  const data=fin.years.map((y,i)=>({year:String(y),value:activeMetric?.values[i]??null}));
+  xAxis.data.setAll(data);
+  const series=chart.series.push(am5xy.ColumnSeries.new(root,{xAxis,yAxis,valueYField:'value',categoryXField:'year',tooltip:am5.Tooltip.new(root,{labelText:'{valueY}'})}));
+  series.columns.template.setAll({cornerRadiusTL:3,cornerRadiusTR:3,strokeOpacity:0});
+  series.columns.template.adapters.add('fill',(fill,target)=>{
+    const v=target.dataItem?.get('valueY');
+    if(v==null)return am5.color('#8b949e');
+    return am5.color(v>=0?'#3fb950':'#f85149');
+  });
+  series.data.setAll(data);
+  series.appear(1000);
+  const bar=document.getElementById('fin-metric-bar');
+  if(bar){
+    bar.innerHTML=metrics.map(m=>`<button class="fin-metric-btn ${m===activeMetric?'active':''}" onclick="switchFinMetric('${m.name}')">${m.name}</button>`).join('');
+  }
+  window._finRoot=root;
+  window._fin=fin;
+}
+window.switchFinMetric=function(name){
+  const fin=window._fin;
+  if(!fin)return;
+  const m=fin.metrics.find(x=>x.name===name);
+  if(!m)return;
+  document.querySelectorAll('.fin-metric-btn').forEach(b=>b.classList.toggle('active',b.textContent===name));
+  const data=fin.years.map((y,i)=>({year:String(y),value:m.values[i]??null}));
+  if(window._finRoot){
+    window._finRoot.dispose();
+    window._finRoot=null;
+  }
+  if(finChartRoot){finChartRoot.dispose();finChartRoot=null;}
+  const root=am5MakeRoot('fin-chart');
+  finChartRoot=root;
+  window._finRoot=root;
+  const chart=root.container.children.push(am5xy.XYChart.new(root,{panX:false,panY:false,wheelX:'none',wheelY:'none'}));
+  const xAxis=chart.xAxes.push(am5xy.CategoryAxis.new(root,{categoryField:'year',renderer:am5xy.AxisRendererX.new(root,{minGridDistance:20})}));
+  const yAxis=chart.yAxes.push(am5xy.ValueAxis.new(root,{renderer:am5xy.AxisRendererY.new(root,{})}));
+  xAxis.data.setAll(data);
+  const series=chart.series.push(am5xy.ColumnSeries.new(root,{xAxis,yAxis,valueYField:'value',categoryXField:'year',tooltip:am5.Tooltip.new(root,{labelText:'{valueY}'})}));
+  series.columns.template.setAll({cornerRadiusTL:3,cornerRadiusTR:3,strokeOpacity:0});
+  series.columns.template.adapters.add('fill',(fill,target)=>{
+    const v=target.dataItem?.get('valueY');
+    return am5.color(v>=0?'#3fb950':'#f85149');
+  });
+  series.data.setAll(data);
+  series.appear(1000);
+};
+/* ── TRADINGVIEW ── */
+function renderTVChart(symbol){
+  const outer=document.getElementById('tv-chart-outer');
+  if(!outer||!symbol)return;
+  outer.innerHTML='';
+  const container=document.createElement('div');
+  container.id='tv-chart-widget';
+  container.style.height='100%';
+  outer.appendChild(container);
+  new TradingView.widget({autosize:true,symbol,interval:'W',timezone:'Etc/UTC',theme:am5isLight()?'light':'dark',style:'1',locale:'en',toolbar_bg:'#f1f3f6',enable_publishing:false,hide_top_toolbar:false,save_image:false,container_id:'tv-chart-widget'});
+}
+function renderTVFundamentals(symbol){
+  const outer=document.getElementById('tv-fundamentals-outer');
+  if(!outer||!symbol)return;
+  outer.innerHTML='';
+  const container=document.createElement('div');
+  container.id='tv-fund-widget';
+  container.style.height='100%';
+  outer.appendChild(container);
+  new TradingView.FundamentalData({colorTheme:am5isLight()?'light':'dark',isTransparent:false,largeChartUrl:'',displayMode:'regular',width:'100%',height:'100%',locale:'en',symbol,container_id:'tv-fund-widget'});
+}
+loadCompany();
+</script>
+</body>
+</html>
