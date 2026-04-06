@@ -1,7 +1,17 @@
-# MacOS junk files
-.DS_Store
-**/.DS_Store
+# ── API Keys — ห้าม commit เด็ดขาด ──
+.env
+.env.local
+.env.*
 
-# Optional
-node_modules/
-quartz/public/
+# ── Python cache ──
+__pycache__/
+*.py[cod]
+*.pyo
+
+# ── macOS ──
+.DS_Store
+
+# ── Backup / temp files ──
+*.bak
+*.tmp
+/data/*/history/
