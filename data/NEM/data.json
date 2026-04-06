@@ -1,194 +1,213 @@
 {
   "ticker": "NEM",
   "name": "Newmont Corporation",
+  "name_th": "",
   "sector": "Mining",
   "exchange": "NYSE",
-  "last_updated": "2026-04-02",
-  "description": "World's largest gold mining company, founded in 1921 and headquartered in Denver, Colorado. Newmont operates mines and projects across North America, South America, Australia, and Africa, producing gold, silver, copper, zinc, and lead.",
+  "tradingview_symbol": "NYSE:NEM",
+  "last_updated": "2026-04-06",
+  "description": "World's largest gold mining company, founded in 1921 and headquartered in Denver, Colorado. Produces gold, silver, copper across North America, South America, Australia, and Africa.",
+  "ceo": "Natascha Viljoen",
+  "employees": 44100,
+  "management_tone": "bullish",
   "notes": [
     {
       "date": "2026-04-02",
       "title": "FY2025 10-K Analysis",
-      "title_th": "การวิเคราะห์รายงานประจำปี FY2025",
       "tags": [
-        "annual-report",
-        "fy2025",
-        "financials",
-        "portfolio-optimization"
+        "strategy"
       ],
       "rating": 3,
-      "content": "[Financial Performance]\nNewmont delivered a transformative year with net income surging to $7.2B from $3.3B, driven by robust gold prices and strategic portfolio actions. While attributable gold production declined 14% due to divestitures, this was more than offset by a 45% increase in average realized gold prices and improved cost efficiency. The company generated record operating cash flow of $10.3B, enabling substantial debt reduction and shareholder returns. Strategic divestitures have reshaped the portfolio toward higher-margin assets, with all-in sustaining costs for gold increasing only modestly to $1,609/oz despite inflationary pressures. The integration of Newcrest assets is now complete, positioning Newmont with a strengthened project pipeline for long-term value creation.\n\n[Performance Drivers]\nRevenue growth was primarily driven by significantly higher average realized gold prices ($3,498/oz vs $2,408/oz prior year) and contributions from the Newcrest acquisition, partially offset by lower production volumes due to strategic divestitures of non-core assets. The portfolio optimization program reduced costs applicable to sales while maintaining focus on higher-margin operations.\n\n[Strategic Priorities]\n• Portfolio optimization — divesting non-core assets (CC&V, Musselwhite, Éléonore, Akyem, Porcupine, Telfer) to focus on highest-return operations\n• Project pipeline development — advancing Tanami Expansion 2 and Cadia Panel Caves to extend mine life and improve production efficiency\n• Financial strength maintenance — reducing debt ($3.4B senior notes redeemed), maintaining liquidity ($11.6B total), and returning capital to shareholders ($1.01/share dividend)\n\n[Competitive Position]\nNewmont maintains its position as the world's leading gold producer with approximately 5% of global mined production, supported by a diverse portfolio across favorable jurisdictions. The company's competitive moat comes from its large reserve base (118.2M attributable ounces), scale advantages, and focus on tier-1 assets. Strategic divestitures have streamlined the portfolio toward higher-grade, lower-cost operations while maintaining geographic diversification.\n\n[Management Quality]\nExecution score: HIGH\nManagement delivered on portfolio optimization promises by completing all planned divestitures, achieving commercial production at Ahafo North, and generating $7.3B free cash flow—more than doubling prior year's $2.9B. They successfully integrated Newcrest assets while improving cost structure.\n\n[Outlook]\nManagement signals continued focus on project development with Tanami Expansion 2 expected to achieve commercial production in H2 2027 and Cadia Panel Caves advancing through 2029. They emphasize maintaining financial strength while investing in the pipeline to support stable production with improving margins.\n\n[Key Risks]\nNewmont faces a multifaceted risk profile dominated by commodity price volatility and project execution challenges, with significant exposure to metal market fluctuations and capital project risks. The company manages these through portfolio optimization, hedging strategies, and operational discipline, though remains vulnerable to external market forces and geopolitical factors across its global operations. Environmental compliance and cost management present ongoing challenges in maintaining profitability.\n\n[Management Tone]\nBullish",
-      "content_th": ""
+      "content": "[Financial Performance]\nNet income surged to $7.2B from $3.3B. Record operating cash flow $10.3B. Free cash flow $7.3B (from $2.9B prior year). Average realized gold price $3,498/oz vs $2,408/oz. Adjusted EBITDA $13.48B (+55% YoY).\n[Strategic Priorities]\n• Portfolio optimization: divested CC&V, Musselwhite, Eleonore, Akyem, Porcupine, Telfer\n• Tanami Expansion 2: commercial production expected H2 2027\n• Cadia Panel Caves advancing through 2029\n• Debt reduction: $3.4B senior notes redeemed\n[Management Tone]\nBullish"
     },
     {
       "date": "2026-04-02",
       "title": "FY2025 vs FY2024 — Narrative Evolution Analysis",
-      "title_th": "วิเคราะห์การเปลี่ยนแปลงเชิงกลยุทธ์ FY2025 เทียบ FY2024",
       "tags": [
-        "narrative-evolution",
-        "accounting-watch",
-        "multi-year",
-        "nem"
+        "strategy"
       ],
       "rating": 3,
-      "content": "[Management Narrative Drift (2024 → 2025)]\nManagement's narrative shifted from integration-focused to execution-focused between 2024 and 2025. The 2025 filing emphasizes completed divestitures and portfolio optimization results, while downplaying the Newcrest acquisition that dominated the 2024 discussion. Despite reporting lower production metrics due to asset sales, management adopted a more bullish tone by highlighting strong financial results, increased liquidity, and successful debt reduction. The evolution shows a company transitioning from post-acquisition restructuring to streamlined operations with improved financial flexibility.\nTone: cautious→bullish\nDisappeared topics: Newcrest acquisition integration details, Portfolio optimization program announcement, Specific mention of Telfer sale completion in 2024, Detailed breakdown of development capital costs for Ahafo North project, Mention of '16 mining operations' (reduced to 12 in 2025)\nNew topics: Divestiture completion announcements (CC&V, Musselwhite, Éléonore, Porcupine, Akyem, Coffee), Ahafo North achieving commercial production, Senior notes redemption and share repurchase settlements, Increased liquidity focus ($11.6 billion mentioned), Capitalized depreciation and amortization in development cost reporting\n\n[Business & Reporting Evolution]\nNewmont maintained consistent business model and reporting structure between 2024 and 2025 filings, with minor refinements rather than major changes. The company continued its strong ESG focus, climate targets, and operational framework while adjusting workforce numbers due to acquisitions/divestitures. Geographic presence remained largely stable with one country addition and reporting clarifications on emissions targets and governance composition.\nNew KPIs introduced: —\nKPIs quietly dropped: —\n\n[Accounting Watch]\nReporting shows mixed quality signals. While divestitures and portfolio optimization reflect strategic realignment, accounting changes like expanded cost capitalization reduce current expenses optically. Segment redefinitions and altered cost methodologies hinder year-over-year comparability. Overall, financial presentation appears geared toward showcasing improved margins post-divestitures, but underlying accounting policy shifts warrant scrutiny for sustainable earnings quality.\n\n[Risk Evolution — ?]\nThe risk factors section shows no substantive changes between the 2024 and 2025 filings. Both documents maintain the same structure and numbering (RISK FACTORS 16 in 2024 vs 17 in 2025, with the difference likely due to formatting). No new risks were introduced, no risks were removed, and there were no escalations or de-escalations in risk language. The stability suggests the company's risk profile remained consistent year-over-year despite operational changes like divestitures.\nNew risks: —\nRemoved risks: —\n\n[Red Flags & Optical Improvements]\n⚠️ Reduced attributable gold production (14% decrease)\n⚠️ Fewer reportable segments (16 to 12)\n⚠️ Smaller land position (25,500 to 19,200 square miles)\n⚠️ Lower attributable gold reserves (134.1 to 118.2 million ounces)\n⚠️ Less detailed breakdown of equity method investment contributions\n⚠️ Development capital cost exclusions expanded from 'excluding capitalized interest' (2024) to 'excluding capitalized interest and capitalized depreciation and amortization' (2025), reducing reported expenses and improving margins.\n⚠️ Divestiture of lower-performing assets (CC&V, Musselwhite, Éléonore, Akyem, Porcupine, Telfer) improves remaining portfolio metrics like costs per ounce and margins, though overall production decreased.\n⚠️ Presentation of costs per tonne for copper, lead, and zinc in 2025 (not in 2024) provides additional granularity but may obscure year-over-year unit cost comparisons at per-ounce level.",
-      "content_th": ""
+      "content": "[Management Narrative Drift]\nNarrative shifted from integration-focused to execution-focused. 2025 filing emphasizes completed divestitures and portfolio optimization. Tone: cautious→bullish.\n[Red Flags]\n• Reduced attributable gold production (14% decrease)\n• Fewer segments (16 to 12)\n• Smaller land position (25,500 to 19,200 sq miles)\n• Lower gold reserves (134.1 to 118.2M ounces)\n• Expanded cost capitalization reduces reported expenses optically"
     }
   ],
   "quotes": [
     {
-      "speaker": "Management (Overview)",
-      "quote": "As the world's leading gold company, Newmont remains committed to creating value and improving lives through sustainable and responsible mining.",
-      "quote_th": "",
-      "tag": "strategy",
+      "date": "2026-02-19",
       "source": "FY2025 10-K",
-      "date": "2026-02-19"
+      "speaker": "Management (Risk Factors)",
+      "quote": "We manage our wider project portfolio to maintain flexibility to address the development risks associated with our projects including permitting, local community and government support, engineering and procurement availability, technical issues, escalating costs and other associated risks.",
+      "quote_th": "เราบริหารพอร์ตโฟลิโโครงการที่กว้างขึ้นเพื่อรักษาความยืดหยุ่น รวมถึงความเสี่ยงด้านการอนุญาต ชุมชนท้องถิ่น การจัดซื้อจัดจ้าง ปัญหาเทคนิค ต้นทุนสูงขึ้น และความเสี่ยงอื่นๆ",
+      "tag": "risk"
     },
     {
-      "speaker": "Management (Financial Results)",
-      "quote": "Net income (loss) from continuing operations attributable to Newmont stockholders of $7,085 or $6.39 per diluted share, an increase of $3,805 from the prior year primarily due to (i) a net increase in Sales largely due to higher average realized gold prices partially offset by the impact from divestitures, (ii) a net gain on completed divestments... and (iii) a net decrease in costs applicable to sales...",
-      "quote_th": "",
-      "tag": "revenue",
+      "date": "2026-02-19",
       "source": "FY2025 10-K",
-      "date": "2026-02-19"
-    },
-    {
-      "speaker": "Management (Financial Results)",
-      "quote": "Reported Adjusted EBITDA of $13,480, an increase of 55% from the prior year.",
-      "quote_th": "",
-      "tag": "revenue",
-      "source": "FY2025 10-K",
-      "date": "2026-02-19"
-    },
-    {
       "speaker": "Management (Financial Results)",
       "quote": "Reported Net cash provided by (used in) operating activities of continuing operations of $10,334, an increase of 64% from the prior year, and Free cash flow of $7,299.",
-      "quote_th": "",
-      "tag": "revenue",
-      "source": "FY2025 10-K",
-      "date": "2026-02-19"
+      "quote_th": "รายงานเงินสดสุทธิ์ที่ได้รับจากการดำเนินงานต่อเนื่องของ  10,334 ล้านดอลลาร์ เพิ่มขึ้น  64% จากปีก่อน และกระแสเงินสดอิสระ 7,299 ล้านดอลลาร์",
+      "tag": "growth"
     },
     {
-      "speaker": "Management (Portfolio Updates)",
-      "quote": "Achieved commercial production at the Ahafo North project in Ghana resulting in classification as a reportable segment. Completed the sale of the CC&V, Musselwhite, Éléonore, Akyem, and Porcupine reportable segments and the Coffee development project.",
-      "quote_th": "",
-      "tag": "strategy",
+      "date": "2026-02-19",
       "source": "FY2025 10-K",
-      "date": "2026-02-19"
+      "speaker": "Management (Financial Results)",
+      "quote": "Reported Adjusted EBITDA of $13,480, an increase of 55% from the prior year.",
+      "quote_th": "รายงาน Adjusted EBITDA ที่ 13,480 ล้านดอลลาร์ เพิ่มขึ้น 55% จากปีก่อน",
+      "tag": "growth"
     },
     {
-      "speaker": "Management (Project Pipeline)",
-      "quote": "Newmont's project pipeline supports stable production with improving margins and mine life.",
-      "quote_th": "",
-      "tag": "growth",
+      "date": "2026-02-19",
       "source": "FY2025 10-K",
-      "date": "2026-02-19"
-    },
-    {
-      "speaker": "Management (Tanami Expansion 2)",
-      "quote": "This project secures Tanami's future as a long-life, low-cost producer by extending mine life beyond 2040 through the addition of a 1,460 meter hoisting shaft and supporting infrastructure to achieve higher production and provide a platform for future growth.",
-      "quote_th": "",
-      "tag": "growth",
-      "source": "FY2025 10-K",
-      "date": "2026-02-19"
-    },
-    {
       "speaker": "Management (Cadia Panel Caves)",
       "quote": "This project includes two panel caves to recover approximately 5 million ounces of gold reserves and 1.1 million tonnes of copper reserves.",
-      "quote_th": "",
-      "tag": "growth",
-      "source": "FY2025 10-K",
-      "date": "2026-02-19"
+      "quote_th": "โครงการนี้มีถ้ำผลิตแบบ panel caves สองแห่ง เพื่อเรียกคืนสำรองทองคำประมาณ 5 ล้านอาวส์ และสำรองทองแดง 1.1 ล้านตัน",
+      "tag": "growth"
     },
     {
-      "speaker": "Management (Risk Factors)",
-      "quote": "We manage our wider project portfolio to maintain flexibility to address the development risks associated with our projects including permitting, local community and government support, engineering and procurement availability, technical issues, escalating costs and other associated risks that could adversely impact the timing and costs of certain opportunities.",
-      "quote_th": "",
-      "tag": "risk",
+      "date": "2026-02-19",
       "source": "FY2025 10-K",
-      "date": "2026-02-19"
+      "speaker": "Management (Tanami Expansion 2)",
+      "quote": "This project secures Tanami's future as a long-life, low-cost producer by extending mine life beyond 2040 through the addition of a 1,460 meter hoisting shaft and supporting infrastructure to achieve higher production and provide a platform for future growth.",
+      "quote_th": "โครงการนี้รักษาอนาคตของ Tanami ให้เป็นอุตสาหกรรมที่ดำเนินได้ระยะยาวและต้นทุนต่ำ โดยยืดอายุเหมืองเหมืองเกินปี 2040 ด้วยการเพิ่มสัดลำเลียง 1,460 เมตร",
+      "tag": "growth"
     },
     {
+      "date": "2026-02-19",
+      "source": "FY2025 10-K",
+      "speaker": "Management (Overview)",
+      "quote": "As the world's leading gold company, Newmont remains committed to creating value and improving lives through sustainable and responsible mining.",
+      "quote_th": "ในฐานะบริษัททองคำชั้นนำของโลก Newmont ยังคงมุ่งมั่นสร้างคุณค่าและพัฒนาคุณภาพชีวิตผ่านการทำเหมืองอย่างยั่งยืนและรับผิดชอบ",
+      "tag": "strategy"
+    },
+    {
+      "date": "2026-02-19",
+      "source": "FY2025 10-K",
+      "speaker": "Management (Portfolio Updates)",
+      "quote": "Achieved commercial production at the Ahafo North project in Ghana resulting in classification as a reportable segment. Completed the sale of the CC&V, Musselwhite, Éléonore, Akyem, and Porcupine reportable segments and the Coffee development project.",
+      "quote_th": "บรรลุการผลิตเชิงพาณิชย์ที่โครงการ Ahafo North",
+      "tag": "strategy"
+    },
+    {
+      "date": "2026-02-19",
+      "source": "FY2025 10-K",
+      "speaker": "Management (Project Pipeline)",
+      "quote": "Newmont's project pipeline supports stable production with improving margins and mine life.",
+      "quote_th": "เส้นโครงการของ Newmont สนับสนุนการผลิตที่มั่นคง โดยมีอัตรากำไรที่ดีขึ้นและอายุการทำเหมืองที่ยาวนานขึ้น",
+      "tag": "growth"
+    },
+    {
+      "date": "2026-02-19",
+      "source": "FY2025 10-K",
+      "speaker": "Management (Financial Results)",
+      "quote": "Net income (loss) from continuing operations attributable to Newmont stockholders of $7,085 or $6.39 per diluted share, an increase of $3,805 from the prior year primarily due to a net increase in Sales largely due to higher average realized gold prices.",
+      "quote_th": "กำไรสุทธิ์จากการดำเนินงานต่อเนื่องที่นับเข้าผู้ถือหุ้น Newmont อยู่ที่ 7,085 ล้านดอลลาร์ หรือ 6.39 ดอลลาร์ต่อหุ้นแบบสูสรรพ เพิ่มขึ้น 3,805 ล้านดอลลาร์ เป็นหลักเนื่องจากรายได้ขายที่สูงขึ้นจากราคาทองที่สูงขึ้น",
+      "tag": "growth"
+    },
+    {
+      "date": "2026-02-19",
+      "source": "FY2025 10-K",
       "speaker": "Management (Financial Strength)",
       "quote": "Ended the year with $7.6 billion of consolidated cash and $11.6 billion of total liquidity; redeemed $3.4 billion of senior notes and settled $2.3 billion of share repurchases; declared a total dividend of $1.01 per share for the year.",
-      "quote_th": "",
-      "tag": "guidance",
-      "source": "FY2025 10-K",
-      "date": "2026-02-19"
+      "quote_th": "สิ้นปีด้วยเงินสดรวม 7.6 พันล้านดอลลาร์ และสภาพคล่องแคล่วรวม 11.6 พันล้านดอลลาร์ ไถ่ถอนหุ้นกู้ 3.4 พันล้านดอลลาร์ และซื้อคืนหุ้น 2.3 พันล้านดอลลาร์ ประกาศเงินปันผลรวม 1.01 ดอลลาร์ต่อหุ้น สำหรับปี",
+      "tag": "guidance"
     }
   ],
   "roadmap": [
     {
-      "commitment": "Achieve commercial production at Tanami Expansion 2 project in second half of 2027",
       "date_said": null,
       "source": "FY2025 10-K",
-      "status": "pending"
-    },
-    {
-      "commitment": "Increase average annual gold production and improve efficiency at Tanami Expansion 2 for first five years (2028-2032)",
-      "date_said": null,
-      "source": "FY2025 10-K",
-      "status": "pending"
-    },
-    {
-      "commitment": "Complete cave establishment at Cadia Panel Caves PC2-3 by late 2026",
-      "date_said": null,
-      "source": "FY2025 10-K",
-      "status": "pending"
-    },
-    {
-      "commitment": "Complete last drawbell at Cadia Panel Caves PC1-2 in 2029",
-      "date_said": null,
-      "source": "FY2025 10-K",
-      "status": "pending"
-    },
-    {
-      "commitment": "Extend Tanami mine life beyond 2040 through Tanami Expansion 2 project",
-      "date_said": null,
-      "source": "FY2025 10-K",
-      "status": "pending"
-    },
-    {
-      "commitment": "Recover approximately 5 million ounces of gold reserves and 1.1 million tonnes of copper reserves at Cadia Panel Caves",
-      "date_said": null,
-      "source": "FY2025 10-K",
-      "status": "pending"
-    },
-    {
-      "commitment": "Maintain project portfolio flexibility to address development risks including permitting, community support, engineering availability, and cost escalation",
-      "date_said": null,
-      "source": "FY2025 10-K",
-      "status": "pending"
-    },
-    {
-      "commitment": "Support stable production with improving margins and mine life through global project pipeline",
-      "date_said": null,
-      "source": "FY2025 10-K",
-      "status": "pending"
-    },
-    {
-      "commitment": "Manage wider project portfolio to address timing and cost risks of development opportunities",
-      "date_said": null,
-      "source": "FY2025 10-K",
-      "status": "pending"
-    },
-    {
+      "status": "pending",
       "commitment": "Achieve higher production at Tanami through addition of 1,460 meter hoisting shaft and supporting infrastructure",
-      "date_said": null,
-      "source": "FY2025 10-K",
-      "status": "pending"
+      "follow_up": "",
+      "follow_up_date": ""
     },
     {
+      "date_said": null,
+      "source": "FY2025 10-K",
+      "status": "pending",
+      "commitment": "Manage wider project portfolio to address timing and cost risks of development opportunities",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": null,
+      "source": "FY2025 10-K",
+      "status": "pending",
       "commitment": "Provide platform for future growth at Tanami through expansion project",
-      "date_said": null,
-      "source": "FY2025 10-K",
-      "status": "pending"
+      "follow_up": "",
+      "follow_up_date": ""
     },
     {
-      "commitment": "Continue cave establishment through firing of additional drawbells in PC2-3 at Cadia",
       "date_said": null,
       "source": "FY2025 10-K",
-      "status": "pending"
+      "status": "pending",
+      "commitment": "Maintain project portfolio flexibility to address development risks including permitting, community support, engineering availability, and cost escalation",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": null,
+      "source": "FY2025 10-K",
+      "status": "pending",
+      "commitment": "Complete cave establishment at Cadia Panel Caves PC2-3 by late 2026",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": null,
+      "source": "FY2025 10-K",
+      "status": "pending",
+      "commitment": "Extend Tanami mine life beyond 2040 through Tanami Expansion 2 project",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": null,
+      "source": "FY2025 10-K",
+      "status": "pending",
+      "commitment": "Continue cave establishment through firing of additional drawbells in PC2-3 at Cadia",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": null,
+      "source": "FY2025 10-K",
+      "status": "pending",
+      "commitment": "Recover approximately 5 million ounces of gold reserves and 1.1 million tonnes of copper reserves at Cadia Panel Caves",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": null,
+      "source": "FY2025 10-K",
+      "status": "pending",
+      "commitment": "Complete last drawbell at Cadia Panel Caves PC1-2 in 2029",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": null,
+      "source": "FY2025 10-K",
+      "status": "pending",
+      "commitment": "Support stable production with improving margins and mine life through global project pipeline",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": null,
+      "source": "FY2025 10-K",
+      "status": "pending",
+      "commitment": "Achieve commercial production at Tanami Expansion 2 project in second half of 2027",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": null,
+      "source": "FY2025 10-K",
+      "status": "pending",
+      "commitment": "Increase average annual gold production and improve efficiency at Tanami Expansion 2 for first five years (2028-2032)",
+      "follow_up": "",
+      "follow_up_date": ""
     }
   ],
   "financials": {
@@ -234,7 +253,7 @@
           2.14,
           1.17,
           6.42,
-          11.0
+          11
         ]
       },
       {
@@ -250,7 +269,7 @@
         "name": "EPS (diluted)",
         "values": [
           -0.58,
-          -3.0,
+          -3,
           2.86,
           6.41
         ]
@@ -266,7 +285,5 @@
       }
     ],
     "notes": "Revenue = total sales per FMP/EDGAR. Gross Profit = Revenue - Cost of Revenue. Net Income = attributable to Newmont shareholders. FCF = Operating CF - CapEx. FY2023 NI impacted by ~$3.2B impairment charges (Ahafo, Cerro Negro) and Newcrest acquisition costs. FY2024 marked first full year post-Newcrest consolidation (acquired Nov 2023). FY2025 benefited from record gold prices (~$2,650/oz avg). Source: FMP annual, EDGAR 10-K."
-  },
-  "ceo": "Natascha Viljoen",
-  "employees": 44100
+  }
 }

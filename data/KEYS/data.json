@@ -1,198 +1,222 @@
 {
   "ticker": "KEYS",
   "name": "Keysight Technologies, Inc.",
+  "name_th": "",
   "sector": "Technology",
   "exchange": "NYSE",
-  "last_updated": "2026-04-04",
-  "description": "Keysight Technologies is a leading technology company that provides electronic design and test solutions to communications, aerospace & defense, automotive, energy, semiconductor, and general electronics markets.",
+  "tradingview_symbol": "NYSE:KEYS",
+  "last_updated": "2026-04-06",
+  "description": "Keysight Technologies provides electronic design and test solutions to communications, aerospace & defense, automotive, energy, semiconductor, and general electronics markets.",
+  "ceo": "Satish C. Dhanasekaran",
+  "employees": 16800,
+  "management_tone": "bullish",
   "notes": [
     {
       "date": "2026-04-04",
       "title": "FY2025 10-K Analysis",
-      "title_th": "การวิเคราะห์รายงานประจำปี FY2025",
       "tags": [
-        "annual-report",
-        "fy2025",
-        "test-measurement",
-        "acquisitions"
+        "strategy",
+        "growth"
       ],
       "rating": 3,
-      "content": "[Financial Performance]\nKeysight Technologies delivered revenue of $5.38B in FY2025, a recovery of +8.0% from FY2024's $4.98B trough (which itself declined 8.8% from FY2023's $5.46B peak). The FY2024 downturn was driven by broad telecom and semiconductor end-market inventory corrections; FY2025 recovery was powered by the acquisitions of Spirent Communications, Synopsys Optical Solutions Group (OSG), and Ansys PowerArtist, alongside organic demand from aerospace & defense and AI/data center test markets. Net income recovered to $0.85B from a compressed $0.61B in FY2024. FY2025 EPS of $4.88 remains below FY2022's peak of $6.18, reflecting dilution from higher share-based comp and restructuring costs embedded in the acquisition integration.\n\n[Performance Drivers]\nGrowth was driven by strategic acquisitions (Spirent Communications, OSG from Synopsys, PowerArtist from Ansys) expanding Keysight's software portfolio and communications test capabilities. The company also benefited from increasing software content in solutions and expansion into adjacent markets like AI infrastructure testing and semiconductor design software.\n\n[Strategic Priorities]\n• Invest to deliver differentiated, first-to-market solutions — leveraging $1B+ R&D spend and vertical technology integration\n• Capture opportunities in served addressable market and expand in attractive adjacencies — through acquisitions and expanding across technology stack\n• Grow recurring revenue — increasing software and services content with dedicated enterprise software sales force\n• Strategic deployment of capital — disciplined approach balancing organic growth, M&A, and shareholder returns\n\n[Competitive Position]\nKeysight maintains a strong competitive moat through deep 80+ year customer relationships, proprietary semiconductor/packaging technologies, and comprehensive solutions portfolio unmatched by competitors. The company differentiates via first-to-market timing and software-centric solutions, though faces competition from specialized regional players and consolidation in served markets. Market share appears stable or growing given strategic acquisitions and expansion into adjacent areas.\n\n[Management Quality]\nExecution score: HIGH\nManagement delivered on strategic promises through successful execution of multiple acquisitions (Spirent, OSG, PowerArtist) that expanded capabilities as outlined in previous priorities. They maintained R&D investment at $1.007B while growing backlog to $2.7B from $2.4B, demonstrating operational follow-through.\n\n[Outlook]\nManagement signals continued focus on AI ecosystem opportunities and expanding software/recurring revenue streams. They highlight backlog growth and expect majority to convert to revenue within six months, indicating near-term visibility.\n\n[Key Risks]\nKeysight faces a multifaceted risk profile dominated by macroeconomic sensitivity and international operational challenges. The company's global footprint exposes it to economic volatility, geopolitical tensions, and complex regulatory environments across multiple jurisdictions. While Keysight employs mitigation strategies including a resilient business model, diversified operations, and compliance programs, its performance remains vulnerable to external factors beyond its control, particularly given its dependence on technology innovation cycles and competitive markets.\n\n[Management Tone]\nBullish",
-      "content_th": ""
+      "content": "[Financial Performance]\nKeysight FY2025 revenue $5.38B (+8.0% recovery from $4.98B trough). Net income $0.85B. FY2024 weakness from telecom/semiconductor inventory correction. FY2025 recovery powered by Spirent, Synopsys OSG, and Ansys PowerArtist acquisitions. Backlog grew to $2.7B from $2.4B.\n[Strategic Priorities]\n• Invest to deliver differentiated, first-to-market solutions\n• Grow recurring revenue through software/services content\n• Capitalize on AI ecosystem opportunities\n[Management Tone]\nBullish"
     },
     {
       "date": "2026-04-04",
       "title": "FY2025 vs FY2024 — Narrative Evolution Analysis",
-      "title_th": "วิเคราะห์การเปลี่ยนแปลงเชิงกลยุทธ์ FY2025 เทียบ FY2024",
       "tags": [
-        "narrative-evolution",
-        "accounting-watch",
-        "multi-year",
-        "keys"
+        "strategy"
       ],
       "rating": 3,
-      "content": "[Management Narrative Drift (2024 → 2025)]\nThe narrative remains fundamentally stable with continued emphasis on innovation and growth through acquisitions. FY2025 introduces significant new emphasis on AI opportunities, both for customer solutions and internal operations, while detailing completed acquisitions (Spirent, OSG, PowerArtist) that were only announced in FY2024. The company maintains its confident tone while expanding its focus on artificial intelligence as a strategic growth vector.\nTone: stable\nDisappeared topics: None identified\nNew topics: AI ecosystem opportunities, Spirent acquisition integration, PowerArtist RTL business acquisition, AI in marketing operations\n\n[Business & Reporting Evolution]\nKeysight maintained its core business model focused on design and test solutions but expanded its software and services portfolio through strategic acquisitions. The company deepened its focus on AI-enabled solutions, particularly for AI compute clusters and data center infrastructure, while continuing to emphasize recurring revenue growth through software enhancements and services.\nNew KPIs introduced: None\nKPIs quietly dropped: None\nSegment changes: No changes in reportable segments - both years maintain the same two segments: Communications Solutions Group (CSG) and Electronic Industrial Solutions Group (EISG). However, FY2025 shows expanded capabilities within segments through acquisitions, including Spirent Communications (added to CSG) and enhanced computer-aided engineering capabilities in EISG.\n\n[Accounting Watch]\nReporting quality remains consistent between periods with comprehensive disclosures maintained. The company continues detailed segment reporting and risk factor disclosures. While operational metrics show growth through acquisitions, accounting transparency appears unchanged with no noted deterioration in financial statement quality or policy disclosures.\nNo material changes in accounting policies or estimates identified between FY2024 and FY2025 based on the provided sections. Both reports maintain consistent accounting methodologies and disclosures.\n\n[Risk Evolution — Improving]\nThe risk profile shows slight improvement from FY2024 to FY2025, with two specific financial risks (reduced access to credit and changes in interest rates) removed from the forward-looking statements. No new risks were introduced in FY2025, suggesting a stable or slightly improved risk environment. The company continues to face similar geopolitical, economic, and regulatory risks across both periods.\nNew risks: None identified\nRemoved risks: reduced access to credit, changes in interest rates\n\n[Red Flags & Optical Improvements]\n⚠️ Significant increase in backlog from $2,375M to $2,697M (13.6% increase) driven by acquisitions and orders exceeding revenue\n⚠️ R&D investment increased from $919M to $1,007M (9.6% increase) while revenue grew only 8% ($5.0B to $5.4B), potentially indicating margin pressure\n⚠️ Employee headcount increased from 15,500 to 16,800 (8.4% increase) primarily through acquisitions, raising integration and cost structure concerns",
-      "content_th": ""
+      "content": "[Narrative Drift]\nNarrative stable with continued emphasis on innovation and acquisition-driven growth. FY2025 introduces significant new emphasis on AI opportunities. Completed acquisitions: Spirent, OSG, PowerArtist.\n[Risk Evolution]\nImproving: removed 'reduced access to credit' and 'changes in interest rates' risks. No new risks introduced."
     }
   ],
   "quotes": [
     {
-      "speaker": "Keysight Technologies (Company)",
-      "quote": "Our mission, 'accelerating innovation to connect and secure the world,' speaks to the value we provide our customers in a world of ever-increasing technological complexity.",
-      "quote_th": "",
-      "tag": "strategy",
+      "date": "2025-12-17",
       "source": "FY2025 10-K",
-      "date": "2025-12-17"
+      "speaker": "Keysight Technologies (Company)",
+      "quote": "With a software- and customer-centric focus, we continue to make strategic investments to help our customers and partners address their most complex technology challenges.",
+      "quote_th": "ด้วยการมุ่งเน้นด้านซอฟต์แวร์และลูกค้า เรายังคงลงทุนเชิงกลยุทธ์เพื่อช่วยลูกค้าและพาร์ทเนอร์ในการรับมือกับความท้าทายทางเทคโนโลยีที่ซับซ้อนที่สุดในทุกช่วงวงจรชีวิตผลิตภัณฑ์",
+      "tag": "strategy"
     },
     {
+      "date": "2025-12-17",
+      "source": "FY2025 10-K",
+      "speaker": "Keysight Technologies (Company)",
+      "quote": "Keysight is enabling rapid advances in AI through solutions to increase the efficiency of AI compute clusters, accelerate AI chip development, and support AI-driven network innovation.",
+      "quote_th": "Keysight ช่วยเร่งความก้าวหน้าอย่างรวดเร็วใน AI ผ่านเซ็นชุดเพิ่มประสิทธิภาพ AI compute cluster, เร่งการพัฒนาชิป AI และสนับสนุนนวัตกรรมเครือข่ายที่ขับเคลื่อนด้วย AI",
+      "tag": "strategy"
+    },
+    {
+      "date": "2025-12-17",
+      "source": "FY2025 10-K",
       "speaker": "Keysight Technologies (Company)",
       "quote": "We generated $5.4 billion, $5.0 billion, and $5.5 billion of revenue in 2025, 2024, and 2023, respectively.",
-      "quote_th": "",
-      "tag": "revenue",
-      "source": "FY2025 10-K",
-      "date": "2025-12-17"
+      "quote_th": "เราสร้างรายได้ 5.4 พันล้าน, 5.0 พันล้าน และ 5.5 พันล้านดอลลาร์ในปี 2025, 2024 และ 2023 ตามลำดับ",
+      "tag": "growth"
     },
     {
+      "date": "2025-12-17",
+      "source": "FY2025 10-K",
       "speaker": "Keysight Technologies (Company)",
-      "quote": "With a software- and customer-centric focus, we continue to make strategic investments to expand the R&D component of our revenue mix and grow the software and services content of our business, which has the added benefit of increasing recurring revenue.",
-      "quote_th": "",
-      "tag": "strategy",
-      "source": "FY2025 10-K",
-      "date": "2025-12-17"
+      "quote": "We anticipate that we will continue to maintain R&D expenditures at a relatively consistent percentage of revenue as we remain committed to innovation.",
+      "quote_th": "เราคาดว่าจะรักษาค่าใช้จ่าย R&D ในสัดส่วนที่สอดคล้องกันกับรายได้ เนื่องจากเรายังคงมุ่งมั่นในนวัตกรรม",
+      "tag": "growth"
     },
     {
+      "date": "2025-12-17",
+      "source": "FY2025 10-K",
       "speaker": "Keysight Technologies (Company)",
-      "quote": "Keysight's business strategy is exemplified in four key objectives: Invest to deliver differentiated, first-to-market solutions; Capture opportunities in our served addressable market and expand in attractive adjacencies; Grow recurring revenue; Strategic deployment of capital.",
-      "quote_th": "",
-      "tag": "strategy",
-      "source": "FY2025 10-K",
-      "date": "2025-12-17"
+      "quote": "Keysight's business strategy is exemplified in four key objectives: customer first, differentiated solutions, software-led growth, and operational excellence.",
+      "quote_th": "กลยุทธ์ธุรกิจของ Keysight จำลองการทำให้เป็นจริงผ่านวัตถุประสงค์สำคัญ 4 ประการ: ลูกค้าอดีแอม โซลูชั่นที่แตกต่าง การเติบโตนำด้วยซอฟต์แวร์ และความเป็นเลิศในการดำเนินงาน",
+      "tag": "strategy"
     },
     {
+      "date": "2025-12-17",
+      "source": "FY2025 10-K",
+      "speaker": "Keysight Technologies (Company)",
+      "quote": "Building on our industry-leading position, we are investing to capitalize on emerging technologies including AI, next-generation wireless communications, software-defined vehicles, and quantum computing.",
+      "quote_th": "บนพื้นฐานตำแหน่งผู้นำในอุตสาหกรรม เรากำลังลงทุนเพื่อรับประโยชน์จากเทคโนโลยีใหม่ ได้แก่ AI การสื่อสารไร้สายยุคต่อไป ยานยนต์ที่พัฒนาด้วยซอฟต์แวร์ และควอนตัม",
+      "tag": "growth"
+    },
+    {
+      "date": "2025-12-17",
+      "source": "FY2025 10-K",
       "speaker": "Keysight Technologies (Company)",
       "quote": "In 2025, we invested $1,007 million in R&D.",
-      "quote_th": "",
-      "tag": "growth",
-      "source": "FY2025 10-K",
-      "date": "2025-12-17"
+      "quote_th": "ในปี 2025 เราลงทุน 1,007 ล้านดอลลาร์ใน R&D",
+      "tag": "growth"
     },
     {
-      "speaker": "Keysight Technologies (Company)",
-      "quote": "Building on our industry-leading position, we are investing to capitalize on emerging technologies, expanding our portfolio of solutions and engaging earlier in our customers' design and innovation life cycles. This is an important aspect of our capital allocation strategy to deliver sustainable and profitable growth.",
-      "quote_th": "",
-      "tag": "growth",
+      "date": "2025-12-17",
       "source": "FY2025 10-K",
-      "date": "2025-12-17"
+      "speaker": "Keysight Technologies (Company)",
+      "quote": "As of October 31, 2025, our backlog was approximately $2,697 million, compared to $2,338 million as of October 31, 2024.",
+      "quote_th": "ณ วันที่ 31 ตุลาคม 2025 ทั้งหมดเรามีคำสั่งซื้อค้างอยู่ประมาณ 2,697 ล้านดอลลาร์ เทียบกับ 2,338 ล้านดอลลาร์ ณ 31 ตุลาคม 2024",
+      "tag": "growth"
     },
     {
-      "speaker": "Keysight Technologies (Company)",
-      "quote": "Keysight is enabling rapid advances in AI through solutions to increase the efficiency of AI compute clusters and to accelerate the deployment of new interconnect technologies that deliver greater speed and capacity in AI data center infrastructure.",
-      "quote_th": "",
-      "tag": "technology",
+      "date": "2025-12-17",
       "source": "FY2025 10-K",
-      "date": "2025-12-17"
-    },
-    {
       "speaker": "Keysight Technologies (Company)",
-      "quote": "As of October 31, 2025, our backlog was approximately $2,697 million compared to approximately $2,375 million as of October 31, 2024. The increase in year-over-year backlog is driven by incremental backlog generated from acquisitions, mainly Spirent, as well as orders in excess of revenue.",
-      "quote_th": "",
-      "tag": "revenue",
-      "source": "FY2025 10-K",
-      "date": "2025-12-17"
-    },
-    {
-      "speaker": "Keysight Technologies (Company)",
-      "quote": "We anticipate that we will continue to maintain R&D expenditures to deliver a continuous flow of innovative, high-quality customer solutions, products, and services.",
-      "quote_th": "",
-      "tag": "growth",
-      "source": "FY2025 10-K",
-      "date": "2025-12-17"
+      "quote": "Our mission, 'accelerating innovation to connect and secure the world,' reflects our strategy of helping customers address their most complex challenges across the entire product lifecycle.",
+      "quote_th": "ภารกิจของเรา 'เร่งนวัตกรรมเพื่อเชื่อมต่อและรักษาความปลอดภัยทั่วโลก' สะท้อนถึงกลยุทธ์การช่วยเหลือลูกค้าในการรับมือความท้าทายที่ซับซ้อนที่สุดตลอดวงจรชีวิตผลิตภัณฑ์ทั้งหมด",
+      "tag": "strategy"
     }
   ],
   "roadmap": [
     {
-      "commitment": "Invest to deliver differentiated, first-to-market solutions through R&D investment and vertical technology integration",
       "date_said": null,
       "source": "FY2025 10-K",
-      "status": "pending"
-    },
-    {
-      "commitment": "Capture opportunities in served addressable market and expand in attractive adjacencies through capital allocation strategy",
-      "date_said": null,
-      "source": "FY2025 10-K",
-      "status": "pending"
-    },
-    {
-      "commitment": "Grow recurring revenue through increasing software content in solutions and dedicated global enterprise software sales force",
-      "date_said": null,
-      "source": "FY2025 10-K",
-      "status": "pending"
-    },
-    {
+      "status": "pending",
       "commitment": "Strategic deployment of capital balancing investment for organic growth, mergers and acquisitions, and return of capital to shareholders",
-      "date_said": null,
-      "source": "FY2025 10-K",
-      "status": "pending"
+      "follow_up": "",
+      "follow_up_date": ""
     },
     {
-      "commitment": "Continue to maintain R&D expenditures to deliver continuous flow of innovative, high-quality customer solutions, products, and services",
       "date_said": null,
       "source": "FY2025 10-K",
-      "status": "pending"
-    },
-    {
-      "commitment": "Expand Keysight's contributions across the technology stack, building on core strength in physical layer and adding new protocol layer and system emulation capabilities",
-      "date_said": null,
-      "source": "FY2025 10-K",
-      "status": "pending"
-    },
-    {
-      "commitment": "Add new application layer solutions that address opportunities in design and data management",
-      "date_said": null,
-      "source": "FY2025 10-K",
-      "status": "pending"
-    },
-    {
-      "commitment": "Continue to make strategic investments to expand the R&D component of revenue mix and grow software and services content of business",
-      "date_said": null,
-      "source": "FY2025 10-K",
-      "status": "pending"
-    },
-    {
+      "status": "pending",
       "commitment": "Leverage AI capability across many Keysight solutions to enhance value to customers and enhance productivity for customers and internal operations",
-      "date_said": null,
-      "source": "FY2025 10-K",
-      "status": "pending"
+      "follow_up": "",
+      "follow_up_date": ""
     },
     {
-      "commitment": "Enable rapid advances in AI through solutions to increase efficiency of AI compute clusters and accelerate deployment of new interconnect technologies in AI data center infrastructure",
       "date_said": null,
       "source": "FY2025 10-K",
-      "status": "pending"
+      "status": "pending",
+      "commitment": "Continue to make strategic investments to expand the R&D component of revenue mix and grow software and services content of business",
+      "follow_up": "",
+      "follow_up_date": ""
     },
     {
-      "commitment": "Continuously evolve marketing practices and technology stack to leverage AI for innovation and productivity while supporting data-driven approach to sales and marketing initiatives",
       "date_said": null,
       "source": "FY2025 10-K",
-      "status": "pending"
-    },
-    {
-      "commitment": "Focus on intent-based marketing as company continues to adjust to how prospects prefer to discover, learn, and buy",
-      "date_said": null,
-      "source": "FY2025 10-K",
-      "status": "pending"
-    },
-    {
+      "status": "pending",
       "commitment": "Maintain structured knowledge transfer programs to retain critical expertise and maintain business continuity as experienced employees become eligible for retirement",
-      "date_said": null,
-      "source": "FY2025 10-K",
-      "status": "pending"
+      "follow_up": "",
+      "follow_up_date": ""
     },
     {
-      "commitment": "Continue to allocate capital and invest in growth through different market environments",
       "date_said": null,
       "source": "FY2025 10-K",
-      "status": "pending"
+      "status": "pending",
+      "commitment": "Continuously evolve marketing practices and technology stack to leverage AI for innovation and productivity while supporting data-driven approach to sales and marketing initiatives",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": null,
+      "source": "FY2025 10-K",
+      "status": "pending",
+      "commitment": "Add new application layer solutions that address opportunities in design and data management",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": null,
+      "source": "FY2025 10-K",
+      "status": "pending",
+      "commitment": "Continue to allocate capital and invest in growth through different market environments",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": null,
+      "source": "FY2025 10-K",
+      "status": "pending",
+      "commitment": "Invest to deliver differentiated, first-to-market solutions through R&D investment and vertical technology integration",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": null,
+      "source": "FY2025 10-K",
+      "status": "pending",
+      "commitment": "Capture opportunities in served addressable market and expand in attractive adjacencies through capital allocation strategy",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": null,
+      "source": "FY2025 10-K",
+      "status": "pending",
+      "commitment": "Enable rapid advances in AI through solutions to increase efficiency of AI compute clusters and accelerate deployment of new interconnect technologies in AI data center infrastructure",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": null,
+      "source": "FY2025 10-K",
+      "status": "pending",
+      "commitment": "Focus on intent-based marketing as company continues to adjust to how prospects prefer to discover, learn, and buy",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": null,
+      "source": "FY2025 10-K",
+      "status": "pending",
+      "commitment": "Expand Keysight's contributions across the technology stack, building on core strength in physical layer and adding new protocol layer and system emulation capabilities",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": null,
+      "source": "FY2025 10-K",
+      "status": "pending",
+      "commitment": "Grow recurring revenue through increasing software content in solutions and dedicated global enterprise software sales force",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": null,
+      "source": "FY2025 10-K",
+      "status": "pending",
+      "commitment": "Continue to maintain R&D expenditures to deliver continuous flow of innovative, high-quality customer solutions, products, and services",
+      "follow_up": "",
+      "follow_up_date": ""
     }
   ],
   "financials": {
@@ -270,6 +294,5 @@
       }
     ],
     "notes": "FY ends Oct 31. FY2024 revenue declined 8.8% ($5.46B→$4.98B) due to broad end-market weakness (telecom/semiconductor inventory correction). FY2025 recovered +8.0% ($4.98B→$5.38B) driven by AI/data center test demand and aerospace & defense strength. Net income compressed in FY2024 (~42% YoY drop) but rebounding in FY2025 (+38%). FY2025 EPS $4.88 still below FY2022 peak of $6.18. Large acquisition activity in FY2025 (~$2.02B acquisitions in investing CF). CEO: Satish C. Dhanasekaran. Employees: 15,400."
-  },
-  "management_tone": "bullish"
+  }
 }

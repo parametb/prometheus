@@ -1,589 +1,140 @@
 {
   "ticker": "B",
   "name": "Barrick Mining Corporation",
+  "name_th": "Barrick Mining Corporation",
   "sector": "Mining",
   "exchange": "NYSE",
   "tradingview_symbol": "NYSE:B",
-  "last_updated": "2026-04-04",
-  "ticker_note": "Barrick renamed from 'Barrick Gold Corporation' to 'Barrick Mining Corporation' in FY2025. NYSE ticker changed from GOLD → B in 2025. TSX remains ABX.",
-  "description": "Barrick Mining Corporation (formerly Barrick Gold) is one of the world's largest gold and copper mining companies. Operates six Tier One gold mines across Africa, Americas, and Asia Pacific. Dual-listed NYSE (GOLD) and TSX (ABX). Increasingly positioning as a gold-copper producer.",
-  "notes": [
-    {
-      "date": "2026-03-28",
-      "title": "FY2024 Annual Report Analysis",
-      "tags": [
-        "annual-report",
-        "fy2024",
-        "financials",
-        "gold",
-        "copper"
-      ],
-      "rating": 4,
-      "content": "[Financial Performance]\nRevenue grew 13.4% YoY to $12.92B (FY2023: $11.39B, FY2022: $11.01B), driven primarily by a 23% rise in realized gold price to $2,397/oz despite slightly lower gold sales volume. Net earnings attributable to shareholders surged 69% to $2.14B, the strongest since 2020. Adjusted net earnings +51% to $2.21B. Adjusted EPS $1.26 vs $0.75 in FY2022 — showing a clear earnings recovery trajectory.\n\nCash generation was exceptional: operating cash flow +20% to $4.49B (highest since 2020), and free cash flow more than doubled to $1.32B. This demonstrates improving operational leverage to gold prices. Net debt remains manageable at ~$650M. Returned ~$1.2B to shareholders in 2024 ($696M dividends + $498M buybacks).\n\nGold mineral reserves grew 23% to 89M oz — a transformational reserve replacement that extends mine life and underpins long-term thesis. The company replaced 180%+ of annual depletion since 2019.\n\n[Strategic Focus]\n1. Gold + Copper dual mandate: Copper increasingly strategic. Reko Diq (Pakistan) and Lumwana Super Pit (Zambia) are the two flagship copper growth projects — positioning Barrick as a major global copper producer.\n2. Tier One asset focus: CEO Mark Bristow consistently culls non-core assets when gold prices are high. Portfolio discipline is a defining characteristic.\n3. Balance sheet strength: No reliance on equity issuance or excessive debt. Self-funding growth through operating cash flows.\n4. Organic reserve growth: $10/equivalent oz cost to add reserves — extremely low cost of reserve replacement vs. industry average.\n5. Decadal growth target: Targeting 30%+ production growth by end of decade, anchored by Reko Diq, Lumwana, Pueblo Viejo, and Nevada.\n\n[Key Risks]\n1. Mali/Loulo situation: Three employees detained, production suspended. Represents ~400K oz/year of attributable gold. Arbitration filed. Management says balance sheet can absorb without changing 5-year plan, but prolonged suspension is a meaningful earnings risk.\n2. Geopolitical concentration: Significant operations in Mali, DR Congo, Tanzania, Pakistan — all jurisdictions with elevated political risk.\n3. Reko Diq execution risk: $5.6-6B capital commitment in Pakistan is the largest single project. Any delay or cost overrun would be material. Still in project financing stage (targeting Q3 2025 signing).\n4. Gold price dependency: Revenue leverage to gold price is high. A sustained decline from $2,400+ levels would compress margins significantly given AISC ~$1,390/oz.\n5. Safety: 3 fatalities in 2024 — acknowledged by management as unacceptable.\n\n[Management Tone]\nOverall tone is confidently bullish, with Bristow consistently framing the company as deeply undervalued. He notes that Nevada assets + copper assets alone in NAV analysis exceed total market cap, implying negative value for remaining Tier 1-2 mines. Language is assertive rather than defensive, particularly on capital allocation and reserve growth. The Mali situation is the one area where tone is measured and careful.\n\n[Investment Implications]\nBullish factors: Record gold prices + strong operational leverage = exceptional FCF generation. Reserve growth at low cost extends runway. Copper optionality (Reko Diq) not yet in market cap. Management track record on portfolio discipline is strong.\nBearish factors: Mali overhang unresolved (~8-10% of production). Pakistan execution risk on largest capex project. Valuations still subject to gold price assumptions. 3 fatalities suggests safety culture still needs work.\n\nVerdict: Conviction 4/5. Strong gold-price leveraged business with copper growth optionality. Key de-risking events: Loulo resolution + Reko Diq financing signing (Q3 2025).",
-      "title_th": "การวิเคราะห์รายงานประจำปี FY2024",
-      "content_th": "[ผลการดำเนินงานทางการเงิน]\nรายได้เติบโต 13.4% YoY เป็น $12.92B (FY2023: $11.39B, FY2022: $11.01B) ขับเคลื่อนหลักจากการเพิ่มขึ้น 23% ในราคาทองคำที่รับรู้เป็น $2,397/oz แม้ปริมาณการขายทองจะลดลงเล็กน้อย กำไรสุทธิที่ถือเป็นของผู้ถือหุ้นพุ่ง 69% เป็น $2.14B ซึ่งสูงสุดนับตั้งแต่ปี 2020 Adjusted net earnings +51% เป็น $2.21B Adjusted EPS $1.26 เทียบกับ $0.75 ใน FY2022 — แสดงให้เห็นแนวโน้มการฟื้นตัวของกำไรที่ชัดเจน\n\nการสร้างเงินสดยอดเยี่ยม: กระแสเงินสดจากการดำเนินงาน +20% เป็น $4.49B (สูงสุดนับตั้งแต่ปี 2020) และ free cash flow เพิ่มขึ้นมากกว่าสองเท่าเป็น $1.32B สิ่งนี้แสดงให้เห็นการปรับปรุงเลเวอเรจการดำเนินงานต่อราคาทองคำ หนี้สุทธิยังคงจัดการได้ที่ ~$650M คืนเงิน ~$1.2B ให้ผู้ถือหุ้นในปี 2024 ($696M เงินปันผล + $498M การซื้อคืนหุ้น)\n\nปริมาณสำรองแร่ทองคำเพิ่มขึ้น 23% เป็น 89M oz — การทดแทนปริมาณสำรองที่เปลี่ยนแปลงอย่างมากซึ่งขยายอายุเหมืองและสนับสนุนแนวคิดระยะยาว บริษัททดแทนมากกว่า 180% ของการลดลงประจำปีนับตั้งแต่ปี 2019\n\n[จุดเน้นเชิงกลยุทธ์]\n1. ภารกิจคู่ทองคำ + ทองแดง: ทองแดงมีความสำคัญเชิงกลยุทธ์มากขึ้น Reko Diq (ปากีสถาน) และ Lumwana Super Pit (แซมเบีย) เป็นสองโครงการเติบโตทองแดงหลัก — ทำให้ Barrick เป็นผู้ผลิตทองแดงระดับโลกรายใหญ่\n2. การมุ่งเน้นสินทรัพย์ระดับ Tier One: CEO Mark Bristow ตัดสินทรัพย์ที่ไม่ใช่แกนกลางอย่างสม่ำเสมอเมื่อราคาทองสูง วินัยในพอร์ตโฟลิโอเป็นลักษณะที่กำหนด\n3. ความแข็งแกร่งของงบดุล: ไม่พึ่งพาการออกหุ้นหรือหนี้มากเกินไป การเติบโตด้วยเงินทุนตนเองผ่านกระแสเงินสดจากการดำเนินงาน\n4. การเติบโตของปริมาณสำรองแบบอินทรีย์: ต้นทุน $10/equivalent oz ในการเพิ่มปริมาณสำรอง — ต้นทุนการทดแทนปริมาณสำรองที่ต่ำมากเทียบกับค่าเฉลี่ยอุตสาหกรรม\n5. เป้าหมายการเติบโตทศวรรษ: ตั้งเป้าการเติบโตการผลิตมากกว่า 30% ภายในสิ้นทศวรรษ โดยมี Reko Diq, Lumwana, Pueblo Viejo และ Nevada เป็นหลัก\n\n[ความเสี่ยงหลัก]\n1. สถานการณ์มาลี/ลูลู: พนักงาน 3 คนถูกกักตัว การผลิตหยุดชะงัก คิดเป็น ~400K oz/ปี ของทองคำที่ถือเป็น ยื่นอนุญาโตตุลาการแล้ว ผู้บริหารระบุว่างบดุลสามารถรองรับได้โดยไม่ต้องเปลี่ยนแผน 5 ปี แต่การหยุดชะงักที่ยืดเยื้อเป็นความเสี่ยงกำไรที่มีนัยสำคัญ\n2. ความเข้มข้นทางภูมิรัฐศาสตร์: การดำเนินงานสำคัญในมาลี, สาธารณรัฐประชาธิปไตยคองโก, แทนซาเนีย, ปากีสถาน — เขตอำนาจทั้งหมดที่มีความเสี่ยงทางการเมืองสูง\n3. ความเสี่ยงการดำเนินงาน Reko Diq: การลงทุน $5.6-6B ในปากีสถานเป็นโครงการเดี่ยวที่ใหญ่ที่สุด ความล่าช้าหรือต้นทุนเกินใด ๆ จะมีนัยสำคัญ ยังอยู่ในขั้นตอนการจัดหาเงินทุนโครงการ (ตั้งเป้าลงนาม Q3 2025)\n4. การพึ่งพาราคาทองคำ: เลเวอเรจรายได้ต่อราคาทองคำสูง การลดลงอย่างต่อเนื่องจากระดับ $2,400+ จะบีบอัดอัตรากำไรอย่างมีนัยสำคัญเนื่องจาก AISC ~$1,390/oz\n5. ความปลอดภัย: เสียชีวิต 3 รายในปี 2024 — ผู้บริหารยอมรับว่าไม่สามารถยอมรับได้\n\n[น้ำเสียงของผู้บริหาร]\nน้ำเสียงโดยรวมมั่นใจในทิศทางขาขึ้น โดย Bristow มักนำเสนอบริษัทว่าถูกตีค่าต่ำอย่างมาก เขาระบุว่าสินทรัพย์เนวาดา + สินทรัพย์ทองแดงเพียงอย่างเดียวในการวิเคราะห์ NAV เกินมูลค่าตลาดรวมทั้งหมด ซึ่งหมายถึงมูลค่าลบสำหรับเหมืองระดับ Tier 1-2 ที่เหลือ ภาษีมีความมั่นใจมากกว่าการตั้งรับ โดยเฉพาะในด้านการจัดสรรทุนและการเติบโตของปริมาณสำรอง สถานการณ์มาลีเป็นพื้นที่เดียวที่น้ำเสียงระมัดระวังและรอบคอบ\n\n[ผลกระทบต่อการลงทุน]\nปัจจัยสนับสนุนขาขึ้น: ราคาทองคำสูงสุดเป็นประวัติการณ์ + เลเวอเรจการดำเนินงานที่แข็งแกร่ง = การสร้าง FCF ที่ยอดเยี่ยม การเติบโตของปริมาณสำรองต้นทุนต่ำขยายระยะเวลา ตัวเลือกทองแดง (Reko Diq) ยังไม่รวมในมูลค่าตลาด ประวัติผู้บริหารด้านวินัยพอร์ตโฟลิโอแข็งแกร่ง\nปัจจัยสนับสนุนขาลง: ปัญหามาลียังไม่คลี่คลาย (~8-10% ของการผลิต) ความเสี่ยงการดำเนินงานปากีสถานในโครงการ capex ที่ใหญ่ที่สุด การประเมินมูลค่ายังขึ้นกับสมมติฐานราคาทองคำ การเสียชีวิต 3 รายบ่งชี้ว่าวัฒนธรรมความปลอดภัยยังต้องปรับปรุง\n\nคำตัดสิน: ความเชื่อมั่น 4/5 ธุรกิจที่มีเลเวอเรจราคาทองคำแข็งแกร่งพร้อมตัวเลือกการเติบโตทองแดง เหตุการณ์สำคัญในการลดความเสี่ยง: การแก้ไขลูลู + การลงนามจัดหาเงินทุน Reko Diq (Q3 2025)"
-    },
-    {
-      "date": "2026-03-29",
-      "title": "Evolution Analysis: FY2024 → FY2025 (4-Agent Cross-Year Comparison)",
-      "tags": [
-        "narrative-evolution",
-        "accounting-watch",
-        "multi-year",
-        "b"
-      ],
-      "rating": null,
-      "content": "[Management Narrative Drift (2024 → 2025)]\nManagement's narrative shifted from aggressive growth emphasis to more cautious execution focus. The 2025 filing de-emphasizes several specific growth projects while introducing new strategic elements like copper business focus and potential asset IPO. Tone became more measured with increased risk disclosures (trade policies, Venezuela) and leadership transition acknowledgment. Core themes of tier-one assets and sustainability remain consistent, but with reduced specificity on previously highlighted initiatives.\nTone: bullish→cautious\nDisappeared topics: Donlin Gold project, Veladero Phase 7 Leach Pad, Jabal Sayid Lode 1 project, solar power projects at NGM and Loulo-Gounkoto, Pascua-Lama project VAT refunds in Chile, 'ramp-up' and 'objective' language\nNew topics: Strategic copper business focus, Potential IPO of North American gold assets, Search for permanent President and CEO, Contingent consideration from Hemlo and Tongon mine sales, Fourmile incorporation into NGM JV, U.S. trade/tariff policy risks, Venezuela uncertainty\n\n[Business & Reporting Evolution]\nBarrick transformed from a diversified gold and copper producer to a more focused portfolio operator, divesting non-core assets while achieving record financial performance driven by surging gold prices. The company shifted toward shareholder returns with a new dividend policy linked to attributable free cash flow and optimized its geographic footprint toward North America. New KPI: Attributable free cash flow ($2.84B FY2025) — introduced to align with new dividend policy.\n\n[Accounting Watch]\nReporting shows mixed quality. Positive: enhanced transparency with attributable free cash flow metric. Concerning: significant non-operational gains (divestitures $1.1B) and price-driven improvements mask operational declines in production volume. Segment change: 12 producing mines → 11. Notable: 'Other expense adjustments' include $559M Q4 2025 settlement payment to Mali government, reclassified away from operating results. Overall comparability is reduced due to portfolio changes and one-time items.\n\n[Risk Evolution — deteriorating on costs, improving on geopolitics]\nThe risk profile has deteriorated on cost pressures but improved on geopolitical resolution (Loulo). AISC rose 10% to $1,637/oz. Capex increasing substantially ($4.0-4.5B guided 2026 vs $3.0B in 2025). Safety: 4 fatalities in 2025. New risks: U.S. trade policy / tariff sensitivity. Removed risks: Loulo-Gounkoto suspension (resolved). Biggest change: Production volume decline (3.26M oz vs 3.91M oz in 2024) masked by gold price appreciation (44% increase).\n\n[Red Flags & Optical Improvements]\n⚠️ Net earnings +133% driven largely by divestitures ($1,107M) + price, not operational improvement\n⚠️ Gold production DECLINED 17% YoY (3.26M oz vs 3.91M oz) — masked by gold price appreciation\n⚠️ Net debt improved from -$655M to +$2,003M net cash primarily via divestitures, not operational CF\n⚠️ EBITDA margin 48%→58% mainly from gold price, not cost control (AISC +10%)\n⚠️ CEO Mark Bristow departing — 'search for permanent President and CEO' underway\n⚠️ Company renamed 'Barrick Mining Corporation' (formerly 'Barrick Gold Corporation')\n⚠️ Specific growth project timelines (Donlin Gold, Jabal Sayid) no longer mentioned\n⚠️ Royalty at Loulo-Gounkoto now 18% (2023 Mining Code) — structural cost increase",
-      "title_th": "การวิเคราะห์วิวัฒนาการ: FY2024 → FY2025 (การเปรียบเทียบข้ามปี 4 ตัวแทน)",
-      "content_th": "[การเปลี่ยนแปลงเรื่องเล่าของฝ่ายบริหาร (2024 → 2025)]\nเรื่องเล่าของฝ่ายบริหารเปลี่ยนจากการเน้นการเติบโตเชิงรุกไปสู่การมุ่งเน้นการดำเนินงานที่ระมัดระวังมากขึ้น การยื่นเอกสารปี 2025 ลดความสำคัญของโครงการเติบโตเฉพาะหลายโครงการ ในขณะที่นำองค์ประกอบเชิงกลยุทธ์ใหม่ๆ เช่น การมุ่งเน้นธุรกิจทองแดง และการเสนอขายหุ้นต่อประชาชนครั้งแรกของสินทรัพย์ทองคำในอเมริกาเหนือเข้ามา น้ำเสียงมีความรอบคอบมากขึ้นพร้อมกับการเปิดเผยความเสี่ยงที่เพิ่มขึ้น (นโยบายการค้า เวเนซุเอลา) และการยอมรับการเปลี่ยนผ่านผู้นำ ธีมหลักของสินทรัพย์ระดับชั้นหนึ่งและความยั่งยืนยังคงสอดคล้องกัน แต่มีความเฉพาะเจาะจงลดลงในโครงการที่เคยถูกเน้นย้ำมาก่อน\nน้ำเสียง: มองบวก→ระมัดระวัง\nหัวข้อที่หายไป: โครงการ Donlin Gold, แผ่นกรอง Veladero Phase 7 Leach Pad, โครงการ Jabal Sayid Lode 1, โครงการพลังงานแสงอาทิตย์ที่ NGM และ Loulo-Gounkoto, การคืนภาษีมูลค่าเพิ่มของโครงการ Pascua-Lama ในชิลี, ภาษาที่เกี่ยวกับ 'การเพิ่มขึ้น' และ 'วัตถุประสงค์'\nหัวข้อใหม่: การมุ่งเน้นเชิงกลยุทธ์ในธุรกิจทองแดง, การเสนอขายหุ้นต่อประชาชนครั้งแรกที่อาจเกิดขึ้นของสินทรัพย์ทองคำในอเมริกาเหนือ, การค้นหาประธานและซีอีโอถาวร, การพิจารณาเงื่อนไขจากการขายเหมือง Hemlo และ Tongon, การรวม Fourmile เข้าสู่กิจการร่วมค้า NGM, ความเสี่ยงจากนโยบายการค้า/ภาษีของสหรัฐอเมริกา, ความไม่แน่นอนในเวเนซุเอลา\n\n[วิวัฒนาการทางธุรกิจและการรายงาน]\nBarrick เปลี่ยนจากผู้ผลิตทองคำและทองแดงที่หลากหลายไปสู่ผู้ดำเนินงานพอร์ตโฟลิโอที่มุ่งเน้นมากขึ้น โดยขายสินทรัพย์ที่ไม่ใช่แกนหลักในขณะที่บรรลุผลการดำเนินงานทางการเงินที่ทำลายสถิติซึ่งขับเคลื่อนโดยราคาทองคำที่พุ่งสูงขึ้น บริษัทเปลี่ยนไปสู่ผลตอบแทนผู้ถือหุ้นด้วยนโยบายปันผลใหม่ที่เชื่อมโยงกับกระแสเงินสดอิสระที่สามารถระบุได้ และปรับปรุงรอยเท้าทางภูมิศาสตร์ให้มุ่งไปยังอเมริกาเหนือ ตัวชี้วัดประสิทธิภาพหลักใหม่: กระแสเงินสดอิสระที่สามารถระบุได้ ($2.84B FY2025) — ถูกนำมาใช้เพื่อให้สอดคล้องกับนโยบายปันผลใหม่\n\n[ข้อควรระวังด้านบัญชี]\nการรายงานแสดงคุณภาพที่หลากหลาย ด้านบวก: ความโปร่งใสที่เพิ่มขึ้นด้วยตัวชี้วัดกระแสเงินสดอิสระที่สามารถระบุได้ ด้านน่ากังวล: กำไรที่ไม่ใช่จากการดำเนินงานที่สำคัญ (การขายสินทรัพย์ $1.1B) และการปรับปรุงที่ขับเคลื่อนโดยราคาปกปิดการลดลงในการดำเนินงานของปริมาณการผลิต การเปลี่ยนแปลงส่วน: เหมืองที่ผลิต 12 แห่ง → 11 แห่ง สิ่งที่น่าสังเกต: 'การปรับปรุงค่าใช้จ่ายอื่นๆ' รวมถึงการชำระเงินตกลง $559M ไตรมาสที่ 4 ปี 2025 ให้กับรัฐบาลมาลี ซึ่งถูกจัดประเภทใหม่ออกจากผลการดำเนินงาน โดยรวมแล้ว ความสามารถในการเปรียบเทียบลดลงเนื่องจากการเปลี่ยนแปลงพอร์ตโฟลิโอและรายการครั้งเดียว\n\n[วิวัฒนาการความเสี่ยง — แย่ลงในด้านต้นทุน ดีขึ้นในด้านภูมิรัฐศาสตร์]\nโปรไฟล์ความเสี่ยงแย่ลงในด้านแรงกดดันต้นทุน แต่ดีขึ้นในด้านการแก้ไขปัญหาทางภูมิรัฐศาสตร์ (Loulo) AISC เพิ่มขึ้น 10% เป็น $1,637/oz การใช้จ่ายเงินทุนเพิ่มขึ้นอย่างมาก ($4.0-4.5B คาดการณ์ปี 2026 เทียบกับ $3.0B ในปี 2025) ความปลอดภัย: ผู้เสียชีวิต 4 รายในปี 2025 ความเสี่ยงใหม่: ความไวต่อนโยบายการค้า/ภาษีของสหรัฐอเมริกา ความเสี่ยงที่ถูกเอาออก: การระงับ Loulo-Gounkoto (ได้รับการแก้ไขแล้ว) การเปลี่ยนแปลงที่ใหญ่ที่สุด: การลดลงของปริมาณการผลิต (3.26M oz เทียบกับ 3.91M oz ในปี 2024) ถูกปกปิดโดยการเพิ่มขึ้นของราคาทองคำ (เพิ่มขึ้น 44%)\n\n[สัญญาณเตือนและการปรับปรุงเชิงภาพลักษณ์]\n⚠️ กำไรสุทธิ +133% ขับเคลื่อนส่วนใหญ่โดยการขายสินทรัพย์ ($1,107M) + ราคา ไม่ใช่การปรับปรุงการดำเนินงาน\n⚠️ การผลิตทองคำลดลง 17% เทียบกับปีก่อน (3.26M oz เทียบกับ 3.91M oz) — ถูกปกปิดโดยการเพิ่มขึ้นของราคาทองคำ\n⚠️ หนี้สุทธิดีขึ้นจาก -$655M เป็น +$2,003M เงินสดสุทธิส่วนใหญ่ผ่านการขายสินทรัพย์ ไม่ใช่กระแสเงินสดจากการดำเนินงาน\n⚠️ อัตรากำไร EBITDA 48%→58% ส่วนใหญ่มาจากราคาทองคำ ไม่ใช่การควบคุมต้นทุน (AISC +10%)\n⚠️ ซีอีโอ Mark Bristow กำลังจะออก — 'การค้นหาประธานและซีอีโอถาวร' กำลังดำเนินอยู่\n⚠️ บริษัทเปลี่ยนชื่อเป็น 'Barrick Mining Corporation' (เดิมชื่อ 'Barrick Gold Corporation')\n⚠️ ไม่มีการกล่าวถึงกรอบเวลาของโครงการเติบโตเฉพาะ (Donlin Gold, Jabal Sayid) อีกต่อไป\n⚠️ ค่าสิทธิที่ Loulo-Gounkoto ตอนนี้อยู่ที่ 18% (ประมวลกฎหมายเหมืองแร่ปี 2023) — การเพิ่มขึ้นของต้นทุนเชิงโครงสร้าง"
-    },
-    {
-      "date": "2026-03-29",
-      "title": "FY2025 Annual Report Analysis",
-      "tags": [
-        "annual-report",
-        "fy2025",
-        "financials",
-        "gold",
-        "copper"
-      ],
-      "rating": 4,
-      "content": "[Financial Performance]\nBarrick reported its strongest financial performance since the Randgold merger in FY2025. Revenue surged 31% to $16.96B driven by a 44% rise in realized gold price ($3,501/oz vs $2,397/oz in 2024). Net earnings $4.99B (+133%), though $1.1B of this came from asset disposal gains (Hemlo, Tongon). Adjusted net earnings of $4.14B (+87%) and adjusted EPS of $2.42 (+92%) better reflect underlying performance. Operating cash flow grew 71% to $7.69B and free cash flow tripled to $3.87B. The company ended 2025 in a net cash position ($2.0B net cash vs $655M net debt in 2024), primarily from divestitures and cash accumulation.\n\nImportant caveat: gold production DECLINED 17% to 3.26M oz (from 3.91M oz in 2024) due to Loulo-Gounkoto suspension and asset sales. All revenue and earnings growth was driven by gold price, not volume.\n\n[Strategic Focus]\n1. Copper business IPO: Potential separation of North American gold assets via IPO — major strategic shift.\n2. Loulo-Gounkoto resolution: Operations resumed after settlement with Mali government (including $559M Q4 2025 payment). Employees released.\n3. CEO Transition: Mark Bristow departing; search for permanent President & CEO underway — most significant leadership transition since 2018 merger.\n4. Fourmile into NGM JV: Incorporating the ultra-high-grade Fourmile project ($12g/t+) into Nevada Gold Mines JV at fair market value.\n5. Reko Diq construction: Major copper growth project underway in Pakistan — transformational for 2029+ production.\n\n[Key Risks]\n1. Production volume decline: 3.26M oz vs 3.91M oz (-17%) — needs to be monitored for continuation in 2026.\n2. Rising costs: AISC $1,637/oz (+10%) and cost guidance $1,870-$2,070/oz for 2026 (further +12-26%).\n3. CEO uncertainty: Leadership transition without identified successor creates execution risk.\n4. Safety: 4 fatalities in 2025 (NGM, Bulyanhulu, Kibali) — ongoing safety culture issue.\n5. Capex step-up: $4.0-4.5B guided in 2026 (+35%+ vs 2025) for Lumwana and Reko Diq — FCF will be pressured.\n\n[Management Tone]\nBullish on gold price thesis and long-term asset quality, but notably more measured on execution specifics. The CEO departure is the most significant change not yet fully reflected in forward guidance. Language around Loulo resolution is confident; language around 2026 production guidance is more cautious.\n\n[Investment Implications]\nBullish factors: Record gold prices continuing into 2026. Net cash position gives flexibility. Loulo restart adds back ~400Koz in 2026 (partial year). Reko Diq and Lumwana are multi-decade value creators. North America IPO could unlock hidden value.\nBearish factors: Production volume declining. AISC creep accelerating. CEO transition uncertainty. Capex surge in 2026 will compress FCF significantly. IPO of North America assets could reduce Barrick's most profitable segment.",
-      "title_th": "การวิเคราะห์รายงานประจำปี FY2025",
-      "content_th": "[ผลการดำเนินงานทางการเงิน]\nBarrick รายงานผลการดำเนินงานทางการเงินที่แข็งแกร่งที่สุดนับตั้งแต่การควบรวมกิจการกับ Randgold ใน FY2025 Revenue เพิ่มขึ้น 31% มาอยู่ที่ $16.96B เนื่องจากการเพิ่มขึ้น 44% ในราคาทองคำที่รับรู้ได้ ($3,501/oz เทียบกับ $2,397/oz ในปี 2024) Net earnings $4.99B (+133%) แม้ว่า $1.1B ของจำนวนนี้จะมาจากกำไรจากการขายสินทรัพย์ (Hemlo, Tongon) Adjusted net earnings $4.14B (+87%) และ adjusted EPS $2.42 (+92%) สะท้อนผลการดำเนินงานพื้นฐานได้ดีกว่า Operating cash flow เติบโต 71% มาอยู่ที่ $7.69B และ free cash flow เพิ่มขึ้นสามเท่ามาอยู่ที่ $3.87B บริษัทสิ้นสุดปี 2025 ในสถานะ net cash ($2.0B net cash เทียบกับ $655M net debt ในปี 2024) หลักมาจากการขายสินทรัพย์และการสะสมเงินสด\n\nข้อควรระวังสำคัญ: การผลิตทองคำลดลง 17% มาอยู่ที่ 3.26M oz (จาก 3.91M oz ในปี 2024) เนื่องจากการระงับดำเนินการที่ Loulo-Gounkoto และการขายสินทรัพย์ การเติบโตของ revenue และ earnings ทั้งหมดขับเคลื่อนโดยราคาทองคำ ไม่ใช่ปริมาณ\n\n[จุดเน้นเชิงกลยุทธ์]\n1. Copper business IPO: ความเป็นไปได้ในการแยกสินทรัพย์ทองคำในอเมริกาเหนือผ่านการเสนอขายหุ้นแก่ประชาชนทั่วไป (IPO) — การเปลี่ยนแปลงเชิงกลยุทธ์ครั้งสำคัญ\n2. Loulo-Gounkoto resolution: ดำเนินการต่อหลังจากตกลงกับรัฐบาลมาลี (รวมถึงการชำระเงิน $559M ในไตรมาสที่ 4 ปี 2025) พนักงานได้รับการปล่อยตัว\n3. CEO Transition: Mark Bristow กำลังจะออกจากตำแหน่ง; การค้นหาประธานและ CEO ถาวรกำลังดำเนินอยู่ — การเปลี่ยนผ่านผู้นำที่สำคัญที่สุดนับตั้งแต่การควบรวมกิจการในปี 2018\n4. Fourmile into NGM JV: การผนวกโครงการ Fourmile ที่มีเกรดสูงมาก ($12g/t+) เข้าสู่กิจการร่วมค้า Nevada Gold Mines (NGM JV) ในราคาตลาดที่เป็นธรรม\n5. Reko Diq construction: โครงการเติบโตทองแดงหลักกำลังดำเนินการในปากีสถาน — การเปลี่ยนแปลงสำหรับการผลิตในปี 2029 เป็นต้นไป\n\n[ความเสี่ยงหลัก]\n1. การลดลงของปริมาณการผลิต: 3.26M oz เทียบกับ 3.91M oz (-17%) — จำเป็นต้องติดตามเพื่อดูความต่อเนื่องในปี 2026\n2. ต้นทุนที่เพิ่มสูงขึ้น: AISC $1,637/oz (+10%) และคำแนะนำต้นทุน $1,870-$2,070/oz สำหรับปี 2026 (เพิ่มขึ้นอีก +12-26%)\n3. ความไม่แน่นอนของ CEO: การเปลี่ยนผ่านผู้นำโดยไม่มีผู้สืบทอดที่ระบุชัดเจน สร้างความเสี่ยงในการดำเนินการ\n4. ความปลอดภัย: มีผู้เสียชีวิต 4 รายในปี 2025 (NGM, Bulyanhulu, Kibali) — ปัญหาวัฒนธรรมความปลอดภัยที่ยังคงดำเนินอยู่\n5. Capex step-up: คาดการณ์ $4.0-4.5B ในปี 2026 (+35%+ เทียบกับปี 2025) สำหรับ Lumwana และ Reko Diq — FCF จะถูกกดดัน\n\n[น้ำเสียงของผู้บริหาร]\nมองบวกต่อแนวคิดราคาทองคำและคุณภาพสินทรัพย์ในระยะยาว แต่มีความระมัดระวังมากขึ้นอย่างเห็นได้ชัดในรายละเอียดการดำเนินงาน การออกจากตำแหน่งของ CEO เป็นการเปลี่ยนแปลงที่สำคัญที่สุดที่ยังไม่สะท้อนอย่างเต็มที่ในคำแนะนำเชิงล่วงหน้า ภาษาที่ใช้เกี่ยวกับการแก้ไขปัญหา Loulo มั่นใจ; ภาษาที่ใช้เกี่ยวกับคำแนะนำการผลิตปี 2026 ระมัดระวังมากขึ้น\n\n[ผลกระทบต่อการลงทุน]\nปัจจัยบวก: ราคาทองคำที่ทำสถิติสูงสุดยังคงดำเนินต่อไปในปี 2026 สถานะ net cash ให้ความยืดหยุ่น การเริ่มดำเนินการใหม่ที่ Loulo เพิ่มกลับมาประมาณ 400Koz ในปี 2026 (บางส่วนของปี) Reko Diq และ Lumwana เป็นผู้สร้างมูลค่าในหลายทศวรรษ การเสนอขายหุ้นแก่ประชาชนทั่วไป (IPO) ในอเมริกาเหนืออาจปลดล็อกมูลค่าที่ซ่อนอยู่\nปัจจัยลบ: ปริมาณการผลิตลดลง AISC ที่เพิ่มสูงขึ้นเรื่อยๆ เร่งตัวขึ้น ความไม่แน่นอนจากการเปลี่ยนผ่าน CEO Capex ที่เพิ่มขึ้นอย่างมากในปี 2026 จะกดดัน FCF อย่างมีนัยสำคัญ การเสนอขายหุ้นแก่ประชาชนทั่วไป (IPO) ของสินทรัพย์ในอเมริกาเหนืออาจลดส่วนที่ทำกำไรได้สูงสุดของ Barrick"
-    },
-    {
-      "date": "2026-03-28",
-      "title": "Q4 2024 Earnings Call — Key Takeaways",
-      "tags": [
-        "earnings",
-        "q42024",
-        "reko-diq",
-        "mali",
-        "copper"
-      ],
-      "rating": 4,
-      "content": "[Q4 2024 Results]\nGold production Q4 +15% QoQ, total cash costs down 5%, operating cash flow $1.4B (+18% QoQ). Q4 dividend maintained $0.10/share. Q4 buybacks $354M — accelerated toward year-end.\n\n[Reko Diq Update]\nBoard conditionally approved bankable feasibility study. Phase 1 cost $5.6-6B. Project financing targeting Q3 2025 signing. Production target end of 2028. Projected FCF ~$74B over 36 years (pre-Pakistan taxes). AISC target below $1/pound copper — among the lowest cost globally.\n\n[Mali/Loulo]\nThree employees detained unjustly. $84M one-time payment made in Oct 2024. Production suspended, in care-and-maintenance breakeven status. Excluded from 2025 guidance. Contingency: possible restart early March 2025 if resolved. Arbitration filed.\n\n[2025 Guidance Context]\nCapex: Total project capex $1.7-1.9B. Reko Diq ~$1B (100% basis), Lumwana $600M, Fourmile $78M pre-feasibility. These are 'major capital years' before normalizing.\n\n[Valuation Thesis from Bristow]\nConsensus NAV analysis: Nevada + copper assets alone exceed Barrick's total market cap. Implies negative value assigned to all other Tier 1-2 assets. Management views this as 'standout value opportunity.'",
-      "title_th": "สรุปประเด็นสำคัญจากการประชุมผลประกอบการไตรมาส 4 ปี 2024",
-      "content_th": "[ผลประกอบการไตรมาส 4 ปี 2024]\nการผลิตทองคำไตรมาส 4 เพิ่มขึ้น 15% เทียบกับไตรมาสก่อน ต้นทุนเงินสดรวมลดลง 5% กระแสเงินสดจากการดำเนินงาน 1.4 พันล้านดอลลาร์ (เพิ่มขึ้น 18% เทียบกับไตรมาสก่อน) เงินปันผลไตรมาส 4 คงไว้ที่ 0.10 ดอลลาร์ต่อหุ้น การซื้อคืนหุ้นไตรมาส 4 354 ล้านดอลลาร์ — เร่งดำเนินการใกล้สิ้นปี\n\n[อัปเดตโครงการ Reko Diq]\nคณะกรรมการอนุมัติการศึกษาความเป็นไปได้ที่สามารถขอสินเชื่อได้โดยมีเงื่อนไข ต้นทุนเฟส 1 5.6-6 พันล้านดอลลาร์ การจัดหาเงินทุนโครงการตั้งเป้าลงนามไตรมาส 3 ปี 2025 เป้าหมายการผลิตปลายปี 2028 คาดการณ์ FCF ประมาณ 74 พันล้านดอลลาร์ ตลอด 36 ปี (ก่อนหักภาษีปากีสถาน) เป้าหมาย AISC ต่ำกว่า 1 ดอลลาร์ต่อปอนด์ทองแดง — อยู่ในกลุ่มต้นทุนต่ำที่สุดในโลก\n\n[มาลี/ลูลโล]\nพนักงานสามคนถูกกักตัวอย่างไม่เป็นธรรม ชำระเงินครั้งเดียว 84 ล้านดอลลาร์ในเดือนตุลาคม 2024 การผลิตหยุดชะงัก อยู่ในสถานะดูแลและบำรุงรักษาระดับคุ้มทุน ไม่รวมในการคาดการณ์ปี 2025 มาตรการฉุกเฉิน: อาจเริ่มดำเนินการใหม่ต้นเดือนมีนาคม 2025 หากแก้ไขปัญหาได้ ยื่นคำร้องอนุญาโตตุลาการแล้ว\n\n[บริบทการคาดการณ์ปี 2025]\nCapex: Capex โครงการรวม 1.7-1.9 พันล้านดอลลาร์ Reko Diq ประมาณ 1 พันล้านดอลลาร์ (ฐาน 100%) Lumwana 600 ล้านดอลลาร์ Fourmile 78 ล้านดอลลาร์ ก่อนการศึกษาความเป็นไปได้ นี่คือ 'ปีใช้เงินทุนหลัก' ก่อนเข้าสู่ภาวะปกติ\n\n[แนวคิดการประเมินมูลค่าจาก Bristow]\nการวิเคราะห์ NAV ตามมติร่วม: สินทรัพย์เนวาดาและทองแดงเพียงอย่างเดียวมีมูลค่าเกินกว่ามูลค่าตลาดรวมของ Barrick หมายถึงการกำหนดมูลค่าลบให้กับสินทรัพย์ระดับ Tier 1-2 อื่นทั้งหมด ผู้บริหารมองว่านี่คือ 'โอกาสการลงทุนที่มีมูลค่ายอดเยี่ยม'"
-    },
-    {
-      "date": "2022-03-18",
-      "title": "FY2021 Annual Report Analysis (40-F MD&A)",
-      "title_th": "การวิเคราะห์รายงานประจำปี FY2021",
-      "tags": [
-        "annual-report",
-        "fy2021",
-        "gold-mining",
-        "40-f"
-      ],
-      "rating": 4,
-      "content": "[Financial Performance]\nRevenue $11.96B | Net Earnings $1.44B | Adj EPS $0.96 | FCF $1.53B | Gold 4.44Moz | AISC $1,045/oz\nBarrick delivered strong financial performance in FY2021 with revenue of $11.96B and adjusted net earnings of $1.72B, supported by robust gold prices and operational execution. The company generated substantial operating cash flow of $4.38B and free cash flow of $1.53B, enabling continued debt reduction and shareholder returns. Despite inflationary pressures driving AISC to $1,045/oz, margins remained healthy with disciplined capital allocation toward growth projects and exploration.\n\n[Performance Drivers]\nGold production of 4.44Moz was driven by strong performance at Nevada Gold Mines and the successful ramp-up of Bulyanhulu. Higher AISC of $1,045/oz reflected industry-wide inflationary pressures on consumables, energy, and labor costs, partially offset by operational efficiencies. Margins benefited from a higher realized gold price of $1,790/oz and disciplined cost management across the portfolio.\n\n[Strategic Priorities]\n• Asset Quality — Grow and invest in a portfolio of Tier One Gold Assets with emphasis on organic growth to leverage existing footprint\n• Operational Excellence — Strive for zero harm workplaces, leverage innovation and technology to drive industry-leading efficiencies\n• Sustainable Profitability — Follow a disciplined approach to growth with focus on return on capital, IRR, and free cash flow\n\n[Notable Events]\nMajor events included the sale of Lone Tree mine to i-80 Gold in exchange for the remaining 40% interest in South Arturo, and continued progress on the Pueblo Viejo plant expansion and mine life extension project. The company also achieved its target to certify all operational sites to ISO 45001 safety standard.\n\n[Competitive Position]\nBarrick maintains a high-quality mine portfolio with six Tier One Gold Assets and industry-leading AISC positioning in the lower half of the cost curve. The company's growth profile is supported by organic projects including Pueblo Viejo expansion, Goldrush development, and extensive exploration across prolific districts, providing visibility for reserve replacement and future production.\n\n[Management Quality]\nExecution score: HIGH\nManagement delivered strong operational execution with gold production meeting guidance and free cash flow generation of $1.53B, enabling substantial shareholder returns. The successful ramp-up of Bulyanhulu and progress on key growth projects demonstrate effective delivery against strategic commitments.\n\n[Outlook]\nManagement provided 2022 production guidance targeting similar gold production levels with continued focus on cost management despite inflationary pressures. The company signals ongoing investment in growth projects and exploration to sustain the production profile.\n\n[Key Risks]\nInflationary cost pressures on consumables, energy, and labor, Geopolitical risks in operating jurisdictions including Tanzania, DRC, and Argentina, Regulatory changes including proposed mining law revisions in the U.S., Climate change impacts and transition risks to low-carbon operations\n\n[Management Tone]\nBullish",
-      "content_th": ""
-    },
-    {
-      "date": "2023-03-17",
-      "title": "FY2022 Annual Report Analysis (40-F MD&A)",
-      "title_th": "การวิเคราะห์รายงานประจำปี FY2022",
-      "tags": [
-        "annual-report",
-        "fy2022",
-        "gold-mining",
-        "40-f"
-      ],
-      "rating": 2,
-      "content": "[Financial Performance]\nRevenue $11.01B | Net Earnings $0.43B | Adj EPS $0.75 | FCF $0.50B | Gold 4.14Moz | AISC $1,262/oz\nFY2022 saw revenue decline 8% to $11.01B and adjusted net earnings fall 23% to $1.33B amid production declines and significant cost inflation. Operating cash flow dropped 20% to $2.87B while free cash flow plunged 67% to $0.50B due to higher capital expenditures. The balance sheet remained strong with net debt of $0.34B, supporting $1B share buyback authorization and performance dividend policy. Management executed strategic wins with Reko Diq reconstitution and debt reduction but faced operational headwinds from inflation and asset-specific challenges.\n\n[Performance Drivers]\nGold production declined 7% to 4.14Moz primarily due to completion of Phase 1 mining at Long Canyon, lower grades at Pueblo Viejo, and lower leach/refractory ore at Cortez. All-in sustaining costs rose 19% to $1,262/oz driven by inflationary pressures on energy, labor, and consumables exacerbated by the Russian invasion of Ukraine. Margins compressed despite stable realized gold prices as cost inflation outpaced price increases.\n\n[Strategic Priorities]\n• Tier One Asset Focus — Grow and invest in portfolio of Tier One Gold Assets with 15% IRR threshold\n• Operational Excellence — Leverage innovation and technology for industry-leading efficiencies\n• Sustainable Profitability — Disciplined capital allocation with focus on free cash flow and returns\n• ESG Integration — Sustainability-linked credit facility with environmental/social performance targets\n\n[Notable Events]\nReconstituted Reko Diq copper-gold project in Pakistan (50% Barrick ownership) with 2028 targeted production. Porgera remains on care and maintenance pending new joint venture structure implementation with PNG stakeholders taking 51% equity.\n\n[Competitive Position]\nPortfolio includes six Tier One Gold Assets with geographic diversification across stable jurisdictions. AISC at $1,262/oz remains competitive within industry despite 19% year-over-year increase. Growth profile strengthened through Reko Diq reconstitution and pipeline projects (Goldrush, Pueblo Viejo expansion, Lumwana Super Pit) but faces near-term production declines.\n\n[Management Quality]\nExecution score: MEDIUM\nMixed delivery against commitments: achieved debt reduction and Reko Diq reconstitution but missed cost guidance with AISC at $1,262/oz vs $1,040-1,120/oz target and production below range. Capital expenditures exceeded guidance by 10%.\n\n[Outlook]\n2023 guidance maintains 4.2-4.6Moz production range but raises AISC guidance to $1,170-1,250/oz, reflecting persistent inflationary pressures. Excludes Porgera pending definitive agreements for mine restart.\n\n[Key Risks]\nPersistent inflationary pressures on energy, labor, and consumables, Geopolitical risks in operating jurisdictions (PNG, DRC, Argentina), Permitting delays for growth projects (Goldrush, Long Canyon Phase 2), Operational challenges at specific assets (Veladero recovery issues)\n\n[Management Tone]\nCautious",
-      "content_th": ""
-    },
-    {
-      "date": "2024-03-15",
-      "title": "FY2023 Annual Report Analysis (40-F MD&A)",
-      "title_th": "การวิเคราะห์รายงานประจำปี FY2023",
-      "tags": [
-        "annual-report",
-        "fy2023",
-        "gold-mining",
-        "40-f"
-      ],
-      "rating": 3,
-      "content": "[Financial Performance]\nRevenue $11.39B | Net Earnings $1.27B | Adj EPS $0.83 | FCF $0.65B | Gold 4.05Moz | AISC $1,335/oz\nBarrick delivered improved financial performance in FY2023 with revenue increasing to $11.39B and adjusted net earnings rising to $1.46B, supported by higher realized gold prices. Operating cash flow strengthened to $3.74B, though free cash flow remained modest at $0.65B due to elevated capital expenditures. The company maintained a strong balance sheet with $4.15B cash against $4.73B debt, while navigating cost inflation that pushed AISC to $1,335/oz.\n\n[Performance Drivers]\nGold production declined to 4.05Moz due to lower grades at key assets like Carlin and Pueblo Viejo, while AISC rose to $1,335/oz driven by inflationary pressures on energy, grinding media, and plant maintenance costs. Higher realized gold price ($1,948/oz) partially offset cost increases, supporting margins despite operational challenges including a tropical storm at Pueblo Viejo and lower mining efficiencies at Lumwana.\n\n[Strategic Priorities]\n• Tier One Asset Focus — Grow and invest in portfolio of Tier One Gold and Copper Assets with emphasis on organic growth in world-class districts\n• Operational Excellence — Leverage innovation and technology to drive industry-leading efficiencies while maintaining zero-harm workplaces\n• Sustainable Profitability — Increase returns to shareholders through disciplined capital allocation focused on free cash flow and IRR\n\n[Notable Events]\nCompleted Porgera restart agreement in December 2023, reducing ownership from 47.5% to 24.5% but securing mine reopening. Authorized new $1 billion share buyback program and transitioned Executive Chairman to Chairman role in February 2024.\n\n[Competitive Position]\nBarrick maintains a portfolio of six Tier One Gold Assets with geographically diversified operations, though AISC of $1,335/oz places it in the mid-to-upper range of industry cost curve. Growth profile is supported by organic projects including Goldrush, Pueblo Viejo expansion, and Lumwana Super Pit, but faces execution risks and permitting delays.\n\n[Management Quality]\nExecution score: MEDIUM\nManagement delivered mixed execution: successfully completed Porgera restart agreement after multi-year negotiations but missed on Pueblo Viejo plant expansion ramp-up and faced operational challenges. Gold production came in below 2023 guidance range of 4.20-4.60Moz at 4.05Moz.\n\n[Outlook]\n2024 guidance indicates modest production improvement (3.9-4.3Moz) with AISC expected at $1,320-1,420/oz, reflecting continued cost pressures. Production expected to increase steadily through 2024 as Porgera restarts and Pueblo Viejo rectification work completes.\n\n[Key Risks]\nGeopolitical and permitting risks in key jurisdictions (PNG, DRC, Mali), Persistent inflationary pressures on energy and input costs, Operational execution risks at growth projects and asset ramp-ups, Commodity price volatility affecting margins\n\n[Management Tone]\nCautious",
-      "content_th": ""
-    },
-    {
-      "date": "2026-04-04",
-      "title": "5-Year Retrospective: Barrick FY2021–FY2025",
-      "title_th": "ย้อนหลัง 5 ปี: Barrick FY2021–FY2025",
-      "tags": [
-        "5-year-review",
-        "retrospective",
-        "gold-mining",
-        "multi-year"
-      ],
-      "rating": 4,
-      "content": "[5-Year Executive Summary (2021–2025)]\nBarrick's 2021-2025 journey reflects a transformation from operational challenges to financial outperformance. The period began with inflationary pressures and production declines but culminated in record profitability in FY2025, driven by disciplined cost management, strategic portfolio optimization, and exceptional gold price strength. Management successfully navigated geopolitical risks while executing a Tier One asset strategy that delivered substantial shareholder returns through dividends and buybacks.\n\n[Production Trajectory]\nGold production declined steadily from 4.44Moz in 2021 to 3.26Moz in 2025, primarily due to lower grades at key assets and strategic portfolio optimization. This was partially offset by successful ramp-ups at Bulyanhulu and the Porgera restart, with management prioritizing quality over quantity through its Tier One asset focus.\n\n[Cost Evolution]\nAll-in sustaining costs rose consistently from $1,045/oz in 2021 to $1,637/oz in 2025, reflecting industry-wide inflationary pressures on energy, labor, and consumables. Despite these headwinds, Barrick maintained relative cost discipline through operational efficiencies and technology adoption, though margins were ultimately rescued by gold price appreciation rather than cost containment.\n\n[Financial Inflection Points]\nFinancial performance inflected decisively in FY2024 as gold prices surged above $2,300/oz, with revenue growing 13.4% and net earnings jumping 69%. The true inflection occurred in FY2025 when record gold prices above $3,500/oz combined with asset disposal gains to deliver $4.99B net earnings, marking Barrick's strongest performance since the Randgold merger.\n\n[Strategic Evolution]\nBarrick's strategy evolved from initial portfolio simplification to a focused Tier One gold and copper asset approach with strict IRR thresholds. By 2025, the strategy further matured to include copper business emphasis, potential asset IPOs, and disciplined growth through organic projects like Reko Diq. The evolution reflects a shift from aggressive expansion to measured execution with enhanced risk management.\n\n[Risk Profile Evolution]\nThe risk profile shifted from primarily operational and inflationary pressures in 2021-2022 to heightened geopolitical and trade policy risks by 2025. While cost inflation remained persistent, new risks emerged including Venezuela exposure, complex joint venture structures, and regulatory changes in key jurisdictions like the U.S. and PNG.\n\n[Management Scorecard]\nOverall rating: HIGH\nManagement demonstrated strong consistency in executing the Tier One asset strategy despite volatile market conditions. Their credibility was enhanced through transparent communication, disciplined capital allocation, and successful navigation of complex geopolitical challenges across multiple jurisdictions.\nBest year: FY2025 — Record financial performance with $4.99B net earnings, strategic asset disposals at premium valuations, and exceptional execution during unprecedented gold price strength.\nWorst year: FY2022 — Significant margin compression as 19% cost inflation outpaced gold price appreciation, production declines across multiple assets, and ongoing geopolitical uncertainties in key jurisdictions.\n\n[Year-by-Year Ratings]\n• FY2021: Strong operational execution amid early inflationary pressures (rating=4)\n• FY2022: Margin compression as cost inflation outpaces gold price gains (rating=2)\n• FY2023: Cautious navigation of operational challenges and Porgera restart (rating=3)\n• FY2024: Financial inflection as gold price surge drives earnings recovery (rating=4)\n• FY2025: Record performance with strategic execution during gold price boom (rating=5)\n\n[Investment Thesis — as of end-2025]\nBull case: Barrick offers leveraged exposure to sustained high gold prices through its Tier One asset portfolio, with additional upside from copper growth projects and potential asset monetization. Bear case: The company faces persistent cost inflation, declining production profile, and significant geopolitical risks across multiple jurisdictions that could undermine operational stability and future growth.",
-      "content_th": ""
-    }
-  ],
+  "last_updated": "2026-04-06",
+  "description": "Barrick Mining Corporation (formerly Barrick Gold) is one of the world's largest gold and copper mining companies. Operates six Tier One gold mines across Africa, Americas, and Asia Pacific.",
+  "ceo": "",
+  "employees": null,
+  "management_tone": "",
+  "notes": [],
   "quotes": [
     {
       "date": "2025-02-12",
       "source": "Q4 2024 Earnings Call",
       "speaker": "Mark Bristow (CEO)",
-      "quote": "We are focused on delivering sustainable long-term value by owning the best gold and copper assets managed by the best people. With gold becoming more important as a safe haven in a geopolitically uncertain world, and copper being as strategic as gold is precious. I plan to show you how we are adding value and building capacity in both metals without taking an excessive amount of debt on or issuing new shares.",
-      "quote_th": "เรามุ่งมั่นสร้างมูลค่าระยะยาวอย่างยั่งยืนจากการถือครองสินทรัพย์ทองคำและทองแดงที่ดีที่สุด บริหารโดยบุคลากรที่ดีที่สุด ทองคำกำลังมีความสำคัญมากขึ้นในฐานะสินทรัพย์ปลอดภัยในโลกที่ไม่แน่นอนทางภูมิรัฐศาสตร์ ขณะที่ทองแดงมีความสำคัญเชิงยุทธศาสตร์เทียบเท่ากับความล้ำค่าของทองคำ ฉันจะแสดงให้เห็นว่าเราสร้างมูลค่าและเพิ่มศักยภาพในโลหะทั้งสองได้อย่างไร โดยไม่ต้องก่อหนี้มากเกินไปหรือออกหุ้นใหม่",
+      "quote": "By any measure, Barrick Gold Corporation today presents a standout value opportunity. Consensus NAV analysis shows Nevada and copper assets alone exceed our market cap — implying negative value for all our remaining Tier 1 and Tier 2 assets.",
+      "quote_th": "ด้วยทุกมาตรวัด Barrick Gold Corporation ในวันนี้นำเสนอโอกาสสร้างมูลค่าที่โดดเด่น",
       "tag": "strategy"
     },
     {
       "date": "2025-02-12",
       "source": "Q4 2024 Earnings Call",
       "speaker": "Mark Bristow (CEO)",
-      "quote": "Every one of our operations are independently viable, and Barrick's balance sheet is very solid. And so, with or without Loulo will not change our long-term plan, our five-year plan. And it will just be slightly smaller, but fundamentally, we can easily support the projects and the capital commitments during that period.",
-      "quote_th": "ทุกหน่วยงานของเราสามารถดำรงอยู่ได้อย่างเป็นอิสระ และงบดุลของ Barrick แข็งแกร่งมาก ไม่ว่าจะมีหรือไม่มี Loulo จะไม่เปลี่ยนแผนระยะยาวหรือแผน 5 ปีของเรา อาจจะเล็กลงเล็กน้อย แต่โดยพื้นฐานแล้วเราสนับสนุนโครงการและภาระทางการเงินทั้งหมดได้อย่างสบาย",
-      "tag": "mali"
+      "quote": "We are focused on delivering sustainable long-term value by owning the best gold and copper assets managed by the best people. With gold becoming more important as a safe haven in a geopolitically uncertain world, and copper being as strategic as gold is precious.",
+      "quote_th": "เรามุ่งมั่นสร้างมูลค่าระยะยาวอย่างยั่งยืนจากการถือครองสินทรัพย์ทองคำและทองแดงที่ดีที่สุด",
+      "tag": "strategy"
     },
     {
       "date": "2025-02-12",
       "source": "Q4 2024 Earnings Call",
       "speaker": "Mark Bristow (CEO)",
-      "quote": "By any measure, Barrick Gold Corporation today presents a standout value opportunity. Consensus NAV analysis shows Nevada and copper assets alone exceed our market cap — implying negative value for all our remaining Tier 1 and Tier 2 assets.",
-      "quote_th": "ด้วยทุกมาตรวัด Barrick Gold Corporation ในวันนี้นำเสนอโอกาสสร้างมูลค่าที่โดดเด่น การวิเคราะห์ NAV ของตลาดแสดงให้เห็นว่าสินทรัพย์ Nevada และทองแดงเพียงอย่างเดียวก็เกินมูลค่าตลาดรวมของเราแล้ว ซึ่งหมายความว่าตลาดกำหนดมูลค่าติดลบให้กับสินทรัพย์ Tier 1 และ Tier 2 ที่เหลือทั้งหมด",
-      "tag": "valuation"
+      "quote": "Every one of our operations are independently viable, and Barrick's balance sheet is very solid. And so, with or without Loulo will not change our long-term plan, our five-year plan.",
+      "quote_th": "ทุกหน่วยงานของเราสามารถดำรงอยู่ได้อย่างเป็นอิสระ และงบดุลของ Barrick แข็งแกร่งมาก",
+      "tag": "risk"
     },
     {
       "date": "2025-02-12",
       "source": "Q4 2024 Earnings Call",
       "speaker": "Mark Bristow (CEO)",
-      "quote": "PV is a big value creator in Barrick. And again, you've seen I don't hesitate to clean up the portfolio at the appropriate time. And the best time is when you have higher commodity prices. So certainly, we'll continue to keep ourselves very focused and stick to our strategy of having Tier 1 assets.",
-      "quote_th": "Pueblo Viejo เป็นตัวสร้างมูลค่าสำคัญใน Barrick และอีกครั้ง คุณเห็นแล้วว่าฉันไม่ลังเลในการปรับพอร์ตโฟลิโอในเวลาที่เหมาะสม ช่วงที่ดีที่สุดคือเมื่อราคาสินค้าโภคภัณฑ์สูง เราจะยังคงมุ่งเน้นและยึดมั่นในกลยุทธ์การถือครองสินทรัพย์ Tier 1",
-      "tag": "portfolio"
+      "quote": "PV is a big value creator in Barrick. And again, you've seen I don't hesitate to clean up the portfolio at the appropriate time. And the best time is when you have higher commodity prices.",
+      "quote_th": "Pueblo Viejo เป็นตัวสร้างมูลค่าสำคัญใน Barrick",
+      "tag": "strategy"
     },
     {
       "date": "2025-02-12",
       "source": "Q4 2024 Earnings Call",
       "speaker": "Graham Shuttleworth (CFO)",
-      "quote": "These are graphs, they're at a very small scale — there to give you directional information. The key message is that Reko Diq transforms our copper production profile from 2029 onward, and Lumwana positions us as a top-tier copper producer well before that.",
-      "quote_th": "กราฟเหล่านี้อยู่ในมาตราส่วนเล็กมาก มีไว้เพื่อให้ข้อมูลทิศทางเท่านั้น ข้อความสำคัญคือ Reko Diq จะเปลี่ยนโฉมโปรไฟล์การผลิตทองแดงของเราจากปี 2029 เป็นต้นไป และ Lumwana จะวางตำแหน่งเราให้เป็นผู้ผลิตทองแดงชั้นนำก่อนหน้านั้นมาก",
-      "tag": "copper"
+      "quote": "The key message is that Reko Diq transforms our copper production profile from 2029 onward, and Lumwana positions us as a top-tier copper producer well before that.",
+      "quote_th": "ข้อความสำคัญคือ Reko Diq จะเปลี่ยนโฉมโปรไฟล์การผลิตทองแดงของเราจากปี 2029 เป็นต้นไป",
+      "tag": "growth"
     }
   ],
   "roadmap": [
     {
+      "date_said": "2026-02-27",
+      "source": "FY2025 40-F / MD&A",
+      "status": "pending",
+      "commitment": "Potential IPO of North American gold assets (Nevada Gold Mines, Fourmile, related assets) — exploring structure and timing",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": "2026-02-27",
+      "source": "FY2025 40-F / MD&A",
+      "status": "monitoring",
+      "commitment": "Lumwana Super Pit Expansion: Major capex phase continuing — capex guided $600M+ in 2026, target to become top-tier copper producer",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": "2026-02-27",
+      "source": "FY2025 40-F / MD&A",
+      "status": "pending",
+      "commitment": "Incorporate Fourmile ultra-high-grade project into Nevada Gold Mines JV at fair market value",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": "2026-02-27",
+      "source": "FY2025 40-F / MD&A",
+      "status": "pending",
+      "commitment": "Search for permanent President and CEO to succeed Mark Bristow — interim leadership in place",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
       "date_said": "2025-02-12",
       "source": "Q4 2024 Earnings Call",
-      "commitment": "Reko Diq Phase 1: Complete project financing by Q3 2025 and begin construction. Production target end of 2028. Cost $5.6-6B (100% basis).",
       "status": "monitoring",
+      "commitment": "Achieve 30%+ group-wide gold equivalent production growth by end of decade (2029-2030), anchored by Reko Diq, Lumwana, Pueblo Viejo, and Nevada",
       "follow_up": "Construction ongoing, on schedule for 2028 production",
       "follow_up_date": "2026-03-29"
     },
     {
       "date_said": "2025-02-12",
       "source": "Q4 2024 Earnings Call",
-      "commitment": "Lumwana Super Pit Expansion: Deploy $600M capex in 2025. Feasibility complete, permits received, early works and long-lead fabrication underway.",
-      "status": "monitoring",
-      "follow_up": "",
-      "follow_up_date": ""
-    },
-    {
-      "date_said": "2025-02-12",
-      "source": "Q4 2024 Earnings Call",
-      "commitment": "Pueblo Viejo: Achieve mid-600,000 oz attributable production in 2025, then exceed 800,000 oz from 2026 onward. El Naranjo tailings relocation complete by 2029.",
-      "status": "pending",
-      "follow_up": "",
-      "follow_up_date": ""
-    },
-    {
-      "date_said": "2025-02-12",
-      "source": "Q4 2024 Earnings Call",
-      "commitment": "Fourmile (Nevada): Complete pre-feasibility study within 3 years. Allocate $78M in 2025 for study. Grade significantly higher than adjacent Goldrush (~12g/t vs 6g/t).",
-      "status": "pending",
-      "follow_up": "",
-      "follow_up_date": ""
-    },
-    {
-      "date_said": "2025-02-12",
-      "source": "Q4 2024 Earnings Call",
-      "commitment": "Resolve Mali/Loulo situation and restart production. Arbitration filed. Contingency plan for restart early March 2025 if employees released.",
       "status": "delivered",
+      "commitment": "Resolve Mali/Loulo situation and restart production — arbitration filed, contingency plan for restart early March 2025 if employees released",
       "follow_up": "Loulo-Gounkoto operations resumed in FY2025 after $559M settlement payment to Mali government in Q4 2025. Employees released. Royalty rate now 18% under 2023 Mining Code.",
       "follow_up_date": "2025-12-31"
     },
     {
       "date_said": "2025-02-12",
       "source": "Q4 2024 Earnings Call",
-      "commitment": "Achieve 30%+ group-wide gold equivalent production growth by end of decade (2029-2030), anchored by Reko Diq, Lumwana, Pueblo Viejo, and Nevada.",
       "status": "monitoring",
+      "commitment": "Reko Diq Phase 1: Complete project financing by Q3 2025 and begin construction — production target end of 2028, cost $5.6–6B (100% basis)",
       "follow_up": "Construction ongoing, on schedule for 2028 production",
       "follow_up_date": "2026-03-29"
     },
     {
-      "date_said": "2026-02-27",
-      "source": "FY2025 40-F / MD&A",
-      "commitment": "Potential IPO of North American gold assets (Nevada Gold Mines, Fourmile, related assets). Exploring structure and timing.",
-      "status": "pending",
-      "follow_up": "",
-      "follow_up_date": ""
-    },
-    {
-      "date_said": "2026-02-27",
-      "source": "FY2025 40-F / MD&A",
-      "commitment": "Incorporate Fourmile ultra-high-grade project into Nevada Gold Mines JV at fair market value.",
-      "status": "pending",
-      "follow_up": "",
-      "follow_up_date": ""
-    },
-    {
-      "date_said": "2026-02-27",
-      "source": "FY2025 40-F / MD&A",
-      "commitment": "Search for permanent President and CEO to succeed Mark Bristow. Interim leadership in place.",
-      "status": "pending",
-      "follow_up": "",
-      "follow_up_date": ""
-    },
-    {
-      "date_said": "2026-02-27",
-      "source": "FY2025 40-F / MD&A",
-      "commitment": "Lumwana Super Pit Expansion: Major capex phase continuing. Capex guided $600M+ in 2026. Target to become top-tier copper producer.",
+      "date_said": "2025-02-12",
+      "source": "Q4 2024 Earnings Call",
       "status": "monitoring",
-      "follow_up": "",
-      "follow_up_date": ""
+      "commitment": "Lumwana Super Pit Expansion: Deploy $600M capex in 2025 — feasibility complete, permits received, early works and long-lead fabrication underway",
+      "follow_up": "Review quarterly update for capex/permits/progress; update status and add evidence link.",
+      "follow_up_date": "2025-05-13"
+    },
+    {
+      "date_said": "2025-02-12",
+      "source": "Q4 2024 Earnings Call",
+      "status": "pending",
+      "commitment": "Pueblo Viejo: Achieve mid-600,000 oz attributable production in 2025, then exceed 800,000 oz from 2026 onward; El Naranjo tailings relocation complete by 2029",
+      "follow_up": "Review production guidance milestones; update status and add evidence link.",
+      "follow_up_date": "2025-05-13"
+    },
+    {
+      "date_said": "2025-02-12",
+      "source": "Q4 2024 Earnings Call",
+      "status": "pending",
+      "commitment": "Fourmile (Nevada): Complete pre-feasibility study within 3 years; allocate $78M in 2025 for study; grade significantly higher than adjacent Goldrush (~12g/t vs 6g/t)",
+      "follow_up": "Check study timeline/capex updates; update status and add evidence link.",
+      "follow_up_date": "2025-05-13"
     }
   ],
-  "overview": {
-    "founded": "1983",
-    "headquarters": "Toronto, Canada (TSX: ABX · NYSE: GOLD)",
-    "employees": "~18,000 (+ contractors)",
-    "fiscal_year_end": "December 31",
-    "business_model_summary": "Barrick is a gold and copper mining company operating a portfolio of Tier One and Tier Two assets across four continents. Revenue is generated by mining and selling gold (primarily) and copper. The business model is capital-intensive — major upfront investment in mine construction, followed by decades of production at relatively stable unit costs. Profitability is determined by the spread between commodity prices and AISC. Under CEO Mark Bristow (former Randgold CEO), Barrick's defining characteristic is portfolio discipline: pruning non-core assets when prices are elevated, growing reserves organically rather than through overpriced M&A, and returning capital while self-funding growth.",
-    "competitive_position": "2nd or 3rd largest gold miner globally by reserves and production volume. The Nevada Gold Mines JV with Newmont is the world's largest gold complex. Key differentiator: Tier-One asset concentration and operational expertise in technically complex jurisdictions. Primary competitors: Newmont Corporation (#1 globally), Agnico Eagle Mines, Gold Fields, AngloGold Ashanti.",
-    "moat_factors": [
-      "Tier-1 asset portfolio with 10–30+ year mine lives",
-      "Organic reserve replacement at ~$10/oz (industry-leading)",
-      "Dual-metal platform: gold (safe-haven) + copper (energy transition)",
-      "Operational expertise in complex jurisdictions (Randgold DNA)",
-      "Balance sheet self-funding growth without equity issuance",
-      "Mark Bristow's 25-year track record of value creation"
-    ],
-    "segments": [
-      {
-        "name": "Nevada Gold Mines",
-        "type": "gold",
-        "description": "Joint venture with Newmont (Barrick 61.5%, Newmont 38.5%). World's largest gold mining complex. Barrick's most profitable and strategically important segment. Cortez is the crown jewel — highest-grade open-pit gold mine in North America.",
-        "revenue": 3.84,
-        "revenue_pct": 29.7,
-        "yoy_change": 20,
-        "key_assets": [
-          "Cortez",
-          "Carlin",
-          "Turquoise Ridge",
-          "Long Canyon",
-          "Fourmile (dev)"
-        ]
-      },
-      {
-        "name": "Africa & Middle East",
-        "type": "gold",
-        "description": "Loulo-Gounkoto (Mali 80%, SUSPENDED as of 2024), Kibali (DRC 45% JV), North Mara (Tanzania 84%), Bulyanhulu (Tanzania 84%), Tongon (Côte d'Ivoire 89.7%), Jabal Sayid copper (Saudi Arabia 50%). High-quality assets but elevated geopolitical risk.",
-        "revenue": 3.36,
-        "revenue_pct": 26.0,
-        "yoy_change": 10,
-        "key_assets": [
-          "Loulo-Gounkoto",
-          "Kibali",
-          "North Mara",
-          "Bulyanhulu",
-          "Tongon"
-        ]
-      },
-      {
-        "name": "Copper (Global)",
-        "type": "copper",
-        "description": "Lumwana Super Pit (Zambia, 100%) — largest open-pit copper mine in Africa, undergoing $2B+ expansion. Zaldivar (Chile, 50% JV with Antofagasta). Jabal Sayid (Saudi Arabia, 50%). Reko Diq (Pakistan, 50% — under development, targeted 2028 production start, projected 38-year mine life).",
-        "revenue": 2.14,
-        "revenue_pct": 16.6,
-        "yoy_change": 28,
-        "key_assets": [
-          "Lumwana",
-          "Zaldivar",
-          "Jabal Sayid",
-          "Reko Diq (dev)"
-        ]
-      },
-      {
-        "name": "Latin America & Caribbean",
-        "type": "gold",
-        "description": "Pueblo Viejo (Dominican Republic, 60% JV with Newmont) — flagship. Expanding to 800Koz+ attributable from 2026 after tailings facility upgrade. Veladero (Argentina, 50% JV). High cost jurisdictions but large, long-life reserves.",
-        "revenue": 2.56,
-        "revenue_pct": 19.8,
-        "yoy_change": 8,
-        "key_assets": [
-          "Pueblo Viejo",
-          "Veladero"
-        ]
-      },
-      {
-        "name": "Asia Pacific & North America",
-        "type": "gold",
-        "description": "Porgera (Papua New Guinea, 47.5% JV — restarted 2024 after 4-year suspension). Hemlo (Ontario, Canada, 100%). Smaller combined contribution but Porgera restart adds meaningful production uplift.",
-        "revenue": 1.02,
-        "revenue_pct": 7.9,
-        "yoy_change": 35,
-        "key_assets": [
-          "Porgera",
-          "Hemlo"
-        ]
-      }
-    ],
-    "geographies": [
-      {
-        "region": "Americas (North + Latin + Nevada)",
-        "revenue_pct": 57.4
-      },
-      {
-        "region": "Africa & Middle East",
-        "revenue_pct": 26.0
-      },
-      {
-        "region": "Asia Pacific",
-        "revenue_pct": 16.6
-      }
-    ],
-    "timeline": [
-      {
-        "year": 1983,
-        "title": "Founded in Toronto",
-        "description": "Barrick Gold Corporation founded by Peter Munk. Started as a small Canadian oil company that pivoted to gold mining.",
-        "type": "founding"
-      },
-      {
-        "year": 1987,
-        "title": "Goldstrike Acquisition",
-        "description": "Acquired the Goldstrike property in Nevada for $62M. This single acquisition became one of the most productive gold deposits in North American history and anchors the Nevada Gold Mines JV today.",
-        "type": "milestone"
-      },
-      {
-        "year": 1993,
-        "title": "Becomes World's #1 Producer",
-        "description": "Barrick surpasses all rivals to become the world's largest gold mining company by production, driven by Nevada output.",
-        "type": "milestone"
-      },
-      {
-        "year": 2006,
-        "title": "Placer Dome Merger ($10.4B)",
-        "description": "Acquired Placer Dome in a $10.4B deal — one of the largest mining M&A transactions of the decade. Added major assets including Cortez (Nevada), Pueblo Viejo, and Porgera.",
-        "type": "merger"
-      },
-      {
-        "year": 2013,
-        "title": "Gold Price Crash & $8.7B Impairment",
-        "description": "Gold price collapsed below $1,200/oz. Barrick recorded ~$8.7B in impairment charges and launched a major debt reduction / restructuring program. Revenue fell and confidence in management was shaken.",
-        "type": "crisis"
-      },
-      {
-        "year": 2018,
-        "title": "Randgold Merger ($18.3B)",
-        "description": "All-share merger with London-listed Randgold Resources. Mark Bristow became President & CEO, bringing Randgold's operational discipline, African mining expertise, and reserve-focused philosophy to Barrick.",
-        "type": "merger"
-      },
-      {
-        "year": 2019,
-        "title": "Nevada Gold Mines JV with Newmont",
-        "description": "Combined all Nevada gold operations into a 61.5%/38.5% JV with Newmont, creating the world's largest gold mining complex. Saved ~$500M in annual synergies.",
-        "type": "milestone"
-      },
-      {
-        "year": 2022,
-        "title": "Reko Diq Agreement Signed",
-        "description": "Reached landmark agreement with Pakistan government to revive the Reko Diq copper-gold project (Barrick 50%, Pakistan entities 50%). One of world's largest undeveloped copper-gold deposits.",
-        "type": "project"
-      },
-      {
-        "year": 2024,
-        "title": "Porgera Restart",
-        "description": "Porgera gold mine (PNG) restarted after 4-year suspension following lease expiry dispute. Full production expected by 2025.",
-        "type": "milestone"
-      },
-      {
-        "year": 2024,
-        "title": "Record FCF & Reserve Growth",
-        "description": "Free cash flow doubled to $1.32B. Operating CF $4.49B. Gold mineral reserves grew 23% to 89M oz. Returned ~$1.2B to shareholders. Gold averaged $2,397/oz.",
-        "type": "financial"
-      },
-      {
-        "year": 2024,
-        "title": "Mali Crisis — Loulo Suspended",
-        "description": "Malian government detained three Barrick employees. Loulo-Gounkoto mine (~400Koz/year) placed in care-and-maintenance. Arbitration filed. Resolved in Q4 2025 via $559M settlement.",
-        "type": "crisis"
-      },
-      {
-        "year": 2025,
-        "title": "Record Gold Price & Financial Performance",
-        "description": "Gold averaged $3,432/oz (realized $3,501/oz) — a 44% increase over 2024. Revenue surged to $16.96B (+31%), FCF tripled to $3.87B. Company ended year with $2B net cash position.",
-        "type": "financial"
-      },
-      {
-        "year": 2025,
-        "title": "Rebrand to Barrick Mining Corporation",
-        "description": "Barrick Gold Corporation officially renamed to Barrick Mining Corporation, reflecting the strategic shift to become a gold AND copper producer. NYSE ticker changed from GOLD to B.",
-        "type": "milestone"
-      },
-      {
-        "year": 2025,
-        "title": "CEO Bristow Departure Announced",
-        "description": "Mark Bristow, who led Barrick since the 2018 Randgold merger, announced departure. Search for permanent President & CEO underway. Bristow oversaw reserve growth, Nevada JV, and Reko Diq revival.",
-        "type": "crisis"
-      },
-      {
-        "year": 2025,
-        "title": "North America IPO Exploration",
-        "description": "Barrick begins exploring potential IPO of North American gold assets (Nevada Gold Mines, Fourmile). Could be the largest strategic restructuring since the Nevada JV with Newmont in 2019.",
-        "type": "milestone"
-      }
-    ],
-    "management": [
-      {
-        "name": "Mark Bristow",
-        "title": "President & CEO",
-        "since": "2019",
-        "background": "Former CEO of Randgold Resources for 25 years. Geologist by training. Widely credited as one of the best capital allocators in mining. Designed the 2018 Barrick-Randgold merger and the 2019 Nevada Gold Mines JV. Known for mine visits, operational discipline, and blunt shareholder communication."
-      },
-      {
-        "name": "Graham Shuttleworth",
-        "title": "Senior EVP & CFO",
-        "since": "2019",
-        "background": "Former CFO of Randgold Resources. Joined with Bristow in the merger. Deep experience in mining finance across Africa and emerging markets. Focuses on balance sheet strength and disciplined capital allocation."
-      }
-    ],
-    "bull_case": "Gold price tailwinds from central bank buying, dedollarization trends, and persistent geopolitical instability support $2,000–$2,500+ gold long-term. Exceptional operational leverage — each $100/oz rise in gold price adds ~$400M FCF annually. Reko Diq copper project (Pakistan) provides decades of tier-one copper growth not yet priced into market cap. Organic reserve replacement at ~$10/oz is industry-leading and extends asset longevity. Balance sheet strong enough to self-fund all major capex without equity dilution. Bristow's track record on portfolio discipline and value creation is exceptional.",
-    "bear_case": "AISC creep ($1,262 → $1,390 over 3 years) narrows margin expansion narrative if gold plateaus. Mali/Loulo dispute (~10% of production) remains unresolved — prolonged suspension materially impairs 2025 targets. Reko Diq execution risk is the single biggest concern: $5.6-6B capex in Pakistan is the largest project in Barrick's history; delay, overrun, or political shift in Balochistan would be material. Gold price mean-reversion from $2,400+ would significantly compress FCF and re-rate the stock.",
-    "ownership": {
-      "major_shareholders": [
-        {
-          "name": "Vanguard Group",
-          "pct": 7.8,
-          "type": "institutional"
-        },
-        {
-          "name": "BlackRock",
-          "pct": 6.5,
-          "type": "institutional"
-        },
-        {
-          "name": "Capital Group",
-          "pct": 5.2,
-          "type": "institutional"
-        },
-        {
-          "name": "State Street Global",
-          "pct": 3.8,
-          "type": "institutional"
-        },
-        {
-          "name": "Norges Bank",
-          "pct": 2.1,
-          "type": "sovereign fund"
-        },
-        {
-          "name": "Public Float (อื่นๆ)",
-          "pct": 74.6,
-          "type": "float"
-        }
-      ],
-      "corporate_structure": [
-        {
-          "name": "Barrick Mining Corp (TSX: ABX / NYSE: GOLD)",
-          "type": "parent",
-          "children": [
-            {
-              "name": "Nevada Gold Mines JV",
-              "ownership_pct": 61.5,
-              "type": "jv",
-              "partner": "Newmont 38.5%"
-            },
-            {
-              "name": "Lumwana (Zambia)",
-              "ownership_pct": 100,
-              "type": "subsidiary",
-              "partner": ""
-            },
-            {
-              "name": "Pueblo Viejo JV (DR)",
-              "ownership_pct": 60.0,
-              "type": "jv",
-              "partner": "Newmont 40%"
-            },
-            {
-              "name": "Loulo-Gounkoto (Mali)",
-              "ownership_pct": 80.0,
-              "type": "jv",
-              "partner": "Mali Govt 20%"
-            },
-            {
-              "name": "Kibali JV (DRC)",
-              "ownership_pct": 45.0,
-              "type": "jv",
-              "partner": "AngloGold 45%, DRC 10%"
-            },
-            {
-              "name": "Reko Diq JV (Pakistan)",
-              "ownership_pct": 50.0,
-              "type": "jv",
-              "partner": "Pakistan 50%"
-            },
-            {
-              "name": "Zaldivar JV (Chile)",
-              "ownership_pct": 50.0,
-              "type": "jv",
-              "partner": "Antofagasta 50%"
-            },
-            {
-              "name": "Porgera JV (PNG)",
-              "ownership_pct": 47.5,
-              "type": "jv",
-              "partner": "PNG Govt 52.5%"
-            },
-            {
-              "name": "Hemlo (Canada)",
-              "ownership_pct": 100,
-              "type": "subsidiary",
-              "partner": ""
-            }
-          ]
-        }
-      ]
-    },
-    "key_risks": [
-      {
-        "risk": "Mali / Loulo-Gounkoto Dispute",
-        "severity": "high",
-        "description": "Loulo-Gounkoto (Mali, 80% Barrick) contributes ~400Koz/year (~10% of attributable gold production). Three Barrick employees detained by Malian government since end-2024. Mine in care-and-maintenance. No timeline for resolution.",
-        "mitigation": "Arbitration filed under ICSID rules. Company states balance sheet can absorb impact. Mali operations excluded from 2025 production guidance."
-      },
-      {
-        "risk": "Reko Diq Execution & Pakistan Risk",
-        "severity": "high",
-        "description": "Largest single capex commitment in Barrick history ($5.6-6B, Barrick 50%). Located in Balochistan, Pakistan — historically challenging jurisdiction. Project financing not yet signed as of Q4 2024 (targeting Q3 2025). Production target end-2028.",
-        "mitigation": "50% JV with Pakistani government entities aligns interests. Board conditionally approved bankable feasibility. Multiple international DFI lenders engaged."
-      },
-      {
-        "risk": "Gold Price Volatility",
-        "severity": "high",
-        "description": "Revenue and FCF highly correlated to spot gold price. AISC ~$1,390/oz. A $100/oz gold price decline reduces annual revenue ~$400M. Return to $1,800/oz gold would eliminate most FCF and require significant capex prioritization.",
-        "mitigation": "No gold hedging (management philosophy: full exposure to gold). Copper diversification partially offsets — ~16% of revenue. Geographic diversification provides operational stability."
-      },
-      {
-        "risk": "Rising All-In Sustaining Costs (AISC)",
-        "severity": "medium",
-        "description": "AISC rose from $1,262/oz (2022) to $1,390/oz (2024) — a $128/oz increase in 2 years driven by labor, energy, and reagent inflation. Industry-wide trend. If gold price plateaus, margin compression accelerates.",
-        "mitigation": "Lumwana Super Pit and Pueblo Viejo expansions designed to lower unit costs at key operations. Ongoing operational efficiency programs."
-      },
-      {
-        "risk": "Geopolitical Concentration in High-Risk Jurisdictions",
-        "severity": "medium",
-        "description": "~40-50% of production from Mali, DRC, Tanzania, Pakistan, PNG — all elevated-risk jurisdictions. Regulatory changes, resource nationalism, or instability can disrupt operations with limited warning.",
-        "mitigation": "Randgold DNA: Barrick has decades of operating expertise in complex African/emerging market jurisdictions. Local partnership and community engagement model proven effective historically."
-      }
-    ]
-  },
   "financials": {
     "currency": "USD",
     "unit": "Billion",
@@ -873,5 +424,340 @@
     ],
     "notes": "Barrick is a Canadian company (TSX: ABX, NYSE: B). Fiscal year ends December 31. Files 40-F (not 10-K) with SEC as a Canadian issuer. Unit = Billion USD except Gold Production (Moz) and AISC ($/oz).\n\nAdjusted Net Earnings and Adjusted EPS exclude impairments, unrealized gains/losses, and other non-recurring items — management's preferred profitability measure.\n\nFY2022 net earnings impacted by ~$700M impairment charges. FY2025 net earnings include $1,107M one-time acquisition/disposition gains — adjusted net earnings ($4.14B) better reflects underlying performance.\n\nAISC (All-in Sustaining Cost per ounce): rising from $1,262 (2022) → $1,484 (2024) → $1,637 (2025) — cost inflation trend. Gold price realization: $1,803 (2022) → $1,948 (2023) → $2,397 (2024) → $3,501 (2025). Dramatic spread expansion drove FY2025 FCF tripling.\n\nNote: FY2024 Gold Production corrected to 3.91 Moz (official 40-F) from earlier 4.05 estimate. FY2024 AISC corrected to $1,484/oz (official 40-F). FY2025 gold production decline (3.26 Moz) primarily due to Loulo-Gounkoto suspension and asset divestitures."
   },
-  "name_th": "Barrick Mining Corporation"
+  "overview": {
+    "founded": "1983",
+    "headquarters": "Toronto, Canada (TSX: ABX · NYSE: GOLD)",
+    "employees": "~18,000 (+ contractors)",
+    "fiscal_year_end": "December 31",
+    "business_model_summary": "Barrick is a gold and copper mining company operating a portfolio of Tier One and Tier Two assets across four continents. Revenue is generated by mining and selling gold (primarily) and copper. The business model is capital-intensive — major upfront investment in mine construction, followed by decades of production at relatively stable unit costs. Profitability is determined by the spread between commodity prices and AISC. Under CEO Mark Bristow (former Randgold CEO), Barrick's defining characteristic is portfolio discipline: pruning non-core assets when prices are elevated, growing reserves organically rather than through overpriced M&A, and returning capital while self-funding growth.",
+    "competitive_position": "2nd or 3rd largest gold miner globally by reserves and production volume. The Nevada Gold Mines JV with Newmont is the world's largest gold complex. Key differentiator: Tier-One asset concentration and operational expertise in technically complex jurisdictions. Primary competitors: Newmont Corporation (#1 globally), Agnico Eagle Mines, Gold Fields, AngloGold Ashanti.",
+    "moat_factors": [
+      "Tier-1 asset portfolio with 10–30+ year mine lives",
+      "Organic reserve replacement at ~$10/oz (industry-leading)",
+      "Dual-metal platform: gold (safe-haven) + copper (energy transition)",
+      "Operational expertise in complex jurisdictions (Randgold DNA)",
+      "Balance sheet self-funding growth without equity issuance",
+      "Mark Bristow's 25-year track record of value creation"
+    ],
+    "segments": [
+      {
+        "name": "Nevada Gold Mines",
+        "type": "gold",
+        "description": "Joint venture with Newmont (Barrick 61.5%, Newmont 38.5%). World's largest gold mining complex. Barrick's most profitable and strategically important segment. Cortez is the crown jewel — highest-grade open-pit gold mine in North America.",
+        "revenue": 3.84,
+        "revenue_pct": 29.7,
+        "yoy_change": 20,
+        "key_assets": [
+          "Cortez",
+          "Carlin",
+          "Turquoise Ridge",
+          "Long Canyon",
+          "Fourmile (dev)"
+        ]
+      },
+      {
+        "name": "Africa & Middle East",
+        "type": "gold",
+        "description": "Loulo-Gounkoto (Mali 80%, SUSPENDED as of 2024), Kibali (DRC 45% JV), North Mara (Tanzania 84%), Bulyanhulu (Tanzania 84%), Tongon (Côte d'Ivoire 89.7%), Jabal Sayid copper (Saudi Arabia 50%). High-quality assets but elevated geopolitical risk.",
+        "revenue": 3.36,
+        "revenue_pct": 26,
+        "yoy_change": 10,
+        "key_assets": [
+          "Loulo-Gounkoto",
+          "Kibali",
+          "North Mara",
+          "Bulyanhulu",
+          "Tongon"
+        ]
+      },
+      {
+        "name": "Copper (Global)",
+        "type": "copper",
+        "description": "Lumwana Super Pit (Zambia, 100%) — largest open-pit copper mine in Africa, undergoing $2B+ expansion. Zaldivar (Chile, 50% JV with Antofagasta). Jabal Sayid (Saudi Arabia, 50%). Reko Diq (Pakistan, 50% — under development, targeted 2028 production start, projected 38-year mine life).",
+        "revenue": 2.14,
+        "revenue_pct": 16.6,
+        "yoy_change": 28,
+        "key_assets": [
+          "Lumwana",
+          "Zaldivar",
+          "Jabal Sayid",
+          "Reko Diq (dev)"
+        ]
+      },
+      {
+        "name": "Latin America & Caribbean",
+        "type": "gold",
+        "description": "Pueblo Viejo (Dominican Republic, 60% JV with Newmont) — flagship. Expanding to 800Koz+ attributable from 2026 after tailings facility upgrade. Veladero (Argentina, 50% JV). High cost jurisdictions but large, long-life reserves.",
+        "revenue": 2.56,
+        "revenue_pct": 19.8,
+        "yoy_change": 8,
+        "key_assets": [
+          "Pueblo Viejo",
+          "Veladero"
+        ]
+      },
+      {
+        "name": "Asia Pacific & North America",
+        "type": "gold",
+        "description": "Porgera (Papua New Guinea, 47.5% JV — restarted 2024 after 4-year suspension). Hemlo (Ontario, Canada, 100%). Smaller combined contribution but Porgera restart adds meaningful production uplift.",
+        "revenue": 1.02,
+        "revenue_pct": 7.9,
+        "yoy_change": 35,
+        "key_assets": [
+          "Porgera",
+          "Hemlo"
+        ]
+      }
+    ],
+    "geographies": [
+      {
+        "region": "Americas (North + Latin + Nevada)",
+        "revenue_pct": 57.4
+      },
+      {
+        "region": "Africa & Middle East",
+        "revenue_pct": 26
+      },
+      {
+        "region": "Asia Pacific",
+        "revenue_pct": 16.6
+      }
+    ],
+    "timeline": [
+      {
+        "year": 1983,
+        "title": "Founded in Toronto",
+        "description": "Barrick Gold Corporation founded by Peter Munk. Started as a small Canadian oil company that pivoted to gold mining.",
+        "type": "founding"
+      },
+      {
+        "year": 1987,
+        "title": "Goldstrike Acquisition",
+        "description": "Acquired the Goldstrike property in Nevada for $62M. This single acquisition became one of the most productive gold deposits in North American history and anchors the Nevada Gold Mines JV today.",
+        "type": "milestone"
+      },
+      {
+        "year": 1993,
+        "title": "Becomes World's #1 Producer",
+        "description": "Barrick surpasses all rivals to become the world's largest gold mining company by production, driven by Nevada output.",
+        "type": "milestone"
+      },
+      {
+        "year": 2006,
+        "title": "Placer Dome Merger ($10.4B)",
+        "description": "Acquired Placer Dome in a $10.4B deal — one of the largest mining M&A transactions of the decade. Added major assets including Cortez (Nevada), Pueblo Viejo, and Porgera.",
+        "type": "merger"
+      },
+      {
+        "year": 2013,
+        "title": "Gold Price Crash & $8.7B Impairment",
+        "description": "Gold price collapsed below $1,200/oz. Barrick recorded ~$8.7B in impairment charges and launched a major debt reduction / restructuring program. Revenue fell and confidence in management was shaken.",
+        "type": "crisis"
+      },
+      {
+        "year": 2018,
+        "title": "Randgold Merger ($18.3B)",
+        "description": "All-share merger with London-listed Randgold Resources. Mark Bristow became President & CEO, bringing Randgold's operational discipline, African mining expertise, and reserve-focused philosophy to Barrick.",
+        "type": "merger"
+      },
+      {
+        "year": 2019,
+        "title": "Nevada Gold Mines JV with Newmont",
+        "description": "Combined all Nevada gold operations into a 61.5%/38.5% JV with Newmont, creating the world's largest gold mining complex. Saved ~$500M in annual synergies.",
+        "type": "milestone"
+      },
+      {
+        "year": 2022,
+        "title": "Reko Diq Agreement Signed",
+        "description": "Reached landmark agreement with Pakistan government to revive the Reko Diq copper-gold project (Barrick 50%, Pakistan entities 50%). One of world's largest undeveloped copper-gold deposits.",
+        "type": "project"
+      },
+      {
+        "year": 2024,
+        "title": "Porgera Restart",
+        "description": "Porgera gold mine (PNG) restarted after 4-year suspension following lease expiry dispute. Full production expected by 2025.",
+        "type": "milestone"
+      },
+      {
+        "year": 2024,
+        "title": "Record FCF & Reserve Growth",
+        "description": "Free cash flow doubled to $1.32B. Operating CF $4.49B. Gold mineral reserves grew 23% to 89M oz. Returned ~$1.2B to shareholders. Gold averaged $2,397/oz.",
+        "type": "financial"
+      },
+      {
+        "year": 2024,
+        "title": "Mali Crisis — Loulo Suspended",
+        "description": "Malian government detained three Barrick employees. Loulo-Gounkoto mine (~400Koz/year) placed in care-and-maintenance. Arbitration filed. Resolved in Q4 2025 via $559M settlement.",
+        "type": "crisis"
+      },
+      {
+        "year": 2025,
+        "title": "Record Gold Price & Financial Performance",
+        "description": "Gold averaged $3,432/oz (realized $3,501/oz) — a 44% increase over 2024. Revenue surged to $16.96B (+31%), FCF tripled to $3.87B. Company ended year with $2B net cash position.",
+        "type": "financial"
+      },
+      {
+        "year": 2025,
+        "title": "Rebrand to Barrick Mining Corporation",
+        "description": "Barrick Gold Corporation officially renamed to Barrick Mining Corporation, reflecting the strategic shift to become a gold AND copper producer. NYSE ticker changed from GOLD to B.",
+        "type": "milestone"
+      },
+      {
+        "year": 2025,
+        "title": "CEO Bristow Departure Announced",
+        "description": "Mark Bristow, who led Barrick since the 2018 Randgold merger, announced departure. Search for permanent President & CEO underway. Bristow oversaw reserve growth, Nevada JV, and Reko Diq revival.",
+        "type": "crisis"
+      },
+      {
+        "year": 2025,
+        "title": "North America IPO Exploration",
+        "description": "Barrick begins exploring potential IPO of North American gold assets (Nevada Gold Mines, Fourmile). Could be the largest strategic restructuring since the Nevada JV with Newmont in 2019.",
+        "type": "milestone"
+      }
+    ],
+    "management": [
+      {
+        "name": "Mark Bristow",
+        "title": "President & CEO",
+        "since": "2019",
+        "background": "Former CEO of Randgold Resources for 25 years. Geologist by training. Widely credited as one of the best capital allocators in mining. Designed the 2018 Barrick-Randgold merger and the 2019 Nevada Gold Mines JV. Known for mine visits, operational discipline, and blunt shareholder communication."
+      },
+      {
+        "name": "Graham Shuttleworth",
+        "title": "Senior EVP & CFO",
+        "since": "2019",
+        "background": "Former CFO of Randgold Resources. Joined with Bristow in the merger. Deep experience in mining finance across Africa and emerging markets. Focuses on balance sheet strength and disciplined capital allocation."
+      }
+    ],
+    "bull_case": "Gold price tailwinds from central bank buying, dedollarization trends, and persistent geopolitical instability support $2,000–$2,500+ gold long-term. Exceptional operational leverage — each $100/oz rise in gold price adds ~$400M FCF annually. Reko Diq copper project (Pakistan) provides decades of tier-one copper growth not yet priced into market cap. Organic reserve replacement at ~$10/oz is industry-leading and extends asset longevity. Balance sheet strong enough to self-fund all major capex without equity dilution. Bristow's track record on portfolio discipline and value creation is exceptional.",
+    "bear_case": "AISC creep ($1,262 → $1,390 over 3 years) narrows margin expansion narrative if gold plateaus. Mali/Loulo dispute (~10% of production) remains unresolved — prolonged suspension materially impairs 2025 targets. Reko Diq execution risk is the single biggest concern: $5.6-6B capex in Pakistan is the largest project in Barrick's history; delay, overrun, or political shift in Balochistan would be material. Gold price mean-reversion from $2,400+ would significantly compress FCF and re-rate the stock.",
+    "ownership": {
+      "major_shareholders": [
+        {
+          "name": "Vanguard Group",
+          "pct": 7.8,
+          "type": "institutional"
+        },
+        {
+          "name": "BlackRock",
+          "pct": 6.5,
+          "type": "institutional"
+        },
+        {
+          "name": "Capital Group",
+          "pct": 5.2,
+          "type": "institutional"
+        },
+        {
+          "name": "State Street Global",
+          "pct": 3.8,
+          "type": "institutional"
+        },
+        {
+          "name": "Norges Bank",
+          "pct": 2.1,
+          "type": "sovereign fund"
+        },
+        {
+          "name": "Public Float (อื่นๆ)",
+          "pct": 74.6,
+          "type": "float"
+        }
+      ],
+      "corporate_structure": [
+        {
+          "name": "Barrick Mining Corp (TSX: ABX / NYSE: GOLD)",
+          "type": "parent",
+          "children": [
+            {
+              "name": "Nevada Gold Mines JV",
+              "ownership_pct": 61.5,
+              "type": "jv",
+              "partner": "Newmont 38.5%"
+            },
+            {
+              "name": "Lumwana (Zambia)",
+              "ownership_pct": 100,
+              "type": "subsidiary",
+              "partner": ""
+            },
+            {
+              "name": "Pueblo Viejo JV (DR)",
+              "ownership_pct": 60,
+              "type": "jv",
+              "partner": "Newmont 40%"
+            },
+            {
+              "name": "Loulo-Gounkoto (Mali)",
+              "ownership_pct": 80,
+              "type": "jv",
+              "partner": "Mali Govt 20%"
+            },
+            {
+              "name": "Kibali JV (DRC)",
+              "ownership_pct": 45,
+              "type": "jv",
+              "partner": "AngloGold 45%, DRC 10%"
+            },
+            {
+              "name": "Reko Diq JV (Pakistan)",
+              "ownership_pct": 50,
+              "type": "jv",
+              "partner": "Pakistan 50%"
+            },
+            {
+              "name": "Zaldivar JV (Chile)",
+              "ownership_pct": 50,
+              "type": "jv",
+              "partner": "Antofagasta 50%"
+            },
+            {
+              "name": "Porgera JV (PNG)",
+              "ownership_pct": 47.5,
+              "type": "jv",
+              "partner": "PNG Govt 52.5%"
+            },
+            {
+              "name": "Hemlo (Canada)",
+              "ownership_pct": 100,
+              "type": "subsidiary",
+              "partner": ""
+            }
+          ]
+        }
+      ]
+    },
+    "key_risks": [
+      {
+        "risk": "Mali / Loulo-Gounkoto Dispute",
+        "severity": "high",
+        "description": "Loulo-Gounkoto (Mali, 80% Barrick) contributes ~400Koz/year (~10% of attributable gold production). Three Barrick employees detained by Malian government since end-2024. Mine in care-and-maintenance. No timeline for resolution.",
+        "mitigation": "Arbitration filed under ICSID rules. Company states balance sheet can absorb impact. Mali operations excluded from 2025 production guidance."
+      },
+      {
+        "risk": "Reko Diq Execution & Pakistan Risk",
+        "severity": "high",
+        "description": "Largest single capex commitment in Barrick history ($5.6-6B, Barrick 50%). Located in Balochistan, Pakistan — historically challenging jurisdiction. Project financing not yet signed as of Q4 2024 (targeting Q3 2025). Production target end-2028.",
+        "mitigation": "50% JV with Pakistani government entities aligns interests. Board conditionally approved bankable feasibility. Multiple international DFI lenders engaged."
+      },
+      {
+        "risk": "Gold Price Volatility",
+        "severity": "high",
+        "description": "Revenue and FCF highly correlated to spot gold price. AISC ~$1,390/oz. A $100/oz gold price decline reduces annual revenue ~$400M. Return to $1,800/oz gold would eliminate most FCF and require significant capex prioritization.",
+        "mitigation": "No gold hedging (management philosophy: full exposure to gold). Copper diversification partially offsets — ~16% of revenue. Geographic diversification provides operational stability."
+      },
+      {
+        "risk": "Rising All-In Sustaining Costs (AISC)",
+        "severity": "medium",
+        "description": "AISC rose from $1,262/oz (2022) to $1,390/oz (2024) — a $128/oz increase in 2 years driven by labor, energy, and reagent inflation. Industry-wide trend. If gold price plateaus, margin compression accelerates.",
+        "mitigation": "Lumwana Super Pit and Pueblo Viejo expansions designed to lower unit costs at key operations. Ongoing operational efficiency programs."
+      },
+      {
+        "risk": "Geopolitical Concentration in High-Risk Jurisdictions",
+        "severity": "medium",
+        "description": "~40-50% of production from Mali, DRC, Tanzania, Pakistan, PNG — all elevated-risk jurisdictions. Regulatory changes, resource nationalism, or instability can disrupt operations with limited warning.",
+        "mitigation": "Randgold DNA: Barrick has decades of operating expertise in complex African/emerging market jurisdictions. Local partnership and community engagement model proven effective historically."
+      }
+    ]
+  }
 }

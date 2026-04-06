@@ -1,22 +1,24 @@
 {
   "ticker": "NVDA",
   "name": "NVIDIA Corporation",
+  "name_th": "บริษัท เอ็นวีไอเดีย คอร์ปอเรชั่น",
   "sector": "Semiconductors",
   "exchange": "NASDAQ",
-  "last_updated": "2026-03-30",
-  "description": "NVIDIA Corporation เป็นผู้นำระดับโลกด้าน GPU, AI accelerators และ high-performance computing platform ก่อตั้งปี 1993 โดย Jensen Huang ปัจจุบันเป็นบริษัทที่มี market cap สูงที่สุดในโลก (ช่วงปี 2024-2025) ขับเคลื่อนโดยความต้องการ AI infrastructure จาก data center ทั่วโลก",
+  "tradingview_symbol": "NASDAQ:NVDA",
+  "last_updated": "2026-04-06",
+  "description": "NVIDIA is a global leader in GPU, AI accelerators and high-performance computing. Founded in 1993 by Jensen Huang, now a data center-scale AI infrastructure company reshaping all industries.",
+  "ceo": "Jensen Huang",
+  "employees": null,
+  "management_tone": "bullish",
   "notes": [
     {
       "date": "2026-03-30",
       "title": "10-K Analysis",
       "tags": [
-        "10-k",
-        "nvda"
+        "strategy"
       ],
       "rating": 3,
-      "content": "[Financial Performance]\nNVIDIA has successfully transitioned from a GPU company to a data center-scale AI infrastructure leader, with the Data Center platform now representing the core growth engine. The company's full-stack innovation approach across silicon, systems, networking, and software has created significant competitive advantages in AI infrastructure. Strategic expansion into automotive, healthcare, and professional visualization markets provides diversified growth opportunities beyond core data center business. The accelerated release cadence of open AI models and platforms demonstrates management's focus on ecosystem development and market expansion.\n\n[Performance Drivers]\nGrowth was driven by strong demand for AI infrastructure, particularly data center-scale accelerated computing platforms. The launch of the Blackwell architecture and expansion into agentic and physical AI applications created new market opportunities. Gaming growth was supported by new Blackwell GeForce RTX GPUs with neural graphics capabilities.\n\n[Strategic Priorities]\n• Advancing accelerated computing platform — full-stack innovation across architecture, chip design, systems, and software\n• Extending AI leadership — end-to-end platform for training and inference with NVIDIA AI Enterprise software suite\n• Expanding computer graphics with AI — neural rendering and Omniverse for virtual world simulation\n• Advancing autonomous vehicle platform — comprehensive AI-based hardware/software solution for AV/EV market\n\n[Competitive Position]\nNVIDIA maintains a strong moat through its full-stack platform approach combining hardware, software, and ecosystem. Differentiation comes from CUDA developer platform with 7.5M developers, data center-scale co-design, and leadership in AI infrastructure. Competitive threats include custom ASIC development by hyperscalers, though NVIDIA's NVLink Fusion addresses this by enabling integration with custom CPUs/XPUs.\n\n[Management Quality]\nExecution score: HIGH\nManagement delivered on innovation promises with successful launch of Blackwell architecture in FY2025 and Blackwell Ultra platform in FY2026, demonstrating consistent execution of product roadmap. The acquisition of Mellanox in 2020 has been successfully integrated to create data center-scale offerings.\n\n[Outlook]\nManagement signals continued strong demand for AI infrastructure with Rubin platform expected to commence production in second half of FY2027. Guidance suggests expansion into agentic AI and reasoning applications with focus on cost-per-token reduction.\n\n[Key Risks]\nNVIDIA faces a high-risk profile dominated by technological and competitive pressures in fast-evolving AI and computing markets. Key risks include cybersecurity threats, legal exposures, and supply chain vulnerabilities, though the company mitigates some through heavy R&D investment and market diversification. Overall, NVIDIA's success hinges on maintaining innovation leadership amid intense competition and regulatory uncertainties.\n\n[Management Tone]\nBullish",
-      "title_th": "10-K Analysis",
-      "content_th": "[Financial Performance]\nNVIDIA ได้เปลี่ยนผ่านจากบริษัท GPU ไปสู่ผู้นำโครงสร้างพื้นฐาน AI ขนาดศูนย์ข้อมูลได้สำเร็จ โดยแพลตฟอร์ม Data Center ในปัจจุบันเป็นเครื่องจักรหลักของการเติบโต แนวทางการสร้างนวัตกรรมแบบเต็มสแต็กของบริษัทครอบคลุมตั้งแต่ชิป ระบบ เครือข่าย และซอฟต์แวร์ สร้างข้อได้เปรียบทางการแข่งขันที่สำคัญในโครงสร้างพื้นฐาน AI การขยายตัวอย่างมีกลยุทธ์เข้าสู่ตลาดยานยนต์ การดูแลสุขภาพ และการสร้างภาพมืออาชีพ สร้างโอกาสการเติบโตที่หลากหลายนอกเหนือจากธุรกิจศูนย์ข้อมูลหลัก การปล่อยโมเดลและแพลตฟอร์ม AI แบบเปิดที่เร่งความถี่ แสดงให้เห็นถึงความมุ่งมั่นของฝ่ายบริหารในการพัฒนาระบบนิเวศและการขยายตลาด\n\n[Performance Drivers]\nการเติบโตขับเคลื่อนโดยความต้องการที่แข็งแกร่งสำหรับโครงสร้างพื้นฐาน AI โดยเฉพาะแพลตฟอร์มการประมวลผลแบบเร่งความเร็วขนาดศูนย์ข้อมูล การเปิดตัวสถาปัตยกรรม Blackwell และการขยายเข้าสู่แอปพลิเคชัน AI แบบเอเจนต์และทางกายภาพ สร้างโอกาสทางการตลาดใหม่ การเติบโตในส่วนเกมได้รับการสนับสนุนโดยการ์ดจอ GeForce RTX รุ่นใหม่จาก Blackwell ที่มีความสามารถกราฟิกประสาท\n\n[Strategic Priorities]\n• การพัฒนาแพลตฟอร์มการประมวลผลแบบเร่งความเร็ว — นวัตกรรมเต็มสแต็กครอบคลุมสถาปัตยกรรม การออกแบบชิป ระบบ และซอฟต์แวร์\n• การขยายความเป็นผู้นำด้าน AI — แพลตฟอร์มแบบครบวงจรสำหรับการฝึกฝนและการอนุมานด้วยชุดซอฟต์แวร์ NVIDIA AI Enterprise\n• การขยายกราฟิกคอมพิวเตอร์ด้วย AI — การเรนเดอร์ประสาทและ Omniverse สำหรับการจำลองโลกเสมือน\n• การพัฒนาแพลตฟอร์มยานยนต์อัตโนมัติ — โซลูชันฮาร์ดแวร์/ซอฟต์แวร์แบบครบวงจรบนพื้นฐาน AI สำหรับตลาด AV/EV\n\n[Competitive Position]\nNVIDIA รักษาความได้เปรียบทางการแข่งขันที่แข็งแกร่งผ่านแนวทางแพลตฟอร์มเต็มสแต็กที่ผสานฮาร์ดแวร์ ซอฟต์แวร์ และระบบนิเวศ การสร้างความแตกต่างมาจากแพลตฟอร์มนักพัฒนา CUDA ที่มีนักพัฒนา 7.5 ล้านคน การออกแบบร่วมขนาดศูนย์ข้อมูล และความเป็นผู้นำในโครงสร้างพื้นฐาน AI ภัยคุกคามทางการแข่งขันรวมถึงการพัฒนา ASIC แบบกำหนดเองโดยผู้ให้บริการไฮเปอร์สเกล แม้ว่า NVLink Fusion ของ NVIDIA จะจัดการกับเรื่องนี้โดยเปิดให้สามารถบูรณาการกับ CPU/XPU แบบกำหนดเองได้\n\n[Management Quality]\nExecution score: HIGH\nฝ่ายบริหารส่งมอบตามคำสัญญาด้านนวัตกรรมด้วยการเปิดตัวสถาปัตยกรรม Blackwell ใน FY2025 และแพลตฟอร์ม Blackwell Ultra ใน FY2026 ได้สำเร็จ แสดงให้เห็นถึงการดำเนินการตามแผนงานผลิตภัณฑ์อย่างสม่ำเสมอ การเข้าซื้อกิจการ Mellanox ในปี 2020 ได้รับการบูรณาการอย่างประสบความสำเร็จเพื่อสร้างข้อเสนอขนาดศูนย์ข้อมูล\n\n[Outlook]\nฝ่ายบริหารส่งสัญญาณถึงความต้องการที่แข็งแกร่งอย่างต่อเนื่องสำหรับโครงสร้างพื้นฐาน AI โดยคาดว่าแพลตฟอร์ม Rubin จะเริ่มการผลิตในครึ่งหลังของ FY2027 แนวทางแนะนำการขยายเข้าสู่แอปพลิเคชัน AI แบบเอเจนต์และการให้เหตุผล โดยมุ่งเน้นที่การลดต้นทุนต่อโทเคน\n\n[Key Risks]\nNVIDIA เผชิญกับโปรไฟล์ความเสี่ยงสูงซึ่งครอบงำโดยแรงกดดันด้านเทคโนโลยีและการแข่งขันในตลาด AI และการประมวลผลที่พัฒนาอย่างรวดเร็ว ความเสี่ยงหลักรวมถึงภัยคุกคามด้านความปลอดภัยทางไซเบอร์ การเปิดเผยทางกฎหมาย และความเปราะบางของห่วงโซ่อุปทาน แม้ว่าบริษัทจะบรรเทาบางส่วนผ่านการลงทุนด้าน R&D อย่างหนักและการกระจายตลาด โดยรวมแล้ว ความสำเร็จของ NVIDIA ขึ้นอยู่กับการรักษาความเป็นผู้นำด้านนวัตกรรมท่ามกลางการแข่งขันที่รุนแรงและความไม่แน่นอนด้านกฎระเบียบ\n\n[Management Tone]\nBullish"
+      "content": "[Financial Performance]\nNVIDIA has successfully transitioned from a GPU company to a data center-scale AI infrastructure leader. The Data Center platform now represents the core growth engine.\n[Strategic Priorities]\n• Advancing accelerated computing platform across architecture, chip design, systems, and software\n• Extending AI leadership with end-to-end platform for training and inference\n• Expanding autonomous vehicle platform with AI-based hardware/software solution\n• Rubin platform expected to commence production shipments in H2 FY2027\n[Management Tone]\nBullish"
     }
   ],
   "quotes": [
@@ -24,8 +26,8 @@
       "date": "2026-03-30",
       "source": "10-K",
       "speaker": "NVIDIA Management",
-      "quote": "NVIDIA is now a data center scale AI infrastructure company reshaping all industries.",
-      "quote_th": "NVIDIA ได้กลายเป็นบริษัทโครงสร้างพื้นฐาน AI ขนาดศูนย์ข้อมูลที่กำลังปรับเปลี่ยนอุตสาหกรรมทั้งหมด",
+      "quote": "We work to deliver continued performance leaps that outpace Moore's Law by leveraging innovation across the architecture, chip design, system, interconnect, algorithm, and software layers.",
+      "quote_th": "เราทำงานเพื่อส่งมอบความก้าวหน้าทางประสิทธิภาพอย่างต่อเนื่องที่แซงหน้ากฎของมัวร์",
       "tag": "strategy"
     },
     {
@@ -33,8 +35,16 @@
       "source": "10-K",
       "speaker": "NVIDIA Management",
       "quote": "We expect a broader set of PC users to choose NVIDIA GPUs for running these applications locally on their PC, which is critical for privacy, latency, and cost-sensitive AI applications.",
-      "quote_th": "เราคาดว่าผู้ใช้ PC ที่หลากหลายมากขึ้นจะเลือกใช้ GPU ของ NVIDIA เพื่อรันแอปพลิเคชันเหล่านี้บนเครื่อง PC ของพวกเขาโดยตรง ซึ่งมีความสำคัญต่อแอปพลิเคชัน AI ที่อ่อนไหวต่อความเป็นส่วนตัว ความหน่วงเวลา และต้นทุน",
+      "quote_th": "เราคาดว่าผู้ใช้ PC ที่หลากหลายมากขึ้นจะเลือกใช้ GPU ของ NVIDIA สำหรับแอปพลิเคชัน AI ที่อ่อนไหวต่อความเป็นส่วนตัว ความหน่วงเวลา และต้นทุน",
       "tag": "growth"
+    },
+    {
+      "date": "2026-03-30",
+      "source": "10-K",
+      "speaker": "NVIDIA Management",
+      "quote": "Our compute solutions include all three major processing units in AI servers – GPUs, CPUs, and DPUs.",
+      "quote_th": "โซลูชันการประมวลผลของเรารวมถึงหน่วยประมวลผลหลักทั้งสามประเภทในเซิร์ฟเวอร์ AI ได้แก่ GPU, CPU และ DPU",
+      "tag": "strategy"
     },
     {
       "date": "2026-03-30",
@@ -49,32 +59,8 @@
       "source": "10-K",
       "speaker": "NVIDIA Management",
       "quote": "Our accelerated computing platform can solve complex problems in significantly less time and with lower power consumption than alternative computational approaches.",
-      "quote_th": "แพลตฟอร์มการประมวลผลแบบเร่งความเร็วของเราสามารถแก้ปัญหาที่ซับซ้อนได้ในเวลาที่น้อยกว่าอย่างมีนัยสำคัญและด้วยการใช้พลังงานที่ต่ำกว่าเมื่อเทียบกับแนวทางการคำนวณทางเลือกอื่น",
-      "tag": "technology"
-    },
-    {
-      "date": "2026-03-30",
-      "source": "10-K",
-      "speaker": "NVIDIA Management",
-      "quote": "We work to deliver continued performance leaps that outpace Moore's Law by leveraging innovation across the architecture, chip design, system, interconnect, algorithm, and software layers.",
-      "quote_th": "เราทำงานเพื่อส่งมอบความก้าวหน้าทางประสิทธิภาพอย่างต่อเนื่องที่แซงหน้ากฎของมัวร์ โดยใช้ประโยชน์จากนวัตกรรมในทุกชั้น ตั้งแต่สถาปัตยกรรม การออกแบบชิป ระบบ การเชื่อมต่อ อัลกอริทึม และชั้นซอฟต์แวร์",
+      "quote_th": "แพลตฟอร์มการประมวลผลแบบเร่งความเร็วของเราสามารถแก้ปัญหาที่ซับซ้อนได้ในเวลาที่น้อยกว่าและด้วยการใช้พลังงานที่ต่ำกว่า",
       "tag": "strategy"
-    },
-    {
-      "date": "2026-03-30",
-      "source": "10-K",
-      "speaker": "NVIDIA Management",
-      "quote": "We provide a complete, end-to-end accelerated computing platform for AI, addressing both training and inferencing.",
-      "quote_th": "เราจัดหาแพลตฟอร์มการประมวลผลแบบเร่งความเร็วแบบครบวงจรตั้งแต่ต้นจนจบสำหรับ AI ซึ่งครอบคลุมทั้งการฝึกฝนและการอนุมาน",
-      "tag": "strategy"
-    },
-    {
-      "date": "2026-03-30",
-      "source": "10-K",
-      "speaker": "NVIDIA Management",
-      "quote": "Our compute solutions include all three major processing units in AI servers – GPUs, CPUs, and DPUs.",
-      "quote_th": "โซลูชันการประมวลผลของเรารวมถึงหน่วยประมวลผลหลักทั้งสามประเภทในเซิร์ฟเวอร์ AI ได้แก่ GPU, CPU และ DPU",
-      "tag": "technology"
     },
     {
       "date": "2026-03-30",
@@ -83,120 +69,136 @@
       "quote": "Our AI technology leadership is reinforced by our large and expanding ecosystem.",
       "quote_th": "ความเป็นผู้นำด้านเทคโนโลยี AI ของเราได้รับการเสริมความแข็งแกร่งจากระบบนิเวศขนาดใหญ่และขยายตัวของเรา",
       "tag": "growth"
+    },
+    {
+      "date": "2026-03-30",
+      "source": "10-K",
+      "speaker": "NVIDIA Management",
+      "quote": "NVIDIA is now a data center scale AI infrastructure company reshaping all industries.",
+      "quote_th": "NVIDIA ได้กลายเป็นบริษัทโครงสร้างพื้นฐาน AI ขนาดศูนย์ข้อมูลที่กำลังปรับเปลี่ยนอุตสาหกรรมทั้งหมด",
+      "tag": "strategy"
+    },
+    {
+      "date": "2026-03-30",
+      "source": "10-K",
+      "speaker": "NVIDIA Management",
+      "quote": "We provide a complete, end-to-end accelerated computing platform for AI, addressing both training and inferencing.",
+      "quote_th": "เราจัดหาแพลตฟอร์มการประมวลผลแบบเร่งความเร็วแบบครบวงจรสำหรับ AI ซึ่งครอบคลุมทั้งการฝึกฝนและการอนุมาน",
+      "tag": "strategy"
     }
   ],
   "roadmap": [
     {
-      "date_said": "2026-01-31",
-      "source": "10-K",
-      "commitment": "Launch NVIDIA Rubin platform for agentic AI and reasoning",
-      "status": "pending",
-      "follow_up": "",
-      "follow_up_date": ""
-    },
-    {
       "date_said": "2027-07-01",
       "source": "10-K",
+      "status": "pending",
       "commitment": "Commence production shipments of NVIDIA Rubin platform in second half of fiscal year 2027",
-      "status": "pending",
       "follow_up": "",
       "follow_up_date": ""
     },
     {
       "date_said": "2026-03-30",
       "source": "10-K",
+      "status": "pending",
+      "commitment": "Provide end-to-end platform for physical AI spanning data center infrastructure, open models, systems, embedded compute modules, and software stacks",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": "2026-03-30",
+      "source": "10-K",
+      "status": "pending",
       "commitment": "Deliver up to 10x reduction in cost per token compared to Blackwell with Rubin platform",
-      "status": "pending",
       "follow_up": "",
       "follow_up_date": ""
     },
     {
       "date_said": "2026-03-30",
       "source": "10-K",
-      "commitment": "Accelerate release cadence of open AI model platforms including NVIDIA Nemotron for agentic AI and Cosmos for physical AI",
       "status": "pending",
+      "commitment": "Deliver significant increase in token throughput and reduction in cost per token compared to Hopper generation with Blackwell Ultra",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": "2026-03-30",
+      "source": "10-K",
+      "status": "pending",
+      "commitment": "Accelerate release cadence of open AI model platforms including NVIDIA Nemotron for agentic AI and Cosmos for physical AI",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": "2026-03-30",
+      "source": "10-K",
+      "status": "pending",
+      "commitment": "Deliver continued performance leaps that outpace Moore's Law by leveraging innovation across architecture, chip design, system, interconnect, algorithm, and software layers",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": "2026-03-30",
+      "source": "10-K",
+      "status": "pending",
+      "commitment": "Introduce neural graphics combining AI models with traditional rendering to boost game performance, image quality, and interactivity",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": "2026-03-30",
+      "source": "10-K",
+      "status": "pending",
+      "commitment": "Deliver full stack end-to-end solution for AV market under DRIVE Hyperion platform",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": "2026-03-30",
+      "source": "10-K",
+      "status": "pending",
+      "commitment": "Launch next generation of DLSS technology powered by new transformer model architecture",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": "2026-03-30",
+      "source": "10-K",
+      "status": "pending",
+      "commitment": "Continue to add AI-specific features to GPU architecture to extend leadership position",
       "follow_up": "",
       "follow_up_date": ""
     },
     {
       "date_said": "2026-01-31",
       "source": "10-K",
-      "commitment": "Launch NVIDIA Blackwell Ultra platform optimized for agentic, reasoning, and physical AI",
       "status": "pending",
+      "commitment": "Launch NVIDIA Blackwell Ultra platform optimized for agentic, reasoning, and physical AI",
       "follow_up": "",
       "follow_up_date": ""
     },
     {
-      "date_said": "2026-03-30",
+      "date_said": "2026-01-31",
       "source": "10-K",
-      "commitment": "Deliver significant increase in token throughput and reduction in cost per token compared to Hopper generation with Blackwell Ultra",
       "status": "pending",
+      "commitment": "Launch NVIDIA Rubin platform for agentic AI and reasoning",
+      "follow_up": "",
+      "follow_up_date": ""
+    },
+    {
+      "date_said": "2026-01-31",
+      "source": "10-K",
+      "status": "pending",
+      "commitment": "Scale Blackwell architecture for gaming and GeForce NOW",
       "follow_up": "",
       "follow_up_date": ""
     },
     {
       "date_said": "2025-01-31",
       "source": "10-K",
+      "status": "pending",
       "commitment": "Launch NVIDIA Blackwell GeForce RTX 50 Series family of desktop and laptop GPUs",
-      "status": "pending",
-      "follow_up": "",
-      "follow_up_date": ""
-    },
-    {
-      "date_said": "2026-03-30",
-      "source": "10-K",
-      "commitment": "Introduce neural graphics combining AI models with traditional rendering to boost game performance, image quality, and interactivity",
-      "status": "pending",
-      "follow_up": "",
-      "follow_up_date": ""
-    },
-    {
-      "date_said": "2026-03-30",
-      "source": "10-K",
-      "commitment": "Launch next generation of DLSS technology powered by new transformer model architecture",
-      "status": "pending",
-      "follow_up": "",
-      "follow_up_date": ""
-    },
-    {
-      "date_said": "2026-01-31",
-      "source": "10-K",
-      "commitment": "Scale Blackwell architecture for gaming and GeForce NOW",
-      "status": "pending",
-      "follow_up": "",
-      "follow_up_date": ""
-    },
-    {
-      "date_said": "2026-03-30",
-      "source": "10-K",
-      "commitment": "Provide end-to-end platform for physical AI spanning data center infrastructure, open models, systems, embedded compute modules, and software stacks",
-      "status": "pending",
-      "follow_up": "",
-      "follow_up_date": ""
-    },
-    {
-      "date_said": "2026-03-30",
-      "source": "10-K",
-      "commitment": "Deliver full stack end-to-end solution for AV market under DRIVE Hyperion platform",
-      "status": "pending",
-      "follow_up": "",
-      "follow_up_date": ""
-    },
-    {
-      "date_said": "2026-03-30",
-      "source": "10-K",
-      "commitment": "Continue to add AI-specific features to GPU architecture to extend leadership position",
-      "status": "pending",
-      "follow_up": "",
-      "follow_up_date": ""
-    },
-    {
-      "date_said": "2026-03-30",
-      "source": "10-K",
-      "commitment": "Deliver continued performance leaps that outpace Moore's Law by leveraging innovation across architecture, chip design, system, interconnect, algorithm, and software layers",
-      "status": "pending",
-      "follow_up": "",
-      "follow_up_date": ""
+      "follow_up": "Verify launch/availability timelines; update status and add evidence link.",
+      "follow_up_date": "2025-05-01"
     }
   ],
   "financials": {
@@ -218,47 +220,47 @@
         "values": [
           null,
           null,
-          10918.0,
-          16675.0,
-          26914.0,
-          26974.0,
-          60922.0
+          10918,
+          16675,
+          26914,
+          26974,
+          60922
         ]
       },
       {
         "name": "Gross Profit",
         "values": [
-          5822.0,
-          7171.0,
-          6768.0,
-          10396.0,
-          17475.0,
-          15356.0,
-          44301.0
+          5822,
+          7171,
+          6768,
+          10396,
+          17475,
+          15356,
+          44301
         ]
       },
       {
         "name": "Operating Income",
         "values": [
-          3210.0,
-          3804.0,
-          2846.0,
-          4532.0,
-          10041.0,
-          4224.0,
-          32972.0
+          3210,
+          3804,
+          2846,
+          4532,
+          10041,
+          4224,
+          32972
         ]
       },
       {
         "name": "Net Income",
         "values": [
-          3047.0,
-          4141.0,
-          2796.0,
-          4332.0,
-          9752.0,
-          4368.0,
-          29760.0
+          3047,
+          4141,
+          2796,
+          4332,
+          9752,
+          4368,
+          29760
         ]
       },
       {
@@ -288,85 +290,85 @@
       {
         "name": "R&D Expense",
         "values": [
-          1797.0,
-          2376.0,
-          2829.0,
-          3924.0,
-          5268.0,
-          7339.0,
-          8675.0
+          1797,
+          2376,
+          2829,
+          3924,
+          5268,
+          7339,
+          8675
         ]
       },
       {
         "name": "Op. Cash Flow",
         "values": [
-          3502.0,
-          3743.0,
-          4761.0,
-          5822.0,
-          9108.0,
-          5641.0,
-          28090.0
+          3502,
+          3743,
+          4761,
+          5822,
+          9108,
+          5641,
+          28090
         ]
       },
       {
         "name": "Free Cash Flow",
         "values": [
-          3502.0,
-          3743.0,
-          4761.0,
-          5822.0,
-          9108.0,
-          5641.0,
-          28090.0
+          3502,
+          3743,
+          4761,
+          5822,
+          9108,
+          5641,
+          28090
         ]
       },
       {
         "name": "Total Debt",
         "values": [
-          1988.0,
-          1991.0,
-          6963.0,
-          10946.0,
-          10953.0,
-          9709.0,
-          8463.0
+          1988,
+          1991,
+          6963,
+          10946,
+          10953,
+          9709,
+          8463
         ]
       },
       {
         "name": "Cash & Equiv.",
         "values": [
-          782.0,
-          10896.0,
-          847.0,
-          1990.0,
-          3389.0,
-          7280.0,
-          8589.0
+          782,
+          10896,
+          847,
+          1990,
+          3389,
+          7280,
+          8589
         ]
       },
       {
         "name": "Total Assets",
         "values": [
-          13292.0,
-          17315.0,
-          28791.0,
-          44187.0,
-          41182.0,
-          65728.0,
-          111601.0
+          13292,
+          17315,
+          28791,
+          44187,
+          41182,
+          65728,
+          111601
         ]
       },
       {
         "name": "Total Equity",
         "values": [
-          5762.0,
-          7471.0,
-          9342.0,
-          12204.0,
-          16893.0,
-          26612.0,
-          22101.0
+          5762,
+          7471,
+          9342,
+          12204,
+          16893,
+          26612,
+          22101
         ]
       }
     ],
@@ -518,6 +520,5 @@
       "float": "~97% (Jensen Huang ถือ ~3.5% ณ ต้นปี 2026)",
       "insider_ownership": "~3.5% (ลดลงจาก ~5% เมื่อ 2 ปีก่อนเนื่องจาก planned selling)"
     }
-  },
-  "name_th": "บริษัท เอ็นวีไอเดีย คอร์ปอเรชั่น"
+  }
 }
