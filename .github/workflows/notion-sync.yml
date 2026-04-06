@@ -1,0 +1,79 @@
+name: Notion → Prometheus Sync
+
+# ── Triggers ──────────────────────────────────────────────────────────────────
+on:
+  schedule:
+    - cron: '0 */6 * * *'   # every 6 hours (00:00, 06:00, 12:00, 18:00 UTC)
+  workflow_dispatch:          # manual trigger from GitHub Actions UI
+    inputs:
+      debug:
+        description: 'Enable verbose logging'
+        required: false
+        default: 'false'
+        type: boolean
+
+# Only allow one sync to run at a time (cancel older runs if triggered again)
+concurrency:
+  group: notion-sync
+  cancel-in-progress: true
+
+# ── Jobs ──────────────────────────────────────────────────────────────────────
+jobs:
+  sync:
+    name: Sync Notion → data/
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    permissions:
+      contents: write   # needed to push updated data/[TICKER]/data.json
+
+    steps:
+      # 1. Checkout repo
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      # 2. Set up Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: investment-research/package-lock.json
+
+      # 3. Install dependencies
+      - name: Install dependencies
+        working-directory: investment-research
+        run: npm ci
+
+      # 4. Run sync script
+      - name: Run Notion sync
+        working-directory: investment-research
+        env:
+          NOTION_TOKEN:        ${{ secrets.NOTION_TOKEN }}
+          NOTION_COMPANIES_DB: ${{ secrets.NOTION_COMPANIES_DB }}
+          NOTION_NOTES_DB:     ${{ secrets.NOTION_NOTES_DB }}
+          NOTION_QUOTES_DB:    ${{ secrets.NOTION_QUOTES_DB }}
+          NOTION_ROADMAP_DB:   ${{ secrets.NOTION_ROADMAP_DB }}
+          DEBUG: ${{ inputs.debug == 'true' && '1' || '' }}
+        run: node scripts/notion-sync.js
+
+      # 5. Commit & push any changed data files
+      - name: Commit changes
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Stage only the data directory (never touches scripts, HTML, etc.)
+          git add investment-research/data/
+
+          # Only commit if something actually changed
+          if git diff --cached --quiet; then
+            echo "✅ No data changes — nothing to commit"
+          else
+            CHANGED=$(git diff --cached --name-only | wc -l)
+            git commit -m "chore: notion sync — ${CHANGED} file(s) updated [skip ci]"
+            git push
+            echo "✅ Pushed ${CHANGED} updated file(s)"
+          fi
