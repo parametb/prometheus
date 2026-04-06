@@ -40,16 +40,14 @@ jobs:
         with:
           node-version: '20'
           cache: 'npm'
-          cache-dependency-path: investment-research/package-lock.json
+          cache-dependency-path: package-lock.json
 
       # 3. Install dependencies
       - name: Install dependencies
-        working-directory: investment-research
         run: npm ci
 
       # 4. Run sync script
       - name: Run Notion sync
-        working-directory: investment-research
         env:
           NOTION_TOKEN:        ${{ secrets.NOTION_TOKEN }}
           NOTION_COMPANIES_DB: ${{ secrets.NOTION_COMPANIES_DB }}
@@ -66,7 +64,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
           # Stage only the data directory (never touches scripts, HTML, etc.)
-          git add investment-research/data/
+          git add data/
 
           # Only commit if something actually changed
           if git diff --cached --quiet; then
