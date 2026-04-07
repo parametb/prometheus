@@ -2,29 +2,62 @@
 
 เว็บไซต์ส่วนตัวสำหรับติดตามข้อมูลบริษัทเพื่อการลงทุน รวบรวม Notes, Quotes จาก Earnings Call, Roadmap Tracker, ข้อมูลทางการเงิน และ Deep Dive Analysis
 
-**Repository:** https://github.com/parametb/prometheus
+**Repository:** https://github.com/parametb/prometheus  
+**Live Site:** https://parametb.github.io/prometheus  
+**Knowledge Base:** https://parametb.github.io/prometheus/research/
+
+---
+
+## 🔄 ภาพรวมระบบ (How It Works)
+
+ข้อมูลทุกอย่างไหลจาก **Notion → GitHub → เว็บไซต์** โดยอัตโนมัติ ไม่ต้องแตะโค้ด:
+
+```
+Notion (เขียนข้อมูลที่นี่)
+    ↓  GitHub Actions รันทุก 6 ชั่วโมง
+notion-sync.js
+    ↓
+data/{TICKER}/data.json
+    ↓                        ↓
+generate-quartz.js      Dashboard HTML
+    ↓                        ↓
+quartz/content/*.md     index.html / company.html
+    ↓
+Quartz Build → /research/companies/{TICKER}
+```
+
+**Notion databases ที่ sync:**
+- **Companies** — ข้อมูลหลักบริษัท (ticker, sector, exchange, description)
+- **Notes** — บันทึกการวิเคราะห์
+- **Quotes** — คำพูดผู้บริหารจาก Earnings Call / Annual Report
+- **Roadmap** — commitments และ delivery tracking
 
 ---
 
 ## 📁 โครงสร้างไฟล์
 
 ```
-investment-research/
+prometheus/
 ├── index.html              ← หน้าหลัก (รายชื่อบริษัททั้งหมด)
 ├── company.html            ← หน้าข้อมูลรายบริษัท (tabs: Overview, Notes, Quotes, Roadmap, Financials)
 ├── overview.html           ← หน้า Deep Dive (Segments, Geography, Timeline, Management, Thesis, Risks)
-├── i18n.js                 ← ระบบ 2 ภาษา ไทย/อังกฤษ (ใหม่)
-├── README.md               ← ไฟล์นี้
+├── i18n.js                 ← ระบบ 2 ภาษา ไทย/อังกฤษ
 ├── data/
 │   ├── companies.json      ← รายชื่อบริษัททั้งหมด (index)
-│   └── [TICKER]/
-│       ├── data.json       ← ข้อมูลหลักของบริษัท
-│       ├── snapshot.json   ← snapshot สำหรับ overview
-│       └── history/        ← ประวัติ patch ทั้งหมด
+│   └── {TICKER}/
+│       └── data.json       ← ข้อมูลหลักของบริษัท (sync จาก Notion)
 ├── scripts/
-│   ├── apply_patch.py      ← apply JSON patch เข้า data.json
-│   ├── validate_patch.py   ← ตรวจสอบความถูกต้องของ patch
-│   └── generate_snapshot.py← สร้าง snapshot.json
+│   ├── notion-sync.js      ← Notion → data.json (รันโดย GitHub Actions)
+│   ├── generate-quartz.js  ← data.json → quartz/content/*.md
+│   ├── apply_patch.py      ← apply JSON patch เข้า data.json (manual)
+│   └── validate_patch.py   ← ตรวจสอบความถูกต้องของ patch
+├── quartz/
+│   └── content/
+│       ├── companies/      ← {TICKER}.md (auto-generated)
+│       └── sectors/        ← sector pages (auto-generated)
+├── .github/
+│   └── workflows/
+│       └── notion-sync.yml ← GitHub Actions pipeline
 └── .claude/
     └── skills/             ← Prometheus skills สำหรับ Cowork/Claude
 ```
@@ -48,7 +81,7 @@ investment-research/
 ## 🗂️ บริษัทที่ติดตามอยู่ (13 บริษัท)
 
 | Ticker | บริษัท | Sector | อัพเดทล่าสุด |
-|--------|--------|--------|-------------|
+|--------|--------|--------|---------------|
 | AAPL | Apple Inc. | Technology | 2026-03-29 |
 | MSFT | Microsoft Corporation | Technology | 2026-03-29 |
 | NVDA | NVIDIA Corporation | Semiconductors | 2026-03-30 |
@@ -65,31 +98,31 @@ investment-research/
 
 ---
 
-## 🔄 Workflow: GitHub เป็น Source of Truth
+## ✏️ วิธีเพิ่มข้อมูล (วิธีที่แนะนำ)
 
-**แก้ไขใน GitHub โดยตรง** (Perplexity หรือ browser):
-1. ไปที่ https://github.com/parametb/prometheus
-2. แก้ไขไฟล์ที่ต้องการ → Commit changes
-3. บอก Claude ให้ sync มา → Claude จะ clone และ copy เฉพาะไฟล์ที่ใหม่กว่า
+### เพิ่มผ่าน Notion (แนะนำ)
 
-**แก้ไขผ่าน Claude (Cowork)**:
-- ใช้ skills เช่น `prometheus:analyze-earnings`, `prometheus:analyze-report`
-- Claude แก้ไข data.json ใน local folder โดยตรง
-- Push ขึ้น GitHub ทีหลัง (manual หรือขอให้ Claude ทำ)
+1. เปิด Notion workspace
+2. เพิ่มข้อมูลใน database ที่ต้องการ (Notes / Quotes / Roadmap / Companies)
+3. รอ GitHub Actions sync อัตโนมัติ (ทุก 6 ชั่วโมง)
+4. หรือกด **Actions → notion-sync → Run workflow** เพื่อ sync ทันที
 
-**หมายเหตุ:** เมื่อแก้ทั้งสองที่พร้อมกัน ให้ดูเวลา commit เป็นหลัก — ไฟล์ที่ commit ล่าสุดคือ version ที่ควรใช้
+### เพิ่มบริษัทใหม่ผ่าน Cowork
 
----
+ใช้ skill **`prometheus:add-company`** ใน Cowork:
 
-## ✏️ วิธีเพิ่มบริษัทใหม่
+```
+เพิ่ม [TICKER] เข้า Prometheus
+```
 
-ใช้ skill **`prometheus:add-company`** ใน Cowork หรือทำเองดังนี้:
+Skill จะสร้าง `data/{TICKER}/data.json` และลงทะเบียนใน `data/companies.json` ให้อัตโนมัติ
 
-**ขั้นตอนที่ 1:** สร้างโฟลเดอร์ `data/[TICKER]/` และไฟล์ `data.json` ตาม template ด้านล่าง
+### วิธีสำรอง — สร้างไฟล์เอง
 
+**ขั้นตอนที่ 1:** สร้างโฟลเดอร์ `data/{TICKER}/` และไฟล์ `data.json` ตาม template ด้านล่าง  
 **ขั้นตอนที่ 2:** เพิ่ม entry ใน `data/companies.json`
 
-### Template: `data/[TICKER]/data.json`
+#### Template: `data/{TICKER}/data.json`
 
 ```json
 {
@@ -100,66 +133,29 @@ investment-research/
   "last_updated": "2026-01-01",
   "description": "Short description of the company.",
   "tradingview_symbol": "NASDAQ:TICKER",
-
-  "notes": [
-    {
-      "date": "2026-01-01",
-      "title": "Note title",
-      "tags": ["tag1", "tag2"],
-      "rating": 4,
-      "content": "Note content..."
-    }
-  ],
-
-  "quotes": [
-    {
-      "date": "2026-01-30",
-      "source": "Q1 FY2026 Earnings Call",
-      "speaker": "CEO Name",
-      "quote": "Exact quote from management.",
-      "quote_th": "คำแปลภาษาไทย (optional)",
-      "tag": "growth"
-    }
-  ],
-
-  "roadmap": [
-    {
-      "date_said": "2026-01-30",
-      "source": "Q1 FY2026 Earnings Call",
-      "commitment": "What management committed to do.",
-      "status": "pending",
-      "follow_up": "Actual outcome (if any)",
-      "follow_up_date": ""
-    }
-  ],
-
+  "notes": [],
+  "quotes": [],
+  "roadmap": [],
   "financials": {
     "currency": "USD",
     "unit": "Billion",
-    "years": [2023, 2024, 2025],
-    "metrics": [
-      { "name": "Revenue",        "values": [0, 0, 0] },
-      { "name": "Net Income",     "values": [0, 0, 0] },
-      { "name": "EPS (diluted)",  "values": [0, 0, 0] },
-      { "name": "Free Cash Flow", "values": [0, 0, 0] }
-    ],
-    "notes": "Additional financial notes"
+    "years": [],
+    "metrics": []
   },
-
   "overview": {
-    "founded": "2000",
-    "headquarters": "City, Country",
-    "employees": "10,000",
+    "founded": "",
+    "headquarters": "",
+    "employees": "",
     "fiscal_year_end": "December 31",
-    "business_model_summary": "How the company makes money.",
-    "competitive_position": "Market position description.",
-    "moat_factors": ["Factor 1", "Factor 2"],
+    "business_model_summary": "",
+    "competitive_position": "",
+    "moat_factors": [],
     "segments": [],
     "geographies": [],
     "timeline": [],
     "management": [],
-    "bull_case": "Reasons to be bullish.",
-    "bear_case": "Risks and bear case.",
+    "bull_case": "",
+    "bear_case": "",
     "key_risks": []
   }
 }
@@ -181,7 +177,7 @@ investment-research/
 
 ### Sector
 
-`Technology` · `Finance` · `Healthcare` · `Energy` · `Consumer` · `Mining` · หรือค่าอื่น (จะแสดงสีเทา)
+`Technology` · `Finance` · `Healthcare` · `Energy` · `Consumer` · `Mining` · `Semiconductors` · หรือค่าอื่น (จะแสดงสีเทา)
 
 ### Timeline event type
 
@@ -192,7 +188,7 @@ investment-research/
 ## 🤖 Prometheus Skills (Cowork)
 
 | Skill | ใช้เมื่อ |
-|-------|---------|
+|-------|----------|
 | `prometheus:add-company` | เพิ่มบริษัทใหม่เข้าระบบ |
 | `prometheus:analyze-report` | วิเคราะห์ Annual Report / 10-K → เพิ่ม overview data |
 | `prometheus:analyze-earnings` | วิเคราะห์ Earnings Call transcript → เพิ่ม quotes + roadmap |
@@ -201,18 +197,42 @@ investment-research/
 
 ---
 
+## ⚙️ GitHub Actions Pipeline
+
+ไฟล์: `.github/workflows/notion-sync.yml`  
+รันอัตโนมัติ: ทุก 6 ชั่วโมง (00:00, 06:00, 12:00, 18:00 UTC)
+
+**Job 1 — Notion Sync + Generate:**
+1. `notion-sync.js` — ดึงข้อมูลจาก Notion → `data/{TICKER}/data.json`
+2. `generate-quartz.js` — แปลง `data.json` → `quartz/content/companies/{TICKER}.md`
+3. commit + push การเปลี่ยนแปลงกลับ repo
+
+**Job 2 — Build + Deploy:**
+1. `npx quartz build` — build knowledge base จาก Markdown
+2. merge กับ dashboard HTML → `_site/`
+3. deploy ขึ้น GitHub Pages
+
+**รัน manual ได้ที่:** Actions → "Notion → Prometheus Sync + Quartz Build" → Run workflow
+
+> **Option เพิ่มเติม:** เปิด `skip_notion: true` เพื่อ build Quartz เฉพาะ (ไม่ดึง Notion)
+
+---
+
 ## 💡 Tips
 
 - **Rating (1-5 ดาว):** ใส่ใน `rating` field ของ notes เพื่อระบุ conviction level
 - **quote_th:** เพิ่มคำแปลไทยให้ quotes — จะแสดงใต้ original quote เมื่ออยู่ในโหมดภาษาไทย
 - **tradingview_symbol:** ใส่เพื่อแสดง stock chart และ fundamentals จาก TradingView เช่น `"NASDAQ:AAPL"`
-- **companies.json counts:** อัปเดต `note_count`, `quote_count`, `roadmap_count` ให้ตรงกับข้อมูลจริงเพื่อให้ dashboard แสดงถูกต้อง
 - **last_updated:** อัปเดตทุกครั้งที่เพิ่มข้อมูลใหม่
+- **Knowledge Base:** ดูข้อมูล research เชิงลึกได้ที่ `/research/companies/{TICKER}` — generate อัตโนมัติจาก `data.json`
 
 ---
 
 ## 🚀 Deploy บน GitHub Pages
 
-1. Push ทุกไฟล์ขึ้น repository `parametb/prometheus`
-2. ไปที่ **Settings → Pages** → Source: **Deploy from branch** → branch: **main**
-3. เว็บจะพร้อมใช้งานที่ `https://parametb.github.io/prometheus`
+ระบบ deploy อัตโนมัติผ่าน GitHub Actions ทุกครั้งที่มีการ sync
+
+**URL หลัก:**
+- Dashboard: `https://parametb.github.io/prometheus`
+- Knowledge Base: `https://parametb.github.io/prometheus/research/`
+- บริษัทเฉพาะ: `https://parametb.github.io/prometheus/research/companies/{TICKER}`
