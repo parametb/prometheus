@@ -809,6 +809,7 @@ function renderRoadmapItems(items){
       <div>
         <div class="rm-commitment">${rmText(r)}</div>
         <div class="rm-source">${r.date_said?`${t('rm.said_on')} ${formatDate(r.date_said)} · `:''}${r.source||''}</div>
+                      ${(r.category||r.confidence||r.target_quarter)?`<div class="rm-meta-tags" style="display:flex;gap:5px;flex-wrap:wrap;margin-top:4px">  ${r.category?`<span class="rm-badge" style="background:rgba(88,166,255,0.1);color:var(--accent);font-size:10px;padding:2px 7px">${r.category}</span>`:''}  ${r.confidence?`<span class="rm-badge" style="background:rgba(63,185,80,0.1);color:var(--green);font-size:10px;padding:2px 7px">${r.confidence}</span>`:''}  ${r.target_quarter?`<span class="rm-badge" style="background:rgba(210,153,34,0.1);color:var(--yellow);font-size:10px;padding:2px 7px">🎯 ${r.target_quarter}</span>`:''}  </div>`:''}
         ${r.follow_up?`<div class="rm-followup"><div class="rm-followup-label">${t('rm.outcome')} (${formatDate(r.follow_up_date)})</div>${r.follow_up}</div>`:''}
       </div>
       <span class="rm-badge badge-${r.status}">${getStatusLabel(r.status)}</span>
