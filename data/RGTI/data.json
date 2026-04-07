@@ -199,7 +199,11 @@
       "status": "pending",
       "commitment": "Scale business quickly enough to meet customer and market demand",
       "follow_up": "",
-      "follow_up_date": ""
+      "follow_up_date": "",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     },
     {
       "date_said": "2026-03-30",
@@ -207,7 +211,11 @@
       "status": "pending",
       "commitment": "Accelerate development of multiple generations of quantum processors",
       "follow_up": "",
-      "follow_up_date": ""
+      "follow_up_date": "",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     },
     {
       "date_said": "2026-03-30",
@@ -215,7 +223,11 @@
       "status": "pending",
       "commitment": "Execute on business strategy, including monetization of products",
       "follow_up": "",
-      "follow_up_date": ""
+      "follow_up_date": "",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     },
     {
       "date_said": "2026-03-30",
@@ -223,7 +235,11 @@
       "status": "pending",
       "commitment": "Attract and retain senior executive leadership and other key employees such as quantum physicists, software engineers and other key technical employees",
       "follow_up": "",
-      "follow_up_date": ""
+      "follow_up_date": "",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     },
     {
       "date_said": "2026-03-30",
@@ -231,7 +247,11 @@
       "status": "pending",
       "commitment": "Complete development of quantum computers, produce quantum computers at scale, achieve targeted performance milestones and realize quantum advantage",
       "follow_up": "",
-      "follow_up_date": ""
+      "follow_up_date": "",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     },
     {
       "date_said": "2026-03-30",
@@ -239,7 +259,11 @@
       "status": "pending",
       "commitment": "Implement strategic initiatives, expansion plans and continue to innovate existing products and services",
       "follow_up": "",
-      "follow_up_date": ""
+      "follow_up_date": "",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     },
     {
       "date_said": "2026-03-30",
@@ -247,7 +271,11 @@
       "status": "pending",
       "commitment": "Deploy 108-qubit quantum computer to C-DAC in Bengaluru in second half of 2026",
       "follow_up": "",
-      "follow_up_date": ""
+      "follow_up_date": "",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     },
     {
       "date_said": "2026-03-30",
@@ -255,7 +283,11 @@
       "status": "pending",
       "commitment": "Achieve milestones and technological advancements, including executing on technology roadmap and developing practical applications",
       "follow_up": "",
-      "follow_up_date": ""
+      "follow_up_date": "",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     },
     {
       "date_said": "2026-03-30",
@@ -263,7 +295,11 @@
       "status": "pending",
       "commitment": "Grow and manage growth profitably",
       "follow_up": "",
-      "follow_up_date": ""
+      "follow_up_date": "",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     },
     {
       "date_said": "2026-03-30",
@@ -271,7 +307,11 @@
       "status": "pending",
       "commitment": "Compete successfully through continuous innovation, timely execution of strategy and achieving cost reduction",
       "follow_up": "",
-      "follow_up_date": ""
+      "follow_up_date": "",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     },
     {
       "date_said": "2026-03-30",
@@ -279,7 +319,11 @@
       "status": "pending",
       "commitment": "Continue to improve system performance",
       "follow_up": "",
-      "follow_up_date": ""
+      "follow_up_date": "",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     },
     {
       "date_said": "2026-03-30",
@@ -287,7 +331,11 @@
       "status": "pending",
       "commitment": "Monetize investments in quantum computing",
       "follow_up": "",
-      "follow_up_date": ""
+      "follow_up_date": "",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     },
     {
       "date_said": "2026-03-30",
@@ -295,7 +343,11 @@
       "status": "pending",
       "commitment": "Expand or maintain existing customer base",
       "follow_up": "",
-      "follow_up_date": ""
+      "follow_up_date": "",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     },
     {
       "date_said": "2026-03-04",
@@ -303,7 +355,11 @@
       "status": "pending",
       "commitment": "Fab-1 will accelerate our roadmap, support proprietary innovation, and create a durable competitive advantage as systems grow in scale and complexity",
       "follow_up": "",
-      "follow_up_date": ""
+      "follow_up_date": "",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     },
     {
       "date_said": "2026-03-04",
@@ -311,7 +367,11 @@
       "status": "pending",
       "commitment": "Enhancements to 108-qubit chiplet-based system bolster confidence in deploying the 108-qubit system and reinforce path toward customer readiness",
       "follow_up": "",
-      "follow_up_date": ""
+      "follow_up_date": "",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     },
     {
       "date_said": "2026-03-04",
@@ -319,7 +379,11 @@
       "status": "pending",
       "commitment": "Continued progress on fidelity, speed, and error mitigation techniques is critical to achieving practical quantum advantage",
       "follow_up": "",
-      "follow_up_date": ""
+      "follow_up_date": "",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     },
     {
       "date_said": "2026-03-04",
@@ -327,7 +391,11 @@
       "status": "pending",
       "commitment": "Chiplet-based approach provides a practical and scalable path toward large-scale quantum systems",
       "follow_up": "",
-      "follow_up_date": ""
+      "follow_up_date": "",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     },
     {
       "date_said": "2026-03-04",
@@ -335,7 +403,11 @@
       "status": "pending",
       "commitment": "Ecosystem of partners (Riverlane, NVIDIA, Quanta Computer, and QphoX) allows us to innovate across the stack",
       "follow_up": "",
-      "follow_up_date": ""
+      "follow_up_date": "",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     },
     {
       "date_said": "2026-03-04",
@@ -343,7 +415,11 @@
       "status": "pending",
       "commitment": "Anticipate significant first-quarter year-over-year revenue growth driven by $5.7M Novera on-premises system purchase orders expected to ship in Q1",
       "follow_up": "",
-      "follow_up_date": ""
+      "follow_up_date": "",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     },
     {
       "date_said": "2026-03-04",
@@ -351,7 +427,11 @@
       "status": "pending",
       "commitment": "Advance toward larger-scale systems as we work steadily toward quantum advantage",
       "follow_up": "",
-      "follow_up_date": ""
+      "follow_up_date": "",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     },
     {
       "date_said": "2026-03-04",
@@ -359,7 +439,11 @@
       "status": "pending",
       "commitment": "108-qubit on-premises superconducting quantum computer for C-DAC expected to be deployed in the second half of 2026",
       "follow_up": "",
-      "follow_up_date": ""
+      "follow_up_date": "",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     },
     {
       "date_said": "2026-03-04",
@@ -367,7 +451,11 @@
       "status": "pending",
       "commitment": "Focus on achieving practical quantum advantage",
       "follow_up": "",
-      "follow_up_date": ""
+      "follow_up_date": "",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     },
     {
       "date_said": "2026-03-04",
@@ -375,7 +463,11 @@
       "status": "pending",
       "commitment": "Chiplet tiling represents the most viable path toward large-scale quantum systems",
       "follow_up": "",
-      "follow_up_date": ""
+      "follow_up_date": "",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     },
     {
       "date_said": "2026-03-04",
@@ -383,7 +475,11 @@
       "status": "pending",
       "commitment": "Novera QPU from Japanese research organization delivery expected in April 2026",
       "follow_up": "",
-      "follow_up_date": ""
+      "follow_up_date": "",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     },
     {
       "date_said": "2026-03-04",
@@ -391,7 +487,11 @@
       "status": "pending",
       "commitment": "Deploy 108-qubit system at 99.5% median two-qubit gate fidelity",
       "follow_up": "",
-      "follow_up_date": ""
+      "follow_up_date": "",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     },
     {
       "date_said": "2026-03-04",
@@ -399,7 +499,11 @@
       "status": "pending",
       "commitment": "Novera on-premises systems will be upgradeable, enabling customers to scale system capabilities over time",
       "follow_up": "",
-      "follow_up_date": ""
+      "follow_up_date": "",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     }
   ],
   "financials": {

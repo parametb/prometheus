@@ -65,7 +65,11 @@
       "status": "pending",
       "commitment": "Expand Apple Intelligence to additional languages in 2025",
       "follow_up": "Check latest product/press updates; update status and add evidence link.",
-      "follow_up_date": "2025-01-29"
+      "follow_up_date": "2025-01-29",
+      "category": "Product",
+      "confidence": "medium",
+      "target_quarter": "",
+      "quarter_said": ""
     },
     {
       "date_said": "2024-06-10",
@@ -73,7 +77,11 @@
       "status": "monitoring",
       "commitment": "Launch Apple Intelligence on iPhone 15 Pro and iPhone 16 series in Q4 2024",
       "follow_up": "Launched in US only; some features delayed; non-English languages behind schedule",
-      "follow_up_date": "2024-10-28"
+      "follow_up_date": "2024-10-28",
+      "category": "Product",
+      "confidence": "high",
+      "target_quarter": "",
+      "quarter_said": ""
     },
     {
       "date_said": "2024-02-29",
@@ -81,7 +89,11 @@
       "status": "delivered",
       "commitment": "Maintain Services gross margin at a high level",
       "follow_up": "Services gross margin sustained at 75%+ throughout FY2024",
-      "follow_up_date": "2024-10-31"
+      "follow_up_date": "2024-10-31",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     },
     {
       "date_said": "2023-06-05",
@@ -89,7 +101,11 @@
       "status": "delivered",
       "commitment": "Launch Apple Vision Pro in early 2024",
       "follow_up": "Launched in the US on February 2, 2024 at $3,499",
-      "follow_up_date": "2024-02-02"
+      "follow_up_date": "2024-02-02",
+      "category": "Product",
+      "confidence": "high",
+      "target_quarter": "",
+      "quarter_said": ""
     }
   ],
   "financials": {

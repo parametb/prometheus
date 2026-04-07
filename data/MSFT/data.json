@@ -47,7 +47,11 @@
       "status": "monitoring",
       "commitment": "Launch Copilot Actions and autonomous agents in Microsoft 365 by 2025",
       "follow_up": "Rollout began for some features in Q1 2025 but not yet complete across all markets",
-      "follow_up_date": "2025-02-01"
+      "follow_up_date": "2025-02-01",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     },
     {
       "date_said": "2024-07-29",
@@ -55,7 +59,11 @@
       "status": "pending",
       "commitment": "Invest $80B+ in AI infrastructure in FY2025",
       "follow_up": "Check progress vs commitment; update status and add evidence link.",
-      "follow_up_date": "2024-10-27"
+      "follow_up_date": "2024-10-27",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     },
     {
       "date_said": "2023-01-24",
@@ -63,7 +71,11 @@
       "status": "delivered",
       "commitment": "Integrate AI into Microsoft 365 via Copilot in 2023",
       "follow_up": "Microsoft 365 Copilot launched for enterprise in November 2023",
-      "follow_up_date": "2023-11-01"
+      "follow_up_date": "2023-11-01",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     }
   ],
   "financials": {

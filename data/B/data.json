@@ -60,7 +60,11 @@
       "status": "pending",
       "commitment": "Potential IPO of North American gold assets (Nevada Gold Mines, Fourmile, related assets) — exploring structure and timing",
       "follow_up": "",
-      "follow_up_date": ""
+      "follow_up_date": "",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     },
     {
       "date_said": "2026-02-27",
@@ -68,7 +72,11 @@
       "status": "monitoring",
       "commitment": "Lumwana Super Pit Expansion: Major capex phase continuing — capex guided $600M+ in 2026, target to become top-tier copper producer",
       "follow_up": "",
-      "follow_up_date": ""
+      "follow_up_date": "",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     },
     {
       "date_said": "2026-02-27",
@@ -76,7 +84,11 @@
       "status": "pending",
       "commitment": "Incorporate Fourmile ultra-high-grade project into Nevada Gold Mines JV at fair market value",
       "follow_up": "",
-      "follow_up_date": ""
+      "follow_up_date": "",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     },
     {
       "date_said": "2026-02-27",
@@ -84,7 +96,11 @@
       "status": "pending",
       "commitment": "Search for permanent President and CEO to succeed Mark Bristow — interim leadership in place",
       "follow_up": "",
-      "follow_up_date": ""
+      "follow_up_date": "",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     },
     {
       "date_said": "2025-02-12",
@@ -92,7 +108,11 @@
       "status": "monitoring",
       "commitment": "Achieve 30%+ group-wide gold equivalent production growth by end of decade (2029-2030), anchored by Reko Diq, Lumwana, Pueblo Viejo, and Nevada",
       "follow_up": "Construction ongoing, on schedule for 2028 production",
-      "follow_up_date": "2026-03-29"
+      "follow_up_date": "2026-03-29",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     },
     {
       "date_said": "2025-02-12",
@@ -100,7 +120,11 @@
       "status": "delivered",
       "commitment": "Resolve Mali/Loulo situation and restart production — arbitration filed, contingency plan for restart early March 2025 if employees released",
       "follow_up": "Loulo-Gounkoto operations resumed in FY2025 after $559M settlement payment to Mali government in Q4 2025. Employees released. Royalty rate now 18% under 2023 Mining Code.",
-      "follow_up_date": "2025-12-31"
+      "follow_up_date": "2025-12-31",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     },
     {
       "date_said": "2025-02-12",
@@ -108,7 +132,11 @@
       "status": "monitoring",
       "commitment": "Reko Diq Phase 1: Complete project financing by Q3 2025 and begin construction — production target end of 2028, cost $5.6–6B (100% basis)",
       "follow_up": "Construction ongoing, on schedule for 2028 production",
-      "follow_up_date": "2026-03-29"
+      "follow_up_date": "2026-03-29",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     },
     {
       "date_said": "2025-02-12",
@@ -116,7 +144,11 @@
       "status": "monitoring",
       "commitment": "Lumwana Super Pit Expansion: Deploy $600M capex in 2025 — feasibility complete, permits received, early works and long-lead fabrication underway",
       "follow_up": "Review quarterly update for capex/permits/progress; update status and add evidence link.",
-      "follow_up_date": "2025-05-13"
+      "follow_up_date": "2025-05-13",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     },
     {
       "date_said": "2025-02-12",
@@ -124,7 +156,11 @@
       "status": "pending",
       "commitment": "Pueblo Viejo: Achieve mid-600,000 oz attributable production in 2025, then exceed 800,000 oz from 2026 onward; El Naranjo tailings relocation complete by 2029",
       "follow_up": "Review production guidance milestones; update status and add evidence link.",
-      "follow_up_date": "2025-05-13"
+      "follow_up_date": "2025-05-13",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     },
     {
       "date_said": "2025-02-12",
@@ -132,7 +168,11 @@
       "status": "pending",
       "commitment": "Fourmile (Nevada): Complete pre-feasibility study within 3 years; allocate $78M in 2025 for study; grade significantly higher than adjacent Goldrush (~12g/t vs 6g/t)",
       "follow_up": "Check study timeline/capex updates; update status and add evidence link.",
-      "follow_up_date": "2025-05-13"
+      "follow_up_date": "2025-05-13",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     }
   ],
   "financials": {

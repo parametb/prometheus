@@ -30,7 +30,11 @@
       "status": "monitoring",
       "commitment": "Launch Advantage2 processor commercially (4,400+ qubits) following calibration completion in Nov 2024",
       "follow_up": "Check product readiness / commercial launch updates; update status and add evidence link.",
-      "follow_up_date": "2025-06-11"
+      "follow_up_date": "2025-06-11",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     },
     {
       "date_said": "2025-03-13",
@@ -38,7 +42,11 @@
       "status": "monitoring",
       "commitment": "Maintain Leap cloud service at 99.9% uptime and expand customer base in 42+ countries",
       "follow_up": "Verify uptime + customer expansion updates; update status and add evidence link.",
-      "follow_up_date": "2025-06-11"
+      "follow_up_date": "2025-06-11",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     },
     {
       "date_said": "2025-03-13",
@@ -46,7 +54,11 @@
       "status": "pending",
       "commitment": "Launch initial dual-rail gate-model quantum system in 2026 (post-Quantum Circuits acquisition)",
       "follow_up": "Check 2026 launch progress; update status and add evidence link.",
-      "follow_up_date": "2025-06-11"
+      "follow_up_date": "2025-06-11",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     },
     {
       "date_said": "2025-03-13",
@@ -54,7 +66,11 @@
       "status": "monitoring",
       "commitment": "Support optimization problems with up to 2 million variables via hybrid quantum-classical solver",
       "follow_up": "Review product capability updates; update status and add evidence link.",
-      "follow_up_date": "2025-06-11"
+      "follow_up_date": "2025-06-11",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     },
     {
       "date_said": "2025-03-13",
@@ -62,7 +78,11 @@
       "status": "pending",
       "commitment": "Launch 17-qubit, 49-qubit, and 181-qubit dual-rail error-corrected systems by 2028",
       "follow_up": "",
-      "follow_up_date": ""
+      "follow_up_date": "",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     }
   ],
   "financials": {

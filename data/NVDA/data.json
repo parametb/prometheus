@@ -94,7 +94,11 @@
       "status": "pending",
       "commitment": "Commence production shipments of NVIDIA Rubin platform in second half of fiscal year 2027",
       "follow_up": "",
-      "follow_up_date": ""
+      "follow_up_date": "",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     },
     {
       "date_said": "2026-03-30",
@@ -102,7 +106,11 @@
       "status": "pending",
       "commitment": "Provide end-to-end platform for physical AI spanning data center infrastructure, open models, systems, embedded compute modules, and software stacks",
       "follow_up": "",
-      "follow_up_date": ""
+      "follow_up_date": "",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     },
     {
       "date_said": "2026-03-30",
@@ -110,7 +118,11 @@
       "status": "pending",
       "commitment": "Deliver up to 10x reduction in cost per token compared to Blackwell with Rubin platform",
       "follow_up": "",
-      "follow_up_date": ""
+      "follow_up_date": "",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     },
     {
       "date_said": "2026-03-30",
@@ -118,7 +130,11 @@
       "status": "pending",
       "commitment": "Deliver significant increase in token throughput and reduction in cost per token compared to Hopper generation with Blackwell Ultra",
       "follow_up": "",
-      "follow_up_date": ""
+      "follow_up_date": "",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     },
     {
       "date_said": "2026-03-30",
@@ -126,7 +142,11 @@
       "status": "pending",
       "commitment": "Accelerate release cadence of open AI model platforms including NVIDIA Nemotron for agentic AI and Cosmos for physical AI",
       "follow_up": "",
-      "follow_up_date": ""
+      "follow_up_date": "",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     },
     {
       "date_said": "2026-03-30",
@@ -134,7 +154,11 @@
       "status": "pending",
       "commitment": "Deliver continued performance leaps that outpace Moore's Law by leveraging innovation across architecture, chip design, system, interconnect, algorithm, and software layers",
       "follow_up": "",
-      "follow_up_date": ""
+      "follow_up_date": "",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     },
     {
       "date_said": "2026-03-30",
@@ -142,7 +166,11 @@
       "status": "pending",
       "commitment": "Introduce neural graphics combining AI models with traditional rendering to boost game performance, image quality, and interactivity",
       "follow_up": "",
-      "follow_up_date": ""
+      "follow_up_date": "",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     },
     {
       "date_said": "2026-03-30",
@@ -150,7 +178,11 @@
       "status": "pending",
       "commitment": "Deliver full stack end-to-end solution for AV market under DRIVE Hyperion platform",
       "follow_up": "",
-      "follow_up_date": ""
+      "follow_up_date": "",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     },
     {
       "date_said": "2026-03-30",
@@ -158,7 +190,11 @@
       "status": "pending",
       "commitment": "Launch next generation of DLSS technology powered by new transformer model architecture",
       "follow_up": "",
-      "follow_up_date": ""
+      "follow_up_date": "",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     },
     {
       "date_said": "2026-03-30",
@@ -166,7 +202,11 @@
       "status": "pending",
       "commitment": "Continue to add AI-specific features to GPU architecture to extend leadership position",
       "follow_up": "",
-      "follow_up_date": ""
+      "follow_up_date": "",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     },
     {
       "date_said": "2026-01-31",
@@ -174,7 +214,11 @@
       "status": "pending",
       "commitment": "Launch NVIDIA Blackwell Ultra platform optimized for agentic, reasoning, and physical AI",
       "follow_up": "",
-      "follow_up_date": ""
+      "follow_up_date": "",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     },
     {
       "date_said": "2026-01-31",
@@ -182,7 +226,11 @@
       "status": "pending",
       "commitment": "Launch NVIDIA Rubin platform for agentic AI and reasoning",
       "follow_up": "",
-      "follow_up_date": ""
+      "follow_up_date": "",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     },
     {
       "date_said": "2026-01-31",
@@ -190,7 +238,11 @@
       "status": "pending",
       "commitment": "Scale Blackwell architecture for gaming and GeForce NOW",
       "follow_up": "",
-      "follow_up_date": ""
+      "follow_up_date": "",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     },
     {
       "date_said": "2025-01-31",
@@ -198,7 +250,11 @@
       "status": "pending",
       "commitment": "Launch NVIDIA Blackwell GeForce RTX 50 Series family of desktop and laptop GPUs",
       "follow_up": "Verify launch/availability timelines; update status and add evidence link.",
-      "follow_up_date": "2025-05-01"
+      "follow_up_date": "2025-05-01",
+      "category": "",
+      "confidence": "",
+      "target_quarter": "",
+      "quarter_said": ""
     }
   ],
   "financials": {
