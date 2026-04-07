@@ -1,53 +1,63 @@
-name: Notion → Prometheus Sync
+name: Notion → Prometheus Sync + Quartz Build
 
 # ── Triggers ──────────────────────────────────────────────────────────────────
 on:
   schedule:
     - cron: '0 */6 * * *'   # every 6 hours (00:00, 06:00, 12:00, 18:00 UTC)
-  workflow_dispatch:          # manual trigger from GitHub Actions UI
+  workflow_dispatch:
     inputs:
       debug:
         description: 'Enable verbose logging'
         required: false
         default: 'false'
         type: boolean
+      skip_notion:
+        description: 'Skip Notion sync (build Quartz only)'
+        required: false
+        default: 'false'
+        type: boolean
 
-# Only allow one sync to run at a time (cancel older runs if triggered again)
+# Only one sync runs at a time; newer triggers cancel older ones
 concurrency:
   group: notion-sync
   cancel-in-progress: true
 
+# ── Permissions ────────────────────────────────────────────────────────────────
+permissions:
+  contents: write   # push data + content changes
+  pages: write      # deploy to GitHub Pages
+  id-token: write   # OIDC token for Pages deployment
+
 # ── Jobs ──────────────────────────────────────────────────────────────────────
 jobs:
-  sync:
-    name: Sync Notion → data/
+
+  # ── Job 1: Sync Notion data → generate Quartz Markdown content ──────────────
+  sync-and-generate:
+    name: "① Notion sync → generate Quartz content"
     runs-on: ubuntu-latest
     timeout-minutes: 15
 
-    permissions:
-      contents: write   # needed to push updated data/[TICKER]/data.json
-
     steps:
-      # 1. Checkout repo
+      # 1. Checkout (full history so Quartz can use git dates)
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 1
+          fetch-depth: 0
 
-      # 2. Set up Node.js
+      # 2. Node.js v22 (required by Quartz 4)
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
           cache: 'npm'
-          cache-dependency-path: package-lock.json
 
-      # 3. Install dependencies
+      # 3. Install Prometheus dependencies (Notion client)
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
-      # 4. Run sync script
+      # 4. Sync data from Notion (can be skipped via workflow_dispatch)
       - name: Run Notion sync
+        if: ${{ inputs.skip_notion != 'true' }}
         env:
           NOTION_TOKEN:        ${{ secrets.NOTION_TOKEN }}
           NOTION_COMPANIES_DB: ${{ secrets.NOTION_COMPANIES_DB }}
@@ -57,21 +67,97 @@ jobs:
           DEBUG: ${{ inputs.debug == 'true' && '1' || '' }}
         run: node scripts/notion-sync.js
 
-      # 5. Commit & push any changed data files
+      # 5. Generate Quartz Markdown from data.json files
+      - name: Generate Quartz content
+        run: node scripts/generate-quartz.js ${{ inputs.debug == 'true' && '--verbose' || '' }}
+
+      # 6. Commit data/ + quartz/content/ back to repo
       - name: Commit changes
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # Stage only the data directory (never touches scripts, HTML, etc.)
           git add data/
+          git add quartz/content/
 
-          # Only commit if something actually changed
           if git diff --cached --quiet; then
-            echo "✅ No data changes — nothing to commit"
+            echo "✅ No changes — nothing to commit"
           else
             CHANGED=$(git diff --cached --name-only | wc -l)
-            git commit -m "chore: notion sync — ${CHANGED} file(s) updated [skip ci]"
+            git commit -m "chore: notion sync + quartz content — ${CHANGED} file(s) [skip ci]"
             git push
             echo "✅ Pushed ${CHANGED} updated file(s)"
           fi
+
+  # ── Job 2: Build Quartz → deploy to GitHub Pages ────────────────────────────
+  build-and-deploy:
+    name: "② Build Quartz → deploy Pages"
+    needs: sync-and-generate
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      # Checkout with latest committed content
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: main
+
+      # Node.js v22 for Quartz
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: quartz/package-lock.json
+
+      # Install Quartz dependencies
+      - name: Install Quartz dependencies
+        working-directory: quartz
+        run: npm ci
+
+      # Build Quartz static site → quartz/public/
+      - name: Build Quartz
+        working-directory: quartz
+        run: npx quartz build
+
+      # Assemble the Pages artifact:
+      #   /           → existing Prometheus dashboard (index.html, company.html, data/, etc.)
+      #   /research/  → Quartz knowledge base
+      - name: Prepare Pages artifact
+        run: |
+          mkdir -p _site/research
+
+          # Dashboard files at root (exclude build dirs, source-only folders)
+          rsync -av \
+            --exclude='.git/' \
+            --exclude='.github/' \
+            --exclude='node_modules/' \
+            --exclude='quartz/' \
+            --exclude='_site/' \
+            --exclude='scripts/' \
+            --exclude='prompts/' \
+            . _site/
+
+          # Quartz output → /research/
+          rsync -av quartz/public/ _site/research/
+
+          echo "📦 Pages artifact summary:"
+          echo "  Dashboard files: $(find _site -maxdepth 1 -type f | wc -l)"
+          echo "  Research files:  $(find _site/research -type f | wc -l)"
+
+      # Upload Pages artifact
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      # Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

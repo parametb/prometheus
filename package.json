@@ -4,12 +4,17 @@
   "description": "Prometheus – personal investment research dashboard synced from Notion",
   "private": true,
   "engines": {
-    "node": ">=18"
+    "node": ">=22"
   },
   "scripts": {
     "sync": "node scripts/notion-sync.js",
     "migrate": "node scripts/migrate-to-notion.js",
-    "migrate:dry": "node scripts/migrate-to-notion.js --dry-run"
+    "migrate:dry": "node scripts/migrate-to-notion.js --dry-run",
+
+    "research:generate": "node scripts/generate-quartz.js",
+    "research:build": "cd quartz && npx quartz build",
+    "research:dev": "node scripts/generate-quartz.js --verbose && cd quartz && npx quartz build --serve",
+    "research:full": "npm run sync && npm run research:generate && npm run research:build"
   },
   "dependencies": {
     "@notionhq/client": "^2.2.15"
