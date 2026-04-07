@@ -196,6 +196,10 @@ async function main() {
       commitment     : getText(prop(page, 'Commitment')),
       follow_up      : getText(prop(page, 'Follow Up')),
       follow_up_date : getDate(prop(page, 'Follow Up Date'))   || '',
+            category       : getSelect(prop(page, 'Category'))      || '',
+      confidence     : getSelect(prop(page, 'Confidence'))     || '',
+      target_quarter : getText(prop(page, 'Target Quarter'))   || '',
+      quarter_said   : getText(prop(page, 'Quarter Said'))     || '',
     })).sort((a, b) => (b.date_said || '').localeCompare(a.date_said || ''));
 
     // Merge — overwrite human-editable, preserve Claude-managed
