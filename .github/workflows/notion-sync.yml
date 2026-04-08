@@ -45,9 +45,10 @@ jobs:
           NOTION_REPORTS_DB:   ${{ secrets.NOTION_REPORTS_DB }}
           NOTION_TASKS_DB:     ${{ secrets.NOTION_TASKS_DB }}
           DEBUG:               ${{ inputs.debug }}
-        run: node scripts/notion-sync.js
+        run: node notion-sync.js
 
-    - run: node scripts/generate-quartz.js
+      - run: node generate-quartz.js
+
       - name: Commit data + quartz content
         run: |
           git config user.name  "github-actions[bot]"
