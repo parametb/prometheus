@@ -8,7 +8,7 @@ tags:
 
 Personal investment research dashboard tracking **13 companies** across 5 sectors.
 
-*Last generated: 2026-04-07*
+*Last generated: 2026-04-08*
 
 > Use the **Graph View** (right panel) to explore connections between companies, sectors, and themes.
 

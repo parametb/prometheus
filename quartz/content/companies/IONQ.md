@@ -4,7 +4,7 @@ ticker: IONQ
 name: "IonQ, Inc."
 sector: Technology
 exchange: NYSE
-last_updated: 2026-04-07
+last_updated: 2026-04-08
 tags:
   - technology
   - nyse
@@ -15,7 +15,7 @@ tags:
 
 # IONQ — IonQ, Inc.
 
-**Sector:** Technology | **Exchange:** NYSE | **Updated:** 2026-04-07
+**Sector:** Technology | **Exchange:** NYSE | **Updated:** 2026-04-08
 
 IonQ is a quantum computing company developing trapped-ion quantum computers. First pure-play quantum computing company to go public (2021). Expanding into quantum networking, sensing, and security.
 

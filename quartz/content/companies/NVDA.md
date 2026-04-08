@@ -5,7 +5,7 @@ name: "NVIDIA Corporation"
 name_th: "บริษัท เอ็นวีไอเดีย คอร์ปอเรชั่น"
 sector: Semiconductors
 exchange: NASDAQ
-last_updated: 2026-04-07
+last_updated: 2026-04-08
 tags:
   - semiconductors
   - nasdaq
@@ -17,7 +17,7 @@ tags:
 
 *บริษัท เอ็นวีไอเดีย คอร์ปอเรชั่น*
 
-**Sector:** Semiconductors | **Exchange:** NASDAQ | **Updated:** 2026-04-07
+**Sector:** Semiconductors | **Exchange:** NASDAQ | **Updated:** 2026-04-08
 
 NVIDIA is a global leader in GPU, AI accelerators and high-performance computing. Founded in 1993 by Jensen Huang, now a data center-scale AI infrastructure company reshaping all industries.
 

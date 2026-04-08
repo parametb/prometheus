@@ -4,7 +4,7 @@ ticker: NEM
 name: "Newmont Corporation"
 sector: Mining
 exchange: NYSE
-last_updated: 2026-04-07
+last_updated: 2026-04-08
 tags:
   - mining
   - nyse
@@ -14,7 +14,7 @@ tags:
 
 # NEM — Newmont Corporation
 
-**Sector:** Mining | **Exchange:** NYSE | **Updated:** 2026-04-07
+**Sector:** Mining | **Exchange:** NYSE | **Updated:** 2026-04-08
 
 World's largest gold mining company, founded in 1921 and headquartered in Denver, Colorado. Produces gold, silver, copper across North America, South America, Australia, and Africa.
 

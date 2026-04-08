@@ -4,7 +4,7 @@ ticker: AAPL
 name: "Apple Inc."
 sector: Technology
 exchange: NASDAQ
-last_updated: 2026-04-07
+last_updated: 2026-04-08
 tags:
   - technology
   - nasdaq
@@ -17,7 +17,7 @@ tags:
 
 # AAPL — Apple Inc.
 
-**Sector:** Technology | **Exchange:** NASDAQ | **Updated:** 2026-04-07
+**Sector:** Technology | **Exchange:** NASDAQ | **Updated:** 2026-04-08
 
 Apple Inc. designs, manufactures, and markets smartphones, personal computers, tablets, wearables, and accessories. Known for iPhone, Mac, iPad, Apple Watch, and a fast-growing Services ecosystem.
 

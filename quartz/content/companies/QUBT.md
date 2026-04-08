@@ -5,7 +5,7 @@ name: "Quantum Computing Inc."
 name_th: "ควอนตัม คอมพิวติ้ง อิงค์"
 sector: Technology
 exchange: NASDAQ
-last_updated: 2026-04-07
+last_updated: 2026-04-08
 tags:
   - technology
   - nasdaq
@@ -16,7 +16,7 @@ tags:
 
 *ควอนตัม คอมพิวติ้ง อิงค์*
 
-**Sector:** Technology | **Exchange:** NASDAQ | **Updated:** 2026-04-07
+**Sector:** Technology | **Exchange:** NASDAQ | **Updated:** 2026-04-08
 
 Quantum Computing Inc. develops full-stack quantum computing software and hardware solutions, focusing on photonic quantum computing with its Dirac series.
 

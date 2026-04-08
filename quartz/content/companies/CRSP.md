@@ -4,7 +4,7 @@ ticker: CRSP
 name: "CRISPR Therapeutics AG"
 sector: Healthcare
 exchange: NASDAQ
-last_updated: 2026-04-07
+last_updated: 2026-04-08
 tags:
   - healthcare
   - nasdaq
@@ -14,7 +14,7 @@ tags:
 
 # CRSP — CRISPR Therapeutics AG
 
-**Sector:** Healthcare | **Exchange:** NASDAQ | **Updated:** 2026-04-07
+**Sector:** Healthcare | **Exchange:** NASDAQ | **Updated:** 2026-04-08
 
 CRISPR Therapeutics is a gene editing company focused on transformative gene-based medicines using CRISPR/Cas9. Its lead product Casgevy is the world's first CRISPR-based therapy approved by the FDA.
 

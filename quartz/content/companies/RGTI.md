@@ -4,7 +4,7 @@ ticker: RGTI
 name: "Rigetti Computing, Inc."
 sector: Technology
 exchange: NASDAQ
-last_updated: 2026-04-07
+last_updated: 2026-04-08
 tags:
   - technology
   - nasdaq
@@ -15,7 +15,7 @@ tags:
 
 # RGTI — Rigetti Computing, Inc.
 
-**Sector:** Technology | **Exchange:** NASDAQ | **Updated:** 2026-04-07
+**Sector:** Technology | **Exchange:** NASDAQ | **Updated:** 2026-04-08
 
 Rigetti Computing develops superconducting qubit quantum computers and provides cloud access via QCS (Quantum Cloud Services), targeting enterprise and government customers.
 

@@ -4,7 +4,7 @@ ticker: BRBY
 name: "Burberry Group plc"
 sector: Consumer
 exchange: LSE
-last_updated: 2026-04-07
+last_updated: 2026-04-08
 tags:
   - consumer
   - lse
@@ -16,7 +16,7 @@ tags:
 
 # BRBY — Burberry Group plc
 
-**Sector:** Consumer | **Exchange:** LSE | **Updated:** 2026-04-07
+**Sector:** Consumer | **Exchange:** LSE | **Updated:** 2026-04-08
 
 British luxury fashion house founded in 1856, known for iconic trench coats and tartan pattern. Executing Burberry Forward transformation under CEO Joshua Schulman.
 

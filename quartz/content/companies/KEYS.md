@@ -4,7 +4,7 @@ ticker: KEYS
 name: "Keysight Technologies, Inc."
 sector: Technology
 exchange: NYSE
-last_updated: 2026-04-07
+last_updated: 2026-04-08
 tags:
   - technology
   - nyse
@@ -15,7 +15,7 @@ tags:
 
 # KEYS — Keysight Technologies, Inc.
 
-**Sector:** Technology | **Exchange:** NYSE | **Updated:** 2026-04-07
+**Sector:** Technology | **Exchange:** NYSE | **Updated:** 2026-04-08
 
 Keysight Technologies provides electronic design and test solutions to communications, aerospace & defense, automotive, energy, semiconductor, and general electronics markets.
 

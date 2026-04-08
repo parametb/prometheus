@@ -4,7 +4,7 @@ ticker: B
 name: "Barrick Mining Corporation"
 sector: Mining
 exchange: NYSE
-last_updated: 2026-04-07
+last_updated: 2026-04-08
 tags:
   - mining
   - nyse
@@ -13,7 +13,7 @@ tags:
 
 # B — Barrick Mining Corporation
 
-**Sector:** Mining | **Exchange:** NYSE | **Updated:** 2026-04-07
+**Sector:** Mining | **Exchange:** NYSE | **Updated:** 2026-04-08
 
 Barrick Mining Corporation (formerly Barrick Gold) is one of the world's largest gold and copper mining companies. Operates six Tier One gold mines across Africa, Americas, and Asia Pacific.
 

@@ -5,7 +5,7 @@ name: "Tesla, Inc."
 name_th: "เทสลา"
 sector: Consumer
 exchange: NASDAQ
-last_updated: 2026-04-07
+last_updated: 2026-04-08
 tags:
   - consumer
   - nasdaq
@@ -18,7 +18,7 @@ tags:
 
 *เทสลา*
 
-**Sector:** Consumer | **Exchange:** NASDAQ | **Updated:** 2026-04-07
+**Sector:** Consumer | **Exchange:** NASDAQ | **Updated:** 2026-04-08
 
 Tesla designs, develops, manufactures, and sells electric vehicles, energy storage systems, and solar products. Pivoting to AI-first company with Robotaxi, FSD subscriptions, and Optimus robots.
 

@@ -4,7 +4,7 @@ ticker: QBTS
 name: "D-Wave Quantum Inc."
 sector: Technology
 exchange: NYSE
-last_updated: 2026-04-07
+last_updated: 2026-04-08
 tags:
   - technology
   - nyse
@@ -15,7 +15,7 @@ tags:
 
 # QBTS — D-Wave Quantum Inc.
 
-**Sector:** Technology | **Exchange:** NYSE | **Updated:** 2026-04-07
+**Sector:** Technology | **Exchange:** NYSE | **Updated:** 2026-04-08
 
 D-Wave is the world's first commercial quantum computing company, providing quantum annealing systems and cloud access via Leap QCaaS platform to enterprise customers globally.
 

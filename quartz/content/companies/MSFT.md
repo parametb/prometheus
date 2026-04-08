@@ -5,7 +5,7 @@ name: "Microsoft Corporation"
 name_th: "บริษัทไมโครซอฟท์คอร์ปอเรชั่น"
 sector: Technology
 exchange: NASDAQ
-last_updated: 2026-04-07
+last_updated: 2026-04-08
 tags:
   - technology
   - nasdaq
@@ -18,7 +18,7 @@ tags:
 
 *บริษัทไมโครซอฟท์คอร์ปอเรชั่น*
 
-**Sector:** Technology | **Exchange:** NASDAQ | **Updated:** 2026-04-07
+**Sector:** Technology | **Exchange:** NASDAQ | **Updated:** 2026-04-08
 
 Microsoft develops, licenses, and supports software, services, devices, and solutions worldwide. Key segments: Intelligent Cloud (Azure), Productivity & Business Processes (Office 365, LinkedIn), and More Personal Computing.
 

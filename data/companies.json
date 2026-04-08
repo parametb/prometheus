@@ -4,7 +4,7 @@
     "name": "Apple Inc.",
     "sector": "Technology",
     "exchange": "NASDAQ",
-    "last_updated": "2026-04-07",
+    "last_updated": "2026-04-08",
     "note_count": 2,
     "quote_count": 3,
     "roadmap_count": 4
@@ -14,7 +14,7 @@
     "name": "Barrick Mining Corporation",
     "sector": "Mining",
     "exchange": "NYSE",
-    "last_updated": "2026-04-07",
+    "last_updated": "2026-04-08",
     "note_count": 0,
     "quote_count": 5,
     "roadmap_count": 10
@@ -24,7 +24,7 @@
     "name": "Burberry Group plc",
     "sector": "Consumer",
     "exchange": "LSE",
-    "last_updated": "2026-04-07",
+    "last_updated": "2026-04-08",
     "note_count": 2,
     "quote_count": 13,
     "roadmap_count": 17
@@ -34,7 +34,7 @@
     "name": "CRISPR Therapeutics AG",
     "sector": "Healthcare",
     "exchange": "NASDAQ",
-    "last_updated": "2026-04-07",
+    "last_updated": "2026-04-08",
     "note_count": 2,
     "quote_count": 10,
     "roadmap_count": 13
@@ -44,7 +44,7 @@
     "name": "IonQ, Inc.",
     "sector": "Technology",
     "exchange": "NYSE",
-    "last_updated": "2026-04-07",
+    "last_updated": "2026-04-08",
     "note_count": 2,
     "quote_count": 10,
     "roadmap_count": 14
@@ -54,7 +54,7 @@
     "name": "Keysight Technologies, Inc.",
     "sector": "Technology",
     "exchange": "NYSE",
-    "last_updated": "2026-04-07",
+    "last_updated": "2026-04-08",
     "note_count": 2,
     "quote_count": 9,
     "roadmap_count": 14
@@ -64,7 +64,7 @@
     "name": "Microsoft Corporation",
     "sector": "Technology",
     "exchange": "NASDAQ",
-    "last_updated": "2026-04-07",
+    "last_updated": "2026-04-08",
     "note_count": 1,
     "quote_count": 2,
     "roadmap_count": 3
@@ -74,7 +74,7 @@
     "name": "Newmont Corporation",
     "sector": "Mining",
     "exchange": "NYSE",
-    "last_updated": "2026-04-07",
+    "last_updated": "2026-04-08",
     "note_count": 2,
     "quote_count": 10,
     "roadmap_count": 12
@@ -84,7 +84,7 @@
     "name": "NVIDIA Corporation",
     "sector": "Semiconductors",
     "exchange": "NASDAQ",
-    "last_updated": "2026-04-07",
+    "last_updated": "2026-04-08",
     "note_count": 1,
     "quote_count": 8,
     "roadmap_count": 14
@@ -94,7 +94,7 @@
     "name": "D-Wave Quantum Inc.",
     "sector": "Technology",
     "exchange": "NYSE",
-    "last_updated": "2026-04-07",
+    "last_updated": "2026-04-08",
     "note_count": 1,
     "quote_count": 0,
     "roadmap_count": 5
@@ -104,7 +104,7 @@
     "name": "Quantum Computing Inc.",
     "sector": "Technology",
     "exchange": "NASDAQ",
-    "last_updated": "2026-04-07",
+    "last_updated": "2026-04-08",
     "note_count": 0,
     "quote_count": 20,
     "roadmap_count": 25
@@ -114,7 +114,7 @@
     "name": "Rigetti Computing, Inc.",
     "sector": "Technology",
     "exchange": "NASDAQ",
-    "last_updated": "2026-04-07",
+    "last_updated": "2026-04-08",
     "note_count": 2,
     "quote_count": 20,
     "roadmap_count": 26
@@ -124,7 +124,7 @@
     "name": "Tesla, Inc.",
     "sector": "Consumer",
     "exchange": "NASDAQ",
-    "last_updated": "2026-04-07",
+    "last_updated": "2026-04-08",
     "note_count": 2,
     "quote_count": 9,
     "roadmap_count": 15
