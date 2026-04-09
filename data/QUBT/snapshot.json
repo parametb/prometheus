@@ -1,43 +1,19 @@
 {
   "ticker": "QUBT",
   "name": "Quantum Computing Inc.",
-  "name_th": "ควอนตัม คอมพิวติ้ง อิงค์",
+  "name_th": "Quantum Computing Inc.",
   "sector": "Technology",
   "exchange": "NASDAQ",
-  "currency": "USD",
-  "last_updated": "2026-03-29",
-  "generated_at": "2026-04-02",
-  "latest_year": 2026,
-  "financials": {
-    "unit": "Billion",
-    "currency": "USD",
-    "revenue_B": 0.0,
-    "net_income_B": -0.027,
-    "fcf_B": -0.02,
-    "op_income_B": -0.026,
-    "eps": -0.42,
-    "gross_margin_pct": 44.4
-  },
+  "conviction_level": null,
+  "management_tone": null,
+  "last_analyzed": null,
   "counts": {
-    "notes": 3,
     "quotes": 20,
-    "roadmap_total": 26,
-    "roadmap_pending": 26,
-    "roadmap_progress": 0,
-    "roadmap_delivered": 0
+    "roadmap_total": 25,
+    "roadmap_delivered": 0,
+    "notes": 0,
+    "sources": 2,
+    "reports": 0
   },
-  "latest_note": {
-    "date": "2026-03-29",
-    "title": "10-K Analysis",
-    "title_th": "10-K Analysis",
-    "rating": 3,
-    "summary": "[Financial Performance] As an early-stage quantum computing company, QCi is aggressively investing in R&D and product commercialization, with a focus on photonic-based technologies that offer room-tem…"
-  },
-  "top_risks": [
-    "QUBT faces significant risks from intense competition in the rapidly evolving quantum computing industry, with numerous well-funded competitors and uncertain market adoption",
-    "Technology development and commercialization challenges are high, as the company's products are in early stages and rely on emerging technologies",
-    "Intellectual property protection is limited, and financial constraints may hinder competitiveness"
-  ],
-  "management_tone": "bullish",
-  "one_liner": "As an early-stage quantum computing company, QCi is aggressively investing in R&D and product commercialization, with a focus on photonic-based technologies that offer room-tempera"
+  "delivery_rate": 0
 }

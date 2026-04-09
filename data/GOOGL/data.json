@@ -1,0 +1,32 @@
+{
+  "ticker": "GOOGL",
+  "name": "Alphabet Inc.",
+  "name_th": "Alphabet Inc.",
+  "sector": "Technology",
+  "industry": "Internet / Search / Cloud / AI",
+  "exchange": "NASDAQ",
+  "country": "US",
+  "tradingview_symbol": "NASDAQ:GOOGL",
+  "last_updated": "2026-04-09",
+  "description": "Alphabet Inc. is the parent holding company of Google and its subsidiaries. Core businesses include Search, Advertising (Google Ads/YouTube), Cloud Computing (Google Cloud), and AI through Google DeepMind. Other Bets include Waymo (autonomous vehicles) and Verily (life sciences).",
+
+  "notes": [],
+  "quotes": [],
+
+  "roadmap": [],
+
+  "financials": {
+    "currency": "USD",
+    "unit": "Billion",
+    "links": [],
+    "years": [],
+    "metrics": [
+      { "name": "Revenue",        "values": [] },
+      { "name": "Gross Profit",   "values": [] },
+      { "name": "Net Income",     "values": [] },
+      { "name": "EPS (diluted)",  "values": [] },
+      { "name": "Free Cash Flow", "values": [] }
+    ],
+    "notes": ""
+  }
+}

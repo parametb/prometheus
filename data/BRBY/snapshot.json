@@ -4,42 +4,16 @@
   "name_th": "Burberry Group plc",
   "sector": "Consumer",
   "exchange": "LSE",
-  "currency": "GBP",
-  "last_updated": "2026-04-02",
-  "generated_at": "2026-04-02",
-  "latest_year": 2025,
-  "financials": {
-    "unit": "Billion",
-    "currency": "GBP",
-    "revenue_B": 2.46,
-    "net_income_B": -0.075,
-    "fcf_B": 0.278,
-    "op_income_B": -0.003,
-    "eps": -0.21,
-    "cash_B": 0.813,
-    "total_debt_B": 1.92,
-    "gross_margin_pct": 62.6
-  },
+  "conviction_level": null,
+  "management_tone": "cautious",
+  "last_analyzed": null,
   "counts": {
-    "notes": 2,
     "quotes": 13,
     "roadmap_total": 17,
-    "roadmap_pending": 14,
-    "roadmap_progress": 3,
-    "roadmap_delivered": 0
+    "roadmap_delivered": 0,
+    "notes": 2,
+    "sources": 0,
+    "reports": 0
   },
-  "latest_note": {
-    "date": "2026-03-31",
-    "title": "FY2025 Annual Report Analysis",
-    "title_th": "การวิเคราะห์รายงานประจำปี FY2025",
-    "rating": 2,
-    "summary": "[Financial Performance] Revenue fell 17% to £2.46B (from £2.97B), with operating income turning negative (-£3M) versus £418M in FY2024. Net loss of -£75M vs. net profit of £270M prior year. Gross marg…"
-  },
-  "top_risks": [
-    "Luxury demand slowdown in Asia Pacific (comps -16% FY25, China -15%) with no clear inflection timeline",
-    "Execution risk remains high — Burberry has undergone multiple strategic resets in the past decade",
-    "Elevated leverage (Net Debt £1.1B, Net Debt/EBITDA 2.6x) limits financial flexibility"
-  ],
-  "management_tone": "cautious",
-  "one_liner": "Revenue fell 17% to £2.46B (from £2.97B), with operating income turning negative (-£3M) versus £418M in FY2024."
+  "delivery_rate": 0
 }

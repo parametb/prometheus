@@ -1,83 +1,126 @@
 {
   "ticker": "MSFT",
-  "name": "Microsoft Corporation",
-  "name_th": "บริษัทไมโครซอฟท์คอร์ปอเรชั่น",
-  "sector": "Technology",
-  "exchange": "NASDAQ",
-  "tradingview_symbol": "NASDAQ:MSFT",
-  "last_updated": "2026-04-08",
-  "description": "Microsoft develops, licenses, and supports software, services, devices, and solutions worldwide. Key segments: Intelligent Cloud (Azure), Productivity & Business Processes (Office 365, LinkedIn), and More Personal Computing.",
-  "ceo": "Satya Nadella",
-  "employees": 228000,
-  "management_tone": "bullish",
+  "name": null,
+  "name_th": null,
+  "sector": null,
+  "industry": null,
+  "exchange": null,
+  "country": null,
+  "tradingview_symbol": null,
+  "last_updated": "2026-04-09",
+  "description": null,
+  "ceo": null,
+  "employees": null,
+  "market_cap_b": null,
+  "management_tone": null,
+  "conviction_level": null,
+  "investment_thesis": null,
+  "last_analyzed": null,
+  "website": null,
   "notes": [
     {
-      "date": "2025-01-15",
       "title": "Azure Growth & AI Monetization",
+      "note_type": null,
+      "date": "2025-01-15",
+      "quarter": null,
       "tags": [
         "growth",
         "strategy"
       ],
       "rating": 5,
-      "content": "Azure growth ยังแข็งแกร่งที่ 31% YoY โดยมี AI services เป็น tailwind สำคัญ\nCopilot 365 มีผู้ใช้งานเชิงพาณิชย์เพิ่มขึ้น 2x QoQ\n$80B AI capex commitment ใน FY2025 แสดงว่า MSFT ยอมรับว่า AI race ต้องลงทุน infra ก่อน short-term กระทบ FCF แต่ long-term build moat ที่คู่แข่งตามได้ยาก"
+      "active": true,
+      "content": "Azure growth ยังแข็งแกร่งที่ 31% YoY โดยมี AI services เป็น tailwind สำคัญ\nCopilot 365 มีผู้ใช้งานเชิงพาณิชย์เพิ่มขึ้น 2x QoQ\n$80B AI capex commitment ใน FY2025 แสดงว่า MSFT ยอมรับว่า AI race ต้องลงทุน infra ก่อน short-term กระทบ FCF แต่ long-term build moat ที่คู่แข่งตามได้ยาก",
+      "source_doc": null
     }
   ],
   "quotes": [
     {
-      "date": "2025-01-29",
-      "source": "Q2 FY2025 Earnings Call",
-      "speaker": "Amy Hood (CFO)",
       "quote": "We expect Azure growth to accelerate in H2 as AI capacity becomes available and demand continues to outpace supply.",
       "quote_th": "เราคาดว่าการเติบโตของ Azure จะเร่งตัวขึ้นในครึ่งหลัง เมื่อ AI capacity พร้อมใช้งานและความต้องการยังคงเกินกว่า supply",
-      "tag": "guidance"
+      "date": "2025-01-29",
+      "quarter": null,
+      "segment": null,
+      "speaker": "Amy Hood (CFO)",
+      "source": "Q2 FY2025 Earnings Call",
+      "tag": "guidance",
+      "sub_tags": [],
+      "sentiment": null,
+      "analyst_note": null,
+      "source_doc": null
     },
     {
-      "date": "2025-01-29",
-      "source": "Q2 FY2025 Earnings Call",
-      "speaker": "Satya Nadella (CEO)",
       "quote": "Microsoft Cloud revenue was $40.9 billion, up 21 percent year-over-year. We are seeing healthy growth across all of our cloud offerings and continued strong adoption of our AI services.",
       "quote_th": "รายได้ Microsoft Cloud อยู่ที่ 40.9 พันล้านเหรียญ เพิ่มขึ้น 21 เปอร์เซ็นต์เทียบปีต่อปี",
-      "tag": "growth"
+      "date": "2025-01-29",
+      "quarter": null,
+      "segment": null,
+      "speaker": "Satya Nadella (CEO)",
+      "source": "Q2 FY2025 Earnings Call",
+      "tag": "growth",
+      "sub_tags": [],
+      "sentiment": null,
+      "analyst_note": null,
+      "source_doc": null
     }
   ],
   "roadmap": [
     {
-      "date_said": "2024-11-07",
-      "source": "Microsoft Ignite 2024",
-      "status": "monitoring",
       "commitment": "Launch Copilot Actions and autonomous agents in Microsoft 365 by 2025",
+      "status": "monitoring",
+      "category": null,
+      "confidence": null,
+      "quarter_said": null,
+      "target_quarter": null,
+      "date_said": "2024-11-07",
       "follow_up": "Rollout began for some features in Q1 2025 but not yet complete across all markets",
       "follow_up_date": "2025-02-01",
-      "category": "",
-      "confidence": "",
-      "target_quarter": "",
-      "quarter_said": ""
+      "delivery_note": null,
+      "source": "Microsoft Ignite 2024",
+      "source_doc": null
     },
     {
-      "date_said": "2024-07-29",
-      "source": "Q4 FY2024 Earnings Call",
-      "status": "pending",
-      "commitment": "Invest $80B+ in AI infrastructure in FY2025",
-      "follow_up": "Check progress vs commitment; update status and add evidence link.",
-      "follow_up_date": "2024-10-27",
-      "category": "",
-      "confidence": "",
-      "target_quarter": "",
-      "quarter_said": ""
-    },
-    {
-      "date_said": "2023-01-24",
-      "source": "Q2 FY2023 Earnings Call",
-      "status": "delivered",
       "commitment": "Integrate AI into Microsoft 365 via Copilot in 2023",
+      "status": "delivered",
+      "category": null,
+      "confidence": null,
+      "quarter_said": null,
+      "target_quarter": null,
+      "date_said": "2023-01-24",
       "follow_up": "Microsoft 365 Copilot launched for enterprise in November 2023",
       "follow_up_date": "2023-11-01",
-      "category": "",
-      "confidence": "",
-      "target_quarter": "",
-      "quarter_said": ""
+      "delivery_note": null,
+      "source": "Q2 FY2023 Earnings Call",
+      "source_doc": null
+    },
+    {
+      "commitment": "Invest $80B+ in AI infrastructure in FY2025",
+      "status": "pending",
+      "category": null,
+      "confidence": null,
+      "quarter_said": null,
+      "target_quarter": null,
+      "date_said": "2024-07-29",
+      "follow_up": "Check progress vs commitment; update status and add evidence link.",
+      "follow_up_date": "2024-10-27",
+      "delivery_note": null,
+      "source": "Q4 FY2024 Earnings Call",
+      "source_doc": null
     }
   ],
+  "sources": [
+    {
+      "title": "MSFT Q2 FY2025 Earnings Call",
+      "source_type": null,
+      "date": "2025-01-29",
+      "quarter": "Q2 2025",
+      "url": null,
+      "analyzed_by": "DeepSeek",
+      "status": null,
+      "tags": []
+    }
+  ],
+  "analytic_reports": [],
+  "open_tasks": [],
   "financials": {
     "currency": "USD",
     "unit": "Billion",

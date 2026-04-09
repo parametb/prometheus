@@ -1,42 +1,19 @@
 {
   "ticker": "NEM",
   "name": "Newmont Corporation",
-  "name_th": "",
+  "name_th": "Newmont Corporation",
   "sector": "Mining",
   "exchange": "NYSE",
-  "currency": "USD",
-  "last_updated": "2026-04-02",
-  "generated_at": "2026-04-02",
-  "latest_year": 2025,
-  "financials": {
-    "unit": "Billion",
-    "currency": "USD",
-    "revenue_B": 22.1,
-    "net_income_B": 7.08,
-    "fcf_B": 7.3,
-    "eps": 6.41,
-    "gross_margin_pct": 49.8
-  },
+  "conviction_level": null,
+  "management_tone": "bullish",
+  "last_analyzed": null,
   "counts": {
-    "notes": 2,
     "quotes": 10,
     "roadmap_total": 12,
-    "roadmap_pending": 12,
-    "roadmap_progress": 0,
-    "roadmap_delivered": 0
+    "roadmap_delivered": 0,
+    "notes": 2,
+    "sources": 0,
+    "reports": 0
   },
-  "latest_note": {
-    "date": "2026-04-02",
-    "title": "FY2025 10-K Analysis",
-    "title_th": "การวิเคราะห์รายงานประจำปี FY2025",
-    "rating": 3,
-    "summary": "[Financial Performance] Newmont delivered a transformative year with net income surging to $7.2B from $3.3B, driven by robust gold prices and strategic portfolio actions. While attributable gold produ…"
-  },
-  "top_risks": [
-    "Newmont faces a multifaceted risk profile dominated by commodity price volatility and project execution challenges, with significant exposure to metal market fluctuations and capital project risks",
-    "The company manages these through portfolio optimization, hedging strategies, and operational discipline, though remains vulnerable to external market forces and geopolitical factors across its global operations",
-    "Environmental compliance and cost management present ongoing challenges in maintaining profitability"
-  ],
-  "management_tone": "bullish",
-  "one_liner": "Newmont delivered a transformative year with net income surging to $7.2B from $3.3B, driven by robust gold prices and strategic portfolio actions."
+  "delivery_rate": 0
 }

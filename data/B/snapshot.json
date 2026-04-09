@@ -4,32 +4,16 @@
   "name_th": "Barrick Mining Corporation",
   "sector": "Mining",
   "exchange": "NYSE",
-  "currency": "USD",
-  "last_updated": "2026-04-04",
-  "generated_at": "2026-04-04",
-  "latest_year": 2025,
-  "financials": {
-    "unit": "Billion",
-    "currency": "USD",
-    "revenue_B": 16.96,
-    "fcf_B": 3.87
-  },
+  "conviction_level": null,
+  "management_tone": null,
+  "last_analyzed": null,
   "counts": {
-    "notes": 8,
     "quotes": 5,
     "roadmap_total": 10,
-    "roadmap_pending": 5,
-    "roadmap_progress": 0,
-    "roadmap_delivered": 1
+    "roadmap_delivered": 1,
+    "notes": 0,
+    "sources": 0,
+    "reports": 0
   },
-  "latest_note": {
-    "date": "2026-04-04",
-    "title": "5-Year Retrospective: Barrick FY2021–FY2025",
-    "title_th": "ย้อนหลัง 5 ปี: Barrick FY2021–FY2025",
-    "rating": 4,
-    "summary": "[5-Year Executive Summary (2021–2025)] Barrick's 2021-2025 journey reflects a transformation from operational challenges to financial outperformance. The period began with inflationary pressures and p…"
-  },
-  "top_risks": [],
-  "management_tone": null,
-  "one_liner": "[5-Year Executive Summary (2021–2025)]"
+  "delivery_rate": 10
 }

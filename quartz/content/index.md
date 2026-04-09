@@ -1,68 +1,32 @@
 ---
-title: "Prometheus — Investment Research"
+title: "Prometheus Research"
 tags:
   - index
+draft: false
 ---
 
-# 🔭 Prometheus Investment Research
+# 🔥 Prometheus Research
 
-Personal investment research dashboard tracking **13 companies** across 5 sectors.
+> Investment research powered by Notion + AI — updated every 6 hours
 
-*Last generated: 2026-04-08*
+*Last generated: 2026-04-09  ·  15 companies tracked*
 
-> Use the **Graph View** (right panel) to explore connections between companies, sectors, and themes.
+## Companies
 
-## Companies by Exchange
-
-### LSE
-
-- [[companies/BRBY|BRBY]] — Burberry Group plc *(Consumer)*
-
-### NASDAQ
-
-- [[companies/AAPL|AAPL]] — Apple Inc. *(Technology)*
-- [[companies/CRSP|CRSP]] — CRISPR Therapeutics AG *(Healthcare)*
-- [[companies/MSFT|MSFT]] — Microsoft Corporation *(Technology)*
-- [[companies/NVDA|NVDA]] — NVIDIA Corporation *(Semiconductors)*
-- [[companies/QUBT|QUBT]] — Quantum Computing Inc. *(Technology)*
-- [[companies/RGTI|RGTI]] — Rigetti Computing, Inc. *(Technology)*
-- [[companies/TSLA|TSLA]] — Tesla, Inc. *(Consumer)*
-
-### NYSE
-
-- [[companies/B|B]] — Barrick Mining Corporation *(Mining)*
-- [[companies/IONQ|IONQ]] — IonQ, Inc. *(Technology)*
-- [[companies/KEYS|KEYS]] — Keysight Technologies, Inc. *(Technology)*
-- [[companies/NEM|NEM]] — Newmont Corporation *(Mining)*
-- [[companies/QBTS|QBTS]] — D-Wave Quantum Inc. *(Technology)*
-
-## Companies by Sector
-
-### [[sectors/consumer|Consumer]]
-
-- [[companies/BRBY|BRBY — Burberry Group plc]]
-- [[companies/TSLA|TSLA — Tesla, Inc.]]
-
-### [[sectors/healthcare|Healthcare]]
-
-- [[companies/CRSP|CRSP — CRISPR Therapeutics AG]]
-
-### [[sectors/mining|Mining]]
-
-- [[companies/B|B — Barrick Mining Corporation]]
-- [[companies/NEM|NEM — Newmont Corporation]]
-
-### [[sectors/semiconductors|Semiconductors]]
-
-- [[companies/NVDA|NVDA — NVIDIA Corporation]]
-
-### [[sectors/technology|Technology]]
-
-- [[companies/AAPL|AAPL — Apple Inc.]]
-- [[companies/IONQ|IONQ — IonQ, Inc.]]
-- [[companies/KEYS|KEYS — Keysight Technologies, Inc.]]
-- [[companies/MSFT|MSFT — Microsoft Corporation]]
-- [[companies/QBTS|QBTS — D-Wave Quantum Inc.]]
-- [[companies/QUBT|QUBT — Quantum Computing Inc.]]
-- [[companies/RGTI|RGTI — Rigetti Computing, Inc.]]
-
+| Ticker | Name | Sector | Conviction | Delivery | Sources | Notes |
+|--------|------|--------|------------|----------|---------|-------|
+| [[MSFT]] | — | — | — | 100% | 1 | 1 |
+| [[AAPL]] | Apple Inc. | Technology | — | 100% | 0 | 2 |
+| [[B]] | Barrick Mining Corporation | Mining | — | 100% | 0 | 0 |
+| [[BROKEN_A]] | Broken Alpha Corp | Technology | — | — | 0 | 0 |
+| [[BROKEN_B]] | Broken Beta Inc | Finance | — | — | 0 | 1 |
+| [[BRBY]] | Burberry Group plc | Consumer | — | — | 0 | 2 |
+| [[CRSP]] | CRISPR Therapeutics AG | Healthcare | — | — | 0 | 2 |
+| [[QBTS]] | D-Wave Quantum Inc. | Technology | — | — | 0 | 1 |
+| [[IONQ]] | IonQ, Inc. | Technology | — | — | 0 | 2 |
+| [[KEYS]] | Keysight Technologies, Inc. | Technology | — | — | 0 | 2 |
+| [[NEM]] | Newmont Corporation | Mining | — | — | 0 | 2 |
+| [[NVDA]] | NVIDIA Corporation | Semiconductors | — | — | 0 | 1 |
+| [[QUBT]] | Quantum Computing Inc. | Technology | — | — | 2 | 0 |
+| [[RGTI]] | Rigetti Computing, Inc. | Technology | — | — | 0 | 2 |
+| [[TSLA]] | Tesla, Inc. | Consumer | — | 100% | 0 | 2 |
