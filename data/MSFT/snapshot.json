@@ -1,18 +1,18 @@
 {
   "ticker": "MSFT",
-  "name": null,
-  "name_th": null,
-  "sector": null,
-  "exchange": null,
+  "name": "Microsoft Corporation",
+  "name_th": "Microsoft Corporation",
+  "sector": "Technology",
+  "exchange": "NASDAQ",
   "conviction_level": null,
-  "management_tone": null,
+  "management_tone": "bullish",
   "last_analyzed": null,
   "counts": {
     "quotes": 2,
     "roadmap_total": 3,
     "roadmap_delivered": 1,
     "notes": 1,
-    "sources": 1,
+    "sources": 0,
     "reports": 0
   },
   "delivery_rate": 33

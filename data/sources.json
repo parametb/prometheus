@@ -26,9 +26,7 @@
     "analyzed_by": "DeepSeek",
     "status": null,
     "tags": [],
-    "tickers": [
-      "MSFT"
-    ],
+    "tickers": [],
     "notion_id": "33c104a0-c4b1-80cf-a8dd-cde7e25fc1d5"
   },
   {
@@ -44,5 +42,22 @@
       "QUBT"
     ],
     "notion_id": "33c104a0-c4b1-80ef-b903-faf386854a38"
+  },
+  {
+    "title": "GOOGL 10-K 2025",
+    "source_type": "Annual Report",
+    "date": null,
+    "quarter": "Q4 2025",
+    "url": "https://s206.q4cdn.com/479360582/files/doc_financials/2025/q4/2025q4-alphabet-earnings-release.pdf",
+    "analyzed_by": "DeepSeek",
+    "status": "analyzed",
+    "tags": [
+      "financials",
+      "strategy"
+    ],
+    "tickers": [
+      "GOOGL"
+    ],
+    "notion_id": "33d104a0-c4b1-8167-9569-eac66d4f38c3"
   }
 ]
