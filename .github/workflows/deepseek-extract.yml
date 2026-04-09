@@ -1,0 +1,120 @@
+name: DeepSeek Extract → Notion
+
+# Trigger manually from GitHub Actions tab
+on:
+  workflow_dispatch:
+    inputs:
+      ticker:
+        description: 'Company ticker (e.g. GOOGL, NVDA, AAPL)'
+        required: true
+        type: string
+      url:
+        description: 'Document URL (PDF or HTML — earnings release, 10-K, etc.)'
+        required: true
+        type: string
+      doc_type:
+        description: 'Document type'
+        required: true
+        type: choice
+        options:
+          - 10-K
+          - 10-Q
+          - Earnings Call
+          - Press Release
+          - SEC Filing
+          - Annual Report
+        default: '10-K'
+      year:
+        description: 'Fiscal year (e.g. 2025)'
+        required: true
+        type: string
+      quarter:
+        description: 'Quarter label (e.g. Q4 2025)'
+        required: true
+        type: string
+        default: 'Q4 2025'
+      sync_after:
+        description: 'Run Notion sync after extraction (updates data.json)'
+        type: boolean
+        default: true
+
+concurrency:
+  group: deepseek-extract-${{ inputs.ticker }}
+  cancel-in-progress: false
+
+jobs:
+  extract:
+    name: DeepSeek Extract — ${{ inputs.ticker }} ${{ inputs.doc_type }} ${{ inputs.year }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run DeepSeek extraction
+        env:
+          DEEPSEEK_API_KEY:    ${{ secrets.DEEPSEEK_API_KEY }}
+          NOTION_TOKEN:        ${{ secrets.NOTION_TOKEN }}
+          NOTION_COMPANIES_DB: ${{ secrets.NOTION_COMPANIES_DB }}
+          NOTION_QUOTES_DB:    ${{ secrets.NOTION_QUOTES_DB }}
+          NOTION_ROADMAP_DB:   ${{ secrets.NOTION_ROADMAP_DB }}
+          NOTION_NOTES_DB:     ${{ secrets.NOTION_NOTES_DB }}
+          NOTION_SOURCES_DB:   ${{ secrets.NOTION_SOURCES_DB }}
+          NOTION_TASKS_DB:     ${{ secrets.NOTION_TASKS_DB }}
+        run: |
+          node scripts/deepseek-extract.js \
+            --ticker   "${{ inputs.ticker }}" \
+            --url      "${{ inputs.url }}" \
+            --doc-type "${{ inputs.doc_type }}" \
+            --year     "${{ inputs.year }}" \
+            --quarter  "${{ inputs.quarter }}"
+
+  # Optional: sync Notion → data.json after extraction completes
+  sync:
+    name: Sync Notion → data.json
+    needs: extract
+    if: ${{ inputs.sync_after }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - run: npm install
+
+      - name: Sync Notion → data.json
+        env:
+          NOTION_TOKEN:        ${{ secrets.NOTION_TOKEN }}
+          NOTION_COMPANIES_DB: ${{ secrets.NOTION_COMPANIES_DB }}
+          NOTION_NOTES_DB:     ${{ secrets.NOTION_NOTES_DB }}
+          NOTION_QUOTES_DB:    ${{ secrets.NOTION_QUOTES_DB }}
+          NOTION_ROADMAP_DB:   ${{ secrets.NOTION_ROADMAP_DB }}
+          NOTION_SOURCES_DB:   ${{ secrets.NOTION_SOURCES_DB }}
+          NOTION_REPORTS_DB:   ${{ secrets.NOTION_REPORTS_DB }}
+          NOTION_TASKS_DB:     ${{ secrets.NOTION_TASKS_DB }}
+        run: node notion-sync.js
+
+      - run: node generate-quartz.js
+
+      - name: Commit updated data
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/ quartz/content/
+          git diff --staged --quiet || git commit -m "chore: deepseek extract ${{ inputs.ticker }} ${{ inputs.doc_type }} ${{ inputs.year }} [skip ci]"
+          git push

@@ -1,5 +1,5 @@
-# PROMETHEUS_FLOW.md — v2.1
-> อัปเดต: 2026-04-08 | Notion-First · DeepSeek Pipeline · Chunked Processing
+# PROMETHEUS_FLOW.md — v2.2
+> อัปเดต: 2026-04-10 | Automated DeepSeek Pipeline · GitHub Actions Trigger · PDF Support
 
 ---
 
@@ -11,7 +11,7 @@
 |---------|----------|
 | 🏆 **High Quality Data** | ข้อมูลต้องมีที่มา, linked, tagged, searchable ไม่ใช่แค่ข้อความดิบ |
 | ⚡ **Token-Efficient** | ไม่โหลดข้อมูลทั้งก้อน — อ่านเฉพาะส่วนที่ต้องการจาก Notion |
-| 🧑‍💼 **No-Code Friendly** | ใช้ Cowork Skills ทำงานได้ ไม่ต้องแตะ code |
+| 🧑‍💼 **No-Code Friendly** | ใช้ Cowork Skills + GitHub Actions ทำงานได้ ไม่ต้องแตะ code |
 | 🤖 **Hybrid AI** | DeepSeek = อ่าน/สกัด/แปล | Claude = วางแผน/สังเคราะห์/ตัดสิน |
 
 ---
@@ -19,15 +19,24 @@
 ## 1. สถาปัตยกรรมโดยรวม
 
 ```
-[เอกสาร: PDF / Transcript / Filing]
+[User: ระบุ Ticker + URL เอกสาร]
           │
           ▼
-  ┌───────────────────┐
-  │   DeepSeek API    │  ← อ่านเอกสาร, สกัดข้อมูล, แปลไทย
-  │  (Extraction)     │    ประหยัด token มากกว่า Claude
-  └───────┬───────────┘
-          │ เขียนทีละ record อย่างต่อเนื่อง
-          ▼
+  ┌──────────────────────────┐
+  │   GitHub Actions         │  ← deepseek-extract.yml
+  │   (Manual Trigger)       │    กรอก ticker / url / doc_type / quarter
+  └───────────┬──────────────┘
+              │
+              ▼
+  ┌──────────────────────────┐
+  │  scripts/deepseek-       │  ← รัน 4 agents พร้อมกัน
+  │  extract.js              │    • phase2_deep_analysis
+  │                          │    • phase2_quotes  (+ quote_th)
+  │  DeepSeek API            │    • phase2_roadmap
+  │  (Extraction Engine)     │    • phase2_risks
+  └───────────┬──────────────┘
+              │ เขียนตรงเข้า Notion ทันที
+              ▼
   ┌───────────────────────────────────────────┐
   │           NOTION (Working Memory)         │
   │                                           │
@@ -37,17 +46,20 @@
   │               ↓                           │
   │         Analytic Reports ← Tasks          │
   └───────────────────┬───────────────────────┘
-          │ ดึงเฉพาะ slice ที่ต้องการ
+          │ Claude query เฉพาะ slice ที่ต้องการ
           ▼
   ┌───────────────────┐
-  │    Claude API     │  ← วางแผน, สังเคราะห์, approve report
-  │  (Orchestration)  │    อ่านข้อมูลจาก Notion ทีละชิ้น
+  │    Claude         │  ← Cowork Skills: สังเคราะห์, approve report
+  │  (Orchestration)  │    ไม่อ่านเอกสารดิบ — อ่านจาก Notion เท่านั้น
   └───────┬───────────┘
           │
           ▼
-  [GitHub Actions: Notion → JSON → Quartz]
-          │
-          ▼
+  ┌────────────────────────────────────┐
+  │  GitHub Actions: notion-sync.yml   │  ← ทุก 6 ชั่วโมง (อัตโนมัติ)
+  │  Notion → data.json → Quartz       │
+  └───────────────┬────────────────────┘
+                  │
+                  ▼
   [Website: Dashboard + Company Pages]
 ```
 
@@ -56,34 +68,43 @@
 ## 2. บทบาท AI แต่ละตัว
 
 ### 2.1 DeepSeek — Extraction Engine
-ใช้เมื่อ: อ่านเอกสารดิบ, สกัดข้อมูล, แปลภาษา
+ทำงานผ่าน `scripts/deepseek-extract.js` ที่ trigger จาก GitHub Actions
 
 ```
-งานที่ DeepSeek ทำ:
-- อ่าน Earnings Call transcript ทั้งฉบับ
-- สกัด quotes ทีละอัน → เขียน Notion Quotes DB ทันที
-- สกัด commitments → เขียน Notion Roadmap DB ทันที
-- แปล quote เป็นภาษาไทย (Quote TH field)
-- อ่าน Annual Report → สกัด financial metrics
-- classify tag/sentiment ของแต่ละ quote
+งานที่ DeepSeek ทำ (4 agents, รันพร้อมกัน):
+  Agent A — Deep Analysis:
+    → management_tone, strategic_priorities, management_quality
+    → competitive_position, outlook_signals, financial_summary
+
+  Agent B — Roadmap:
+    → forward-looking commitments → เขียน Notion Roadmap DB
+    → fields: Commitment, Category, Confidence, Quarter Said, Target Quarter
+
+  Agent C — Quotes:
+    → executive quotes + แปล Quote TH ในตัว
+    → fields: Quote, Quote TH, Speaker, Segment, Tag, Sentiment, Sub-tag
+
+  Agent D — Risks:
+    → key risks + severity → รวมอยู่ใน Analysis Note
 
 ข้อดี:
-- ราคาถูกกว่า Claude มาก สำหรับงาน extraction
-- ทนต่อ context ยาว (long document)
-- เขียน Notion แบบ streaming ทีละ record ไม่ต้องรอจบ
+  - ราคาถูกกว่า Claude มาก สำหรับงาน extraction
+  - รัน parallel ทั้ง 4 agents → เสร็จเร็วกว่า sequential
+  - รองรับทั้ง PDF และ HTML (pdf-parse)
+  - เขียน Notion โดยตรง ไม่ผ่าน data.json
 ```
 
 ### 2.2 Claude — Orchestration & Synthesis
-ใช้เมื่อ: วางแผน, สังเคราะห์ข้อมูล, เขียนรายงาน, ตัดสินใจ
+ทำงานผ่าน Cowork Skills เท่านั้น ไม่อ่านเอกสารดิบ
 
 ```
 งานที่ Claude ทำ:
-- ออกแบบ extraction plan ก่อน DeepSeek เริ่มทำงาน
-- Query Notion เพื่อดึงข้อมูล slice เล็กๆ ที่ต้องการ
-- สังเคราะห์ข้อมูลจาก Notion → เขียน Analytic Report
-- อัปเดต status ใน Tasks DB
-- ตรวจสอบ quality ของข้อมูลที่ DeepSeek บันทึก
-- ตอบคำถาม user โดย query Notion โดยตรง (ไม่ต้องโหลด JSON)
+  - Bootstrap บริษัทใหม่ (add-company skill)
+  - Query Notion เพื่อดึงข้อมูล slice เล็กๆ
+  - สังเคราะห์ข้อมูลจาก Notion → เขียน Analytic Report
+  - ตอบคำถาม user โดย query Notion โดยตรง
+  - track delivery rate ของ management
+  - debug website rendering issues
 ```
 
 ---
@@ -105,29 +126,16 @@
    ≈ 200-500 tokens ต่อครั้ง
 ```
 
-### Chunked Processing Pattern
+### Chunked Processing Pattern (ใน deepseek-extract.js)
 
 ```
-แทนที่จะ:  อ่านเอกสาร 50 หน้า → สรุปทุกอย่างในครั้งเดียว
-
-ให้ทำแบบนี้:
-
-  เอกสาร 50 หน้า
-       │
-       ├── Chunk 1 (หน้า 1-10: CEO Opening Remarks)
-       │     └── DeepSeek → เขียน 3-5 Quotes + 2 Roadmap items → Notion
-       │
-       ├── Chunk 2 (หน้า 11-20: CFO Financial Update)
-       │     └── DeepSeek → เขียน Financial Notes + Guidance quotes → Notion
-       │
-       ├── Chunk 3 (หน้า 21-35: Q&A Session)
-       │     └── DeepSeek → เขียน Q&A Quotes + Risk items → Notion
-       │
-       └── Chunk 4 (หน้า 36-50: Written Submission)
-             └── DeepSeek → เขียน Formal commitments → Notion
-
-  จากนั้น Claude:
-       └── Query Notion → สังเคราะห์ → เขียน Analytic Report 1 record
+เอกสาร (PDF/HTML) → fetchDocumentText() → chunkText(maxChars=20000)
+     │
+     ├── analysisText  = chunks[0..1]  (first ~40k chars: MD&A, Risk Factors)
+     │     └── Agent A (Deep Analysis) + Agent B (Roadmap) + Agent D (Risks)
+     │
+     └── fullSlice     = chunks[0..n]  (all chunks, up to 40k chars)
+           └── Agent C (Quotes) — ดึง quotes จากทุกส่วนของเอกสาร
 ```
 
 ### Notion Query Patterns ที่ใช้บ่อย
@@ -143,12 +151,13 @@
 
 ## 4. Workflow รายละเอียด
 
-### Step 1 — Claude: Bootstrap & Plan (ครั้งเดียวต่อบริษัท)
+### Step 1 — Claude: Bootstrap (ครั้งเดียวต่อบริษัท)
 ```
-INPUT: ชื่อบริษัท + ticker + exchange
+SKILL: prometheus:add-company
+INPUT: ticker
 
 Claude ทำ:
-  1. สร้าง data/{TICKER}/data.json โครงสร้างพื้นฐาน (50 tokens)
+  1. สร้าง data/{TICKER}/data.json โครงสร้างพื้นฐาน
   2. เพิ่มใน companies.json
   3. สร้าง Company record ใน Notion Companies DB
   4. สร้าง Task record: "วิเคราะห์เอกสารแรก" → Status=pending
@@ -157,85 +166,77 @@ OUTPUT: JSON skeleton + Notion record พร้อมแล้ว
 TOKEN COST: ~300 tokens
 ```
 
-### Step 2 — Claude: Extraction Plan (ก่อน DeepSeek ทำงาน)
+### Step 2 — User: Trigger Extraction (GitHub Actions)
 ```
-INPUT: เอกสาร (URL หรือ PDF path)
+WORKFLOW: .github/workflows/deepseek-extract.yml
+TRIGGER: Manual (Actions tab → Run workflow)
 
-Claude วางแผน:
-  1. ดูประเภทเอกสาร → กำหนด chunk strategy
-  2. สร้าง Source record ใน Notion: Status=pending
-  3. ออก extraction prompt template ให้ DeepSeek
+User กรอก:
+  - ticker:    GOOGL
+  - url:       https://... (PDF หรือ HTML)
+  - doc_type:  10-K / Earnings Call / Press Release
+  - year:      2025
+  - quarter:   Q4 2025
+  - sync_after: true (รัน notion-sync หลังจบ)
 
-  ตัวอย่าง plan สำหรับ Earnings Call:
-  ├── Chunk A: Prepared Remarks → extract: quotes + commitments
-  ├── Chunk B: CFO Section → extract: guidance + financial notes
-  └── Chunk C: Q&A → extract: risk mentions + clarifications
-
-OUTPUT: extraction plan + Source record ใน Notion
-TOKEN COST: ~200 tokens
+ไม่ต้องเขียน code ใดๆ — กดปุ่มเดียวจบ
 ```
 
-### Step 3 — DeepSeek: Extraction → Notion (งานหนัก)
+### Step 3 — DeepSeek: Extraction → Notion (อัตโนมัติ)
 ```
-INPUT: เอกสาร chunk + extraction template จาก Claude
+SCRIPT: scripts/deepseek-extract.js
+ใช้เวลา: ~1-3 นาที ต่อเอกสาร
 
-DeepSeek ทำสำหรับแต่ละ chunk:
-  FOR each quote found:
-    → เขียน 1 record ใน Quotes DB ทันที
-    → fields: Quote, Speaker, Tag, Sentiment, Quarter, Source Doc
-    → แปล Quote TH ในตัว
-    → ไม่รอให้ครบทุก quote ก่อนค่อยเขียน
+Pipeline:
+  1. Fetch document (PDF → pdf-parse / HTML → strip tags)
+  2. สร้าง Source record ใน Notion (Status=extracting)
+  3. Chunk text → 20,000 chars ต่อ chunk
+  4. รัน 4 DeepSeek agents พร้อมกัน (Promise.allSettled)
+  5. เขียน Quotes → Notion Quotes DB  (พร้อม quote_th ภาษาไทย)
+  6. เขียน Roadmap → Notion Roadmap DB
+  7. เขียน Analysis Note → Notion Notes DB
+  8. อัปเดต Management Tone ใน Companies DB
+  9. อัปเดต Source: Status=analyzed
+  10. ปิด pending Task: Status=done
 
-  FOR each commitment found:
-    → เขียน 1 record ใน Roadmap DB ทันที
-    → fields: Commitment, Category, Confidence, Target Quarter
-    → link → Origin Quote ที่เพิ่งสร้าง
-
-  FOR each key insight:
-    → เขียน 1 record ใน Notes DB
-    → fields: Title, Note Type, Tags, body content
-
-  เมื่อ chunk เสร็จ:
-    → อัปเดต Source record: progress tracking
-
-OUTPUT: N records ใน Notion (ไม่มี intermediate file)
-TOKEN COST (DeepSeek): ต่ำมาก เพราะ output เป็น structured JSON ทีละ record
+OUTPUT: Quotes + Roadmap + Note ใน Notion
+TOKEN COST (DeepSeek): ~$0.01-0.05 ต่อเอกสาร
 ```
 
-### Step 4 — Claude: Synthesis (เบา)
+### Step 4 — Claude: Synthesis (เบา, ผ่าน Cowork)
 ```
-INPUT: query จาก Notion (ไม่ใช่ raw document)
+SKILL: prometheus:analyze-report หรือ prometheus:analyze-earnings
 
 Claude query Notion:
-  - "quotes จาก Source นี้ทั้งหมด" → ได้ N records
-  - "roadmap items ที่เพิ่งสร้าง" → ได้ M records
+  - quotes จาก Source นี้ → ได้ N records
+  - roadmap items ที่เพิ่งสร้าง → ได้ M records
 
 Claude สังเคราะห์:
-  - เขียน Executive Summary (1 text field ใน Analytic Reports)
-  - ประเมิน management tone → อัปเดต Companies DB
-  - อัปเดต Task: Status=done
+  - เขียน Executive Summary → Analytic Reports DB
+  - ประเมิน investment thesis
   - สร้าง Analytic Report: Status=draft
 
-OUTPUT: 1 Analytic Report record + Companies update
-TOKEN COST: ~500-800 tokens (ไม่ใช่ 5,000+)
+OUTPUT: 1 Analytic Report record
+TOKEN COST (Claude): ~500-800 tokens
 ```
 
 ### Step 5 — User: Review & Approve
 ```
-User เปิด Notion → เห็น Analytic Report Status=draft
-  - อ่าน Executive Summary
+User เปิด Notion:
   - ตรวจสอบ Quotes ที่ DeepSeek สกัด
-  - แก้ไขถ้าต้องการ
-  - เปลี่ยน Status → approved
+  - แก้ไข/เพิ่ม Analyst Note ถ้าต้องการ
+  - เปลี่ยน Report Status → approved → published
 
 GitHub Actions sync อัตโนมัติทุก 6 ชั่วโมง
 ```
 
-### Step 6 — GitHub Actions: Publish
+### Step 6 — GitHub Actions: Publish (อัตโนมัติ)
 ```
+WORKFLOW: .github/workflows/notion-sync.yml
+SCHEDULE: ทุก 6 ชั่วโมง (00:00, 06:00, 12:00, 18:00 UTC)
+
 notion-sync.js:
-  - ดึง Analytic Reports ที่ Status=published
-  - ดึง Quotes, Roadmap, Notes ที่ link กัน
+  - ดึง Companies, Notes, Quotes, Roadmap จาก Notion
   - เขียน data/{TICKER}/data.json
 
 generate-quartz.js:
@@ -245,7 +246,41 @@ generate-quartz.js:
 
 ---
 
-## 5. Database Schema (7 DBs)
+## 5. GitHub Actions Workflows
+
+| Workflow | Trigger | ใช้เมื่อ |
+|----------|---------|---------|
+| `deepseek-extract.yml` | Manual (Run workflow) | เพิ่งได้รับเอกสารใหม่ — 10-K, Earnings Call, Press Release |
+| `notion-sync.yml` | Schedule (ทุก 6 ชม.) + Manual | sync Notion → data.json → deploy website |
+
+### deepseek-extract.yml — inputs
+
+| Input | ตัวอย่าง | หมายเหตุ |
+|-------|---------|---------|
+| ticker | GOOGL | uppercase |
+| url | https://...pdf | PDF หรือ HTML |
+| doc_type | 10-K | ดู options ใน workflow |
+| year | 2025 | fiscal year |
+| quarter | Q4 2025 | format "Q# YYYY" |
+| sync_after | true | รัน notion-sync หลังจบ extraction |
+
+### Secrets ที่ต้องตั้งใน GitHub
+
+```
+DEEPSEEK_API_KEY       = sk-...
+NOTION_TOKEN           = secret_...
+NOTION_COMPANIES_DB    = 1846ceaeee3842cdb00c351d5f735c4d
+NOTION_NOTES_DB        = 00002ee5d11f443692fd6a9a5b9c640e
+NOTION_QUOTES_DB       = 78027774aa664acea7488c81176ac3a0
+NOTION_ROADMAP_DB      = 37dfa0c7ab724d17b09076be033f90cf
+NOTION_SOURCES_DB      = 17d7966d29a54ced80cd9cb3236f51cc
+NOTION_REPORTS_DB      = 0b5706ab4758488ab8c57d280c9c4754
+NOTION_TASKS_DB        = 1d7fedba7e6f45a1801e05193ac7af7d
+```
+
+---
+
+## 6. Database Schema (7 DBs)
 
 ### DB 1: Companies
 | Field | Type | หมายเหตุ |
@@ -256,7 +291,7 @@ generate-quartz.js:
 | Exchange / Country | text/select | |
 | CEO / Description | text | |
 | Employees / Market Cap (B) | number | |
-| Management Tone | select | bullish / cautious / mixed |
+| Management Tone | select | bullish / cautious / mixed — auto-set จาก deepseek-extract |
 | Conviction Level | select | high / medium / low / watch |
 | Investment Thesis | text | สรุปวิทยาทัศน์ |
 | Last Analyzed | date | auto-update จาก workflow |
@@ -270,22 +305,22 @@ generate-quartz.js:
 | Source Type | select | Annual Report / Earnings Call / Press Release / SEC Filing / News |
 | Date / Quarter | date/select | |
 | URL / File | url/files | |
-| Analyzed By | select | Claude / DeepSeek / Manual |
-| Status | select | pending / extracting / analyzed / archived |
+| Analyzed By | select | Claude / **DeepSeek** / Manual |
+| Status | select | pending / **extracting** / analyzed / archived |
 | Tags | multi-select | earnings / financials / strategy / guidance / risk |
 
 ### DB 3: Quotes
 | Field | Type | หมายเหตุ |
 |-------|------|----------|
 | Quote | title | ข้อความต้นฉบับ |
-| Quote TH | text | DeepSeek แปล |
+| Quote TH | text | **DeepSeek แปลอัตโนมัติ** |
 | Company / Source Doc | relation | |
 | Date / Quarter | date/select | |
-| Segment | select | Prepared Remarks / Q&A / Written Submission |
+| Segment | select | **Prepared Remarks / Q&A / Written Submission** |
 | Speaker | text | CEO, CFO... |
 | Tag | select | growth / risk / strategy / guidance / product / macro |
 | Sub-tag | multi-select | revenue-guidance / margin / capex / AI / china-risk / competition / product-launch / hiring / buyback / debt |
-| Sentiment | select | bullish / neutral / cautious / bearish |
+| Sentiment | select | **bullish / neutral / cautious / bearish** — DeepSeek classify |
 | Analyst Note | text | Claude เพิ่มภายหลัง |
 | Parent Quote | relation → self | quotes ที่เกี่ยวกัน |
 
@@ -296,9 +331,9 @@ generate-quartz.js:
 | Company / Source Doc | relation | |
 | Origin Quote | relation → Quotes | |
 | Evidence | relation → Quotes | หลักฐาน delivery |
-| Status | select | pending / in_progress / monitoring / delivered / missed |
-| Category | select | Strategic / Financial / Product / Operational / Regulatory |
-| Confidence | select | low / medium / high |
+| Status | select | **pending** (default) / in_progress / monitoring / delivered / missed |
+| Category | select | **Strategic / Financial / Product / Operational / Regulatory** |
+| Confidence | select | **low / medium / high** — DeepSeek assess |
 | Quarter Said / Target Quarter | select | |
 | Delivery Note | text | สรุปผลการส่งมอบ |
 | Parent Commitment | relation → self | |
@@ -308,7 +343,7 @@ generate-quartz.js:
 |-------|------|----------|
 | Title | title | |
 | Company / Source Doc | relation | |
-| Note Type | select | Analysis / Observation / Risk / Thesis / Update / Question |
+| Note Type | select | **Analysis** / Observation / Risk / Thesis / Update / Question |
 | Date / Quarter | date/select | |
 | Tags | multi-select | earnings / risk / strategy / growth / macro / valuation / services / china |
 | Rating | number | 1-5 ความสำคัญ |
@@ -332,13 +367,13 @@ generate-quartz.js:
 | Task | title | ชื่องาน |
 | Company / Related Source | relation | |
 | Task Type | select | Add Data / Analyze Document / Write Report / Update Roadmap / Fix UI |
-| Status | select | pending / in_progress / done / blocked |
+| Status | select | pending / in_progress / **done** (auto-close จาก deepseek-extract) / blocked |
 | Priority / Assigned To | select | |
 | Related Report / Due Quarter | relation/select | |
 
 ---
 
-## 6. Relation Map
+## 7. Relation Map
 
 ```
 Companies ←────────────────────────────────┐
@@ -361,7 +396,7 @@ Key chains:
 
 ---
 
-## 7. Web Interface Mapping
+## 8. Web Interface Mapping
 
 | Website Tab | Notion Source | Fields แสดง |
 |-------------|---------------|-------------|
@@ -376,31 +411,52 @@ Key chains:
 
 ---
 
-## 8. Token Cost Comparison
+## 9. Token Cost Comparison
 
 | Operation | แบบเก่า | แบบใหม่ | ประหยัด |
 |-----------|---------|---------|---------|
-| วิเคราะห์ Earnings Call | ~8,000 tokens (Claude) | ~500 tokens (DeepSeek extract) + 800 tokens (Claude synth) | ~85% |
+| วิเคราะห์ Earnings Call | ~8,000 tokens (Claude) | ~$0.02 (DeepSeek) + 800 tokens (Claude synth) | ~90% cost |
 | อัปเดต roadmap 1 item | ~5,000 tokens (โหลด JSON) | ~100 tokens (Notion API call) | ~98% |
 | ตอบคำถาม "management tone ล่าสุด" | ~3,000 tokens (โหลด JSON) | ~200 tokens (Notion query) | ~93% |
 | เขียน Analytic Report | ~6,000 tokens | ~800 tokens (Claude + Notion data) | ~87% |
+| Trigger extraction ใหม่ | manual copy-paste prompt | กด Run workflow ใน GitHub | 100% automated |
 
 ---
 
-## 9. Cowork Skills
+## 10. Cowork Skills
 
 | Skill | AI ที่ใช้ | ทำอะไร |
 |-------|----------|--------|
-| `prometheus:add-company` | Claude | Step 1-2: Bootstrap JSON + Notion + Sources |
-| `prometheus:analyze-earnings` | DeepSeek + Claude | Step 3-4: Extract → Notion → Synthesize |
-| `prometheus:analyze-report` | DeepSeek + Claude | Step 3-4: สำหรับ Annual Report / 10-K |
+| `prometheus:add-company` | Claude | Step 1: Bootstrap JSON + Notion + Task |
+| `prometheus:analyze-earnings` | Claude (post-extraction) | Step 4: สังเคราะห์หลัง DeepSeek เสร็จ |
+| `prometheus:analyze-report` | Claude (post-extraction) | Step 4: สำหรับ Annual Report / 10-K |
 | `prometheus:track-delivery` | Claude | Query Notion Roadmap → ประเมิน delivery rate |
 | `fix-ui` | Claude | debug website rendering issues |
 
+> **หมายเหตุ:** Step 3 (Extraction) ไม่ผ่าน Cowork Skills แล้ว — ทำงานผ่าน GitHub Actions `deepseek-extract.yml` อัตโนมัติ
+
 ---
 
-## 10. การเปลี่ยนแปลงจาก v1 → v2.1
+## 11. DeepSeek Prompt Files
 
+| ไฟล์ | Agent | Output fields |
+|------|-------|---------------|
+| `phase2_deep_analysis.md` | A — Qualitative | management_tone, strategic_priorities, management_quality, competitive_position, outlook_signals, financial_summary |
+| `phase2_roadmap.md` | B — Roadmap | commitment, category, confidence, quarter_said, target_quarter, status |
+| `phase2_quotes.md` | C — Quotes | quote, **quote_th**, speaker, **segment**, tag, **sentiment**, **sub_tags** |
+| `phase2_risks.md` | D — Risks | key_risks[{risk, severity, description}], risk_summary |
+| `phase3_narrative.md` | E — Narrative Drift | tone/topic shift ข้ามปี |
+| `phase3_business.md` | F — Business Evolution | segment/KPI changes |
+| `phase3_accounting.md` | G — Accounting Watch | policy changes, optical improvements |
+| `phase3_risk_evolution.md` | H — Risk Evolution | risks appeared/disappeared/escalated |
+
+> **굵은 fields** = เพิ่มใหม่ใน v2.2 เพื่อ map ตรงกับ Notion schema
+
+---
+
+## 12. การเปลี่ยนแปลง
+
+### v1 → v2.1
 | สิ่งที่เปลี่ยน | v1 | v2.1 |
 |----------------|-----|------|
 | Primary storage | data.json | Notion (JSON เป็น output เท่านั้น) |
@@ -410,4 +466,15 @@ Key chains:
 | Task visibility | ไม่มี | Tasks DB (User เห็นความคืบหน้า) |
 | Report pipeline | ไม่มี | Draft → Review → Published |
 | DB count | 4 | 7 |
-| Token cost | สูงมาก | ลดลง 85-98% ต่อ operation |
+
+### v2.1 → v2.2
+| สิ่งที่เปลี่ยน | v2.1 | v2.2 |
+|----------------|------|------|
+| DeepSeek trigger | manual (copy prompt) | **GitHub Actions — กดปุ่มเดียว** |
+| Extraction script | ไม่มี | `scripts/deepseek-extract.js` |
+| Agent execution | sequential | **parallel (Promise.allSettled)** |
+| PDF support | ไม่มี | **pdf-parse** |
+| Quote fields | quote, speaker, tag | + **quote_th, segment, sentiment, sub_tags** |
+| Roadmap fields | commitment, date_said | + **category, confidence, quarter_said, target_quarter** |
+| Task auto-close | manual | **auto-close เมื่อ extraction เสร็จ** |
+| Source status | manual | **auto: extracting → analyzed** |
