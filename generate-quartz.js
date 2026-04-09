@@ -1,410 +1,422 @@
 #!/usr/bin/env node
 /**
- * generate-quartz.js
- * ==================
- * Converts Prometheus data/TICKER/data.json → Quartz Markdown content files
+ * generate-quartz.js — Prometheus v2.1
+ * ─────────────────────────────────────────────────────────────────────────────
+ * Reads  data/{TICKER}/data.json
+ * Writes quartz/content/{ticker}.md   (one page per company)
+ * Writes quartz/content/index.md      (master index)
  *
- * Output structure:
- *   quartz/content/
- *     index.md              ← Homepage with company list
- *     companies/TICKER.md   ← Per-company research page
- *     sectors/SECTOR.md     ← Sector grouping pages
- *
- * Usage:
- *   node scripts/generate-quartz.js
- *   node scripts/generate-quartz.js --verbose
+ * New in v2.1:
+ *   - Industry, Country, Market Cap (B), Conviction Level, Investment Thesis
+ *   - Sources section (from data.sources[])
+ *   - Analytic Reports section (from data.analytic_reports[])
+ *   - Note Type badge on research notes
+ *   - Sub-tags, Sentiment, Analyst Note on quotes
+ *   - Delivery Note, Confidence on roadmap items
+ * ─────────────────────────────────────────────────────────────────────────────
  */
 
-const fs = require("fs");
-const path = require("path");
+const fs   = require('fs');
+const path = require('path');
 
-const VERBOSE = process.argv.includes("--verbose");
+const DATA_DIR    = path.join(__dirname, 'data');
+const CONTENT_DIR = path.join(__dirname, 'quartz', 'content');
 
-const ROOT_DIR = path.join(__dirname, "..");
-const DATA_DIR = path.join(ROOT_DIR, "data");
-const QUARTZ_CONTENT = path.join(ROOT_DIR, "quartz", "content");
-const COMPANIES_DIR = path.join(QUARTZ_CONTENT, "companies");
-const SECTORS_DIR = path.join(QUARTZ_CONTENT, "sectors");
+// ─── Helpers ──────────────────────────────────────────────────────────────────
 
-// ── Helpers ─────────────────────────────────────────────────────────────────
+const esc = (s) => (s || '').replace(/"/g, '\\"');
 
-const STATUS_ICONS = {
-  delivered: "✅",
-  completed: "✅",
-  in_progress: "🔄",
-  partial: "⚠️",
-  pending: "⏳",
-  cancelled: "❌",
-  delayed: "⚠️",
+const STATUS_EMOJI = {
+  delivered : '✅',
+  pending   : '⏳',
+  missed    : '❌',
+  partial   : '🔶',
+  monitoring: '👁️',
 };
 
-function icon(status) {
-  return STATUS_ICONS[(status || "").toLowerCase()] || "⏳";
+function formatDate(d) {
+  if (!d) return '—';
+  try {
+    return new Date(d).toLocaleDateString('en-US', { day: 'numeric', month: 'short', year: 'numeric' });
+  } catch {
+    return d;
+  }
 }
 
-/** Convert [Section Name] lines in note content to ### headings */
-function formatNoteContent(content) {
-  if (!content) return "";
-  return content
-    .replace(/^\[([^\]]+)\]\s*$/gm, "### $1")
-    .replace(/^•/gm, "-")      // bullet normalisation
-    .trim();
-}
-
-/** Escape pipe characters inside table cells */
-function escapeCell(text) {
-  return (text || "").replace(/\|/g, "\\|").replace(/\n/g, " ").trim();
-}
-
-function log(msg) {
-  if (VERBOSE) console.log(msg);
-}
-
-// ── Page Generators ──────────────────────────────────────────────────────────
+// ─── Company page generator ───────────────────────────────────────────────────
 
 function generateCompanyPage(data) {
-  const {
-    ticker = "",
-    name = "",
-    name_th = "",
-    sector = "Unknown",
-    exchange = "",
-    last_updated = "",
-    description = "",
-    notes = [],
-    quotes = [],
-    roadmap = [],
-    overview = {},
-    financials = {},
-  } = data;
+  const lines = [];
 
-  const sectorSlug = sector.toLowerCase().replace(/\s+/g, "-");
+  const sources  = data.sources          || [];
+  const notes    = data.notes            || [];
+  const quotes   = data.quotes           || [];
+  const roadmap  = data.roadmap          || [];
+  const reports  = data.analytic_reports || [];
+  const ov       = data.overview         || null;
+  const fin      = data.financials       || null;
 
-  // Collect tags from notes
-  const noteTags = notes.flatMap((n) => n.tags || []);
-  const baseTags = [sectorSlug, exchange.toLowerCase(), ticker.toLowerCase()];
-  const allTags = [...new Set([...baseTags, ...noteTags])].filter(Boolean);
+  const delivered = roadmap.filter(r => r.status === 'delivered').length;
+  const concluded = roadmap.filter(r => ['delivered','missed','partial'].includes(r.status)).length;
+  const drPct     = concluded > 0 ? Math.round(delivered / concluded * 100) : null;
 
-  let md = "";
+  // ── Frontmatter ───────────────────────────────────────────────────────────
+  lines.push('---');
+  lines.push(`title: "${esc(data.name)} (${data.ticker})"`);
+  lines.push(`ticker: ${data.ticker}`);
+  if (data.sector)           lines.push(`sector: "${esc(data.sector)}"`);
+  if (data.industry)         lines.push(`industry: "${esc(data.industry)}"`);
+  if (data.exchange)         lines.push(`exchange: ${data.exchange}`);
+  if (data.country)          lines.push(`country: "${esc(data.country)}"`);
+  if (data.conviction_level) lines.push(`conviction: "${esc(data.conviction_level)}"`);
+  if (data.last_analyzed)    lines.push(`last_analyzed: ${data.last_analyzed}`);
+  if (data.last_updated)     lines.push(`date: ${data.last_updated}`);
+  lines.push('tags:');
+  lines.push('  - company');
+  if (data.sector)           lines.push(`  - ${data.sector.toLowerCase().replace(/[\s/]+/g, '-')}`);
+  if (data.conviction_level) lines.push(`  - conviction-${data.conviction_level.toLowerCase().replace(/\s+/g, '-')}`);
+  lines.push('draft: false');
+  lines.push('---');
+  lines.push('');
 
-  // ── Frontmatter
-  md += `---\n`;
-  md += `title: "${ticker} — ${name}"\n`;
-  md += `ticker: ${ticker}\n`;
-  md += `name: "${name}"\n`;
-  if (name_th && name_th !== name) md += `name_th: "${name_th}"\n`;
-  md += `sector: ${sector}\n`;
-  md += `exchange: ${exchange}\n`;
-  md += `last_updated: ${last_updated}\n`;
-  md += `tags:\n`;
-  allTags.forEach((t) => (md += `  - ${t}\n`));
-  md += `---\n\n`;
+  // ── Page header ───────────────────────────────────────────────────────────
+  lines.push(`# ${data.name} (${data.ticker})`);
+  lines.push('');
 
-  // ── Page Header
-  md += `# ${ticker} — ${name}\n\n`;
-  if (name_th && name_th !== name) md += `*${name_th}*\n\n`;
-  md += `**Sector:** ${sector} | **Exchange:** ${exchange} | **Updated:** ${last_updated}\n\n`;
-  if (description) md += `${description}\n\n`;
+  // Meta row
+  const metaParts = [];
+  if (data.exchange)      metaParts.push(`**Exchange:** ${data.exchange}`);
+  if (data.sector)        metaParts.push(`**Sector:** ${data.sector}`);
+  if (data.industry)      metaParts.push(`**Industry:** ${data.industry}`);
+  if (data.country)       metaParts.push(`**Country:** ${data.country}`);
+  if (data.market_cap_b)  metaParts.push(`**Mkt Cap:** $${data.market_cap_b}B`);
+  if (data.ceo)           metaParts.push(`**CEO:** ${data.ceo}`);
+  if (data.website)       metaParts.push(`**Web:** [${data.website.replace(/^https?:\/\//, '')}](${data.website})`);
+  if (metaParts.length)   lines.push(metaParts.join('  ·  '));
+  lines.push('');
 
-  // ── Overview
-  if (overview.business_model_summary) {
-    md += `## Business Model\n\n${overview.business_model_summary}\n\n`;
+  if (data.description) {
+    lines.push(`> ${data.description}`);
+    lines.push('');
   }
 
-  if (overview.competitive_position) {
-    md += `## Competitive Position\n\n${overview.competitive_position}\n\n`;
-  }
-
-  if (overview.moat_factors?.length > 0) {
-    md += `### Moat Factors\n\n`;
-    overview.moat_factors.forEach((f) => (md += `- ${f}\n`));
-    md += `\n`;
-  }
-
-  // ── Segments
-  if (overview.segments?.length > 0) {
-    md += `## Business Segments\n\n`;
-    overview.segments.forEach((s) => {
-      md += `**${s.name}** — ${s.description || ""}\n\n`;
-    });
-  }
-
-  // ── Management
-  if (overview.management?.length > 0) {
-    md += `## Management\n\n`;
-    overview.management.forEach((m) => {
-      md += `**${m.name}** *(${m.title})*`;
-      if (m.note) md += `\n> ${m.note.replace(/\n/g, "\n> ")}`;
-      md += `\n\n`;
-    });
-  }
-
-  // ── Investment Case
-  // bull_case / bear_case can be string or array depending on data source
-  const bullItems = Array.isArray(overview.bull_case)
-    ? overview.bull_case
-    : overview.bull_case
-    ? [overview.bull_case]
-    : [];
-  const bearItems = Array.isArray(overview.bear_case)
-    ? overview.bear_case
-    : overview.bear_case
-    ? [overview.bear_case]
-    : [];
-
-  if (bullItems.length > 0 || bearItems.length > 0) {
-    md += `## Investment Case\n\n`;
-    if (bullItems.length > 0) {
-      md += `### Bull Case\n\n`;
-      bullItems.forEach((b) => (md += `- ${b}\n`));
-      md += `\n`;
+  // ── Conviction & Investment Thesis ────────────────────────────────────────
+  if (data.conviction_level || data.investment_thesis) {
+    lines.push('## 🎯 Investment Thesis');
+    lines.push('');
+    if (data.conviction_level) {
+      lines.push(`**Conviction Level:** ${data.conviction_level}  ·  **Last Analyzed:** ${data.last_analyzed || '—'}`);
+      lines.push('');
     }
-    if (bearItems.length > 0) {
-      md += `### Bear Case\n\n`;
-      bearItems.forEach((b) => (md += `- ${b}\n`));
-      md += `\n`;
+    if (data.investment_thesis) {
+      lines.push(data.investment_thesis);
+      lines.push('');
     }
   }
 
-  // ── Key Risks
-  if (overview.key_risks?.length > 0) {
-    md += `## Key Risks\n\n`;
-    overview.key_risks.forEach((r) => {
-      if (typeof r === "string") {
-        md += `- ${r}\n`;
-      } else {
-        const sev = r.severity ? ` *(${r.severity})*` : "";
-        md += `- **${r.risk}**${sev}: ${r.description || ""}\n`;
+  // ── Quick Stats ───────────────────────────────────────────────────────────
+  lines.push('## 📊 Quick Stats');
+  lines.push('');
+  lines.push('| Metric | Value |');
+  lines.push('|--------|-------|');
+  lines.push(`| Sources Analyzed | ${sources.length} |`);
+  lines.push(`| Research Notes | ${notes.length} |`);
+  lines.push(`| Management Quotes | ${quotes.length} |`);
+  lines.push(`| Roadmap Items | ${roadmap.length} |`);
+  if (drPct !== null) lines.push(`| Delivery Rate | **${drPct}%** (${delivered}/${concluded} concluded) |`);
+  if (reports.length) lines.push(`| Analytic Reports | ${reports.length} |`);
+  if (data.management_tone) lines.push(`| Management Tone | ${data.management_tone} |`);
+  lines.push('');
+
+  // ── Sources ───────────────────────────────────────────────────────────────
+  if (sources.length) {
+    lines.push('## 📁 Sources');
+    lines.push('');
+    lines.push('| Title | Type | Quarter | Date | Status | Analyzed By |');
+    lines.push('|-------|------|---------|------|--------|-------------|');
+    for (const s of sources) {
+      const title  = s.url ? `[${s.title || '—'}](${s.url})` : (s.title || '—');
+      const type   = s.source_type  || '—';
+      const qtr    = s.quarter      || '—';
+      const dt     = s.date         || '—';
+      const status = s.status       || '—';
+      const by     = s.analyzed_by  || '—';
+      lines.push(`| ${title} | ${type} | ${qtr} | ${dt} | ${status} | ${by} |`);
+    }
+    lines.push('');
+  }
+
+  // ── Analytic Reports ──────────────────────────────────────────────────────
+  if (reports.length) {
+    lines.push('## 📋 Analytic Reports');
+    lines.push('');
+    for (const r of reports) {
+      lines.push(`### ${r.title || 'Untitled Report'}`);
+      const rMeta = [];
+      if (r.report_type) rMeta.push(`**Type:** ${r.report_type}`);
+      if (r.quarter)     rMeta.push(`**Quarter:** ${r.quarter}`);
+      if (r.author)      rMeta.push(`**Author:** ${r.author}`);
+      if (r.status)      rMeta.push(`**Status:** ${r.status}`);
+      if (rMeta.length)  lines.push(rMeta.join('  ·  '));
+      lines.push('');
+      if (r.executive_summary) {
+        lines.push(`> ${r.executive_summary}`);
+        lines.push('');
       }
-    });
-    md += `\n`;
-  }
-
-  // ── Roadmap
-  if (roadmap.length > 0) {
-    const delivered = roadmap.filter((r) =>
-      ["delivered", "completed"].includes((r.status || "").toLowerCase())
-    ).length;
-    const total = roadmap.length;
-    const pct = Math.round((delivered / total) * 100);
-
-    md += `## Roadmap\n\n`;
-    md += `*Delivery: ${delivered}/${total} (${pct}%)*\n\n`;
-    md += `| | Commitment | Date Said | Source | Follow-up |\n`;
-    md += `|---|---|---|---|---|\n`;
-    roadmap.forEach((r) => {
-      const follow = r.follow_up ? escapeCell(r.follow_up) : "";
-      md += `| ${icon(r.status)} | ${escapeCell(r.commitment)} | ${r.date_said || ""} | ${r.source || ""} | ${follow} |\n`;
-    });
-    md += `\n`;
-  }
-
-  // ── Management Quotes
-  if (quotes.length > 0) {
-    md += `## Management Quotes\n\n`;
-    quotes.forEach((q) => {
-      md += `> "${q.quote}"\n`;
-      md += `>\n`;
-      md += `> — **${q.speaker}**, *${q.source}* (${q.date || ""})`;
-      if (q.tag) md += ` \`#${q.tag}\``;
-      md += `\n\n`;
-    });
-  }
-
-  // ── Analysis Notes
-  if (notes.length > 0) {
-    md += `## Analysis Notes\n\n`;
-    notes.forEach((n) => {
-      const stars = n.rating ? "⭐".repeat(Math.min(n.rating, 5)) : "";
-      md += `### ${n.title || "Note"} *(${n.date || ""})*\n\n`;
-      if (stars) md += `**Rating:** ${stars}\n\n`;
-      if (n.tags?.length > 0) {
-        md += `**Tags:** ${n.tags.map((t) => `\`${t}\``).join(" ")}\n\n`;
+      if (r.body) {
+        lines.push(r.body);
+        lines.push('');
       }
+      lines.push('---');
+      lines.push('');
+    }
+  }
+
+  // ── Research Notes ────────────────────────────────────────────────────────
+  if (notes.length) {
+    lines.push('## 📝 Research Notes');
+    lines.push('');
+    const sorted = [...notes].reverse();
+    for (const n of sorted) {
+      if (!n.active && n.active !== undefined) continue; // skip inactive
+      lines.push(`### ${n.title || 'Untitled Note'}`);
+      const nMeta = [];
+      if (n.note_type)  nMeta.push(`**${n.note_type}**`);
+      if (n.quarter)    nMeta.push(n.quarter);
+      if (n.date)       nMeta.push(formatDate(n.date));
+      if (n.rating)     nMeta.push(`${'★'.repeat(n.rating)}${'☆'.repeat(5 - n.rating)}`);
+      if (nMeta.length) lines.push(nMeta.join('  ·  '));
+      if (n.tags?.length) lines.push(`*${n.tags.map(tg => '#' + tg).join(' ')}*`);
+      lines.push('');
       if (n.content) {
-        md += `${formatNoteContent(n.content)}\n\n`;
+        lines.push(n.content);
+        lines.push('');
       }
-      // Thai version (collapsible hint)
-      if (n.content_th) {
-        md += `<details>\n<summary>🇹🇭 Thai Version</summary>\n\n${formatNoteContent(n.content_th)}\n\n</details>\n\n`;
+      if (n.source_doc?.title) {
+        const srcLink = n.source_doc.url
+          ? `[${n.source_doc.title}](${n.source_doc.url})`
+          : n.source_doc.title;
+        lines.push(`*Source: ${srcLink}*`);
+        lines.push('');
       }
-    });
-  }
-
-  // ── Financials summary (just years available)
-  if (financials.years?.length > 0) {
-    md += `## Financials\n\n`;
-    md += `*Data available for: ${financials.years.join(", ")} (${financials.currency || "USD"} ${financials.unit || ""})*\n\n`;
-    if (financials.links?.length > 0) {
-      financials.links.forEach((l) => {
-        md += `- [${l.label || l.url}](${l.url})\n`;
-      });
-      md += `\n`;
     }
   }
 
-  // ── See Also
-  md += `## See Also\n\n`;
-  md += `- [[sectors/${sectorSlug}|All ${sector} companies]]\n`;
-  md += `- [Dashboard](https://parametb.github.io/prometheus/company.html?ticker=${ticker})\n`;
+  // ── Management Quotes ─────────────────────────────────────────────────────
+  if (quotes.length) {
+    lines.push('## 💬 Management Quotes');
+    lines.push('');
+    const sorted = [...quotes].reverse();
+    for (const q of sorted) {
+      if (!q.quote) continue;
+      lines.push(`> ${q.quote}`);
+      const qMeta = [];
+      if (q.speaker)   qMeta.push(`— ${q.speaker}`);
+      if (q.source)    qMeta.push(q.source);
+      if (q.quarter)   qMeta.push(q.quarter);
+      else if (q.date) qMeta.push(formatDate(q.date));
+      if (qMeta.length) lines.push(`*${qMeta.join('  ·  ')}*`);
 
-  return md;
+      // Tags
+      const allTags = [q.tag, ...(q.sub_tags || [])].filter(Boolean);
+      if (allTags.length) lines.push(`*${allTags.map(tg => '#' + tg).join(' ')}*`);
+
+      // Sentiment
+      if (q.sentiment) {
+        const emoji = q.sentiment === 'Bullish' ? '🟢' : q.sentiment === 'Bearish' ? '🔴' : '🟡';
+        lines.push(`*${emoji} ${q.sentiment}*`);
+      }
+
+      // Analyst note
+      if (q.analyst_note) {
+        lines.push('');
+        lines.push(`📌 *${q.analyst_note}*`);
+      }
+
+      if (q.quote_th) {
+        lines.push('');
+        lines.push(`> 🇹🇭 ${q.quote_th}`);
+      }
+
+      lines.push('');
+    }
+  }
+
+  // ── Management Roadmap ────────────────────────────────────────────────────
+  if (roadmap.length) {
+    lines.push('## 🗺️ Management Roadmap');
+    lines.push('');
+
+    if (drPct !== null) {
+      lines.push(`**Delivery Rate:** ${drPct}%  (${delivered} delivered / ${concluded} concluded / ${roadmap.length} total)`);
+      lines.push('');
+    }
+
+    const sorted = [...roadmap].sort(
+      (a, b) => new Date(b.date_said || 0) - new Date(a.date_said || 0)
+    );
+
+    for (const r of sorted) {
+      const emoji = STATUS_EMOJI[r.status] || '•';
+      const text  = r.commitment || '—';
+      lines.push(`${emoji} **${text}**`);
+
+      const rMeta = [];
+      if (r.date_said)       rMeta.push(`Said: ${formatDate(r.date_said)}`);
+      if (r.target_quarter)  rMeta.push(`Target: ${r.target_quarter}`);
+      if (r.source)          rMeta.push(r.source);
+      if (r.confidence)      rMeta.push(`Confidence: ${r.confidence}`);
+      if (rMeta.length)      lines.push(`*${rMeta.join('  ·  ')}*`);
+
+      if (r.follow_up) {
+        lines.push(`  → **Outcome (${formatDate(r.follow_up_date)}):** ${r.follow_up}`);
+      }
+      if (r.delivery_note) {
+        lines.push(`  📌 ${r.delivery_note}`);
+      }
+      lines.push('');
+    }
+  }
+
+  // ── Financials ────────────────────────────────────────────────────────────
+  if (fin?.metrics?.length && fin?.years?.length) {
+    lines.push('## 💰 Financials');
+    lines.push('');
+    lines.push(`*${fin.currency || 'USD'}, ${fin.unit || 'Million'}*`);
+    lines.push('');
+    lines.push(`| Metric | ${fin.years.join(' | ')} |`);
+    lines.push(`|--------|${fin.years.map(() => '------').join('|')}|`);
+    for (const m of fin.metrics) {
+      const vals = m.values.map(v => v != null ? v.toLocaleString() : '—');
+      lines.push(`| ${m.name} | ${vals.join(' | ')} |`);
+    }
+    lines.push('');
+    if (fin.notes) {
+      lines.push(`*${fin.notes}*`);
+      lines.push('');
+    }
+  }
+
+  // ── Overview (key fields) ─────────────────────────────────────────────────
+  if (ov) {
+    if (ov.bull_case || ov.bear_case) {
+      lines.push('## ⚖️ Bull / Bear Case');
+      lines.push('');
+      if (ov.bull_case) {
+        lines.push('**🟢 Bull Case**');
+        lines.push('');
+        lines.push(ov.bull_case);
+        lines.push('');
+      }
+      if (ov.bear_case) {
+        lines.push('**🔴 Bear Case**');
+        lines.push('');
+        lines.push(ov.bear_case);
+        lines.push('');
+      }
+    }
+    if (ov.key_risks?.length) {
+      lines.push('## ⚠️ Key Risks');
+      lines.push('');
+      for (const r of ov.key_risks) {
+        lines.push(`- **[${r.severity || 'medium'}]** ${r.risk}${r.description ? ': ' + r.description : ''}`);
+      }
+      lines.push('');
+    }
+  }
+
+  return lines.join('\n');
 }
 
-function generateSectorPage(sectorName, companies) {
-  const slug = sectorName.toLowerCase().replace(/\s+/g, "-");
-  let md = `---\ntitle: "${sectorName} Sector"\ntags:\n  - sector\n  - ${slug}\n---\n\n`;
-  md += `# ${sectorName}\n\n`;
-  md += `${companies.length} ${companies.length === 1 ? "company" : "companies"} tracked in **${sectorName}**:\n\n`;
-  companies.forEach((c) => {
-    md += `- [[companies/${c.ticker}|${c.ticker} — ${c.name}]]\n`;
-  });
-  md += `\n`;
-  return md;
+// ─── Index page generator ─────────────────────────────────────────────────────
+
+function generateIndexPage(companies) {
+  const sorted = [...companies].sort((a, b) => (a.name || '').localeCompare(b.name || ''));
+
+  const lines = [
+    '---',
+    'title: "Prometheus Research"',
+    'tags:',
+    '  - index',
+    'draft: false',
+    '---',
+    '',
+    '# 🔥 Prometheus Research',
+    '',
+    '> Investment research powered by Notion + AI — updated every 6 hours',
+    '',
+    `*Last generated: ${new Date().toISOString().slice(0, 10)}  ·  ${sorted.length} companies tracked*`,
+    '',
+    '## Companies',
+    '',
+    '| Ticker | Name | Sector | Conviction | Delivery | Sources | Notes |',
+    '|--------|------|--------|------------|----------|---------|-------|',
+  ];
+
+  for (const c of sorted) {
+    const srcs      = (c.sources          || []).length;
+    const notes     = (c.notes            || []).length;
+    const roadmap   = c.roadmap           || [];
+    const delivered = roadmap.filter(r => r.status === 'delivered').length;
+    const concluded = roadmap.filter(r => ['delivered','missed','partial'].includes(r.status)).length;
+    const dr        = concluded > 0 ? `${Math.round(delivered/concluded*100)}%` : '—';
+
+    lines.push(
+      `| [[${c.ticker}]] | ${c.name || '—'} | ${c.sector || '—'} | ` +
+      `${c.conviction_level || '—'} | ${dr} | ${srcs} | ${notes} |`
+    );
+  }
+
+  lines.push('');
+  return lines.join('\n');
 }
 
-function generateIndex(companies) {
-  // Group by exchange
-  const byExchange = {};
-  companies.forEach((c) => {
-    const ex = c.exchange || "Other";
-    if (!byExchange[ex]) byExchange[ex] = [];
-    byExchange[ex].push(c);
-  });
-
-  // Group by sector
-  const bySector = {};
-  companies.forEach((c) => {
-    const sec = c.sector || "Unknown";
-    if (!bySector[sec]) bySector[sec] = [];
-    bySector[sec].push(c);
-  });
-
-  const today = new Date().toISOString().split("T")[0];
-
-  let md = `---\ntitle: "Prometheus — Investment Research"\ntags:\n  - index\n---\n\n`;
-  md += `# 🔭 Prometheus Investment Research\n\n`;
-  md += `Personal investment research dashboard tracking **${companies.length} companies** across ${Object.keys(bySector).length} sectors.\n\n`;
-  md += `*Last generated: ${today}*\n\n`;
-  md += `> Use the **Graph View** (right panel) to explore connections between companies, sectors, and themes.\n\n`;
-
-  // By Exchange
-  md += `## Companies by Exchange\n\n`;
-  Object.entries(byExchange)
-    .sort(([a], [b]) => a.localeCompare(b))
-    .forEach(([exchange, cos]) => {
-      md += `### ${exchange}\n\n`;
-      cos
-        .sort((a, b) => a.ticker.localeCompare(b.ticker))
-        .forEach((c) => {
-          md += `- [[companies/${c.ticker}|${c.ticker}]] — ${c.name} *(${c.sector})*\n`;
-        });
-      md += `\n`;
-    });
-
-  // By Sector
-  md += `## Companies by Sector\n\n`;
-  Object.entries(bySector)
-    .sort(([a], [b]) => a.localeCompare(b))
-    .forEach(([sector, cos]) => {
-      const slug = sector.toLowerCase().replace(/\s+/g, "-");
-      md += `### [[sectors/${slug}|${sector}]]\n\n`;
-      cos
-        .sort((a, b) => a.ticker.localeCompare(b.ticker))
-        .forEach((c) => {
-          md += `- [[companies/${c.ticker}|${c.ticker} — ${c.name}]]\n`;
-        });
-      md += `\n`;
-    });
-
-  return md;
-}
-
-// ── Main ─────────────────────────────────────────────────────────────────────
+// ─── Main ─────────────────────────────────────────────────────────────────────
 
 async function main() {
-  console.log("🔄 Prometheus → Quartz content generator\n");
+  console.log('\n⚡ Prometheus Quartz Generator v2.1');
+  console.log('────────────────────────────────────\n');
 
-  // Ensure output directories exist
-  [QUARTZ_CONTENT, COMPANIES_DIR, SECTORS_DIR].forEach((dir) => {
-    if (!fs.existsSync(dir)) {
-      fs.mkdirSync(dir, { recursive: true });
-      log(`  📁 Created ${path.relative(ROOT_DIR, dir)}`);
-    }
+  fs.mkdirSync(CONTENT_DIR, { recursive: true });
+
+  // Collect all ticker directories
+  const tickers = fs.readdirSync(DATA_DIR).filter(d => {
+    try { return fs.statSync(path.join(DATA_DIR, d)).isDirectory(); }
+    catch { return false; }
   });
 
-  // Read master companies list
-  const companiesFile = path.join(DATA_DIR, "companies.json");
-  if (!fs.existsSync(companiesFile)) {
-    console.error("❌ data/companies.json not found. Aborting.");
-    process.exit(1);
-  }
+  const allCompanies = [];
+  let count = 0;
 
-  const allCompanies = JSON.parse(fs.readFileSync(companiesFile, "utf8"));
-  // Exclude BROKEN test fixtures
-  const companies = allCompanies.filter((c) => !c.ticker.startsWith("BROKEN"));
-  console.log(`📦 ${companies.length} companies found (${allCompanies.length - companies.length} test fixtures skipped)\n`);
+  for (const ticker of tickers) {
+    const dataFile = path.join(DATA_DIR, ticker, 'data.json');
+    if (!fs.existsSync(dataFile)) continue;
 
-  // Generate per-company pages
-  const sectorMap = {};
-  let generated = 0;
-  let skipped = 0;
-
-  for (const meta of companies) {
-    const dataFile = path.join(DATA_DIR, meta.ticker, "data.json");
-    if (!fs.existsSync(dataFile)) {
-      console.warn(`  ⚠️  ${meta.ticker}: data.json not found, skipping`);
-      skipped++;
-      continue;
-    }
-
-    let data;
     try {
-      data = JSON.parse(fs.readFileSync(dataFile, "utf8"));
-    } catch (e) {
-      console.warn(`  ⚠️  ${meta.ticker}: JSON parse error — ${e.message}`);
-      skipped++;
-      continue;
+      const data = JSON.parse(fs.readFileSync(dataFile, 'utf8'));
+      if (!data.ticker) continue;
+
+      allCompanies.push(data);
+
+      const md      = generateCompanyPage(data);
+      const outFile = path.join(CONTENT_DIR, `${ticker}.md`);
+      fs.writeFileSync(outFile, md, 'utf8');
+      console.log(`  ✅ ${ticker.padEnd(8)} ${data.name || ''}`);
+      count++;
+    } catch (err) {
+      console.error(`  ❌ ${ticker}: ${err.message}`);
     }
-
-    const md = generateCompanyPage(data);
-    const outPath = path.join(COMPANIES_DIR, `${meta.ticker}.md`);
-    fs.writeFileSync(outPath, md, "utf8");
-    console.log(`  ✅ companies/${meta.ticker}.md`);
-    generated++;
-
-    // Track sector membership
-    const sec = data.sector || "Unknown";
-    if (!sectorMap[sec]) sectorMap[sec] = [];
-    sectorMap[sec].push({ ticker: data.ticker, name: data.name });
   }
 
-  // Generate sector pages
-  console.log("");
-  for (const [sector, cos] of Object.entries(sectorMap)) {
-    const slug = sector.toLowerCase().replace(/\s+/g, "-");
-    const md = generateSectorPage(sector, cos);
-    const outPath = path.join(SECTORS_DIR, `${slug}.md`);
-    fs.writeFileSync(outPath, md, "utf8");
-    console.log(`  📂 sectors/${slug}.md  (${cos.length} companies)`);
-  }
+  // Write index
+  const indexMd = generateIndexPage(allCompanies);
+  fs.writeFileSync(path.join(CONTENT_DIR, 'index.md'), indexMd, 'utf8');
+  console.log('  ✅ index.md');
 
-  // Generate homepage
-  const indexMd = generateIndex(companies);
-  fs.writeFileSync(path.join(QUARTZ_CONTENT, "index.md"), indexMd, "utf8");
-  console.log(`  🏠 index.md`);
-
-  // Summary
-  console.log(`
-────────────────────────────────────────
-✨ Done!
-   Company pages : ${generated}
-   Sector pages  : ${Object.keys(sectorMap).length}
-   Skipped       : ${skipped}
-────────────────────────────────────────`);
+  console.log(`\n✨ Done: ${count} companies → quartz/content/\n`);
 }
 
-main().catch((err) => {
-  console.error("Fatal error:", err);
+main().catch(err => {
+  console.error('\nFatal:', err.message);
   process.exit(1);
 });

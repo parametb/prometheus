@@ -301,6 +301,80 @@
     .sector-consumer { background:rgba(188,140,255,0.15); color:#bc8cff; }
     .sector-other    { background:rgba(139,148,158,0.15); color:#8b949e; }
 
+    /* CONVICTION BADGE */
+    .company-conviction { display:flex; align-items:center; gap:8px; margin-top:8px; flex-wrap:wrap; }
+    .conviction-label   { font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--text-muted); letter-spacing:.06em; }
+    .conviction-badge   { border-radius:4px; font-size:11px; font-weight:700; padding:2px 8px; letter-spacing:.04em; }
+    .conviction-high,  .conviction-strong  { background:rgba(63,185,80,0.18);  color:#3fb950; }
+    .conviction-medium, .conviction-moderate { background:rgba(210,153,34,0.18); color:#d29922; }
+    .conviction-low,   .conviction-weak    { background:rgba(248,81,73,0.18);  color:#f85149; }
+    .conviction-watchlist                  { background:rgba(88,166,255,0.15); color:#58a6ff; }
+    .conviction-thesis  { font-size:12px; color:var(--text-muted); line-height:1.4; max-width:560px; }
+
+    /* NOTE TYPE BADGE */
+    .note-header-right { display:flex; align-items:center; gap:8px; }
+    .note-type-badge   { border-radius:4px; font-family:'JetBrains Mono',monospace; font-size:10px; font-weight:600; padding:2px 6px; white-space:nowrap; }
+    .nt-analysis    { background:rgba(88,166,255,0.15);  color:#58a6ff; }
+    .nt-thesis      { background:rgba(63,185,80,0.15);   color:#3fb950; }
+    .nt-risk        { background:rgba(248,81,73,0.15);   color:#f85149; }
+    .nt-observation { background:rgba(188,140,255,0.15); color:#bc8cff; }
+    .nt-update      { background:rgba(210,153,34,0.15);  color:#d29922; }
+    .nt-question    { background:rgba(139,148,158,0.15); color:#8b949e; }
+    .nt-default     { background:var(--surface2); color:var(--text-muted); }
+    .note-source-doc { font-size:11px; color:var(--text-muted); margin:2px 0 6px; }
+    .note-source-doc a { color:var(--accent); text-decoration:none; }
+    .note-source-doc a:hover { text-decoration:underline; }
+
+    /* QUOTE ENHANCEMENTS */
+    .quote-sentiment { border-radius:4px; font-size:10px; font-weight:600; padding:2px 6px; }
+    .sent-bullish { background:rgba(63,185,80,0.15);  color:#3fb950; }
+    .sent-bearish { background:rgba(248,81,73,0.15);  color:#f85149; }
+    .sent-neutral { background:rgba(210,153,34,0.15); color:#d29922; }
+    .sent-mixed   { background:rgba(188,140,255,0.15);color:#bc8cff; }
+    .quote-footer  { display:flex; flex-wrap:wrap; gap:6px; margin-top:8px; align-items:center; }
+    .quote-subtag  { background:var(--surface2); border-radius:4px; color:var(--text-muted); font-size:11px; padding:2px 6px; }
+    .quote-analyst-note { background:rgba(210,153,34,0.08); border-left:3px solid var(--yellow); border-radius:0 6px 6px 0; color:var(--text-muted); font-size:12px; line-height:1.5; margin-top:10px; padding:8px 12px; }
+    .analyst-note-icon  { margin-right:6px; }
+
+    /* ROADMAP ENHANCEMENTS */
+    .rm-body         { flex:1; min-width:0; }
+    .rm-delivery-note { background:rgba(210,153,34,0.08); border-left:3px solid var(--yellow); border-radius:0 4px 4px 0; color:var(--text-muted); font-size:12px; margin-top:6px; padding:6px 10px; }
+    .rm-note-icon    { margin-right:5px; }
+
+    /* SOURCES SECTION */
+    .src-section       { margin-bottom:28px; }
+    .src-section-title { font-size:13px; font-weight:600; color:var(--text-muted); letter-spacing:.06em; margin-bottom:12px; text-transform:uppercase; }
+    .src-grid          { display:grid; gap:10px; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); }
+    .src-card          { background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:12px 14px; transition:border-color .15s; }
+    .src-card:hover    { border-color:var(--accent); }
+    .src-card-header   { display:flex; gap:10px; align-items:flex-start; }
+    .src-icon          { font-size:18px; flex-shrink:0; line-height:1; margin-top:2px; }
+    .src-card-info     { flex:1; min-width:0; }
+    .src-title         { font-size:13px; font-weight:600; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+    .src-title a       { color:var(--text); text-decoration:none; }
+    .src-title a:hover { color:var(--accent); text-decoration:underline; }
+    .src-meta          { color:var(--text-muted); font-size:11px; margin-top:3px; }
+    .src-analyzed-by   { color:var(--text-muted); font-size:11px; margin-top:6px; }
+    .src-tags          { display:flex; flex-wrap:wrap; gap:4px; margin-top:8px; }
+    .src-tag           { background:var(--surface2); border-radius:4px; color:var(--text-muted); font-size:10px; padding:1px 5px; }
+    .src-status-badge  { border-radius:4px; font-family:'JetBrains Mono',monospace; font-size:10px; padding:2px 6px; white-space:nowrap; flex-shrink:0; }
+    .src-analyzed  { background:rgba(63,185,80,0.15);  color:#3fb950; }
+    .src-pending   { background:rgba(210,153,34,0.15); color:#d29922; }
+    .src-processing{ background:rgba(88,166,255,0.15); color:#58a6ff; }
+    .src-archived  { background:var(--surface2); color:var(--text-muted); }
+    .src-other     { background:var(--surface2); color:var(--text-muted); }
+
+    /* REPORTS */
+    .report-card         { background:var(--surface); border:1px solid var(--border); border-radius:8px; margin-bottom:12px; padding:16px 18px; }
+    .report-header       { margin-bottom:10px; }
+    .report-title        { font-size:14px; font-weight:600; }
+    .report-meta         { color:var(--text-muted); font-size:11px; margin-top:4px; }
+    .report-summary      { background:rgba(88,166,255,0.06); border-left:3px solid var(--accent); border-radius:0 6px 6px 0; color:var(--text-muted); font-size:13px; line-height:1.6; margin-bottom:12px; padding:10px 14px; }
+    .report-body-wrap    { margin-top:8px; }
+    .report-body-wrap summary { color:var(--accent); cursor:pointer; font-size:12px; padding:4px 0; user-select:none; }
+    .report-body-wrap summary:hover { text-decoration:underline; }
+    .report-body         { border-top:1px solid var(--border); font-size:13px; line-height:1.7; margin-top:8px; padding-top:10px; }
+
     /* MISC */
     .empty   { text-align:center; padding:40px; color:var(--text-muted); font-size:13px; }
     .loading { text-align:center; padding:60px; color:var(--text-muted); }
@@ -341,6 +415,7 @@
       <button class="sn-btn" data-section="notes"    data-tip="Notes"    onclick="scrollToSection('notes')">NTS</button>
       <button class="sn-btn" data-section="quotes"   data-tip="Quotes"   onclick="scrollToSection('quotes')">QTS</button>
       <button class="sn-btn" data-section="roadmap"  data-tip="Roadmap"  onclick="scrollToSection('roadmap')">RDM</button>
+      <button class="sn-btn" data-section="sources"  data-tip="Sources"  onclick="scrollToSection('sources')">SRC</button>
       <div class="sn-divider"></div>
       <button class="sn-btn" data-section="financials" data-tip="Financials" onclick="scrollToSection('financials')">FIN</button>
     </nav>
@@ -468,6 +543,8 @@ function render(){
   const notes=c.notes||[];
   const quotes=c.quotes||[];
   const roadmap=c.roadmap||[];
+  const sources=c.sources||[];
+  const reports=c.analytic_reports||[];
   const fin=c.financials||{};
   const ov=c.overview||null;
   if(ov?.segments?.length) ov.segments=enrichSegments(ov.segments);
@@ -489,14 +566,19 @@ function render(){
         <div class="company-title">${c.name}</div>
         <div class="company-meta">
           <span class="meta-tag ${sectorClass}">${c.sector}</span>
+          ${c.industry?`<span class="meta-muted">${c.industry}</span>`:''}
           <span class="meta-muted">${ticker} · ${c.exchange||'NASDAQ'}</span>
+          ${c.country?`<span class="meta-muted">· ${c.country}</span>`:''}
+          ${c.market_cap_b?`<span class="meta-muted">· $${c.market_cap_b}B</span>`:''}
           <span class="meta-muted">· ${t('company.updated')} ${formatDate(c.last_updated)}</span>
         </div>
         ${c.description?`<div class="company-desc">${c.description}</div>`:''}
+        ${c.conviction_level?`<div class="company-conviction"><span class="conviction-label">Conviction</span><span class="conviction-badge conviction-${c.conviction_level.toLowerCase().replace(/\s+/g,'-')}">${c.conviction_level}</span>${c.investment_thesis?`<span class="conviction-thesis">${c.investment_thesis}</span>`:''}</div>`:''}
       </div>
     </div>
 
     <div class="stat-strip stagger" style="--i:1">
+      <div class="stat-item"><div class="stat-label">SOURCES</div><div class="stat-value">${sources.length}</div><div class="stat-sub">${t('qs.sources_sub')||'docs analyzed'}</div></div>
       <div class="stat-item"><div class="stat-label">NOTES</div><div class="stat-value">${notes.length}</div><div class="stat-sub">${t('qs.notes_sub')}</div></div>
       <div class="stat-item"><div class="stat-label">QUOTES</div><div class="stat-value">${quotes.length}</div><div class="stat-sub">${t('qs.quotes_sub')}</div></div>
       <div class="stat-item"><div class="stat-label">ROADMAP</div><div class="stat-value">${roadmap.length}</div><div class="stat-sub">${t('qs.roadmap_sub')}</div></div>
@@ -538,6 +620,15 @@ function render(){
       ${renderRoadmapPanel(roadmap,rmStats)}
     </div>
 
+    <span class="section-anchor" id="anchor-sources"></span>
+    <div class="content-section" id="section-sources">
+      <div class="section-header">
+        <div class="section-title">📁 ${t('tab.sources')||'Sources'}</div>
+        <span class="section-badge">${sources.length}</span>
+      </div>
+      ${renderSourcesPanel(sources,reports)}
+    </div>
+
     <span class="section-anchor" id="anchor-financials"></span>
     <div class="content-section" id="section-financials">
       <div class="section-header">
@@ -561,7 +652,7 @@ function render(){
 
 /* ── SCROLL SPY ── */
 function initScrollSpy(){
-  const sections=['overview','notes','quotes','roadmap','financials'];
+  const sections=['overview','notes','quotes','roadmap','sources','financials'];
   const observer=new IntersectionObserver(entries=>{
     entries.forEach(e=>{
       if(e.isIntersecting){
@@ -731,14 +822,24 @@ async function renderOrgChart(corpStructure){
 }
 
 /* ── NOTES PANEL ── */
+const NOTE_TYPE_CLASS={'Analysis':'nt-analysis','Observation':'nt-observation','Risk':'nt-risk','Thesis':'nt-thesis','Update':'nt-update','Question':'nt-question'};
 function renderNotesPanel(notes){
   if(!notes.length)return`<div class="empty">${t('empty.notes')}</div>`;
   const allTags=collectTags(notes,'tags');
   const filterBar=tagFilterBar(allTags,activeNoteTag,'setNoteTag','clearNoteTag');
   const cards=notes.slice().reverse().map((n,i)=>{
     const hidden=activeNoteTag&&!(n.tags||[]).includes(activeNoteTag)?'hidden':'';
+    const ntClass=NOTE_TYPE_CLASS[n.note_type]||'nt-default';
+    const srcHtml=n.source_doc?.title?`<div class="note-source-doc">📄 ${n.source_doc.url?`<a href="${n.source_doc.url}" target="_blank" rel="noopener">${n.source_doc.title}</a>`:n.source_doc.title}${n.quarter?` · ${n.quarter}`:''}</div>`:'';
     return `<div class="note-card stagger ${hidden}" style="--i:${i}">
-      <div class="note-header"><div class="note-title">${n.title}</div><div class="note-date">${formatDate(n.date)}</div></div>
+      <div class="note-header">
+        <div class="note-title">${n.title}</div>
+        <div class="note-header-right">
+          ${n.note_type?`<span class="note-type-badge ${ntClass}">${n.note_type}</span>`:''}
+          <div class="note-date">${formatDate(n.date)}</div>
+        </div>
+      </div>
+      ${srcHtml}
       ${(n.tags||[]).length?`<div class="note-tags">${n.tags.map(tg=>`<button class="note-tag ${activeNoteTag===tg?'active':''}" onclick="setNoteTag('${tg}')">#${tg}</button>`).join('')}</div>`:''}
       <div class="note-body">${n.content}</div>
       ${n.rating?`<div class="note-rating">${'★'.repeat(n.rating)}${'☆'.repeat(5-n.rating)} Conviction</div>`:''}
@@ -749,17 +850,34 @@ function renderNotesPanel(notes){
 }
 
 /* ── QUOTES PANEL ── */
+const SENTIMENT_CLASS={'Bullish':'sent-bullish','Bearish':'sent-bearish','Neutral':'sent-neutral','Mixed':'sent-mixed'};
+const SENTIMENT_ICON ={'Bullish':'🟢','Bearish':'🔴','Neutral':'🟡','Mixed':'🔶'};
 function renderQuotesPanel(quotes){
   if(!quotes.length)return`<div class="empty">${t('empty.quotes')}</div>`;
   const allTags=collectTags(quotes,'tag');
   const filterBar=tagFilterBar(allTags,activeQuoteTag,'setQuoteTag','clearQuoteTag');
   const cards=quotes.slice().reverse().map((q,i)=>{
     const hidden=activeQuoteTag&&q.tag!==activeQuoteTag?'hidden':'';
+    const sentClass=SENTIMENT_CLASS[q.sentiment]||'';
+    const sentIcon=SENTIMENT_ICON[q.sentiment]||'';
+    const srcLabel=q.source_doc?.title?
+      (q.source_doc.url?`<a href="${q.source_doc.url}" target="_blank" rel="noopener">${q.source_doc.title}</a>`:q.source_doc.title)
+      :q.source||'';
+    const allSubTags=(q.sub_tags||[]).filter(t=>t);
     return `<div class="quote-card stagger ${hidden}" style="--i:${i}">
-      <div class="quote-meta"><span class="quote-source">${q.source}</span><span class="quote-speaker">— ${q.speaker||'Management'}</span><span class="quote-date">${formatDate(q.date)}</span></div>
+      <div class="quote-meta">
+        <span class="quote-source">${srcLabel}</span>
+        <span class="quote-speaker">— ${q.speaker||'Management'}</span>
+        <span class="quote-date">${formatDate(q.date)}</span>
+        ${q.sentiment?`<span class="quote-sentiment ${sentClass}">${sentIcon} ${q.sentiment}</span>`:''}
+      </div>
       <div class="quote-text">${q.quote}</div>
       ${q.quote_th?`<div class="quote-th"><div class="quote-th-label">${t('quote.th_label')}</div>${q.quote_th}</div>`:''}
-      ${q.tag?`<button class="quote-tag-link ${activeQuoteTag===q.tag?'active':''}" onclick="setQuoteTag('${q.tag}')">#${q.tag}</button>`:''}
+      <div class="quote-footer">
+        ${q.tag?`<button class="quote-tag-link ${activeQuoteTag===q.tag?'active':''}" onclick="setQuoteTag('${q.tag}')">#${q.tag}</button>`:''}
+        ${allSubTags.map(st=>`<span class="quote-subtag">#${st}</span>`).join('')}
+      </div>
+      ${q.analyst_note?`<div class="quote-analyst-note"><span class="analyst-note-icon">📌</span>${q.analyst_note}</div>`:''}
     </div>`;
   }).join('');
   const emptyMsg=activeQuoteTag?`<div class="tag-filter-empty">${t('empty.quotes_tag')}${activeQuoteTag}</div>`:'';
@@ -803,17 +921,23 @@ function renderRoadmapItems(items){
     const da=a.date_said?new Date(a.date_said):new Date(0);
     const db=b.date_said?new Date(b.date_said):new Date(0);
     return db-da;
-  }).map((r,i)=>`
+  }).map((r,i)=>{
+    const srcDoc=r.source_doc?.title?
+      (r.source_doc.url?`<a href="${r.source_doc.url}" target="_blank" rel="noopener">${r.source_doc.title}</a>`:r.source_doc.title)
+      :r.source||'';
+    const srcLine=[r.date_said?`${t('rm.said_on')} ${formatDate(r.date_said)}`:'',srcDoc,r.confidence?`${t('rm.confidence')||'Confidence'}: ${r.confidence}`:'',r.target_quarter?`Target: ${r.target_quarter}`:''].filter(Boolean).join(' · ');
+    return `
     <div class="roadmap-item stagger" style="--i:${i}">
       <div class="rm-status-dot status-${r.status}"></div>
-      <div>
+      <div class="rm-body">
         <div class="rm-commitment">${rmText(r)}</div>
-        <div class="rm-source">${r.date_said?`${t('rm.said_on')} ${formatDate(r.date_said)} · `:''}${r.source||''}</div>
-                      ${(r.category||r.confidence||r.target_quarter)?`<div class="rm-meta-tags" style="display:flex;gap:5px;flex-wrap:wrap;margin-top:4px">  ${r.category?`<span class="rm-badge" style="background:rgba(88,166,255,0.1);color:var(--accent);font-size:10px;padding:2px 7px">${r.category}</span>`:''}  ${r.confidence?`<span class="rm-badge" style="background:rgba(63,185,80,0.1);color:var(--green);font-size:10px;padding:2px 7px">${r.confidence}</span>`:''}  ${r.target_quarter?`<span class="rm-badge" style="background:rgba(210,153,34,0.1);color:var(--yellow);font-size:10px;padding:2px 7px">🎯 ${r.target_quarter}</span>`:''}  </div>`:''}
+        ${srcLine?`<div class="rm-source">${srcLine}</div>`:''}
         ${r.follow_up?`<div class="rm-followup"><div class="rm-followup-label">${t('rm.outcome')} (${formatDate(r.follow_up_date)})</div>${r.follow_up}</div>`:''}
+        ${r.delivery_note?`<div class="rm-delivery-note"><span class="rm-note-icon">📌</span>${r.delivery_note}</div>`:''}
       </div>
       <span class="rm-badge badge-${r.status}">${getStatusLabel(r.status)}</span>
-    </div>`).join('');
+    </div>`;
+  }).join('');
 }
 window.filterRoadmap=function(f,btn){
   rmFilter=f;
@@ -821,6 +945,56 @@ window.filterRoadmap=function(f,btn){
   if(btn)btn.classList.add('active');
   document.getElementById('roadmap-list').innerHTML=renderRoadmapItems(companyData.roadmap||[]);
 };
+
+/* ── SOURCES PANEL ── */
+const SRC_TYPE_ICON={'Earnings Call':'🎤','Annual Report':'📑','10-K':'📄','10-Q':'📋','Investor Day':'🏛️','Press Release':'📰','Analyst Report':'🔍','Other':'📎'};
+const SRC_STATUS_CLASS={'analyzed':'src-analyzed','pending':'src-pending','processing':'src-processing','archived':'src-archived'};
+function renderSourcesPanel(sources,reports){
+  let html='';
+  if(!sources.length&&!reports.length)return`<div class="empty">${t('empty.sources')||'No sources analyzed yet'}</div>`;
+
+  /* ── Source documents table ── */
+  if(sources.length){
+    html+=`<div class="src-section"><div class="src-section-title">📁 ${t('src.docs')||'Source Documents'}</div>
+    <div class="src-grid">`;
+    sources.forEach((s,i)=>{
+      const icon=SRC_TYPE_ICON[s.source_type]||'📎';
+      const stClass=SRC_STATUS_CLASS[s.status]||'src-other';
+      const tags=(s.tags||[]).filter(Boolean);
+      html+=`<div class="src-card stagger" style="--i:${i}">
+        <div class="src-card-header">
+          <span class="src-icon">${icon}</span>
+          <div class="src-card-info">
+            <div class="src-title">${s.url?`<a href="${s.url}" target="_blank" rel="noopener">${s.title||'Untitled'}</a>`:(s.title||'Untitled')}</div>
+            <div class="src-meta">${[s.source_type,s.quarter,formatDate(s.date)].filter(Boolean).join(' · ')}</div>
+          </div>
+          ${s.status?`<span class="src-status-badge ${stClass}">${s.status}</span>`:''}
+        </div>
+        ${s.analyzed_by?`<div class="src-analyzed-by">Analyzed by: ${s.analyzed_by}</div>`:''}
+        ${tags.length?`<div class="src-tags">${tags.map(tg=>`<span class="src-tag">#${tg}</span>`).join('')}</div>`:''}
+      </div>`;
+    });
+    html+=`</div></div>`;
+  }
+
+  /* ── Analytic Reports ── */
+  if(reports.length){
+    html+=`<div class="src-section"><div class="src-section-title">📋 ${t('src.reports')||'Analytic Reports'}</div>`;
+    reports.forEach((r,i)=>{
+      html+=`<div class="report-card stagger" style="--i:${i}">
+        <div class="report-header">
+          <div class="report-title">${r.title||'Untitled Report'}</div>
+          <div class="report-meta">${[r.report_type,r.quarter,r.author?'by '+r.author:''].filter(Boolean).join(' · ')}</div>
+        </div>
+        ${r.executive_summary?`<div class="report-summary">${r.executive_summary}</div>`:''}
+        ${r.body?`<details class="report-body-wrap"><summary>${t('src.read_full')||'Read full report'}</summary><div class="report-body">${r.body.replace(/\n/g,'<br>')}</div></details>`:''}
+      </div>`;
+    });
+    html+=`</div>`;
+  }
+
+  return html;
+}
 
 /* ── GANTT ── */
 function extractEndDate(text,dateSaid){
