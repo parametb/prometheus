@@ -67,7 +67,7 @@
     "notes_count": 1,
     "quotes_count": 2,
     "roadmap_count": 3,
-    "sources_count": 1,
+    "sources_count": 0,
     "last_analyzed": null,
     "last_updated": "2026-04-09"
   },
@@ -242,12 +242,12 @@
     "exchange": "NASDAQ",
     "country": "US",
     "conviction_level": null,
-    "management_tone": null,
+    "management_tone": "bullish",
     "tradingview_symbol": "NASDAQ:GOOGL",
-    "notes_count": 0,
-    "quotes_count": 0,
-    "roadmap_count": 0,
-    "sources_count": 0,
+    "notes_count": 1,
+    "quotes_count": 12,
+    "roadmap_count": 14,
+    "sources_count": 1,
     "last_analyzed": null,
     "last_updated": "2026-04-09"
   }

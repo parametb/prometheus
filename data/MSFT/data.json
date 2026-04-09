@@ -1,22 +1,22 @@
 {
   "ticker": "MSFT",
-  "name": null,
-  "name_th": null,
-  "sector": null,
-  "industry": null,
-  "exchange": null,
-  "country": null,
-  "tradingview_symbol": null,
+  "name": "Microsoft Corporation",
+  "name_th": "Microsoft Corporation",
+  "sector": "Technology",
+  "industry": "Software / Cloud",
+  "exchange": "NASDAQ",
+  "country": "US",
+  "tradingview_symbol": "NASDAQ:MSFT",
   "last_updated": "2026-04-09",
-  "description": null,
-  "ceo": null,
-  "employees": null,
+  "description": "Microsoft develops, licenses, and supports software, services, devices, and solutions worldwide. Key segments: Intelligent Cloud (Azure), Productivity & Business Processes (Office 365, LinkedIn), and More Personal Computing.",
+  "ceo": "Satya Nadella",
+  "employees": 228000,
   "market_cap_b": null,
-  "management_tone": null,
+  "management_tone": "bullish",
   "conviction_level": null,
   "investment_thesis": null,
   "last_analyzed": null,
-  "website": null,
+  "website": "https://www.microsoft.com/",
   "notes": [
     {
       "title": "Azure Growth & AI Monetization",
@@ -107,18 +107,7 @@
       "source_doc": null
     }
   ],
-  "sources": [
-    {
-      "title": "MSFT Q2 FY2025 Earnings Call",
-      "source_type": null,
-      "date": "2025-01-29",
-      "quarter": "Q2 2025",
-      "url": null,
-      "analyzed_by": "DeepSeek",
-      "status": null,
-      "tags": []
-    }
-  ],
+  "sources": [],
   "analytic_reports": [],
   "open_tasks": [],
   "financials": {

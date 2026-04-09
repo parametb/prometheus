@@ -1,30 +1,33 @@
 ---
-title: " (MSFT)"
+title: "Microsoft Corporation (MSFT)"
 ticker: MSFT
+sector: "Technology"
+industry: "Software / Cloud"
+exchange: NASDAQ
+country: "US"
 date: 2026-04-09
 tags:
   - company
+  - technology
 draft: false
 ---
 
-# null (MSFT)
+# Microsoft Corporation (MSFT)
 
+**Exchange:** NASDAQ  ·  **Sector:** Technology  ·  **Industry:** Software / Cloud  ·  **Country:** US  ·  **CEO:** Satya Nadella  ·  **Web:** [www.microsoft.com/](https://www.microsoft.com/)
+
+> Microsoft develops, licenses, and supports software, services, devices, and solutions worldwide. Key segments: Intelligent Cloud (Azure), Productivity & Business Processes (Office 365, LinkedIn), and More Personal Computing.
 
 ## 📊 Quick Stats
 
 | Metric | Value |
 |--------|-------|
-| Sources Analyzed | 1 |
+| Sources Analyzed | 0 |
 | Research Notes | 1 |
 | Management Quotes | 2 |
 | Roadmap Items | 3 |
 | Delivery Rate | **100%** (1/1 concluded) |
-
-## 📁 Sources
-
-| Title | Type | Quarter | Date | Status | Analyzed By |
-|-------|------|---------|------|--------|-------------|
-| MSFT Q2 FY2025 Earnings Call | — | Q2 2025 | 2025-01-29 | — | DeepSeek |
+| Management Tone | bullish |
 
 ## 📝 Research Notes
 
