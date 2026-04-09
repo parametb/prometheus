@@ -1,0 +1,29 @@
+{
+  "ticker": "BROKEN_B",
+  "name": "Broken Beta Inc",
+  "sector": "Finance",
+  "exchange": "NYSE",
+  "last_updated": "2026-04-01",
+  "description": "Test company with all null date_said roadmap.",
+  "notes": [
+    {"title": "10-K Analysis", "tags": ["10-k"], "rating": 3, "content": "Strong growth driven by digital transformation initiatives."}
+  ],
+  "quotes": [],
+  "roadmap": [
+    {"commitment": "Expand digital lending platform to 10 new states", "date_said": null, "source": "10-K FY2025", "status": "pending"},
+    {"commitment": "Launch mobile-first banking app", "date_said": null, "source": "10-K FY2025", "status": "pending"},
+    {"commitment": "Achieve carbon-neutral operations by 2027", "date_said": null, "source": "10-K FY2025", "status": "pending"}
+  ],
+  "financials": {
+    "currency": "USD", "unit": "Billion", "links": [], "years": [2024, 2025],
+    "metrics": [
+      {"name": "Revenue", "values": [5.2, 5.8]},
+      {"name": "Net Income", "values": [0.8, 0.9]},
+      {"name": "EPS (diluted)", "values": [2.1, 2.4]},
+      {"name": "Free Cash Flow", "values": [0.6, 0.75]}
+    ],
+    "notes": ""
+  },
+  "ceo": "Jane Smith",
+  "employees": 12000
+}

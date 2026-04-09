@@ -1,0 +1,25 @@
+{
+  "ticker": "BROKEN_A",
+  "name": "Broken Alpha Corp",
+  "sector": "Technology",
+  "exchange": "NASDAQ",
+  "last_updated": "2026-04-01",
+  "description": "Test company with milestone key bug.",
+  "notes": [],
+  "quotes": [],
+  "roadmap": [
+    {"milestone": "Launch new product line by Q3 2026", "date_said": "2026-01-15", "source": "10-K FY2025", "status": "pending"},
+    {"milestone": "Expand to 5 new markets in 2026", "date_said": "2026-01-15", "source": "10-K FY2025", "status": "pending"},
+    {"milestone": "Achieve $1B ARR by end of 2026", "date_said": null, "source": "10-K FY2025", "status": "pending"}
+  ],
+  "financials": {
+    "currency": "USD", "unit": "Billion", "links": [], "years": [2024, 2025],
+    "metrics": [
+      {"name": "Revenue", "values": [1.2, 1.5]},
+      {"name": "Net Income", "values": [0.1, 0.15]},
+      {"name": "EPS (diluted)", "values": [1.0, 1.2]},
+      {"name": "Free Cash Flow", "values": [0.08, 0.12]}
+    ],
+    "notes": ""
+  }
+}
