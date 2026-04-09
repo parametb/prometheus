@@ -131,7 +131,7 @@ async function getPendingRoadmapItems(ticker) {
 
   const filter = {
     and: [
-      { property: 'Status', status: { equals: 'pending' } },
+      { property: 'Status', select: { equals: 'pending' } },
     ]
   };
 
@@ -278,7 +278,7 @@ Status guide:
 // ─── Update Notion roadmap item ────────────────────────────────────────────────
 async function updateRoadmapItem(pageId, status, deliveryNoteEn, deliveryNoteTh) {
   const properties = {
-    'Status': { status: { name: status } },
+    'Status': { select: { name: status } },
   };
 
   // Build delivery note (EN + TH combined)
