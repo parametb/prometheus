@@ -1,0 +1,19 @@
+{
+  "ticker": "GOOGL",
+  "name": "Alphabet Inc.",
+  "name_th": "Alphabet Inc.",
+  "sector": "Technology",
+  "exchange": "NASDAQ",
+  "conviction_level": null,
+  "management_tone": "bullish",
+  "last_analyzed": null,
+  "counts": {
+    "quotes": 24,
+    "roadmap_total": 26,
+    "roadmap_delivered": 0,
+    "notes": 2,
+    "sources": 2,
+    "reports": 0
+  },
+  "delivery_rate": 0
+}
