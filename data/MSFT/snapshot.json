@@ -1,39 +1,19 @@
 {
   "ticker": "MSFT",
-  "name": "Microsoft Corporation",
-  "name_th": "บริษัทไมโครซอฟท์คอร์ปอเรชั่น",
-  "sector": "Technology",
-  "exchange": "NASDAQ",
-  "currency": "USD",
-  "last_updated": "2026-03-29",
-  "generated_at": "2026-04-02",
-  "latest_year": 2024,
-  "financials": {
-    "unit": "Billion",
-    "currency": "USD",
-    "revenue_B": 245.1,
-    "net_income_B": 88.1,
-    "fcf_B": 74.1,
-    "op_income_B": 109.4,
-    "eps": 11.8,
-    "gross_margin_pct": 69.8
-  },
+  "name": null,
+  "name_th": null,
+  "sector": null,
+  "exchange": null,
+  "conviction_level": null,
+  "management_tone": null,
+  "last_analyzed": null,
   "counts": {
-    "notes": 1,
     "quotes": 2,
     "roadmap_total": 3,
-    "roadmap_pending": 1,
-    "roadmap_progress": 0,
-    "roadmap_delivered": 1
+    "roadmap_delivered": 1,
+    "notes": 1,
+    "sources": 1,
+    "reports": 0
   },
-  "latest_note": {
-    "date": "2025-01-15",
-    "title": "Azure Growth & AI Monetization",
-    "title_th": "การเติบโตของ Azure และการสร้างรายได้จาก AI",
-    "rating": 5,
-    "summary": "Azure growth ยังแข็งแกร่งที่ 31% YoY โดยมี AI services เป็น tailwind สำคัญ Copilot 365 มีผู้ใช้งานเชิงพาณิชย์เพิ่มขึ้น 2x QoQ  สิ่งที่น่าสนใจ: Satya พูดถึง AI Hyperscale Compute อย่างชัดเจน บ่งบอกว่า…"
-  },
-  "top_risks": [],
-  "management_tone": null,
-  "one_liner": "Azure growth ยังแข็งแกร่งที่ 31% YoY โดยมี AI services เป็น tailwind สำคัญ"
+  "delivery_rate": 33
 }

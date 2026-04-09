@@ -3,111 +3,155 @@
   "name": "Apple Inc.",
   "name_th": "Apple Inc.",
   "sector": "Technology",
+  "industry": "Consumer Electronics / Software Services",
   "exchange": "NASDAQ",
+  "country": "US",
   "tradingview_symbol": "NASDAQ:AAPL",
-  "last_updated": "2026-04-08",
+  "last_updated": "2026-04-09",
   "description": "Apple Inc. designs, manufactures, and markets smartphones, personal computers, tablets, wearables, and accessories. Known for iPhone, Mac, iPad, Apple Watch, and a fast-growing Services ecosystem.",
   "ceo": "Tim Cook",
   "employees": 164000,
+  "market_cap_b": null,
   "management_tone": "bullish",
+  "conviction_level": null,
+  "investment_thesis": null,
+  "last_analyzed": null,
+  "website": "https://www.apple.com/",
   "notes": [
     {
-      "date": "2025-02-01",
       "title": "ภาพรวม Q1 FY2025",
+      "note_type": null,
+      "date": "2025-02-01",
+      "quarter": null,
       "tags": [
         "earnings",
         "services"
       ],
       "rating": 4,
-      "content": "iPhone revenue ดีกว่าที่คาด แม้จะมีความกังวลเรื่อง China\nServices segment ทำสถิติสูงสุดอีกครั้งที่ $26.3B (+14% YoY)\nGross margin ขยับขึ้นมาอยู่ที่ 46.9% สูงกว่า consensus\nจุดที่ต้องติดตาม: Vision Pro ยังไม่มีสัญญาณว่าจะ scale ได้จริง\nAI integration ใน iOS 18 ยังช้ากว่าคู่แข่ง แต่ Tim Cook พูดว่ากำลัง expand ฟีเจอร์ใน H2 2025"
+      "active": true,
+      "content": "iPhone revenue ดีกว่าที่คาด แม้จะมีความกังวลเรื่อง China\nServices segment ทำสถิติสูงสุดอีกครั้งที่ $26.3B (+14% YoY)\nGross margin ขยับขึ้นมาอยู่ที่ 46.9% สูงกว่า consensus\nจุดที่ต้องติดตาม: Vision Pro ยังไม่มีสัญญาณว่าจะ scale ได้จริง\nAI integration ใน iOS 18 ยังช้ากว่าคู่แข่ง แต่ Tim Cook พูดว่ากำลัง expand ฟีเจอร์ใน H2 2025",
+      "source_doc": null
     },
     {
-      "date": "2024-08-15",
       "title": "วิเคราะห์ China Risk",
+      "note_type": null,
+      "date": "2024-08-15",
+      "quarter": null,
       "tags": [
         "china",
         "risk"
       ],
       "rating": 3,
-      "content": "ยอดขายใน Greater China ลดลง YoY ต่อเนื่อง 3 ไตรมาส\nHuawei กลับมาด้วย Mate 60 Pro กดดัน market share ใน premium segment\nความเสี่ยง: หากรัฐบาลจีนห้ามใช้ iPhone ในองค์กรรัฐ อาจกระทบ 15-20% ของรายได้\nApple กำลังกระจาย supply chain ไป India แต่ยังต้องใช้เวลาอีก 3-5 ปี"
+      "active": true,
+      "content": "ยอดขายใน Greater China ลดลง YoY ต่อเนื่อง 3 ไตรมาส\nHuawei กลับมาด้วย Mate 60 Pro กดดัน market share ใน premium segment\nความเสี่ยง: หากรัฐบาลจีนห้ามใช้ iPhone ในองค์กรรัฐ อาจกระทบ 15-20% ของรายได้\nApple กำลังกระจาย supply chain ไป India แต่ยังต้องใช้เวลาอีก 3-5 ปี",
+      "source_doc": null
     }
   ],
   "quotes": [
     {
-      "date": "2025-01-30",
-      "source": "Q1 FY2025 Earnings Call",
-      "speaker": "Luca Maestri (CFO)",
       "quote": "Services revenue set an all-time record of $26.3 billion, up 14 percent year over year, driven by growth across all categories and geographic segments.",
       "quote_th": "รายได้จาก Services บันทึกสถิติใหม่ตลอดกาลที่ 26.3 พันล้านเหรียญ เพิ่มขึ้น 14 เปอร์เซ็นต์เทียบปีต่อปี ขับเคลื่อนโดยการเติบโตในทุกหมวดหมู่และทุกส่วนภูมิศาสตร์",
-      "tag": "growth"
-    },
-    {
       "date": "2025-01-30",
+      "quarter": null,
+      "segment": null,
+      "speaker": "Luca Maestri (CFO)",
       "source": "Q1 FY2025 Earnings Call",
-      "speaker": "Tim Cook (CEO)",
-      "quote": "We are in the early innings of a transformative moment with Apple Intelligence. The features we're seeing resonate deeply with customers, and we're only just getting started with what we can do.",
-      "quote_th": "เราอยู่ในช่วงเริ่มต้นของโมเมนต์การเปลี่ยนแปลงครั้งยิ่งใหญ่กับ Apple Intelligence ฟีเจอร์ที่เราเห็นสร้างความประทับใจอย่างลึกซึ้งให้กับลูกค้า และเราแค่เริ่มต้นสิ่งที่เราสามารถทำได้เท่านั้น",
-      "tag": "strategy"
+      "tag": "growth",
+      "sub_tags": [],
+      "sentiment": null,
+      "analyst_note": null,
+      "source_doc": null
     },
     {
-      "date": "2024-10-31",
-      "source": "Q4 FY2024 Earnings Call",
-      "speaker": "Tim Cook (CEO)",
       "quote": "We are very excited about the AI features we're adding, and we believe this is a significant opportunity to drive upgrades in the installed base over the coming years.",
       "quote_th": "เราตื่นเต้นมากกับฟีเจอร์ AI ที่เราเพิ่มเข้ามา และเราเชื่อว่านี่คือโอกาสสำคัญในการขับเคลื่อนการ upgrade ในฐานผู้ใช้ที่มีอยู่ในช่วงปีต่อๆ ไป",
-      "tag": "strategy"
+      "date": "2024-10-31",
+      "quarter": null,
+      "segment": null,
+      "speaker": "Tim Cook (CEO)",
+      "source": "Q4 FY2024 Earnings Call",
+      "tag": "strategy",
+      "sub_tags": [],
+      "sentiment": null,
+      "analyst_note": null,
+      "source_doc": null
+    },
+    {
+      "quote": "We are in the early innings of a transformative moment with Apple Intelligence. The features we're seeing resonate deeply with customers, and we're only just getting started with what we can do.",
+      "quote_th": "เราอยู่ในช่วงเริ่มต้นของโมเมนต์การเปลี่ยนแปลงครั้งยิ่งใหญ่กับ Apple Intelligence ฟีเจอร์ที่เราเห็นสร้างความประทับใจอย่างลึกซึ้งให้กับลูกค้า และเราแค่เริ่มต้นสิ่งที่เราสามารถทำได้เท่านั้น",
+      "date": "2025-01-30",
+      "quarter": null,
+      "segment": null,
+      "speaker": "Tim Cook (CEO)",
+      "source": "Q1 FY2025 Earnings Call",
+      "tag": "strategy",
+      "sub_tags": [],
+      "sentiment": null,
+      "analyst_note": null,
+      "source_doc": null
     }
   ],
   "roadmap": [
     {
-      "date_said": "2024-10-31",
-      "source": "Q4 FY2024 Earnings Call",
-      "status": "pending",
-      "commitment": "Expand Apple Intelligence to additional languages in 2025",
-      "follow_up": "Check latest product/press updates; update status and add evidence link.",
-      "follow_up_date": "2025-01-29",
-      "category": "Product",
-      "confidence": "medium",
-      "target_quarter": "",
-      "quarter_said": ""
-    },
-    {
-      "date_said": "2024-06-10",
-      "source": "WWDC 2024 Keynote",
-      "status": "monitoring",
-      "commitment": "Launch Apple Intelligence on iPhone 15 Pro and iPhone 16 series in Q4 2024",
-      "follow_up": "Launched in US only; some features delayed; non-English languages behind schedule",
-      "follow_up_date": "2024-10-28",
+      "commitment": "Launch Apple Vision Pro in early 2024",
+      "status": "delivered",
       "category": "Product",
       "confidence": "high",
-      "target_quarter": "",
-      "quarter_said": ""
-    },
-    {
-      "date_said": "2024-02-29",
-      "source": "Q1 FY2024 Earnings Call",
-      "status": "delivered",
-      "commitment": "Maintain Services gross margin at a high level",
-      "follow_up": "Services gross margin sustained at 75%+ throughout FY2024",
-      "follow_up_date": "2024-10-31",
-      "category": "",
-      "confidence": "",
-      "target_quarter": "",
-      "quarter_said": ""
-    },
-    {
+      "quarter_said": "Q3 2023",
+      "target_quarter": "Q1 2024",
       "date_said": "2023-06-05",
-      "source": "WWDC 2023 Keynote",
-      "status": "delivered",
-      "commitment": "Launch Apple Vision Pro in early 2024",
       "follow_up": "Launched in the US on February 2, 2024 at $3,499",
       "follow_up_date": "2024-02-02",
+      "delivery_note": null,
+      "source": "WWDC 2023 Keynote",
+      "source_doc": null
+    },
+    {
+      "commitment": "Launch Apple Intelligence on iPhone 15 Pro and iPhone 16 series in Q4 2024",
+      "status": "monitoring",
       "category": "Product",
       "confidence": "high",
-      "target_quarter": "",
-      "quarter_said": ""
+      "quarter_said": "Q2 2024",
+      "target_quarter": "Q4 2024",
+      "date_said": "2024-06-10",
+      "follow_up": "Launched in US only; some features delayed; non-English languages behind schedule",
+      "follow_up_date": "2024-10-28",
+      "delivery_note": null,
+      "source": "WWDC 2024 Keynote",
+      "source_doc": null
+    },
+    {
+      "commitment": "Maintain Services gross margin at a high level",
+      "status": "delivered",
+      "category": null,
+      "confidence": null,
+      "quarter_said": null,
+      "target_quarter": null,
+      "date_said": "2024-02-29",
+      "follow_up": "Services gross margin sustained at 75%+ throughout FY2024",
+      "follow_up_date": "2024-10-31",
+      "delivery_note": null,
+      "source": "Q1 FY2024 Earnings Call",
+      "source_doc": null
+    },
+    {
+      "commitment": "Expand Apple Intelligence to additional languages in 2025",
+      "status": "pending",
+      "category": "Product",
+      "confidence": "medium",
+      "quarter_said": "Q4 2024",
+      "target_quarter": "Q2 2025",
+      "date_said": "2024-10-31",
+      "follow_up": "Check latest product/press updates; update status and add evidence link.",
+      "follow_up_date": "2025-01-29",
+      "delivery_note": null,
+      "source": "Q4 FY2024 Earnings Call",
+      "source_doc": null
     }
   ],
+  "sources": [],
+  "analytic_reports": [],
+  "open_tasks": [],
   "financials": {
     "currency": "USD",
     "unit": "Billion",

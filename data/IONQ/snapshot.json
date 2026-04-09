@@ -1,42 +1,19 @@
 {
   "ticker": "IONQ",
   "name": "IonQ, Inc.",
-  "name_th": "",
+  "name_th": "IonQ, Inc.",
   "sector": "Technology",
   "exchange": "NYSE",
-  "currency": "USD",
-  "last_updated": "2026-04-03",
-  "generated_at": "2026-04-03",
-  "latest_year": 2025,
-  "financials": {
-    "unit": "Billion",
-    "currency": "USD",
-    "revenue_B": 0.13,
-    "net_income_B": -0.51,
-    "fcf_B": -0.3,
-    "eps": -1.82,
-    "gross_margin_pct": 40.4
-  },
+  "conviction_level": null,
+  "management_tone": "bullish",
+  "last_analyzed": null,
   "counts": {
-    "notes": 2,
     "quotes": 10,
     "roadmap_total": 14,
-    "roadmap_pending": 14,
-    "roadmap_progress": 0,
-    "roadmap_delivered": 0
+    "roadmap_delivered": 0,
+    "notes": 2,
+    "sources": 0,
+    "reports": 0
   },
-  "latest_note": {
-    "date": "2026-04-03",
-    "title": "FY2025 10-K Analysis",
-    "title_th": "การวิเคราะห์รายงานประจำปี FY2025",
-    "rating": 3,
-    "summary": "[Financial Performance] IONQ is in a high-growth, pre-profitability phase, focusing on scaling its quantum computing and platform ecosystem through strategic acquisitions and cloud-based service expan…"
-  },
-  "top_risks": [
-    "IONQ faces significant risks typical of an early-stage quantum computing company, including substantial ongoing losses, unproven technology commercialization, and intense competition",
-    "The company is addressing these through aggressive acquisition strategy, IP protection, and technical roadmap execution, but faces uncertainty in achieving quantum advantage and sustainable profitability",
-    "Macroeconomic factors and integration challenges from recent acquisitions add to the risk profile"
-  ],
-  "management_tone": "bullish",
-  "one_liner": "IONQ is in a high-growth, pre-profitability phase, focusing on scaling its quantum computing and platform ecosystem through strategic acquisitions and cloud-based service expansion"
+  "delivery_rate": 0
 }
