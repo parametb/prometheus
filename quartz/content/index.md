@@ -15,7 +15,7 @@ draft: false
 
 | Ticker | Name | Sector | Conviction | Delivery | Sources | Notes |
 |--------|------|--------|------------|----------|---------|-------|
-| [[GOOGL]] | Alphabet Inc. | Technology | — | — | 1 | 1 |
+| [[GOOGL]] | Alphabet Inc. | Technology | — | — | 2 | 2 |
 | [[AAPL]] | Apple Inc. | Technology | — | 100% | 0 | 2 |
 | [[B]] | Barrick Mining Corporation | Mining | — | 100% | 0 | 0 |
 | [[BROKEN_A]] | Broken Alpha Corp | Technology | — | — | 0 | 0 |

@@ -8,11 +8,11 @@
   "management_tone": "bullish",
   "last_analyzed": null,
   "counts": {
-    "quotes": 12,
-    "roadmap_total": 14,
+    "quotes": 24,
+    "roadmap_total": 26,
     "roadmap_delivered": 0,
-    "notes": 1,
-    "sources": 1,
+    "notes": 2,
+    "sources": 2,
     "reports": 0
   },
   "delivery_rate": 0

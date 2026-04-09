@@ -22,10 +22,10 @@ draft: false
 
 | Metric | Value |
 |--------|-------|
-| Sources Analyzed | 1 |
-| Research Notes | 1 |
-| Management Quotes | 12 |
-| Roadmap Items | 14 |
+| Sources Analyzed | 2 |
+| Research Notes | 2 |
+| Management Quotes | 24 |
+| Roadmap Items | 26 |
 | Management Tone | bullish |
 
 ## 📁 Sources
@@ -33,6 +33,7 @@ draft: false
 | Title | Type | Quarter | Date | Status | Analyzed By |
 |-------|------|---------|------|--------|-------------|
 | [GOOGL 10-K 2025](https://s206.q4cdn.com/479360582/files/doc_financials/2025/q4/2025q4-alphabet-earnings-release.pdf) | Annual Report | Q4 2025 | — | analyzed | DeepSeek |
+| [GOOGL Annual Report 2025](https://files.quartr.com/reports/84bed-2026-02-05-11-10-05.pdf?ref=UGVycGxleGl0eSBBSQ==) | SEC Filing | Q4 2025 | — | analyzed | DeepSeek |
 
 ## 📝 Research Notes
 
@@ -73,7 +74,67 @@ Alphabet faces a mixed risk profile with high capital intensity as the primary c
 
 *Source: [GOOGL 10-K 2025](https://s206.q4cdn.com/479360582/files/doc_financials/2025/q4/2025q4-alphabet-earnings-release.pdf)*
 
+### GOOGL Annual Report 2025 — Analysis
+**Analysis**  ·  Q4 2025  ·  ★★★☆☆
+*#earnings #strategy #financials*
+
+[FINANCIAL PERFORMANCE]
+Alphabet's financial story centers on its successful transformation into an AI-first company, with Gemini integration driving product innovation and advertising effectiveness. The company demonstrates disciplined execution of its full-stack AI strategy while maintaining investment in moonshot projects for long-term growth. Despite facing intense competition and regulatory headwinds, Alphabet's massive scale and AI infrastructure advantages position it to capitalize on the platform shift to AI across its diversified business segments.
+
+[STRATEGIC PRIORITIES]
+1. AI Integration — embedding Gemini models across all major products to enhance user experiences and advertising effectiveness
+2. Cloud Expansion — leveraging AI-optimized infrastructure and enterprise solutions to drive Google Cloud growth
+3. Moonshot Development — scaling autonomous driving (Waymo) and AI-driven drug discovery (Isomorphic Labs) for long-term innovation
+
+[MANAGEMENT QUALITY]
+Execution: high
+Management delivered on last year's AI-first promises by successfully integrating Gemini 3 across all major products and expanding AI capabilities in Google Cloud, demonstrating strong execution of their strategic roadmap.
+
+[COMPETITIVE POSITION]
+Alphabet maintains a strong moat through its AI-optimized infrastructure including custom TPUs, massive user base across 15 half-billion-user products, and full-stack AI capabilities. However, it faces intense competition across all business segments from AI model developers, cloud providers, and digital advertising platforms, requiring continuous innovation to maintain market leadership.
+
+[OUTLOOK]
+Management signals continued heavy investment in AI infrastructure and research, with focus on driving efficiencies in data centers while scaling AI capabilities across products. They emphasize responsible AI development guided by AI principles despite regulatory uncertainties.
+
+[KEY RISKS]
+• [HIGH] Intense Competition Across All Business Segments
+: Alphabet faces formidable competition in every aspect of its business from search engines, advertising platforms, cloud services, AI developers, hardware manufacturers, and social networks, which could impact market share and profitability.
+• [HIGH] Increasing Government Regulation and Scrutiny: The company faces heightened scrutiny and evolving regulations worldwide covering AI, competition, data privacy, content moderation, and intellectual property, which could increase costs and limit business practices.
+• [HIGH] Dependence on Advertising Revenue: Google Services generates most revenues from performance and brand advertising, making the business vulnerable to shifts in advertising spending, platform changes, and competition from other advertising mediums.
+• [HIGH] Rapid Technological Change and AI Development: The technology industry is characterized by revolutionary rather than evolutionary change, requiring continuous innovation in AI and other technologies to avoid irrelevance and maintain competitive position.
+• [HIGH] Data Privacy and Security Challenges: Protecting user privacy and security while maintaining product functionality is increasingly complex, with potential near-term financial consequences and regulatory implications.
+• [MEDIUM] Execution Risks in Other Bets Portfolio: Other Bets businesses like Waymo and Isomorphic Labs are at various development stages with considerable uncertainty, requiring significant investment while facing commercialization challenges.
+• [MEDIUM] Intellectual Property Protection: Reliance on trademarks, patents, copyrights, and trade secrets to protect proprietary technology and brand, with risks from infringement, litigation, and the need to license rights.
+• [MEDIUM] Workforce Management and Talent Retention: With 190,820 employees and extended workforce, maintaining culture, attracting technical talent, and managing global workforce operations present ongoing challenges.
+
+[RISK SUMMARY]
+Alphabet faces a complex risk
+ landscape dominated by intense competition across all business segments, increasing regulatory scrutiny worldwide, and dependence on advertising revenue. The company must navigate rapid technological change, particularly in AI development, while managing data privacy and security challenges. Alphabet's risk profile reflects its position as a technology leader operating in multiple highly competitive and regulated markets, requiring continuous innovation and substantial compliance investments.
+
+*Source: [GOOGL Annual Report 2025](https://files.quartr.com/reports/84bed-2026-02-05-11-10-05.pdf?ref=UGVycGxleGl0eSBBSQ==)*
+
 ## 💬 Management Quotes
+
+> As of December 31, 2025, Alphabet had 190,820 employees.
+*— Sundar Pichai (CEO)  ·  Q4 2025*
+*#growth #hiring*
+*🟡 neutral*
+
+> 🇹🇭 ณ วันที่ 31 ธันวาคม 2025 Alphabet มีพนักงาน 190,820 คน
+
+> We believe AI is a profound platform shift that can bring meaningful and positive change to people and societies across the world, and to our business.
+*— Sundar Pichai (CEO)  ·  Q4 2025*
+*#strategy #AI*
+*🟡 bullish*
+
+> 🇹🇭 เราเชื่อว่า AI เป็นการเปลี่ยนแปลงแพลตฟอร์มที่ลึกซึ้งซึ่งสามารถนำมาซึ่งการเปลี่ยนแปลงที่มีความหมายและเป็นบวกต่อผู้คนและสังคมทั่วโลก รวมถึงธุรกิจของเรา
+
+> Today, all 15 of our half-billion-user products — including seven with two billion users — use our Gemini models.
+*— Sundar Pichai (CEO)  ·  Q4 2025*
+*#product #AI #product-launch*
+*🟡 bullish*
+
+> 🇹🇭 ปัจจุบัน ผลิตภัณฑ์ทั้ง 15 รายการของเราที่มีผู้ใช้ครึ่งพันล้านราย — รวมถึง 7 รายการที่มีผู้ใช้สองพันล้านราย — ใช้โมเดล Gemini ของเรา
 
 > Net income increased 30% and EPS increased 31% to $2.82.
 *— Document (Financial Results)  ·  Q4 2025*
@@ -81,6 +142,20 @@ Alphabet faces a mixed risk profile with high capital intensity as the primary c
 *🟡 bullish*
 
 > 🇹🇭 รายได้สุทธิเพิ่มขึ้น 30% และ EPS เพิ่มขึ้น 31% เป็น 2.82 ดอลลาร์
+
+> Our investments ultimately may not be commercially viable or may not result in an adequate return of capital and, in pursuing new strategies, we may incur unanticipated liabilities.
+*— Sundar Pichai (CEO)  ·  Q4 2025*
+*#risk #capex*
+*🟡 cautious*
+
+> 🇹🇭 การลงทุนของเราอาจไม่สามารถทำกำไรได้ในเชิงพาณิชย์ หรืออาจไม่ส่งผลให้ได้ผลตอบแทนที่เพียงพอ และในการดำเนินกลยุทธ์ใหม่ เราอาจเกิดหนี้สินที่ไม่คาดคิด
+
+> We have invested more than $200 billion in research and development in the last five years in support of these efforts.
+*— Sundar Pichai (CEO)  ·  Q4 2025*
+*#growth #capex #AI*
+*🟡 bullish*
+
+> 🇹🇭 เราได้ลงทุนมากกว่า 200 พันล้านดอลลาร์ในการวิจัยและพัฒนาตลอด 5 ปีที่ผ่านมาเพื่อสนับสนุนความพยายามเหล่านี้
 
 > We're seeing our AI investments and infrastructure drive revenue and growth across the board.
 *— Sundar Pichai (CEO)  ·  Q4 2025*
@@ -103,6 +178,13 @@ Alphabet faces a mixed risk profile with high capital intensity as the primary c
 
 > 🇹🇭 โมเดลของเราเอง เช่น Gemini ตอนนี้ประมวลผลมากกว่า 10 พันล้านโทเคนต่อนาทีผ่านการใช้งาน API โดยตรงจากลูกค้า
 
+> We face formidable competition in every aspect of our business, including but not limited to, from general purpose search engines and information services; online advertising platforms and networks; and AI model developers and providers of AI products and services.
+*— Sundar Pichai (CEO)  ·  Q4 2025*
+*#risk #competition #AI*
+*🟡 cautious*
+
+> 🇹🇭 เราเผชิญกับการแข่งขันที่รุนแรงในทุกด้านของธุรกิจของเรา รวมถึงแต่ไม่จำกัดเพียง เครื่องมือค้นหาทั่วไปและบริการข้อมูล แพลตฟอร์มและเครือข่ายโฆษณาออนไลน์ และนักพัฒนาโมเดล AI และผู้ให้บริการผลิตภัณฑ์และบริการ AI
+
 > Google Cloud saw a continued increase in customer demand as revenues increased 48% to $17.7 billion, led by an increase in Google Cloud Platform (GCP) across enterprise AI Infrastructure and enterprise AI Solutions.
 *— Document (Financial Results)  ·  Q4 2025*
 *#growth #AI #revenue-guidance*
@@ -116,6 +198,13 @@ Alphabet faces a mixed risk profile with high capital intensity as the primary c
 *🟡 bullish*
 
 > 🇹🇭 เป็นไตรมาสที่ยอดเยี่ยมสำหรับ Alphabet และรายได้ประจำปีเกิน 400 พันล้านดอลลาร์เป็นครั้งแรก
+
+> We generated more than 70% of total revenues from online advertising in 2025.
+*— Sundar Pichai (CEO)  ·  Q4 2025*
+*#growth #revenue-guidance*
+*🟡 neutral*
+
+> 🇹🇭 เราได้รับรายได้มากกว่า 70% ของรายได้ทั้งหมดจากการโฆษณาออนไลน์ในปี 2025
 
 > YouTube's annual revenues surpassed $60 billion across ads and subscriptions.
 *— Sundar Pichai (CEO)  ·  Q4 2025*
@@ -152,6 +241,41 @@ Alphabet faces a mixed risk profile with high capital intensity as the primary c
 
 > 🇹🇭 Search มีการใช้งานมากกว่าที่เคยเป็นมา โดย AI ยังคงขับเคลื่อนช่วงเวลาการขยายตัว
 
+> Our compliance with these laws and regulations may be onerous and could, individually or in the aggregate, increase our cost of doing business, make our products and services less useful, limit our ability to pursue certain business practices or offer certain products and services.
+*— Sundar Pichai (CEO)  ·  Q4 2025*
+*#risk #macro*
+*🟡 cautious*
+
+> 🇹🇭 การปฏิบัติตามกฎหมายและข้อบังคับเหล่านี้อาจเป็นภาระหนักและอาจเพิ่มต้นทุนการดำเนินธุรกิจ ทำให้ผลิตภัณฑ์และบริการของเรามีประโยชน์น้อยลง จำกัดความสามารถของเราในการดำเนินธุรกิจบางอย่างหรือเสนอผลิตภัณฑ์และบริการบางอย่าง
+
+> Expenditures by advertisers tend to correlate with overall economic conditions. Adverse macroeconomic conditions have affected, and may in the future affect, the demand for advertising.
+*— Sundar Pichai (CEO)  ·  Q4 2025*
+*#risk #macro*
+*🟡 cautious*
+
+> 🇹🇭 ค่าใช้จ่ายของผู้โฆษณามีแนวโน้มสอดคล้องกับสภาพเศรษฐกิจโดยรวม สภาวะเศรษฐกิจมหภาคที่ไม่เอื้ออำนวยได้ส่งผลกระทบ และอาจส่งผลกระทบในอนาคตต่อความต้องการโฆษณา
+
+> We are focused on building an even more helpful Google for everyone, and we aspire to give everyone the tools they need to increase their knowledge, health, happiness, and success.
+*— Sundar Pichai (CEO)  ·  Q4 2025*
+*#strategy #product*
+*🟡 bullish*
+
+> 🇹🇭 เราให้ความสำคัญกับการสร้าง Google ที่เป็นประโยชน์มากขึ้นสำหรับทุกคน และเรามุ่งหวังที่จะมอบเครื่องมือที่ทุกคนต้องการเพื่อเพิ่มพูนความรู้ สุขภาพ ความสุข และความสำเร็จ
+
+> We believe AI is quickly reshaping the advertising industry, including how ads are delivered online, and we and our competitors are constantly adjusting to meet this shift.
+*— Sundar Pichai (CEO)  ·  Q4 2025*
+*#strategy #AI #competition*
+*🟡 cautious*
+
+> 🇹🇭 เราเชื่อว่า AI กำลังปรับเปลี่ยนอุตสาหกรรมโฆษณาอย่างรวดเร็ว รวมถึงวิธีการส่งมอบโฆษณาออนไลน์ และเราและคู่แข่งกำลังปรับตัวอย่างต่อเนื่องเพื่อตอบสนองต่อการเปลี่ยนแปลงนี้
+
+> We have invested and expect to significantly expand our investment in property and equipment, including our technical infrastructure.
+*— Sundar Pichai (CEO)  ·  Q4 2025*
+*#growth #capex*
+*🟡 bullish*
+
+> 🇹🇭 เราได้ลงทุนและคาดว่าจะขยายการลงทุนในทรัพย์สินและอุปกรณ์อย่างมีนัยสำคัญ รวมถึงโครงสร้างพื้นฐานทางเทคนิคของเรา
+
 > This press release may contain forward-looking statements that involve risks and uncertainties. Actual results may differ materially from the results predicted.
 *— Document (Forward-Looking Statements)  ·  Q4 2025*
 *#risk*
@@ -173,13 +297,31 @@ Alphabet faces a mixed risk profile with high capital intensity as the primary c
 ⏳ **Drive YouTube annual revenues to surpass $60 billion across ads and subscriptions.**
 *Confidence: medium*
 
+⏳ **We will continue to invest in recruiting talented people to technical and non-technical roles and rewarding them well.**
+*Confidence: medium*
+
 ⏳ **Increase Gemini App monthly active users to over 750 million.**
+*Confidence: medium*
+
+⏳ **We will continue to invest in platforms like our Android mobile operating system, Chrome browser, and Chrome operating system.**
 *Confidence: medium*
 
 ⏳ **Fund the majority of Waymo's $16.0 billion investment round in February 2026.**
 *Target: Q1 2026  ·  Confidence: high*
 
+⏳ **We will continue to look toward the future and to invest for the long term, most notably for the application of AI to our products and services.**
+*Confidence: medium*
+
+⏳ **We are focused on driving efficiencies in our data centers to deliver products and services at an increasing scale.**
+*Confidence: medium*
+
+⏳ **We will continue to build new ways for people around the world to create and find great digital content.**
+*Confidence: medium*
+
 ⏳ **Grow paid subscriptions across consumer services to over 325 million.**
+*Confidence: medium*
+
+⏳ **We will continue to invest in both performance and brand advertising and seek to improve the measurability of advertising.**
 *Confidence: medium*
 
 ⏳ **Increase employee headcount from 183,323 to 190,820 by Q4 2025.**
@@ -191,7 +333,25 @@ Alphabet faces a mixed risk profile with high capital intensity as the primary c
 ⏳ **Invest $175 to $185 billion in CapEx for 2026 to meet customer demand and capitalize on opportunities.**
 *Target: Q4 2026  ·  Confidence: high*
 
+⏳ **We aspire to give everyone the tools they need to increase their knowledge, health, happiness, and success.**
+*Confidence: low*
+
 ⏳ **Grow Google One and YouTube Premium subscriptions through strong adoption.**
+*Confidence: medium*
+
+⏳ **We aim to build the most advanced, safe, and responsible AI through our full-stack approach.**
+*Confidence: low*
+
+⏳ **We are continually enhancing privacy and security efforts over time by enabling users to auto-delete their data and applying privacy technologies.**
+*Confidence: medium*
+
+⏳ **We will launch the Pixel 10 series and Pixel Watch 4 as our latest generation of devices.**
+*Target: Q4 2025  ·  Confidence: high*
+
+⏳ **Waymo is expanding to more cities domestically, entering international markets, and further scaling operations.**
+*Confidence: medium*
+
+⏳ **We have invested more than $200 billion in research and development in the last five years and will continue these efforts.**
 *Confidence: medium*
 
 ⏳ **Drive strong growth across Google Services, Google Cloud, and YouTube.**
