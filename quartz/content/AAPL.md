@@ -26,7 +26,7 @@ draft: false
 | Research Notes | 2 |
 | Management Quotes | 3 |
 | Roadmap Items | 4 |
-| Delivery Rate | **100%** (2/2 concluded) |
+| Delivery Rate | **67%** (2/3 concluded) |
 | Management Tone | bullish |
 
 ## 📝 Research Notes
@@ -72,11 +72,14 @@ AI integration ใน iOS 18 ยังช้ากว่าคู่แข่ง
 
 ## 🗺️ Management Roadmap
 
-**Delivery Rate:** 100%  (2 delivered / 2 concluded / 4 total)
+**Delivery Rate:** 67%  (2 delivered / 3 concluded / 4 total)
 
-⏳ **Expand Apple Intelligence to additional languages in 2025**
+❌ **Expand Apple Intelligence to additional languages in 2025**
 *Said: Oct 31, 2024  ·  Target: Q2 2025  ·  Q4 FY2024 Earnings Call  ·  Confidence: medium*
   → **Outcome (Jan 29, 2025):** Check latest product/press updates; update status and add evidence link.
+  📌 The commitment targeted Q2 2025 for expanding Apple Intelligence to additional languages. As of Q2 2026, there is no evidence of delivery in recent quotes or notes, and no product/press updates indicate fulfillment. The target quarter has passed without management providing updates or explanations.
+
+[TH] คำมั่นสัญญากำหนดเป้าหมายในไตรมาสที่ 2 ปี 2025 สำหรับการขยาย Apple Intelligence ไปยังภาษาพิเศษเพิ่มเติม ณ ไตรมาสที่ 2 ปี 2026 ไม่มีหลักฐานการส่งมอบในคำพูดหรือบันทึกล่าสุด และไม่มีอัปเดตผลิตภัณฑ์หรือสื่อมวลชนที่บ่งชี้การปฏิบัติตาม เป้าหมายไตรมาสผ่านไปโดยไม่มีการอัปเดตหรือคำอธิบายจากฝ่ายบริหาร
 
 👁️ **Launch Apple Intelligence on iPhone 15 Pro and iPhone 16 series in Q4 2024**
 *Said: Jun 10, 2024  ·  Target: Q4 2024  ·  WWDC 2024 Keynote  ·  Confidence: high*
