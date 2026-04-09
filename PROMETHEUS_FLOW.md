@@ -1,5 +1,5 @@
-# PROMETHEUS_FLOW.md — v2.2
-> อัปเดต: 2026-04-10 | Automated DeepSeek Pipeline · GitHub Actions Trigger · PDF Support
+# PROMETHEUS_FLOW.md — v2.3
+> อัปเดต: 2026-04-10 | Automated DeepSeek Pipeline · GitHub Actions Trigger · PDF Support · Delivery Check · Sector Scan · Thesis Synthesis
 
 ---
 
@@ -248,10 +248,13 @@ generate-quartz.js:
 
 ## 5. GitHub Actions Workflows
 
-| Workflow | Trigger | ใช้เมื่อ |
-|----------|---------|---------|
-| `deepseek-extract.yml` | Manual (Run workflow) | เพิ่งได้รับเอกสารใหม่ — 10-K, Earnings Call, Press Release |
-| `notion-sync.yml` | Schedule (ทุก 6 ชม.) + Manual | sync Notion → data.json → deploy website |
+| Workflow | Trigger | ใช้เมื่อ | Script |
+|----------|---------|---------|--------|
+| `deepseek-extract.yml` | Manual | มีเอกสารใหม่ — 10-K, Earnings Call, Press Release | `deepseek-extract.js` |
+| `deepseek-delivery-check.yml` | Manual + **Quarterly** (Jan/Apr/Jul/Oct 5) | ตรวจสอบว่า management ส่งมอบตาม roadmap หรือไม่ | `deepseek-delivery-check.js` |
+| `deepseek-sector-scan.yml` | Manual + **Weekly** (จ. 07:00 UTC) | สรุปข่าวรายสัปดาห์ต่อ sector → สร้าง Note ใน Notion | `deepseek-sector-scan.js` |
+| `deepseek-thesis.yml` | Manual | สังเคราะห์ Investment Thesis จากข้อมูลทั้งหมดใน Notion | `deepseek-thesis.js` |
+| `notion-sync.yml` | Schedule (ทุก 6 ชม.) + Manual | sync Notion → data.json → deploy website | `notion-sync.js` |
 
 ### deepseek-extract.yml — inputs
 
@@ -276,6 +279,52 @@ NOTION_ROADMAP_DB      = 37dfa0c7ab724d17b09076be033f90cf
 NOTION_SOURCES_DB      = 17d7966d29a54ced80cd9cb3236f51cc
 NOTION_REPORTS_DB      = 0b5706ab4758488ab8c57d280c9c4754
 NOTION_TASKS_DB        = 1d7fedba7e6f45a1801e05193ac7af7d
+NEWS_API_KEY           = (optional) newsapi.org key สำหรับ sector-scan
+```
+
+### deepseek-delivery-check.yml — logic
+
+```
+INPUT:  ticker (หรือ "all") + dry_run
+QUERY:  Roadmap DB → status=pending + target_quarter ผ่านมา > 30 วัน
+FOR EACH overdue item:
+  - ดึง recent Quotes + Notes ของ ticker นั้น
+  - ถาม DeepSeek: "ส่งมอบหรือยัง? หลักฐานคืออะไร?"
+  - อัปเดต status: delivered / partial / missed / monitoring
+  - เขียน Delivery Note (EN + TH) กลับ Notion
+SUMMARY: สร้าง Task record สรุปผล
+```
+
+### deepseek-sector-scan.yml — logic
+
+```
+INPUT:  sector (Technology / Healthcare / Finance / etc.)
+        note_type (Observation / Analysis / Risk)
+FETCH:  watchlist companies ของ sector จาก Notion Companies DB
+        + ข่าวล่าสุด 7 วัน จาก newsapi.org (หรือ GNews fallback)
+DEEPSEEK: เขียน digest note (4-6 paragraphs, EN + TH)
+          sections: Key Developments / Watchlist Highlights / Macro Themes / Risks
+OUTPUT: สร้าง Note + Source record ใน Notion
+SCHEDULE: ทุกวันจันทร์ 07:00 UTC = 14:00 Bangkok time
+```
+
+### deepseek-thesis.yml — logic
+
+```
+INPUT:  ticker + force_update
+FETCH (parallel):
+  - Company info จาก Notion Companies DB
+  - Quotes ทั้งหมด (50 ล่าสุด)
+  - Roadmap items ทั้งหมด (แยก pending/delivered/missed)
+  - Notes ทั้งหมด (20 ล่าสุด)
+  - Financials จาก data/{TICKER}/data.json
+DEEPSEEK: สังเคราะห์ Thesis Update report (8,192 tokens)
+          sections: Executive Summary / Core Thesis / Financial Quality /
+                    Management Credibility / Bull Case / Bear Case /
+                    Key Risks / Watchlist / Thesis Change
+OUTPUT:
+  1. สร้าง Analytic Report (Type=Thesis) ใน Notion Reports DB
+  2. อัปเดต Companies DB: Investment Thesis + Conviction Level + Last Analyzed
 ```
 
 ---
@@ -439,18 +488,25 @@ Key chains:
 
 ## 11. DeepSeek Prompt Files
 
-| ไฟล์ | Agent | Output fields |
-|------|-------|---------------|
-| `phase2_deep_analysis.md` | A — Qualitative | management_tone, strategic_priorities, management_quality, competitive_position, outlook_signals, financial_summary |
-| `phase2_roadmap.md` | B — Roadmap | commitment, category, confidence, quarter_said, target_quarter, status |
-| `phase2_quotes.md` | C — Quotes | quote, **quote_th**, speaker, **segment**, tag, **sentiment**, **sub_tags** |
-| `phase2_risks.md` | D — Risks | key_risks[{risk, severity, description}], risk_summary |
-| `phase3_narrative.md` | E — Narrative Drift | tone/topic shift ข้ามปี |
-| `phase3_business.md` | F — Business Evolution | segment/KPI changes |
-| `phase3_accounting.md` | G — Accounting Watch | policy changes, optical improvements |
-| `phase3_risk_evolution.md` | H — Risk Evolution | risks appeared/disappeared/escalated |
+### Phase 2 — Extraction agents (รันใน deepseek-extract.js)
 
-> **굵은 fields** = เพิ่มใหม่ใน v2.2 เพื่อ map ตรงกับ Notion schema
+| ไฟล์ | Agent | Output fields | max_tokens |
+|------|-------|---------------|-----------|
+| `phase2_deep_analysis.md` | A — Qualitative | management_tone, strategic_priorities, management_quality, competitive_position, outlook_signals, financial_summary (EN+TH), conviction, investment_thesis, ceo, employees, market_cap | 8192 |
+| `phase2_roadmap.md` | B — Roadmap | commitment, **commitment_th**, category, confidence, quarter_said, target_quarter, **follow_up_en**, **follow_up_th**, status | 8192 |
+| `phase2_quotes.md` | C — Quotes | quote, **quote_th**, speaker, segment, tag, sentiment, sub_tags, **analyst_note_en**, **analyst_note_th** | 8192 |
+| `phase2_financials.md` | D — Financials | currency, unit, years[], metrics[], segments[], margin_pct[], guidance (EN+TH), notable_items (EN+TH) | 8192 |
+| `phase2_notes_multi.md` | E — Notes (3x) | note_type, title_en, **title_th**, tags, rating, **content_en** (5-8 paragraphs), **content_th** (full Thai) | 12288 |
+
+> **굵은 fields** = เพิ่มใหม่ใน v2.2 เพื่อ fill Notion fields ที่ว่างเปล่า
+
+### Phase 3+ — Scheduled automation agents
+
+| Script | ใช้ prompt? | AI calls |
+|--------|------------|---------|
+| `deepseek-delivery-check.js` | Inline prompt | 1 call ต่อ roadmap item ที่ overdue |
+| `deepseek-sector-scan.js` | Inline prompt | 1 call ต่อ sector scan |
+| `deepseek-thesis.js` | Inline prompt | 1 call ต่อ ticker (8,192 tokens) |
 
 ---
 
@@ -474,7 +530,18 @@ Key chains:
 | Extraction script | ไม่มี | `scripts/deepseek-extract.js` |
 | Agent execution | sequential | **parallel (Promise.allSettled)** |
 | PDF support | ไม่มี | **pdf-parse** |
-| Quote fields | quote, speaker, tag | + **quote_th, segment, sentiment, sub_tags** |
-| Roadmap fields | commitment, date_said | + **category, confidence, quarter_said, target_quarter** |
+| Quote fields | quote, speaker, tag | + **quote_th, segment, sentiment, sub_tags, analyst_note EN+TH** |
+| Roadmap fields | commitment, date_said | + **commitment_th, category, confidence, follow_up EN+TH** |
+| Notes | 1 note | **3 notes: Analysis + Risk + Thesis (EN+TH)** |
+| Financials | ไม่มี | **phase2_financials.md → data.json (segments, margins, guidance)** |
 | Task auto-close | manual | **auto-close เมื่อ extraction เสร็จ** |
 | Source status | manual | **auto: extracting → analyzed** |
+
+### v2.2 → v2.3
+| สิ่งที่เปลี่ยน | v2.2 | v2.3 |
+|----------------|------|------|
+| Delivery tracking | Claude skill เท่านั้น | **GitHub Action quarterly auto-scan** |
+| Sector monitoring | manual | **Weekly GitHub Action + newsapi.org** |
+| Thesis synthesis | ไม่มี workflow | **GitHub Action: query all Notion → DeepSeek → Report** |
+| GitHub workflows | 2 | **5** |
+| Automation coverage | extraction only | **extract + delivery check + scan + thesis** |

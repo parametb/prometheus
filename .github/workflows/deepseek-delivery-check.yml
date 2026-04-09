@@ -1,0 +1,49 @@
+name: DeepSeek — Delivery Check
+
+on:
+  workflow_dispatch:
+    inputs:
+      ticker:
+        description: 'Ticker symbol (or "all" for every company)'
+        required: true
+        default: 'all'
+      dry_run:
+        description: 'Dry run (preview only, no Notion writes)'
+        required: false
+        default: 'false'
+        type: choice
+        options: ['false', 'true']
+
+  schedule:
+    # Run quarterly: Jan 5, Apr 5, Jul 5, Oct 5 at 09:00 UTC
+    - cron: '0 9 5 1,4,7,10 *'
+
+jobs:
+  delivery-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run delivery check
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_COMPANIES_DB: ${{ secrets.NOTION_COMPANIES_DB }}
+          NOTION_QUOTES_DB: ${{ secrets.NOTION_QUOTES_DB }}
+          NOTION_ROADMAP_DB: ${{ secrets.NOTION_ROADMAP_DB }}
+          NOTION_NOTES_DB: ${{ secrets.NOTION_NOTES_DB }}
+          NOTION_TASKS_DB: ${{ secrets.NOTION_TASKS_DB }}
+          TICKER: ${{ github.event.inputs.ticker || 'all' }}
+          DRY_RUN: ${{ github.event.inputs.dry_run || 'false' }}
+        run: node scripts/deepseek-delivery-check.js --ticker "$TICKER" --dry-run "$DRY_RUN"
