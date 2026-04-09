@@ -58,7 +58,7 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       - name: Run DeepSeek extraction
         env:
@@ -95,7 +95,7 @@ jobs:
           node-version: '22'
           cache: 'npm'
 
-      - run: npm ci
+      - run: npm install
 
       - name: Sync Notion → data.json
         env:
