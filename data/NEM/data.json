@@ -362,26 +362,105 @@
   "open_tasks": [],
   "financials": {
     "currency": "USD",
-    "unit": "Billion",
-    "links": [
-      {
-        "label": "10-K FY2025 (filed 2026-02-19)",
-        "url": "https://www.sec.gov/Archives/edgar/data/1164727/000116472726000010/nem-20251231.htm"
-      },
-      {
-        "label": "10-K FY2024 (filed 2025-02-20)",
-        "url": "https://www.sec.gov/Archives/edgar/data/1164727/000116472725000011/nem-20241231.htm"
-      },
-      {
-        "label": "10-K FY2023 (filed 2024-02-29)",
-        "url": "https://www.sec.gov/Archives/edgar/data/1164727/000116472724000016/nem-20231231.htm"
-      },
-      {
-        "label": "10-K FY2022 (filed 2023-02-23)",
-        "url": "https://www.sec.gov/Archives/edgar/data/1164727/000116472723000011/nem-20221231.htm"
-      }
-    ],
+    "unit": "Million",
+    "source": "EDGAR",
+    "last_updated": "2026-04-10",
+    "annual": {
+      "periods": [
+        "FY2021",
+        "FY2022",
+        "FY2023",
+        "FY2024",
+        "FY2025"
+      ],
+      "period_ends": [
+        "2019-12-31",
+        "2020-12-31",
+        "2021-12-31",
+        "2022-12-31",
+        "2023-12-31"
+      ],
+      "metrics": [
+        {
+          "name": "Net Income",
+          "values": [
+            2805,
+            2829,
+            1166,
+            -429,
+            -2494
+          ],
+          "chart": false,
+          "growth": [
+            null,
+            0.9,
+            -58.8,
+            -136.8,
+            -481.4
+          ],
+          "margin": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "name": "EPS Diluted",
+          "values": [
+            3.81,
+            3.51,
+            1.46,
+            -0.54,
+            -2.97
+          ],
+          "chart": false,
+          "growth": [
+            null,
+            -7.9,
+            -58.4,
+            -137,
+            -450
+          ]
+        },
+        {
+          "name": "Operating CF",
+          "values": [
+            2866,
+            4882,
+            4279,
+            3220,
+            2763
+          ],
+          "chart": false
+        },
+        {
+          "name": "Cash",
+          "values": [
+            2243,
+            5540,
+            4992,
+            2877,
+            3002
+          ],
+          "chart": false
+        },
+        {
+          "name": "Total Debt",
+          "values": [
+            5711,
+            5571,
+            8874,
+            8476,
+            5115
+          ],
+          "chart": false
+        }
+      ]
+    },
     "years": [
+      2021,
       2022,
       2023,
       2024,
@@ -389,52 +468,186 @@
     ],
     "metrics": [
       {
-        "name": "Revenue",
-        "values": [
-          11.95,
-          11.78,
-          18.56,
-          22.1
-        ]
-      },
-      {
-        "name": "Gross Profit",
-        "values": [
-          2.14,
-          1.17,
-          6.42,
-          11
-        ]
-      },
-      {
         "name": "Net Income",
         "values": [
-          -0.459,
-          -2.52,
-          3.35,
-          7.08
+          2805,
+          2829,
+          1166,
+          -429,
+          -2494
+        ],
+        "chart": false,
+        "growth": [
+          null,
+          0.9,
+          -58.8,
+          -136.8,
+          -481.4
+        ],
+        "margin": [
+          null,
+          null,
+          null,
+          null,
+          null
         ]
       },
       {
-        "name": "EPS (diluted)",
+        "name": "EPS Diluted",
         "values": [
-          -0.58,
-          -3,
-          2.86,
-          6.41
+          3.81,
+          3.51,
+          1.46,
+          -0.54,
+          -2.97
+        ],
+        "chart": false,
+        "growth": [
+          null,
+          -7.9,
+          -58.4,
+          -137,
+          -450
         ]
       },
       {
-        "name": "Free Cash Flow",
+        "name": "Operating CF",
         "values": [
-          1.09,
-          0.097,
-          2.96,
-          7.3
-        ]
+          2866,
+          4882,
+          4279,
+          3220,
+          2763
+        ],
+        "chart": false
+      },
+      {
+        "name": "Cash",
+        "values": [
+          2243,
+          5540,
+          4992,
+          2877,
+          3002
+        ],
+        "chart": false
+      },
+      {
+        "name": "Total Debt",
+        "values": [
+          5711,
+          5571,
+          8874,
+          8476,
+          5115
+        ],
+        "chart": false
       }
     ],
-    "notes": "Revenue = total sales per FMP/EDGAR. Gross Profit = Revenue - Cost of Revenue. Net Income = attributable to Newmont shareholders. FCF = Operating CF - CapEx. FY2023 NI impacted by ~$3.2B impairment charges (Ahafo, Cerro Negro) and Newcrest acquisition costs. FY2024 marked first full year post-Newcrest consolidation (acquired Nov 2023). FY2025 benefited from record gold prices (~$2,650/oz avg). Source: FMP annual, EDGAR 10-K."
+    "quarterly": {
+      "periods": [
+        "Q1 2024",
+        "Q2 2024",
+        "Q3 2024",
+        "Q1 2025",
+        "Q2 2025",
+        "Q3 2025"
+      ],
+      "period_ends": [
+        "2023-03-31",
+        "2023-06-30",
+        "2023-09-30",
+        "2024-03-31",
+        "2024-06-30",
+        "2024-09-30"
+      ],
+      "metrics": [
+        {
+          "name": "Net Income",
+          "values": [
+            351,
+            506,
+            664,
+            170,
+            1023,
+            1945
+          ],
+          "chart": false,
+          "growth": [
+            null,
+            44.2,
+            31.2,
+            -74.4,
+            501.8,
+            90.1
+          ],
+          "margin": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "name": "EPS Diluted",
+          "values": [
+            0.44,
+            0.64,
+            0.84,
+            0.15,
+            0.89,
+            1.69
+          ],
+          "chart": false,
+          "growth": [
+            null,
+            45.5,
+            31.2,
+            -82.1,
+            493.3,
+            89.9
+          ]
+        },
+        {
+          "name": "Operating CF",
+          "values": [
+            null,
+            1144,
+            2147,
+            776,
+            2204,
+            3852
+          ],
+          "chart": false
+        },
+        {
+          "name": "Cash",
+          "values": [
+            2657,
+            2829,
+            3190,
+            2336,
+            2602,
+            3016
+          ],
+          "chart": false
+        },
+        {
+          "name": "Total Debt",
+          "values": [
+            8933,
+            8692,
+            8550,
+            7507,
+            7132,
+            5180
+          ],
+          "chart": false
+        }
+      ]
+    }
   },
   "overview": {}
 }

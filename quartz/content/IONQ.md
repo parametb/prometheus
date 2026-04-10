@@ -166,12 +166,14 @@ IonQ evolved from quantum computing company to 'quantum platform company' across
 
 *USD, Million*
 
-| Metric | 2022 | 2023 | 2024 | 2025 |
-|--------|------|------|------|------|
-| Revenue | 11.13 | 22.04 | 43.07 | 130.02 |
-| Gross Profit | 2.58 | 13.93 | 3.82 | 52.53 |
-| Net Income | -48.51 | -157.77 | -331.65 | -510.38 |
-| EPS (diluted) | -0.25 | -0.78 | -1.56 | -1.82 |
-| Free Cash Flow | -57.26 | -98.36 | -129.25 | -299.6 |
-
-*Unit = Million USD. Revenue = total contract revenue per EDGAR/FMP. Gross Profit = Revenue - COR. Net Income = GAAP attributable to common shareholders. FCF = Operating CF - CapEx. All years are loss-making; stock-based compensation is the largest non-cash item (~$312M in FY2025). FY2025 revenue +202% YoY driven by US Government contracts, hyperscaler partnerships (AWS, Azure, Google), and Ansys acquisition. FY2025 EPS GAAP -$1.82; non-GAAP adjusted EPS +$1.93 (includes fair-value gains on warrants/convertibles). Source: EDGAR 10-K, FMP annual.*
+| Metric | 2021 | 2022 | 2023 | 2024 | 2025 |
+|--------|------|------|------|------|------|
+| Revenue | — | 1,235 | — | — | — |
+| Operating Income | -15.7 | -38.7 | -85.7 | -85.7 | -157.8 |
+| EBITDA | -14.3 | -36.2 | -80.1 | -80.1 | -147.4 |
+| Net Income | -15.4 | -106.2 | -48.5 | -48.5 | -157.8 |
+| EPS Diluted | — | -0.77 | -0.25 | -0.25 | -0.78 |
+| Operating CF | -12 | -26.5 | -44.7 | -44.7 | -78.8 |
+| CapEx | -10 | -7.8 | -9.3 | -9.3 | -13.7 |
+| Free Cash Flow | -22 | -34.3 | -54 | -54 | -92.5 |
+| Cash | 59.5 | 399 | 44.4 | 35.7 | 54.4 |

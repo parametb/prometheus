@@ -154,240 +154,546 @@
   "open_tasks": [],
   "financials": {
     "currency": "USD",
-    "unit": "Billion",
-    "links": [
-      {
-        "title": "Annual Report FY2024",
-        "type": "Annual Report",
-        "year": 2024,
-        "url": "https://investor.apple.com/sec-filings/annual-reports/default.aspx"
-      },
-      {
-        "title": "10-K FY2024",
-        "type": "10-K",
-        "year": 2024,
-        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000320193&type=10-K&dateb=&owner=include&count=10"
-      },
-      {
-        "title": "10-Q Q1 FY2025",
-        "type": "10-Q",
-        "year": 2025,
-        "quarter": "Q1",
-        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000320193&type=10-Q&dateb=&owner=include&count=10"
-      },
-      {
-        "title": "Investor Relations",
-        "type": "Investor Day",
-        "year": 2024,
-        "url": "https://investor.apple.com"
-      }
-    ],
+    "unit": "Million",
+    "source": "EDGAR",
+    "last_updated": "2026-04-10",
+    "annual": {
+      "periods": [
+        "FY2021",
+        "FY2022",
+        "FY2023",
+        "FY2024",
+        "FY2025"
+      ],
+      "period_ends": [
+        "2019-09-28",
+        "2020-09-26",
+        "2021-09-25",
+        "2022-09-24",
+        "2023-09-30"
+      ],
+      "metrics": [
+        {
+          "name": "Gross Profit",
+          "values": [
+            98392,
+            104956,
+            152836,
+            170782,
+            169148
+          ],
+          "chart": false,
+          "margin": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "name": "Operating Income",
+          "values": [
+            63930,
+            66288,
+            108949,
+            119437,
+            114301
+          ],
+          "chart": false,
+          "margin": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "name": "EBITDA",
+          "values": [
+            76477,
+            77344,
+            120233,
+            130541,
+            125820
+          ],
+          "chart": false,
+          "margin": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "name": "Net Income",
+          "values": [
+            55256,
+            57411,
+            94680,
+            99803,
+            96995
+          ],
+          "chart": false,
+          "growth": [
+            null,
+            3.9,
+            64.9,
+            5.4,
+            -2.8
+          ],
+          "margin": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "name": "EPS Diluted",
+          "values": [
+            2.97,
+            3.28,
+            5.61,
+            6.11,
+            6.13
+          ],
+          "chart": false,
+          "growth": [
+            null,
+            10.4,
+            71,
+            8.9,
+            0.3
+          ]
+        },
+        {
+          "name": "Operating CF",
+          "values": [
+            69391,
+            80674,
+            104038,
+            122151,
+            110543
+          ],
+          "chart": false
+        },
+        {
+          "name": "CapEx",
+          "values": [
+            -10495,
+            -7309,
+            -11085,
+            -10708,
+            -10959
+          ],
+          "chart": false
+        },
+        {
+          "name": "Free Cash Flow",
+          "values": [
+            58896,
+            73365,
+            92953,
+            111443,
+            99584
+          ],
+          "chart": false
+        },
+        {
+          "name": "Cash",
+          "values": [
+            38016,
+            34940,
+            23646,
+            29965,
+            29943
+          ],
+          "chart": false
+        },
+        {
+          "name": "Total Debt",
+          "values": [
+            null,
+            null,
+            110087,
+            105103,
+            96662
+          ],
+          "chart": false
+        }
+      ]
+    },
     "years": [
-      2020,
       2021,
       2022,
       2023,
-      2024
+      2024,
+      2025
     ],
     "metrics": [
       {
-        "name": "Revenue",
-        "values": [
-          274.5,
-          365.8,
-          394.3,
-          383.3,
-          391
-        ]
-      },
-      {
         "name": "Gross Profit",
         "values": [
-          104.9,
-          152.8,
-          170.8,
-          169.1,
-          180.7
+          98392,
+          104956,
+          152836,
+          170782,
+          169148
+        ],
+        "chart": false,
+        "margin": [
+          null,
+          null,
+          null,
+          null,
+          null
         ]
       },
       {
         "name": "Operating Income",
         "values": [
-          66.3,
-          108.9,
-          119.4,
-          114.3,
-          123.2
+          63930,
+          66288,
+          108949,
+          119437,
+          114301
+        ],
+        "chart": false,
+        "margin": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "EBITDA",
+        "values": [
+          76477,
+          77344,
+          120233,
+          130541,
+          125820
+        ],
+        "chart": false,
+        "margin": [
+          null,
+          null,
+          null,
+          null,
+          null
         ]
       },
       {
         "name": "Net Income",
         "values": [
-          57.4,
-          94.7,
-          99.8,
-          97,
-          93.7
+          55256,
+          57411,
+          94680,
+          99803,
+          96995
+        ],
+        "chart": false,
+        "growth": [
+          null,
+          3.9,
+          64.9,
+          5.4,
+          -2.8
+        ],
+        "margin": [
+          null,
+          null,
+          null,
+          null,
+          null
         ]
       },
       {
-        "name": "EPS (diluted)",
+        "name": "EPS Diluted",
         "values": [
+          2.97,
           3.28,
           5.61,
           6.11,
-          6.13,
-          6.08
+          6.13
+        ],
+        "chart": false,
+        "growth": [
+          null,
+          10.4,
+          71,
+          8.9,
+          0.3
         ]
+      },
+      {
+        "name": "Operating CF",
+        "values": [
+          69391,
+          80674,
+          104038,
+          122151,
+          110543
+        ],
+        "chart": false
+      },
+      {
+        "name": "CapEx",
+        "values": [
+          -10495,
+          -7309,
+          -11085,
+          -10708,
+          -10959
+        ],
+        "chart": false
       },
       {
         "name": "Free Cash Flow",
         "values": [
-          80.7,
-          92.9,
-          111.4,
-          99.6,
-          108.8
-        ]
+          58896,
+          73365,
+          92953,
+          111443,
+          99584
+        ],
+        "chart": false
+      },
+      {
+        "name": "Cash",
+        "values": [
+          38016,
+          34940,
+          23646,
+          29965,
+          29943
+        ],
+        "chart": false
+      },
+      {
+        "name": "Total Debt",
+        "values": [
+          null,
+          null,
+          110087,
+          105103,
+          96662
+        ],
+        "chart": false
       }
     ],
-    "breakdown": {
-      "sankey": {
-        "year": 2024,
-        "currency": "USD",
-        "unit": "Billion",
-        "nodes": [
-          {
-            "id": 0,
-            "label": "iPhone",
-            "color": "#58a6ff"
-          },
-          {
-            "id": 1,
-            "label": "Services",
-            "color": "#3fb950"
-          },
-          {
-            "id": 2,
-            "label": "Wearables & Home",
-            "color": "#bc8cff"
-          },
-          {
-            "id": 3,
-            "label": "Mac",
-            "color": "#8b949e"
-          },
-          {
-            "id": 4,
-            "label": "iPad",
-            "color": "#d29922"
-          },
-          {
-            "id": 5,
-            "label": "Total Revenue $391.0B",
-            "color": "#f0c060"
-          },
-          {
-            "id": 6,
-            "label": "Cost of Sales $210.4B",
-            "color": "#f85149"
-          },
-          {
-            "id": 7,
-            "label": "Gross Profit $180.7B",
-            "color": "#58d68d"
-          },
-          {
-            "id": 8,
-            "label": "R&D $31.4B",
-            "color": "#8b949e"
-          },
-          {
-            "id": 9,
-            "label": "SG&A $26.1B",
-            "color": "#aaaaaa"
-          },
-          {
-            "id": 10,
-            "label": "Operating Income $123.2B",
-            "color": "#58a6ff"
-          },
-          {
-            "id": 11,
-            "label": "Tax & Other $29.5B",
-            "color": "#f85149"
-          },
-          {
-            "id": 12,
-            "label": "Net Income $93.7B",
-            "color": "#3fb950"
-          }
-        ],
-        "links": [
-          {
-            "source": 0,
-            "target": 5,
-            "value": 201.2
-          },
-          {
-            "source": 1,
-            "target": 5,
-            "value": 96.2
-          },
-          {
-            "source": 2,
-            "target": 5,
-            "value": 37
-          },
-          {
-            "source": 3,
-            "target": 5,
-            "value": 29.9
-          },
-          {
-            "source": 4,
-            "target": 5,
-            "value": 26.7
-          },
-          {
-            "source": 5,
-            "target": 6,
-            "value": 210.4
-          },
-          {
-            "source": 5,
-            "target": 7,
-            "value": 180.7
-          },
-          {
-            "source": 7,
-            "target": 8,
-            "value": 31.4
-          },
-          {
-            "source": 7,
-            "target": 9,
-            "value": 26.1
-          },
-          {
-            "source": 7,
-            "target": 10,
-            "value": 123.2
-          },
-          {
-            "source": 10,
-            "target": 11,
-            "value": 29.5
-          },
-          {
-            "source": 10,
-            "target": 12,
-            "value": 93.7
-          }
-        ]
-      }
-    },
-    "notes": "ปีบัญชีของ Apple สิ้นสุดในเดือนกันยายนของทุกปี (ตุลาคม – กันยายน) หน่วย: พันล้านเหรียญสหรัฐ ยกเว้น EPS (ต่อหุ้น)\n\nFY2020 เป็นปีแรกที่เปิดตัว Apple Silicon (M1) ใน Mac ซึ่งช่วยดัน gross margin ระยะยาว\nOperating Income FY2021 พุ่งแรงจาก pandemic-driven demand ทั้ง iPhone 12 5G และ Mac M1\nServices gross margin ~75% สูงกว่า hardware margin (~36%) มาก — เป็น key thesis ของหุ้น AAPL"
+    "quarterly": {
+      "periods": [
+        "Q1 2024",
+        "Q2 2024",
+        "Q3 2024",
+        "Q1 2025",
+        "Q2 2025",
+        "Q3 2025",
+        "Q1 2026"
+      ],
+      "period_ends": [
+        "2022-12-31",
+        "2023-04-01",
+        "2023-07-01",
+        "2023-12-30",
+        "2024-03-30",
+        "2024-06-29",
+        "2024-12-28"
+      ],
+      "metrics": [
+        {
+          "name": "Gross Profit",
+          "values": [
+            50332,
+            92308,
+            128721,
+            54855,
+            97126,
+            136804,
+            58275
+          ],
+          "chart": false,
+          "margin": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "name": "Operating Income",
+          "values": [
+            36016,
+            64334,
+            87332,
+            40373,
+            68273,
+            93625,
+            42832
+          ],
+          "chart": false,
+          "margin": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "name": "EBITDA",
+          "values": [
+            38932,
+            70148,
+            96198,
+            43221,
+            73957,
+            102159,
+            45912
+          ],
+          "chart": false,
+          "margin": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "name": "Net Income",
+          "values": [
+            29998,
+            54158,
+            74039,
+            33916,
+            57552,
+            79000,
+            36330
+          ],
+          "chart": false,
+          "growth": [
+            null,
+            80.5,
+            36.7,
+            -54.2,
+            69.7,
+            37.3,
+            -54
+          ],
+          "margin": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "name": "EPS Diluted",
+          "values": [
+            1.88,
+            3.41,
+            4.67,
+            2.18,
+            3.71,
+            5.11,
+            2.4
+          ],
+          "chart": false,
+          "growth": [
+            null,
+            81.4,
+            37,
+            -53.3,
+            70.2,
+            37.7,
+            -53
+          ]
+        },
+        {
+          "name": "Operating CF",
+          "values": [
+            34005,
+            62565,
+            88945,
+            39895,
+            62585,
+            91443,
+            29935
+          ],
+          "chart": false
+        },
+        {
+          "name": "CapEx",
+          "values": [
+            -3787,
+            -6703,
+            -8796,
+            -2392,
+            -4388,
+            -6539,
+            -2940
+          ],
+          "chart": false
+        },
+        {
+          "name": "Free Cash Flow",
+          "values": [
+            30218,
+            55862,
+            80149,
+            37503,
+            58197,
+            84904,
+            26995
+          ],
+          "chart": false
+        },
+        {
+          "name": "Cash",
+          "values": [
+            29965,
+            29965,
+            29965,
+            29943,
+            29943,
+            29943,
+            35934
+          ],
+          "chart": false
+        },
+        {
+          "name": "Total Debt",
+          "values": [
+            105100,
+            105100,
+            105100,
+            96700,
+            96700,
+            96700,
+            90700
+          ],
+          "chart": false
+        }
+      ]
+    }
   },
   "overview": {
     "founded": "1976",

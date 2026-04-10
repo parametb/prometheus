@@ -159,14 +159,12 @@ Bullish
 
 ## 💰 Financials
 
-*USD, Billion*
+*USD, Million*
 
-| Metric | 2022 | 2023 | 2024 | 2025 |
-|--------|------|------|------|------|
-| Revenue | 11.95 | 11.78 | 18.56 | 22.1 |
-| Gross Profit | 2.14 | 1.17 | 6.42 | 11 |
-| Net Income | -0.459 | -2.52 | 3.35 | 7.08 |
-| EPS (diluted) | -0.58 | -3 | 2.86 | 6.41 |
-| Free Cash Flow | 1.09 | 0.097 | 2.96 | 7.3 |
-
-*Revenue = total sales per FMP/EDGAR. Gross Profit = Revenue - Cost of Revenue. Net Income = attributable to Newmont shareholders. FCF = Operating CF - CapEx. FY2023 NI impacted by ~$3.2B impairment charges (Ahafo, Cerro Negro) and Newcrest acquisition costs. FY2024 marked first full year post-Newcrest consolidation (acquired Nov 2023). FY2025 benefited from record gold prices (~$2,650/oz avg). Source: FMP annual, EDGAR 10-K.*
+| Metric | 2021 | 2022 | 2023 | 2024 | 2025 |
+|--------|------|------|------|------|------|
+| Net Income | 2,805 | 2,829 | 1,166 | -429 | -2,494 |
+| EPS Diluted | 3.81 | 3.51 | 1.46 | -0.54 | -2.97 |
+| Operating CF | 2,866 | 4,882 | 4,279 | 3,220 | 2,763 |
+| Cash | 2,243 | 5,540 | 4,992 | 2,877 | 3,002 |
+| Total Debt | 5,711 | 5,571 | 8,874 | 8,476 | 5,115 |

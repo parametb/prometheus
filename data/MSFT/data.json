@@ -112,220 +112,504 @@
   "open_tasks": [],
   "financials": {
     "currency": "USD",
-    "unit": "Billion",
-    "links": [
-      {
-        "title": "Annual Report FY2024",
-        "type": "Annual Report",
-        "year": 2024,
-        "url": "https://www.microsoft.com/en-us/investor/annual-reports.aspx"
-      },
-      {
-        "title": "10-K FY2024",
-        "type": "10-K",
-        "year": 2024,
-        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000789019&type=10-K&dateb=&owner=include&count=10"
-      },
-      {
-        "title": "10-Q Q2 FY2025",
-        "type": "10-Q",
-        "year": 2025,
-        "quarter": "Q2",
-        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000789019&type=10-Q&dateb=&owner=include&count=10"
-      },
-      {
-        "title": "Investor Relations",
-        "type": "Investor Day",
-        "year": 2024,
-        "url": "https://www.microsoft.com/en-us/investor"
-      }
-    ],
+    "unit": "Million",
+    "source": "EDGAR",
+    "last_updated": "2026-04-10",
+    "annual": {
+      "periods": [
+        "FY2021",
+        "FY2022",
+        "FY2023",
+        "FY2024",
+        "FY2025"
+      ],
+      "period_ends": [
+        "2019-06-30",
+        "2020-06-30",
+        "2021-06-30",
+        "2022-06-30",
+        "2023-06-30"
+      ],
+      "metrics": [
+        {
+          "name": "Gross Profit",
+          "values": [
+            82933,
+            96937,
+            115856,
+            135620,
+            146052
+          ],
+          "chart": false,
+          "margin": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "name": "Operating Income",
+          "values": [
+            42959,
+            52959,
+            69916,
+            83383,
+            88523
+          ],
+          "chart": false,
+          "margin": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "name": "Net Income",
+          "values": [
+            39240,
+            44281,
+            61271,
+            72738,
+            72361
+          ],
+          "chart": false,
+          "growth": [
+            null,
+            12.8,
+            38.4,
+            18.7,
+            -0.5
+          ],
+          "margin": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "name": "EPS Diluted",
+          "values": [
+            5.06,
+            5.76,
+            8.05,
+            9.65,
+            9.68
+          ],
+          "chart": false,
+          "growth": [
+            null,
+            13.8,
+            39.8,
+            19.9,
+            0.3
+          ]
+        },
+        {
+          "name": "Operating CF",
+          "values": [
+            52185,
+            60675,
+            76740,
+            89035,
+            87582
+          ],
+          "chart": false
+        },
+        {
+          "name": "CapEx",
+          "values": [
+            -13925,
+            -15441,
+            -20622,
+            -23886,
+            -28107
+          ],
+          "chart": false
+        },
+        {
+          "name": "Free Cash Flow",
+          "values": [
+            38260,
+            45234,
+            56118,
+            65149,
+            59475
+          ],
+          "chart": false
+        },
+        {
+          "name": "Cash",
+          "values": [
+            13576,
+            14224,
+            13931,
+            34704,
+            18315
+          ],
+          "chart": false
+        },
+        {
+          "name": "Total Debt",
+          "values": [
+            63327,
+            58146,
+            49781,
+            47237,
+            44937
+          ],
+          "chart": false
+        }
+      ]
+    },
     "years": [
-      2020,
       2021,
       2022,
       2023,
-      2024
+      2024,
+      2025
     ],
     "metrics": [
       {
-        "name": "Revenue",
-        "values": [
-          143,
-          168.1,
-          198.3,
-          211.9,
-          245.1
-        ]
-      },
-      {
         "name": "Gross Profit",
         "values": [
-          96.9,
-          115.9,
-          135.6,
-          146.1,
-          171
+          82933,
+          96937,
+          115856,
+          135620,
+          146052
+        ],
+        "chart": false,
+        "margin": [
+          null,
+          null,
+          null,
+          null,
+          null
         ]
       },
       {
         "name": "Operating Income",
         "values": [
-          53,
-          69.9,
-          83.4,
-          88.5,
-          109.4
+          42959,
+          52959,
+          69916,
+          83383,
+          88523
+        ],
+        "chart": false,
+        "margin": [
+          null,
+          null,
+          null,
+          null,
+          null
         ]
       },
       {
         "name": "Net Income",
         "values": [
-          44.3,
-          61.3,
-          72.7,
-          72.4,
-          88.1
+          39240,
+          44281,
+          61271,
+          72738,
+          72361
+        ],
+        "chart": false,
+        "growth": [
+          null,
+          12.8,
+          38.4,
+          18.7,
+          -0.5
+        ],
+        "margin": [
+          null,
+          null,
+          null,
+          null,
+          null
         ]
       },
       {
-        "name": "EPS (diluted)",
+        "name": "EPS Diluted",
         "values": [
+          5.06,
           5.76,
           8.05,
           9.65,
-          9.72,
-          11.8
+          9.68
+        ],
+        "chart": false,
+        "growth": [
+          null,
+          13.8,
+          39.8,
+          19.9,
+          0.3
         ]
+      },
+      {
+        "name": "Operating CF",
+        "values": [
+          52185,
+          60675,
+          76740,
+          89035,
+          87582
+        ],
+        "chart": false
+      },
+      {
+        "name": "CapEx",
+        "values": [
+          -13925,
+          -15441,
+          -20622,
+          -23886,
+          -28107
+        ],
+        "chart": false
       },
       {
         "name": "Free Cash Flow",
         "values": [
-          45.2,
-          56.1,
-          65.1,
-          87.9,
-          74.1
-        ]
+          38260,
+          45234,
+          56118,
+          65149,
+          59475
+        ],
+        "chart": false
+      },
+      {
+        "name": "Cash",
+        "values": [
+          13576,
+          14224,
+          13931,
+          34704,
+          18315
+        ],
+        "chart": false
+      },
+      {
+        "name": "Total Debt",
+        "values": [
+          63327,
+          58146,
+          49781,
+          47237,
+          44937
+        ],
+        "chart": false
       }
     ],
-    "breakdown": {
-      "sankey": {
-        "year": 2024,
-        "currency": "USD",
-        "unit": "Billion",
-        "nodes": [
-          {
-            "id": 0,
-            "label": "Intelligent Cloud",
-            "color": "#58a6ff"
-          },
-          {
-            "id": 1,
-            "label": "Productivity & Business",
-            "color": "#3fb950"
-          },
-          {
-            "id": 2,
-            "label": "More Personal Computing",
-            "color": "#bc8cff"
-          },
-          {
-            "id": 3,
-            "label": "Total Revenue $245.1B",
-            "color": "#f0c060"
-          },
-          {
-            "id": 4,
-            "label": "COGS $74.1B",
-            "color": "#f85149"
-          },
-          {
-            "id": 5,
-            "label": "Gross Profit $171.0B",
-            "color": "#58d68d"
-          },
-          {
-            "id": 6,
-            "label": "R&D $29.5B",
-            "color": "#8b949e"
-          },
-          {
-            "id": 7,
-            "label": "SG&A $32.1B",
-            "color": "#aaaaaa"
-          },
-          {
-            "id": 8,
-            "label": "Operating Income $109.4B",
-            "color": "#58a6ff"
-          },
-          {
-            "id": 9,
-            "label": "Tax & Other $21.3B",
-            "color": "#f85149"
-          },
-          {
-            "id": 10,
-            "label": "Net Income $88.1B",
-            "color": "#3fb950"
-          }
-        ],
-        "links": [
-          {
-            "source": 0,
-            "target": 3,
-            "value": 105.4
-          },
-          {
-            "source": 1,
-            "target": 3,
-            "value": 77.4
-          },
-          {
-            "source": 2,
-            "target": 3,
-            "value": 62.3
-          },
-          {
-            "source": 3,
-            "target": 4,
-            "value": 74.1
-          },
-          {
-            "source": 3,
-            "target": 5,
-            "value": 171
-          },
-          {
-            "source": 5,
-            "target": 6,
-            "value": 29.5
-          },
-          {
-            "source": 5,
-            "target": 7,
-            "value": 32.1
-          },
-          {
-            "source": 5,
-            "target": 8,
-            "value": 109.4
-          },
-          {
-            "source": 8,
-            "target": 9,
-            "value": 21.3
-          },
-          {
-            "source": 8,
-            "target": 10,
-            "value": 88.1
-          }
-        ]
-      }
-    },
-    "notes": "ปีบัญชีของ Microsoft สิ้นสุดในเดือนมิถุนายนของทุกปี (กรกฎาคม – มิถุนายน) หน่วย: พันล้านเหรียญสหรัฐ ยกเว้น EPS (ต่อหุ้น)\n\nFY2020-2021 เป็นช่วง hyper-growth ของ Azure จาก pandemic-driven cloud migration\nFY2022 Operating Income ขยับจาก $69.9B → $83.4B (+19%) สะท้อน operating leverage ของ cloud business\nFY2024 FCF ลดลง YoY เพราะ capex เพิ่มจาก AI infrastructure investment ($44.5B capex vs $29.1B ปีก่อน)\nOpenAI investment (~$13B+) บันทึกเป็น equity investment ไม่ได้รวมอยู่ใน revenue แต่ Azure OpenAI Service revenue อยู่ใน Intelligent Cloud"
+    "quarterly": {
+      "periods": [
+        "Q1 2024",
+        "Q2 2024",
+        "Q3 2024",
+        "Q1 2025",
+        "Q2 2025",
+        "Q3 2025",
+        "Q1 2026",
+        "Q2 2026"
+      ],
+      "period_ends": [
+        "2022-09-30",
+        "2022-12-31",
+        "2023-03-31",
+        "2023-09-30",
+        "2023-12-31",
+        "2024-03-31",
+        "2024-09-30",
+        "2024-12-31"
+      ],
+      "metrics": [
+        {
+          "name": "Gross Profit",
+          "values": [
+            34670,
+            69929,
+            106658,
+            40215,
+            82612,
+            125965,
+            45486,
+            93319
+          ],
+          "chart": false,
+          "margin": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "name": "Operating Income",
+          "values": [
+            21518,
+            41917,
+            64269,
+            26895,
+            53927,
+            81508,
+            30552,
+            62205
+          ],
+          "chart": false,
+          "margin": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "name": "Net Income",
+          "values": [
+            17556,
+            33981,
+            52280,
+            22291,
+            44161,
+            66100,
+            24667,
+            48775
+          ],
+          "chart": false,
+          "growth": [
+            null,
+            93.6,
+            53.9,
+            -57.4,
+            98.1,
+            49.7,
+            -62.7,
+            97.7
+          ],
+          "margin": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "name": "EPS Diluted",
+          "values": [
+            2.35,
+            4.54,
+            6.99,
+            2.99,
+            5.92,
+            8.85,
+            3.3,
+            6.53
+          ],
+          "chart": false,
+          "growth": [
+            null,
+            93.2,
+            54,
+            -57.2,
+            98,
+            49.5,
+            -62.7,
+            97.9
+          ]
+        },
+        {
+          "name": "Operating CF",
+          "values": [
+            23198,
+            34371,
+            58812,
+            30583,
+            49436,
+            81353,
+            34180,
+            56471
+          ],
+          "chart": false
+        },
+        {
+          "name": "CapEx",
+          "values": [
+            -6283,
+            -12557,
+            -19164,
+            -9917,
+            -19652,
+            -30604,
+            -14923,
+            -30727
+          ],
+          "chart": false
+        },
+        {
+          "name": "Free Cash Flow",
+          "values": [
+            16915,
+            21814,
+            39648,
+            20666,
+            29784,
+            50749,
+            19257,
+            25744
+          ],
+          "chart": false
+        },
+        {
+          "name": "Cash",
+          "values": [
+            34704,
+            34704,
+            34704,
+            18315,
+            18315,
+            18315,
+            30242,
+            30242
+          ],
+          "chart": false
+        },
+        {
+          "name": "Total Debt",
+          "values": [
+            47237,
+            47237,
+            47237,
+            44937,
+            44937,
+            44937,
+            43151,
+            43151
+          ],
+          "chart": false
+        }
+      ]
+    }
   },
   "overview": {
     "founded": "1975",
