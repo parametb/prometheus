@@ -28,13 +28,14 @@ const path = require('path');
 const notion = new Client({ auth: process.env.NOTION_TOKEN });
 
 const DB = {
-  companies : process.env.NOTION_COMPANIES_DB,
-  notes     : process.env.NOTION_NOTES_DB,
-  quotes    : process.env.NOTION_QUOTES_DB,
-  roadmap   : process.env.NOTION_ROADMAP_DB,
-  sources   : process.env.NOTION_SOURCES_DB,
-  reports   : process.env.NOTION_REPORTS_DB,
-  tasks     : process.env.NOTION_TASKS_DB,
+  companies  : process.env.NOTION_COMPANIES_DB,
+  notes      : process.env.NOTION_NOTES_DB,
+  quotes     : process.env.NOTION_QUOTES_DB,
+  roadmap    : process.env.NOTION_ROADMAP_DB,
+  sources    : process.env.NOTION_SOURCES_DB,
+  reports    : process.env.NOTION_REPORTS_DB,
+  tasks      : process.env.NOTION_TASKS_DB,
+  financials : process.env.NOTION_FINANCIALS_DB,  // v2.2 — EDGAR data
 };
 
 const DATA_DIR = path.join(__dirname, 'data');
@@ -275,6 +276,120 @@ function mapTask(page) {
   };
 }
 
+function mapFinancial(page) {
+  return {
+    _id             : page.id,
+    _company_ids    : prop(page, 'Company') ?? [],
+    ticker          : prop(page, 'Ticker'),
+    period_type     : prop(page, 'Period Type'),     // 'Annual' | 'Quarterly'
+    period_label    : prop(page, 'Period Label'),    // 'FY2024' | 'Q3 2024'
+    fiscal_year     : prop(page, 'Fiscal Year'),
+    quarter         : prop(page, 'Quarter'),         // 'Q1'–'Q4' | null
+    period_end_date : prop(page, 'Period End Date'),
+    form            : prop(page, 'Form'),
+    data_source     : prop(page, 'Data Source'),
+    revenue         : prop(page, 'Revenue'),
+    gross_profit    : prop(page, 'Gross Profit'),
+    operating_income: prop(page, 'Operating Income'),
+    ebitda          : prop(page, 'EBITDA'),
+    net_income      : prop(page, 'Net Income'),
+    eps_diluted     : prop(page, 'EPS Diluted'),
+    shares_diluted  : prop(page, 'Shares Diluted'),
+    operating_cf    : prop(page, 'Operating CF'),
+    capex           : prop(page, 'CapEx'),
+    free_cash_flow  : prop(page, 'Free Cash Flow'),
+    cash            : prop(page, 'Cash'),
+    total_debt      : prop(page, 'Total Debt'),
+    total_assets    : prop(page, 'Total Assets'),
+    total_equity    : prop(page, 'Total Equity'),
+  };
+}
+
+/**
+ * Build the financials section of data.json from Notion Financial records.
+ * Returns backward-compatible format + enhanced annual/quarterly sections.
+ */
+function buildFinancialsFromNotion(records) {
+  if (!records?.length) return null;
+
+  const QUARTER_ORDER = { Q1: 1, Q2: 2, Q3: 3, Q4: 4 };
+
+  const annual = records
+    .filter(r => r.period_type === 'Annual' && r.fiscal_year)
+    .sort((a, b) => a.fiscal_year - b.fiscal_year);
+
+  const quarterly = records
+    .filter(r => r.period_type === 'Quarterly' && r.fiscal_year)
+    .sort((a, b) => {
+      if (a.fiscal_year !== b.fiscal_year) return a.fiscal_year - b.fiscal_year;
+      return (QUARTER_ORDER[a.quarter] || 0) - (QUARTER_ORDER[b.quarter] || 0);
+    });
+
+  const METRIC_DEFS = [
+    { key: 'revenue',          name: 'Revenue',         chart: true,  showGrowth: true },
+    { key: 'gross_profit',     name: 'Gross Profit',                  marginOf: 'revenue' },
+    { key: 'operating_income', name: 'Operating Income',              marginOf: 'revenue' },
+    { key: 'ebitda',           name: 'EBITDA',                        marginOf: 'revenue' },
+    { key: 'net_income',       name: 'Net Income',                    marginOf: 'revenue', showGrowth: true },
+    { key: 'eps_diluted',      name: 'EPS Diluted',     chart: false, showGrowth: true },
+    { key: 'operating_cf',     name: 'Operating CF' },
+    { key: 'capex',            name: 'CapEx' },
+    { key: 'free_cash_flow',   name: 'Free Cash Flow' },
+    { key: 'cash',             name: 'Cash' },
+    { key: 'total_debt',       name: 'Total Debt' },
+  ];
+
+  function buildSection(recs) {
+    if (!recs.length) return null;
+    const periods     = recs.map(r => r.period_label);
+    const period_ends = recs.map(r => r.period_end_date);
+
+    const metrics = METRIC_DEFS.map(def => {
+      const values = recs.map(r => r[def.key] ?? null);
+      const out = { name: def.name, values, chart: def.chart ?? false };
+
+      if (def.showGrowth) {
+        out.growth = values.map((v, i) => {
+          if (i === 0 || values[i - 1] == null || v == null || values[i - 1] === 0) return null;
+          return Math.round((v - values[i - 1]) / Math.abs(values[i - 1]) * 1000) / 10;
+        });
+      }
+      if (def.marginOf) {
+        const base = recs.map(r => r[def.marginOf] ?? null);
+        out.margin = values.map((v, i) => {
+          if (v == null || base[i] == null || base[i] === 0) return null;
+          return Math.round(v / base[i] * 1000) / 10;
+        });
+      }
+      return out;
+    }).filter(m => m.values.some(v => v != null)); // drop metrics with no data
+
+    return { periods, period_ends, metrics };
+  }
+
+  const annualSection    = buildSection(annual);
+  const quarterlySection = buildSection(quarterly);
+
+  const result = {
+    currency    : 'USD',
+    unit        : 'Million',
+    source      : 'EDGAR',
+    last_updated: new Date().toISOString().split('T')[0],
+  };
+
+  if (annualSection) {
+    result.annual = annualSection;
+    // backward-compatible keys (company.html still reads these)
+    result.years   = annual.map(r => r.fiscal_year);
+    result.metrics = annualSection.metrics;
+  }
+  if (quarterlySection) {
+    result.quarterly = quarterlySection;
+  }
+
+  return result;
+}
+
 // ─── Group records by company ─────────────────────────────────────────────────
 
 /**
@@ -353,7 +468,7 @@ function buildSnapshot(company, quotes, roadmap, notes, sources, reports) {
 
 // ─── Assemble data.json for one company ──────────────────────────────────────
 
-function buildDataJson(company, allQuotes, allRoadmap, allNotes, allSources, allReports, allTasks, sourceIndex) {
+function buildDataJson(company, allQuotes, allRoadmap, allNotes, allSources, allReports, allTasks, allFinancials, sourceIndex) {
   // Clean records: strip internal _* fields from output
   const clean = (obj, omit = []) => {
     const out = {};
@@ -429,7 +544,7 @@ function buildDataJson(company, allQuotes, allRoadmap, allNotes, allSources, all
     sources,           // v2.1 — NEW section
     analytic_reports   : reports,  // v2.1 — NEW section
     open_tasks         : tasks,    // v2.1 — NEW section (non-done tasks only)
-    financials        : loadExistingFinancials(company.ticker),  // preserved from JSON
+    financials        : buildFinancialsFromNotion(allFinancials) || loadExistingFinancials(company.ticker),  // v2.2: prefer Notion, fallback to JSON
     overview          : loadExistingOverview(company.ticker),    // preserved from JSON
   };
 }
@@ -470,14 +585,18 @@ async function main() {
   console.log('\n🔥 Prometheus Notion Sync v2.1');
   console.log('─────────────────────────────────\n');
 
-  // Validate env
-  const missing = Object.entries(DB)
-    .filter(([, v]) => !v)
-    .map(([k]) => `NOTION_${k.toUpperCase()}_DB`);
+  // Validate env (financials is optional — skip warning if not set)
+  const REQUIRED_DBS = ['companies','notes','quotes','roadmap','sources','reports','tasks'];
+  const missing = REQUIRED_DBS
+    .filter(k => !DB[k])
+    .map(k => `NOTION_${k.toUpperCase()}_DB`);
   if (!process.env.NOTION_TOKEN) missing.push('NOTION_TOKEN');
   if (missing.length) {
     console.error('❌ Missing env vars:\n  ' + missing.join('\n  '));
     process.exit(1);
+  }
+  if (!DB.financials) {
+    console.warn('⚠️  NOTION_FINANCIALS_DB not set — financial data will use fallback JSON');
   }
 
   // ── Step 1: Fetch all databases ──────────────────────────────────────────
@@ -518,17 +637,22 @@ async function main() {
   const taskPages = await fetchAll(DB.tasks);
   const tasks = taskPages.map(mapTask);
 
-  console.log(`\n  📊 Fetched: ${companies.length} companies · ${quotes.length} quotes · ${roadmapItems.length} roadmap · ${notes.length} notes · ${sources.length} sources · ${reports.length} reports · ${tasks.length} tasks\n`);
+  console.log('  → Financials (EDGAR data)');
+  const financialPages = await fetchAll(DB.financials);
+  const financials = financialPages.map(mapFinancial);
+
+  console.log(`\n  📊 Fetched: ${companies.length} companies · ${quotes.length} quotes · ${roadmapItems.length} roadmap · ${notes.length} notes · ${sources.length} sources · ${reports.length} reports · ${tasks.length} tasks · ${financials.length} financial periods\n`);
 
   // ── Step 2: Build company index + group records ───────────────────────────
   const companyIndex = buildCompanyIndex(companies);
 
-  const quotesByTicker   = groupByCompany(quotes, companyIndex);
-  const roadmapByTicker  = groupByCompany(roadmapItems, companyIndex);
-  const notesByTicker    = groupByCompany(notes, companyIndex);
-  const sourcesByTicker  = groupByCompany(sources, companyIndex);
-  const reportsByTicker  = groupByCompany(reports, companyIndex);
-  const tasksByTicker    = groupByCompany(tasks, companyIndex);
+  const quotesByTicker      = groupByCompany(quotes, companyIndex);
+  const roadmapByTicker     = groupByCompany(roadmapItems, companyIndex);
+  const notesByTicker       = groupByCompany(notes, companyIndex);
+  const sourcesByTicker     = groupByCompany(sources, companyIndex);
+  const reportsByTicker     = groupByCompany(reports, companyIndex);
+  const tasksByTicker       = groupByCompany(tasks, companyIndex);
+  const financialsByTicker  = groupByCompany(financials, companyIndex);
 
   // ── Step 3: Write data.json per company ──────────────────────────────────
   console.log('📝 Writing company data files...\n');
@@ -539,15 +663,16 @@ async function main() {
     const ticker = company.ticker;
     console.log(`  🏢 ${ticker} — ${company.name}`);
 
-    const cQuotes  = quotesByTicker[ticker]  ?? [];
-    const cRoadmap = roadmapByTicker[ticker] ?? [];
-    const cNotes   = notesByTicker[ticker]   ?? [];
-    const cSources = sourcesByTicker[ticker] ?? [];
-    const cReports = reportsByTicker[ticker] ?? [];
-    const cTasks   = tasksByTicker[ticker]   ?? [];
+    const cQuotes     = quotesByTicker[ticker]     ?? [];
+    const cRoadmap    = roadmapByTicker[ticker]    ?? [];
+    const cNotes      = notesByTicker[ticker]      ?? [];
+    const cSources    = sourcesByTicker[ticker]    ?? [];
+    const cReports    = reportsByTicker[ticker]    ?? [];
+    const cTasks      = tasksByTicker[ticker]      ?? [];
+    const cFinancials = financialsByTicker[ticker] ?? [];
 
     const dataJson = buildDataJson(
-      company, cQuotes, cRoadmap, cNotes, cSources, cReports, cTasks, sourceIndex
+      company, cQuotes, cRoadmap, cNotes, cSources, cReports, cTasks, cFinancials, sourceIndex
     );
 
     const snapshot = buildSnapshot(company, cQuotes, cRoadmap, cNotes, cSources, cReports);

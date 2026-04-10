@@ -13,6 +13,10 @@ on:
         description: 'Skip Notion sync (build Quartz only)'
         type: boolean
         default: false
+      skip_edgar:
+        description: 'Skip EDGAR financial sync'
+        type: boolean
+        default: false
 
 concurrency:
   group: notion-sync
@@ -33,18 +37,28 @@ jobs:
           cache: 'npm'
       - run: npm ci
 
+      - name: Run EDGAR financial sync
+        if: ${{ !inputs.skip_sync && !inputs.skip_edgar }}
+        env:
+          NOTION_TOKEN:         ${{ secrets.NOTION_TOKEN }}
+          NOTION_COMPANIES_DB:  ${{ secrets.NOTION_COMPANIES_DB }}
+          NOTION_FINANCIALS_DB: ${{ secrets.NOTION_FINANCIALS_DB }}
+          DEBUG:                ${{ inputs.debug }}
+        run: node edgar-sync.js
+
       - name: Run Notion sync
         if: ${{ !inputs.skip_sync }}
         env:
-          NOTION_TOKEN:        ${{ secrets.NOTION_TOKEN }}
-          NOTION_COMPANIES_DB: ${{ secrets.NOTION_COMPANIES_DB }}
-          NOTION_NOTES_DB:     ${{ secrets.NOTION_NOTES_DB }}
-          NOTION_QUOTES_DB:    ${{ secrets.NOTION_QUOTES_DB }}
-          NOTION_ROADMAP_DB:   ${{ secrets.NOTION_ROADMAP_DB }}
-          NOTION_SOURCES_DB:   ${{ secrets.NOTION_SOURCES_DB }}
-          NOTION_REPORTS_DB:   ${{ secrets.NOTION_REPORTS_DB }}
-          NOTION_TASKS_DB:     ${{ secrets.NOTION_TASKS_DB }}
-          DEBUG:               ${{ inputs.debug }}
+          NOTION_TOKEN:         ${{ secrets.NOTION_TOKEN }}
+          NOTION_COMPANIES_DB:  ${{ secrets.NOTION_COMPANIES_DB }}
+          NOTION_NOTES_DB:      ${{ secrets.NOTION_NOTES_DB }}
+          NOTION_QUOTES_DB:     ${{ secrets.NOTION_QUOTES_DB }}
+          NOTION_ROADMAP_DB:    ${{ secrets.NOTION_ROADMAP_DB }}
+          NOTION_SOURCES_DB:    ${{ secrets.NOTION_SOURCES_DB }}
+          NOTION_REPORTS_DB:    ${{ secrets.NOTION_REPORTS_DB }}
+          NOTION_TASKS_DB:      ${{ secrets.NOTION_TASKS_DB }}
+          NOTION_FINANCIALS_DB: ${{ secrets.NOTION_FINANCIALS_DB }}
+          DEBUG:                ${{ inputs.debug }}
         run: node notion-sync.js
 
       - run: node generate-quartz.js

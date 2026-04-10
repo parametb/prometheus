@@ -268,6 +268,19 @@
     .fin-table td { border:1px solid var(--border); padding:9px 12px; text-align:right; font-family:'JetBrains Mono',monospace; }
     .fin-table td:first-child { text-align:left; color:var(--text-muted); font-size:11px; font-family:inherit; }
     .fin-table tr:hover td { background:var(--surface2); }
+    /* EDGAR financials */
+    .fin-period-toggle { display:flex; gap:4px; }
+    .fin-period-btn    { background:var(--surface2); border:1px solid var(--border); border-radius:20px; color:var(--text-muted); cursor:pointer; font-size:11px; padding:3px 12px; transition:all 0.18s; }
+    .fin-period-btn:hover { border-color:var(--accent); color:var(--accent); }
+    .fin-period-btn.active { background:var(--accent); border-color:var(--accent); color:#fff; }
+    .fin-table-edgar .fin-row-value td { font-weight:600; padding:7px 12px; }
+    .fin-table-edgar .fin-row-growth td,
+    .fin-table-edgar .fin-row-margin td { background:transparent; border-top:none; padding:2px 12px 6px; font-size:10px; font-family:'JetBrains Mono',monospace; }
+    .fin-table-edgar .fin-row-growth td:first-child,
+    .fin-table-edgar .fin-row-margin td:first-child { color:var(--text-muted); font-size:10px; font-style:italic; }
+    .fin-table-edgar .fin-td-null { color:var(--text-muted)!important; font-size:11px; }
+    .fin-table-edgar .fin-row-group td { border-bottom:2px solid var(--border); }
+    .fin-table-edgar thead tr th:first-child { min-width:140px; }
     .chart-container  { background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:14px 18px 18px; margin-bottom:12px; }
     .fin-metric-bar   { display:flex; flex-wrap:wrap; gap:5px; margin-bottom:10px; }
     .fin-metric-btn   { background:var(--surface2); border:1px solid var(--border); border-radius:20px; color:var(--text-muted); cursor:pointer; font-size:11px; padding:3px 10px; transition:all 0.18s; white-space:nowrap; }
@@ -1034,17 +1047,106 @@ async function renderGanttChart(roadmap){
   mermaid.initialize({startOnLoad:false,theme,securityLevel:'loose'});
   try{const{svg}=await mermaid.render('gantt-'+Date.now(),syntax);container.innerHTML=svg;}
   catch(e){container.innerHTML=`<div class="gantt-loading">${t('error.timeline')}</div>`;}
-}431
+}
 
 /* ── FINANCIALS ── */
+const FIN_METRIC_CFG={
+  revenue:         {label:'Revenue',              showGrowth:true,  showMargin:false},
+  gross_profit:    {label:'Gross Profit',          showGrowth:true,  showMargin:true },
+  operating_income:{label:'Operating Income',      showGrowth:true,  showMargin:true },
+  net_income:      {label:'Net Income',            showGrowth:true,  showMargin:true },
+  ebitda:          {label:'EBITDA',                showGrowth:true,  showMargin:true },
+  eps_diluted:     {label:'EPS (Diluted)',          showGrowth:true,  showMargin:false},
+  operating_cf:    {label:'Operating Cash Flow',   showGrowth:true,  showMargin:false},
+  free_cash_flow:  {label:'Free Cash Flow',        showGrowth:true,  showMargin:false},
+  cash:            {label:'Cash & Equivalents',    showGrowth:false, showMargin:false},
+  total_debt:      {label:'Total Debt',            showGrowth:false, showMargin:false},
+  total_assets:    {label:'Total Assets',          showGrowth:false, showMargin:false},
+  total_equity:    {label:"Stockholders' Equity",  showGrowth:false, showMargin:false},
+  shares_diluted:  {label:'Diluted Shares (M)',    showGrowth:false, showMargin:false},
+};
+function formatFinVal(v,key){
+  if(v==null)return'—';
+  if(key==='eps_diluted')return v.toFixed(2);
+  if(key==='shares_diluted')return v.toFixed(0);
+  // values in millions
+  const abs=Math.abs(v);
+  if(abs>=1000)return(v/1000).toFixed(1)+'B';
+  if(abs>=100)return v.toFixed(0)+'M';
+  if(abs>=10)return v.toFixed(1)+'M';
+  return v.toFixed(2)+'M';
+}
+function buildFinPeriodTable(data,periodType,visible){
+  const periods=data.periods||[];
+  const metrics=data.metrics||[];
+  if(!periods.length||!metrics.length)return'';
+  const display=visible?'':'display:none';
+  const rows=metrics.map(m=>{
+    const cfg=FIN_METRIC_CFG[m.key]||{label:m.name,showGrowth:true,showMargin:false};
+    const hasG=cfg.showGrowth&&(m.growth||[]).some(v=>v!=null);
+    const hasM=cfg.showMargin&&(m.margin||[]).some(v=>v!=null);
+    const valCells=(m.values||[]).map(v=>v==null
+      ?`<td class="fin-td-null">—</td>`
+      :`<td>${formatFinVal(v,m.key)}</td>`).join('');
+    const growCells=hasG?(m.growth||[]).map(g=>{
+      if(g==null)return`<td class="fin-td-sub fin-td-null">—</td>`;
+      const col=g>0?'var(--green)':g<0?'var(--red)':'var(--text-muted)';
+      return`<td class="fin-td-sub" style="color:${col}">${g>0?'+':''}${g}%</td>`;
+    }).join(''):'';
+    const margCells=hasM?(m.margin||[]).map(mg=>{
+      if(mg==null)return`<td class="fin-td-sub fin-td-null">—</td>`;
+      const col=mg>=20?'var(--green)':mg>=0?'var(--text-muted)':'var(--red)';
+      return`<td class="fin-td-sub" style="color:${col}">${mg}%</td>`;
+    }).join(''):'';
+    // last row in each metric group gets fin-row-group for bottom border separator
+    const lastRowClass=' fin-row-group';
+    const valRowClass=`fin-row-value${!hasG&&!hasM?lastRowClass:''}`;
+    const growRowClass=`fin-row-growth${hasG&&!hasM?lastRowClass:''}`;
+    return`<tr class="${valRowClass}"><td class="fin-td-metric">${cfg.label}</td>${valCells}</tr>`
+      +(hasG?`<tr class="${growRowClass}"><td class="fin-td-sub">YoY</td>${growCells}</tr>`:'')
+      +(hasM?`<tr class="fin-row-margin fin-row-group"><td class="fin-td-sub">Margin</td>${margCells}</tr>`:'');
+  }).join('');
+  return`<div class="fin-period-table" id="fin-table-${periodType}" style="${display}"><div style="overflow-x:auto"><table class="fin-table fin-table-edgar">
+    <thead><tr><th>${t('fin.table_metric')}</th>${periods.map(p=>`<th>${p}</th>`).join('')}</tr></thead>
+    <tbody>${rows}</tbody>
+  </table></div></div>`;
+}
 function renderFinancials(fin){
-  if(!fin||!fin.metrics||!fin.metrics.length)return`<div class="empty">${t('empty.financials')}</div>`;
-  const years=fin.years||[];
+  if(!fin)return`<div class="empty">${t('empty.financials')}</div>`;
   const currency=fin.currency||'USD';
   const unit=fin.unit||'Million';
   const linksHtml=renderFinLinks(fin.links||[]);
   const tvFundHtml=companyData?.tradingview_symbol?`<div class="fin-section"><div class="fin-title">${t('fin.tv_fundamentals')}</div><div class="tv-fund-wrap" id="tv-fundamentals-outer"></div></div>`:'';
   const sankeyHtml=fin.breakdown?.sankey?`<div class="fin-section"><div class="fin-title">${t('fin.sankey')} (${fin.breakdown.sankey.year||''})</div><div class="sankey-container" id="sankey-chart"></div></div>`:'';
+  // ── EDGAR enhanced format ──
+  const hasEDGAR=fin.source==='EDGAR'&&(fin.annual||fin.quarterly);
+  if(hasEDGAR){
+    const hasA=fin.annual?.metrics?.length>0;
+    const hasQ=fin.quarterly?.metrics?.length>0;
+    if(!hasA&&!hasQ)return`<div class="empty">${t('empty.financials')}</div>`;
+    const toggleHtml=(hasA&&hasQ)?`<div class="fin-period-toggle">
+      <button class="fin-period-btn active" id="btn-annual" onclick="switchFinPeriod('annual')">Annual</button>
+      <button class="fin-period-btn" id="btn-quarterly" onclick="switchFinPeriod('quarterly')">Quarterly</button>
+    </div>`:'';
+    const annualHtml=hasA?buildFinPeriodTable(fin.annual,'annual',true):'';
+    const quarterlyHtml=hasQ?buildFinPeriodTable(fin.quarterly,'quarterly',!hasA):'';
+    const srcBadge=`<span style="font-size:10px;background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:2px 6px;color:var(--text-muted);font-weight:500;margin-left:auto">EDGAR</span>`;
+    return`${linksHtml}${tvFundHtml}${sankeyHtml}
+    <div class="fin-section">
+      <div class="fin-title" style="justify-content:space-between">
+        <span>${t('fin.table_title')} <span style="font-weight:400;color:var(--text-muted)">(${currency}, ${unit})</span></span>
+        <div style="display:flex;align-items:center;gap:8px">${toggleHtml}${srcBadge}</div>
+      </div>
+      ${annualHtml}${quarterlyHtml}
+    </div>
+    <div class="fin-section"><div class="fin-title">${t('fin.revenue_trend')}</div>
+      <div class="chart-container"><div class="fin-metric-bar" id="fin-metric-bar"></div><div id="fin-chart"></div></div>
+    </div>
+    ${fin.notes?`<div class="fin-section"><div class="fin-title">${t('fin.notes')}</div><div style="color:var(--text-muted);font-size:13px;line-height:1.6">${fin.notes}</div></div>`:''}`;
+  }
+  // ── Legacy format ──
+  if(!fin.metrics||!fin.metrics.length)return`<div class="empty">${t('empty.financials')}</div>`;
+  const years=fin.years||[];
   return`${linksHtml}${tvFundHtml}${sankeyHtml}
     <div class="fin-section"><div class="fin-title">${t('fin.revenue_trend')}</div>
       <div class="chart-container"><div class="fin-metric-bar" id="fin-metric-bar"></div><div id="fin-chart"></div></div>
@@ -1161,6 +1263,14 @@ window.switchFinMetric=function(name){
   });
   series.data.setAll(data);
   series.appear(1000);
+};
+window.switchFinPeriod=function(type){
+  ['annual','quarterly'].forEach(pt=>{
+    const tbl=document.getElementById(`fin-table-${pt}`);
+    const btn=document.getElementById(`btn-${pt}`);
+    if(tbl)tbl.style.display=pt===type?'':'none';
+    if(btn)btn.classList.toggle('active',pt===type);
+  });
 };
 /* ── TRADINGVIEW ── */
 function renderTVChart(symbol){
