@@ -31,7 +31,7 @@ const notion = new Client({ auth: process.env.NOTION_TOKEN });
 const COMPANIES_DB  = process.env.NOTION_COMPANIES_DB;
 const FINANCIALS_DB = process.env.NOTION_FINANCIALS_DB;
 
-const SEC_USER_AGENT = 'Prometheus Research prometheus-research@github.com';
+const SEC_USER_AGENT = process.env.SEC_USER_AGENT || 'Prometheus Research paramet@me.com';
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
 // ─── SEC EDGAR XBRL concept map ───────────────────────────────────────────────
