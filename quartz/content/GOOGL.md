@@ -377,3 +377,19 @@ Alphabet faces a complex risk
 
 ⏳ **Use $24.8 billion from senior unsecured notes issuance for general corporate purposes.**
 *Confidence: high*
+
+## 💰 Financials
+
+*USD, Million*
+
+| Metric | 2021 | 2022 | 2023 | 2024 | 2025 |
+|--------|------|------|------|------|------|
+| Revenue | 161,857 | — | — | — | 307,394 |
+| Operating Income | 34,231 | 41,224 | 78,714 | 74,842 | 84,293 |
+| Net Income | 34,343 | 40,269 | 76,033 | 59,972 | 73,795 |
+| EPS Diluted | 49.16 | 2.93 | 5.61 | 4.56 | 5.8 |
+| Operating CF | 54,520 | 65,124 | 91,652 | 91,495 | 101,746 |
+| CapEx | -23,548 | -22,281 | -24,640 | -31,485 | -32,251 |
+| Free Cash Flow | 30,972 | 42,843 | 67,012 | 60,010 | 69,495 |
+| Cash | 26,465 | 20,945 | 21,879 | 24,048 | 23,466 |
+| Total Debt | 15,440 | 15,312 | 14,862 | 13,000 | 49,085 |

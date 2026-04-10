@@ -158,12 +158,13 @@ Bullish
 
 *USD, Million*
 
-| Metric | 2022 | 2023 | 2024 | 2025 |
-|--------|------|------|------|------|
-| Revenue (milestone/collab) | 0.4 | 370 | 35 | 3.5 |
-| R&D Expenses | 461.6 | 387.3 | 320.7 | 265.3 |
-| Net Income | -650.2 | -153.6 | -366.3 | -581.6 |
-| EPS (diluted) | -8.36 | -1.94 | -4.34 | -6.47 |
-| Cash & Investments | 1,820 | 1,693 | 1,905 | 1,984 |
-
-*Pre-profitability biotech — revenue is lumpy milestone/collaboration payments, not product sales. FY2023 $370M spike = Casgevy FDA approval milestone from Vertex Pharmaceuticals. FY2022 near-zero revenue = no milestone events. FCF is ongoing cash burn from R&D. Cash & Investments is the key survival metric (runway). CEO: Samarth Kulkarni. Employees: 393. CIK: 1674416.*
+| Metric | 2021 | 2022 | 2023 | 2024 | 2025 |
+|--------|------|------|------|------|------|
+| Operating Income | 46.7 | -354.4 | 373.5 | -673.2 | -222.5 |
+| EBITDA | 51.4 | -345.2 | 391.5 | -649 | -202.7 |
+| Net Income | 66.9 | -348.9 | 377.7 | -650.2 | -153.6 |
+| EPS Diluted | 1.17 | -5.29 | 4.7 | -8.36 | -1.94 |
+| Operating CF | 56.7 | -238.4 | 539 | -495.7 | -260.4 |
+| CapEx | -6.7 | -18.4 | -81.7 | -37.2 | -9.5 |
+| Free Cash Flow | 50 | -256.8 | 457.3 | -532.9 | -269.9 |
+| Cash | 943.8 | 1,168.6 | 923 | 211.9 | 389.5 |

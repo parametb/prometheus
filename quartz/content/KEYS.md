@@ -154,14 +154,16 @@ Bullish
 
 ## 💰 Financials
 
-*USD, Billion*
+*USD, Million*
 
-| Metric | 2022 | 2023 | 2024 | 2025 |
-|--------|------|------|------|------|
-| Revenue | 5.42 | 5.46 | 4.98 | 5.38 |
-| Gross Profit | 3.45 | 3.53 | 3.13 | 3.34 |
-| Net Income | 1.12 | 1.06 | 0.61 | 0.85 |
-| EPS (diluted) | 6.18 | 5.91 | 3.51 | 4.88 |
-| Free Cash Flow | 0.96 | 1.21 | 0.9 | 1.28 |
-
-*FY ends Oct 31. FY2024 revenue declined 8.8% ($5.46B→$4.98B) due to broad end-market weakness (telecom/semiconductor inventory correction). FY2025 recovered +8.0% ($4.98B→$5.38B) driven by AI/data center test demand and aerospace & defense strength. Net income compressed in FY2024 (~42% YoY drop) but rebounding in FY2025 (+38%). FY2025 EPS $4.88 still below FY2022 peak of $6.18. Large acquisition activity in FY2025 (~$2.02B acquisitions in investing CF). CEO: Satish C. Dhanasekaran. Employees: 15,400.*
+| Metric | 2021 | 2022 | 2023 | 2024 | 2025 |
+|--------|------|------|------|------|------|
+| Revenue | 4,303 | 4,221 | 4,941 | 5,420 | 5,464 |
+| Operating Income | 711 | 765 | 1,080 | 1,334 | 1,358 |
+| Net Income | — | — | — | 1,124 | 1,057 |
+| EPS Diluted | 3.25 | 3.31 | 4.78 | 6.18 | 5.91 |
+| Operating CF | 998 | 1,016 | 1,322 | 1,144 | 1,408 |
+| CapEx | -120 | -117 | -174 | -185 | -197 |
+| Free Cash Flow | 878 | 899 | 1,148 | 959 | 1,211 |
+| Cash | 1,756 | 2,052 | 2,042 | 2,472 | 1,796 |
+| Total Debt | 1,789 | 1,791 | 1,793 | 1,794 | 1,790 |

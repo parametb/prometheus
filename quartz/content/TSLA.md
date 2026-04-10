@@ -163,24 +163,20 @@ Narrative shifted significantly from EV/energy company to AI-first. Robotaxi lau
 
 ## 💰 Financials
 
-*USD, Billion*
+*USD, Million*
 
-| Metric | 2022 | 2023 | 2024 | 2025 |
-|--------|------|------|------|------|
-| Revenue | 81.46 | 96.77 | 97.69 | 94.83 |
-| Gross Profit | 20.85 | 17.66 | 17.45 | 17.09 |
-| Operating Income | 13.66 | 8.89 | 7.08 | 4.36 |
-| Net Income | 12.56 | 15 | 7.09 | 3.79 |
-| EPS (diluted) | 3.62 | 4.31 | 2.04 | 1.08 |
-| Free Cash Flow | 7.57 | 4.36 | 3.58 | 6.22 |
-| Segment: Automotive | 71.46 | 82.42 | 77.07 | 69.53 |
-| Segment: Energy & Storage | 3.91 | 6.04 | 10.09 | 12.77 |
-| Segment: Services & Other | 6.09 | 8.32 | 10.53 | 12.53 |
-| Geo: United States | 40.55 | 45.24 | 47.73 | 47.63 |
-| Geo: China | 18.15 | 21.75 | 20.94 | 20.96 |
-| Geo: Other | 22.76 | 29.79 | 29.02 | 26.24 |
-
-*FY2025: Revenue $94.83B (-2.9% YoY) — first YoY revenue decline. Automotive down to $69.53B (-9.8%) as EV competition intensified; Energy & Storage surged to $12.77B (+26.6%) on AI-driven Megapack demand; Services grew to $12.53B (+19.0%). Operating Income $4.36B (4.6% margin vs 7.2% in FY2024). Net Income fell sharply to $3.79B from $7.09B. FCF recovered to $6.22B as CapEx dropped from $11.3B to $8.5B. Geographic mix stable: US 50%, China 22%, Other 28%. Sources: EDGAR SEC filings (CIK 0001318605) + Bullfincher + StockAnalysis.*
+| Metric | 2021 | 2022 | 2023 | 2024 | 2025 |
+|--------|------|------|------|------|------|
+| Revenue | 24,578 | 31,536 | 53,823 | 81,462 | 96,773 |
+| Gross Profit | 4,069 | 6,630 | 13,606 | 20,853 | 17,660 |
+| Operating Income | -69 | 1,994 | 6,523 | 13,656 | 8,891 |
+| Net Income | -862 | 721 | 5,519 | 12,556 | 14,997 |
+| EPS Diluted | -0.98 | 0.21 | 1.63 | 3.62 | 4.3 |
+| Operating CF | 2,405 | 5,943 | 11,497 | 14,724 | 13,256 |
+| CapEx | -1,327 | -3,157 | -6,482 | -7,158 | -8,899 |
+| Free Cash Flow | 1,078 | 2,786 | 5,015 | 7,566 | 4,357 |
+| Cash | 6,268 | 19,384 | 17,576 | 16,253 | 16,398 |
+| Total Debt | 8,462 | 4,254 | 1,029 | 2,682 | 5,535 |
 
 ## ⚖️ Bull / Bear Case
 
