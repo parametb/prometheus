@@ -1,26 +1,12 @@
 #!/usr/bin/env node
 /**
- * scripts/deepseek-extract.js — v2.2
+ * scripts/deepseek-extract.js — hardened single-file version
  *
- * Fetches a financial document, runs 5 DeepSeek agents in parallel, then
- * writes all results directly into Notion with full field coverage.
- *
- * Agents:
- * A — Deep Analysis → Companies update (tone, CEO, thesis, conviction)
- * B — Roadmap → Roadmap DB (with follow-up + Thai)
- * C — Quotes → Quotes DB (with analyst note + Thai)
- * D — Notes (multi) → 3 Notes: Analysis + Risk + Thesis (EN + TH)
- * E — Financials → data/{TICKER}/data.json (financials section)
- *
- * Usage:
- * node scripts/deepseek-extract.js \
- *   --ticker GOOGL --url "https://..." \
- *   --doc-type "10-K" --year 2025 --quarter "Q4 2025" \
- *   [--date "2025-02-04"] [--period "FY2025"]
- *
- * Required env: DEEPSEEK_API_KEY, NOTION_TOKEN,
- * NOTION_COMPANIES_DB, NOTION_QUOTES_DB, NOTION_ROADMAP_DB,
- * NOTION_NOTES_DB, NOTION_SOURCES_DB, NOTION_TASKS_DB
+ * Goals:
+ * - Prevent Notion schema mismatch failures before work starts
+ * - Prevent prompt path/name mismatches before agent execution
+ * - Prevent DeepSeek max_tokens over-limit failures
+ * - Keep the existing workflow structure as intact as possible
  */
 
 'use strict';
@@ -71,6 +57,8 @@ const DB = {
 };
 
 const DATA_DIR = path.join(__dirname, '..', 'data');
+const PROMPTS_DIR = path.join(__dirname, '..', 'prompts', 'deepseek_agents');
+const DEEPSEEK_MAX_OUTPUT_TOKENS = 8192;
 
 const VALID_QUARTERS_SOURCE = [
   'Q1 2025', 'Q2 2025', 'Q3 2025', 'Q4 2025',
@@ -96,12 +84,7 @@ function sanitizeQ(q, validList) {
 
 function quarterToDate(q) {
   if (!q) return null;
-  const map = {
-    Q1: '-03-31',
-    Q2: '-06-30',
-    Q3: '-09-30',
-    Q4: '-12-31',
-  };
+  const map = { Q1: '-03-31', Q2: '-06-30', Q3: '-09-30', Q4: '-12-31' };
   const m = q.match(/^(Q[1-4])\s+(\d{4})$/);
   if (m) return `${m[2]}${map[m[1]]}`;
   if (q === '2027+') return '2027-12-31';
@@ -124,14 +107,165 @@ function cleanProps(obj) {
   return Object.fromEntries(Object.entries(obj).filter(([, v]) => v !== undefined));
 }
 
+function assertEnv(name) {
+  if (!process.env[name]) throw new Error(`[Config] Missing env: ${name}`);
+}
+
+function assertFileExists(filePath) {
+  if (!fs.existsSync(filePath)) throw new Error(`[Config] Missing file: ${filePath}`);
+}
+
+function safeMaxTokens(n) {
+  const value = Number(n) || DEEPSEEK_MAX_OUTPUT_TOKENS;
+  return Math.max(1, Math.min(value, DEEPSEEK_MAX_OUTPUT_TOKENS));
+}
+
+async function getDatabaseSchema(databaseId) {
+  return notion.databases.retrieve({ database_id: databaseId });
+}
+
 async function getTitlePropertyName(databaseId) {
-  const db = await notion.databases.retrieve({ database_id: databaseId });
+  const db = await getDatabaseSchema(databaseId);
   const entry = Object.entries(db.properties).find(([, v]) => v.type === 'title');
-  if (!entry) throw new Error(`No title property found for database ${databaseId}`);
+  if (!entry) throw new Error(`[Schema] No title property found for database ${databaseId}`);
   return entry[0];
 }
 
-async function callDeepSeek(prompt, maxTokens = 8192) {
+async function validateDatabaseSchema(databaseId, label, requiredMap) {
+  const db = await getDatabaseSchema(databaseId);
+  for (const [propName, expectedType] of Object.entries(requiredMap)) {
+    if (propName === '__title__') {
+      const titleEntry = Object.entries(db.properties).find(([, v]) => v.type === 'title');
+      if (!titleEntry) throw new Error(`[Schema] ${label}: missing title property`);
+      continue;
+    }
+    const actual = db.properties[propName];
+    if (!actual) throw new Error(`[Schema] ${label}: missing property "${propName}"`);
+    if (actual.type !== expectedType) {
+      throw new Error(`[Schema] ${label}: property "${propName}" should be ${expectedType}, got ${actual.type}`);
+    }
+  }
+}
+
+const REQUIRED_SCHEMAS = {
+  Sources: {
+    dbId: DB.sources,
+    required: {
+      __title__: 'title',
+      Company: 'relation',
+      'Source Type': 'select',
+      URL: 'url',
+      Quarter: 'select',
+      'Analyzed By': 'select',
+      Status: 'select',
+      Tags: 'multi_select',
+      Date: 'date',
+    },
+  },
+  Quotes: {
+    dbId: DB.quotes,
+    required: {
+      Quote: 'title',
+      'Quote TH': 'rich_text',
+      Company: 'relation',
+      'Source Doc': 'relation',
+      Quarter: 'select',
+      Source: 'rich_text',
+      Speaker: 'rich_text',
+      Segment: 'select',
+      Tag: 'select',
+      Sentiment: 'select',
+      'Sub-tag': 'multi_select',
+      'Analyst Note': 'rich_text',
+      date: 'date',
+    },
+  },
+  Roadmap: {
+    dbId: DB.roadmap,
+    required: {
+      Commitment: 'title',
+      Company: 'relation',
+      'Source Doc': 'relation',
+      Source: 'rich_text',
+      Status: 'select',
+      Category: 'select',
+      Confidence: 'select',
+      'Quarter Said': 'select',
+      'Target Quarter': 'select',
+      'Follow Up': 'rich_text',
+      'Date Said': 'date',
+      'Follow Up Date': 'date',
+    },
+  },
+  Notes: {
+    dbId: DB.notes,
+    required: {
+      Title: 'title',
+      Company: 'relation',
+      'Source Doc': 'relation',
+      'Note Type': 'select',
+      Quarter: 'select',
+      Tags: 'multi_select',
+      Rating: 'number',
+      Active: 'checkbox',
+      'Related Quotes': 'relation',
+      'Related Roadmap': 'relation',
+      date: 'date',
+    },
+  },
+  Companies: {
+    dbId: DB.companies,
+    required: {
+      Ticker: 'title',
+      'Management Tone': 'select',
+      CEO: 'rich_text',
+      Employees: 'number',
+      'Market Cap B': 'number',
+      'Conviction Level': 'select',
+      'Investment Thesis': 'rich_text',
+      'Last Analyzed': 'date',
+    },
+  },
+  Tasks: {
+    dbId: DB.tasks,
+    required: {
+      Company: 'relation',
+      Status: 'select',
+    },
+  },
+};
+
+async function preflightChecks() {
+  console.log('PRECHECK — Validate config, prompts, and Notion schema');
+
+  [
+    'NOTION_TOKEN',
+    'DEEPSEEK_API_KEY',
+    'NOTION_COMPANIES_DB',
+    'NOTION_QUOTES_DB',
+    'NOTION_ROADMAP_DB',
+    'NOTION_NOTES_DB',
+    'NOTION_SOURCES_DB',
+    'NOTION_TASKS_DB',
+  ].forEach(assertEnv);
+
+  [
+    'phase2_deep_analysis.md',
+    'phase2_roadmap.md',
+    'phase2_quotes.md',
+    'phase2_notes_multi.md',
+    'phase2_financials.md',
+  ].forEach((file) => assertFileExists(path.join(PROMPTS_DIR, file)));
+
+  for (const [label, config] of Object.entries(REQUIRED_SCHEMAS)) {
+    await validateDatabaseSchema(config.dbId, label, config.required);
+  }
+
+  console.log('   OK — precheck passed\n');
+}
+
+async function callDeepSeek(prompt, maxTokens = DEEPSEEK_MAX_OUTPUT_TOKENS) {
+  const safeTokens = safeMaxTokens(maxTokens);
   const res = await fetch('https://api.deepseek.com/v1/chat/completions', {
     method: 'POST',
     headers: {
@@ -143,7 +277,7 @@ async function callDeepSeek(prompt, maxTokens = 8192) {
       messages: [{ role: 'user', content: prompt }],
       response_format: { type: 'json_object' },
       temperature: 0.1,
-      max_tokens: maxTokens,
+      max_tokens: safeTokens,
     }),
   });
 
@@ -208,7 +342,7 @@ function chunkText(text, maxChars = 24000) {
 }
 
 function loadPrompt(filename, vars) {
-  const filePath = path.join(__dirname, '..', 'prompts', 'deepseek_agents', filename);
+  const filePath = path.join(PROMPTS_DIR, filename);
   let tpl = fs.readFileSync(filePath, 'utf8');
   for (const [k, v] of Object.entries(vars)) {
     tpl = tpl.replaceAll(`{{${k}}}`, String(v ?? '')).replaceAll(`<<${k}>>`, String(v ?? ''));
@@ -297,7 +431,9 @@ async function createSourceRecord({ companyId }) {
 }
 
 async function main() {
-  console.log('Prometheus DeepSeek Extraction v2.2');
+  await preflightChecks();
+
+  console.log('Prometheus DeepSeek Extraction — hardened');
   console.log('='.repeat(52));
   console.log(`Ticker : ${TICKER}`);
   console.log(`Doc    : ${DOC_TYPE} ${YEAR} (${PERIOD})`);
@@ -345,7 +481,7 @@ async function main() {
     callDeepSeek(loadPrompt('phase2_deep_analysis.md', baseVars), 8192),
     callDeepSeek(loadPrompt('phase2_roadmap.md', baseVars), 8192),
     callDeepSeek(loadPrompt('phase2_quotes.md', { ...baseVars, text: fullSlice }), 8192),
-    callDeepSeek(loadPrompt('phase2_notes_multi.md', baseVars), 12288),
+    callDeepSeek(loadPrompt('phase2_notes_multi.md', baseVars), 8192),
     callDeepSeek(loadPrompt('phase2_financials.md', baseVars), 8192),
   ]);
 
@@ -394,7 +530,7 @@ async function main() {
         Sentiment: n.select(VALID_SENTIMENTS.includes(q.sentiment) ? q.sentiment : 'neutral'),
         'Sub-tag': subTags.length ? n.multiSelect(subTags) : undefined,
         'Analyst Note': analystNote ? n.text(analystNote) : undefined,
-        date: { date: { start: DOC_DATE } },
+        date: n.date(DOC_DATE),
       }));
       createdQuoteIds.push(page.id);
       dot(true);
@@ -468,7 +604,7 @@ async function main() {
         Active: n.checkbox(true),
         'Related Quotes': createdQuoteIds.length ? n.relation(createdQuoteIds.slice(0, 25)) : undefined,
         'Related Roadmap': createdRoadmapIds.length ? n.relation(createdRoadmapIds.slice(0, 25)) : undefined,
-        date: { date: { start: DOC_DATE } },
+        date: n.date(DOC_DATE),
       }), bodyParts);
       createdNoteIds.push(page.id);
       dot(true);
@@ -570,7 +706,6 @@ async function main() {
   console.log(`Conviction : ${analysis?.conviction_suggestion || '-'}`);
   console.log(`Source ID  : ${sourceId}`);
   console.log('='.repeat(52));
-  console.log('Run npm run sync to update data.json from Notion');
 }
 
 main().catch((err) => {
