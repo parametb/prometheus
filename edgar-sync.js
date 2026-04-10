@@ -152,6 +152,61 @@ function pickBest(entries, fy, fp) {
 }
 
 /**
+ * Discover all unique annual periods from EDGAR by period_end date.
+ * Returns array of { fy, fp:'FY', end, endYear } sorted oldest→newest.
+ * Using period_end avoids the EDGAR fy-field mismatch for companies like NVDA
+ * whose EDGAR fy can be 2+ years ahead of their own fiscal year naming.
+ */
+function getAnnualPeriods(facts, numYears) {
+  // Use revenue (or any common concept) to find all FY period_end dates
+  const allEntries = [];
+  for (const concepts of Object.values(XBRL)) {
+    for (const name of concepts) {
+      const arr = facts?.['us-gaap']?.[name]?.units?.['USD'];
+      if (arr) { allEntries.push(...arr); break; }
+    }
+  }
+  const seen = new Map(); // end → {fy, fp, end}
+  for (const e of allEntries) {
+    if (e.fp !== 'FY' || !e.end || seen.has(e.end)) continue;
+    seen.set(e.end, { fy: e.fy, fp: 'FY', end: e.end });
+  }
+  const sorted = [...seen.values()]
+    .sort((a, b) => b.end.localeCompare(a.end))
+    .slice(0, numYears)
+    .reverse();
+  return sorted.map(p => ({
+    ...p,
+    endYear: parseInt(p.end.slice(0, 4), 10),
+  }));
+}
+
+/**
+ * Discover all unique quarterly periods from EDGAR by period_end date.
+ * Returns array of { fy, fp, end, endYear, quarter } sorted oldest→newest.
+ */
+function getQuarterlyPeriods(facts, numQuarters) {
+  const allEntries = [];
+  for (const concepts of Object.values(XBRL)) {
+    for (const name of concepts) {
+      const arr = facts?.['us-gaap']?.[name]?.units?.['USD'];
+      if (arr) { allEntries.push(...arr); break; }
+    }
+  }
+  const QTRS = new Set(['Q1','Q2','Q3','Q4']);
+  const seen = new Map();
+  for (const e of allEntries) {
+    if (!QTRS.has(e.fp) || !e.end || seen.has(e.end)) continue;
+    seen.set(e.end, { fy: e.fy, fp: e.fp, end: e.end, quarter: e.fp });
+  }
+  return [...seen.values()]
+    .sort((a, b) => b.end.localeCompare(a.end))
+    .slice(0, numQuarters)
+    .reverse()
+    .map(p => ({ ...p, endYear: parseInt(p.end.slice(0, 4), 10) }));
+}
+
+/**
  * Extract all metrics for one period.
  * Returns { revenue, gross_profit, ..., ebitda, free_cash_flow, ... } in USD millions
  */
@@ -234,12 +289,12 @@ async function fetchAllNotion(dbId) {
 /**
  * Find existing Notion Financials page for (companyId, fy, periodType, quarter)
  */
-async function findExisting(companyId, fy, periodType, quarter) {
+async function findExisting(companyId, labelYear, periodType, quarter) {
   await sleep(360);
   const filter = {
     and: [
       { property: 'Company'     , relation: { contains: companyId } },
-      { property: 'Fiscal Year' , number  : { equals : fy          } },
+      { property: 'Fiscal Year' , number  : { equals : labelYear   } },
       { property: 'Period Type' , select  : { equals : periodType  } },
     ],
   };
@@ -260,7 +315,7 @@ async function findExisting(companyId, fy, periodType, quarter) {
 /**
  * Build Notion page properties for a financial period.
  */
-function buildProps(companyId, ticker, cik, fy, fp, quarter, periodLabel, period, metricsData) {
+function buildProps(companyId, ticker, cik, fy, fp, quarter, periodLabel, period, endYear) {
   const { metrics, form, filed, period_end } = period;
 
   const num = (v) => v != null ? { number: v } : undefined;
@@ -271,7 +326,7 @@ function buildProps(companyId, ticker, cik, fy, fp, quarter, periodLabel, period
     'Ticker'       : { rich_text  : [{ text: { content: ticker } }] },
     'Period Type'  : { select     : { name: fp === 'FY' ? 'Annual' : 'Quarterly' } },
     'Period Label' : { rich_text  : [{ text: { content: periodLabel } }] },
-    'Fiscal Year'  : { number     : fy },
+    'Fiscal Year'  : { number     : endYear ?? fy },
     'Data Source'  : { select     : { name: 'EDGAR' } },
     'CIK'          : { rich_text  : [{ text: { content: cik } }] },
   };
@@ -308,21 +363,19 @@ function buildProps(companyId, ticker, cik, fy, fp, quarter, periodLabel, period
 
 /**
  * Upsert one financial period to Notion.
+ * endYear: the year derived from period_end date (used for labels, not EDGAR's fy field)
  */
-async function upsertPeriod(companyId, ticker, cik, fy, fp, quarter, period) {
-  const periodLabel  = fp === 'FY' ? `FY${fy}` : `${quarter} ${fy}`;
-  const periodType   = fp === 'FY' ? 'Annual' : 'Quarterly';
+async function upsertPeriod(companyId, ticker, cik, fy, fp, quarter, period, endYear) {
+  const labelYear   = endYear ?? fy;
+  const periodLabel = fp === 'FY' ? `FY${labelYear}` : `${quarter} ${labelYear}`;
+  const periodType  = fp === 'FY' ? 'Annual' : 'Quarterly';
 
   // Skip if no useful data at all
   const hasData = Object.values(period.metrics).some(v => v != null);
   if (!hasData) return 'skipped';
 
-  const props    = buildProps(companyId, ticker, cik, fy, fp, quarter, periodLabel, period, null);
-  // Re-build with period passed correctly (buildProps takes period object)
-  const existing = await findExisting(companyId, fy, periodType, quarter || null);
-
-  // Rebuild full props
-  const fullProps = buildProps(companyId, ticker, cik, fy, fp, quarter, periodLabel, period);
+  const existing  = await findExisting(companyId, labelYear, periodType, quarter || null);
+  const fullProps = buildProps(companyId, ticker, cik, fy, fp, quarter, periodLabel, period, endYear);
 
   await sleep(360);
   if (existing) {
@@ -361,11 +414,6 @@ async function main() {
     process.exit(0);
   }
 
-  const currentYear = new Date().getFullYear();
-  const minAnnualYear = currentYear - 5;        // 5 years of annual
-  const minQuarterYear = currentYear - 2;       // 2 fiscal years of quarters (~8 quarters)
-  const QUARTERS = ['Q1', 'Q2', 'Q3', 'Q4'];
-
   let totalCreated = 0;
   let totalUpdated = 0;
   let totalSkipped = 0;
@@ -392,34 +440,34 @@ async function main() {
       continue;
     }
 
-    // Step 3: Extract Annual data
-    console.log(`   📅 Annual (FY${minAnnualYear}–${currentYear})...`);
-    for (let fy = minAnnualYear; fy <= currentYear; fy++) {
-      const period = extractPeriod(facts.facts, fy, 'FY');
+    // Step 3: Extract Annual data — discover periods by period_end date (avoids fy-field mismatch)
+    const annualPeriods = getAnnualPeriods(facts.facts, 6);
+    console.log(`   📅 Annual — ${annualPeriods.length} periods found`);
+    for (const ap of annualPeriods) {
+      const period = extractPeriod(facts.facts, ap.fy, 'FY');
       if (!Object.values(period.metrics).some(v => v != null)) continue;
 
-      const result = await upsertPeriod(company.id, company.ticker, cikPadded, fy, 'FY', null, period);
+      const result = await upsertPeriod(company.id, company.ticker, cikPadded, ap.fy, 'FY', null, period, ap.endYear);
       const icon = result === 'created' ? '+' : result === 'updated' ? '↑' : '·';
-      console.log(`     ${icon} FY${fy} (${period.period_end || 'no date'}) — ${result}`);
+      console.log(`     ${icon} FY${ap.endYear} (ends ${ap.end}) — ${result}`);
       if (result === 'created') totalCreated++;
       else if (result === 'updated') totalUpdated++;
       else totalSkipped++;
     }
 
-    // Step 4: Extract Quarterly data
-    console.log(`   📅 Quarterly (FY${minQuarterYear}–${currentYear})...`);
-    for (let fy = minQuarterYear; fy <= currentYear; fy++) {
-      for (const q of QUARTERS) {
-        const period = extractPeriod(facts.facts, fy, q);
-        if (!Object.values(period.metrics).some(v => v != null)) continue;
+    // Step 4: Extract Quarterly data — discover periods by period_end date
+    const quarterlyPeriods = getQuarterlyPeriods(facts.facts, 8);
+    console.log(`   📅 Quarterly — ${quarterlyPeriods.length} periods found`);
+    for (const qp of quarterlyPeriods) {
+      const period = extractPeriod(facts.facts, qp.fy, qp.fp);
+      if (!Object.values(period.metrics).some(v => v != null)) continue;
 
-        const result = await upsertPeriod(company.id, company.ticker, cikPadded, fy, q, q, period);
-        const icon = result === 'created' ? '+' : result === 'updated' ? '↑' : '·';
-        console.log(`     ${icon} ${q} FY${fy} (${period.period_end || 'no date'}) — ${result}`);
-        if (result === 'created') totalCreated++;
-        else if (result === 'updated') totalUpdated++;
-        else totalSkipped++;
-      }
+      const result = await upsertPeriod(company.id, company.ticker, cikPadded, qp.fy, qp.fp, qp.quarter, period, qp.endYear);
+      const icon = result === 'created' ? '+' : result === 'updated' ? '↑' : '·';
+      console.log(`     ${icon} ${qp.quarter} ${qp.endYear} (ends ${qp.end}) — ${result}`);
+      if (result === 'created') totalCreated++;
+      else if (result === 'updated') totalUpdated++;
+      else totalSkipped++;
     }
   }
 

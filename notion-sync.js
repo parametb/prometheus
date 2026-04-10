@@ -346,7 +346,7 @@ function buildFinancialsFromNotion(records) {
 
     const metrics = METRIC_DEFS.map(def => {
       const values = recs.map(r => r[def.key] ?? null);
-      const out = { name: def.name, values, chart: def.chart ?? false };
+      const out = { key: def.key, name: def.name, values, chart: def.chart ?? false };
 
       if (def.showGrowth) {
         out.growth = values.map((v, i) => {

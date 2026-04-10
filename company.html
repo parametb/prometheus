@@ -1106,8 +1106,17 @@ function buildFinPeriodTable(data,periodType,visible){
       +(hasG?`<tr class="${growRowClass}"><td class="fin-td-sub">YoY</td>${growCells}</tr>`:'')
       +(hasM?`<tr class="fin-row-margin fin-row-group"><td class="fin-td-sub">Margin</td>${margCells}</tr>`:'');
   }).join('');
+  const periodEnds=data.period_ends||[];
+  function fmtPeriodEnd(d){
+    if(!d)return'';
+    const dt=new Date(d+'T00:00:00Z');
+    return dt.toLocaleDateString('en-US',{month:'short',year:'numeric',timeZone:'UTC'});
+  }
   return`<div class="fin-period-table" id="fin-table-${periodType}" style="${display}"><div style="overflow-x:auto"><table class="fin-table fin-table-edgar">
-    <thead><tr><th>${t('fin.table_metric')}</th>${periods.map(p=>`<th>${p}</th>`).join('')}</tr></thead>
+    <thead><tr><th>${t('fin.table_metric')}</th>${periods.map((p,i)=>{
+      const endStr=periodEnds[i]?`<div style="font-size:9px;font-weight:400;color:var(--text-muted);margin-top:1px">${fmtPeriodEnd(periodEnds[i])}</div>`:'';
+      return`<th>${p}${endStr}</th>`;
+    }).join('')}</tr></thead>
     <tbody>${rows}</tbody>
   </table></div></div>`;
 }
