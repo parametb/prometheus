@@ -57,7 +57,9 @@ const SPEC = {
       speaker: { name: 'Speaker', types: ['rich_text', 'title'], optional: true },
       date: { name: 'date', types: ['date'] },
       source: { name: 'Source', types: ['rich_text', 'title'], optional: true },
-      tag: { name: 'Tag', types: ['multi_select'], optional: true },
+      segment: { name: 'Segment', types: ['select', 'multi_select'], optional: true },
+      tag: { name: 'Tag', types: ['select', 'multi_select'], optional: true },
+      sentiment: { name: 'Sentiment', types: ['select', 'multi_select'], optional: true },
     },
   },
   notes: {
@@ -195,6 +197,28 @@ async function getDatabaseSchema(databaseId) {
   return resp.properties || {};
 }
 
+async function validateDatabaseSchema(databaseId, label, requiredMap) {
+  const db = await getDatabaseSchema(databaseId);
+
+  for (const [propName, expectedType] of Object.entries(requiredMap)) {
+    if (propName === '__title__') {
+      const titleEntry = Object.entries(db.properties).find(([, v]) => v.type === 'title');
+      if (!titleEntry) throw new Error(`[Schema] ${label}: missing title property`);
+      continue;
+    }
+
+    const actual = db.properties[propName];
+    if (!actual) throw new Error(`[Schema] ${label}: missing property "${propName}"`);
+
+    const acceptedTypes = Array.isArray(expectedType) ? expectedType : [expectedType];
+    if (!acceptedTypes.includes(actual.type)) {
+      throw new Error(
+        `[Schema] ${label}: property "${propName}" expected one of [${acceptedTypes.join(', ')}] but got type=${actual.type}`
+      );
+    }
+  }
+}
+
 function resolveType(foundType, allowedTypes) {
   return allowedTypes.includes(foundType) ? foundType : null;
 }
@@ -211,6 +235,12 @@ async function resolveSchemas() {
 
     const liveSchema = await getDatabaseSchema(dbId);
     resolvedSchema[dbKey] = { label: spec.label, props: {}, raw: liveSchema };
+
+    if (DUMP_SCHEMA) {
+      for (const [name, meta] of Object.entries(liveSchema)) {
+        console.log(`- ${spec.label}: ${name} (${meta.type})`);
+      }
+    }
 
     for (const [alias, def] of Object.entries(spec.props)) {
       const found = liveSchema[def.name];
@@ -275,6 +305,15 @@ function getDateValue(page, dbKey, alias) {
 
 function getRelationIds(page, dbKey, alias) {
   return (getProp(page, dbKey, alias)?.relation || []).map((r) => r.id);
+}
+
+function getTagsFromItem(item) {
+  const p = prop('quotes', 'tag');
+  const v = getProp(item, 'quotes', 'tag');
+  if (!v) return [];
+  if (p.type === 'multi_select') return (v.multi_select || []).map((t) => t.name);
+  if (p.type === 'select') return v.select?.name ? [v.select.name] : [];
+  return [];
 }
 
 function equalsFilter(dbKey, alias, value) {
@@ -361,7 +400,7 @@ async function getRecentQuotesByCompany(companyPageId, limit = 20) {
     speaker: resolvedSchema.quotes.props.speaker ? getText(item, 'quotes', 'speaker') : '',
     date: getDateValue(item, 'quotes', 'date'),
     source: resolvedSchema.quotes.props.source ? getText(item, 'quotes', 'source') : '',
-    tags: resolvedSchema.quotes.props.tag ? (getProp(item, 'quotes', 'tag')?.multi_select || []).map((t) => t.name) : [],
+    tags: resolvedSchema.quotes.props.tag ? getTagsFromItem(item) : [],
   })).filter((q) => q.quote.length > 10);
 }
 
