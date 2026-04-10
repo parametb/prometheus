@@ -24,7 +24,7 @@ draft: false
 | [[CRSP]] | CRISPR Therapeutics AG | Healthcare | — | — | 0 | 2 |
 | [[QBTS]] | D-Wave Quantum Inc. | Technology | — | — | 0 | 1 |
 | [[IONQ]] | IonQ, Inc. | Technology | — | — | 0 | 2 |
-| [[KEYS]] | Keysight Technologies, Inc. | Technology | — | — | 0 | 2 |
+| [[KEYS]] | Keysight Technologies, Inc. | Technology | medium | — | 1 | 5 |
 | [[MSFT]] | Microsoft Corporation | Technology | — | 100% | 0 | 1 |
 | [[NEM]] | Newmont Corporation | Mining | — | — | 0 | 2 |
 | [[NVDA]] | NVIDIA Corporation | Semiconductors | medium | — | 2 | 1 |

@@ -44,6 +44,23 @@
     "notion_id": "33c104a0-c4b1-80cf-a8dd-cde7e25fc1d5"
   },
   {
+    "title": "KEYS 10-K 2025",
+    "source_type": "Annual Report",
+    "date": "2026-04-10",
+    "quarter": "Q4 2025",
+    "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf",
+    "analyzed_by": "DeepSeek",
+    "status": "analyzed",
+    "tags": [
+      "financials",
+      "strategy"
+    ],
+    "tickers": [
+      "KEYS"
+    ],
+    "notion_id": "33e104a0-c4b1-8147-8760-de50c13749e9"
+  },
+  {
     "title": "NVDA 10-K 2025",
     "source_type": "Annual Report",
     "date": "2026-04-10",

@@ -4,15 +4,15 @@
   "name_th": "Keysight Technologies, Inc.",
   "sector": "Technology",
   "exchange": "NYSE",
-  "conviction_level": null,
+  "conviction_level": "medium",
   "management_tone": "bullish",
-  "last_analyzed": null,
+  "last_analyzed": "2026-04-10",
   "counts": {
-    "quotes": 9,
-    "roadmap_total": 14,
+    "quotes": 21,
+    "roadmap_total": 30,
     "roadmap_delivered": 0,
-    "notes": 2,
-    "sources": 0,
+    "notes": 5,
+    "sources": 1,
     "reports": 0
   },
   "delivery_rate": 0
