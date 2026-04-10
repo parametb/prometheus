@@ -237,292 +237,336 @@
   "open_tasks": [],
   "financials": {
     "currency": "USD",
-    "unit": "Billion",
-    "breakdown": {
-      "sankey": {
-        "year": 2024,
-        "currency": "USD",
-        "unit": "Billion",
-        "nodes": [
-          {
-            "id": 0,
-            "label": "Nevada Gold Mines",
-            "color": "#d29922"
-          },
-          {
-            "id": 1,
-            "label": "Latin America & Caribbean",
-            "color": "#3fb950"
-          },
-          {
-            "id": 2,
-            "label": "Africa & Middle East",
-            "color": "#e3663a"
-          },
-          {
-            "id": 3,
-            "label": "Copper (Global)",
-            "color": "#58a6ff"
-          },
-          {
-            "id": 4,
-            "label": "Asia Pacific & N. America",
-            "color": "#bc8cff"
-          },
-          {
-            "id": 5,
-            "label": "Total Revenue $12.92B",
-            "color": "#f0c060"
-          },
-          {
-            "id": 6,
-            "label": "Cost of Sales $8.50B",
-            "color": "#f85149"
-          },
-          {
-            "id": 7,
-            "label": "Gross Profit $4.42B",
-            "color": "#58d68d"
-          },
-          {
-            "id": 8,
-            "label": "D&A & Depreciation $1.40B",
-            "color": "#8b949e"
-          },
-          {
-            "id": 9,
-            "label": "G&A & Exploration $0.48B",
-            "color": "#aaaaaa"
-          },
-          {
-            "id": 10,
-            "label": "Operating Income $2.54B",
-            "color": "#58a6ff"
-          },
-          {
-            "id": 11,
-            "label": "Tax & Minority Int. $0.40B",
-            "color": "#f85149"
-          },
-          {
-            "id": 12,
-            "label": "Net Earnings $2.14B",
-            "color": "#3fb950"
-          }
-        ],
-        "links": [
-          {
-            "source": 0,
-            "target": 5,
-            "value": 3.84
-          },
-          {
-            "source": 1,
-            "target": 5,
-            "value": 2.56
-          },
-          {
-            "source": 2,
-            "target": 5,
-            "value": 3.36
-          },
-          {
-            "source": 3,
-            "target": 5,
-            "value": 2.14
-          },
-          {
-            "source": 4,
-            "target": 5,
-            "value": 1.02
-          },
-          {
-            "source": 5,
-            "target": 6,
-            "value": 8.5
-          },
-          {
-            "source": 5,
-            "target": 7,
-            "value": 4.42
-          },
-          {
-            "source": 7,
-            "target": 8,
-            "value": 1.4
-          },
-          {
-            "source": 7,
-            "target": 9,
-            "value": 0.48
-          },
-          {
-            "source": 7,
-            "target": 10,
-            "value": 2.54
-          },
-          {
-            "source": 10,
-            "target": 11,
-            "value": 0.4
-          },
-          {
-            "source": 10,
-            "target": 12,
-            "value": 2.14
-          }
-        ]
-      }
+    "unit": "Million",
+    "source": "EDGAR",
+    "last_updated": "2026-04-10",
+    "annual": {
+      "periods": [
+        "FY2006",
+        "FY2007",
+        "FY2008",
+        "FY2009",
+        "FY2010"
+      ],
+      "period_ends": [
+        "2006-12-31",
+        "2006-12-31",
+        "2008-12-31",
+        "2008-12-31",
+        "2008-12-31"
+      ],
+      "metrics": [
+        {
+          "key": "revenue",
+          "name": "Revenue",
+          "values": [
+            6014,
+            6014,
+            7613,
+            7613,
+            7613
+          ],
+          "chart": true,
+          "growth": [
+            null,
+            0,
+            26.6,
+            0,
+            0
+          ]
+        },
+        {
+          "key": "operating_income",
+          "name": "Operating Income",
+          "values": [
+            null,
+            null,
+            2415,
+            2415,
+            2415
+          ],
+          "chart": false,
+          "margin": [
+            null,
+            null,
+            31.7,
+            31.7,
+            31.7
+          ]
+        },
+        {
+          "key": "ebitda",
+          "name": "EBITDA",
+          "values": [
+            null,
+            null,
+            3327,
+            3327,
+            3327
+          ],
+          "chart": false,
+          "margin": [
+            null,
+            null,
+            43.7,
+            43.7,
+            43.7
+          ]
+        },
+        {
+          "key": "net_income",
+          "name": "Net Income",
+          "values": [
+            0,
+            0,
+            785,
+            785,
+            785
+          ],
+          "chart": false,
+          "growth": [
+            null,
+            null,
+            null,
+            0,
+            0
+          ],
+          "margin": [
+            0,
+            0,
+            10.3,
+            10.3,
+            10.3
+          ]
+        },
+        {
+          "key": "eps_diluted",
+          "name": "EPS Diluted",
+          "values": [
+            1.28,
+            1.28,
+            0.89,
+            0.89,
+            0.89
+          ],
+          "chart": false,
+          "growth": [
+            null,
+            0,
+            -30.5,
+            0,
+            0
+          ]
+        },
+        {
+          "key": "operating_cf",
+          "name": "Operating CF",
+          "values": [
+            1768,
+            1768,
+            2254,
+            2254,
+            2254
+          ],
+          "chart": false
+        },
+        {
+          "key": "capex",
+          "name": "CapEx",
+          "values": [
+            null,
+            null,
+            -1916,
+            -1916,
+            -1916
+          ],
+          "chart": false
+        },
+        {
+          "key": "free_cash_flow",
+          "name": "Free Cash Flow",
+          "values": [
+            null,
+            null,
+            338,
+            338,
+            338
+          ],
+          "chart": false
+        },
+        {
+          "key": "cash",
+          "name": "Cash",
+          "values": [
+            3043,
+            3043,
+            2207,
+            2207,
+            2207
+          ],
+          "chart": false
+        }
+      ]
     },
-    "links": [
-      {
-        "title": "Annual Report 2024",
-        "type": "Annual Report",
-        "year": 2024,
-        "url": "https://www.barrick.com/English/investors/annual-report/default.aspx"
-      },
-      {
-        "title": "Q4 & FY2024 Results Press Release",
-        "type": "10-K",
-        "year": 2024,
-        "url": "https://www.barrick.com/English/news/news-details/2025/q4-2024-results/default.aspx"
-      },
-      {
-        "title": "20-F FY2024 (SEC Filing)",
-        "type": "10-K",
-        "year": 2024,
-        "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000756502&type=20-F&dateb=&owner=include&count=10"
-      },
-      {
-        "title": "Q4 2024 Results Presentation",
-        "type": "Investor Day",
-        "year": 2024,
-        "url": "https://s25.q4cdn.com/322814910/files/doc_presentations/2025/02/Barrick_Q4_2024_Results_Presentation.pdf"
-      },
-      {
-        "title": "FY2025 MD&A (40-F EX-99.4)",
-        "type": "Annual Report",
-        "year": 2025,
-        "url": "https://www.sec.gov/Archives/edgar/data/756894/000119312526079253/d833573dex994.htm"
-      },
-      {
-        "title": "FY2024 MD&A (40-F EX-99.4)",
-        "type": "Annual Report",
-        "year": 2024,
-        "url": "https://www.sec.gov/Archives/edgar/data/756894/000119312525054500/d910692dex994.htm"
-      },
-      {
-        "label": "40-F FY2021 MD&A (filed 2022-03-18)",
-        "url": "https://www.sec.gov/Archives/edgar/data/756894/000119312522078905/d180315dex994.htm"
-      },
-      {
-        "label": "40-F FY2022 MD&A (filed 2023-03-17)",
-        "url": "https://www.sec.gov/Archives/edgar/data/756894/000119312523073212/d428754dex994.htm"
-      },
-      {
-        "label": "40-F FY2023 MD&A (filed 2024-03-15)",
-        "url": "https://www.sec.gov/Archives/edgar/data/756894/000119312524068583/d643214dex994.htm"
-      }
-    ],
     "years": [
-      2020,
-      2021,
-      2022,
-      2023,
-      2024,
-      2025
+      2006,
+      2007,
+      2008,
+      2009,
+      2010
     ],
     "metrics": [
       {
+        "key": "revenue",
         "name": "Revenue",
         "values": [
-          12.59,
-          11.96,
-          11.01,
-          11.39,
-          12.92,
-          16.96
+          6014,
+          6014,
+          7613,
+          7613,
+          7613
+        ],
+        "chart": true,
+        "growth": [
+          null,
+          0,
+          26.6,
+          0,
+          0
         ]
       },
       {
-        "name": "Net Earnings (attributable)",
+        "key": "operating_income",
+        "name": "Operating Income",
         "values": [
-          2.32,
-          1.44,
-          0.43,
-          1.27,
-          2.14,
-          4.99
+          null,
+          null,
+          2415,
+          2415,
+          2415
+        ],
+        "chart": false,
+        "margin": [
+          null,
+          null,
+          31.7,
+          31.7,
+          31.7
         ]
       },
       {
-        "name": "Adjusted Net Earnings",
+        "key": "ebitda",
+        "name": "EBITDA",
         "values": [
-          2.04,
-          1.72,
-          1.33,
-          1.46,
-          2.21,
-          4.14
+          null,
+          null,
+          3327,
+          3327,
+          3327
+        ],
+        "chart": false,
+        "margin": [
+          null,
+          null,
+          43.7,
+          43.7,
+          43.7
         ]
       },
       {
-        "name": "Adjusted EPS (diluted)",
+        "key": "net_income",
+        "name": "Net Income",
         "values": [
-          1.15,
-          0.96,
-          0.75,
-          0.83,
-          1.26,
-          2.42
+          0,
+          0,
+          785,
+          785,
+          785
+        ],
+        "chart": false,
+        "growth": [
+          null,
+          null,
+          null,
+          0,
+          0
+        ],
+        "margin": [
+          0,
+          0,
+          10.3,
+          10.3,
+          10.3
         ]
       },
       {
-        "name": "Operating Cash Flow",
+        "key": "eps_diluted",
+        "name": "EPS Diluted",
         "values": [
-          5.41,
-          4.38,
-          2.87,
-          3.74,
-          4.49,
-          7.69
+          1.28,
+          1.28,
+          0.89,
+          0.89,
+          0.89
+        ],
+        "chart": false,
+        "growth": [
+          null,
+          0,
+          -30.5,
+          0,
+          0
         ]
       },
       {
+        "key": "operating_cf",
+        "name": "Operating CF",
+        "values": [
+          1768,
+          1768,
+          2254,
+          2254,
+          2254
+        ],
+        "chart": false
+      },
+      {
+        "key": "capex",
+        "name": "CapEx",
+        "values": [
+          null,
+          null,
+          -1916,
+          -1916,
+          -1916
+        ],
+        "chart": false
+      },
+      {
+        "key": "free_cash_flow",
         "name": "Free Cash Flow",
         "values": [
-          1.77,
-          1.53,
-          0.5,
-          0.65,
-          1.32,
-          3.87
-        ]
+          null,
+          null,
+          338,
+          338,
+          338
+        ],
+        "chart": false
       },
       {
-        "name": "Gold Production (Moz)",
+        "key": "cash",
+        "name": "Cash",
         "values": [
-          4.76,
-          4.44,
-          4.14,
-          4.05,
-          3.91,
-          3.26
-        ]
-      },
-      {
-        "name": "AISC ($/oz)",
-        "values": [
-          966,
-          1045,
-          1262,
-          1335,
-          1484,
-          1637
-        ]
+          3043,
+          3043,
+          2207,
+          2207,
+          2207
+        ],
+        "chart": false
       }
-    ],
-    "notes": "Barrick is a Canadian company (TSX: ABX, NYSE: B). Fiscal year ends December 31. Files 40-F (not 10-K) with SEC as a Canadian issuer. Unit = Billion USD except Gold Production (Moz) and AISC ($/oz).\n\nAdjusted Net Earnings and Adjusted EPS exclude impairments, unrealized gains/losses, and other non-recurring items — management's preferred profitability measure.\n\nFY2022 net earnings impacted by ~$700M impairment charges. FY2025 net earnings include $1,107M one-time acquisition/disposition gains — adjusted net earnings ($4.14B) better reflects underlying performance.\n\nAISC (All-in Sustaining Cost per ounce): rising from $1,262 (2022) → $1,484 (2024) → $1,637 (2025) — cost inflation trend. Gold price realization: $1,803 (2022) → $1,948 (2023) → $2,397 (2024) → $3,501 (2025). Dramatic spread expansion drove FY2025 FCF tripling.\n\nNote: FY2024 Gold Production corrected to 3.91 Moz (official 40-F) from earlier 4.05 estimate. FY2024 AISC corrected to $1,484/oz (official 40-F). FY2025 gold production decline (3.26 Moz) primarily due to Loulo-Gounkoto suspension and asset divestitures."
+    ]
   },
   "overview": {
     "founded": "1983",
