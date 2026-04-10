@@ -34,9 +34,18 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Dump Notion schema
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_COMPANIES_DB: ${{ secrets.NOTION_COMPANIES_DB }}
+          NOTION_QUOTES_DB: ${{ secrets.NOTION_QUOTES_DB }}
+          NOTION_ROADMAP_DB: ${{ secrets.NOTION_ROADMAP_DB }}
+          NOTION_NOTES_DB: ${{ secrets.NOTION_NOTES_DB }}
+          NOTION_TASKS_DB: ${{ secrets.NOTION_TASKS_DB }}
+        run: node scripts/deepseek-delivery-check.js --dump-schema true
+
       - name: Validate Notion schema
         env:
-          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           NOTION_COMPANIES_DB: ${{ secrets.NOTION_COMPANIES_DB }}
           NOTION_QUOTES_DB: ${{ secrets.NOTION_QUOTES_DB }}
