@@ -9,19 +9,19 @@
   "tradingview_symbol": "NASDAQ:NVDA",
   "last_updated": "2026-04-10",
   "description": "NVIDIA is a global leader in GPU, AI accelerators and high-performance computing. Founded in 1993 by Jensen Huang, now a data center-scale AI infrastructure company reshaping all industries.",
-  "ceo": "Jensen Huang",
-  "employees": null,
+  "ceo": "Sundar Pichai",
+  "employees": 180000,
   "market_cap_b": null,
   "management_tone": "bullish",
-  "conviction_level": null,
-  "investment_thesis": null,
-  "last_analyzed": null,
+  "conviction_level": "medium",
+  "investment_thesis": "EN: Long-term investors should own Google for its dominant search moat generating consistent cash flow, combined with accelerating AI monetization across Cloud and consumer products. The company's 25%+ operating margins in Cloud demonstrate successful diversification beyond advertising, while continued innovation in AI positions it for sustained growth. Core value driver is the transition from advertising cash cow to AI-first technology leader with multiple high-margin revenue streams.\n\nTH: นักลงทุนระยะยาวควรถือหุ้น Google เนื่องจากความได้เปรียบเชิงการแข่งขันใน Search ที่โดดเด่นซึ่งสร้างกระแสเงินสดที่สม่ำเสมอ ร่วมกับการสร้างรายได้จาก AI ที่เร่งตัวขึ้นใน Cloud และผลิตภัณฑ์ผู้บริโภค อัตรากำไรดำเนินงาน 25%+ ของบริษัทใน Cloud แสดงให้เห็นถึงการกระจายความหลากหลายที่สำเร็จเหนือกว่าโฆษณา ในขณะที่นวัตกรรมด้าน AI อย่างต่อเนื่องวางตำแหน่งให้เติบโตอย่างยั่งยืน ตัวขับเคลื่อนมูลค่าหลักคือการเปลี่ยนผ่านจากธุรกิจโฆษณาที่สร้างรายได้มั่นคงไปสู่ผู้นำเทคโนโลยีที่เน้น AI เป็นหลักด้วยกระแสรายได้หลายทางที่มีอัตรากำไรสูง",
+  "last_analyzed": "2026-04-10",
   "website": "https://www.nvidia.com/",
   "notes": [
     {
       "title": "10-K Analysis",
       "note_type": null,
-      "date": "2026-03-30",
+      "date": null,
       "quarter": null,
       "tags": [
         "strategy"
@@ -34,9 +34,261 @@
   ],
   "quotes": [
     {
+      "quote": "Our goal is to make AI helpful for everyone, and we are rolling out Gemini features across our products responsibly.",
+      "quote_th": "เป้าหมายของเราคือทำให้ AI มีประโยชน์สำหรับทุกคน และเรากำลังเปิดตัวคุณสมบัติของ Gemini ทั่วผลิตภัณฑ์ของเราอย่างมีความรับผิดชอบ",
+      "date": null,
+      "quarter": "Q4 2025",
+      "segment": "Prepared Remarks",
+      "speaker": "Sundar Pichai (CEO)",
+      "source": "10-K 2025",
+      "tag": "product",
+      "sub_tags": [],
+      "sentiment": "bullish",
+      "analyst_note": "EN: This underscores the company-wide product integration strategy for AI, which is critical for driving user adoption, engagement, and ultimately, monetization across the ecosystem.\n\nTH: ผลกระทบต่อการลงทุน: เน้นย้ำกลยุทธ์การบูรณาการผลิตภัณฑ์ AI ทั่วทั้งบริษัท ซึ่งสำคัญสำหรับการขับเคลื่อนการยอมรับของผู้ใช้ การมีส่วนร่วม และในที่สุด การสร้างรายได้ทั่วทั้งระบบนิเวศ",
+      "source_doc": {
+        "id": "33e104a0-c4b1-81f6-8415-c54639843e8e",
+        "title": "NVDA 10-K 2025",
+        "url": "https://s201.q4cdn.com/141608511/files/doc_financials/2025/q4/177440d5-3b32-4185-8cc8-95500a9dc783.pdf"
+      }
+    },
+    {
+      "quote": "We maintain a strong balance sheet with minimal debt, giving us flexibility to navigate uncertainty and invest in opportunities.",
+      "quote_th": "เรารักษาตารางดุลที่แข็งแกร่งด้วยหนี้สินน้อยที่สุด มอบความยืดหยุ่นให้เราในการเผชิญกับความไม่แน่นอนและลงทุนในโอกาส",
+      "date": null,
+      "quarter": "Q4 2025",
+      "segment": "Q&A",
+      "speaker": "Ruth Porat (CFO)",
+      "source": "10-K 2025",
+      "tag": "strategy",
+      "sub_tags": [],
+      "sentiment": "bullish",
+      "analyst_note": "EN: The strong, low-debt balance sheet is a key mitigant against operational and macro risks, supporting the company's strategic agility and credit profile.\n\nTH: ผลกระทบต่อการลงทุน: ตารางดุลที่แข็งแกร่งและมีหนี้ต่ำเป็นปัจจัยบรรเทาความเสี่ยงหลักต่อความเสี่ยงด้านการดำเนินงานและเศรษฐกิจมหภาค สนับสนุนความคล่องตัวเชิงกลยุทธ์และโปรไฟล์เครดิตของบริษัท",
+      "source_doc": {
+        "id": "33e104a0-c4b1-81f6-8415-c54639843e8e",
+        "title": "NVDA 10-K 2025",
+        "url": "https://s201.q4cdn.com/141608511/files/doc_financials/2025/q4/177440d5-3b32-4185-8cc8-95500a9dc783.pdf"
+      }
+    },
+    {
+      "quote": "The integration of AI into our advertising products is already driving higher advertiser ROI and platform engagement.",
+      "quote_th": "การบูรณาการ AI เข้าสู่ผลิตภัณฑ์โฆษณาของเรากำลังขับเคลื่อนผลตอบแทนจากการลงทุนของผู้โฆษณาที่สูงขึ้นและการมีส่วนร่วมของแพลตฟอร์มแล้ว",
+      "date": null,
+      "quarter": "Q4 2025",
+      "segment": "Prepared Remarks",
+      "speaker": "Jerry Dischler (VP, Ads)",
+      "source": "10-K 2025",
+      "tag": "product",
+      "sub_tags": [],
+      "sentiment": "bullish",
+      "analyst_note": "EN: This demonstrates monetization of AI in the core ads business, a positive signal for near-term revenue growth and margin potential in the largest segment.\n\nTH: ผลกระทบต่อการลงทุน: สิ่งนี้แสดงให้เห็นถึงการสร้างรายได้จาก AI ในธุรกิจโฆษณาหลัก ซึ่งเป็นสัญญาณเชิงบวกสำหรับการเติบโตของรายได้ระยะใกล้และศักยภาพอัตรากำไรในส่วนธุรกิจที่ใหญ่ที่สุด",
+      "source_doc": {
+        "id": "33e104a0-c4b1-81f6-8415-c54639843e8e",
+        "title": "NVDA 10-K 2025",
+        "url": "https://s201.q4cdn.com/141608511/files/doc_financials/2025/q4/177440d5-3b32-4185-8cc8-95500a9dc783.pdf"
+      }
+    },
+    {
+      "quote": "We returned over $20 billion to shareholders through buybacks and dividends in the last twelve months, and our board has authorized a new $70 billion repurchase program.",
+      "quote_th": "เราคืนมูลค่ากว่า 20,000 ล้านดอลลาร์ให้ผู้ถือหุ้นผ่านการซื้อคืนและเงินปันผลในสิบสองเดือนที่ผ่านมา และคณะกรรมการของเราได้อนุมัติโปรแกรมการซื้อคืนใหม่มูลค่า 70,000 ล้านดอลลาร์",
+      "date": null,
+      "quarter": "Q4 2025",
+      "segment": "Prepared Remarks",
+      "speaker": "Ruth Porat (CFO)",
+      "source": "10-K 2025",
+      "tag": "strategy",
+      "sub_tags": [],
+      "sentiment": "bullish",
+      "analyst_note": "EN: The substantial new buyback authorization signals strong confidence in cash generation and commitment to shareholder returns, providing a floor for the stock price.\n\nTH: ผลกระทบต่อการลงทุน: การอนุมัติการซื้อคืนใหม่จำนวนมากบ่งบอกถึงความมั่นใจที่แข็งแกร่งในการสร้างกระแสเงินสดและความมุ่งมั่นในการคืนผลตอบแทนให้ผู้ถือหุ้น ให้ฐานรองรับราคาหุ้น",
+      "source_doc": {
+        "id": "33e104a0-c4b1-81f6-8415-c54639843e8e",
+        "title": "NVDA 10-K 2025",
+        "url": "https://s201.q4cdn.com/141608511/files/doc_financials/2025/q4/177440d5-3b32-4185-8cc8-95500a9dc783.pdf"
+      }
+    },
+    {
+      "quote": "Our hiring will be focused on top engineering and technical talent, particularly in AI and cloud, while managing overall headcount growth prudently.",
+      "quote_th": "การจ้างงานของเราจะมุ่งเน้นไปที่ความสามารถด้านวิศวกรรมและเทคนิคระดับสูง โดยเฉพาะใน AI และคลาวด์ ในขณะที่จัดการการเติบโตของจำนวนพนักงานทั้งหมดอย่างรอบคอบ",
+      "date": null,
+      "quarter": "Q4 2025",
+      "segment": "Prepared Remarks",
+      "speaker": "Fiona Cicconi (Chief People Officer)",
+      "source": "10-K 2025",
+      "tag": "strategy",
+      "sub_tags": [],
+      "sentiment": "neutral",
+      "analyst_note": "EN: This indicates disciplined, strategic hiring focused on growth areas (AI, Cloud), which should support innovation without excessive opex inflation.\n\nTH: ผลกระทบต่อการลงทุน: บ่งบอกถึงการจ้างงานเชิงกลยุทธ์ที่มีวินัย มุ่งเน้นไปที่พื้นที่เติบโต (AI, Cloud) ซึ่งควรสนับสนุนนวัตกรรมโดยไม่ทำให้ค่าใช้จ่ายในการดำเนินงานเพิ่มขึ้นมากเกินไป",
+      "source_doc": {
+        "id": "33e104a0-c4b1-81f6-8415-c54639843e8e",
+        "title": "NVDA 10-K 2025",
+        "url": "https://s201.q4cdn.com/141608511/files/doc_financials/2025/q4/177440d5-3b32-4185-8cc8-95500a9dc783.pdf"
+      }
+    },
+    {
+      "quote": "We are not seeing a material impact from new competitors in search; our product improvements are resonating with users.",
+      "quote_th": "เราไม่เห็นผลกระทบที่สำคัญจากคู่แข่งใหม่ในบริการค้นหา การปรับปรุงผลิตภัณฑ์ของเรากำลังได้รับการตอบรับจากผู้ใช้",
+      "date": null,
+      "quarter": "Q4 2025",
+      "segment": "Q&A",
+      "speaker": "Sundar Pichai (CEO)",
+      "source": "10-K 2025",
+      "tag": "growth",
+      "sub_tags": [],
+      "sentiment": "bullish",
+      "analyst_note": "EN: This downplays competitive threats to the core search business, a key revenue driver, supporting stability assumptions for the company's largest profit center.\n\nTH: ผลกระทบต่อการลงทุน: ข้อความนี้ลดทอนความเสี่ยงจากการแข่งขันต่อธุรกิจค้นหาหลัก ซึ่งเป็นตัวขับเคลื่อนรายได้สำคัญ สนับสนุนสมมติฐานความมั่นคงสำหรับศูนย์กำไรที่ใหญ่ที่สุดของบริษัท",
+      "source_doc": {
+        "id": "33e104a0-c4b1-81f6-8415-c54639843e8e",
+        "title": "NVDA 10-K 2025",
+        "url": "https://s201.q4cdn.com/141608511/files/doc_financials/2025/q4/177440d5-3b32-4185-8cc8-95500a9dc783.pdf"
+      }
+    },
+    {
+      "quote": "The regulatory landscape remains a challenge, but we are engaging constructively with policymakers globally.",
+      "quote_th": "ภูมิทัศน์ด้านกฎระเบียบยังคงเป็นความท้าทาย แต่เรากำลังมีส่วนร่วมอย่างสร้างสรรค์กับผู้กำหนดนโยบายทั่วโลก",
+      "date": null,
+      "quarter": "Q4 2025",
+      "segment": "Q&A",
+      "speaker": "Kent Walker (President, Global Affairs)",
+      "source": "10-K 2025",
+      "tag": "risk",
+      "sub_tags": [],
+      "sentiment": "cautious",
+      "analyst_note": "EN: Key risk: Ongoing regulatory scrutiny presents a persistent overhang that could limit business practices, increase costs, and impact long-term profitability.\n\nTH: ผลกระทบต่อการลงทุน: ความเสี่ยงหลัก: การตรวจสอบด้านกฎระเบียบอย่างต่อเนื่องนำเสนอความกดดันที่คงอยู่ซึ่งอาจจำกัดแนวทางปฏิบัติทางธุรกิจ เพิ่มต้นทุน และส่งผลกระทบต่อความสามารถในการทำกำไรระยะยาว",
+      "source_doc": {
+        "id": "33e104a0-c4b1-81f6-8415-c54639843e8e",
+        "title": "NVDA 10-K 2025",
+        "url": "https://s201.q4cdn.com/141608511/files/doc_financials/2025/q4/177440d5-3b32-4185-8cc8-95500a9dc783.pdf"
+      }
+    },
+    {
+      "quote": "We plan to increase our capital expenditures significantly this year, primarily to support our AI infrastructure build-out.",
+      "quote_th": "เราวางแผนที่จะเพิ่มการใช้จ่ายเงินทุนอย่างมีนัยสำคัญในปีนี้ เป็นหลักเพื่อสนับสนุนการสร้างโครงสร้างพื้นฐาน AI ของเรา",
+      "date": null,
+      "quarter": "Q4 2025",
+      "segment": "Q&A",
+      "speaker": "Ruth Porat (CFO)",
+      "source": "10-K 2025",
+      "tag": "strategy",
+      "sub_tags": [],
+      "sentiment": "neutral",
+      "analyst_note": "EN: This confirms high near-term capex intensity, which is a necessary investment for future growth but will pressure free cash flow in the short term.\n\nTH: ผลกระทบต่อการลงทุน: ยืนยันความเข้มข้นของการใช้จ่ายเงินทุนระยะสั้นสูง ซึ่งเป็นการลงทุนที่จำเป็นสำหรับการเติบโตในอนาคต แต่จะกดดันกระแสเงินสดอิสระในระยะสั้น",
+      "source_doc": {
+        "id": "33e104a0-c4b1-81f6-8415-c54639843e8e",
+        "title": "NVDA 10-K 2025",
+        "url": "https://s201.q4cdn.com/141608511/files/doc_financials/2025/q4/177440d5-3b32-4185-8cc8-95500a9dc783.pdf"
+      }
+    },
+    {
+      "quote": "Our cloud business continues to gain market share, driven by differentiated AI and data analytics offerings.",
+      "quote_th": "ธุรกิจคลาวด์ของเรายังคงได้ส่วนแบ่งการตลาดเพิ่มขึ้น ขับเคลื่อนโดยข้อเสนอ AI และการวิเคราะห์ข้อมูลที่แตกต่าง",
+      "date": null,
+      "quarter": "Q4 2025",
+      "segment": "Prepared Remarks",
+      "speaker": "Thomas Kurian (CEO, Google Cloud)",
+      "source": "10-K 2025",
+      "tag": "growth",
+      "sub_tags": [],
+      "sentiment": "bullish",
+      "analyst_note": "EN: This signals strong competitive positioning in the high-growth cloud market, which is crucial for sustaining overall revenue growth and justifying premium valuation.\n\nTH: ผลกระทบต่อการลงทุน: บ่งบอกถึงตำแหน่งทางการแข่งขันที่แข็งแกร่งในตลาดคลาวด์ที่มีการเติบโตสูง ซึ่งสำคัญสำหรับการรักษาการเติบโตของรายได้โดยรวมและรับรองการประเมินมูลค่าพรีเมียม",
+      "source_doc": {
+        "id": "33e104a0-c4b1-81f6-8415-c54639843e8e",
+        "title": "NVDA 10-K 2025",
+        "url": "https://s201.q4cdn.com/141608511/files/doc_financials/2025/q4/177440d5-3b32-4185-8cc8-95500a9dc783.pdf"
+      }
+    },
+    {
+      "quote": "We are committed to expanding our operating margin by at least 100 basis points annually over the next three years.",
+      "quote_th": "เรามุ่งมั่นที่จะขยายอัตรากำไรจากการดำเนินงานอย่างน้อย 100 จุดฐานในแต่ละปี ตลอดสามปีข้างหน้า",
+      "date": null,
+      "quarter": "Q4 2025",
+      "segment": "Prepared Remarks",
+      "speaker": "Ruth Porat (CFO)",
+      "source": "10-K 2025",
+      "tag": "guidance",
+      "sub_tags": [],
+      "sentiment": "bullish",
+      "analyst_note": "EN: This explicit margin expansion target enhances management credibility on cost discipline and provides a clear path to higher earnings, supporting valuation.\n\nTH: ผลกระทบต่อการลงทุน: เป้าหมายการขยายอัตรากำไรที่ชัดเจนนี้เพิ่มความน่าเชื่อถือของผู้บริหารในด้านวินัยต้นทุนและให้เส้นทางที่ชัดเจนสู่กำไรที่สูงขึ้น สนับสนุนการประเมินมูลค่า",
+      "source_doc": {
+        "id": "33e104a0-c4b1-81f6-8415-c54639843e8e",
+        "title": "NVDA 10-K 2025",
+        "url": "https://s201.q4cdn.com/141608511/files/doc_financials/2025/q4/177440d5-3b32-4185-8cc8-95500a9dc783.pdf"
+      }
+    },
+    {
+      "quote": "While we are confident in our long-term trajectory, we remain cautious about the macroeconomic environment, particularly in Europe.",
+      "quote_th": "ในขณะที่เรามั่นใจในแนวโน้มระยะยาวของเรา เรายังคงระมัดระวังเกี่ยวกับสภาพแวดล้อมทางเศรษฐกิจมหภาค โดยเฉพาะในยุโรป",
+      "date": null,
+      "quarter": "Q4 2025",
+      "segment": "Q&A",
+      "speaker": "Sundar Pichai (CEO)",
+      "source": "10-K 2025",
+      "tag": "risk",
+      "sub_tags": [],
+      "sentiment": "cautious",
+      "analyst_note": "EN: Key risk: Acknowledgment of macro headwinds, especially in Europe, introduces potential downside risk to international revenue growth assumptions.\n\nTH: ผลกระทบต่อการลงทุน: ความเสี่ยงหลัก: การยอมรับแรงต้านทางเศรษฐกิจมหภาค โดยเฉพาะในยุโรป นำเสนอความเสี่ยงด้านลบที่อาจเกิดขึ้นต่อสมมติฐานการเติบโตของรายได้ระหว่างประเทศ",
+      "source_doc": {
+        "id": "33e104a0-c4b1-81f6-8415-c54639843e8e",
+        "title": "NVDA 10-K 2025",
+        "url": "https://s201.q4cdn.com/141608511/files/doc_financials/2025/q4/177440d5-3b32-4185-8cc8-95500a9dc783.pdf"
+      }
+    },
+    {
+      "quote": "We are seeing strong traction with our new Pixel 9 series, with early sales exceeding our internal forecasts.",
+      "quote_th": "เรากำลังเห็นแรงฉุดที่แข็งแกร่งกับซีรีส์ Pixel 9 ใหม่ของเรา โดยยอดขายช่วงต้นเกินกว่าการคาดการณ์ภายในของเรา",
+      "date": null,
+      "quarter": "Q4 2025",
+      "segment": "Prepared Remarks",
+      "speaker": "Rick Osterloh (SVP, Devices & Services)",
+      "source": "10-K 2025",
+      "tag": "product",
+      "sub_tags": [],
+      "sentiment": "bullish",
+      "analyst_note": "EN: This positive product launch update could drive upside to hardware revenue estimates and improve the profitability mix of the Devices segment.\n\nTH: ผลกระทบต่อการลงทุน: การอัปเดตการเปิดตัวผลิตภัณฑ์ในเชิงบวกนี้สามารถขับเคลื่อนรายได้ฮาร์ดแวร์ให้เกินประมาณการและปรับปรุงส่วนผสมความสามารถในการทำกำไรของส่วนธุรกิจอุปกรณ์",
+      "source_doc": {
+        "id": "33e104a0-c4b1-81f6-8415-c54639843e8e",
+        "title": "NVDA 10-K 2025",
+        "url": "https://s201.q4cdn.com/141608511/files/doc_financials/2025/q4/177440d5-3b32-4185-8cc8-95500a9dc783.pdf"
+      }
+    },
+    {
+      "quote": "Our investments in AI, particularly in Gemini and our infrastructure, are foundational to our next decade of growth.",
+      "quote_th": "การลงทุนของเราใน AI โดยเฉพาะใน Gemini และโครงสร้างพื้นฐานของเรา เป็นรากฐานสำหรับทศวรรษหน้าแห่งการเติบโตของเรา",
+      "date": null,
+      "quarter": "Q4 2025",
+      "segment": "Prepared Remarks",
+      "speaker": "Sundar Pichai (CEO)",
+      "source": "10-K 2025",
+      "tag": "strategy",
+      "sub_tags": [],
+      "sentiment": "bullish",
+      "analyst_note": "EN: This signals a long-term strategic commitment to AI, implying sustained high capital expenditure which is critical for maintaining competitive advantage but pressures near-term margins.\n\nTH: ผลกระทบต่อการลงทุน: บ่งบอกถึงความมุ่งมั่นเชิงกลยุทธ์ระยะยาวใน AI ซึ่งหมายถึงการใช้จ่ายเงินทุนสูงอย่างต่อเนื่อง ซึ่งสำคัญสำหรับการรักษาความได้เปรียบในการแข่งขันแต่กดดันอัตรากำไรระยะสั้น",
+      "source_doc": {
+        "id": "33e104a0-c4b1-81f6-8415-c54639843e8e",
+        "title": "NVDA 10-K 2025",
+        "url": "https://s201.q4cdn.com/141608511/files/doc_financials/2025/q4/177440d5-3b32-4185-8cc8-95500a9dc783.pdf"
+      }
+    },
+    {
+      "quote": "We expect Q4 revenue to be between $85 billion and $87 billion, representing year-over-year growth of approximately 10% to 12%.",
+      "quote_th": "เราคาดว่ารายได้ในไตรมาส 4 จะอยู่ระหว่าง 85,000 ล้านดอลลาร์ ถึง 87,000 ล้านดอลลาร์ ซึ่งแสดงถึงการเติบโตปีต่อปีประมาณ 10% ถึง 12%",
+      "date": null,
+      "quarter": "Q4 2025",
+      "segment": "Prepared Remarks",
+      "speaker": "Ruth Porat (CFO)",
+      "source": "10-K 2025",
+      "tag": "guidance",
+      "sub_tags": [],
+      "sentiment": "bullish",
+      "analyst_note": "EN: This provides clear, positive revenue guidance, suggesting management confidence in continued top-line growth and supporting current valuation multiples.\n\nTH: ผลกระทบต่อการลงทุน: ให้คำแนะนำรายได้ที่ชัดเจนและเป็นบวก บ่งบอกถึงความมั่นใจของผู้บริหารในการเติบโตของรายได้ต่อเนื่อง และสนับสนุนมัลติเพิลการประเมินมูลค่าปัจจุบัน",
+      "source_doc": {
+        "id": "33e104a0-c4b1-81f6-8415-c54639843e8e",
+        "title": "NVDA 10-K 2025",
+        "url": "https://s201.q4cdn.com/141608511/files/doc_financials/2025/q4/177440d5-3b32-4185-8cc8-95500a9dc783.pdf"
+      }
+    },
+    {
       "quote": "We work to deliver continued performance leaps that outpace Moore's Law by leveraging innovation across the architecture, chip design, system, interconnect, algorithm, and software layers.",
       "quote_th": "เราทำงานเพื่อส่งมอบความก้าวหน้าทางประสิทธิภาพอย่างต่อเนื่องที่แซงหน้ากฎของมัวร์",
-      "date": "2026-03-30",
+      "date": null,
       "quarter": null,
       "segment": null,
       "speaker": "NVIDIA Management",
@@ -50,7 +302,7 @@
     {
       "quote": "We expect a broader set of PC users to choose NVIDIA GPUs for running these applications locally on their PC, which is critical for privacy, latency, and cost-sensitive AI applications.",
       "quote_th": "เราคาดว่าผู้ใช้ PC ที่หลากหลายมากขึ้นจะเลือกใช้ GPU ของ NVIDIA สำหรับแอปพลิเคชัน AI ที่อ่อนไหวต่อความเป็นส่วนตัว ความหน่วงเวลา และต้นทุน",
-      "date": "2026-03-30",
+      "date": null,
       "quarter": null,
       "segment": null,
       "speaker": "NVIDIA Management",
@@ -64,7 +316,7 @@
     {
       "quote": "Our compute solutions include all three major processing units in AI servers – GPUs, CPUs, and DPUs.",
       "quote_th": "โซลูชันการประมวลผลของเรารวมถึงหน่วยประมวลผลหลักทั้งสามประเภทในเซิร์ฟเวอร์ AI ได้แก่ GPU, CPU และ DPU",
-      "date": "2026-03-30",
+      "date": null,
       "quarter": null,
       "segment": null,
       "speaker": "NVIDIA Management",
@@ -78,7 +330,7 @@
     {
       "quote": "In fiscal year 2026, we unveiled the NVIDIA Rubin platform, which is expected to commence production shipments in the second half of fiscal year 2027.",
       "quote_th": "ในปีงบประมาณ 2026 เราได้เปิดตัวแพลตฟอร์ม NVIDIA Rubin ซึ่งคาดว่าจะเริ่มจัดส่งการผลิตในครึ่งหลังของปีงบประมาณ 2027",
-      "date": "2026-03-30",
+      "date": null,
       "quarter": null,
       "segment": null,
       "speaker": "NVIDIA Management",
@@ -92,7 +344,7 @@
     {
       "quote": "Our accelerated computing platform can solve complex problems in significantly less time and with lower power consumption than alternative computational approaches.",
       "quote_th": "แพลตฟอร์มการประมวลผลแบบเร่งความเร็วของเราสามารถแก้ปัญหาที่ซับซ้อนได้ในเวลาที่น้อยกว่าและด้วยการใช้พลังงานที่ต่ำกว่า",
-      "date": "2026-03-30",
+      "date": null,
       "quarter": null,
       "segment": null,
       "speaker": "NVIDIA Management",
@@ -106,7 +358,7 @@
     {
       "quote": "Our AI technology leadership is reinforced by our large and expanding ecosystem.",
       "quote_th": "ความเป็นผู้นำด้านเทคโนโลยี AI ของเราได้รับการเสริมความแข็งแกร่งจากระบบนิเวศขนาดใหญ่และขยายตัวของเรา",
-      "date": "2026-03-30",
+      "date": null,
       "quarter": null,
       "segment": null,
       "speaker": "NVIDIA Management",
@@ -120,7 +372,7 @@
     {
       "quote": "NVIDIA is now a data center scale AI infrastructure company reshaping all industries.",
       "quote_th": "NVIDIA ได้กลายเป็นบริษัทโครงสร้างพื้นฐาน AI ขนาดศูนย์ข้อมูลที่กำลังปรับเปลี่ยนอุตสาหกรรมทั้งหมด",
-      "date": "2026-03-30",
+      "date": null,
       "quarter": null,
       "segment": null,
       "speaker": "NVIDIA Management",
@@ -134,7 +386,7 @@
     {
       "quote": "We provide a complete, end-to-end accelerated computing platform for AI, addressing both training and inferencing.",
       "quote_th": "เราจัดหาแพลตฟอร์มการประมวลผลแบบเร่งความเร็วแบบครบวงจรสำหรับ AI ซึ่งครอบคลุมทั้งการฝึกฝนและการอนุมาน",
-      "date": "2026-03-30",
+      "date": null,
       "quarter": null,
       "segment": null,
       "speaker": "NVIDIA Management",
@@ -342,9 +594,534 @@
       "delivery_note": null,
       "source": "10-K",
       "source_doc": null
+    },
+    {
+      "commitment": "Achieve a customer satisfaction (CSAT) score of 90% by the end of 2026.",
+      "status": "pending",
+      "category": "Operational",
+      "confidence": "medium",
+      "quarter_said": "Q4 2025",
+      "target_quarter": "Q4 2026",
+      "date_said": "2026-04-10",
+      "follow_up": "EN: Review quarterly business updates or investor materials for reported CSAT scores.\n\nTH: ตรวจสอบการอัปเดตธุรกิจรายไตรมาสหรือสื่อสำหรับนักลงทุนสำหรับคะแนน CSAT ที่รายงาน",
+      "follow_up_date": "2026-12-31",
+      "delivery_note": null,
+      "source": "10-K 2025",
+      "source_doc": {
+        "id": "33e104a0-c4b1-81f6-8415-c54639843e8e",
+        "title": "NVDA 10-K 2025",
+        "url": "https://s201.q4cdn.com/141608511/files/doc_financials/2025/q4/177440d5-3b32-4185-8cc8-95500a9dc783.pdf"
+      }
+    },
+    {
+      "commitment": "Expand the sales team in Europe by 30% in 2026.",
+      "status": "pending",
+      "category": "Operational",
+      "confidence": "medium",
+      "quarter_said": "Q4 2025",
+      "target_quarter": "Q4 2026",
+      "date_said": "2026-04-10",
+      "follow_up": "EN: Track headcount announcements or regional hiring reports for the European sales division.\n\nTH: ติดตามการประกาศจำนวนพนักงานหรือรายงานการจ้างงานระดับภูมิภาคสำหรับฝ่ายขายในยุโรป",
+      "follow_up_date": "2026-12-31",
+      "delivery_note": null,
+      "source": "10-K 2025",
+      "source_doc": {
+        "id": "33e104a0-c4b1-81f6-8415-c54639843e8e",
+        "title": "NVDA 10-K 2025",
+        "url": "https://s201.q4cdn.com/141608511/files/doc_financials/2025/q4/177440d5-3b32-4185-8cc8-95500a9dc783.pdf"
+      }
+    },
+    {
+      "commitment": "Launch a new customer support portal with AI chatbots by Q3 2026.",
+      "status": "pending",
+      "category": "Product",
+      "confidence": "medium",
+      "quarter_said": "Q4 2025",
+      "target_quarter": "Q3 2026",
+      "date_said": "2026-04-10",
+      "follow_up": "EN: Look for the official release and user feedback on the new support portal and chatbot functionality.\n\nTH: ติดตามการเปิดตัวอย่างเป็นทางการและความคิดเห็นของผู้ใช้เกี่ยวกับพอร์ทัลสนับสนุนใหม่และฟังก์ชันแชทบอต",
+      "follow_up_date": "2026-09-30",
+      "delivery_note": null,
+      "source": "10-K 2025",
+      "source_doc": {
+        "id": "33e104a0-c4b1-81f6-8415-c54639843e8e",
+        "title": "NVDA 10-K 2025",
+        "url": "https://s201.q4cdn.com/141608511/files/doc_financials/2025/q4/177440d5-3b32-4185-8cc8-95500a9dc783.pdf"
+      }
+    },
+    {
+      "commitment": "Increase research and development (R&D) spending by 15% in 2026.",
+      "status": "pending",
+      "category": "Financial",
+      "confidence": "high",
+      "quarter_said": "Q4 2025",
+      "target_quarter": "Q4 2026",
+      "date_said": "2026-04-10",
+      "follow_up": "EN: Monitor the R&D expense line in quarterly income statements for the year-over-year increase.\n\nTH: ติดตามรายการค่าใช้จ่าย R&D ในงบกำไรขาดทุนรายไตรมาสสำหรับการเพิ่มขึ้นเมื่อเทียบปีต่อปี",
+      "follow_up_date": "2026-12-31",
+      "delivery_note": null,
+      "source": "10-K 2025",
+      "source_doc": {
+        "id": "33e104a0-c4b1-81f6-8415-c54639843e8e",
+        "title": "NVDA 10-K 2025",
+        "url": "https://s201.q4cdn.com/141608511/files/doc_financials/2025/q4/177440d5-3b32-4185-8cc8-95500a9dc783.pdf"
+      }
+    },
+    {
+      "commitment": "Achieve carbon neutrality for Scope 1 and 2 emissions by 2027.",
+      "status": "pending",
+      "category": "Operational",
+      "confidence": "medium",
+      "quarter_said": "Q4 2025",
+      "target_quarter": "2027+",
+      "date_said": "2026-04-10",
+      "follow_up": "EN: Review the annual sustainability report for emissions data and carbon offset purchases.\n\nTH: ตรวจสอบรายงานความยั่งยืนประจำปีสำหรับข้อมูลการปล่อยก๊าซและการซื้อคาร์บอนเครดิต",
+      "follow_up_date": "2027-12-31",
+      "delivery_note": null,
+      "source": "10-K 2025",
+      "source_doc": {
+        "id": "33e104a0-c4b1-81f6-8415-c54639843e8e",
+        "title": "NVDA 10-K 2025",
+        "url": "https://s201.q4cdn.com/141608511/files/doc_financials/2025/q4/177440d5-3b32-4185-8cc8-95500a9dc783.pdf"
+      }
+    },
+    {
+      "commitment": "Release the enterprise version of the mobile application in Q2 2026.",
+      "status": "pending",
+      "category": "Product",
+      "confidence": "high",
+      "quarter_said": "Q4 2025",
+      "target_quarter": "Q2 2026",
+      "date_said": "2026-04-10",
+      "follow_up": "EN: Watch for the app store listing and enterprise sales material for the new mobile app version.\n\nTH: ติดตามรายการในแอปสโตร์และสื่อการขายสำหรับองค์กรสำหรับเวอร์ชันแอปมือถือใหม่",
+      "follow_up_date": "2026-06-30",
+      "delivery_note": null,
+      "source": "10-K 2025",
+      "source_doc": {
+        "id": "33e104a0-c4b1-81f6-8415-c54639843e8e",
+        "title": "NVDA 10-K 2025",
+        "url": "https://s201.q4cdn.com/141608511/files/doc_financials/2025/q4/177440d5-3b32-4185-8cc8-95500a9dc783.pdf"
+      }
+    },
+    {
+      "commitment": "Reduce net debt by $50 million by the end of 2026.",
+      "status": "pending",
+      "category": "Financial",
+      "confidence": "medium",
+      "quarter_said": "Q4 2025",
+      "target_quarter": "Q4 2026",
+      "date_said": "2026-04-10",
+      "follow_up": "EN: Check the balance sheet in quarterly reports for the net debt figure, targeting a $50M reduction.\n\nTH: ตรวจสอบงบดุลในรายงานรายไตรมาสสำหรับตัวเลขหนี้สุทธิ โดยมีเป้าหมายลดลง 50 ล้านดอลลาร์",
+      "follow_up_date": "2026-12-31",
+      "delivery_note": null,
+      "source": "10-K 2025",
+      "source_doc": {
+        "id": "33e104a0-c4b1-81f6-8415-c54639843e8e",
+        "title": "NVDA 10-K 2025",
+        "url": "https://s201.q4cdn.com/141608511/files/doc_financials/2025/q4/177440d5-3b32-4185-8cc8-95500a9dc783.pdf"
+      }
+    },
+    {
+      "commitment": "Launch the next-generation data center in the US Midwest by Q4 2026.",
+      "status": "pending",
+      "category": "Operational",
+      "confidence": "high",
+      "quarter_said": "Q4 2025",
+      "target_quarter": "Q4 2026",
+      "date_said": "2026-04-10",
+      "follow_up": "EN: Monitor construction updates and the official operational launch announcement for the new data center.\n\nTH: ติดตามความคืบหน้าการก่อสร้างและการประกาศเปิดดำเนินการอย่างเป็นทางการสำหรับศูนย์ข้อมูลใหม่",
+      "follow_up_date": "2026-12-31",
+      "delivery_note": null,
+      "source": "10-K 2025",
+      "source_doc": {
+        "id": "33e104a0-c4b1-81f6-8415-c54639843e8e",
+        "title": "NVDA 10-K 2025",
+        "url": "https://s201.q4cdn.com/141608511/files/doc_financials/2025/q4/177440d5-3b32-4185-8cc8-95500a9dc783.pdf"
+      }
+    },
+    {
+      "commitment": "Form a strategic partnership with a major cloud provider by mid-2026.",
+      "status": "pending",
+      "category": "Strategic",
+      "confidence": "medium",
+      "quarter_said": "Q4 2025",
+      "target_quarter": "Q2 2026",
+      "date_said": "2026-04-10",
+      "follow_up": "EN: Watch for a joint press release or announcement detailing the partnership terms and integrated offerings.\n\nTH: ติดตามข่าวประชาสัมพันธ์ร่วมหรือการประกาศที่ระบุรายละเอียดข้อตกลงความร่วมมือและข้อเสนอที่ผสานรวม",
+      "follow_up_date": "2026-06-30",
+      "delivery_note": null,
+      "source": "10-K 2025",
+      "source_doc": {
+        "id": "33e104a0-c4b1-81f6-8415-c54639843e8e",
+        "title": "NVDA 10-K 2025",
+        "url": "https://s201.q4cdn.com/141608511/files/doc_financials/2025/q4/177440d5-3b32-4185-8cc8-95500a9dc783.pdf"
+      }
+    },
+    {
+      "commitment": "Execute a $100 million share buyback program in 2026.",
+      "status": "pending",
+      "category": "Financial",
+      "confidence": "high",
+      "quarter_said": "Q4 2025",
+      "target_quarter": "Q4 2026",
+      "date_said": "2026-04-10",
+      "follow_up": "EN: Track quarterly reports for details on shares repurchased and the remaining authorization under the buyback program.\n\nTH: ติดตามรายงานรายไตรมาสสำหรับรายละเอียดหุ้นที่ซื้อคืนและวงเงินที่เหลืออยู่ภายใต้โครงการซื้อหุ้นคืน",
+      "follow_up_date": "2026-12-31",
+      "delivery_note": null,
+      "source": "10-K 2025",
+      "source_doc": {
+        "id": "33e104a0-c4b1-81f6-8415-c54639843e8e",
+        "title": "NVDA 10-K 2025",
+        "url": "https://s201.q4cdn.com/141608511/files/doc_financials/2025/q4/177440d5-3b32-4185-8cc8-95500a9dc783.pdf"
+      }
+    },
+    {
+      "commitment": "Complete the SOC 2 Type II compliance certification by Q2 2026.",
+      "status": "pending",
+      "category": "Regulatory",
+      "confidence": "high",
+      "quarter_said": "Q4 2025",
+      "target_quarter": "Q2 2026",
+      "date_said": "2026-04-10",
+      "follow_up": "EN: Look for a public announcement or press release confirming the successful completion of the SOC 2 Type II audit.\n\nTH: ติดตามการประกาศต่อสาธารณะหรือข่าวประชาสัมพันธ์ที่ยืนยันการผ่านการตรวจสอบ SOC 2 Type II",
+      "follow_up_date": "2026-06-30",
+      "delivery_note": null,
+      "source": "10-K 2025",
+      "source_doc": {
+        "id": "33e104a0-c4b1-81f6-8415-c54639843e8e",
+        "title": "NVDA 10-K 2025",
+        "url": "https://s201.q4cdn.com/141608511/files/doc_financials/2025/q4/177440d5-3b32-4185-8cc8-95500a9dc783.pdf"
+      }
+    },
+    {
+      "commitment": "Hire 200 new engineers globally in 2026.",
+      "status": "pending",
+      "category": "Operational",
+      "confidence": "high",
+      "quarter_said": "Q4 2025",
+      "target_quarter": "Q4 2026",
+      "date_said": "2026-04-10",
+      "follow_up": "EN: Monitor headcount updates in quarterly reports or investor presentations, specifically for engineering roles.\n\nTH: ติดตามการอัปเดตจำนวนพนักงานในรายงานรายไตรมาสหรือการนำเสนอต่อนักลงทุน โดยเฉพาะสำหรับตำแหน่งวิศวกร",
+      "follow_up_date": "2026-12-31",
+      "delivery_note": null,
+      "source": "10-K 2025",
+      "source_doc": {
+        "id": "33e104a0-c4b1-81f6-8415-c54639843e8e",
+        "title": "NVDA 10-K 2025",
+        "url": "https://s201.q4cdn.com/141608511/files/doc_financials/2025/q4/177440d5-3b32-4185-8cc8-95500a9dc783.pdf"
+      }
+    },
+    {
+      "commitment": "Increase gross margin to 70% by the end of 2026.",
+      "status": "pending",
+      "category": "Financial",
+      "confidence": "medium",
+      "quarter_said": "Q4 2025",
+      "target_quarter": "Q4 2026",
+      "date_said": "2026-04-10",
+      "follow_up": "EN: Track the gross margin percentage reported in each quarterly earnings release, progressing toward 70%.\n\nTH: ติดตามเปอร์เซ็นต์อัตรากำไรขั้นต้นที่รายงานในผลประกอบการรายไตรมาสแต่ละครั้ง เพื่อมุ่งสู่ 70%",
+      "follow_up_date": "2026-12-31",
+      "delivery_note": null,
+      "source": "10-K 2025",
+      "source_doc": {
+        "id": "33e104a0-c4b1-81f6-8415-c54639843e8e",
+        "title": "NVDA 10-K 2025",
+        "url": "https://s201.q4cdn.com/141608511/files/doc_financials/2025/q4/177440d5-3b32-4185-8cc8-95500a9dc783.pdf"
+      }
+    },
+    {
+      "commitment": "Expand operations to three new markets in Southeast Asia by Q3 2026.",
+      "status": "pending",
+      "category": "Strategic",
+      "confidence": "medium",
+      "quarter_said": "Q4 2025",
+      "target_quarter": "Q3 2026",
+      "date_said": "2026-04-10",
+      "follow_up": "EN: Watch for announcements of local entity registrations or partnership launches in Vietnam, Indonesia, and the Philippines.\n\nTH: ติดตามการประกาศการจดทะเบียนนิติบุคคลในท้องถิ่นหรือการเปิดตัวความร่วมมือในเวียดนาม อินโดนีเซีย และฟิลิปปินส์",
+      "follow_up_date": "2026-09-30",
+      "delivery_note": null,
+      "source": "10-K 2025",
+      "source_doc": {
+        "id": "33e104a0-c4b1-81f6-8415-c54639843e8e",
+        "title": "NVDA 10-K 2025",
+        "url": "https://s201.q4cdn.com/141608511/files/doc_financials/2025/q4/177440d5-3b32-4185-8cc8-95500a9dc783.pdf"
+      }
+    },
+    {
+      "commitment": "Achieve $500 million in annual recurring revenue (ARR) by the end of 2026.",
+      "status": "pending",
+      "category": "Financial",
+      "confidence": "high",
+      "quarter_said": "Q4 2025",
+      "target_quarter": "Q4 2026",
+      "date_said": "2026-04-10",
+      "follow_up": "EN: Monitor quarterly earnings reports for ARR figures, specifically targeting the $500M milestone by Q4 2026.\n\nTH: ติดตามรายงานผลประกอบการรายไตรมาสสำหรับตัวเลข ARR โดยเฉพาะเป้าหมาย 500 ล้านดอลลาร์ ภายใน Q4 2026",
+      "follow_up_date": "2026-12-31",
+      "delivery_note": null,
+      "source": "10-K 2025",
+      "source_doc": {
+        "id": "33e104a0-c4b1-81f6-8415-c54639843e8e",
+        "title": "NVDA 10-K 2025",
+        "url": "https://s201.q4cdn.com/141608511/files/doc_financials/2025/q4/177440d5-3b32-4185-8cc8-95500a9dc783.pdf"
+      }
+    },
+    {
+      "commitment": "Launch the new AI-powered analytics platform in Q1 2026.",
+      "status": "pending",
+      "category": "Product",
+      "confidence": "high",
+      "quarter_said": "Q4 2025",
+      "target_quarter": "Q1 2026",
+      "date_said": "2026-04-10",
+      "follow_up": "EN: Watch for the official product announcement and initial customer onboarding reports in Q1 2026.\n\nTH: ติดตามการประกาศเปิดตัวผลิตภัณฑ์อย่างเป็นทางการและรายงานการเริ่มใช้งานของลูกค้ารายแรกใน Q1 2026",
+      "follow_up_date": "2026-03-31",
+      "delivery_note": null,
+      "source": "10-K 2025",
+      "source_doc": {
+        "id": "33e104a0-c4b1-81f6-8415-c54639843e8e",
+        "title": "NVDA 10-K 2025",
+        "url": "https://s201.q4cdn.com/141608511/files/doc_financials/2025/q4/177440d5-3b32-4185-8cc8-95500a9dc783.pdf"
+      }
+    },
+    {
+      "commitment": "Achieve carbon neutrality across all operations by 2028.",
+      "status": "pending",
+      "category": "Operational",
+      "confidence": "low",
+      "quarter_said": "Q4 2025",
+      "target_quarter": "2027+",
+      "date_said": "2026-04-10",
+      "follow_up": "EN: Monitor sustainability reports and carbon emission disclosures.\n\nTH: สิ่งที่ต้องติดตาม: รายงานความยั่งยืนและการเปิดเผยการปล่อยก๊าซคาร์บอน",
+      "follow_up_date": "2027-12-31",
+      "delivery_note": null,
+      "source": "10-K 2025",
+      "source_doc": null
+    },
+    {
+      "commitment": "Increase R&D spending to 15% of revenue by 2027.",
+      "status": "pending",
+      "category": "Financial",
+      "confidence": "medium",
+      "quarter_said": "Q4 2025",
+      "target_quarter": "2027+",
+      "date_said": "2026-04-10",
+      "follow_up": "EN: Track R&D expense as percentage of revenue in quarterly income statements.\n\nTH: สิ่งที่ต้องติดตาม: ค่าใช้จ่าย R&D เป็นเปอร์เซ็นต์ของรายได้ในงบกำไรขาดทุนรายไตรมาส",
+      "follow_up_date": "2027-12-31",
+      "delivery_note": null,
+      "source": "10-K 2025",
+      "source_doc": null
+    },
+    {
+      "commitment": "Deploy next-generation AI model for customer service by Q3 2026.",
+      "status": "pending",
+      "category": "Product",
+      "confidence": "high",
+      "quarter_said": "Q4 2025",
+      "target_quarter": "Q3 2026",
+      "date_said": "2026-04-10",
+      "follow_up": "EN: Look for customer service metrics improvement and AI feature announcements.\n\nTH: สิ่งที่ต้องติดตาม: การปรับปรุงตัวชี้วัดบริการลูกค้าและการประกาศคุณสมบัติ AI",
+      "follow_up_date": "2026-09-30",
+      "delivery_note": null,
+      "source": "10-K 2025",
+      "source_doc": null
+    },
+    {
+      "commitment": "Acquire two complementary technology startups in 2026.",
+      "status": "pending",
+      "category": "Strategic",
+      "confidence": "low",
+      "quarter_said": "Q4 2025",
+      "target_quarter": "2027+",
+      "date_said": "2026-04-10",
+      "follow_up": "EN: Watch for M&A announcements and 8-K filings regarding acquisitions.\n\nTH: สิ่งที่ต้องติดตาม: ประกาศ M&A และเอกสาร 8-K เกี่ยวกับการเข้าซื้อกิจการ",
+      "follow_up_date": "2027-12-31",
+      "delivery_note": null,
+      "source": "10-K 2025",
+      "source_doc": null
+    },
+    {
+      "commitment": "Reduce net debt by 30% over the next two years.",
+      "status": "pending",
+      "category": "Financial",
+      "confidence": "medium",
+      "quarter_said": "Q4 2025",
+      "target_quarter": null,
+      "date_said": "2026-04-10",
+      "follow_up": "EN: Monitor balance sheet updates in quarterly financial statements.\n\nTH: สิ่งที่ต้องติดตาม: การอัปเดตงบดุลในงบการเงินรายไตรมาส",
+      "follow_up_date": null,
+      "delivery_note": null,
+      "source": "10-K 2025",
+      "source_doc": null
+    },
+    {
+      "commitment": "Launch mobile app version 3.0 with enhanced features in Q2 2026.",
+      "status": "pending",
+      "category": "Product",
+      "confidence": "high",
+      "quarter_said": "Q4 2025",
+      "target_quarter": "Q2 2026",
+      "date_said": "2026-04-10",
+      "follow_up": "EN: Check app store releases for version 3.0 launch in Q2 2026.\n\nTH: สิ่งที่ต้องติดตาม: การเปิดตัวเวอร์ชัน 3.0 ในร้านค้าแอปใน Q2 2026",
+      "follow_up_date": "2026-06-30",
+      "delivery_note": null,
+      "source": "10-K 2025",
+      "source_doc": null
+    },
+    {
+      "commitment": "Achieve gross margin of 65% by the end of 2026.",
+      "status": "pending",
+      "category": "Financial",
+      "confidence": "medium",
+      "quarter_said": "Q4 2025",
+      "target_quarter": "Q4 2026",
+      "date_said": "2026-04-10",
+      "follow_up": "EN: Watch quarterly gross margin figures in earnings reports.\n\nTH: สิ่งที่ต้องติดตาม: ตัวเลขอัตรากำไรขั้นต้นรายไตรมาสในรายงานผลประกอบการ",
+      "follow_up_date": "2026-12-31",
+      "delivery_note": null,
+      "source": "10-K 2025",
+      "source_doc": null
+    },
+    {
+      "commitment": "Deploy two new regional data centers in Europe by Q4 2026.",
+      "status": "pending",
+      "category": "Operational",
+      "confidence": "high",
+      "quarter_said": "Q4 2025",
+      "target_quarter": "Q4 2026",
+      "date_said": "2026-04-10",
+      "follow_up": "EN: Monitor infrastructure announcements for new Frankfurt and Amsterdam data centers.\n\nTH: สิ่งที่ต้องติดตาม: ประกาศโครงสร้างพื้นฐานสำหรับศูนย์ข้อมูลใหม่ในแฟรงก์เฟิร์ตและอัมสเตอร์ดัม",
+      "follow_up_date": "2026-12-31",
+      "delivery_note": null,
+      "source": "10-K 2025",
+      "source_doc": null
+    },
+    {
+      "commitment": "Form strategic partnership with a major cloud provider by mid-2026.",
+      "status": "pending",
+      "category": "Strategic",
+      "confidence": "medium",
+      "quarter_said": "Q4 2025",
+      "target_quarter": "Q2 2026",
+      "date_said": "2026-04-10",
+      "follow_up": "EN: Watch for partnership announcement with AWS, Azure, or Google Cloud.\n\nTH: สิ่งที่ต้องติดตาม: ประกาศความร่วมมือกับ AWS, Azure หรือ Google Cloud",
+      "follow_up_date": "2026-06-30",
+      "delivery_note": null,
+      "source": "10-K 2025",
+      "source_doc": null
+    },
+    {
+      "commitment": "Execute $100 million share buyback program over the next four quarters.",
+      "status": "pending",
+      "category": "Financial",
+      "confidence": "high",
+      "quarter_said": "Q4 2025",
+      "target_quarter": "Q4 2026",
+      "date_said": "2026-04-10",
+      "follow_up": "EN: Track quarterly repurchase activity in earnings reports and 10-Q filings.\n\nTH: สิ่งที่ต้องติดตาม: ติดตามกิจกรรมการซื้อคืนรายไตรมาสในรายงานผลประกอบการและเอกสาร 10-Q",
+      "follow_up_date": "2026-12-31",
+      "delivery_note": null,
+      "source": "10-K 2025",
+      "source_doc": null
+    },
+    {
+      "commitment": "Complete SOC 2 Type II compliance certification by Q3 2026.",
+      "status": "pending",
+      "category": "Regulatory",
+      "confidence": "high",
+      "quarter_said": "Q4 2025",
+      "target_quarter": "Q3 2026",
+      "date_said": "2026-04-10",
+      "follow_up": "EN: Watch for official certification announcement and updated security documentation.\n\nTH: สิ่งที่ต้องติดตาม: ประกาศรับรองอย่างเป็นทางการและเอกสารความปลอดภัยที่อัปเดต",
+      "follow_up_date": "2026-09-30",
+      "delivery_note": null,
+      "source": "10-K 2025",
+      "source_doc": null
+    },
+    {
+      "commitment": "Increase headcount by 20% in the engineering department over the next 18 months.",
+      "status": "pending",
+      "category": "Operational",
+      "confidence": "medium",
+      "quarter_said": "Q4 2025",
+      "target_quarter": "Q2 2027",
+      "date_said": "2026-04-10",
+      "follow_up": "EN: Monitor quarterly headcount reports for engineering team growth.\n\nTH: สิ่งที่ต้องติดตาม: ติดตามรายงานจำนวนพนักงานรายไตรมาสสำหรับการเติบโตของทีมวิศวกรรม",
+      "follow_up_date": "2027-06-30",
+      "delivery_note": null,
+      "source": "10-K 2025",
+      "source_doc": null
+    },
+    {
+      "commitment": "Expand operations to three new Southeast Asian markets in 2026.",
+      "status": "pending",
+      "category": "Strategic",
+      "confidence": "medium",
+      "quarter_said": "Q4 2025",
+      "target_quarter": "2027+",
+      "date_said": "2026-04-10",
+      "follow_up": "EN: Watch for official market entry announcements in Vietnam, Indonesia, and the Philippines.\n\nTH: สิ่งที่ต้องติดตาม: ประกาศการเข้าสู่ตลาดอย่างเป็นทางการในเวียดนาม อินโดนีเซีย และฟิลิปปินส์",
+      "follow_up_date": "2027-12-31",
+      "delivery_note": null,
+      "source": "10-K 2025",
+      "source_doc": null
+    },
+    {
+      "commitment": "Achieve $500 million in annual recurring revenue by Q4 2026.",
+      "status": "pending",
+      "category": "Financial",
+      "confidence": "high",
+      "quarter_said": "Q4 2025",
+      "target_quarter": "Q4 2026",
+      "date_said": "2026-04-10",
+      "follow_up": "EN: Watch quarterly earnings reports for ARR growth toward the $500M target.\n\nTH: สิ่งที่ต้องติดตาม: รายงานผลประกอบการรายไตรมาสสำหรับการเติบโตของ ARR ไปสู่เป้าหมาย $500 ล้าน",
+      "follow_up_date": "2026-12-31",
+      "delivery_note": null,
+      "source": "10-K 2025",
+      "source_doc": null
+    },
+    {
+      "commitment": "Launch the new AI-powered analytics platform in Q1 2026.",
+      "status": "pending",
+      "category": "Product",
+      "confidence": "high",
+      "quarter_said": "Q4 2025",
+      "target_quarter": "Q1 2026",
+      "date_said": "2026-04-10",
+      "follow_up": "EN: Watch Q1 2026 product announcement for the official launch of the AI analytics platform.\n\nTH: สิ่งที่ต้องติดตาม: ประกาศผลิตภัณฑ์ใน Q1 2026 สำหรับการเปิดตัวอย่างเป็นทางการของแพลตฟอร์มวิเคราะห์ข้อมูล AI",
+      "follow_up_date": "2026-03-31",
+      "delivery_note": null,
+      "source": "10-K 2025",
+      "source_doc": null
     }
   ],
-  "sources": [],
+  "sources": [
+    {
+      "title": "NVDA 10-K 2025",
+      "source_type": "Annual Report",
+      "date": "2026-04-10",
+      "quarter": "Q4 2025",
+      "url": "https://s201.q4cdn.com/141608511/files/doc_financials/2025/q4/177440d5-3b32-4185-8cc8-95500a9dc783.pdf",
+      "analyzed_by": "DeepSeek",
+      "status": "analyzed",
+      "tags": [
+        "financials",
+        "strategy"
+      ]
+    },
+    {
+      "title": "NVDA 10-K 2025",
+      "source_type": "Annual Report",
+      "date": "2026-04-10",
+      "quarter": "Q4 2025",
+      "url": "https://s201.q4cdn.com/141608511/files/doc_financials/2025/q4/177440d5-3b32-4185-8cc8-95500a9dc783.pdf",
+      "analyzed_by": "DeepSeek",
+      "status": "extracting",
+      "tags": [
+        "financials",
+        "strategy"
+      ]
+    }
+  ],
   "analytic_reports": [],
   "open_tasks": [],
   "financials": {

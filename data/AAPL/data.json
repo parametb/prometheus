@@ -21,7 +21,7 @@
     {
       "title": "ภาพรวม Q1 FY2025",
       "note_type": null,
-      "date": "2025-02-01",
+      "date": null,
       "quarter": null,
       "tags": [
         "earnings",
@@ -31,27 +31,13 @@
       "active": true,
       "content": "iPhone revenue ดีกว่าที่คาด แม้จะมีความกังวลเรื่อง China\nServices segment ทำสถิติสูงสุดอีกครั้งที่ $26.3B (+14% YoY)\nGross margin ขยับขึ้นมาอยู่ที่ 46.9% สูงกว่า consensus\nจุดที่ต้องติดตาม: Vision Pro ยังไม่มีสัญญาณว่าจะ scale ได้จริง\nAI integration ใน iOS 18 ยังช้ากว่าคู่แข่ง แต่ Tim Cook พูดว่ากำลัง expand ฟีเจอร์ใน H2 2025",
       "source_doc": null
-    },
-    {
-      "title": "วิเคราะห์ China Risk",
-      "note_type": null,
-      "date": "2024-08-15",
-      "quarter": null,
-      "tags": [
-        "china",
-        "risk"
-      ],
-      "rating": 3,
-      "active": true,
-      "content": "ยอดขายใน Greater China ลดลง YoY ต่อเนื่อง 3 ไตรมาส\nHuawei กลับมาด้วย Mate 60 Pro กดดัน market share ใน premium segment\nความเสี่ยง: หากรัฐบาลจีนห้ามใช้ iPhone ในองค์กรรัฐ อาจกระทบ 15-20% ของรายได้\nApple กำลังกระจาย supply chain ไป India แต่ยังต้องใช้เวลาอีก 3-5 ปี",
-      "source_doc": null
     }
   ],
   "quotes": [
     {
       "quote": "Services revenue set an all-time record of $26.3 billion, up 14 percent year over year, driven by growth across all categories and geographic segments.",
       "quote_th": "รายได้จาก Services บันทึกสถิติใหม่ตลอดกาลที่ 26.3 พันล้านเหรียญ เพิ่มขึ้น 14 เปอร์เซ็นต์เทียบปีต่อปี ขับเคลื่อนโดยการเติบโตในทุกหมวดหมู่และทุกส่วนภูมิศาสตร์",
-      "date": "2025-01-30",
+      "date": null,
       "quarter": null,
       "segment": null,
       "speaker": "Luca Maestri (CFO)",
@@ -65,7 +51,7 @@
     {
       "quote": "We are very excited about the AI features we're adding, and we believe this is a significant opportunity to drive upgrades in the installed base over the coming years.",
       "quote_th": "เราตื่นเต้นมากกับฟีเจอร์ AI ที่เราเพิ่มเข้ามา และเราเชื่อว่านี่คือโอกาสสำคัญในการขับเคลื่อนการ upgrade ในฐานผู้ใช้ที่มีอยู่ในช่วงปีต่อๆ ไป",
-      "date": "2024-10-31",
+      "date": null,
       "quarter": null,
       "segment": null,
       "speaker": "Tim Cook (CEO)",
@@ -79,7 +65,7 @@
     {
       "quote": "We are in the early innings of a transformative moment with Apple Intelligence. The features we're seeing resonate deeply with customers, and we're only just getting started with what we can do.",
       "quote_th": "เราอยู่ในช่วงเริ่มต้นของโมเมนต์การเปลี่ยนแปลงครั้งยิ่งใหญ่กับ Apple Intelligence ฟีเจอร์ที่เราเห็นสร้างความประทับใจอย่างลึกซึ้งให้กับลูกค้า และเราแค่เริ่มต้นสิ่งที่เราสามารถทำได้เท่านั้น",
-      "date": "2025-01-30",
+      "date": null,
       "quarter": null,
       "segment": null,
       "speaker": "Tim Cook (CEO)",

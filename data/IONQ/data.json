@@ -21,7 +21,7 @@
     {
       "title": "FY2025 vs FY2024 — Narrative Evolution Analysis",
       "note_type": null,
-      "date": "2026-04-03",
+      "date": null,
       "quarter": null,
       "tags": [
         "strategy"
@@ -34,7 +34,7 @@
     {
       "title": "FY2025 10-K Analysis",
       "note_type": null,
-      "date": "2026-04-03",
+      "date": null,
       "quarter": null,
       "tags": [
         "strategy",
@@ -50,7 +50,7 @@
     {
       "quote": "We expect to continue to incur significant losses for the foreseeable future as we prioritize reaching the technical milestones necessary to achieve an increasingly higher number of physical and logical qubits and higher levels of qubit performance.",
       "quote_th": "เราคาดว่าจะยังคงประสบการขาดทุนอย่างสำคัญในอนาคตอันใกล้ เนื่องจากเราให้ความสำคัญกับการบรรลุเป้าหมายทางเทคโนโลยี",
-      "date": "2026-02-25",
+      "date": null,
       "quarter": null,
       "segment": null,
       "speaker": "IonQ Management",
@@ -64,7 +64,7 @@
     {
       "quote": "We believe that our proprietary technology, our architecture and the technology exclusively available to us through license agreements will offer us advantages both in research and development and in the commercial value of our product offerings.",
       "quote_th": "เราเชื่อว่าเทคโนโลยีเฟพาะ สถาปัตยกรรม และเทคโนโลยีที่เราได้รับสิทธิ์ใช้ตามสัญญาอนุญาตจะมอบโอกาสให้เราทั้งด้านการวิจัยและพัฒนา และคุณค่าเชิงพาณิชย์ของผลิตภัณฑ์ของเรา",
-      "date": "2026-02-25",
+      "date": null,
       "quarter": null,
       "segment": null,
       "speaker": "IonQ Management",
@@ -78,7 +78,7 @@
     {
       "quote": "We are developing quantum computers designed to solve some of the world's most complex problems and transform business, society and the planet for the better.",
       "quote_th": "เรากำลังพัฒนาคอมพิวเตอร์ควอนตัมที่ออกแบบมาเพื่อแก้ปัญหาที่ซับซ้อนที่สุดของโลก และเปลี่ยนแปลงธุรกิจ สังคม และโลกให้ดีขึ้น",
-      "date": "2026-02-25",
+      "date": null,
       "quarter": null,
       "segment": null,
       "speaker": "IonQ Management",
@@ -92,7 +92,7 @@
     {
       "quote": "We believe that by offering QCaaS, we can accelerate the adoption of our quantum computing solutions, while efficiently promoting quantum computing across our partner ecosystems.",
       "quote_th": "เราเชื่อว่าการเสนอ QCaaS จะช่วยเร่งการนำควอนตัมไปใช้ในวงการกว้างขึ้น พร้อมเพิ่มการส่งเสริมควอนตัมทั่วระบบนิเวศพาร์ทเนอร์ของเรา",
-      "date": "2026-02-25",
+      "date": null,
       "quarter": null,
       "segment": null,
       "speaker": "IonQ Management",
@@ -106,7 +106,7 @@
     {
       "quote": "We intend to continue to drive innovation in quantum and seek intellectual property protection where appropriate to enhance our proprietary technology position.",
       "quote_th": "เราตั้งใจที่จะส่งเสริมนวัตกรรมด้านควอนตัมอย่างต่อเนื่อง และแสวงหาการคุ้มครองสิทธิ์ปัญญาบัตร์ทางแพทย์ที่เหมาะสมเพื่อเสริมตำแหน่งเทคโนโลยีเฟพาะ",
-      "date": "2026-02-25",
+      "date": null,
       "quarter": null,
       "segment": null,
       "speaker": "IonQ Management",
@@ -120,7 +120,7 @@
     {
       "quote": "We believe that a quantum computer currently offers the best possibility for computational power that could be used to solve problems classical computing may never solve.",
       "quote_th": "เราเชื่อว่าคอมพิวเตอร์ควอนตัมในปัจจุบันเปิดโอกาสที่ดีที่สุดสำหรับพลังคำนวณที่อาจใช้แก้ปัญหาที่คอมพิวเตอร์แบบคลาสสิกอาจไม่สามารถแก้ไขได้",
-      "date": "2026-02-25",
+      "date": null,
       "quarter": null,
       "segment": null,
       "speaker": "IonQ Management",
@@ -134,7 +134,7 @@
     {
       "quote": "We believe that by offering direct access to quantum computing, supplemented by our professional services, we can assist select customers in deepening their application of quantum solutions.",
       "quote_th": "เราเชื่อว่าการเปิดให้เข้าถึงควอนตัมโดยตรง พร้อมบริการผู้เชี่ยวชาญของเรา จะช่วยลูกค้าในการนำโซลูชันควอนตัมไปใช้ในระดับความลึกซึ้งเป็นสำคัญ",
-      "date": "2026-02-25",
+      "date": null,
       "quarter": null,
       "segment": null,
       "speaker": "IonQ Management",
@@ -148,7 +148,7 @@
     {
       "quote": "We envision a future powered by quantum computing and believe the 21st century is poised to be the dawn of this era.",
       "quote_th": "เราวาดภาพอนาคตที่ขับเคลื่อนด้วยควอนตัม และเชื่อว่าศตวรรษที่ 21 กำลังจะเป็นรุ่งอรุณของยุคเดียวกันนี้",
-      "date": "2026-02-25",
+      "date": null,
       "quarter": null,
       "segment": null,
       "speaker": "IonQ Management",
@@ -162,7 +162,7 @@
     {
       "quote": "We believe that we have the clearest path to fault-tolerant quantum computing, and a repertoire of networking, sensing and security products that will form the backbone of a global quantum infrastructure.",
       "quote_th": "เราเชื่อว่าเรามีเส้นทางที่ชัดเจนที่สุดไปสู่การคำนวณควอนตัมที่ทนต่อความผิดพลาด และมีผลิตภัณฑ์ด้านเครือข่าย เซนเซอร์ และความปลอดภัยที่จะเป็นเสาหลักของโครงสร้างพื้นฐานควอนตัมทั่วโลก",
-      "date": "2026-02-25",
+      "date": null,
       "quarter": null,
       "segment": null,
       "speaker": "IonQ Management",
@@ -176,7 +176,7 @@
     {
       "quote": "We intend to fulfill our mission by: Leveraging Our Technology... Accelerating Our Roadmap by Acquiring the Best Minds and Technologies... Selling Direct Access to Quantum Computers... Offering QCaaS... Continuing to Enhance Our Proprietary Position... Developing a Worldwide Quantum Ecosystem.",
       "quote_th": "เราตั้งใจที่จะบรรลุภารกิจโดย: ใช้เทคโนโลยีให้เกิดประโยชน์ เร่งแผนงานระยะเวลา ขายบริการควอนตัมโดยตรง เสนอ QCaaS เสริมตำแหน่งเฟพาะ และพัฒนาระบบนิเวศควอนตัมทั่วโลก",
-      "date": "2026-02-25",
+      "date": null,
       "quarter": null,
       "segment": null,
       "speaker": "IonQ Management",

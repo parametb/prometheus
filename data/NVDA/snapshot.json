@@ -4,15 +4,15 @@
   "name_th": "NVIDIA Corporation",
   "sector": "Semiconductors",
   "exchange": "NASDAQ",
-  "conviction_level": null,
+  "conviction_level": "medium",
   "management_tone": "bullish",
-  "last_analyzed": null,
+  "last_analyzed": "2026-04-10",
   "counts": {
-    "quotes": 8,
-    "roadmap_total": 14,
+    "quotes": 22,
+    "roadmap_total": 45,
     "roadmap_delivered": 0,
     "notes": 1,
-    "sources": 0,
+    "sources": 2,
     "reports": 0
   },
   "delivery_rate": 0

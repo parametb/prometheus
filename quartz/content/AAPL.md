@@ -23,7 +23,7 @@ draft: false
 | Metric | Value |
 |--------|-------|
 | Sources Analyzed | 0 |
-| Research Notes | 2 |
+| Research Notes | 1 |
 | Management Quotes | 3 |
 | Roadmap Items | 4 |
 | Delivery Rate | **67%** (2/3 concluded) |
@@ -31,17 +31,8 @@ draft: false
 
 ## 📝 Research Notes
 
-### วิเคราะห์ China Risk
-Aug 15, 2024  ·  ★★★☆☆
-*#china #risk*
-
-ยอดขายใน Greater China ลดลง YoY ต่อเนื่อง 3 ไตรมาส
-Huawei กลับมาด้วย Mate 60 Pro กดดัน market share ใน premium segment
-ความเสี่ยง: หากรัฐบาลจีนห้ามใช้ iPhone ในองค์กรรัฐ อาจกระทบ 15-20% ของรายได้
-Apple กำลังกระจาย supply chain ไป India แต่ยังต้องใช้เวลาอีก 3-5 ปี
-
 ### ภาพรวม Q1 FY2025
-Feb 1, 2025  ·  ★★★★☆
+★★★★☆
 *#earnings #services*
 
 iPhone revenue ดีกว่าที่คาด แม้จะมีความกังวลเรื่อง China
@@ -53,19 +44,19 @@ AI integration ใน iOS 18 ยังช้ากว่าคู่แข่ง
 ## 💬 Management Quotes
 
 > We are in the early innings of a transformative moment with Apple Intelligence. The features we're seeing resonate deeply with customers, and we're only just getting started with what we can do.
-*— Tim Cook (CEO)  ·  Q1 FY2025 Earnings Call  ·  Jan 30, 2025*
+*— Tim Cook (CEO)  ·  Q1 FY2025 Earnings Call*
 *#strategy*
 
 > 🇹🇭 เราอยู่ในช่วงเริ่มต้นของโมเมนต์การเปลี่ยนแปลงครั้งยิ่งใหญ่กับ Apple Intelligence ฟีเจอร์ที่เราเห็นสร้างความประทับใจอย่างลึกซึ้งให้กับลูกค้า และเราแค่เริ่มต้นสิ่งที่เราสามารถทำได้เท่านั้น
 
 > We are very excited about the AI features we're adding, and we believe this is a significant opportunity to drive upgrades in the installed base over the coming years.
-*— Tim Cook (CEO)  ·  Q4 FY2024 Earnings Call  ·  Oct 31, 2024*
+*— Tim Cook (CEO)  ·  Q4 FY2024 Earnings Call*
 *#strategy*
 
 > 🇹🇭 เราตื่นเต้นมากกับฟีเจอร์ AI ที่เราเพิ่มเข้ามา และเราเชื่อว่านี่คือโอกาสสำคัญในการขับเคลื่อนการ upgrade ในฐานผู้ใช้ที่มีอยู่ในช่วงปีต่อๆ ไป
 
 > Services revenue set an all-time record of $26.3 billion, up 14 percent year over year, driven by growth across all categories and geographic segments.
-*— Luca Maestri (CFO)  ·  Q1 FY2025 Earnings Call  ·  Jan 30, 2025*
+*— Luca Maestri (CFO)  ·  Q1 FY2025 Earnings Call*
 *#growth*
 
 > 🇹🇭 รายได้จาก Services บันทึกสถิติใหม่ตลอดกาลที่ 26.3 พันล้านเหรียญ เพิ่มขึ้น 14 เปอร์เซ็นต์เทียบปีต่อปี ขับเคลื่อนโดยการเติบโตในทุกหมวดหมู่และทุกส่วนภูมิศาสตร์

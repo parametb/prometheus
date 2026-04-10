@@ -32,7 +32,7 @@ draft: false
 ## 📝 Research Notes
 
 ### FY2025 10-K Analysis
-Jan 28, 2026  ·  ★★★☆☆
+★★★☆☆
 *#strategy #growth*
 
 [Financial Performance]
@@ -42,7 +42,7 @@ Roboxi launched June 2025. Cortex 2 AI cluster announced. Six new production lin
 Bullish
 
 ### Evolution Analysis: FY2024 vs FY2025 10-K
-Jan 28, 2026  ·  ★★★☆☆
+★★★☆☆
 *#strategy*
 
 [Narrative Drift]
@@ -55,55 +55,55 @@ Narrative shifted significantly from EV/energy company to AI-first. Robotaxi lau
 ## 💬 Management Quotes
 
 > Our insurance products are currently available in 13 states and we plan to expand the markets in which we offer insurance products, as part of our ongoing effort to decrease the total cost of ownership for our customers.
-*— Management (Insurance)  ·  FY2025 10-K  ·  Jan 28, 2026*
+*— Management (Insurance)  ·  FY2025 10-K*
 *#growth*
 
 > 🇹🇭 ผลิตภัณฑ์ประกันภัยของเราให้บริการใน 13 รัฐ ในปัจจุบัน และเราวางแผนขยายตลาดจำหน่ายเพิ่มเติม
 
 > We intend to leverage our current operations, in which we design, develop, manufacture, sell and lease high-performance fully electric vehicles and energy generation and storage systems that increasingly deliver AI-related and enhanced software and services to our customers.
-*— Management (Overview)  ·  FY2025 10-K  ·  Jan 28, 2026*
+*— Management (Overview)  ·  FY2025 10-K*
 *#strategy*
 
 > 🇹🇭 เราตั้งใจใช้ประโยชน์จากเครือข่ายโรงงาน เส้นทางชาร์จ และศูนย์บริการที่มีอยู่เพื่อรองรับการเติบโตในอนาคต
 
 > As AI infrastructure drives rapid load growth, Megapack helps to, among other things, increase utilization of existing generation and transmission capacity, resulting in a more efficient use of the electric grid.
-*— Management (Energy Generation and Storage)  ·  FY2025 10-K  ·  Jan 28, 2026*
+*— Management (Energy Generation and Storage)  ·  FY2025 10-K*
 *#strategy*
 
 > 🇹🇭 ขณะที่โครงสร้างพื้นฐาน AI ส่งผลให้ความต้องการไฟฟ้าเพิ่มขึ้นอย่างรวดเร็ว Megapack ช่วยเพิ่มการใช้ประโยชน์จากไฟฟ้ากำเนิดและการส่งผ่านสายส่งไฟฟ้าที่มีอยู่อย่างมีประสิทธิภาพ
 
 > We are focused on bringing artificial intelligence ('AI') into the real world, through products and services like Full Self-Driving ('FSD') (Supervised) and Robotaxi, as well as working to develop and commercialize AI robots ('Bots') (including Optimus).
-*— Management (Overview)  ·  FY2025 10-K  ·  Jan 28, 2026*
+*— Management (Overview)  ·  FY2025 10-K*
 *#strategy*
 
 > 🇹🇭 เรามุ่งเน้นการนำ AI มาใช้ในโลกจริง ผ่านผลิตภัณฑ์และบริการอย่าง FSD, Robotaxi และ AI robots (Optimus)
 
 > In June 2025, we launched our Robotaxi service, an autonomous ride-hailing platform that harnesses our technology and vehicles. We expect this service will open access to an expanded customer base as modes of transportation evolve.
-*— Management (Automotive)  ·  FY2025 10-K  ·  Jan 28, 2026*
+*— Management (Automotive)  ·  FY2025 10-K*
 *#growth*
 
 > 🇹🇭 ในเดือนมิถุนายน 2025 เราเปิดตัวบริการ Robotaxi แพลตฟอร์มเรียกรถอัตโนมัติที่ใช้เทคโนโลยีและยานพาหนะของเรา เราคาดว่าบริการนี้จะขยายฐานลูกค้า
 
 > We continue to monitor and increase our network of Tesla Superchargers in anticipation of future demand, including with respect to our Robotaxi services.
-*— Management (Sales and Marketing)  ·  FY2025 10-K  ·  Jan 28, 2026*
+*— Management (Sales and Marketing)  ·  FY2025 10-K*
 *#strategy*
 
 > 🇹🇭 เราติดตามและขยายเครือข่าย Tesla Supercharger เพื่อรองรับความต้องการในอนาคต รวมถึงบริการ Robotaxi
 
 > Every Tesla vehicle delivered today is designed for autonomy, and we believe our capabilities and advancements in AI differentiate us from our competitors.
-*— Management (Technology)  ·  FY2025 10-K  ·  Jan 28, 2026*
+*— Management (Technology)  ·  FY2025 10-K*
 *#strategy*
 
 > 🇹🇭 ยานพาหนะ Tesla ทุกคันที่ส่งมอบวันนี้ถูกออกแบบมาเพื่อรองรับระบบอัตโนมัติ และเราเชื่อว่าความสามารถและความก้าวหน้าด้าน AI ทำให้เราแตกต่างจากคู่แข่ง
 
 > Generally, we continue to expand production capacity at our existing facilities, and strive to increase cost-competitiveness in our significant markets by strategically adding local manufacturing, including through partnerships with suppliers.
-*— Management (Manufacturing)  ·  FY2025 10-K  ·  Jan 28, 2026*
+*— Management (Manufacturing)  ·  FY2025 10-K*
 *#strategy*
 
 > 🇹🇭 โดยทั่วไป เรายังคงขยายกำลังการผลิตที่โรงงานที่มีอยู่ และพยายามเพิ่มความแข่งขันด้านต้นทุนในตลาดสำคัญด้วยการเพิ่มการผลิตในท้องถิ่น รวมถึงผ่านหุ้นส่วน
 
 > In 2026, we will be ramping six new production lines across vehicle, Bots, energy storage and battery manufacturing, while further leveraging our existing factory, charging and service center footprints to support future growth.
-*— Management (Infrastructure)  ·  FY2025 10-K  ·  Jan 28, 2026*
+*— Management (Infrastructure)  ·  FY2025 10-K*
 *#growth*
 
 > 🇹🇭 ในปี 2026 เราจะเร่งสายการผลิตใหม่ 6 สาย ครอบคลุมยานพาหนะ Bots การเก็บพลังงาน และการผลิตแบตเตอรี่
