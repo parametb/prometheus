@@ -31,7 +31,7 @@ draft: false
 ## 📝 Research Notes
 
 ### FY2025 vs FY2024 — Narrative Evolution Analysis
-Apr 4, 2026  ·  ★★★☆☆
+★★★☆☆
 *#strategy*
 
 [Narrative Drift]
@@ -40,7 +40,7 @@ Narrative stable with continued emphasis on innovation and acquisition-driven gr
 Improving: removed 'reduced access to credit' and 'changes in interest rates' risks. No new risks introduced.
 
 ### FY2025 10-K Analysis
-Apr 4, 2026  ·  ★★★☆☆
+★★★☆☆
 *#strategy #growth*
 
 [Financial Performance]
@@ -55,55 +55,55 @@ Bullish
 ## 💬 Management Quotes
 
 > Our mission, 'accelerating innovation to connect and secure the world,' reflects our strategy of helping customers address their most complex challenges across the entire product lifecycle.
-*— Keysight Technologies (Company)  ·  FY2025 10-K  ·  Dec 17, 2025*
+*— Keysight Technologies (Company)  ·  FY2025 10-K*
 *#strategy*
 
 > 🇹🇭 ภารกิจของเรา 'เร่งนวัตกรรมเพื่อเชื่อมต่อและรักษาความปลอดภัยทั่วโลก' สะท้อนถึงกลยุทธ์การช่วยเหลือลูกค้าในการรับมือความท้าทายที่ซับซ้อนที่สุดตลอดวงจรชีวิตผลิตภัณฑ์ทั้งหมด
 
 > As of October 31, 2025, our backlog was approximately $2,697 million, compared to $2,338 million as of October 31, 2024.
-*— Keysight Technologies (Company)  ·  FY2025 10-K  ·  Dec 17, 2025*
+*— Keysight Technologies (Company)  ·  FY2025 10-K*
 *#growth*
 
 > 🇹🇭 ณ วันที่ 31 ตุลาคม 2025 ทั้งหมดเรามีคำสั่งซื้อค้างอยู่ประมาณ 2,697 ล้านดอลลาร์ เทียบกับ 2,338 ล้านดอลลาร์ ณ 31 ตุลาคม 2024
 
 > In 2025, we invested $1,007 million in R&D.
-*— Keysight Technologies (Company)  ·  FY2025 10-K  ·  Dec 17, 2025*
+*— Keysight Technologies (Company)  ·  FY2025 10-K*
 *#growth*
 
 > 🇹🇭 ในปี 2025 เราลงทุน 1,007 ล้านดอลลาร์ใน R&D
 
 > Building on our industry-leading position, we are investing to capitalize on emerging technologies including AI, next-generation wireless communications, software-defined vehicles, and quantum computing.
-*— Keysight Technologies (Company)  ·  FY2025 10-K  ·  Dec 17, 2025*
+*— Keysight Technologies (Company)  ·  FY2025 10-K*
 *#growth*
 
 > 🇹🇭 บนพื้นฐานตำแหน่งผู้นำในอุตสาหกรรม เรากำลังลงทุนเพื่อรับประโยชน์จากเทคโนโลยีใหม่ ได้แก่ AI การสื่อสารไร้สายยุคต่อไป ยานยนต์ที่พัฒนาด้วยซอฟต์แวร์ และควอนตัม
 
 > Keysight's business strategy is exemplified in four key objectives: customer first, differentiated solutions, software-led growth, and operational excellence.
-*— Keysight Technologies (Company)  ·  FY2025 10-K  ·  Dec 17, 2025*
+*— Keysight Technologies (Company)  ·  FY2025 10-K*
 *#strategy*
 
 > 🇹🇭 กลยุทธ์ธุรกิจของ Keysight จำลองการทำให้เป็นจริงผ่านวัตถุประสงค์สำคัญ 4 ประการ: ลูกค้าอดีแอม โซลูชั่นที่แตกต่าง การเติบโตนำด้วยซอฟต์แวร์ และความเป็นเลิศในการดำเนินงาน
 
 > We anticipate that we will continue to maintain R&D expenditures at a relatively consistent percentage of revenue as we remain committed to innovation.
-*— Keysight Technologies (Company)  ·  FY2025 10-K  ·  Dec 17, 2025*
+*— Keysight Technologies (Company)  ·  FY2025 10-K*
 *#growth*
 
 > 🇹🇭 เราคาดว่าจะรักษาค่าใช้จ่าย R&D ในสัดส่วนที่สอดคล้องกันกับรายได้ เนื่องจากเรายังคงมุ่งมั่นในนวัตกรรม
 
 > We generated $5.4 billion, $5.0 billion, and $5.5 billion of revenue in 2025, 2024, and 2023, respectively.
-*— Keysight Technologies (Company)  ·  FY2025 10-K  ·  Dec 17, 2025*
+*— Keysight Technologies (Company)  ·  FY2025 10-K*
 *#growth*
 
 > 🇹🇭 เราสร้างรายได้ 5.4 พันล้าน, 5.0 พันล้าน และ 5.5 พันล้านดอลลาร์ในปี 2025, 2024 และ 2023 ตามลำดับ
 
 > Keysight is enabling rapid advances in AI through solutions to increase the efficiency of AI compute clusters, accelerate AI chip development, and support AI-driven network innovation.
-*— Keysight Technologies (Company)  ·  FY2025 10-K  ·  Dec 17, 2025*
+*— Keysight Technologies (Company)  ·  FY2025 10-K*
 *#strategy*
 
 > 🇹🇭 Keysight ช่วยเร่งความก้าวหน้าอย่างรวดเร็วใน AI ผ่านเซ็นชุดเพิ่มประสิทธิภาพ AI compute cluster, เร่งการพัฒนาชิป AI และสนับสนุนนวัตกรรมเครือข่ายที่ขับเคลื่อนด้วย AI
 
 > With a software- and customer-centric focus, we continue to make strategic investments to help our customers and partners address their most complex technology challenges.
-*— Keysight Technologies (Company)  ·  FY2025 10-K  ·  Dec 17, 2025*
+*— Keysight Technologies (Company)  ·  FY2025 10-K*
 *#strategy*
 
 > 🇹🇭 ด้วยการมุ่งเน้นด้านซอฟต์แวร์และลูกค้า เรายังคงลงทุนเชิงกลยุทธ์เพื่อช่วยลูกค้าและพาร์ทเนอร์ในการรับมือกับความท้าทายทางเทคโนโลยีที่ซับซ้อนที่สุดในทุกช่วงวงจรชีวิตผลิตภัณฑ์

@@ -31,31 +31,31 @@ draft: false
 ## 💬 Management Quotes
 
 > The key message is that Reko Diq transforms our copper production profile from 2029 onward, and Lumwana positions us as a top-tier copper producer well before that.
-*— Graham Shuttleworth (CFO)  ·  Q4 2024 Earnings Call  ·  Feb 12, 2025*
+*— Graham Shuttleworth (CFO)  ·  Q4 2024 Earnings Call*
 *#growth*
 
 > 🇹🇭 ข้อความสำคัญคือ Reko Diq จะเปลี่ยนโฉมโปรไฟล์การผลิตทองแดงของเราจากปี 2029 เป็นต้นไป
 
 > PV is a big value creator in Barrick. And again, you've seen I don't hesitate to clean up the portfolio at the appropriate time. And the best time is when you have higher commodity prices.
-*— Mark Bristow (CEO)  ·  Q4 2024 Earnings Call  ·  Feb 12, 2025*
+*— Mark Bristow (CEO)  ·  Q4 2024 Earnings Call*
 *#strategy*
 
 > 🇹🇭 Pueblo Viejo เป็นตัวสร้างมูลค่าสำคัญใน Barrick
 
 > Every one of our operations are independently viable, and Barrick's balance sheet is very solid. And so, with or without Loulo will not change our long-term plan, our five-year plan.
-*— Mark Bristow (CEO)  ·  Q4 2024 Earnings Call  ·  Feb 12, 2025*
+*— Mark Bristow (CEO)  ·  Q4 2024 Earnings Call*
 *#risk*
 
 > 🇹🇭 ทุกหน่วยงานของเราสามารถดำรงอยู่ได้อย่างเป็นอิสระ และงบดุลของ Barrick แข็งแกร่งมาก
 
 > We are focused on delivering sustainable long-term value by owning the best gold and copper assets managed by the best people. With gold becoming more important as a safe haven in a geopolitically uncertain world, and copper being as strategic as gold is precious.
-*— Mark Bristow (CEO)  ·  Q4 2024 Earnings Call  ·  Feb 12, 2025*
+*— Mark Bristow (CEO)  ·  Q4 2024 Earnings Call*
 *#strategy*
 
 > 🇹🇭 เรามุ่งมั่นสร้างมูลค่าระยะยาวอย่างยั่งยืนจากการถือครองสินทรัพย์ทองคำและทองแดงที่ดีที่สุด
 
 > By any measure, Barrick Gold Corporation today presents a standout value opportunity. Consensus NAV analysis shows Nevada and copper assets alone exceed our market cap — implying negative value for all our remaining Tier 1 and Tier 2 assets.
-*— Mark Bristow (CEO)  ·  Q4 2024 Earnings Call  ·  Feb 12, 2025*
+*— Mark Bristow (CEO)  ·  Q4 2024 Earnings Call*
 *#strategy*
 
 > 🇹🇭 ด้วยทุกมาตรวัด Barrick Gold Corporation ในวันนี้นำเสนอโอกาสสร้างมูลค่าที่โดดเด่น

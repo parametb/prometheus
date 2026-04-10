@@ -16,7 +16,7 @@ draft: false
 | Ticker | Name | Sector | Conviction | Delivery | Sources | Notes |
 |--------|------|--------|------------|----------|---------|-------|
 | [[GOOGL]] | Alphabet Inc. | Technology | — | 0% | 2 | 2 |
-| [[AAPL]] | Apple Inc. | Technology | — | 67% | 0 | 2 |
+| [[AAPL]] | Apple Inc. | Technology | — | 67% | 0 | 1 |
 | [[B]] | Barrick Mining Corporation | Mining | — | 100% | 0 | 0 |
 | [[BROKEN_A]] | Broken Alpha Corp | Technology | — | — | 0 | 0 |
 | [[BROKEN_B]] | Broken Beta Inc | Finance | — | — | 0 | 1 |
@@ -27,7 +27,7 @@ draft: false
 | [[KEYS]] | Keysight Technologies, Inc. | Technology | — | — | 0 | 2 |
 | [[MSFT]] | Microsoft Corporation | Technology | — | 100% | 0 | 1 |
 | [[NEM]] | Newmont Corporation | Mining | — | — | 0 | 2 |
-| [[NVDA]] | NVIDIA Corporation | Semiconductors | — | — | 0 | 1 |
+| [[NVDA]] | NVIDIA Corporation | Semiconductors | medium | — | 2 | 1 |
 | [[QUBT]] | Quantum Computing Inc. | Technology | — | — | 2 | 0 |
 | [[RGTI]] | Rigetti Computing, Inc. | Technology | — | — | 0 | 2 |
 | [[TSLA]] | Tesla, Inc. | Consumer | — | 100% | 0 | 2 |

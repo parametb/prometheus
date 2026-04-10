@@ -31,7 +31,7 @@ draft: false
 ## 📝 Research Notes
 
 ### H1 FY2026 Earnings Call Analysis
-Nov 13, 2025  ·  ★★★☆☆
+★★★☆☆
 *#earnings #strategy*
 
 [Financial Performance]
@@ -41,7 +41,7 @@ Management expects wholesale to return to growth in H2. Currency remains £50M r
 Cautious
 
 ### FY2025 Annual Report Analysis
-Mar 31, 2026  ·  ★★☆☆☆
+★★☆☆☆
 *#strategy #valuation*
 
 [Financial Performance]
@@ -55,79 +55,79 @@ Cautiously optimistic
 ## 💬 Management Quotes
 
 > The product mix and strategy is capturing the attention of new customers and attracting existing customers to return with sequential improvement in customer growth over the course of H1.
-*— Joshua Schulman (Chief Executive Officer)  ·  H1 FY2026 Earnings Call  ·  Nov 13, 2025*
+*— Joshua Schulman (Chief Executive Officer)  ·  H1 FY2026 Earnings Call*
 *#growth*
 
 > 🇹🇭 ส่วนผสมสินค้าและกลยุทธ์กำลังดึงดูความสนใจจากลูกค้าใหม่และดึงดูลูกค้าเดิมให้กลับมา โดยมีการเติบโตของจำนวนลูกค้าที่ดีขึ้นต่อเนื่องตลอดครึ่งแรก
 
 > As we look ahead, our ambition is to deliver sustainable performance, growing the top line, while expanding our profit margin and delivering strong free cash flow.
-*— Joshua Schulman (Chief Executive Officer)  ·  H1 FY2026 Earnings Call  ·  Nov 13, 2025*
+*— Joshua Schulman (Chief Executive Officer)  ·  H1 FY2026 Earnings Call*
 *#guidance*
 
 > 🇹🇭 มองไปข้างหน้า ความทะเยอทะยานของเราคือการสร้างผลการดำเนินงานที่ยั่งยืน เพิ่มยอดขาย พร้อมขยายอัตรากำไรและสร้างกระแสเงินสดอิสระที่แข็งแกร่ง
 
 > Our second half performance, with comparable retail sales down 5%, gives us confidence that Burberry Forward is working.
-*— Joshua Schulman (CEO)  ·  FY2025 Preliminary Results  ·  May 14, 2025*
+*— Joshua Schulman (CEO)  ·  FY2025 Preliminary Results*
 *#guidance*
 
 > 🇹🇭 ผลการดำเนินงานครึ่งปีหลัง โดยยอดขายแบบเทียบสถานแม้รรยาลปฏิเสธคือ 5% ทำให้เรามีความมั่นใจว่า Burberry Forward กำลังทำงานได้ผล
 
 > Total revenue was £1.03 billion in the first half, with adjusted operating profit of £19 million.
-*— Kate Ferry (Chief Financial Officer)  ·  H1 FY2026 Earnings Call  ·  Nov 13, 2025*
+*— Kate Ferry (Chief Financial Officer)  ·  H1 FY2026 Earnings Call*
 *#growth*
 
 > 🇹🇭 รายได้รวมในครึ่งปีแรกอยู่ที่ 1.03 พันล้านปอนด์ โดยมีกำไรจากการดำเนินงานที่ปรับแล้วอยู่ที่ 19 ล้านปอนด์
 
 > Although it is still early days, and there is a lot more to do, as we approach our 170th anniversary, we are confident that Burberry Forward is the right strategy to build brand relevance and value creation.
-*— Joshua Schulman (Chief Executive Officer)  ·  H1 FY2026 Earnings Call  ·  Nov 13, 2025*
+*— Joshua Schulman (Chief Executive Officer)  ·  H1 FY2026 Earnings Call*
 *#strategy*
 
 > 🇹🇭 แม้ยังอยู่ในช่วงอายุต้น และยังมีอีกหลายอย่างที่ต้องทำ เมื่อเราใกล้ครบรอบ 170 ปี เรามีความมั่นใจว่า Burberry Forward คือกลยุทธ์ที่ถูกต้องในการสร้างความเกี่ยวข้องของแบรนด์และการสร้างคุณค่า
 
 > We expect currency to be a headwind of around £50 million on revenue, and around £5 million on operating profit, all based on the 24th of October spot rates.
-*— Kate Ferry (Chief Financial Officer)  ·  H1 FY2026 Earnings Call  ·  Nov 13, 2025*
+*— Kate Ferry (Chief Financial Officer)  ·  H1 FY2026 Earnings Call*
 *#guidance*
 
 > 🇹🇭 เราคาดว่าอัตราแลกเป็นผลลบต่อรายได้ประมาณ 50 ล้านปอนด์ และประมาณ 5 ล้านปอนด์ต่อกำไรจากการดำเนินงาน โดยอิงอัตราแลกณวันที่ 24 ตุลาคม
 
 > As we move into the second year of Burberry Forward, we are increasingly confident that we're on the right path to build brand relevance and value creation.
-*— Joshua Schulman (Chief Executive Officer)  ·  H1 FY2026 Earnings Call  ·  Nov 13, 2025*
+*— Joshua Schulman (Chief Executive Officer)  ·  H1 FY2026 Earnings Call*
 *#strategy*
 
 > 🇹🇭 เมื่อเข้าสู่ปีที่สองของ Burberry Forward เรามีความมั่นใจมากขึ้นว่าเราอยู่บนเส้นทางที่ถูกต้องในการสร้างความเกี่ยวข้องของแบรนด์และการสร้างคุณค่า
 
 > Burberry Forward is about returning the brand to its core — outerwear, British heritage, and the things that made Burberry great.
-*— Joshua Schulman (CEO)  ·  FY2025 Preliminary Results  ·  May 14, 2025*
+*— Joshua Schulman (CEO)  ·  FY2025 Preliminary Results*
 *#strategy*
 
 > 🇹🇭 Burberry Forward คือการนำแบรนด์กลับสู่รากของมัน นั่นคือเสื้อคลุม มรดกสับรีติอังกฤษ และสิ่งที่ทำให้ Burberry ยิ่งใหญ่
 
 > We are looking forward to celebrating our 170th anniversary next year, with a series of campaigns and activations to celebrate our iconic trench.
-*— Joshua Schulman (Chief Executive Officer)  ·  H1 FY2026 Earnings Call  ·  Nov 13, 2025*
+*— Joshua Schulman (Chief Executive Officer)  ·  H1 FY2026 Earnings Call*
 *#strategy*
 
 > 🇹🇭 เราตั้งตารอคอยชมการเฉลิมฉลองครบรอบ 170 ปีในปีหน้า พร้อมแคมเปญและกิจกรรมต่างๆ เพื่อเชียร์ชูเตรนช์อันเป็นตำนานของเรา
 
 > One year into Burberry Forward, my belief in this extraordinary British luxury house is stronger than ever. Since we met last November, we have moved from stabilising the business to returning to growth.
-*— Joshua Schulman (Chief Executive Officer)  ·  H1 FY2026 Earnings Call  ·  Nov 13, 2025*
+*— Joshua Schulman (Chief Executive Officer)  ·  H1 FY2026 Earnings Call*
 *#strategy*
 
 > 🇹🇭 หนึ่งปีถัดไปนับจากเริ่มต้น Burberry Forward ความเชื่อมั่นของผมในบ้านแฟชั่นลักซืรีสัญชาติอันแสนยิ่งใหญ่นี้เข้มแข็งขึ้นกว่าเดิม สับเนื่องจากเราก้าวจากการทั่วถึงการกลับมาเติบโต
 
 > We expect capital expenditure of around £120 million, slightly lower than initial guidance as we've been very intentional in our investment approach, focusing on the highest return on investment projects during this year of transformation.
-*— Kate Ferry (Chief Financial Officer)  ·  H1 FY2026 Earnings Call  ·  Nov 13, 2025*
+*— Kate Ferry (Chief Financial Officer)  ·  H1 FY2026 Earnings Call*
 *#guidance*
 
 > 🇹🇭 เราคาดว่าค่าใช้จ่ายทุนจะอยู่ที่ประมาณ 120 ล้านปอนด์ ต่ำกว่าคาดการณ์เปิดตัวเล็กน้อย เนื่องจากเรามีความตั้งใจอย่างมากในวิธีการลงทุน โดยเน้นโครงการที่ให้ผลตอบแทนสูงสุดในปีแห่งการเปลี่ยนแปลงนี้
 
 > In Q2, we returned our retail business to comp sales growth for the first time in two years.
-*— Joshua Schulman (Chief Executive Officer)  ·  H1 FY2026 Earnings Call  ·  Nov 13, 2025*
+*— Joshua Schulman (Chief Executive Officer)  ·  H1 FY2026 Earnings Call*
 *#growth*
 
 > 🇹🇭 ในไตรมาส 2 เรานำธุรกิจค้าปลีกกลับมาสู่การเติบโตของยอดขายเป็นครั้งแรกในรอบสองปี
 
 > We are targeting £100 million of annualised cost savings by FY27, with £24 million already delivered in FY25.
-*— Burberry Management  ·  FY2025 Preliminary Results  ·  May 14, 2025*
+*— Burberry Management  ·  FY2025 Preliminary Results*
 *#strategy*
 
 > 🇹🇭 เราตั้งเป้าหมายประหยัดต้นทุนค่าใช้จ่ายแบบยั่งยืน 100 ล้านปอนด์ต่อปีภายในปี FY27 โดยส่งมอบไปแล้ว  24 ล้านปอนด์ในปี FY25

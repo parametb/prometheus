@@ -31,7 +31,7 @@ draft: false
 ## 📝 Research Notes
 
 ### FY2025 10-K Analysis
-Apr 3, 2026  ·  ★★★☆☆
+★★★☆☆
 *#strategy #growth*
 
 [Financial Performance]
@@ -45,7 +45,7 @@ IonQ in high-growth, pre-profitability phase. Revenue FY2025: $130M (+202% YoY).
 Bullish
 
 ### FY2025 vs FY2024 — Narrative Evolution Analysis
-Apr 3, 2026  ·  ★★★☆☆
+★★★☆☆
 *#strategy*
 
 [Narrative Drift]
@@ -59,61 +59,61 @@ IonQ evolved from quantum computing company to 'quantum platform company' across
 ## 💬 Management Quotes
 
 > We intend to fulfill our mission by: Leveraging Our Technology... Accelerating Our Roadmap by Acquiring the Best Minds and Technologies... Selling Direct Access to Quantum Computers... Offering QCaaS... Continuing to Enhance Our Proprietary Position... Developing a Worldwide Quantum Ecosystem.
-*— IonQ Management  ·  FY2025 10-K  ·  Feb 25, 2026*
+*— IonQ Management  ·  FY2025 10-K*
 *#strategy*
 
 > 🇹🇭 เราตั้งใจที่จะบรรลุภารกิจโดย: ใช้เทคโนโลยีให้เกิดประโยชน์ เร่งแผนงานระยะเวลา ขายบริการควอนตัมโดยตรง เสนอ QCaaS เสริมตำแหน่งเฟพาะ และพัฒนาระบบนิเวศควอนตัมทั่วโลก
 
 > We believe that we have the clearest path to fault-tolerant quantum computing, and a repertoire of networking, sensing and security products that will form the backbone of a global quantum infrastructure.
-*— IonQ Management  ·  FY2025 10-K  ·  Feb 25, 2026*
+*— IonQ Management  ·  FY2025 10-K*
 *#strategy*
 
 > 🇹🇭 เราเชื่อว่าเรามีเส้นทางที่ชัดเจนที่สุดไปสู่การคำนวณควอนตัมที่ทนต่อความผิดพลาด และมีผลิตภัณฑ์ด้านเครือข่าย เซนเซอร์ และความปลอดภัยที่จะเป็นเสาหลักของโครงสร้างพื้นฐานควอนตัมทั่วโลก
 
 > We envision a future powered by quantum computing and believe the 21st century is poised to be the dawn of this era.
-*— IonQ Management  ·  FY2025 10-K  ·  Feb 25, 2026*
+*— IonQ Management  ·  FY2025 10-K*
 *#growth*
 
 > 🇹🇭 เราวาดภาพอนาคตที่ขับเคลื่อนด้วยควอนตัม และเชื่อว่าศตวรรษที่ 21 กำลังจะเป็นรุ่งอรุณของยุคเดียวกันนี้
 
 > We believe that by offering direct access to quantum computing, supplemented by our professional services, we can assist select customers in deepening their application of quantum solutions.
-*— IonQ Management  ·  FY2025 10-K  ·  Feb 25, 2026*
+*— IonQ Management  ·  FY2025 10-K*
 *#growth*
 
 > 🇹🇭 เราเชื่อว่าการเปิดให้เข้าถึงควอนตัมโดยตรง พร้อมบริการผู้เชี่ยวชาญของเรา จะช่วยลูกค้าในการนำโซลูชันควอนตัมไปใช้ในระดับความลึกซึ้งเป็นสำคัญ
 
 > We believe that a quantum computer currently offers the best possibility for computational power that could be used to solve problems classical computing may never solve.
-*— IonQ Management  ·  FY2025 10-K  ·  Feb 25, 2026*
+*— IonQ Management  ·  FY2025 10-K*
 *#strategy*
 
 > 🇹🇭 เราเชื่อว่าคอมพิวเตอร์ควอนตัมในปัจจุบันเปิดโอกาสที่ดีที่สุดสำหรับพลังคำนวณที่อาจใช้แก้ปัญหาที่คอมพิวเตอร์แบบคลาสสิกอาจไม่สามารถแก้ไขได้
 
 > We intend to continue to drive innovation in quantum and seek intellectual property protection where appropriate to enhance our proprietary technology position.
-*— IonQ Management  ·  FY2025 10-K  ·  Feb 25, 2026*
+*— IonQ Management  ·  FY2025 10-K*
 *#strategy*
 
 > 🇹🇭 เราตั้งใจที่จะส่งเสริมนวัตกรรมด้านควอนตัมอย่างต่อเนื่อง และแสวงหาการคุ้มครองสิทธิ์ปัญญาบัตร์ทางแพทย์ที่เหมาะสมเพื่อเสริมตำแหน่งเทคโนโลยีเฟพาะ
 
 > We believe that by offering QCaaS, we can accelerate the adoption of our quantum computing solutions, while efficiently promoting quantum computing across our partner ecosystems.
-*— IonQ Management  ·  FY2025 10-K  ·  Feb 25, 2026*
+*— IonQ Management  ·  FY2025 10-K*
 *#growth*
 
 > 🇹🇭 เราเชื่อว่าการเสนอ QCaaS จะช่วยเร่งการนำควอนตัมไปใช้ในวงการกว้างขึ้น พร้อมเพิ่มการส่งเสริมควอนตัมทั่วระบบนิเวศพาร์ทเนอร์ของเรา
 
 > We are developing quantum computers designed to solve some of the world's most complex problems and transform business, society and the planet for the better.
-*— IonQ Management  ·  FY2025 10-K  ·  Feb 25, 2026*
+*— IonQ Management  ·  FY2025 10-K*
 *#strategy*
 
 > 🇹🇭 เรากำลังพัฒนาคอมพิวเตอร์ควอนตัมที่ออกแบบมาเพื่อแก้ปัญหาที่ซับซ้อนที่สุดของโลก และเปลี่ยนแปลงธุรกิจ สังคม และโลกให้ดีขึ้น
 
 > We believe that our proprietary technology, our architecture and the technology exclusively available to us through license agreements will offer us advantages both in research and development and in the commercial value of our product offerings.
-*— IonQ Management  ·  FY2025 10-K  ·  Feb 25, 2026*
+*— IonQ Management  ·  FY2025 10-K*
 *#strategy*
 
 > 🇹🇭 เราเชื่อว่าเทคโนโลยีเฟพาะ สถาปัตยกรรม และเทคโนโลยีที่เราได้รับสิทธิ์ใช้ตามสัญญาอนุญาตจะมอบโอกาสให้เราทั้งด้านการวิจัยและพัฒนา และคุณค่าเชิงพาณิชย์ของผลิตภัณฑ์ของเรา
 
 > We expect to continue to incur significant losses for the foreseeable future as we prioritize reaching the technical milestones necessary to achieve an increasingly higher number of physical and logical qubits and higher levels of qubit performance.
-*— IonQ Management  ·  FY2025 10-K  ·  Feb 25, 2026*
+*— IonQ Management  ·  FY2025 10-K*
 *#guidance*
 
 > 🇹🇭 เราคาดว่าจะยังคงประสบการขาดทุนอย่างสำคัญในอนาคตอันใกล้ เนื่องจากเราให้ความสำคัญกับการบรรลุเป้าหมายทางเทคโนโลยี

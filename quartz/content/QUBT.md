@@ -31,127 +31,127 @@ draft: false
 
 | Title | Type | Quarter | Date | Status | Analyzed By |
 |-------|------|---------|------|--------|-------------|
-| QUBT Q4 FY2025 Earnings Call | Earnings Call | Q4 2025 | 2026-03-29 | analyzed | DeepSeek |
 | QUBT FY2025 10-K | Annual Report | Q4 2025 | 2026-03-29 | analyzed | DeepSeek |
+| QUBT Q4 FY2025 Earnings Call | Earnings Call | Q4 2025 | 2026-03-29 | analyzed | DeepSeek |
 
 ## 💬 Management Quotes
 
 > We anticipate that our EQC will enable us to develop and produce multiple generations of quantum machines with increasing computational power, scalability, and speed.
-*— Management (Quantum Computing Inc.)  ·  10-K  ·  Mar 29, 2026*
+*— Management (Quantum Computing Inc.)  ·  10-K*
 *#growth*
 
 > 🇹🇭 เราคาดว่า EQC ของเราจะช่วยให้เราพัฒนาและผลิตคอมพิวเตอร์ควอนตัมหลายรุ่นที่มีพลังการคํานวณ ความสามารถในการขยายสเกล และความเร็วที่เพิ่มขึ้นเรื่อยๆ
 
 > There have been several analyst reports that have projected that revenue would be in the $20 million to $25 million per year range, and I think that is a reasonable estimate right now.
-*— Chris Roberts (Chief Financial Officer)  ·  Earnings Call  ·  Mar 29, 2026*
+*— Chris Roberts (Chief Financial Officer)  ·  Earnings Call*
 *#guidance*
 
 > 🇹🇭 มีรายงานนักวิเคราะห์หลายชิ้นที่คาดการณ์ว่ารายได้จะอยู่ในช่วง 20-25 ล้านดอลลาร์ต่อปี และผมคิดว่านี่เป็นการประมาณที่สมเหตุสมผลในตอนนี้
 
 > QCi's strategy is to provide a range of accessible and affordable quantum machines to commercial and government markets, supported by professional services through our 'Quantum Solutions' offering.
-*— Management (Quantum Computing Inc.)  ·  10-K  ·  Mar 29, 2026*
+*— Management (Quantum Computing Inc.)  ·  10-K*
 *#strategy*
 
 > 🇹🇭 กลยุทธ์ของ QCi คือการให้บริการคอมพิวเตอร์ควอนตัมที่เข้าถึงได้และราคาอันหลากหลายสำหรับตลาดเชิงพาณิชย์และภาครัฐบาล สนับสนุนโดยบริการวิชาชีพผ่านโครงการ Quantum Solutions
 
 > We believe that our core photonics technology applications offer practical, cost-effective solutions that can materially advance the adoption of quantum machines across several market segments.
-*— Management (Quantum Computing Inc.)  ·  10-K  ·  Mar 29, 2026*
+*— Management (Quantum Computing Inc.)  ·  10-K*
 *#strategy*
 
 > 🇹🇭 เราเชื่อว่าการใช้งานฟโตนิกส์หลักของเราเปิดโอกาสโซลูชั่นที่ใช้งานได้จริง คุ้มค่า ที่สามารถส่งเสริมการใช้งานคอมพิวเตอร์ควอนตัมในหลายสังคมตลาดอย่างมีนัยสำคัญ
 
 > The quantum computing industry is highly competitive and rapidly evolving and will likely remain so for the foreseeable future.
-*— Management (Quantum Computing Inc.)  ·  10-K  ·  Mar 29, 2026*
+*— Management (Quantum Computing Inc.)  ·  10-K*
 *#risk*
 
 > 🇹🇭 อุตสาหกรรมคอมพิวเตอร์ควอนตัมมีการแข่งขันสูงและพัฒนาอย่างรวดเร็ว และคาดว่าจะยังคงเป็นเช่นนั้นในอนาคตอันใกล้
 
 > We believe that quantum computers with gradually increasing performance will be introduced by multiple vendors over the next five years.
-*— Management (Quantum Computing Inc.)  ·  10-K  ·  Mar 29, 2026*
+*— Management (Quantum Computing Inc.)  ·  10-K*
 *#growth*
 
 > 🇹🇭 เราเชื่อว่าคอมพิวเตอร์ควอนตัมที่มีประสิทธิภาพเพิ่มขึ้นเรื่อยๆ จะถูกนำเสนอโดยผู้ผลิตหลายรายในช่วงห้าปีข้างหน้า
 
 > The larger cost would be two and three years out. The cost is really hard to estimate at this point in time. Obviously, it is going to be several hundred million dollars to build any kind of sizable fab, but it is too early right now to be able to give you a hard number.
-*— Chris Roberts (Chief Financial Officer)  ·  Earnings Call  ·  Mar 29, 2026*
+*— Chris Roberts (Chief Financial Officer)  ·  Earnings Call*
 *#guidance*
 
 > 🇹🇭 ต้นทุนส่วนใหญ่จะเกิดขึ้นในอีกสองหรือสามปีข้างหน้า ต้นทุนนั้นประเมินได้ยากมาก แน่นอนว่าจะต้องใช้เงินหลายร้อยล้านดอลลาร์ในการสร้างโรงงานขนาดใหญ่ แต่ยังเร็วเกินไปที่จะให้ตัวเลขแน่นอนได้
 
 > 2025 was a transformational year for Quantum Computing, Inc. We made meaningful progress advancing our strategy to build a vertically integrated photonics and quantum optics platform capable of supporting scalable commercial applications across AI, high-performance computing, cybersecurity, and remote sensing.
-*— Yuping Huang (Chief Executive Officer)  ·  Earnings Call  ·  Mar 29, 2026*
+*— Yuping Huang (Chief Executive Officer)  ·  Earnings Call*
 *#strategy*
 
 > 🇹🇭 ปี 2025 เป็นปีแห่งการเปลี่ยนแปลงของ Quantum Computing, Inc. เราคืบหน้ากลยุทธ์ในการสร้างแพลตฯฟอร์มฟโตนิกส์และออปติกส์ควอนตัมแบบผนึกรวมแนวตั้งแต่ต้น ที่สามารถรองรับแอปพลิเคชันเชิงพาณิชย์ทั่วไป ทั้ง AI, HPC, ความปลอดภัยไซเบอร์ และการตรวจจับระยะไกล
 
 > Our vision is to lead the revolution in photonics and quantum computing with scalable, accessible, and affordable solutions for real-world problems.
-*— Management (Quantum Computing Inc.)  ·  10-K  ·  Mar 29, 2026*
+*— Management (Quantum Computing Inc.)  ·  10-K*
 *#strategy*
 
 > 🇹🇭 วิสัยทัศน์ของเราคือการนำการปฏิวัติในวงการฟโตนิกส์และการคํานวณควอนตัม ด้วยโซลูชั่นที่ขยายสเกลได้ เข้าถึงได้ และราคาย่อมเยาว เพื่อแก้ปัญหาในโลกที่เป็นจริง
 
 > I believe that general-purpose quantum computing is still some time down the road, and this applies to all the approaches in terms of the practical utilities.
-*— Yuping Huang (Chief Executive Officer)  ·  Earnings Call  ·  Mar 29, 2026*
+*— Yuping Huang (Chief Executive Officer)  ·  Earnings Call*
 *#strategy*
 
 > 🇹🇭 ผมเชื่อว่าการคํานวณควอนตัมสำหรับวัตถุประสงค์ทั่วไปยังอยู่ห่างออกไปอีกระยะหนึ่ง และนี่ใช้ได้กับทุกวิธีการในแง่ของการใช้งานจริง
 
 > Our roadmap is designed to move Quantum Computing, Inc. from innovation to industrial-scale production, positioning us to deliver practical quantum technologies that are accessible, scalable, and commercially viable.
-*— Yuping Huang (Chief Executive Officer)  ·  Earnings Call  ·  Mar 29, 2026*
+*— Yuping Huang (Chief Executive Officer)  ·  Earnings Call*
 *#strategy*
 
 > 🇹🇭 แผนที่โรดแมปของเราถูกออกแบบมาเพื่อนำ Quantum Computing, Inc. จากนวัตกรรมไปสู่การผลิตในระดับอุตสาหกรรม สร้างตำแหน่งให้เราส่งมอบเทคโนโลยีควอนตัมที่ใช้งานได้จริง ขยายสเกลได้ และคุ้มค่าทางการค้า
 
 > If we can lower the entry point for this quantum technology, it could be one of the very first quantum technologies that can be adopted by a large population.
-*— Yuping Huang (Chief Executive Officer)  ·  Earnings Call  ·  Mar 29, 2026*
+*— Yuping Huang (Chief Executive Officer)  ·  Earnings Call*
 *#growth*
 
 > 🇹🇭 หากเราสามารถลดจุดเข้าถึงเทคโนโลยีควอนตัมนี้ได้ อาจเป็นเทคโนโลยีควอนตัมแรกๆ ที่ประชากรจำนวนมากสามารถนำมาใช้ได้
 
 > As an early participant in this rapidly growing market, we believe we are well-positioned to capture a meaningful amount of this growth.
-*— Management (Quantum Computing Inc.)  ·  10-K  ·  Mar 29, 2026*
+*— Management (Quantum Computing Inc.)  ·  10-K*
 *#growth*
 
 > 🇹🇭 ในฐานะผู้เข้าร่วมตลาดตั้งแต่เนิ่น เราเชื่อว่าเราอยู่ในตำแหน่งที่ดีในการคว้าจับส่วนหนึ่งที่มีความหมายของการเติบโตนี้
 
 > Revenue for the fourth quarter totaled approximately $190,000, compared to $62,000 in the prior-year quarter. The year-over-year increase was driven primarily by hardware sales and services associated with our Fab 1 facility, which began contributing revenue during the fourth quarter.
-*— Chris Roberts (Chief Financial Officer)  ·  Earnings Call  ·  Mar 29, 2026*
+*— Chris Roberts (Chief Financial Officer)  ·  Earnings Call*
 *#growth*
 
 > 🇹🇭 รายได้ไตรมาสที่สี่อยู่ที่ประมาณ 190,000 ดอลลาร์ เปรียบเทียบกับ 62,000 ดอลลาร์ในไตรมาสเดียวกันของปีที่แล้ว การเติบโตที่เพิ่มขึ้นเมื่อปีเทียบกับปีก่อนเกิดจากการขายฮาร์ดแวร์และบริการที่เกี่ยวข้องกับโรงงาน Fab 1 ซึ่งเริ่มสร้างรายได้ในไตรมาสที่สี่
 
 > We anticipate that future generations of the RC will introduce greater speed of performance and scalability, which will enable the RC to participate in large language model training and other applications.
-*— Management (Quantum Computing Inc.)  ·  10-K  ·  Mar 29, 2026*
+*— Management (Quantum Computing Inc.)  ·  10-K*
 *#growth*
 
 > 🇹🇭 เราคาดว่า RC รุ่นต่อๆ ไปจะมีความเร็วและความสามารถในการขยายสเกลที่เพิ่มขึ้น ซึ่งจะทำให้ RC สามารถเข้าร่วมในการฝึกสอนโมเดลภาษาขนาดใหญ่และการใช้งานอื่นๆ ได้
 
 > The Company believes that quantum solutions have the potential to bring significant and increasing advances in the fields of medicine, engineering, autonomous vehicles, energy management, and cybersecurity.
-*— Management (Quantum Computing Inc.)  ·  10-K  ·  Mar 29, 2026*
+*— Management (Quantum Computing Inc.)  ·  10-K*
 *#growth*
 
 > 🇹🇭 บริษัทเชื่อว่าโซลูชั่นควอนตัมมีศักยภาพในการนำความก้าวหน้าอย่างมีนัยสำคัญในด้านการแพทย์ วิศวกรรม ยานยนต์อัตโนมัติ การจัดการพลังงาน และความปลอดภัยไซเบอร์
 
 > In the near term, I would anticipate that the bulk of our revenue is going to be from domestic sources, certainly for the next few quarters.
-*— Chris Roberts (Chief Financial Officer)  ·  Earnings Call  ·  Mar 29, 2026*
+*— Chris Roberts (Chief Financial Officer)  ·  Earnings Call*
 *#guidance*
 
 > 🇹🇭 ในระยะสั้น คาดว่ารายได้ส่วนใหญ่ของเราจะมาจากแหล่งในประเทศเป็นหลัก อย่างแน่นอนสำหรับสองหรือสามไตรมาสถัดไป
 
 > Our vision is to bring quantum technology into real-world applications. That means putting the power of quantum technology into the hands of people by moving it out of the laboratory and into enterprise, government, commercial, and consumer environments through chip-integrated, low-power, deployable systems.
-*— Yuping Huang (Chief Executive Officer)  ·  Earnings Call  ·  Mar 29, 2026*
+*— Yuping Huang (Chief Executive Officer)  ·  Earnings Call*
 *#strategy*
 
 > 🇹🇭 วิสัยทัศน์ของเราคือการนำเทคโนโลยีควอนตัมมาใช้งานจริง นั่นหมายถึงการนำพลังควอนตัมไปอยู่ในมือผู้คน โดยย้ายออกจากห้องปฏิบัติการไปสู่ภาคอุตสาหกรรม ภาครัฐบาล ภาคพาณิชย์ และผู้บริโภค ผ่านระบบที่ฝังรวมชิปใช้พลังงานต่ำ
 
 > Our proprietary technology is central to our strategy because we believe that it enables us to leverage the advantages of size, weight, power, and cost over competing cryogenic products.
-*— Management (Quantum Computing Inc.)  ·  10-K  ·  Mar 29, 2026*
+*— Management (Quantum Computing Inc.)  ·  10-K*
 *#strategy*
 
 > 🇹🇭 เทคโนโลยีเฉพาะของเราเป็นศูนย์กลางของกลยุทธ์ เพราะเราเชื่อว่ามันช่วยให้เราเพิ่มศักยภาพด้านขนาด น้ำหนัก พลังงาน และต้นทุนเหนือผลิตภัณฑ์ครายโจเซนิกที่แข่งขัน
 
 > For 2026, the number one task is to successfully integrate the team now that our headcount has doubled and our product portfolio has largely expanded.
-*— Yuping Huang (Chief Executive Officer)  ·  Earnings Call  ·  Mar 29, 2026*
+*— Yuping Huang (Chief Executive Officer)  ·  Earnings Call*
 *#strategy*
 
 > 🇹🇭 สำหรับปี 2026 ภารกิจอันดับหนึ่งคือการรวมทีมให้สำเร็จ เนื่องจากจำนวนบุคลากรของเราเพิ่มขึ้นเป็นสองเท่าและพอร์ตโฟลิโอผลิตภัณฑ์ของเราขยายตัวอย่างมีนัยสำคัญ

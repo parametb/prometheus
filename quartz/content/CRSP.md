@@ -31,7 +31,7 @@ draft: false
 ## 📝 Research Notes
 
 ### FY2025 vs FY2024 — Narrative Evolution Analysis
-Apr 4, 2026  ·  ★★★☆☆
+★★★☆☆
 *#strategy*
 
 [Narrative Drift]
@@ -42,7 +42,7 @@ Evolved from gene editing pioneer to broader biopharmaceutical company. Expanded
 • Type 1 diabetes folded into regenerative medicine franchise
 
 ### FY2025 10-K Analysis
-Apr 4, 2026  ·  ★★★☆☆
+★★★☆☆
 *#strategy*
 
 [Financial Performance]
@@ -54,61 +54,61 @@ Bullish
 ## 💬 Management Quotes
 
 > CTX310 is currently being investigated in an ongoing Phase 1b clinical trial targeting ANGPTL3 for the treatment of hyperlipidemia.
-*— CRISPR Therapeutics Management  ·  FY2025 10-K  ·  Feb 12, 2026*
+*— CRISPR Therapeutics Management  ·  FY2025 10-K*
 *#strategy*
 
 > 🇹🇭 CTX310 กำลังอยู่ระหว่างการทดลองทางคลินิกระดับ 1b เพื่อรักษาภาวะไขมันสูงโดยมุ่งเป้ามอเลกุล ANGPTL3
 
 > CASGEVY has been approved in the United States, European Union, Great Britain, Canada, Switzerland, Kingdom of Saudi Arabia, and Bahrain.
-*— CRISPR Therapeutics Management  ·  FY2025 10-K  ·  Feb 12, 2026*
+*— CRISPR Therapeutics Management  ·  FY2025 10-K*
 *#strategy*
 
 > 🇹🇭 CASGEVY ได้รับการอนุมัติในสหรัฐอเมริกา สหภาพยุโรป อังกฤษ คานาดา สวิตเซอร์แลนด์ สอาุดีอาระเบีย และบาห์เรน
 
 > We have established a portfolio of therapeutic programs spanning four core franchises: hemoglobinopathies, in vivo, CAR T approaches and regenerative medicine.
-*— CRISPR Therapeutics Management  ·  FY2025 10-K  ·  Feb 12, 2026*
+*— CRISPR Therapeutics Management  ·  FY2025 10-K*
 *#strategy*
 
 > 🇹🇭 เราได้สร้างพอร์ตโฟลิโโปรแกรมการรักษาครอบคลุม 4 สาขาหลัก: โรคแฮมโกบินโอปาธี (hemoglobinopathies), in vivo, วิธี CAR T และการแพทย์แบบฟื้นฟู (regenerative medicine)
 
 > Zugo-cel continues to advance in both autoimmune disease and hematologic malignancies.
-*— CRISPR Therapeutics Management  ·  FY2025 10-K  ·  Feb 12, 2026*
+*— CRISPR Therapeutics Management  ·  FY2025 10-K*
 *#strategy*
 
 > 🇹🇭 Zugo-cel ยังคงคืบหน้าทั้งในเอกสารโรคภูมิคุ้มกันและมะเร็งกระแสเลือด
 
 > Efficacy data presented to date support the profile of CASGEVY as a potential one-time functional cure for patients with severe sickle cell disease and transfusion-dependent beta thalassemia.
-*— CRISPR Therapeutics Management  ·  FY2025 10-K  ·  Feb 12, 2026*
+*— CRISPR Therapeutics Management  ·  FY2025 10-K*
 *#strategy*
 
 > 🇹🇭 ข้อมูลประสิทธิภาพที่นำเสนอในปัจจุบันสนับสนุนบทบาทของ CASGEVY ในฐานะการรักษาครั้งเดียวที่มีศักยภาพสำหรับผู้ป่วยโรคเม็ดเลือดเคียวรุนแรงและ TDT ที่ต้องใช้เลือดทดแทน
 
 > We aim to transform the treatment paradigm for cardiovascular disease by developing one-time in vivo editing therapies targeting ANGPTL3 and PCSK9.
-*— CRISPR Therapeutics Management  ·  FY2025 10-K  ·  Feb 12, 2026*
+*— CRISPR Therapeutics Management  ·  FY2025 10-K*
 *#strategy*
 
 > 🇹🇭 เรามุ่งเปลี่ยนรูปแบบการรักษาโรคหัวใจและหลอดเลือดด้วยการพัฒนาการรักษาแบบปรับแต่งในร่างกาย (in vivo) ครั้งเดียว ตั้งเป้า ANGPTL3 และ PCSK9
 
 > We have partnered with Vertex Pharmaceuticals Incorporated for the development and commercialization of CASGEVY. Vertex has significant control over the CASGEVY program.
-*— CRISPR Therapeutics Management  ·  FY2025 10-K  ·  Feb 12, 2026*
+*— CRISPR Therapeutics Management  ·  FY2025 10-K*
 *#risk*
 
 > 🇹🇭 เราได้ร่วมมือกับ Vertex Pharmaceuticals สำหรับการพัฒนาและการเพิ่มเติมทางการค้า CASGEVY โดย Vertex มีอำนาจควบคุมโครงการ CASGEVY อย่างมีนัยสำคัญ
 
 > We have incurred significant operating losses since our inception and anticipate that we will incur continued losses for the foreseeable future.
-*— CRISPR Therapeutics Management  ·  FY2025 10-K  ·  Feb 12, 2026*
+*— CRISPR Therapeutics Management  ·  FY2025 10-K*
 *#risk*
 
 > 🇹🇭 เราได้ประสบการขาดทุนในการดำเนินงานอย่างมีนัยสำคัญตั้งแต่เริ่มประกอบการ และคาดว่าจะยังคงประสบการขาดทุนต่อเนื่องในอนาคตอันใกล้
 
 > In SCD, 100% of patients (45/45) achieved VF12 in either CLIMB-121 or the long-term follow-up study CLIMB-131.
-*— CRISPR Therapeutics Management  ·  FY2025 10-K  ·  Feb 12, 2026*
+*— CRISPR Therapeutics Management  ·  FY2025 10-K*
 *#strategy*
 
 > 🇹🇭 ใน SCD ผู้ป่วย 100% (45/45 ราย) ชนะเกณฑ์ VF12 ในการทดลอง CLIMB-121 หรือการติดตามระยะยาว CLIMB-131
 
 > In TDT, 98.2% of patients (55/56) achieved TI12 in either CLIMB-111 or CLIMB-131.
-*— CRISPR Therapeutics Management  ·  FY2025 10-K  ·  Feb 12, 2026*
+*— CRISPR Therapeutics Management  ·  FY2025 10-K*
 *#strategy*
 
 > 🇹🇭 ใน TDT ผู้ป่วย 98.2% (55/56 ราย) ชนะเกณฑ์ TI12 ในการทดลอง CLIMB-111 หรือ CLIMB-131

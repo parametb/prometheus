@@ -31,7 +31,7 @@ draft: false
 ## 📝 Research Notes
 
 ### Earnings Call Analysis
-Mar 30, 2026  ·  ★★★☆☆
+★★★☆☆
 *#earnings*
 
 [Financial Performance]
@@ -41,7 +41,7 @@ Key milestones: Novera QPU purchase orders $5.7M, 99.9% two-qubit gate fidelity,
 Bullish
 
 ### 10-K Analysis
-Mar 30, 2026  ·  ★★★☆☆
+★★★☆☆
 *#strategy*
 
 [Financial Performance]
@@ -57,121 +57,121 @@ Bullish
 ## 💬 Management Quotes
 
 > Rigetti announced an approximately $8.4 million purchase order from India's Centre for Development of Advanced Computing (C-DAC) for a 108-qubit on-premises superconducting quantum computer.
-*— Document (Business Update)  ·  Earnings Call  ·  Mar 30, 2026*
+*— Document (Business Update)  ·  Earnings Call*
 *#growth*
 
 > 🇹🇭 Rigetti ประกาศคำสั่งซื้อมูลค่าประมาณ 8.4 ล้านดอลลาร์จาก C-DAC ของอินเดีย สำหรับคอมพิวเตอร์ควอนตัม superconducting ติดตั้งในสถานที่ขนาด 108 qubit
 
 > In 2025, we received purchase orders for two Novera systems totaling approximately $5.7 million. Both systems are upgradeable, allowing the customers to increase the system qubit count for more complex computations and research.
-*— Management (Overview)  ·  10-K  ·  Mar 30, 2026*
+*— Management (Overview)  ·  10-K*
 *#growth*
 
 > 🇹🇭 ในปี 2025 เราได้รับคำสั่งซื้อระบบ Novera สองระบบผลรวมประมาณ 5.7 ล้านดอลลาร์ ทั้งสองระบบสามารถอัปเกรดได้ ช่วยให้ลูกค้าเพิ่มจำนวน qubit สำหรับการคํานวณและวิจัยที่ซับซ้อนยิ่งขึ้นได้
 
 > We anticipate significant first-quarter year-over-year revenue growth driven by a portion of the previously announced $5.7 million Novera on-premises system purchase orders expected to ship in Q1.
-*— Dr. Subodh Kulkarni (CEO)  ·  Earnings Call  ·  Mar 30, 2026*
+*— Dr. Subodh Kulkarni (CEO)  ·  Earnings Call*
 *#guidance*
 
 > 🇹🇭 เราคาดว่ารายได้ไตรมาสแรกจะเติบโตอย่างมีนัยสำคัญเมื่อเทียบปีต่อปี จากคำสั่งซื้อระบบ Novera ชนิดติดตั้งในสถานที่มูลค่า  5.7 ล้านดอลลาร์ที่คาดว่าจะส่งมอบใน Q1
 
 > Rigetti recently achieved a two-qubit gate fidelity as high as 99.9% at 28 nanosecond gate speed on a prototype platform using its new proprietary adiabatic CZ scheme.
-*— Document (Technology Milestones)  ·  Earnings Call  ·  Mar 30, 2026*
+*— Document (Technology Milestones)  ·  Earnings Call*
 *#strategy*
 
 > 🇹🇭 Rigetti ได้บรรลุความเที่ยงของ two-qubit gate สูงถึง 99.9% ที่ความเร็ว gate 28 นาโนวินาทีบนแพลตฟอร์มต้นแบบโดยใช้สคีม adiabatic CZ ใหม่เฉพาะ
 
 > We are in our early stages and have a limited operating history, which makes it difficult to forecast our future results of operations. We have in the past failed to meet publicly announced milestones and may fail to meet projected technological milestones in the future.
-*— Management (Risk Factors)  ·  10-K  ·  Mar 30, 2026*
+*— Management (Risk Factors)  ·  10-K*
 *#risk*
 
 > 🇹🇭 เราอยู่ในช่วงแรกเริ่มดำเนินการและมีประวัติการดำเนินงานที่จำกัด ซึ่งทำให้คาดการณ์ผลลัพธ์ในอนาคตเป็นเรื่องยาก ในอดีตเราไม่สามารถบรรลุเป้าหมายทั้งที่ประกาศไว้ และอาจไม่สามารถบรรลุเป้าหมายทางเทคโนโลยีในอนาคต
 
 > Looking ahead, we remain focused on executing our roadmap, including the deployment of our 108-qubit system at 99.5% median two-qubit gate fidelity and advancing toward larger-scale systems as we work steadily toward quantum advantage.
-*— Dr. Subodh Kulkarni (CEO)  ·  Earnings Call  ·  Mar 30, 2026*
+*— Dr. Subodh Kulkarni (CEO)  ·  Earnings Call*
 *#guidance*
 
 > 🇹🇭 มองไปข้างหน้า เรายังคงมุ่งเน้นการทำตามแผนเส้นทาง รวมถึงการติดตั้งระบบ 108-qubit ที่ความเที่ยง two-qubit gate 99.5% และก้าวไปสู่ระบบขนาดใหญ่ขึ้นอย่างต่อเนื่อง
 
 > Demand for on-premises quantum systems from government and research institutions continues to grow.
-*— Dr. Subodh Kulkarni (CEO)  ·  Earnings Call  ·  Mar 30, 2026*
+*— Dr. Subodh Kulkarni (CEO)  ·  Earnings Call*
 *#growth*
 
 > 🇹🇭 ความต้องการระบบควอนตัมแบบประจำในสถาบันของรัฐบาลและการวิจัยยังคงเติบโตต่อเนื่อง
 
 > We expect this patented and patent pending modular chip architecture to be the building block for new generations of quantum processors that we expect to achieve an advantage over classical computers.
-*— Management (Overview)  ·  10-K  ·  Mar 30, 2026*
+*— Management (Overview)  ·  10-K*
 *#strategy*
 
 > 🇹🇭 เราคาดว่าสถาปัตยกรรมชิปโมดูลาร์ที่มีสิทธิบัตรและอยู่ระหว่างการขอรับสิทธิบัตรจะเป็นก้อนสำหรับโปรเซสเซอร์ควอนตัมรุ่นใหม่ที่เราคาดว่าจะมีความได้เปรียบเหนือคอมพิวเตอร์คลาสสิก
 
 > Our focus continues to be on achieving practical quantum advantage, and over the past year we validated key elements of our strategy, including improved two-qubit gate fidelity across both monolithic and chiplet-based systems and continued momentum in scaling our superconducting quantum technology.
-*— Dr. Subodh Kulkarni (CEO)  ·  Earnings Call  ·  Mar 30, 2026*
+*— Dr. Subodh Kulkarni (CEO)  ·  Earnings Call*
 *#strategy*
 
 > 🇹🇭 ความมุ่งเน้นของเรายังคงเป็นการบรรลุวัตถุประสงค์ควอนตัมที่ใช้งานได้จริง และในช่วงปีที่ผ่านมาเราได้ยืนยันส่วนสำคัญของกลยุทธ์เรา รวมถึงความเที่ยงของ two-qubit gate fidelity ที่ดีขึ้นทั้งในระบบ monolithic และ chiplet
 
 > Our chiplet-based approach provides a practical and scalable path toward large-scale quantum systems, while our ecosystem of partners, including Riverlane, NVIDIA, Quanta Computer, and QphoX, allows us to innovate across the stack.
-*— Dr. Subodh Kulkarni (CEO)  ·  Earnings Call  ·  Mar 30, 2026*
+*— Dr. Subodh Kulkarni (CEO)  ·  Earnings Call*
 *#strategy*
 
 > 🇹🇭 วิธีการชิปเล็ตของเรามอบเส้นทางที่ใช้งานได้จริงและขยายสเกลได้สู่ระบบควอนตัมขนาดใหญ่ ขณะที่ระบบนิเวศของเราที่มีพาร์ทเนอร์ รวมถึง Riverlane, NVIDIA, Quanta Computer และ QphoX ช่วยให้เราสร้างนวัตกรรมทั่วทั้งสแต็ก
 
 > Chiplet-based systems enable Rigetti to increase qubit counts while maintaining control over chip uniformity, reducing manufacturing complexity, and improving fabrication yield, an approach the Company believes represents the most viable path toward large-scale quantum systems.
-*— Document (Technology Milestones)  ·  Earnings Call  ·  Mar 30, 2026*
+*— Document (Technology Milestones)  ·  Earnings Call*
 *#strategy*
 
 > 🇹🇭 ระบบบนพื้นฐานชิปเล็ต ช่วยให้ Rigetti เพิ่มจำนวน Qubit ในขณะควบคุมความสม่ำเสมของชิป ลดความซับซ้อนในการผลิต และปรับปรุงผลผลิตในการผลิตชิปซึ่งบริษัทเชื่อว่าเป็นเส้นทางที่เป็นไปได้มากที่สุดสู่ระบบควอนตัมขนาดใหญ่
 
 > In 2025, we made great progress across fidelity, scale, and system architecture.
-*— Dr. Subodh Kulkarni (CEO)  ·  Earnings Call  ·  Mar 30, 2026*
+*— Dr. Subodh Kulkarni (CEO)  ·  Earnings Call*
 *#growth*
 
 > 🇹🇭 ในปี 2025 เราคืบหน้าได้อย่างยอดเยี่ยมในด้านความเที่ยง ยอดวิธี และสถาปัตยกรรมระบบ
 
 > We achieved a key two-qubit gate fidelity milestone with Ankaa-3: successfully halving error rates in 2024 to achieve a 99.0% median two-qubit gate fidelity based on our internal testing.
-*— Management (Overview)  ·  10-K  ·  Mar 30, 2026*
+*— Management (Overview)  ·  10-K*
 *#strategy*
 
 > 🇹🇭 เราบรรลุความสำเร็จระดับสำคัญด้านความเที่ยงตรงของ two-qubit gate กับ Ankaa-3 ด้วยการลดอัตราความผิดพลาดลงครึ่งหนึ่งในปี 2024 เพื่อบรรลุความเที่ยงตรงชั้นต่ำ 99.0%
 
 > As of January 2026, we achieved a 99.6% median two-qubit gate fidelity (based on internal testing) with Cepheus-1-36Q, successfully halving our error rate from our previous, single-chip 84-qubit Ankaa-3 system.
-*— Management (Overview)  ·  10-K  ·  Mar 30, 2026*
+*— Management (Overview)  ·  10-K*
 *#strategy*
 
 > 🇹🇭 ณ มกราคม 2026 เราบรรลุความเที่ยงตรงของ two-qubit gate เฉลี่ย 99.6% (median) บน Cepheus-1-36Q บรรลุการลดอัตราความผิดพลาดลงครึ่งหนึ่ง
 
 > Our mission is to build the world's most powerful computers to help solve humanity's most important and pressing problems. Our strategy is to be at the forefront of superconducting quantum computing.
-*— Management (Overview)  ·  10-K  ·  Mar 30, 2026*
+*— Management (Overview)  ·  10-K*
 *#strategy*
 
 > 🇹🇭 ภารกิจของเราคือการสร้างคอมพิวเตอร์ที่ทรงพลังที่สุดในโลก เพื่อช่วยแก้ปัญหาที่สำคัญและเร่งด่วนที่สุดของมนุษยชาติ กลยุทธ์ของเราคือการเป็นผู้นำด้านการคำนวณควอนตัมแบบ superconducting
 
 > Rigetti's open and modular architecture remains a core differentiator.
-*— Dr. Subodh Kulkarni (CEO)  ·  Earnings Call  ·  Mar 30, 2026*
+*— Dr. Subodh Kulkarni (CEO)  ·  Earnings Call*
 *#strategy*
 
 > 🇹🇭 สถาปัตยกรรมแบบเปิดและเมาจูลาร์ของ Rigetti ยังคงเป็นจุดแตกต่างหลัก
 
 > We believe quantum computing represents one of the most transformative emerging capabilities in the world today. By leveraging quantum mechanics, our quantum computers process information in fundamentally new, more powerful ways compared to classical computing with meaningful power efficiency.
-*— Management (Overview)  ·  10-K  ·  Mar 30, 2026*
+*— Management (Overview)  ·  10-K*
 *#strategy*
 
 > 🇹🇭 เราเชื่อว่าการคำนวณควอนตัมเป็นหนึ่งในความสามารถที่กำลังเกิดขึ้นใหม่ที่เปลี่ยนแปลงที่สุดในโลกวันนี้ ด้วยการใช้บทบาทกลศาสตร์ควอนตัม คอมพิวเตอร์ของเราประมวลผลข้อมูลในรูปแบบใหม่ที่ทรงพลังและเหนือกว่า
 
 > Leveraging our full-stack platform and in-house quantum foundry capabilities, we believe that Cepheus-1-36Q demonstrates our ability to deliver increasingly higher performance quantum computers with larger qubit counts using our proprietary chiplet-based architecture.
-*— Management (Overview)  ·  10-K  ·  Mar 30, 2026*
+*— Management (Overview)  ·  10-K*
 *#growth*
 
 > 🇹🇭 โดยใช้ประโยชน์จากแพลตฟอร์มครบวงจรและความสามารถโรงงานควอนตัมภายในของเราเอง เราเชื่อว่า Cepheus-1-36Q แสดงความสามารถในการส่งมอบคอมพิวเตอร์ควอนตัมที่มีประสิทธิภาพสูงขึ้นและมีจำนวนคิวบิตมากขึ้น
 
 > We may not be able to scale our business quickly enough to meet customer and market demand, which would result in lower profitability or cause us to fail to execute on our business strategies.
-*— Management (Risk Factors)  ·  10-K  ·  Mar 30, 2026*
+*— Management (Risk Factors)  ·  10-K*
 *#risk*
 
 > 🇹🇭 เราอาจไม่สามารถขยายธุรกิจได้เร็วพอเพื่อตอบสนองความต้องการของลูกค้าและตลาด ซึ่งจะส่งผลให้กำไรลดลงหรือทำให้เราล้มเหลวในการดำเนินกลยุทธ์ทางธุรกิจ
 
 > We will require a significant amount of cash for expenditures as we invest in ongoing research and development and business operations and may need additional capital sooner than planned.
-*— Management (Risk Factors)  ·  10-K  ·  Mar 30, 2026*
+*— Management (Risk Factors)  ·  10-K*
 *#risk*
 
 > 🇹🇭 เราจะต้องการเงินสดจำนวนมากสำหรับค่าใช้จ่ายขณะที่ลงทุนในการวิจัยและพัฒนาและการดำเนินงานทางธุรกิจอย่างต่อเนื่อง และอาจต้องการเงินทุนเพิ่มเติมเร็วกว่าที่วางแผนไว้
