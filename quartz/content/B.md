@@ -102,28 +102,19 @@ draft: false
 
 ## 💰 Financials
 
-*USD, Billion*
+*USD, Million*
 
-| Metric | 2020 | 2021 | 2022 | 2023 | 2024 | 2025 |
-|--------|------|------|------|------|------|------|
-| Revenue | 12.59 | 11.96 | 11.01 | 11.39 | 12.92 | 16.96 |
-| Net Earnings (attributable) | 2.32 | 1.44 | 0.43 | 1.27 | 2.14 | 4.99 |
-| Adjusted Net Earnings | 2.04 | 1.72 | 1.33 | 1.46 | 2.21 | 4.14 |
-| Adjusted EPS (diluted) | 1.15 | 0.96 | 0.75 | 0.83 | 1.26 | 2.42 |
-| Operating Cash Flow | 5.41 | 4.38 | 2.87 | 3.74 | 4.49 | 7.69 |
-| Free Cash Flow | 1.77 | 1.53 | 0.5 | 0.65 | 1.32 | 3.87 |
-| Gold Production (Moz) | 4.76 | 4.44 | 4.14 | 4.05 | 3.91 | 3.26 |
-| AISC ($/oz) | 966 | 1,045 | 1,262 | 1,335 | 1,484 | 1,637 |
-
-*Barrick is a Canadian company (TSX: ABX, NYSE: B). Fiscal year ends December 31. Files 40-F (not 10-K) with SEC as a Canadian issuer. Unit = Billion USD except Gold Production (Moz) and AISC ($/oz).
-
-Adjusted Net Earnings and Adjusted EPS exclude impairments, unrealized gains/losses, and other non-recurring items — management's preferred profitability measure.
-
-FY2022 net earnings impacted by ~$700M impairment charges. FY2025 net earnings include $1,107M one-time acquisition/disposition gains — adjusted net earnings ($4.14B) better reflects underlying performance.
-
-AISC (All-in Sustaining Cost per ounce): rising from $1,262 (2022) → $1,484 (2024) → $1,637 (2025) — cost inflation trend. Gold price realization: $1,803 (2022) → $1,948 (2023) → $2,397 (2024) → $3,501 (2025). Dramatic spread expansion drove FY2025 FCF tripling.
-
-Note: FY2024 Gold Production corrected to 3.91 Moz (official 40-F) from earlier 4.05 estimate. FY2024 AISC corrected to $1,484/oz (official 40-F). FY2025 gold production decline (3.26 Moz) primarily due to Loulo-Gounkoto suspension and asset divestitures.*
+| Metric | 2006 | 2007 | 2008 | 2009 | 2010 |
+|--------|------|------|------|------|------|
+| Revenue | 6,014 | 6,014 | 7,613 | 7,613 | 7,613 |
+| Operating Income | — | — | 2,415 | 2,415 | 2,415 |
+| EBITDA | — | — | 3,327 | 3,327 | 3,327 |
+| Net Income | 0 | 0 | 785 | 785 | 785 |
+| EPS Diluted | 1.28 | 1.28 | 0.89 | 0.89 | 0.89 |
+| Operating CF | 1,768 | 1,768 | 2,254 | 2,254 | 2,254 |
+| CapEx | — | — | -1,916 | -1,916 | -1,916 |
+| Free Cash Flow | — | — | 338 | 338 | 338 |
+| Cash | 3,043 | 3,043 | 2,207 | 2,207 | 2,207 |
 
 ## ⚖️ Bull / Bear Case
 

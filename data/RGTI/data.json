@@ -703,6 +703,7 @@
     "last_updated": "2026-04-10",
     "annual": {
       "periods": [
+        "FY2020",
         "FY2021",
         "FY2022",
         "FY2023",
@@ -711,6 +712,7 @@
       ],
       "period_ends": [
         "2020-12-31",
+        "2020-12-31",
         "2021-12-31",
         "2022-12-31",
         "2022-12-31",
@@ -718,8 +720,10 @@
       ],
       "metrics": [
         {
+          "key": "revenue",
           "name": "Revenue",
           "values": [
+            null,
             null,
             1235,
             null,
@@ -732,12 +736,15 @@
             null,
             null,
             null,
+            null,
             null
           ]
         },
         {
+          "key": "operating_income",
           "name": "Operating Income",
           "values": [
+            -15.7,
             -15.7,
             -38.7,
             -85.7,
@@ -747,6 +754,7 @@
           "chart": false,
           "margin": [
             null,
+            null,
             -3.1,
             null,
             null,
@@ -754,8 +762,10 @@
           ]
         },
         {
+          "key": "ebitda",
           "name": "EBITDA",
           "values": [
+            -14.3,
             -14.3,
             -36.2,
             -80.1,
@@ -765,6 +775,7 @@
           "chart": false,
           "margin": [
             null,
+            null,
             -2.9,
             null,
             null,
@@ -772,8 +783,10 @@
           ]
         },
         {
+          "key": "net_income",
           "name": "Net Income",
           "values": [
+            -15.4,
             -15.4,
             -106.2,
             -48.5,
@@ -783,12 +796,14 @@
           "chart": false,
           "growth": [
             null,
+            0,
             -589.6,
             54.3,
             0,
             -225.4
           ],
           "margin": [
+            null,
             null,
             -8.6,
             null,
@@ -797,8 +812,10 @@
           ]
         },
         {
+          "key": "eps_diluted",
           "name": "EPS Diluted",
           "values": [
+            null,
             null,
             -0.77,
             -0.25,
@@ -809,14 +826,17 @@
           "growth": [
             null,
             null,
+            null,
             67.5,
             0,
             -212
           ]
         },
         {
+          "key": "operating_cf",
           "name": "Operating CF",
           "values": [
+            -12,
             -12,
             -26.5,
             -44.7,
@@ -826,8 +846,10 @@
           "chart": false
         },
         {
+          "key": "capex",
           "name": "CapEx",
           "values": [
+            -10,
             -10,
             -7.8,
             -9.3,
@@ -837,8 +859,10 @@
           "chart": false
         },
         {
+          "key": "free_cash_flow",
           "name": "Free Cash Flow",
           "values": [
+            -22,
             -22,
             -34.3,
             -54,
@@ -848,8 +872,10 @@
           "chart": false
         },
         {
+          "key": "cash",
           "name": "Cash",
           "values": [
+            59.5,
             59.5,
             399,
             44.4,
@@ -861,6 +887,7 @@
       ]
     },
     "years": [
+      2020,
       2021,
       2022,
       2023,
@@ -869,8 +896,10 @@
     ],
     "metrics": [
       {
+        "key": "revenue",
         "name": "Revenue",
         "values": [
+          null,
           null,
           1235,
           null,
@@ -883,12 +912,15 @@
           null,
           null,
           null,
+          null,
           null
         ]
       },
       {
+        "key": "operating_income",
         "name": "Operating Income",
         "values": [
+          -15.7,
           -15.7,
           -38.7,
           -85.7,
@@ -898,6 +930,7 @@
         "chart": false,
         "margin": [
           null,
+          null,
           -3.1,
           null,
           null,
@@ -905,8 +938,10 @@
         ]
       },
       {
+        "key": "ebitda",
         "name": "EBITDA",
         "values": [
+          -14.3,
           -14.3,
           -36.2,
           -80.1,
@@ -916,6 +951,7 @@
         "chart": false,
         "margin": [
           null,
+          null,
           -2.9,
           null,
           null,
@@ -923,8 +959,10 @@
         ]
       },
       {
+        "key": "net_income",
         "name": "Net Income",
         "values": [
+          -15.4,
           -15.4,
           -106.2,
           -48.5,
@@ -934,12 +972,14 @@
         "chart": false,
         "growth": [
           null,
+          0,
           -589.6,
           54.3,
           0,
           -225.4
         ],
         "margin": [
+          null,
           null,
           -8.6,
           null,
@@ -948,8 +988,10 @@
         ]
       },
       {
+        "key": "eps_diluted",
         "name": "EPS Diluted",
         "values": [
+          null,
           null,
           -0.77,
           -0.25,
@@ -960,14 +1002,17 @@
         "growth": [
           null,
           null,
+          null,
           67.5,
           0,
           -212
         ]
       },
       {
+        "key": "operating_cf",
         "name": "Operating CF",
         "values": [
+          -12,
           -12,
           -26.5,
           -44.7,
@@ -977,8 +1022,10 @@
         "chart": false
       },
       {
+        "key": "capex",
         "name": "CapEx",
         "values": [
+          -10,
           -10,
           -7.8,
           -9.3,
@@ -988,8 +1035,10 @@
         "chart": false
       },
       {
+        "key": "free_cash_flow",
         "name": "Free Cash Flow",
         "values": [
+          -22,
           -22,
           -34.3,
           -54,
@@ -999,8 +1048,10 @@
         "chart": false
       },
       {
+        "key": "cash",
         "name": "Cash",
         "values": [
+          59.5,
           59.5,
           399,
           44.4,
@@ -1012,6 +1063,7 @@
     ],
     "quarterly": {
       "periods": [
+        "Q1 2023",
         "Q1 2024",
         "Q2 2024",
         "Q3 2024",
@@ -1021,6 +1073,7 @@
       ],
       "period_ends": [
         "2023-03-31",
+        "2024-03-31",
         "2023-06-30",
         "2023-09-30",
         "2024-03-31",
@@ -1029,9 +1082,11 @@
       ],
       "metrics": [
         {
+          "key": "operating_income",
           "name": "Operating Income",
           "values": [
             -28,
+            -52.9,
             -61.1,
             -103.3,
             -52.9,
@@ -1045,13 +1100,16 @@
             null,
             null,
             null,
+            null,
             null
           ]
         },
         {
+          "key": "ebitda",
           "name": "EBITDA",
           "values": [
             -26.2,
+            -48.9,
             -57,
             -96.4,
             -48.9,
@@ -1065,13 +1123,16 @@
             null,
             null,
             null,
+            null,
             null
           ]
         },
         {
+          "key": "net_income",
           "name": "Net Income",
           "values": [
             -27.3,
+            -39.6,
             -71.1,
             -115.9,
             -39.6,
@@ -1081,7 +1142,8 @@
           "chart": false,
           "growth": [
             null,
-            -160.4,
+            -45.1,
+            -79.5,
             -63,
             65.8,
             -94.9,
@@ -1093,13 +1155,16 @@
             null,
             null,
             null,
+            null,
             null
           ]
         },
         {
+          "key": "eps_diluted",
           "name": "EPS Diluted",
           "values": [
             -0.14,
+            -0.19,
             -0.35,
             -0.57,
             -0.19,
@@ -1109,7 +1174,8 @@
           "chart": false,
           "growth": [
             null,
-            -150,
+            -35.7,
+            -84.2,
             -62.9,
             66.7,
             -94.7,
@@ -1117,9 +1183,11 @@
           ]
         },
         {
+          "key": "operating_cf",
           "name": "Operating CF",
           "values": [
             -13.8,
+            -20.5,
             -29.9,
             -52.2,
             -20.5,
@@ -1129,9 +1197,11 @@
           "chart": false
         },
         {
+          "key": "capex",
           "name": "CapEx",
           "values": [
             -1.2,
+            -3.1,
             -2.4,
             -6.5,
             -3.1,
@@ -1141,9 +1211,11 @@
           "chart": false
         },
         {
+          "key": "free_cash_flow",
           "name": "Free Cash Flow",
           "values": [
             -15,
+            -23.6,
             -32.3,
             -58.7,
             -23.6,
@@ -1153,9 +1225,11 @@
           "chart": false
         },
         {
+          "key": "cash",
           "name": "Cash",
           "values": [
             35.7,
+            54.4,
             35.7,
             35.7,
             54.4,
