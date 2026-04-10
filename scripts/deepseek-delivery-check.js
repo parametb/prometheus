@@ -45,7 +45,7 @@ const SCHEMA = {
     label: 'Companies DB',
     required: true,
     props: {
-      ticker: { name: 'Ticker', type: 'rich_text' },
+      ticker: { name: 'Ticker', type: 'title' },
       name: { name: 'Name', type: 'title', optional: true },
     },
   },
@@ -250,6 +250,7 @@ function getRelationIds(page, dbKey, alias) {
 
 function equalsFilter(dbKey, alias, value) {
   const p = prop(dbKey, alias);
+  if (p.type === 'title') return { property: p.name, title: { equals: value } };
   if (p.type === 'rich_text') return { property: p.name, rich_text: { equals: value } };
   if (p.type === 'select') return { property: p.name, select: { equals: value } };
   if (p.type === 'status') return { property: p.name, status: { equals: value } };
