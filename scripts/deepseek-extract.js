@@ -292,7 +292,7 @@ async function createSourceRecord({ companyId }) {
     'Analyzed By': n.select('DeepSeek'),
     Status: n.select('extracting'),
     Tags: n.multiSelect(tagsMap[DOC_TYPE] || ['financials']),
-    date: { date: { start: DOC_DATE } },
+    Date: n.date(DOC_DATE),
   }));
 }
 
