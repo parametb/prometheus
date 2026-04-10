@@ -208,7 +208,7 @@ function chunkText(text, maxChars = 24000) {
 }
 
 function loadPrompt(filename, vars) {
-  const filePath = path.join(__dirname, '..', 'prompts', 'deepseek-agents', filename);
+  const filePath = path.join(__dirname, '..', 'prompts', 'deepseek_agents', filename);
   let tpl = fs.readFileSync(filePath, 'utf8');
   for (const [k, v] of Object.entries(vars)) {
     tpl = tpl.replaceAll(`{{${k}}}`, String(v ?? '')).replaceAll(`<<${k}>>`, String(v ?? ''));
@@ -342,11 +342,11 @@ async function main() {
 
   console.log('STEP 5 — Run DeepSeek agents (parallel, 5 agents)');
   const [analysisR, roadmapR, quotesR, notesR, financialsR] = await Promise.allSettled([
-    callDeepSeek(loadPrompt('phase2-deep-analysis.md', baseVars), 8192),
-    callDeepSeek(loadPrompt('phase2-roadmap.md', baseVars), 8192),
-    callDeepSeek(loadPrompt('phase2-quotes.md', { ...baseVars, text: fullSlice }), 8192),
-    callDeepSeek(loadPrompt('phase2-notes-multi.md', baseVars), 12288),
-    callDeepSeek(loadPrompt('phase2-financials.md', baseVars), 8192),
+    callDeepSeek(loadPrompt('phase2_deep_analysis.md', baseVars), 8192),
+    callDeepSeek(loadPrompt('phase2_roadmap.md', baseVars), 8192),
+    callDeepSeek(loadPrompt('phase2_quotes.md', { ...baseVars, text: fullSlice }), 8192),
+    callDeepSeek(loadPrompt('phase2_notes_multi.md', baseVars), 12288),
+    callDeepSeek(loadPrompt('phase2_financials.md', baseVars), 8192),
   ]);
 
   const analysis = analysisR.status === 'fulfilled' ? analysisR.value : null;
