@@ -1,23 +1,5 @@
 [
   {
-    "ticker": "GOOGL",
-    "name": "Alphabet Inc.",
-    "name_th": "Alphabet Inc.",
-    "sector": "Technology",
-    "industry": "Internet / Search / Cloud / AI",
-    "exchange": "NASDAQ",
-    "country": "US",
-    "conviction_level": null,
-    "management_tone": "bullish",
-    "tradingview_symbol": "NASDAQ:GOOGL",
-    "notes_count": 2,
-    "quotes_count": 24,
-    "roadmap_count": 26,
-    "sources_count": 2,
-    "last_analyzed": null,
-    "last_updated": "2026-04-14"
-  },
-  {
     "ticker": "QUBT",
     "name": "Quantum Computing Inc.",
     "name_th": "Quantum Computing Inc.",
@@ -33,7 +15,7 @@
     "roadmap_count": 25,
     "sources_count": 2,
     "last_analyzed": null,
-    "last_updated": "2026-04-14"
+    "last_updated": "2026-04-15"
   },
   {
     "ticker": "IONQ",
@@ -51,7 +33,7 @@
     "roadmap_count": 14,
     "sources_count": 0,
     "last_analyzed": null,
-    "last_updated": "2026-04-14"
+    "last_updated": "2026-04-15"
   },
   {
     "ticker": "TSLA",
@@ -69,7 +51,7 @@
     "roadmap_count": 15,
     "sources_count": 0,
     "last_analyzed": null,
-    "last_updated": "2026-04-14"
+    "last_updated": "2026-04-15"
   },
   {
     "ticker": "MSFT",
@@ -87,7 +69,7 @@
     "roadmap_count": 3,
     "sources_count": 0,
     "last_analyzed": null,
-    "last_updated": "2026-04-14"
+    "last_updated": "2026-04-15"
   },
   {
     "ticker": "KEYS",
@@ -105,7 +87,7 @@
     "roadmap_count": 30,
     "sources_count": 1,
     "last_analyzed": "2026-04-10",
-    "last_updated": "2026-04-14"
+    "last_updated": "2026-04-15"
   },
   {
     "ticker": "AAPL",
@@ -123,7 +105,7 @@
     "roadmap_count": 4,
     "sources_count": 0,
     "last_analyzed": null,
-    "last_updated": "2026-04-14"
+    "last_updated": "2026-04-15"
   },
   {
     "ticker": "NEM",
@@ -141,7 +123,7 @@
     "roadmap_count": 12,
     "sources_count": 0,
     "last_analyzed": null,
-    "last_updated": "2026-04-14"
+    "last_updated": "2026-04-15"
   },
   {
     "ticker": "CRSP",
@@ -159,7 +141,7 @@
     "roadmap_count": 13,
     "sources_count": 0,
     "last_analyzed": null,
-    "last_updated": "2026-04-14"
+    "last_updated": "2026-04-15"
   },
   {
     "ticker": "BRBY",
@@ -177,7 +159,7 @@
     "roadmap_count": 17,
     "sources_count": 0,
     "last_analyzed": null,
-    "last_updated": "2026-04-14"
+    "last_updated": "2026-04-15"
   },
   {
     "ticker": "NVDA",
@@ -195,7 +177,7 @@
     "roadmap_count": 45,
     "sources_count": 2,
     "last_analyzed": "2026-04-10",
-    "last_updated": "2026-04-14"
+    "last_updated": "2026-04-15"
   },
   {
     "ticker": "QBTS",
@@ -213,7 +195,7 @@
     "roadmap_count": 5,
     "sources_count": 0,
     "last_analyzed": null,
-    "last_updated": "2026-04-14"
+    "last_updated": "2026-04-15"
   },
   {
     "ticker": "RGTI",
@@ -231,7 +213,7 @@
     "roadmap_count": 26,
     "sources_count": 0,
     "last_analyzed": null,
-    "last_updated": "2026-04-14"
+    "last_updated": "2026-04-15"
   },
   {
     "ticker": "B",
@@ -249,6 +231,24 @@
     "roadmap_count": 10,
     "sources_count": 0,
     "last_analyzed": null,
-    "last_updated": "2026-04-14"
+    "last_updated": "2026-04-15"
+  },
+  {
+    "ticker": "GOOGL",
+    "name": "Alphabet Inc.",
+    "name_th": "Alphabet Inc.",
+    "sector": "Technology",
+    "industry": "Internet / Search / Cloud / AI",
+    "exchange": "NASDAQ",
+    "country": "US",
+    "conviction_level": null,
+    "management_tone": "bullish",
+    "tradingview_symbol": "NASDAQ:GOOGL",
+    "notes_count": 2,
+    "quotes_count": 24,
+    "roadmap_count": 26,
+    "sources_count": 2,
+    "last_analyzed": null,
+    "last_updated": "2026-04-15"
   }
 ]
