@@ -7,7 +7,7 @@
   "exchange": "NASDAQ",
   "country": "US",
   "tradingview_symbol": "NASDAQ:RGTI",
-  "last_updated": "2026-04-22",
+  "last_updated": "2026-04-23",
   "description": "Rigetti Computing develops superconducting qubit quantum computers and provides cloud access via QCS (Quantum Cloud Services), targeting enterprise and government customers.",
   "ceo": null,
   "employees": null,
@@ -700,7 +700,7 @@
     "currency": "USD",
     "unit": "Million",
     "source": "EDGAR",
-    "last_updated": "2026-04-22",
+    "last_updated": "2026-04-23",
     "annual": {
       "periods": [
         "FY2020",
