@@ -7,7 +7,7 @@
   "exchange": "NASDAQ",
   "country": "US",
   "tradingview_symbol": "NASDAQ:MSFT",
-  "last_updated": "2026-04-24",
+  "last_updated": "2026-04-25",
   "description": "Microsoft develops, licenses, and supports software, services, devices, and solutions worldwide. Key segments: Intelligent Cloud (Azure), Productivity & Business Processes (Office 365, LinkedIn), and More Personal Computing.",
   "ceo": "Satya Nadella",
   "employees": 228000,
@@ -114,7 +114,7 @@
     "currency": "USD",
     "unit": "Million",
     "source": "EDGAR",
-    "last_updated": "2026-04-24",
+    "last_updated": "2026-04-25",
     "annual": {
       "periods": [
         "FY2020",

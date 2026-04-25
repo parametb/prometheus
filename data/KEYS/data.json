@@ -7,7 +7,7 @@
   "exchange": "NYSE",
   "country": "US",
   "tradingview_symbol": "NYSE:KEYS",
-  "last_updated": "2026-04-24",
+  "last_updated": "2026-04-25",
   "description": "Keysight Technologies provides electronic design and test solutions to communications, aerospace & defense, automotive, energy, semiconductor, and general electronics markets.",
   "ceo": "Sundar Pichai",
   "employees": 180000,
@@ -952,7 +952,7 @@
     "currency": "USD",
     "unit": "Million",
     "source": "EDGAR",
-    "last_updated": "2026-04-24",
+    "last_updated": "2026-04-25",
     "annual": {
       "periods": [
         "FY2020",
