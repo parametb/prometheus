@@ -7,7 +7,7 @@
   "exchange": "NASDAQ",
   "country": "US",
   "tradingview_symbol": "NASDAQ:TSLA",
-  "last_updated": "2026-04-25",
+  "last_updated": "2026-04-26",
   "description": "Tesla designs, develops, manufactures, and sells electric vehicles, energy storage systems, and solar products. Pivoting to AI-first company with Robotaxi, FSD subscriptions, and Optimus robots.",
   "ceo": "Elon Musk",
   "employees": 125665,
@@ -393,7 +393,7 @@
     "currency": "USD",
     "unit": "Million",
     "source": "EDGAR",
-    "last_updated": "2026-04-25",
+    "last_updated": "2026-04-26",
     "annual": {
       "periods": [
         "FY2021",
