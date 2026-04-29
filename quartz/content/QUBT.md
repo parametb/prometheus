@@ -31,8 +31,8 @@ draft: false
 
 | Title | Type | Quarter | Date | Status | Analyzed By |
 |-------|------|---------|------|--------|-------------|
-| QUBT Q4 FY2025 Earnings Call | Earnings Call | Q4 2025 | 2026-03-29 | analyzed | DeepSeek |
 | QUBT FY2025 10-K | Annual Report | Q4 2025 | 2026-03-29 | analyzed | DeepSeek |
+| QUBT Q4 FY2025 Earnings Call | Earnings Call | Q4 2025 | 2026-03-29 | analyzed | DeepSeek |
 
 ## 💬 Management Quotes
 
