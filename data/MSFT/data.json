@@ -7,7 +7,7 @@
   "exchange": "NASDAQ",
   "country": "US",
   "tradingview_symbol": "NASDAQ:MSFT",
-  "last_updated": "2026-04-29",
+  "last_updated": "2026-04-30",
   "description": "Microsoft develops, licenses, and supports software, services, devices, and solutions worldwide. Key segments: Intelligent Cloud (Azure), Productivity & Business Processes (Office 365, LinkedIn), and More Personal Computing.",
   "ceo": "Satya Nadella",
   "employees": 228000,
@@ -114,7 +114,7 @@
     "currency": "USD",
     "unit": "Million",
     "source": "EDGAR",
-    "last_updated": "2026-04-29",
+    "last_updated": "2026-04-30",
     "annual": {
       "periods": [
         "FY2020",
@@ -468,7 +468,8 @@
         "Q2 2025",
         "Q3 2025",
         "Q1 2026",
-        "Q2 2026"
+        "Q2 2026",
+        "Q3 2026"
       ],
       "period_ends": [
         "2023-09-30",
@@ -478,7 +479,8 @@
         "2024-12-31",
         "2024-03-31",
         "2024-09-30",
-        "2024-12-31"
+        "2024-12-31",
+        "2025-03-31"
       ],
       "metrics": [
         {
@@ -492,10 +494,12 @@
             93319,
             125965,
             45486,
-            93319
+            93319,
+            141466
           ],
           "chart": false,
           "margin": [
+            null,
             null,
             null,
             null,
@@ -517,10 +521,12 @@
             62205,
             81508,
             30552,
-            62205
+            62205,
+            94205
           ],
           "chart": false,
           "margin": [
+            null,
             null,
             null,
             null,
@@ -542,7 +548,8 @@
             48775,
             66100,
             24667,
-            48775
+            48775,
+            74599
           ],
           "chart": false,
           "growth": [
@@ -553,9 +560,11 @@
             97.7,
             35.5,
             -62.7,
-            97.7
+            97.7,
+            52.9
           ],
           "margin": [
+            null,
             null,
             null,
             null,
@@ -577,7 +586,8 @@
             6.53,
             8.85,
             3.3,
-            6.53
+            6.53,
+            9.99
           ],
           "chart": false,
           "growth": [
@@ -588,7 +598,8 @@
             97.9,
             35.5,
             -62.7,
-            97.9
+            97.9,
+            53
           ]
         },
         {
@@ -602,7 +613,8 @@
             56471,
             81353,
             34180,
-            56471
+            56471,
+            93515
           ],
           "chart": false
         },
@@ -617,7 +629,8 @@
             -30727,
             -30604,
             -14923,
-            -30727
+            -30727,
+            -47472
           ],
           "chart": false
         },
@@ -632,7 +645,8 @@
             25744,
             50749,
             19257,
-            25744
+            25744,
+            46043
           ],
           "chart": false
         },
@@ -646,6 +660,7 @@
             30242,
             30242,
             18315,
+            30242,
             30242,
             30242
           ],
@@ -661,6 +676,7 @@
             43151,
             43151,
             44937,
+            43151,
             43151,
             43151
           ],
