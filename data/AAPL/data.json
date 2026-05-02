@@ -7,7 +7,7 @@
   "exchange": "NASDAQ",
   "country": "US",
   "tradingview_symbol": "NASDAQ:AAPL",
-  "last_updated": "2026-05-01",
+  "last_updated": "2026-05-02",
   "description": "Apple Inc. designs, manufactures, and markets smartphones, personal computers, tablets, wearables, and accessories. Known for iPhone, Mac, iPad, Apple Watch, and a fast-growing Services ecosystem.",
   "ceo": "Tim Cook",
   "employees": 164000,
@@ -142,7 +142,7 @@
     "currency": "USD",
     "unit": "Million",
     "source": "EDGAR",
-    "last_updated": "2026-05-01",
+    "last_updated": "2026-05-02",
     "annual": {
       "periods": [
         "FY2020",
@@ -537,7 +537,8 @@
         "Q1 2025",
         "Q2 2025",
         "Q3 2025",
-        "Q1 2026"
+        "Q1 2026",
+        "Q2 2026"
       ],
       "period_ends": [
         "2023-12-30",
@@ -546,7 +547,8 @@
         "2024-12-28",
         "2024-03-30",
         "2024-06-29",
-        "2024-12-28"
+        "2024-12-28",
+        "2025-03-29"
       ],
       "metrics": [
         {
@@ -559,10 +561,12 @@
             58275,
             97126,
             136804,
-            58275
+            58275,
+            103142
           ],
           "chart": false,
           "margin": [
+            null,
             null,
             null,
             null,
@@ -582,10 +586,12 @@
             42832,
             68273,
             93625,
-            42832
+            42832,
+            72421
           ],
           "chart": false,
           "margin": [
+            null,
             null,
             null,
             null,
@@ -605,10 +611,12 @@
             45912,
             73957,
             102159,
-            45912
+            45912,
+            78162
           ],
           "chart": false,
           "margin": [
+            null,
             null,
             null,
             null,
@@ -628,7 +636,8 @@
             36330,
             57552,
             79000,
-            36330
+            36330,
+            61110
           ],
           "chart": false,
           "growth": [
@@ -638,9 +647,11 @@
             -50.9,
             58.4,
             37.3,
-            -54
+            -54,
+            68.2
           ],
           "margin": [
+            null,
             null,
             null,
             null,
@@ -660,7 +671,8 @@
             2.4,
             3.71,
             5.11,
-            2.4
+            2.4,
+            4.05
           ],
           "chart": false,
           "growth": [
@@ -670,7 +682,8 @@
             -48.6,
             54.6,
             37.7,
-            -53
+            -53,
+            68.8
           ]
         },
         {
@@ -683,7 +696,8 @@
             29935,
             62585,
             91443,
-            29935
+            29935,
+            53887
           ],
           "chart": false
         },
@@ -697,7 +711,8 @@
             -2940,
             -4388,
             -6539,
-            -2940
+            -2940,
+            -6011
           ],
           "chart": false
         },
@@ -711,7 +726,8 @@
             26995,
             58197,
             84904,
-            26995
+            26995,
+            47876
           ],
           "chart": false
         },
@@ -725,6 +741,7 @@
             35934,
             29943,
             29943,
+            35934,
             35934
           ],
           "chart": false
@@ -739,6 +756,7 @@
             90700,
             96700,
             96700,
+            90700,
             90700
           ],
           "chart": false
