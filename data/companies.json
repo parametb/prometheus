@@ -1,23 +1,5 @@
 [
   {
-    "ticker": "GOOGL",
-    "name": "Alphabet Inc.",
-    "name_th": "Alphabet Inc.",
-    "sector": "Technology",
-    "industry": "Internet / Search / Cloud / AI",
-    "exchange": "NASDAQ",
-    "country": "US",
-    "conviction_level": null,
-    "management_tone": "bullish",
-    "tradingview_symbol": "NASDAQ:GOOGL",
-    "notes_count": 2,
-    "quotes_count": 24,
-    "roadmap_count": 26,
-    "sources_count": 2,
-    "last_analyzed": null,
-    "last_updated": "2026-05-04"
-  },
-  {
     "ticker": "QUBT",
     "name": "Quantum Computing Inc.",
     "name_th": "Quantum Computing Inc.",
@@ -248,6 +230,24 @@
     "quotes_count": 5,
     "roadmap_count": 10,
     "sources_count": 0,
+    "last_analyzed": null,
+    "last_updated": "2026-05-04"
+  },
+  {
+    "ticker": "GOOGL",
+    "name": "Alphabet Inc.",
+    "name_th": "Alphabet Inc.",
+    "sector": "Technology",
+    "industry": "Internet / Search / Cloud / AI",
+    "exchange": "NASDAQ",
+    "country": "US",
+    "conviction_level": null,
+    "management_tone": "bullish",
+    "tradingview_symbol": "NASDAQ:GOOGL",
+    "notes_count": 2,
+    "quotes_count": 24,
+    "roadmap_count": 26,
+    "sources_count": 2,
     "last_analyzed": null,
     "last_updated": "2026-05-04"
   }

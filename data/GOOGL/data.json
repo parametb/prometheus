@@ -59,145 +59,21 @@
   ],
   "quotes": [
     {
-      "quote": "Our compliance with these laws and regulations may be onerous and could, individually or in the aggregate, increase our cost of doing business, make our products and services less useful, limit our ability to pursue certain business practices or offer certain products and services.",
-      "quote_th": "การปฏิบัติตามกฎหมายและข้อบังคับเหล่านี้อาจเป็นภาระหนักและอาจเพิ่มต้นทุนการดำเนินธุรกิจ ทำให้ผลิตภัณฑ์และบริการของเรามีประโยชน์น้อยลง จำกัดความสามารถของเราในการดำเนินธุรกิจบางอย่างหรือเสนอผลิตภัณฑ์และบริการบางอย่าง",
+      "quote": "This press release may contain forward-looking statements that involve risks and uncertainties. Actual results may differ materially from the results predicted.",
+      "quote_th": "ข่าวประชาสัมพันธ์นี้อาจมีข้อความคาดการณ์ล่วงหน้าที่เกี่ยวข้องกับความเสี่ยงและความไม่แน่นอน ผลลัพธ์จริงอาจแตกต่างอย่างมีนัยสำคัญจากผลลัพธ์ที่คาดการณ์",
       "date": null,
       "quarter": "Q4 2025",
-      "segment": "Prepared Remarks",
-      "speaker": "Sundar Pichai (CEO)",
+      "segment": "Written Submission",
+      "speaker": "Document (Forward-Looking Statements)",
       "source": null,
       "tag": "risk",
-      "sub_tags": [
-        "macro"
-      ],
+      "sub_tags": [],
       "sentiment": "cautious",
       "analyst_note": null,
       "source_doc": {
-        "id": "33d104a0-c4b1-8183-9b0e-e850c23dc703",
-        "title": "GOOGL Annual Report 2025",
-        "url": "https://files.quartr.com/reports/84bed-2026-02-05-11-10-05.pdf?ref=UGVycGxleGl0eSBBSQ=="
-      }
-    },
-    {
-      "quote": "As of December 31, 2025, Alphabet had 190,820 employees.",
-      "quote_th": "ณ วันที่ 31 ธันวาคม 2025 Alphabet มีพนักงาน 190,820 คน",
-      "date": null,
-      "quarter": "Q4 2025",
-      "segment": "Prepared Remarks",
-      "speaker": "Sundar Pichai (CEO)",
-      "source": null,
-      "tag": "growth",
-      "sub_tags": [
-        "hiring"
-      ],
-      "sentiment": "neutral",
-      "analyst_note": null,
-      "source_doc": {
-        "id": "33d104a0-c4b1-8183-9b0e-e850c23dc703",
-        "title": "GOOGL Annual Report 2025",
-        "url": "https://files.quartr.com/reports/84bed-2026-02-05-11-10-05.pdf?ref=UGVycGxleGl0eSBBSQ=="
-      }
-    },
-    {
-      "quote": "We face formidable competition in every aspect of our business, including but not limited to, from general purpose search engines and information services; online advertising platforms and networks; and AI model developers and providers of AI products and services.",
-      "quote_th": "เราเผชิญกับการแข่งขันที่รุนแรงในทุกด้านของธุรกิจของเรา รวมถึงแต่ไม่จำกัดเพียง เครื่องมือค้นหาทั่วไปและบริการข้อมูล แพลตฟอร์มและเครือข่ายโฆษณาออนไลน์ และนักพัฒนาโมเดล AI และผู้ให้บริการผลิตภัณฑ์และบริการ AI",
-      "date": null,
-      "quarter": "Q4 2025",
-      "segment": "Prepared Remarks",
-      "speaker": "Sundar Pichai (CEO)",
-      "source": null,
-      "tag": "risk",
-      "sub_tags": [
-        "competition",
-        "AI"
-      ],
-      "sentiment": "cautious",
-      "analyst_note": null,
-      "source_doc": {
-        "id": "33d104a0-c4b1-8183-9b0e-e850c23dc703",
-        "title": "GOOGL Annual Report 2025",
-        "url": "https://files.quartr.com/reports/84bed-2026-02-05-11-10-05.pdf?ref=UGVycGxleGl0eSBBSQ=="
-      }
-    },
-    {
-      "quote": "Today, all 15 of our half-billion-user products — including seven with two billion users — use our Gemini models.",
-      "quote_th": "ปัจจุบัน ผลิตภัณฑ์ทั้ง 15 รายการของเราที่มีผู้ใช้ครึ่งพันล้านราย — รวมถึง 7 รายการที่มีผู้ใช้สองพันล้านราย — ใช้โมเดล Gemini ของเรา",
-      "date": null,
-      "quarter": "Q4 2025",
-      "segment": "Prepared Remarks",
-      "speaker": "Sundar Pichai (CEO)",
-      "source": null,
-      "tag": "product",
-      "sub_tags": [
-        "AI",
-        "product-launch"
-      ],
-      "sentiment": "bullish",
-      "analyst_note": null,
-      "source_doc": {
-        "id": "33d104a0-c4b1-8183-9b0e-e850c23dc703",
-        "title": "GOOGL Annual Report 2025",
-        "url": "https://files.quartr.com/reports/84bed-2026-02-05-11-10-05.pdf?ref=UGVycGxleGl0eSBBSQ=="
-      }
-    },
-    {
-      "quote": "We are focused on building an even more helpful Google for everyone, and we aspire to give everyone the tools they need to increase their knowledge, health, happiness, and success.",
-      "quote_th": "เราให้ความสำคัญกับการสร้าง Google ที่เป็นประโยชน์มากขึ้นสำหรับทุกคน และเรามุ่งหวังที่จะมอบเครื่องมือที่ทุกคนต้องการเพื่อเพิ่มพูนความรู้ สุขภาพ ความสุข และความสำเร็จ",
-      "date": null,
-      "quarter": "Q4 2025",
-      "segment": "Prepared Remarks",
-      "speaker": "Sundar Pichai (CEO)",
-      "source": null,
-      "tag": "strategy",
-      "sub_tags": [
-        "product"
-      ],
-      "sentiment": "bullish",
-      "analyst_note": null,
-      "source_doc": {
-        "id": "33d104a0-c4b1-8183-9b0e-e850c23dc703",
-        "title": "GOOGL Annual Report 2025",
-        "url": "https://files.quartr.com/reports/84bed-2026-02-05-11-10-05.pdf?ref=UGVycGxleGl0eSBBSQ=="
-      }
-    },
-    {
-      "quote": "Our investments ultimately may not be commercially viable or may not result in an adequate return of capital and, in pursuing new strategies, we may incur unanticipated liabilities.",
-      "quote_th": "การลงทุนของเราอาจไม่สามารถทำกำไรได้ในเชิงพาณิชย์ หรืออาจไม่ส่งผลให้ได้ผลตอบแทนที่เพียงพอ และในการดำเนินกลยุทธ์ใหม่ เราอาจเกิดหนี้สินที่ไม่คาดคิด",
-      "date": null,
-      "quarter": "Q4 2025",
-      "segment": "Prepared Remarks",
-      "speaker": "Sundar Pichai (CEO)",
-      "source": null,
-      "tag": "risk",
-      "sub_tags": [
-        "capex"
-      ],
-      "sentiment": "cautious",
-      "analyst_note": null,
-      "source_doc": {
-        "id": "33d104a0-c4b1-8183-9b0e-e850c23dc703",
-        "title": "GOOGL Annual Report 2025",
-        "url": "https://files.quartr.com/reports/84bed-2026-02-05-11-10-05.pdf?ref=UGVycGxleGl0eSBBSQ=="
-      }
-    },
-    {
-      "quote": "Expenditures by advertisers tend to correlate with overall economic conditions. Adverse macroeconomic conditions have affected, and may in the future affect, the demand for advertising.",
-      "quote_th": "ค่าใช้จ่ายของผู้โฆษณามีแนวโน้มสอดคล้องกับสภาพเศรษฐกิจโดยรวม สภาวะเศรษฐกิจมหภาคที่ไม่เอื้ออำนวยได้ส่งผลกระทบ และอาจส่งผลกระทบในอนาคตต่อความต้องการโฆษณา",
-      "date": null,
-      "quarter": "Q4 2025",
-      "segment": "Prepared Remarks",
-      "speaker": "Sundar Pichai (CEO)",
-      "source": null,
-      "tag": "risk",
-      "sub_tags": [
-        "macro"
-      ],
-      "sentiment": "cautious",
-      "analyst_note": null,
-      "source_doc": {
-        "id": "33d104a0-c4b1-8183-9b0e-e850c23dc703",
-        "title": "GOOGL Annual Report 2025",
-        "url": "https://files.quartr.com/reports/84bed-2026-02-05-11-10-05.pdf?ref=UGVycGxleGl0eSBBSQ=="
+        "id": "33d104a0-c4b1-8167-9569-eac66d4f38c3",
+        "title": "GOOGL 10-K 2025",
+        "url": "https://s206.q4cdn.com/479360582/files/doc_financials/2025/q4/2025q4-alphabet-earnings-release.pdf"
       }
     },
     {
@@ -242,49 +118,8 @@
       }
     },
     {
-      "quote": "We generated more than 70% of total revenues from online advertising in 2025.",
-      "quote_th": "เราได้รับรายได้มากกว่า 70% ของรายได้ทั้งหมดจากการโฆษณาออนไลน์ในปี 2025",
-      "date": null,
-      "quarter": "Q4 2025",
-      "segment": "Prepared Remarks",
-      "speaker": "Sundar Pichai (CEO)",
-      "source": null,
-      "tag": "growth",
-      "sub_tags": [
-        "revenue-guidance"
-      ],
-      "sentiment": "neutral",
-      "analyst_note": null,
-      "source_doc": {
-        "id": "33d104a0-c4b1-8183-9b0e-e850c23dc703",
-        "title": "GOOGL Annual Report 2025",
-        "url": "https://files.quartr.com/reports/84bed-2026-02-05-11-10-05.pdf?ref=UGVycGxleGl0eSBBSQ=="
-      }
-    },
-    {
-      "quote": "We have invested more than $200 billion in research and development in the last five years in support of these efforts.",
-      "quote_th": "เราได้ลงทุนมากกว่า 200 พันล้านดอลลาร์ในการวิจัยและพัฒนาตลอด 5 ปีที่ผ่านมาเพื่อสนับสนุนความพยายามเหล่านี้",
-      "date": null,
-      "quarter": "Q4 2025",
-      "segment": "Prepared Remarks",
-      "speaker": "Sundar Pichai (CEO)",
-      "source": null,
-      "tag": "growth",
-      "sub_tags": [
-        "capex",
-        "AI"
-      ],
-      "sentiment": "bullish",
-      "analyst_note": null,
-      "source_doc": {
-        "id": "33d104a0-c4b1-8183-9b0e-e850c23dc703",
-        "title": "GOOGL Annual Report 2025",
-        "url": "https://files.quartr.com/reports/84bed-2026-02-05-11-10-05.pdf?ref=UGVycGxleGl0eSBBSQ=="
-      }
-    },
-    {
-      "quote": "We believe AI is a profound platform shift that can bring meaningful and positive change to people and societies across the world, and to our business.",
-      "quote_th": "เราเชื่อว่า AI เป็นการเปลี่ยนแปลงแพลตฟอร์มที่ลึกซึ้งซึ่งสามารถนำมาซึ่งการเปลี่ยนแปลงที่มีความหมายและเป็นบวกต่อผู้คนและสังคมทั่วโลก รวมถึงธุรกิจของเรา",
+      "quote": "We are focused on building an even more helpful Google for everyone, and we aspire to give everyone the tools they need to increase their knowledge, health, happiness, and success.",
+      "quote_th": "เราให้ความสำคัญกับการสร้าง Google ที่เป็นประโยชน์มากขึ้นสำหรับทุกคน และเรามุ่งหวังที่จะมอบเครื่องมือที่ทุกคนต้องการเพื่อเพิ่มพูนความรู้ สุขภาพ ความสุข และความสำเร็จ",
       "date": null,
       "quarter": "Q4 2025",
       "segment": "Prepared Remarks",
@@ -292,7 +127,7 @@
       "source": null,
       "tag": "strategy",
       "sub_tags": [
-        "AI"
+        "product"
       ],
       "sentiment": "bullish",
       "analyst_note": null,
@@ -303,34 +138,56 @@
       }
     },
     {
-      "quote": "This press release may contain forward-looking statements that involve risks and uncertainties. Actual results may differ materially from the results predicted.",
-      "quote_th": "ข่าวประชาสัมพันธ์นี้อาจมีข้อความคาดการณ์ล่วงหน้าที่เกี่ยวข้องกับความเสี่ยงและความไม่แน่นอน ผลลัพธ์จริงอาจแตกต่างอย่างมีนัยสำคัญจากผลลัพธ์ที่คาดการณ์",
+      "quote": "Expenditures by advertisers tend to correlate with overall economic conditions. Adverse macroeconomic conditions have affected, and may in the future affect, the demand for advertising.",
+      "quote_th": "ค่าใช้จ่ายของผู้โฆษณามีแนวโน้มสอดคล้องกับสภาพเศรษฐกิจโดยรวม สภาวะเศรษฐกิจมหภาคที่ไม่เอื้ออำนวยได้ส่งผลกระทบ และอาจส่งผลกระทบในอนาคตต่อความต้องการโฆษณา",
       "date": null,
       "quarter": "Q4 2025",
-      "segment": "Written Submission",
-      "speaker": "Document (Forward-Looking Statements)",
+      "segment": "Prepared Remarks",
+      "speaker": "Sundar Pichai (CEO)",
       "source": null,
       "tag": "risk",
-      "sub_tags": [],
+      "sub_tags": [
+        "macro"
+      ],
       "sentiment": "cautious",
       "analyst_note": null,
       "source_doc": {
-        "id": "33d104a0-c4b1-8167-9569-eac66d4f38c3",
-        "title": "GOOGL 10-K 2025",
-        "url": "https://s206.q4cdn.com/479360582/files/doc_financials/2025/q4/2025q4-alphabet-earnings-release.pdf"
+        "id": "33d104a0-c4b1-8183-9b0e-e850c23dc703",
+        "title": "GOOGL Annual Report 2025",
+        "url": "https://files.quartr.com/reports/84bed-2026-02-05-11-10-05.pdf?ref=UGVycGxleGl0eSBBSQ=="
       }
     },
     {
-      "quote": "Net income increased 30% and EPS increased 31% to $2.82.",
-      "quote_th": "รายได้สุทธิเพิ่มขึ้น 30% และ EPS เพิ่มขึ้น 31% เป็น 2.82 ดอลลาร์",
+      "quote": "Our compliance with these laws and regulations may be onerous and could, individually or in the aggregate, increase our cost of doing business, make our products and services less useful, limit our ability to pursue certain business practices or offer certain products and services.",
+      "quote_th": "การปฏิบัติตามกฎหมายและข้อบังคับเหล่านี้อาจเป็นภาระหนักและอาจเพิ่มต้นทุนการดำเนินธุรกิจ ทำให้ผลิตภัณฑ์และบริการของเรามีประโยชน์น้อยลง จำกัดความสามารถของเราในการดำเนินธุรกิจบางอย่างหรือเสนอผลิตภัณฑ์และบริการบางอย่าง",
       "date": null,
       "quarter": "Q4 2025",
-      "segment": "Written Submission",
-      "speaker": "Document (Financial Results)",
+      "segment": "Prepared Remarks",
+      "speaker": "Sundar Pichai (CEO)",
+      "source": null,
+      "tag": "risk",
+      "sub_tags": [
+        "macro"
+      ],
+      "sentiment": "cautious",
+      "analyst_note": null,
+      "source_doc": {
+        "id": "33d104a0-c4b1-8183-9b0e-e850c23dc703",
+        "title": "GOOGL Annual Report 2025",
+        "url": "https://files.quartr.com/reports/84bed-2026-02-05-11-10-05.pdf?ref=UGVycGxleGl0eSBBSQ=="
+      }
+    },
+    {
+      "quote": "Search saw more usage than ever before, with AI continuing to drive an expansionary moment.",
+      "quote_th": "Search มีการใช้งานมากกว่าที่เคยเป็นมา โดย AI ยังคงขับเคลื่อนช่วงเวลาการขยายตัว",
+      "date": null,
+      "quarter": "Q4 2025",
+      "segment": "Prepared Remarks",
+      "speaker": "Sundar Pichai (CEO)",
       "source": null,
       "tag": "growth",
       "sub_tags": [
-        "margin"
+        "AI"
       ],
       "sentiment": "bullish",
       "analyst_note": null,
@@ -361,27 +218,6 @@
       }
     },
     {
-      "quote": "Google Cloud saw a continued increase in customer demand as revenues increased 48% to $17.7 billion, led by an increase in Google Cloud Platform (GCP) across enterprise AI Infrastructure and enterprise AI Solutions.",
-      "quote_th": "Google Cloud มีความต้องการจากลูกค้าเพิ่มขึ้นอย่างต่อเนื่อง โดยรายได้เพิ่มขึ้น 48% เป็น 17.7 พันล้านดอลลาร์ นำโดยการเติบโตของ Google Cloud Platform (GCP) ในโครงสร้างพื้นฐาน AI ระดับองค์กรและโซลูชัน AI ระดับองค์กร",
-      "date": null,
-      "quarter": "Q4 2025",
-      "segment": "Written Submission",
-      "speaker": "Document (Financial Results)",
-      "source": null,
-      "tag": "growth",
-      "sub_tags": [
-        "AI",
-        "revenue-guidance"
-      ],
-      "sentiment": "bullish",
-      "analyst_note": null,
-      "source_doc": {
-        "id": "33d104a0-c4b1-8167-9569-eac66d4f38c3",
-        "title": "GOOGL 10-K 2025",
-        "url": "https://s206.q4cdn.com/479360582/files/doc_financials/2025/q4/2025q4-alphabet-earnings-release.pdf"
-      }
-    },
-    {
       "quote": "To meet customer demand and capitalize on the growing opportunities we have ahead of us, our 2026 CapEx investments are anticipated to be in the range of $175 to $185 billion.",
       "quote_th": "เพื่อตอบสนองความต้องการของลูกค้าและใช้ประโยชน์จากโอกาสที่เติบโตขึ้นข้างหน้า การลงทุน Capex ปี 2026 ของเราคาดว่าจะอยู่ในช่วง 175 ถึง 185 พันล้านดอลลาร์",
       "date": null,
@@ -393,27 +229,6 @@
       "sub_tags": [
         "capex",
         "AI"
-      ],
-      "sentiment": "bullish",
-      "analyst_note": null,
-      "source_doc": {
-        "id": "33d104a0-c4b1-8167-9569-eac66d4f38c3",
-        "title": "GOOGL 10-K 2025",
-        "url": "https://s206.q4cdn.com/479360582/files/doc_financials/2025/q4/2025q4-alphabet-earnings-release.pdf"
-      }
-    },
-    {
-      "quote": "We're seeing our AI investments and infrastructure drive revenue and growth across the board.",
-      "quote_th": "เราเห็นว่าการลงทุนและโครงสร้างพื้นฐานด้าน AI ของเราขับเคลื่อนรายได้และการเติบโตในทุกด้าน",
-      "date": null,
-      "quarter": "Q4 2025",
-      "segment": "Prepared Remarks",
-      "speaker": "Sundar Pichai (CEO)",
-      "source": null,
-      "tag": "strategy",
-      "sub_tags": [
-        "AI",
-        "capex"
       ],
       "sentiment": "bullish",
       "analyst_note": null,
@@ -465,8 +280,8 @@
       }
     },
     {
-      "quote": "Search saw more usage than ever before, with AI continuing to drive an expansionary moment.",
-      "quote_th": "Search มีการใช้งานมากกว่าที่เคยเป็นมา โดย AI ยังคงขับเคลื่อนช่วงเวลาการขยายตัว",
+      "quote": "We generated more than 70% of total revenues from online advertising in 2025.",
+      "quote_th": "เราได้รับรายได้มากกว่า 70% ของรายได้ทั้งหมดจากการโฆษณาออนไลน์ในปี 2025",
       "date": null,
       "quarter": "Q4 2025",
       "segment": "Prepared Remarks",
@@ -474,7 +289,27 @@
       "source": null,
       "tag": "growth",
       "sub_tags": [
-        "AI"
+        "revenue-guidance"
+      ],
+      "sentiment": "neutral",
+      "analyst_note": null,
+      "source_doc": {
+        "id": "33d104a0-c4b1-8183-9b0e-e850c23dc703",
+        "title": "GOOGL Annual Report 2025",
+        "url": "https://files.quartr.com/reports/84bed-2026-02-05-11-10-05.pdf?ref=UGVycGxleGl0eSBBSQ=="
+      }
+    },
+    {
+      "quote": "It was a tremendous quarter for Alphabet and annual revenues exceeded $400 billion for the first time.",
+      "quote_th": "เป็นไตรมาสที่ยอดเยี่ยมสำหรับ Alphabet และรายได้ประจำปีเกิน 400 พันล้านดอลลาร์เป็นครั้งแรก",
+      "date": null,
+      "quarter": "Q4 2025",
+      "segment": "Prepared Remarks",
+      "speaker": "Sundar Pichai (CEO)",
+      "source": null,
+      "tag": "growth",
+      "sub_tags": [
+        "revenue-guidance"
       ],
       "sentiment": "bullish",
       "analyst_note": null,
@@ -482,6 +317,48 @@
         "id": "33d104a0-c4b1-8167-9569-eac66d4f38c3",
         "title": "GOOGL 10-K 2025",
         "url": "https://s206.q4cdn.com/479360582/files/doc_financials/2025/q4/2025q4-alphabet-earnings-release.pdf"
+      }
+    },
+    {
+      "quote": "Google Cloud saw a continued increase in customer demand as revenues increased 48% to $17.7 billion, led by an increase in Google Cloud Platform (GCP) across enterprise AI Infrastructure and enterprise AI Solutions.",
+      "quote_th": "Google Cloud มีความต้องการจากลูกค้าเพิ่มขึ้นอย่างต่อเนื่อง โดยรายได้เพิ่มขึ้น 48% เป็น 17.7 พันล้านดอลลาร์ นำโดยการเติบโตของ Google Cloud Platform (GCP) ในโครงสร้างพื้นฐาน AI ระดับองค์กรและโซลูชัน AI ระดับองค์กร",
+      "date": null,
+      "quarter": "Q4 2025",
+      "segment": "Written Submission",
+      "speaker": "Document (Financial Results)",
+      "source": null,
+      "tag": "growth",
+      "sub_tags": [
+        "AI",
+        "revenue-guidance"
+      ],
+      "sentiment": "bullish",
+      "analyst_note": null,
+      "source_doc": {
+        "id": "33d104a0-c4b1-8167-9569-eac66d4f38c3",
+        "title": "GOOGL 10-K 2025",
+        "url": "https://s206.q4cdn.com/479360582/files/doc_financials/2025/q4/2025q4-alphabet-earnings-release.pdf"
+      }
+    },
+    {
+      "quote": "We face formidable competition in every aspect of our business, including but not limited to, from general purpose search engines and information services; online advertising platforms and networks; and AI model developers and providers of AI products and services.",
+      "quote_th": "เราเผชิญกับการแข่งขันที่รุนแรงในทุกด้านของธุรกิจของเรา รวมถึงแต่ไม่จำกัดเพียง เครื่องมือค้นหาทั่วไปและบริการข้อมูล แพลตฟอร์มและเครือข่ายโฆษณาออนไลน์ และนักพัฒนาโมเดล AI และผู้ให้บริการผลิตภัณฑ์และบริการ AI",
+      "date": null,
+      "quarter": "Q4 2025",
+      "segment": "Prepared Remarks",
+      "speaker": "Sundar Pichai (CEO)",
+      "source": null,
+      "tag": "risk",
+      "sub_tags": [
+        "competition",
+        "AI"
+      ],
+      "sentiment": "cautious",
+      "analyst_note": null,
+      "source_doc": {
+        "id": "33d104a0-c4b1-8183-9b0e-e850c23dc703",
+        "title": "GOOGL Annual Report 2025",
+        "url": "https://files.quartr.com/reports/84bed-2026-02-05-11-10-05.pdf?ref=UGVycGxleGl0eSBBSQ=="
       }
     },
     {
@@ -526,16 +403,17 @@
       }
     },
     {
-      "quote": "It was a tremendous quarter for Alphabet and annual revenues exceeded $400 billion for the first time.",
-      "quote_th": "เป็นไตรมาสที่ยอดเยี่ยมสำหรับ Alphabet และรายได้ประจำปีเกิน 400 พันล้านดอลลาร์เป็นครั้งแรก",
+      "quote": "We're seeing our AI investments and infrastructure drive revenue and growth across the board.",
+      "quote_th": "เราเห็นว่าการลงทุนและโครงสร้างพื้นฐานด้าน AI ของเราขับเคลื่อนรายได้และการเติบโตในทุกด้าน",
       "date": null,
       "quarter": "Q4 2025",
       "segment": "Prepared Remarks",
       "speaker": "Sundar Pichai (CEO)",
       "source": null,
-      "tag": "growth",
+      "tag": "strategy",
       "sub_tags": [
-        "revenue-guidance"
+        "AI",
+        "capex"
       ],
       "sentiment": "bullish",
       "analyst_note": null,
@@ -544,13 +422,207 @@
         "title": "GOOGL 10-K 2025",
         "url": "https://s206.q4cdn.com/479360582/files/doc_financials/2025/q4/2025q4-alphabet-earnings-release.pdf"
       }
+    },
+    {
+      "quote": "We have invested more than $200 billion in research and development in the last five years in support of these efforts.",
+      "quote_th": "เราได้ลงทุนมากกว่า 200 พันล้านดอลลาร์ในการวิจัยและพัฒนาตลอด 5 ปีที่ผ่านมาเพื่อสนับสนุนความพยายามเหล่านี้",
+      "date": null,
+      "quarter": "Q4 2025",
+      "segment": "Prepared Remarks",
+      "speaker": "Sundar Pichai (CEO)",
+      "source": null,
+      "tag": "growth",
+      "sub_tags": [
+        "capex",
+        "AI"
+      ],
+      "sentiment": "bullish",
+      "analyst_note": null,
+      "source_doc": {
+        "id": "33d104a0-c4b1-8183-9b0e-e850c23dc703",
+        "title": "GOOGL Annual Report 2025",
+        "url": "https://files.quartr.com/reports/84bed-2026-02-05-11-10-05.pdf?ref=UGVycGxleGl0eSBBSQ=="
+      }
+    },
+    {
+      "quote": "Our investments ultimately may not be commercially viable or may not result in an adequate return of capital and, in pursuing new strategies, we may incur unanticipated liabilities.",
+      "quote_th": "การลงทุนของเราอาจไม่สามารถทำกำไรได้ในเชิงพาณิชย์ หรืออาจไม่ส่งผลให้ได้ผลตอบแทนที่เพียงพอ และในการดำเนินกลยุทธ์ใหม่ เราอาจเกิดหนี้สินที่ไม่คาดคิด",
+      "date": null,
+      "quarter": "Q4 2025",
+      "segment": "Prepared Remarks",
+      "speaker": "Sundar Pichai (CEO)",
+      "source": null,
+      "tag": "risk",
+      "sub_tags": [
+        "capex"
+      ],
+      "sentiment": "cautious",
+      "analyst_note": null,
+      "source_doc": {
+        "id": "33d104a0-c4b1-8183-9b0e-e850c23dc703",
+        "title": "GOOGL Annual Report 2025",
+        "url": "https://files.quartr.com/reports/84bed-2026-02-05-11-10-05.pdf?ref=UGVycGxleGl0eSBBSQ=="
+      }
+    },
+    {
+      "quote": "Net income increased 30% and EPS increased 31% to $2.82.",
+      "quote_th": "รายได้สุทธิเพิ่มขึ้น 30% และ EPS เพิ่มขึ้น 31% เป็น 2.82 ดอลลาร์",
+      "date": null,
+      "quarter": "Q4 2025",
+      "segment": "Written Submission",
+      "speaker": "Document (Financial Results)",
+      "source": null,
+      "tag": "growth",
+      "sub_tags": [
+        "margin"
+      ],
+      "sentiment": "bullish",
+      "analyst_note": null,
+      "source_doc": {
+        "id": "33d104a0-c4b1-8167-9569-eac66d4f38c3",
+        "title": "GOOGL 10-K 2025",
+        "url": "https://s206.q4cdn.com/479360582/files/doc_financials/2025/q4/2025q4-alphabet-earnings-release.pdf"
+      }
+    },
+    {
+      "quote": "Today, all 15 of our half-billion-user products — including seven with two billion users — use our Gemini models.",
+      "quote_th": "ปัจจุบัน ผลิตภัณฑ์ทั้ง 15 รายการของเราที่มีผู้ใช้ครึ่งพันล้านราย — รวมถึง 7 รายการที่มีผู้ใช้สองพันล้านราย — ใช้โมเดล Gemini ของเรา",
+      "date": null,
+      "quarter": "Q4 2025",
+      "segment": "Prepared Remarks",
+      "speaker": "Sundar Pichai (CEO)",
+      "source": null,
+      "tag": "product",
+      "sub_tags": [
+        "AI",
+        "product-launch"
+      ],
+      "sentiment": "bullish",
+      "analyst_note": null,
+      "source_doc": {
+        "id": "33d104a0-c4b1-8183-9b0e-e850c23dc703",
+        "title": "GOOGL Annual Report 2025",
+        "url": "https://files.quartr.com/reports/84bed-2026-02-05-11-10-05.pdf?ref=UGVycGxleGl0eSBBSQ=="
+      }
+    },
+    {
+      "quote": "We believe AI is a profound platform shift that can bring meaningful and positive change to people and societies across the world, and to our business.",
+      "quote_th": "เราเชื่อว่า AI เป็นการเปลี่ยนแปลงแพลตฟอร์มที่ลึกซึ้งซึ่งสามารถนำมาซึ่งการเปลี่ยนแปลงที่มีความหมายและเป็นบวกต่อผู้คนและสังคมทั่วโลก รวมถึงธุรกิจของเรา",
+      "date": null,
+      "quarter": "Q4 2025",
+      "segment": "Prepared Remarks",
+      "speaker": "Sundar Pichai (CEO)",
+      "source": null,
+      "tag": "strategy",
+      "sub_tags": [
+        "AI"
+      ],
+      "sentiment": "bullish",
+      "analyst_note": null,
+      "source_doc": {
+        "id": "33d104a0-c4b1-8183-9b0e-e850c23dc703",
+        "title": "GOOGL Annual Report 2025",
+        "url": "https://files.quartr.com/reports/84bed-2026-02-05-11-10-05.pdf?ref=UGVycGxleGl0eSBBSQ=="
+      }
+    },
+    {
+      "quote": "As of December 31, 2025, Alphabet had 190,820 employees.",
+      "quote_th": "ณ วันที่ 31 ธันวาคม 2025 Alphabet มีพนักงาน 190,820 คน",
+      "date": null,
+      "quarter": "Q4 2025",
+      "segment": "Prepared Remarks",
+      "speaker": "Sundar Pichai (CEO)",
+      "source": null,
+      "tag": "growth",
+      "sub_tags": [
+        "hiring"
+      ],
+      "sentiment": "neutral",
+      "analyst_note": null,
+      "source_doc": {
+        "id": "33d104a0-c4b1-8183-9b0e-e850c23dc703",
+        "title": "GOOGL Annual Report 2025",
+        "url": "https://files.quartr.com/reports/84bed-2026-02-05-11-10-05.pdf?ref=UGVycGxleGl0eSBBSQ=="
+      }
     }
   ],
   "roadmap": [
     {
-      "commitment": "We have invested more than $200 billion in research and development in the last five years and will continue these efforts.",
+      "commitment": "Pay quarterly cash dividend of $0.21 per share on March 16, 2026.",
       "status": "pending",
       "category": "Financial",
+      "confidence": "high",
+      "quarter_said": "Q4 2025",
+      "target_quarter": "Q1 2026",
+      "date_said": null,
+      "follow_up": null,
+      "follow_up_date": null,
+      "delivery_note": null,
+      "source": null,
+      "source_doc": {
+        "id": "33d104a0-c4b1-8167-9569-eac66d4f38c3",
+        "title": "GOOGL 10-K 2025",
+        "url": "https://s206.q4cdn.com/479360582/files/doc_financials/2025/q4/2025q4-alphabet-earnings-release.pdf"
+      }
+    },
+    {
+      "commitment": "Increase Google Cloud Platform (GCP) adoption across enterprise AI Infrastructure and Solutions.",
+      "status": "pending",
+      "category": "Product",
+      "confidence": "medium",
+      "quarter_said": "Q4 2025",
+      "target_quarter": null,
+      "date_said": null,
+      "follow_up": null,
+      "follow_up_date": null,
+      "delivery_note": null,
+      "source": null,
+      "source_doc": {
+        "id": "33d104a0-c4b1-8167-9569-eac66d4f38c3",
+        "title": "GOOGL 10-K 2025",
+        "url": "https://s206.q4cdn.com/479360582/files/doc_financials/2025/q4/2025q4-alphabet-earnings-release.pdf"
+      }
+    },
+    {
+      "commitment": "Expand AI investments and infrastructure to drive revenue and growth across the board.",
+      "status": "pending",
+      "category": "Strategic",
+      "confidence": "low",
+      "quarter_said": "Q4 2025",
+      "target_quarter": null,
+      "date_said": null,
+      "follow_up": null,
+      "follow_up_date": null,
+      "delivery_note": null,
+      "source": null,
+      "source_doc": {
+        "id": "33d104a0-c4b1-8167-9569-eac66d4f38c3",
+        "title": "GOOGL 10-K 2025",
+        "url": "https://s206.q4cdn.com/479360582/files/doc_financials/2025/q4/2025q4-alphabet-earnings-release.pdf"
+      }
+    },
+    {
+      "commitment": "Drive YouTube annual revenues to surpass $60 billion across ads and subscriptions.",
+      "status": "pending",
+      "category": "Financial",
+      "confidence": "medium",
+      "quarter_said": "Q4 2025",
+      "target_quarter": null,
+      "date_said": null,
+      "follow_up": null,
+      "follow_up_date": null,
+      "delivery_note": null,
+      "source": null,
+      "source_doc": {
+        "id": "33d104a0-c4b1-8167-9569-eac66d4f38c3",
+        "title": "GOOGL 10-K 2025",
+        "url": "https://s206.q4cdn.com/479360582/files/doc_financials/2025/q4/2025q4-alphabet-earnings-release.pdf"
+      }
+    },
+    {
+      "commitment": "We will continue to invest in recruiting talented people to technical and non-technical roles and rewarding them well.",
+      "status": "pending",
+      "category": "Operational",
       "confidence": "medium",
       "quarter_said": "Q4 2025",
       "target_quarter": null,
@@ -563,6 +635,24 @@
         "id": "33d104a0-c4b1-8183-9b0e-e850c23dc703",
         "title": "GOOGL Annual Report 2025",
         "url": "https://files.quartr.com/reports/84bed-2026-02-05-11-10-05.pdf?ref=UGVycGxleGl0eSBBSQ=="
+      }
+    },
+    {
+      "commitment": "Increase Gemini App monthly active users to over 750 million.",
+      "status": "pending",
+      "category": "Product",
+      "confidence": "medium",
+      "quarter_said": "Q4 2025",
+      "target_quarter": null,
+      "date_said": null,
+      "follow_up": null,
+      "follow_up_date": null,
+      "delivery_note": null,
+      "source": null,
+      "source_doc": {
+        "id": "33d104a0-c4b1-8167-9569-eac66d4f38c3",
+        "title": "GOOGL 10-K 2025",
+        "url": "https://s206.q4cdn.com/479360582/files/doc_financials/2025/q4/2025q4-alphabet-earnings-release.pdf"
       }
     },
     {
@@ -584,63 +674,27 @@
       }
     },
     {
-      "commitment": "Waymo is expanding to more cities domestically, entering international markets, and further scaling operations.",
-      "status": "pending",
-      "category": "Operational",
-      "confidence": "medium",
-      "quarter_said": "Q4 2025",
-      "target_quarter": null,
-      "date_said": null,
-      "follow_up": null,
-      "follow_up_date": null,
-      "delivery_note": null,
-      "source": null,
-      "source_doc": {
-        "id": "33d104a0-c4b1-8183-9b0e-e850c23dc703",
-        "title": "GOOGL Annual Report 2025",
-        "url": "https://files.quartr.com/reports/84bed-2026-02-05-11-10-05.pdf?ref=UGVycGxleGl0eSBBSQ=="
-      }
-    },
-    {
-      "commitment": "We aspire to give everyone the tools they need to increase their knowledge, health, happiness, and success.",
+      "commitment": "Fund the majority of Waymo's $16.0 billion investment round in February 2026.",
       "status": "pending",
       "category": "Strategic",
-      "confidence": "low",
+      "confidence": "high",
       "quarter_said": "Q4 2025",
-      "target_quarter": null,
+      "target_quarter": "Q1 2026",
       "date_said": null,
       "follow_up": null,
       "follow_up_date": null,
       "delivery_note": null,
       "source": null,
       "source_doc": {
-        "id": "33d104a0-c4b1-8183-9b0e-e850c23dc703",
-        "title": "GOOGL Annual Report 2025",
-        "url": "https://files.quartr.com/reports/84bed-2026-02-05-11-10-05.pdf?ref=UGVycGxleGl0eSBBSQ=="
+        "id": "33d104a0-c4b1-8167-9569-eac66d4f38c3",
+        "title": "GOOGL 10-K 2025",
+        "url": "https://s206.q4cdn.com/479360582/files/doc_financials/2025/q4/2025q4-alphabet-earnings-release.pdf"
       }
     },
     {
-      "commitment": "We aim to build the most advanced, safe, and responsible AI through our full-stack approach.",
+      "commitment": "We will continue to look toward the future and to invest for the long term, most notably for the application of AI to our products and services.",
       "status": "pending",
       "category": "Strategic",
-      "confidence": "low",
-      "quarter_said": "Q4 2025",
-      "target_quarter": null,
-      "date_said": null,
-      "follow_up": null,
-      "follow_up_date": null,
-      "delivery_note": null,
-      "source": null,
-      "source_doc": {
-        "id": "33d104a0-c4b1-8183-9b0e-e850c23dc703",
-        "title": "GOOGL Annual Report 2025",
-        "url": "https://files.quartr.com/reports/84bed-2026-02-05-11-10-05.pdf?ref=UGVycGxleGl0eSBBSQ=="
-      }
-    },
-    {
-      "commitment": "We are continually enhancing privacy and security efforts over time by enabling users to auto-delete their data and applying privacy technologies.",
-      "status": "pending",
-      "category": "Regulatory",
       "confidence": "medium",
       "quarter_said": "Q4 2025",
       "target_quarter": null,
@@ -692,9 +746,9 @@
       }
     },
     {
-      "commitment": "We will continue to look toward the future and to invest for the long term, most notably for the application of AI to our products and services.",
+      "commitment": "Grow paid subscriptions across consumer services to over 325 million.",
       "status": "pending",
-      "category": "Strategic",
+      "category": "Product",
       "confidence": "medium",
       "quarter_said": "Q4 2025",
       "target_quarter": null,
@@ -704,33 +758,141 @@
       "delivery_note": null,
       "source": null,
       "source_doc": {
-        "id": "33d104a0-c4b1-8183-9b0e-e850c23dc703",
-        "title": "GOOGL Annual Report 2025",
-        "url": "https://files.quartr.com/reports/84bed-2026-02-05-11-10-05.pdf?ref=UGVycGxleGl0eSBBSQ=="
-      }
-    },
-    {
-      "commitment": "We will continue to invest in recruiting talented people to technical and non-technical roles and rewarding them well.",
-      "status": "pending",
-      "category": "Operational",
-      "confidence": "medium",
-      "quarter_said": "Q4 2025",
-      "target_quarter": null,
-      "date_said": null,
-      "follow_up": null,
-      "follow_up_date": null,
-      "delivery_note": null,
-      "source": null,
-      "source_doc": {
-        "id": "33d104a0-c4b1-8183-9b0e-e850c23dc703",
-        "title": "GOOGL Annual Report 2025",
-        "url": "https://files.quartr.com/reports/84bed-2026-02-05-11-10-05.pdf?ref=UGVycGxleGl0eSBBSQ=="
+        "id": "33d104a0-c4b1-8167-9569-eac66d4f38c3",
+        "title": "GOOGL 10-K 2025",
+        "url": "https://s206.q4cdn.com/479360582/files/doc_financials/2025/q4/2025q4-alphabet-earnings-release.pdf"
       }
     },
     {
       "commitment": "We will continue to invest in both performance and brand advertising and seek to improve the measurability of advertising.",
       "status": "pending",
       "category": "Strategic",
+      "confidence": "medium",
+      "quarter_said": "Q4 2025",
+      "target_quarter": null,
+      "date_said": null,
+      "follow_up": null,
+      "follow_up_date": null,
+      "delivery_note": null,
+      "source": null,
+      "source_doc": {
+        "id": "33d104a0-c4b1-8183-9b0e-e850c23dc703",
+        "title": "GOOGL Annual Report 2025",
+        "url": "https://files.quartr.com/reports/84bed-2026-02-05-11-10-05.pdf?ref=UGVycGxleGl0eSBBSQ=="
+      }
+    },
+    {
+      "commitment": "Increase employee headcount from 183,323 to 190,820 by Q4 2025.",
+      "status": "missed",
+      "category": "Operational",
+      "confidence": "medium",
+      "quarter_said": "Q4 2025",
+      "target_quarter": "Q4 2025",
+      "date_said": null,
+      "follow_up": null,
+      "follow_up_date": null,
+      "delivery_note": "The target quarter (Q4 2025) has passed, and there is no evidence of management announcing achievement of the headcount target. No recent quotes or notes mention progress toward this commitment, and the current quarter is Q2 2026, indicating significant time has elapsed since the deadline without reported fulfillment.\n\n[TH] ไตรมาสเป้าหมาย (Q4 2025) ผ่านไปแล้ว และไม่มีหลักฐานว่าฝ่ายบริหารประกาศบรรลุเป้าหมายจำนวนพนักงาน ไม่มีคำพูดหรือบันทึกล่าสุดที่กล่าวถึงความคืบหน้าต่อพันธสัญญานี้ และไตรมาสปัจจุบันคือ Q2 2026 ซึ่งบ่งชี้ว่าเวลาผ่านไปค่อนข้างนานนับจากกำหนดเวลาโดยไม่มีการรายงานการบรรลุเป้าหมาย",
+      "source": null,
+      "source_doc": {
+        "id": "33d104a0-c4b1-8167-9569-eac66d4f38c3",
+        "title": "GOOGL 10-K 2025",
+        "url": "https://s206.q4cdn.com/479360582/files/doc_financials/2025/q4/2025q4-alphabet-earnings-release.pdf"
+      }
+    },
+    {
+      "commitment": "Achieve Google Cloud annual run rate of over $70 billion by end of 2025.",
+      "status": "missed",
+      "category": "Financial",
+      "confidence": "medium",
+      "quarter_said": "Q4 2025",
+      "target_quarter": "Q4 2025",
+      "date_said": null,
+      "follow_up": null,
+      "follow_up_date": null,
+      "delivery_note": "The commitment target date of Q4 2025 has passed with no evidence of delivery. As of Q2 2026, there are no recent quotes or notes indicating Google Cloud achieved the $70 billion annual run rate target. The absence of any announcement or management update suggests the commitment was not met.\n\n[TH] วันที่เป้าหมายของข้อผูกพันคือไตรมาส 4 ปี 2565 ได้ผ่านไปแล้วโดยไม่มีหลักฐานการส่งมอบ ณ ไตรมาส 2 ปี 2566 ไม่มีคำพูดหรือบันทึกล่าสุดที่ระบุว่า Google Cloud บรรลุเป้าหมายอัตรารายปี 70 พันล้านดอลลาร์ การไม่มีประกาศหรือการอัปเดตจากฝ่ายบริหารบ่งชี้ว่าข้อผูกพันไม่เป็นไปตามที่กำหนด",
+      "source": null,
+      "source_doc": {
+        "id": "33d104a0-c4b1-8167-9569-eac66d4f38c3",
+        "title": "GOOGL 10-K 2025",
+        "url": "https://s206.q4cdn.com/479360582/files/doc_financials/2025/q4/2025q4-alphabet-earnings-release.pdf"
+      }
+    },
+    {
+      "commitment": "Invest $175 to $185 billion in CapEx for 2026 to meet customer demand and capitalize on opportunities.",
+      "status": "pending",
+      "category": "Financial",
+      "confidence": "high",
+      "quarter_said": "Q4 2025",
+      "target_quarter": "Q4 2026",
+      "date_said": null,
+      "follow_up": null,
+      "follow_up_date": null,
+      "delivery_note": null,
+      "source": null,
+      "source_doc": {
+        "id": "33d104a0-c4b1-8167-9569-eac66d4f38c3",
+        "title": "GOOGL 10-K 2025",
+        "url": "https://s206.q4cdn.com/479360582/files/doc_financials/2025/q4/2025q4-alphabet-earnings-release.pdf"
+      }
+    },
+    {
+      "commitment": "We aspire to give everyone the tools they need to increase their knowledge, health, happiness, and success.",
+      "status": "pending",
+      "category": "Strategic",
+      "confidence": "low",
+      "quarter_said": "Q4 2025",
+      "target_quarter": null,
+      "date_said": null,
+      "follow_up": null,
+      "follow_up_date": null,
+      "delivery_note": null,
+      "source": null,
+      "source_doc": {
+        "id": "33d104a0-c4b1-8183-9b0e-e850c23dc703",
+        "title": "GOOGL Annual Report 2025",
+        "url": "https://files.quartr.com/reports/84bed-2026-02-05-11-10-05.pdf?ref=UGVycGxleGl0eSBBSQ=="
+      }
+    },
+    {
+      "commitment": "Grow Google One and YouTube Premium subscriptions through strong adoption.",
+      "status": "pending",
+      "category": "Product",
+      "confidence": "medium",
+      "quarter_said": "Q4 2025",
+      "target_quarter": null,
+      "date_said": null,
+      "follow_up": null,
+      "follow_up_date": null,
+      "delivery_note": null,
+      "source": null,
+      "source_doc": {
+        "id": "33d104a0-c4b1-8167-9569-eac66d4f38c3",
+        "title": "GOOGL 10-K 2025",
+        "url": "https://s206.q4cdn.com/479360582/files/doc_financials/2025/q4/2025q4-alphabet-earnings-release.pdf"
+      }
+    },
+    {
+      "commitment": "We aim to build the most advanced, safe, and responsible AI through our full-stack approach.",
+      "status": "pending",
+      "category": "Strategic",
+      "confidence": "low",
+      "quarter_said": "Q4 2025",
+      "target_quarter": null,
+      "date_said": null,
+      "follow_up": null,
+      "follow_up_date": null,
+      "delivery_note": null,
+      "source": null,
+      "source_doc": {
+        "id": "33d104a0-c4b1-8183-9b0e-e850c23dc703",
+        "title": "GOOGL Annual Report 2025",
+        "url": "https://files.quartr.com/reports/84bed-2026-02-05-11-10-05.pdf?ref=UGVycGxleGl0eSBBSQ=="
+      }
+    },
+    {
+      "commitment": "We are continually enhancing privacy and security efforts over time by enabling users to auto-delete their data and applying privacy technologies.",
+      "status": "pending",
+      "category": "Regulatory",
       "confidence": "medium",
       "quarter_said": "Q4 2025",
       "target_quarter": null,
@@ -764,9 +926,9 @@
       }
     },
     {
-      "commitment": "Grow Google One and YouTube Premium subscriptions through strong adoption.",
+      "commitment": "Waymo is expanding to more cities domestically, entering international markets, and further scaling operations.",
       "status": "pending",
-      "category": "Product",
+      "category": "Operational",
       "confidence": "medium",
       "quarter_said": "Q4 2025",
       "target_quarter": null,
@@ -776,15 +938,15 @@
       "delivery_note": null,
       "source": null,
       "source_doc": {
-        "id": "33d104a0-c4b1-8167-9569-eac66d4f38c3",
-        "title": "GOOGL 10-K 2025",
-        "url": "https://s206.q4cdn.com/479360582/files/doc_financials/2025/q4/2025q4-alphabet-earnings-release.pdf"
+        "id": "33d104a0-c4b1-8183-9b0e-e850c23dc703",
+        "title": "GOOGL Annual Report 2025",
+        "url": "https://files.quartr.com/reports/84bed-2026-02-05-11-10-05.pdf?ref=UGVycGxleGl0eSBBSQ=="
       }
     },
     {
-      "commitment": "Increase Google Cloud Platform (GCP) adoption across enterprise AI Infrastructure and Solutions.",
+      "commitment": "We have invested more than $200 billion in research and development in the last five years and will continue these efforts.",
       "status": "pending",
-      "category": "Product",
+      "category": "Financial",
       "confidence": "medium",
       "quarter_said": "Q4 2025",
       "target_quarter": null,
@@ -794,27 +956,9 @@
       "delivery_note": null,
       "source": null,
       "source_doc": {
-        "id": "33d104a0-c4b1-8167-9569-eac66d4f38c3",
-        "title": "GOOGL 10-K 2025",
-        "url": "https://s206.q4cdn.com/479360582/files/doc_financials/2025/q4/2025q4-alphabet-earnings-release.pdf"
-      }
-    },
-    {
-      "commitment": "Expand AI investments and infrastructure to drive revenue and growth across the board.",
-      "status": "pending",
-      "category": "Strategic",
-      "confidence": "low",
-      "quarter_said": "Q4 2025",
-      "target_quarter": null,
-      "date_said": null,
-      "follow_up": null,
-      "follow_up_date": null,
-      "delivery_note": null,
-      "source": null,
-      "source_doc": {
-        "id": "33d104a0-c4b1-8167-9569-eac66d4f38c3",
-        "title": "GOOGL 10-K 2025",
-        "url": "https://s206.q4cdn.com/479360582/files/doc_financials/2025/q4/2025q4-alphabet-earnings-release.pdf"
+        "id": "33d104a0-c4b1-8183-9b0e-e850c23dc703",
+        "title": "GOOGL Annual Report 2025",
+        "url": "https://files.quartr.com/reports/84bed-2026-02-05-11-10-05.pdf?ref=UGVycGxleGl0eSBBSQ=="
       }
     },
     {
@@ -822,168 +966,6 @@
       "status": "pending",
       "category": "Strategic",
       "confidence": "low",
-      "quarter_said": "Q4 2025",
-      "target_quarter": null,
-      "date_said": null,
-      "follow_up": null,
-      "follow_up_date": null,
-      "delivery_note": null,
-      "source": null,
-      "source_doc": {
-        "id": "33d104a0-c4b1-8167-9569-eac66d4f38c3",
-        "title": "GOOGL 10-K 2025",
-        "url": "https://s206.q4cdn.com/479360582/files/doc_financials/2025/q4/2025q4-alphabet-earnings-release.pdf"
-      }
-    },
-    {
-      "commitment": "Pay quarterly cash dividend of $0.21 per share on March 16, 2026.",
-      "status": "pending",
-      "category": "Financial",
-      "confidence": "high",
-      "quarter_said": "Q4 2025",
-      "target_quarter": "Q1 2026",
-      "date_said": null,
-      "follow_up": null,
-      "follow_up_date": null,
-      "delivery_note": null,
-      "source": null,
-      "source_doc": {
-        "id": "33d104a0-c4b1-8167-9569-eac66d4f38c3",
-        "title": "GOOGL 10-K 2025",
-        "url": "https://s206.q4cdn.com/479360582/files/doc_financials/2025/q4/2025q4-alphabet-earnings-release.pdf"
-      }
-    },
-    {
-      "commitment": "Fund the majority of Waymo's $16.0 billion investment round in February 2026.",
-      "status": "pending",
-      "category": "Strategic",
-      "confidence": "high",
-      "quarter_said": "Q4 2025",
-      "target_quarter": "Q1 2026",
-      "date_said": null,
-      "follow_up": null,
-      "follow_up_date": null,
-      "delivery_note": null,
-      "source": null,
-      "source_doc": {
-        "id": "33d104a0-c4b1-8167-9569-eac66d4f38c3",
-        "title": "GOOGL 10-K 2025",
-        "url": "https://s206.q4cdn.com/479360582/files/doc_financials/2025/q4/2025q4-alphabet-earnings-release.pdf"
-      }
-    },
-    {
-      "commitment": "Use $24.8 billion from senior unsecured notes issuance for general corporate purposes.",
-      "status": "pending",
-      "category": "Financial",
-      "confidence": "high",
-      "quarter_said": "Q4 2025",
-      "target_quarter": null,
-      "date_said": null,
-      "follow_up": null,
-      "follow_up_date": null,
-      "delivery_note": null,
-      "source": null,
-      "source_doc": {
-        "id": "33d104a0-c4b1-8167-9569-eac66d4f38c3",
-        "title": "GOOGL 10-K 2025",
-        "url": "https://s206.q4cdn.com/479360582/files/doc_financials/2025/q4/2025q4-alphabet-earnings-release.pdf"
-      }
-    },
-    {
-      "commitment": "Increase employee headcount from 183,323 to 190,820 by Q4 2025.",
-      "status": "missed",
-      "category": "Operational",
-      "confidence": "medium",
-      "quarter_said": "Q4 2025",
-      "target_quarter": "Q4 2025",
-      "date_said": null,
-      "follow_up": null,
-      "follow_up_date": null,
-      "delivery_note": "The target quarter (Q4 2025) has passed, and there is no evidence of management announcing achievement of the headcount target. No recent quotes or notes mention progress toward this commitment, and the current quarter is Q2 2026, indicating significant time has elapsed since the deadline without reported fulfillment.\n\n[TH] ไตรมาสเป้าหมาย (Q4 2025) ผ่านไปแล้ว และไม่มีหลักฐานว่าฝ่ายบริหารประกาศบรรลุเป้าหมายจำนวนพนักงาน ไม่มีคำพูดหรือบันทึกล่าสุดที่กล่าวถึงความคืบหน้าต่อพันธสัญญานี้ และไตรมาสปัจจุบันคือ Q2 2026 ซึ่งบ่งชี้ว่าเวลาผ่านไปค่อนข้างนานนับจากกำหนดเวลาโดยไม่มีการรายงานการบรรลุเป้าหมาย",
-      "source": null,
-      "source_doc": {
-        "id": "33d104a0-c4b1-8167-9569-eac66d4f38c3",
-        "title": "GOOGL 10-K 2025",
-        "url": "https://s206.q4cdn.com/479360582/files/doc_financials/2025/q4/2025q4-alphabet-earnings-release.pdf"
-      }
-    },
-    {
-      "commitment": "Invest $175 to $185 billion in CapEx for 2026 to meet customer demand and capitalize on opportunities.",
-      "status": "pending",
-      "category": "Financial",
-      "confidence": "high",
-      "quarter_said": "Q4 2025",
-      "target_quarter": "Q4 2026",
-      "date_said": null,
-      "follow_up": null,
-      "follow_up_date": null,
-      "delivery_note": null,
-      "source": null,
-      "source_doc": {
-        "id": "33d104a0-c4b1-8167-9569-eac66d4f38c3",
-        "title": "GOOGL 10-K 2025",
-        "url": "https://s206.q4cdn.com/479360582/files/doc_financials/2025/q4/2025q4-alphabet-earnings-release.pdf"
-      }
-    },
-    {
-      "commitment": "Achieve Google Cloud annual run rate of over $70 billion by end of 2025.",
-      "status": "missed",
-      "category": "Financial",
-      "confidence": "medium",
-      "quarter_said": "Q4 2025",
-      "target_quarter": "Q4 2025",
-      "date_said": null,
-      "follow_up": null,
-      "follow_up_date": null,
-      "delivery_note": "The commitment target date of Q4 2025 has passed with no evidence of delivery. As of Q2 2026, there are no recent quotes or notes indicating Google Cloud achieved the $70 billion annual run rate target. The absence of any announcement or management update suggests the commitment was not met.\n\n[TH] วันที่เป้าหมายของข้อผูกพันคือไตรมาส 4 ปี 2565 ได้ผ่านไปแล้วโดยไม่มีหลักฐานการส่งมอบ ณ ไตรมาส 2 ปี 2566 ไม่มีคำพูดหรือบันทึกล่าสุดที่ระบุว่า Google Cloud บรรลุเป้าหมายอัตรารายปี 70 พันล้านดอลลาร์ การไม่มีประกาศหรือการอัปเดตจากฝ่ายบริหารบ่งชี้ว่าข้อผูกพันไม่เป็นไปตามที่กำหนด",
-      "source": null,
-      "source_doc": {
-        "id": "33d104a0-c4b1-8167-9569-eac66d4f38c3",
-        "title": "GOOGL 10-K 2025",
-        "url": "https://s206.q4cdn.com/479360582/files/doc_financials/2025/q4/2025q4-alphabet-earnings-release.pdf"
-      }
-    },
-    {
-      "commitment": "Grow paid subscriptions across consumer services to over 325 million.",
-      "status": "pending",
-      "category": "Product",
-      "confidence": "medium",
-      "quarter_said": "Q4 2025",
-      "target_quarter": null,
-      "date_said": null,
-      "follow_up": null,
-      "follow_up_date": null,
-      "delivery_note": null,
-      "source": null,
-      "source_doc": {
-        "id": "33d104a0-c4b1-8167-9569-eac66d4f38c3",
-        "title": "GOOGL 10-K 2025",
-        "url": "https://s206.q4cdn.com/479360582/files/doc_financials/2025/q4/2025q4-alphabet-earnings-release.pdf"
-      }
-    },
-    {
-      "commitment": "Drive YouTube annual revenues to surpass $60 billion across ads and subscriptions.",
-      "status": "pending",
-      "category": "Financial",
-      "confidence": "medium",
-      "quarter_said": "Q4 2025",
-      "target_quarter": null,
-      "date_said": null,
-      "follow_up": null,
-      "follow_up_date": null,
-      "delivery_note": null,
-      "source": null,
-      "source_doc": {
-        "id": "33d104a0-c4b1-8167-9569-eac66d4f38c3",
-        "title": "GOOGL 10-K 2025",
-        "url": "https://s206.q4cdn.com/479360582/files/doc_financials/2025/q4/2025q4-alphabet-earnings-release.pdf"
-      }
-    },
-    {
-      "commitment": "Increase Gemini App monthly active users to over 750 million.",
-      "status": "pending",
-      "category": "Product",
-      "confidence": "medium",
       "quarter_said": "Q4 2025",
       "target_quarter": null,
       "date_said": null,
@@ -1014,15 +996,33 @@
         "title": "GOOGL 10-K 2025",
         "url": "https://s206.q4cdn.com/479360582/files/doc_financials/2025/q4/2025q4-alphabet-earnings-release.pdf"
       }
+    },
+    {
+      "commitment": "Use $24.8 billion from senior unsecured notes issuance for general corporate purposes.",
+      "status": "pending",
+      "category": "Financial",
+      "confidence": "high",
+      "quarter_said": "Q4 2025",
+      "target_quarter": null,
+      "date_said": null,
+      "follow_up": null,
+      "follow_up_date": null,
+      "delivery_note": null,
+      "source": null,
+      "source_doc": {
+        "id": "33d104a0-c4b1-8167-9569-eac66d4f38c3",
+        "title": "GOOGL 10-K 2025",
+        "url": "https://s206.q4cdn.com/479360582/files/doc_financials/2025/q4/2025q4-alphabet-earnings-release.pdf"
+      }
     }
   ],
   "sources": [
     {
-      "title": "GOOGL Annual Report 2025",
-      "source_type": "SEC Filing",
+      "title": "GOOGL 10-K 2025",
+      "source_type": "Annual Report",
       "date": null,
       "quarter": "Q4 2025",
-      "url": "https://files.quartr.com/reports/84bed-2026-02-05-11-10-05.pdf?ref=UGVycGxleGl0eSBBSQ==",
+      "url": "https://s206.q4cdn.com/479360582/files/doc_financials/2025/q4/2025q4-alphabet-earnings-release.pdf",
       "analyzed_by": "DeepSeek",
       "status": "analyzed",
       "tags": [
@@ -1031,11 +1031,11 @@
       ]
     },
     {
-      "title": "GOOGL 10-K 2025",
-      "source_type": "Annual Report",
+      "title": "GOOGL Annual Report 2025",
+      "source_type": "SEC Filing",
       "date": null,
       "quarter": "Q4 2025",
-      "url": "https://s206.q4cdn.com/479360582/files/doc_financials/2025/q4/2025q4-alphabet-earnings-release.pdf",
+      "url": "https://files.quartr.com/reports/84bed-2026-02-05-11-10-05.pdf?ref=UGVycGxleGl0eSBBSQ==",
       "analyzed_by": "DeepSeek",
       "status": "analyzed",
       "tags": [
