@@ -7,7 +7,7 @@
   "exchange": "NASDAQ",
   "country": "US",
   "tradingview_symbol": "NASDAQ:GOOGL",
-  "last_updated": "2026-05-03",
+  "last_updated": "2026-05-04",
   "description": "Alphabet Inc. is the parent holding company of Google and its subsidiaries. Core businesses include Search, Advertising (Google Ads/YouTube), Cloud Computing (Google Cloud), and AI through Google DeepMind. Other Bets include Waymo (autonomous vehicles) and Verily (life sciences).",
   "ceo": null,
   "employees": null,
@@ -1050,7 +1050,7 @@
     "currency": "USD",
     "unit": "Million",
     "source": "EDGAR",
-    "last_updated": "2026-05-03",
+    "last_updated": "2026-05-04",
     "annual": {
       "periods": [
         "FY2020",
