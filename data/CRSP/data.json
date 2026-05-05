@@ -7,7 +7,7 @@
   "exchange": "NASDAQ",
   "country": "EU",
   "tradingview_symbol": "NASDAQ:CRSP",
-  "last_updated": "2026-05-04",
+  "last_updated": "2026-05-05",
   "description": "CRISPR Therapeutics is a gene editing company focused on transformative gene-based medicines using CRISPR/Cas9. Its lead product Casgevy is the world's first CRISPR-based therapy approved by the FDA.",
   "ceo": "Samarth Kulkarni",
   "employees": 393,
@@ -378,7 +378,7 @@
     "currency": "USD",
     "unit": "Million",
     "source": "EDGAR",
-    "last_updated": "2026-05-04",
+    "last_updated": "2026-05-05",
     "annual": {
       "periods": [
         "FY2020",
@@ -705,16 +705,18 @@
         "Q3 2024",
         "Q1 2025",
         "Q2 2025",
-        "Q3 2025"
+        "Q3 2025",
+        "Q1 2026"
       ],
       "period_ends": [
         "2023-03-31",
         "2024-03-31",
         "2023-03-31",
         "2023-03-31",
+        "2025-03-31",
         "2024-03-31",
         "2024-03-31",
-        "2024-03-31"
+        "2025-03-31"
       ],
       "metrics": [
         {
@@ -725,12 +727,14 @@
             -140.6,
             -159.7,
             -292.1,
-            -140.6,
+            -148.4,
             -291.8,
-            -402
+            -402,
+            -148.4
           ],
           "chart": false,
           "margin": [
+            null,
             null,
             null,
             null,
@@ -748,12 +752,14 @@
             -135.8,
             -149.7,
             -277.2,
-            -135.8,
+            -143.7,
             -282.1,
-            -387.6
+            -387.6,
+            -143.7
           ],
           "chart": false,
           "margin": [
+            null,
             null,
             null,
             null,
@@ -771,9 +777,10 @@
             -116.6,
             -53.1,
             -53.1,
+            -136,
             -116.6,
             -116.6,
-            -116.6
+            -136
           ],
           "chart": false,
           "growth": [
@@ -781,11 +788,13 @@
             -119.6,
             54.5,
             0,
-            -119.6,
+            -156.1,
+            14.3,
             0,
-            0
+            -16.6
           ],
           "margin": [
+            null,
             null,
             null,
             null,
@@ -803,9 +812,10 @@
             -1.43,
             -1.66,
             -3.07,
-            -1.43,
+            -1.58,
             -2.92,
-            -3.92
+            -3.92,
+            -1.58
           ],
           "chart": false,
           "growth": [
@@ -813,9 +823,10 @@
             -113.4,
             -16.1,
             -84.9,
-            53.4,
-            -104.2,
-            -34.2
+            48.5,
+            -84.8,
+            -34.2,
+            59.7
           ]
         },
         {
@@ -826,9 +837,10 @@
             109.8,
             -124.4,
             -164.3,
-            109.8,
+            -53.9,
             14.2,
-            -92.7
+            -92.7,
+            -53.9
           ],
           "chart": false
         },
@@ -840,9 +852,10 @@
             -0.7,
             -6.6,
             -8.7,
-            -0.7,
+            -0.2,
             -1.4,
-            -1.6
+            -1.6,
+            -0.2
           ],
           "chart": false
         },
@@ -854,9 +867,10 @@
             109.1,
             -131,
             -173,
-            109.1,
+            -54.1,
             12.8,
-            -94.3
+            -94.3,
+            -54.1
           ],
           "chart": false
         },
@@ -868,9 +882,25 @@
             707.4,
             444.8,
             527.8,
-            707.4,
+            235.2,
             484.5,
-            225.7
+            225.7,
+            235.2
+          ],
+          "chart": false
+        },
+        {
+          "key": "total_debt",
+          "name": "Total Debt",
+          "values": [
+            null,
+            null,
+            null,
+            null,
+            0,
+            null,
+            null,
+            0
           ],
           "chart": false
         }
