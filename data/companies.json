@@ -15,7 +15,7 @@
     "roadmap_count": 25,
     "sources_count": 2,
     "last_analyzed": null,
-    "last_updated": "2026-05-05"
+    "last_updated": "2026-05-06"
   },
   {
     "ticker": "IONQ",
@@ -33,7 +33,7 @@
     "roadmap_count": 14,
     "sources_count": 0,
     "last_analyzed": null,
-    "last_updated": "2026-05-05"
+    "last_updated": "2026-05-06"
   },
   {
     "ticker": "TSLA",
@@ -51,7 +51,7 @@
     "roadmap_count": 15,
     "sources_count": 0,
     "last_analyzed": null,
-    "last_updated": "2026-05-05"
+    "last_updated": "2026-05-06"
   },
   {
     "ticker": "MSFT",
@@ -69,7 +69,7 @@
     "roadmap_count": 3,
     "sources_count": 0,
     "last_analyzed": null,
-    "last_updated": "2026-05-05"
+    "last_updated": "2026-05-06"
   },
   {
     "ticker": "KEYS",
@@ -87,7 +87,7 @@
     "roadmap_count": 30,
     "sources_count": 1,
     "last_analyzed": "2026-04-10",
-    "last_updated": "2026-05-05"
+    "last_updated": "2026-05-06"
   },
   {
     "ticker": "AAPL",
@@ -105,7 +105,7 @@
     "roadmap_count": 4,
     "sources_count": 0,
     "last_analyzed": null,
-    "last_updated": "2026-05-05"
+    "last_updated": "2026-05-06"
   },
   {
     "ticker": "NEM",
@@ -123,7 +123,7 @@
     "roadmap_count": 12,
     "sources_count": 0,
     "last_analyzed": null,
-    "last_updated": "2026-05-05"
+    "last_updated": "2026-05-06"
   },
   {
     "ticker": "CRSP",
@@ -141,7 +141,7 @@
     "roadmap_count": 13,
     "sources_count": 0,
     "last_analyzed": null,
-    "last_updated": "2026-05-05"
+    "last_updated": "2026-05-06"
   },
   {
     "ticker": "BRBY",
@@ -159,7 +159,7 @@
     "roadmap_count": 17,
     "sources_count": 0,
     "last_analyzed": null,
-    "last_updated": "2026-05-05"
+    "last_updated": "2026-05-06"
   },
   {
     "ticker": "NVDA",
@@ -177,7 +177,7 @@
     "roadmap_count": 45,
     "sources_count": 2,
     "last_analyzed": "2026-04-10",
-    "last_updated": "2026-05-05"
+    "last_updated": "2026-05-06"
   },
   {
     "ticker": "QBTS",
@@ -195,7 +195,7 @@
     "roadmap_count": 5,
     "sources_count": 0,
     "last_analyzed": null,
-    "last_updated": "2026-05-05"
+    "last_updated": "2026-05-06"
   },
   {
     "ticker": "RGTI",
@@ -213,7 +213,7 @@
     "roadmap_count": 26,
     "sources_count": 0,
     "last_analyzed": null,
-    "last_updated": "2026-05-05"
+    "last_updated": "2026-05-06"
   },
   {
     "ticker": "B",
@@ -231,7 +231,7 @@
     "roadmap_count": 10,
     "sources_count": 0,
     "last_analyzed": null,
-    "last_updated": "2026-05-05"
+    "last_updated": "2026-05-06"
   },
   {
     "ticker": "GOOGL",
@@ -249,6 +249,6 @@
     "roadmap_count": 26,
     "sources_count": 2,
     "last_analyzed": null,
-    "last_updated": "2026-05-05"
+    "last_updated": "2026-05-06"
   }
 ]

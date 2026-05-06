@@ -7,7 +7,7 @@
   "exchange": "NASDAQ",
   "country": "US",
   "tradingview_symbol": "NASDAQ:AAPL",
-  "last_updated": "2026-05-05",
+  "last_updated": "2026-05-06",
   "description": "Apple Inc. designs, manufactures, and markets smartphones, personal computers, tablets, wearables, and accessories. Known for iPhone, Mac, iPad, Apple Watch, and a fast-growing Services ecosystem.",
   "ceo": "Tim Cook",
   "employees": 164000,
@@ -142,7 +142,7 @@
     "currency": "USD",
     "unit": "Million",
     "source": "EDGAR",
-    "last_updated": "2026-05-05",
+    "last_updated": "2026-05-06",
     "annual": {
       "periods": [
         "FY2020",
