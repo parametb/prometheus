@@ -7,7 +7,7 @@
   "exchange": "NASDAQ",
   "country": "US",
   "tradingview_symbol": null,
-  "last_updated": "2026-05-08",
+  "last_updated": "2026-05-09",
   "description": "Quantum Computing Inc. develops full-stack quantum computing software and hardware solutions, focusing on photonic quantum computing with its Dirac series.",
   "ceo": null,
   "employees": null,
@@ -684,7 +684,7 @@
     "currency": "USD",
     "unit": "Million",
     "source": "EDGAR",
-    "last_updated": "2026-05-08",
+    "last_updated": "2026-05-09",
     "annual": {
       "periods": [
         "FY2020",

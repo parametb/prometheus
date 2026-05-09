@@ -7,7 +7,7 @@
   "exchange": "NASDAQ",
   "country": "EU",
   "tradingview_symbol": "NASDAQ:CRSP",
-  "last_updated": "2026-05-08",
+  "last_updated": "2026-05-09",
   "description": "CRISPR Therapeutics is a gene editing company focused on transformative gene-based medicines using CRISPR/Cas9. Its lead product Casgevy is the world's first CRISPR-based therapy approved by the FDA.",
   "ceo": "Samarth Kulkarni",
   "employees": 393,
@@ -378,7 +378,7 @@
     "currency": "USD",
     "unit": "Million",
     "source": "EDGAR",
-    "last_updated": "2026-05-08",
+    "last_updated": "2026-05-09",
     "annual": {
       "periods": [
         "FY2020",
