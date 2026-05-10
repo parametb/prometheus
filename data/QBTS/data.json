@@ -7,7 +7,7 @@
   "exchange": "NYSE",
   "country": "US",
   "tradingview_symbol": "NYSE:QBTS",
-  "last_updated": "2026-05-09",
+  "last_updated": "2026-05-10",
   "description": "D-Wave is the world's first commercial quantum computing company, providing quantum annealing systems and cloud access via Leap QCaaS platform to enterprise customers globally.",
   "ceo": "Alan Baratz",
   "employees": 250,
@@ -113,7 +113,7 @@
     "currency": "USD",
     "unit": "Million",
     "source": "EDGAR",
-    "last_updated": "2026-05-09",
+    "last_updated": "2026-05-10",
     "annual": {
       "periods": [
         "FY2020",

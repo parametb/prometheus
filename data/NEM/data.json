@@ -7,7 +7,7 @@
   "exchange": "NYSE",
   "country": "US",
   "tradingview_symbol": "NYSE:NEM",
-  "last_updated": "2026-05-09",
+  "last_updated": "2026-05-10",
   "description": "World's largest gold mining company, founded in 1921 and headquartered in Denver, Colorado. Produces gold, silver, copper across North America, South America, Australia, and Africa.",
   "ceo": "Natascha Viljoen",
   "employees": 44100,
@@ -364,7 +364,7 @@
     "currency": "USD",
     "unit": "Million",
     "source": "EDGAR",
-    "last_updated": "2026-05-09",
+    "last_updated": "2026-05-10",
     "annual": {
       "periods": [
         "FY2020",
