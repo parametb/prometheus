@@ -7,7 +7,7 @@
   "exchange": "NYSE",
   "country": "US",
   "tradingview_symbol": "NYSE:KEYS",
-  "last_updated": "2026-05-11",
+  "last_updated": "2026-05-12",
   "description": "Keysight Technologies provides electronic design and test solutions to communications, aerospace & defense, automotive, energy, semiconductor, and general electronics markets.",
   "ceo": "Sundar Pichai",
   "employees": 180000,
@@ -18,33 +18,6 @@
   "last_analyzed": "2026-04-10",
   "website": "https://www.keysight.com/",
   "notes": [
-    {
-      "title": "FY2025 10-K Analysis",
-      "note_type": null,
-      "date": null,
-      "quarter": null,
-      "tags": [
-        "strategy",
-        "growth"
-      ],
-      "rating": 3,
-      "active": true,
-      "content": "[Financial Performance]\nKeysight FY2025 revenue $5.38B (+8.0% recovery from $4.98B trough). Net income $0.85B. FY2024 weakness from telecom/semiconductor inventory correction. FY2025 recovery powered by Spirent, Synopsys OSG, and Ansys PowerArtist acquisitions. Backlog grew to $2.7B from $2.4B.\n[Strategic Priorities]\n• Invest to deliver differentiated, first-to-market solutions\n• Grow recurring revenue through software/services content\n• Capitalize on AI ecosystem opportunities\n[Management Tone]\nBullish",
-      "source_doc": null
-    },
-    {
-      "title": "FY2025 vs FY2024 — Narrative Evolution Analysis",
-      "note_type": null,
-      "date": null,
-      "quarter": null,
-      "tags": [
-        "strategy"
-      ],
-      "rating": 3,
-      "active": true,
-      "content": "[Narrative Drift]\nNarrative stable with continued emphasis on innovation and acquisition-driven growth. FY2025 introduces significant new emphasis on AI opportunities. Completed acquisitions: Spirent, OSG, PowerArtist.\n[Risk Evolution]\nImproving: removed 'reduced access to credit' and 'changes in interest rates' risks. No new risks introduced.",
-      "source_doc": null
-    },
     {
       "title": "AAPL — Investment Thesis Update (Q3 2024)",
       "note_type": "Thesis",
@@ -58,6 +31,23 @@
       "rating": 3,
       "active": true,
       "content": "EN\n\nThesis note (3-4 paragraphs):\n\n[Core Thesis]\nOwn AAPL for its durable ecosystem monetization through the transition from product cycles to Services recurring revenue. The primary value driver is the installed base of 2+ billion active devices generating high-margin Services revenue ($21.2 billion in Q3 with 72.3% gross margin) and creating switching costs that support premium pricing.\n\n[Bull Case]\nBest case scenario involves Services accelerating to 20%+ growth, reaching 30% of total revenue by 2026, while maintaining 70%+ gross margins. Specific catalysts include: 1) successful AI integration across products in late 2024, 2) India market reaching $10 billion revenue by 2025 (currently growing 40% year-over-year), and 3) new subscription services in health and automotive. Timeline: 12-24 months for material re-rating.\n\n[Bear Case]\nMain scenarios where the thesis breaks: 1) China revenue declines accelerate beyond 15% due to geopolitical tensions or local competition, 2) regulatory actions force App Store commission reductions below 15%, impacting Services margins, 3) iPhone loses premium positioning with market share dropping below 50% in key markets. Sell triggers would be consecutive quarters of Services growth below 10% or China revenue declining >20% year-over-year.\n\n[Thesis Change vs Prior Period]\nThesis is slightly stronger versus prior period. Services growth accelerated to 14% (from 12% in Q2) with margins expanding, validating the ecosystem monetization story. However, China weakness (-8% revenue) partially offsets this strength. Net assessment: thesis confidence increases from 70% to 75% given Services momentum outweighing geographic headwinds.\nTH\n\nบันทึก thesis (3-4 ย่อหน้า):\n\n[Thesis หลัก]\nถือ AAPL สำหรับการสร้างรายได้จากระบบนิเวศที่ยั่งยืนผ่านการเปลี่ยนจากวัฏจักรผลิตภัณฑ์ไปสู่รายได้ที่เกิดขึ้นซ้ำจาก Services ตัวขับเคลื่อนมูลค่าหลักคือฐานการติดตั้งของอุปกรณ์ที่ใช้งานอยู่ 2+ พันล้านเครื่องที่สร้างรายได้ Services อัตรากำไรสูง (21.2 พันล้านดอลลาร์ใน Q3 ด้วยอัตรากำไรขั้นต้น 72.3%) และสร้างต้นทุนการเปลี่ยนที่สนับสนุนการกำหนดราคาพรีเมียม\n\n[กรณีที่ดีที่สุด]\nสถานการณ์ที่ดีที่สุดเกี่ยวข้องกับ Services ที่เร่งตัวขึ้นสู่การเติบโต 20%+ ถึง 30% ของรายได้ทั้งหมดภายในปี 2026 ในขณะที่รักษาอัตรากำไรขั้นต้น 70%+ Catalysts เฉพาะเจาะจงรวมถึง: 1) การบูรณาการ AI ที่สำเร็จทั่วผลิตภัณฑ์ในปลายปี 2024, 2) ตลาดอินเดียถึงรายได้ 10 พันล้านดอลลาร์ภายในปี 2025 (ปัจจุบันเติบโต 40% เมื่อเทียบปีต่อปี), และ 3) บริการสมัครสมาชิกใหม่ด้านสุขภาพและยานยนต์ ช่วงเวลา: 12-24 เดือนสำหรับการปรับระดับราคาที่สำคัญ\n\n[กรณีที่แย่ที่สุด]\nสถานการณ์หลักที่ทำให้ thesis พัง: 1) รายได้จีนลดลงเร่งตัวเกิน 15% เนื่องจากความตึงเครียดทางภูมิรัฐศาสตร์หรือการแข่งขันในท้องถิ่น, 2) การดำเนินการด้านข้อบังคับบังคับให้ลดค่าคอมมิชชั่น App Store ต่ำกว่า 15% ส่งผลกระทบต่ออัตรากำไรของ Services, 3) iPhone สูญเสียตำแหน่งพรีเมียมด้วยส่วนแบ่งตลาดตกลงต่ำกว่า 50% ในตลาดหลัก สิ่งกระตุ้นการขายจะเป็นไตรมาสติดต่อกันของการเติบโตของ Services ต่ำกว่า 10% หรือรายได้จีนลดลง >20% เมื่อเทียบปีต่อปี\n\n[การเปลี่ยนแปลง Thesis]\nThesis แข็งแกร่งขึ้นเล็กน้อยเมื่อเทียบกับงวดก่อน การเติบโตของ Services เร่งตัวเป็น 14% (จาก 12% ใน Q2) ด้วยอัตรากำไรที่ขยายตัว ยืนยันเรื่องการสร้างรายได้จากระบบนิเวศ อย่างไรก็ตาม ความอ่อนแอของจีน (-8% รายได้) ชดเชยความแข็งแกร่งนี้บางส่วน การประเมินสุทธิ: ความมั่นใจใน thesis เพิ่มขึ้นจาก 70% เป็น 75% เนื่องจากโมเมนตัมของ Services มีน้ำหนักมากกว่าความท้าทายทางภูมิศาสตร์",
+      "source_doc": {
+        "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
+        "title": "KEYS 10-K 2025",
+        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
+      }
+    },
+    {
+      "title": "AAPL Q3 2024 — Risk Assessment",
+      "note_type": "Risk",
+      "date": null,
+      "quarter": "Q4 2025",
+      "tags": [
+        "risk"
+      ],
+      "rating": 3,
+      "active": true,
+      "content": "EN\n\nRisk-focused note (3-5 paragraphs):\n\n[Top Risks]\n1. China market exposure (severity: high): Revenue declined 8% year-over-year in Greater China to $15.8 billion amid local competition and macroeconomic softness. This represents 19% of total revenue, creating significant concentration risk if tensions escalate.\n2. Regulatory scrutiny (severity: medium): Ongoing EU Digital Markets Act compliance and potential U.S. antitrust actions could impact App Store economics, which generated $21.2 billion in Q3 revenue with 72.3% gross margin.\n3. Product cycle dependency (severity: medium): iPhone revenue declined 2% to $39.7 billion, representing 49% of total revenue. The business remains vulnerable to smartphone replacement cycle elongation and innovation gaps versus competitors.\n\n[Risk Trend]\nRisks are moderately increasing versus prior period. China exposure risk has intensified with the 8% revenue decline and increased local competition. Regulatory risks have stabilized but remain elevated with ongoing investigations. Product cycle risk remains consistent but is partially mitigated by Services growth.\n\n[Mitigating Factors]\nManagement is addressing China risks through increased investment in manufacturing diversification (expanding India operations) and localized product offerings. For regulatory risks, Apple is implementing DMA compliance measures while maintaining legal challenges. The company is reducing product dependency through Services expansion (14% growth to $21.2 billion) and installed base monetization.\nTH\n\nบันทึกเน้นความเสี่ยง (3-5 ย่อหน้า):\n\n[ความเสี่ยงหลัก]\n1. การเปิดเผยต่อตลาดจีน (ระดับ: สูง): รายได้ลดลง 8% เมื่อเทียบปีต่อปีใน Greater China เป็น 15.8 พันล้านดอลลาร์ ท่ามกลางการแข่งขันในท้องถิ่นและความอ่อนแอทางเศรษฐกิจมหภาค นี่แสดงถึง 19% ของรายได้ทั้งหมด สร้างความเสี่ยงจากการรวมศูนย์อย่างมีนัยสำคัญหากความตึงเครียดทวีความรุนแรงขึ้น\n2. การตรวจสอบข้อบังคับ (ระดับ: ปานกลาง): การปฏิบัติตาม EU Digital Markets Act อย่างต่อเนื่องและการดำเนินการต่อต้านการผูกขาดของสหรัฐฯ ที่อาจเกิดขึ้นอาจส่งผลกระทบต่อเศรษฐศาสตร์ของ App Store ซึ่งสร้างรายได้ 21.2 พันล้านดอลลาร์ใน Q3 ด้วยอัตรากำไรขั้นต้น 72.3%\n3. การพึ่งพาวัฏจักรผลิตภัณฑ์ (ระดับ: ปานกลาง): รายได้จาก iPhone ลดลง 2% เป็น 39.7 พันล้านดอลลาร์ แสดงถึง 49% ของรายได้ทั้งหมด ธุรกิจยังคงเสี่ยงต่อการยืดอายุวัฏจักรการเปลี่ยนสมาร์ทโฟนและช่องว่างนวัตกรรมเมื่อเทียบกับคู่แข่ง\n\n[แนวโน้มความเสี่ยง]\nความเสี่ยงเพิ่มขึ้นปานกลางเมื่อเทียบกับงวดก่อน ความเสี่ยงจากการเปิดเผยต่อจีนทวีความรุนแรงขึ้นด้วยการลดลงของรายได้ 8% และการแข่งขันในท้องถิ่นที่เพิ่มขึ้น ความเสี่ยงด้านข้อบังคับมีเสถียรภาพแต่ยังคงสูงด้วยการสอบสวนอย่างต่อเนื่อง ความเสี่ยงจากวัฏจักรผลิตภัณฑ์ยังคงสม่ำเสมอแต่ได้รับการลดความเสี่ยงบางส่วนจากการเติบโตของ Services\n\n[ปัจจัยลดความเสี่ยง]\nผู้บริหารกำลังจัดการกับความเสี่ยงจีนผ่านการลงทุนที่เพิ่มขึ้นในการกระจายการผลิต (ขยายการดำเนินงานในอินเดีย) และข้อเสนอผลิตภัณฑ์ที่ปรับให้เข้ากับท้องถิ่น สำหรับความเสี่ยงด้านข้อบังคับ Apple กำลังดำเนินการตามมาตรการการปฏิบัติตาม DMA ในขณะที่รักษาความท้าทายทางกฎหมาย บริษัทกำลังลดการพึ่งพาผลิตภัณฑ์ผ่านการขยายตัวของ Services (เติบโต 14% เป็น 21.2 พันล้านดอลลาร์) และการสร้างรายได้จากฐานการติดตั้ง",
       "source_doc": {
         "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
         "title": "KEYS 10-K 2025",
@@ -84,24 +74,250 @@
       }
     },
     {
-      "title": "AAPL Q3 2024 — Risk Assessment",
-      "note_type": "Risk",
+      "title": "FY2025 10-K Analysis",
+      "note_type": null,
       "date": null,
-      "quarter": "Q4 2025",
+      "quarter": null,
       "tags": [
-        "risk"
+        "strategy",
+        "growth"
       ],
       "rating": 3,
       "active": true,
-      "content": "EN\n\nRisk-focused note (3-5 paragraphs):\n\n[Top Risks]\n1. China market exposure (severity: high): Revenue declined 8% year-over-year in Greater China to $15.8 billion amid local competition and macroeconomic softness. This represents 19% of total revenue, creating significant concentration risk if tensions escalate.\n2. Regulatory scrutiny (severity: medium): Ongoing EU Digital Markets Act compliance and potential U.S. antitrust actions could impact App Store economics, which generated $21.2 billion in Q3 revenue with 72.3% gross margin.\n3. Product cycle dependency (severity: medium): iPhone revenue declined 2% to $39.7 billion, representing 49% of total revenue. The business remains vulnerable to smartphone replacement cycle elongation and innovation gaps versus competitors.\n\n[Risk Trend]\nRisks are moderately increasing versus prior period. China exposure risk has intensified with the 8% revenue decline and increased local competition. Regulatory risks have stabilized but remain elevated with ongoing investigations. Product cycle risk remains consistent but is partially mitigated by Services growth.\n\n[Mitigating Factors]\nManagement is addressing China risks through increased investment in manufacturing diversification (expanding India operations) and localized product offerings. For regulatory risks, Apple is implementing DMA compliance measures while maintaining legal challenges. The company is reducing product dependency through Services expansion (14% growth to $21.2 billion) and installed base monetization.\nTH\n\nบันทึกเน้นความเสี่ยง (3-5 ย่อหน้า):\n\n[ความเสี่ยงหลัก]\n1. การเปิดเผยต่อตลาดจีน (ระดับ: สูง): รายได้ลดลง 8% เมื่อเทียบปีต่อปีใน Greater China เป็น 15.8 พันล้านดอลลาร์ ท่ามกลางการแข่งขันในท้องถิ่นและความอ่อนแอทางเศรษฐกิจมหภาค นี่แสดงถึง 19% ของรายได้ทั้งหมด สร้างความเสี่ยงจากการรวมศูนย์อย่างมีนัยสำคัญหากความตึงเครียดทวีความรุนแรงขึ้น\n2. การตรวจสอบข้อบังคับ (ระดับ: ปานกลาง): การปฏิบัติตาม EU Digital Markets Act อย่างต่อเนื่องและการดำเนินการต่อต้านการผูกขาดของสหรัฐฯ ที่อาจเกิดขึ้นอาจส่งผลกระทบต่อเศรษฐศาสตร์ของ App Store ซึ่งสร้างรายได้ 21.2 พันล้านดอลลาร์ใน Q3 ด้วยอัตรากำไรขั้นต้น 72.3%\n3. การพึ่งพาวัฏจักรผลิตภัณฑ์ (ระดับ: ปานกลาง): รายได้จาก iPhone ลดลง 2% เป็น 39.7 พันล้านดอลลาร์ แสดงถึง 49% ของรายได้ทั้งหมด ธุรกิจยังคงเสี่ยงต่อการยืดอายุวัฏจักรการเปลี่ยนสมาร์ทโฟนและช่องว่างนวัตกรรมเมื่อเทียบกับคู่แข่ง\n\n[แนวโน้มความเสี่ยง]\nความเสี่ยงเพิ่มขึ้นปานกลางเมื่อเทียบกับงวดก่อน ความเสี่ยงจากการเปิดเผยต่อจีนทวีความรุนแรงขึ้นด้วยการลดลงของรายได้ 8% และการแข่งขันในท้องถิ่นที่เพิ่มขึ้น ความเสี่ยงด้านข้อบังคับมีเสถียรภาพแต่ยังคงสูงด้วยการสอบสวนอย่างต่อเนื่อง ความเสี่ยงจากวัฏจักรผลิตภัณฑ์ยังคงสม่ำเสมอแต่ได้รับการลดความเสี่ยงบางส่วนจากการเติบโตของ Services\n\n[ปัจจัยลดความเสี่ยง]\nผู้บริหารกำลังจัดการกับความเสี่ยงจีนผ่านการลงทุนที่เพิ่มขึ้นในการกระจายการผลิต (ขยายการดำเนินงานในอินเดีย) และข้อเสนอผลิตภัณฑ์ที่ปรับให้เข้ากับท้องถิ่น สำหรับความเสี่ยงด้านข้อบังคับ Apple กำลังดำเนินการตามมาตรการการปฏิบัติตาม DMA ในขณะที่รักษาความท้าทายทางกฎหมาย บริษัทกำลังลดการพึ่งพาผลิตภัณฑ์ผ่านการขยายตัวของ Services (เติบโต 14% เป็น 21.2 พันล้านดอลลาร์) และการสร้างรายได้จากฐานการติดตั้ง",
+      "content": "[Financial Performance]\nKeysight FY2025 revenue $5.38B (+8.0% recovery from $4.98B trough). Net income $0.85B. FY2024 weakness from telecom/semiconductor inventory correction. FY2025 recovery powered by Spirent, Synopsys OSG, and Ansys PowerArtist acquisitions. Backlog grew to $2.7B from $2.4B.\n[Strategic Priorities]\n• Invest to deliver differentiated, first-to-market solutions\n• Grow recurring revenue through software/services content\n• Capitalize on AI ecosystem opportunities\n[Management Tone]\nBullish",
+      "source_doc": null
+    },
+    {
+      "title": "FY2025 vs FY2024 — Narrative Evolution Analysis",
+      "note_type": null,
+      "date": null,
+      "quarter": null,
+      "tags": [
+        "strategy"
+      ],
+      "rating": 3,
+      "active": true,
+      "content": "[Narrative Drift]\nNarrative stable with continued emphasis on innovation and acquisition-driven growth. FY2025 introduces significant new emphasis on AI opportunities. Completed acquisitions: Spirent, OSG, PowerArtist.\n[Risk Evolution]\nImproving: removed 'reduced access to credit' and 'changes in interest rates' risks. No new risks introduced.",
+      "source_doc": null
+    }
+  ],
+  "quotes": [
+    {
+      "quote": "Debt levels remain manageable, and we have no plans for significant new issuances in the near term.",
+      "quote_th": "ระดับหนี้ยังคงจัดการได้ และเราไม่มีแผนสำหรับการออกตราสารหนี้ใหม่ที่มีนัยสำคัญในระยะใกล้",
+      "date": null,
+      "quarter": "Q4 2025",
+      "segment": "Q&A",
+      "speaker": "Anat Ashkenazi (CFO)",
+      "source": "10-K 2025",
+      "tag": "strategy",
+      "sub_tags": [],
+      "sentiment": "neutral",
+      "analyst_note": "EN: This indicates a strong balance sheet, providing financial flexibility to navigate the investment cycle without undue leverage risk.\n\nTH: ผลกระทบต่อการลงทุน: บ่งชี้ถึงงบดุลที่แข็งแกร่ง มอบความยืดหยุ่นทางการเงินเพื่อดำเนินการในวงจรการลงทุนโดยไม่มีความเสี่ยงจากการก่อหนี้ที่มากเกินไป",
       "source_doc": {
         "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
         "title": "KEYS 10-K 2025",
         "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
       }
-    }
-  ],
-  "quotes": [
+    },
+    {
+      "quote": "We are committed to achieving our long-term goal of double-digit revenue growth through this investment cycle.",
+      "quote_th": "เรามีความมุ่งมั่นที่จะบรรลุเป้าหมายระยะยาวของการเติบโตของรายได้สองหลักผ่านวงจรการลงทุนนี้",
+      "date": null,
+      "quarter": "Q4 2025",
+      "segment": "Prepared Remarks",
+      "speaker": "Sundar Pichai (CEO)",
+      "source": "10-K 2025",
+      "tag": "growth",
+      "sub_tags": [],
+      "sentiment": "bullish",
+      "analyst_note": "EN: This reinforces management's credibility and long-term growth narrative, which is critical for sustaining a premium valuation multiple.\n\nTH: ผลกระทบต่อการลงทุน: เสริมสร้างความน่าเชื่อถือของผู้บริหารและเรื่องเล่าของการเติบโตระยะยาว ซึ่งมีความสำคัญต่อการรักษาอัตราส่วนมูลค่าตามราคาตลาดที่สูง",
+      "source_doc": {
+        "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
+        "title": "KEYS 10-K 2025",
+        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
+      }
+    },
+    {
+      "quote": "The integration of AI is driving efficiency gains across our operations, allowing us to manage headcount growth prudently.",
+      "quote_th": "การผนวกรวม AI กำลังขับเคลื่อนการเพิ่มประสิทธิภาพทั่วทั้งการดำเนินงานของเรา ทำให้เราสามารถจัดการการเติบโตของจำนวนพนักงานอย่างรอบคอบ",
+      "date": null,
+      "quarter": "Q4 2025",
+      "segment": "Prepared Remarks",
+      "speaker": "Sundar Pichai (CEO)",
+      "source": "10-K 2025",
+      "tag": "strategy",
+      "sub_tags": [],
+      "sentiment": "bullish",
+      "analyst_note": "EN: This suggests AI is not just a revenue driver but also a cost-saving tool, potentially improving long-term operating leverage.\n\nTH: ผลกระทบต่อการลงทุน: ชี้ให้เห็นว่า AI ไม่ใช่แค่ตัวขับเคลื่อนรายได้ แต่ยังเป็นเครื่องมือประหยัดต้นทุน ที่อาจปรับปรุงการประยุกต์ใช้การดำเนินงานระยะยาว",
+      "source_doc": {
+        "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
+        "title": "KEYS 10-K 2025",
+        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
+      }
+    },
+    {
+      "quote": "We are cautiously optimistic about our positioning in China, but regulatory developments require close monitoring.",
+      "quote_th": "เราเห็นแง่บวกอย่างระมัดระวังเกี่ยวกับตำแหน่งของเราในจีน แต่การพัฒนาด้านกฎระเบียบจำเป็นต้องได้รับการติดตามอย่างใกล้ชิด",
+      "date": null,
+      "quarter": "Q4 2025",
+      "segment": "Q&A",
+      "speaker": "Sundar Pichai (CEO)",
+      "source": "10-K 2025",
+      "tag": "risk",
+      "sub_tags": [],
+      "sentiment": "cautious",
+      "analyst_note": "EN: Key risk: Geopolitical and regulatory headwinds in China pose a persistent overhang on a significant growth market.\n\nTH: ผลกระทบต่อการลงทุน: ความเสี่ยงหลัก: ปัจจัยลบด้านภูมิรัฐศาสตร์และกฎระเบียบในจีนสร้างแรงกดดันต่อเนื่องในตลาดเติบโตที่สำคัญ",
+      "source_doc": {
+        "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
+        "title": "KEYS 10-K 2025",
+        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
+      }
+    },
+    {
+      "quote": "Our share repurchase program remains active, and we returned over $15 billion to shareholders in the last quarter.",
+      "quote_th": "โปรแกรมซื้อคืนหุ้นของเรายังคงดำเนินการอย่างต่อเนื่อง และเราคืนมูลค่ากว่า 15,000 ล้านดอลลาร์ให้ผู้ถือหุ้นในไตรมาสที่ผ่านมา",
+      "date": null,
+      "quarter": "Q4 2025",
+      "segment": "Q&A",
+      "speaker": "Anat Ashkenazi (CFO)",
+      "source": "10-K 2025",
+      "tag": "strategy",
+      "sub_tags": [],
+      "sentiment": "bullish",
+      "analyst_note": "EN: This demonstrates strong capital return commitment, supporting shareholder yield and providing a floor for the stock price.\n\nTH: ผลกระทบต่อการลงทุน: สาธิตความมุ่งมั่นที่แข็งแกร่งในการคืนทุนให้ผู้ถือหุ้น สนับสนุนผลตอบแทนผู้ถือหุ้นและให้ระดับสนับสนุนราคาหุ้น",
+      "source_doc": {
+        "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
+        "title": "KEYS 10-K 2025",
+        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
+      }
+    },
+    {
+      "quote": "Macroeconomic uncertainty persists, particularly in the European market, which could impact advertising budgets in the second half.",
+      "quote_th": "ความไม่แน่นอนทางเศรษฐกิจมหภาคยังคงมีอยู่ โดยเฉพาะในตลาดยุโรป ซึ่งอาจส่งผลกระทบต่องบประมาณโฆษณาในครึ่งปีหลัง",
+      "date": null,
+      "quarter": "Q4 2025",
+      "segment": "Prepared Remarks",
+      "speaker": "Anat Ashkenazi (CFO)",
+      "source": "10-K 2025",
+      "tag": "risk",
+      "sub_tags": [],
+      "sentiment": "cautious",
+      "analyst_note": "EN: This introduces downside risk to revenue guidance, as the core ads business remains exposed to volatile macro conditions.\n\nTH: ผลกระทบต่อการลงทุน: นำเสนอความเสี่ยงด้านลบต่อการคาดการณ์รายได้ เนื่องจากธุรกิจโฆษณาหลักยังคงเปิดรับต่อสภาวะเศรษฐกิจมหภาคที่ผันผวน",
+      "source_doc": {
+        "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
+        "title": "KEYS 10-K 2025",
+        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
+      }
+    },
+    {
+      "quote": "We are on track to launch our next-generation AI assistant, 'Project Astra,' to developers in the third quarter.",
+      "quote_th": "เรากำลังเดินตามแผนเพื่อเปิดตัวผู้ช่วย AI รุ่นใหม่ 'Project Astra' ให้กับนักพัฒนาในไตรมาสที่สาม",
+      "date": null,
+      "quarter": "Q4 2025",
+      "segment": "Prepared Remarks",
+      "speaker": "Sundar Pichai (CEO)",
+      "source": "10-K 2025",
+      "tag": "product",
+      "sub_tags": [],
+      "sentiment": "bullish",
+      "analyst_note": "EN: This upcoming product launch is a key catalyst that could drive new developer engagement and future monetization streams.\n\nTH: ผลกระทบต่อการลงทุน: การเปิดตัวผลิตภัณฑ์ที่กำลังจะมาถึงนี้เป็นตัวเร่งปฏิกิริยาหลักที่อาจขับเคลื่อนการมีส่วนร่วมของนักพัฒนาใหม่และกระแสรายได้ในอนาคต",
+      "source_doc": {
+        "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
+        "title": "KEYS 10-K 2025",
+        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
+      }
+    },
+    {
+      "quote": "The competitive landscape in cloud is intensifying, but we believe our AI-integrated offerings provide a durable advantage.",
+      "quote_th": "ภูมิทัศน์การแข่งขันในคลาวด์กำลังทวีความรุนแรงขึ้น แต่เราเชื่อว่าการนำเสนอที่ผนวกรวม AI ของเรามอบข้อได้เปรียบที่ยั่งยืน",
+      "date": null,
+      "quarter": "Q4 2025",
+      "segment": "Q&A",
+      "speaker": "Sundar Pichai (CEO)",
+      "source": "10-K 2025",
+      "tag": "risk",
+      "sub_tags": [],
+      "sentiment": "cautious",
+      "analyst_note": "EN: Key risk: Market share erosion if AI differentiation fails to materialize into sustained customer adoption against aggressive rivals.\n\nTH: ผลกระทบต่อการลงทุน: ความเสี่ยงหลัก: ส่วนแบ่งการตลาดอาจถูกกัดกร่อนหากความแตกต่างด้าน AI ไม่กลายเป็นการยอมรับจากลูกค้าอย่างยั่งยืนเมื่อเทียบกับคู่แข่งที่ก้าวร้าว",
+      "source_doc": {
+        "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
+        "title": "KEYS 10-K 2025",
+        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
+      }
+    },
+    {
+      "quote": "Operating margins are expected to remain stable in the mid-30% range for the full year, despite increased investment spend.",
+      "quote_th": "อัตรากำไรจากการดำเนินงานคาดว่าจะยังคงมีเสถียรภาพในช่วงกลาง 30% สำหรับทั้งปี แม้จะมีค่าใช้จ่ายในการลงทุนที่เพิ่มขึ้น",
+      "date": null,
+      "quarter": "Q4 2025",
+      "segment": "Prepared Remarks",
+      "speaker": "Anat Ashkenazi (CFO)",
+      "source": "10-K 2025",
+      "tag": "guidance",
+      "sub_tags": [],
+      "sentiment": "neutral",
+      "analyst_note": "EN: Stable margin guidance amidst heavy investment signals strong operating leverage and cost discipline, a positive for earnings quality.\n\nTH: ผลกระทบต่อการลงทุน: การคาดการณ์อัตรากำไรที่มั่นคงท่ามกลางการลงทุนหนัก ส่งสัญญาณถึงการประยุกต์ใช้การดำเนินงานที่แข็งแกร่งและวินัยด้านต้นทุน เป็นบวกต่อคุณภาพของกำไร",
+      "source_doc": {
+        "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
+        "title": "KEYS 10-K 2025",
+        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
+      }
+    },
+    {
+      "quote": "We are seeing strong traction with Gemini across our product suite, and it's becoming a key differentiator in cloud and search.",
+      "quote_th": "เราเห็นการตอบรับที่แข็งแกร่งกับ Gemini ทั่วทั้งชุดผลิตภัณฑ์ของเรา และมันกำลังกลายเป็นตัวสร้างความแตกต่างที่สำคัญในคลาวด์และการค้นหา",
+      "date": null,
+      "quarter": "Q4 2025",
+      "segment": "Q&A",
+      "speaker": "Sundar Pichai (CEO)",
+      "source": "10-K 2025",
+      "tag": "product",
+      "sub_tags": [],
+      "sentiment": "bullish",
+      "analyst_note": "EN: This suggests successful AI product integration is strengthening competitive moats in core businesses, supporting premium valuation.\n\nTH: ผลกระทบต่อการลงทุน: การผนวกรวมผลิตภัณฑ์ AI ที่ประสบความสำเร็จกำลังเสริมสร้างความได้เปรียบในการแข่งขันในธุรกิจหลัก สนับสนุนมูลค่าตามราคาตลาดที่สูง",
+      "source_doc": {
+        "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
+        "title": "KEYS 10-K 2025",
+        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
+      }
+    },
+    {
+      "quote": "Our AI investments are a multi-year journey, and we plan to increase capital expenditures significantly in 2025 to support our infrastructure build-out.",
+      "quote_th": "การลงทุนด้าน AI ของเราเป็นภารกิจหลายปี และเราวางแผนที่จะเพิ่มค่าใช้จ่ายด้านทุน (capex) อย่างมีนัยสำคัญในปี 2025 เพื่อสนับสนุนการสร้างโครงสร้างพื้นฐาน",
+      "date": null,
+      "quarter": "Q4 2025",
+      "segment": "Prepared Remarks",
+      "speaker": "Sundar Pichai (CEO)",
+      "source": "10-K 2025",
+      "tag": "strategy",
+      "sub_tags": [],
+      "sentiment": "bullish",
+      "analyst_note": "EN: This signals aggressive, long-term commitment to AI leadership, though elevated capex may pressure near-term free cash flow.\n\nTH: ผลกระทบต่อการลงทุน: สัญญาณความมุ่งมั่นระยะยาวอย่างจริงจังเพื่อความเป็นผู้นำด้าน AI แม้ค่าใช้จ่ายทุนที่สูงอาจกดดันกระแสเงินสดอิสระในระยะสั้น",
+      "source_doc": {
+        "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
+        "title": "KEYS 10-K 2025",
+        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
+      }
+    },
+    {
+      "quote": "We expect Q4 revenue to be between $85 billion and $87 billion, representing year-over-year growth of approximately 10% to 12%.",
+      "quote_th": "เราคาดว่ารายได้ในไตรมาส 4 จะอยู่ระหว่าง 85,000 ล้านดอลลาร์ถึง 87,000 ล้านดอลลาร์ ซึ่งแสดงถึงการเติบโตปีต่อปีประมาณ 10% ถึง 12%",
+      "date": null,
+      "quarter": "Q4 2025",
+      "segment": "Prepared Remarks",
+      "speaker": "Anat Ashkenazi (CFO)",
+      "source": "10-K 2025",
+      "tag": "guidance",
+      "sub_tags": [],
+      "sentiment": "bullish",
+      "analyst_note": "EN: This provides clear, above-consensus top-line growth targets, signaling confidence in near-term execution and demand.\n\nTH: ผลกระทบต่อการลงทุน: เป้าหมายการเติบโตรายได้ที่ชัดเจนและสูงกว่าคาดการณ์นี้ส่งสัญญาณความมั่นใจในการดำเนินงานและอุปสงค์ในระยะสั้น",
+      "source_doc": {
+        "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
+        "title": "KEYS 10-K 2025",
+        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
+      }
+    },
     {
       "quote": "With a software- and customer-centric focus, we continue to make strategic investments to help our customers and partners address their most complex technology challenges.",
       "quote_th": "ด้วยการมุ่งเน้นด้านซอฟต์แวร์และลูกค้า เรายังคงลงทุนเชิงกลยุทธ์เพื่อช่วยลูกค้าและพาร์ทเนอร์ในการรับมือกับความท้าทายทางเทคโนโลยีที่ซับซ้อนที่สุดในทุกช่วงวงจรชีวิตผลิตภัณฑ์",
@@ -227,225 +443,297 @@
       "sentiment": null,
       "analyst_note": null,
       "source_doc": null
-    },
-    {
-      "quote": "Macroeconomic uncertainty persists, particularly in the European market, which could impact advertising budgets in the second half.",
-      "quote_th": "ความไม่แน่นอนทางเศรษฐกิจมหภาคยังคงมีอยู่ โดยเฉพาะในตลาดยุโรป ซึ่งอาจส่งผลกระทบต่องบประมาณโฆษณาในครึ่งปีหลัง",
-      "date": null,
-      "quarter": "Q4 2025",
-      "segment": "Prepared Remarks",
-      "speaker": "Anat Ashkenazi (CFO)",
-      "source": "10-K 2025",
-      "tag": "risk",
-      "sub_tags": [],
-      "sentiment": "cautious",
-      "analyst_note": "EN: This introduces downside risk to revenue guidance, as the core ads business remains exposed to volatile macro conditions.\n\nTH: ผลกระทบต่อการลงทุน: นำเสนอความเสี่ยงด้านลบต่อการคาดการณ์รายได้ เนื่องจากธุรกิจโฆษณาหลักยังคงเปิดรับต่อสภาวะเศรษฐกิจมหภาคที่ผันผวน",
-      "source_doc": {
-        "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
-        "title": "KEYS 10-K 2025",
-        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
-      }
-    },
-    {
-      "quote": "We are cautiously optimistic about our positioning in China, but regulatory developments require close monitoring.",
-      "quote_th": "เราเห็นแง่บวกอย่างระมัดระวังเกี่ยวกับตำแหน่งของเราในจีน แต่การพัฒนาด้านกฎระเบียบจำเป็นต้องได้รับการติดตามอย่างใกล้ชิด",
-      "date": null,
-      "quarter": "Q4 2025",
-      "segment": "Q&A",
-      "speaker": "Sundar Pichai (CEO)",
-      "source": "10-K 2025",
-      "tag": "risk",
-      "sub_tags": [],
-      "sentiment": "cautious",
-      "analyst_note": "EN: Key risk: Geopolitical and regulatory headwinds in China pose a persistent overhang on a significant growth market.\n\nTH: ผลกระทบต่อการลงทุน: ความเสี่ยงหลัก: ปัจจัยลบด้านภูมิรัฐศาสตร์และกฎระเบียบในจีนสร้างแรงกดดันต่อเนื่องในตลาดเติบโตที่สำคัญ",
-      "source_doc": {
-        "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
-        "title": "KEYS 10-K 2025",
-        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
-      }
-    },
-    {
-      "quote": "The integration of AI is driving efficiency gains across our operations, allowing us to manage headcount growth prudently.",
-      "quote_th": "การผนวกรวม AI กำลังขับเคลื่อนการเพิ่มประสิทธิภาพทั่วทั้งการดำเนินงานของเรา ทำให้เราสามารถจัดการการเติบโตของจำนวนพนักงานอย่างรอบคอบ",
-      "date": null,
-      "quarter": "Q4 2025",
-      "segment": "Prepared Remarks",
-      "speaker": "Sundar Pichai (CEO)",
-      "source": "10-K 2025",
-      "tag": "strategy",
-      "sub_tags": [],
-      "sentiment": "bullish",
-      "analyst_note": "EN: This suggests AI is not just a revenue driver but also a cost-saving tool, potentially improving long-term operating leverage.\n\nTH: ผลกระทบต่อการลงทุน: ชี้ให้เห็นว่า AI ไม่ใช่แค่ตัวขับเคลื่อนรายได้ แต่ยังเป็นเครื่องมือประหยัดต้นทุน ที่อาจปรับปรุงการประยุกต์ใช้การดำเนินงานระยะยาว",
-      "source_doc": {
-        "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
-        "title": "KEYS 10-K 2025",
-        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
-      }
-    },
-    {
-      "quote": "We are seeing strong traction with Gemini across our product suite, and it's becoming a key differentiator in cloud and search.",
-      "quote_th": "เราเห็นการตอบรับที่แข็งแกร่งกับ Gemini ทั่วทั้งชุดผลิตภัณฑ์ของเรา และมันกำลังกลายเป็นตัวสร้างความแตกต่างที่สำคัญในคลาวด์และการค้นหา",
-      "date": null,
-      "quarter": "Q4 2025",
-      "segment": "Q&A",
-      "speaker": "Sundar Pichai (CEO)",
-      "source": "10-K 2025",
-      "tag": "product",
-      "sub_tags": [],
-      "sentiment": "bullish",
-      "analyst_note": "EN: This suggests successful AI product integration is strengthening competitive moats in core businesses, supporting premium valuation.\n\nTH: ผลกระทบต่อการลงทุน: การผนวกรวมผลิตภัณฑ์ AI ที่ประสบความสำเร็จกำลังเสริมสร้างความได้เปรียบในการแข่งขันในธุรกิจหลัก สนับสนุนมูลค่าตามราคาตลาดที่สูง",
-      "source_doc": {
-        "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
-        "title": "KEYS 10-K 2025",
-        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
-      }
-    },
-    {
-      "quote": "We are on track to launch our next-generation AI assistant, 'Project Astra,' to developers in the third quarter.",
-      "quote_th": "เรากำลังเดินตามแผนเพื่อเปิดตัวผู้ช่วย AI รุ่นใหม่ 'Project Astra' ให้กับนักพัฒนาในไตรมาสที่สาม",
-      "date": null,
-      "quarter": "Q4 2025",
-      "segment": "Prepared Remarks",
-      "speaker": "Sundar Pichai (CEO)",
-      "source": "10-K 2025",
-      "tag": "product",
-      "sub_tags": [],
-      "sentiment": "bullish",
-      "analyst_note": "EN: This upcoming product launch is a key catalyst that could drive new developer engagement and future monetization streams.\n\nTH: ผลกระทบต่อการลงทุน: การเปิดตัวผลิตภัณฑ์ที่กำลังจะมาถึงนี้เป็นตัวเร่งปฏิกิริยาหลักที่อาจขับเคลื่อนการมีส่วนร่วมของนักพัฒนาใหม่และกระแสรายได้ในอนาคต",
-      "source_doc": {
-        "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
-        "title": "KEYS 10-K 2025",
-        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
-      }
-    },
-    {
-      "quote": "Operating margins are expected to remain stable in the mid-30% range for the full year, despite increased investment spend.",
-      "quote_th": "อัตรากำไรจากการดำเนินงานคาดว่าจะยังคงมีเสถียรภาพในช่วงกลาง 30% สำหรับทั้งปี แม้จะมีค่าใช้จ่ายในการลงทุนที่เพิ่มขึ้น",
-      "date": null,
-      "quarter": "Q4 2025",
-      "segment": "Prepared Remarks",
-      "speaker": "Anat Ashkenazi (CFO)",
-      "source": "10-K 2025",
-      "tag": "guidance",
-      "sub_tags": [],
-      "sentiment": "neutral",
-      "analyst_note": "EN: Stable margin guidance amidst heavy investment signals strong operating leverage and cost discipline, a positive for earnings quality.\n\nTH: ผลกระทบต่อการลงทุน: การคาดการณ์อัตรากำไรที่มั่นคงท่ามกลางการลงทุนหนัก ส่งสัญญาณถึงการประยุกต์ใช้การดำเนินงานที่แข็งแกร่งและวินัยด้านต้นทุน เป็นบวกต่อคุณภาพของกำไร",
-      "source_doc": {
-        "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
-        "title": "KEYS 10-K 2025",
-        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
-      }
-    },
-    {
-      "quote": "Debt levels remain manageable, and we have no plans for significant new issuances in the near term.",
-      "quote_th": "ระดับหนี้ยังคงจัดการได้ และเราไม่มีแผนสำหรับการออกตราสารหนี้ใหม่ที่มีนัยสำคัญในระยะใกล้",
-      "date": null,
-      "quarter": "Q4 2025",
-      "segment": "Q&A",
-      "speaker": "Anat Ashkenazi (CFO)",
-      "source": "10-K 2025",
-      "tag": "strategy",
-      "sub_tags": [],
-      "sentiment": "neutral",
-      "analyst_note": "EN: This indicates a strong balance sheet, providing financial flexibility to navigate the investment cycle without undue leverage risk.\n\nTH: ผลกระทบต่อการลงทุน: บ่งชี้ถึงงบดุลที่แข็งแกร่ง มอบความยืดหยุ่นทางการเงินเพื่อดำเนินการในวงจรการลงทุนโดยไม่มีความเสี่ยงจากการก่อหนี้ที่มากเกินไป",
-      "source_doc": {
-        "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
-        "title": "KEYS 10-K 2025",
-        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
-      }
-    },
-    {
-      "quote": "We are committed to achieving our long-term goal of double-digit revenue growth through this investment cycle.",
-      "quote_th": "เรามีความมุ่งมั่นที่จะบรรลุเป้าหมายระยะยาวของการเติบโตของรายได้สองหลักผ่านวงจรการลงทุนนี้",
-      "date": null,
-      "quarter": "Q4 2025",
-      "segment": "Prepared Remarks",
-      "speaker": "Sundar Pichai (CEO)",
-      "source": "10-K 2025",
-      "tag": "growth",
-      "sub_tags": [],
-      "sentiment": "bullish",
-      "analyst_note": "EN: This reinforces management's credibility and long-term growth narrative, which is critical for sustaining a premium valuation multiple.\n\nTH: ผลกระทบต่อการลงทุน: เสริมสร้างความน่าเชื่อถือของผู้บริหารและเรื่องเล่าของการเติบโตระยะยาว ซึ่งมีความสำคัญต่อการรักษาอัตราส่วนมูลค่าตามราคาตลาดที่สูง",
-      "source_doc": {
-        "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
-        "title": "KEYS 10-K 2025",
-        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
-      }
-    },
-    {
-      "quote": "The competitive landscape in cloud is intensifying, but we believe our AI-integrated offerings provide a durable advantage.",
-      "quote_th": "ภูมิทัศน์การแข่งขันในคลาวด์กำลังทวีความรุนแรงขึ้น แต่เราเชื่อว่าการนำเสนอที่ผนวกรวม AI ของเรามอบข้อได้เปรียบที่ยั่งยืน",
-      "date": null,
-      "quarter": "Q4 2025",
-      "segment": "Q&A",
-      "speaker": "Sundar Pichai (CEO)",
-      "source": "10-K 2025",
-      "tag": "risk",
-      "sub_tags": [],
-      "sentiment": "cautious",
-      "analyst_note": "EN: Key risk: Market share erosion if AI differentiation fails to materialize into sustained customer adoption against aggressive rivals.\n\nTH: ผลกระทบต่อการลงทุน: ความเสี่ยงหลัก: ส่วนแบ่งการตลาดอาจถูกกัดกร่อนหากความแตกต่างด้าน AI ไม่กลายเป็นการยอมรับจากลูกค้าอย่างยั่งยืนเมื่อเทียบกับคู่แข่งที่ก้าวร้าว",
-      "source_doc": {
-        "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
-        "title": "KEYS 10-K 2025",
-        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
-      }
-    },
-    {
-      "quote": "Our AI investments are a multi-year journey, and we plan to increase capital expenditures significantly in 2025 to support our infrastructure build-out.",
-      "quote_th": "การลงทุนด้าน AI ของเราเป็นภารกิจหลายปี และเราวางแผนที่จะเพิ่มค่าใช้จ่ายด้านทุน (capex) อย่างมีนัยสำคัญในปี 2025 เพื่อสนับสนุนการสร้างโครงสร้างพื้นฐาน",
-      "date": null,
-      "quarter": "Q4 2025",
-      "segment": "Prepared Remarks",
-      "speaker": "Sundar Pichai (CEO)",
-      "source": "10-K 2025",
-      "tag": "strategy",
-      "sub_tags": [],
-      "sentiment": "bullish",
-      "analyst_note": "EN: This signals aggressive, long-term commitment to AI leadership, though elevated capex may pressure near-term free cash flow.\n\nTH: ผลกระทบต่อการลงทุน: สัญญาณความมุ่งมั่นระยะยาวอย่างจริงจังเพื่อความเป็นผู้นำด้าน AI แม้ค่าใช้จ่ายทุนที่สูงอาจกดดันกระแสเงินสดอิสระในระยะสั้น",
-      "source_doc": {
-        "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
-        "title": "KEYS 10-K 2025",
-        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
-      }
-    },
-    {
-      "quote": "We expect Q4 revenue to be between $85 billion and $87 billion, representing year-over-year growth of approximately 10% to 12%.",
-      "quote_th": "เราคาดว่ารายได้ในไตรมาส 4 จะอยู่ระหว่าง 85,000 ล้านดอลลาร์ถึง 87,000 ล้านดอลลาร์ ซึ่งแสดงถึงการเติบโตปีต่อปีประมาณ 10% ถึง 12%",
-      "date": null,
-      "quarter": "Q4 2025",
-      "segment": "Prepared Remarks",
-      "speaker": "Anat Ashkenazi (CFO)",
-      "source": "10-K 2025",
-      "tag": "guidance",
-      "sub_tags": [],
-      "sentiment": "bullish",
-      "analyst_note": "EN: This provides clear, above-consensus top-line growth targets, signaling confidence in near-term execution and demand.\n\nTH: ผลกระทบต่อการลงทุน: เป้าหมายการเติบโตรายได้ที่ชัดเจนและสูงกว่าคาดการณ์นี้ส่งสัญญาณความมั่นใจในการดำเนินงานและอุปสงค์ในระยะสั้น",
-      "source_doc": {
-        "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
-        "title": "KEYS 10-K 2025",
-        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
-      }
-    },
-    {
-      "quote": "Our share repurchase program remains active, and we returned over $15 billion to shareholders in the last quarter.",
-      "quote_th": "โปรแกรมซื้อคืนหุ้นของเรายังคงดำเนินการอย่างต่อเนื่อง และเราคืนมูลค่ากว่า 15,000 ล้านดอลลาร์ให้ผู้ถือหุ้นในไตรมาสที่ผ่านมา",
-      "date": null,
-      "quarter": "Q4 2025",
-      "segment": "Q&A",
-      "speaker": "Anat Ashkenazi (CFO)",
-      "source": "10-K 2025",
-      "tag": "strategy",
-      "sub_tags": [],
-      "sentiment": "bullish",
-      "analyst_note": "EN: This demonstrates strong capital return commitment, supporting shareholder yield and providing a floor for the stock price.\n\nTH: ผลกระทบต่อการลงทุน: สาธิตความมุ่งมั่นที่แข็งแกร่งในการคืนทุนให้ผู้ถือหุ้น สนับสนุนผลตอบแทนผู้ถือหุ้นและให้ระดับสนับสนุนราคาหุ้น",
-      "source_doc": {
-        "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
-        "title": "KEYS 10-K 2025",
-        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
-      }
     }
   ],
   "roadmap": [
+    {
+      "commitment": "Maintain the quarterly dividend at $0.25 per share through 2026.",
+      "status": "pending",
+      "category": "Financial",
+      "confidence": "high",
+      "quarter_said": "Q4 2025",
+      "target_quarter": "Q4 2026",
+      "date_said": "2026-04-10",
+      "follow_up": "EN: Verify dividend declarations in each quarterly earnings release for 2026.\n\nTH: สิ่งที่ต้องติดตาม: ยืนยันการประกาศเงินปันผลในแต่ละการประกาศผลประกอบการรายไตรมาสสำหรับปี 2026",
+      "follow_up_date": "2026-12-31",
+      "delivery_note": null,
+      "source": "10-K 2025",
+      "source_doc": {
+        "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
+        "title": "KEYS 10-K 2025",
+        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
+      }
+    },
+    {
+      "commitment": "Launch a new mobile app for the consumer segment in Q2 2026.",
+      "status": "pending",
+      "category": "Product",
+      "confidence": "high",
+      "quarter_said": "Q4 2025",
+      "target_quarter": "Q2 2026",
+      "date_said": "2026-04-10",
+      "follow_up": "EN: Check the Apple App Store and Google Play Store for the official app release in Q2 2026.\n\nTH: สิ่งที่ต้องติดตาม: ตรวจสอบ Apple App Store และ Google Play Store สำหรับการเปิดตัวแอปอย่างเป็นทางการใน Q2 2026",
+      "follow_up_date": "2026-06-30",
+      "delivery_note": null,
+      "source": "10-K 2025",
+      "source_doc": {
+        "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
+        "title": "KEYS 10-K 2025",
+        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
+      }
+    },
+    {
+      "commitment": "Acquire a complementary SaaS company in the cybersecurity space within the next 12 months.",
+      "status": "pending",
+      "category": "Strategic",
+      "confidence": "low",
+      "quarter_said": "Q4 2025",
+      "target_quarter": "Q4 2026",
+      "date_said": "2026-04-10",
+      "follow_up": "EN: Watch for M&A announcements or SEC filings related to cybersecurity acquisitions.\n\nTH: สิ่งที่ต้องติดตาม: ติดตามประกาศ M&A หรือการยื่นเอกสาร SEC ที่เกี่ยวข้องกับการเข้าซื้อกิจการด้านความปลอดภัยทางไซเบอร์",
+      "follow_up_date": "2026-12-31",
+      "delivery_note": null,
+      "source": "10-K 2025",
+      "source_doc": {
+        "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
+        "title": "KEYS 10-K 2025",
+        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
+      }
+    },
+    {
+      "commitment": "Increase R&D spending to 15% of revenue by 2027.",
+      "status": "pending",
+      "category": "Financial",
+      "confidence": "medium",
+      "quarter_said": "Q4 2025",
+      "target_quarter": "2027+",
+      "date_said": "2026-04-10",
+      "follow_up": "EN: Check the R&D expense line in quarterly income statements as a percentage of revenue.\n\nTH: สิ่งที่ต้องติดตาม: ตรวจสอบบรรทัดค่าใช้จ่าย R&D ในงบกำไรขาดทุนรายไตรมาสเป็นเปอร์เซ็นต์ของรายได้",
+      "follow_up_date": "2027-12-31",
+      "delivery_note": null,
+      "source": "10-K 2025",
+      "source_doc": {
+        "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
+        "title": "KEYS 10-K 2025",
+        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
+      }
+    },
+    {
+      "commitment": "Achieve positive free cash flow for the full year 2026.",
+      "status": "pending",
+      "category": "Financial",
+      "confidence": "high",
+      "quarter_said": "Q4 2025",
+      "target_quarter": "Q4 2026",
+      "date_said": "2026-04-10",
+      "follow_up": "EN: Review the annual cash flow statement for 2026 to confirm positive FCF.\n\nTH: สิ่งที่ต้องติดตาม: ตรวจสอบงบกระแสเงินสดประจำปี 2026 เพื่อยืนยัน FCF ที่เป็นบวก",
+      "follow_up_date": "2026-12-31",
+      "delivery_note": null,
+      "source": "10-K 2025",
+      "source_doc": {
+        "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
+        "title": "KEYS 10-K 2025",
+        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
+      }
+    },
+    {
+      "commitment": "Launch the next-generation enterprise API with enhanced security features in H2 2026.",
+      "status": "pending",
+      "category": "Product",
+      "confidence": "medium",
+      "quarter_said": "Q4 2025",
+      "target_quarter": "Q3 2026",
+      "date_said": "2026-04-10",
+      "follow_up": "EN: Monitor developer conference announcements or technical blog posts for the new API launch.\n\nTH: สิ่งที่ต้องติดตาม: ติดตามการประกาศในงานประชุมนักพัฒนาหรือโพสต์บล็อกทางเทคนิคสำหรับการเปิดตัว API ใหม่",
+      "follow_up_date": "2026-09-30",
+      "delivery_note": null,
+      "source": "10-K 2025",
+      "source_doc": {
+        "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
+        "title": "KEYS 10-K 2025",
+        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
+      }
+    },
+    {
+      "commitment": "Reduce net debt by 30% by the end of 2027.",
+      "status": "pending",
+      "category": "Financial",
+      "confidence": "medium",
+      "quarter_said": "Q4 2025",
+      "target_quarter": null,
+      "date_said": "2026-04-10",
+      "follow_up": "EN: Track the net debt figure on the quarterly balance sheet.\n\nTH: สิ่งที่ต้องติดตาม: ติดตามตัวเลขหนี้สุทธิในงบดุลรายไตรมาส",
+      "follow_up_date": null,
+      "delivery_note": null,
+      "source": "10-K 2025",
+      "source_doc": {
+        "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
+        "title": "KEYS 10-K 2025",
+        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
+      }
+    },
+    {
+      "commitment": "Deploy two new regional data centers in Europe in 2026.",
+      "status": "pending",
+      "category": "Operational",
+      "confidence": "high",
+      "quarter_said": "Q4 2025",
+      "target_quarter": "2027+",
+      "date_said": "2026-04-10",
+      "follow_up": "EN: Look for announcements of data center openings in cities like Frankfurt or Amsterdam.\n\nTH: สิ่งที่ต้องติดตาม: ค้นหาประกาศการเปิดศูนย์ข้อมูลในเมืองต่างๆ เช่น แฟรงก์เฟิร์ตหรืออัมสเตอร์ดัม",
+      "follow_up_date": "2027-12-31",
+      "delivery_note": null,
+      "source": "10-K 2025",
+      "source_doc": {
+        "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
+        "title": "KEYS 10-K 2025",
+        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
+      }
+    },
+    {
+      "commitment": "Form a strategic partnership with a major cloud provider by mid-2026.",
+      "status": "pending",
+      "category": "Strategic",
+      "confidence": "medium",
+      "quarter_said": "Q4 2025",
+      "target_quarter": "Q2 2026",
+      "date_said": "2026-04-10",
+      "follow_up": "EN: Watch for joint press releases or product integrations announced with AWS, Azure, or Google Cloud.\n\nTH: สิ่งที่ต้องติดตาม: ติดตามการแถลงข่าวร่วมหรือการบูรณาการผลิตภัณฑ์ที่ประกาศกับ AWS, Azure หรือ Google Cloud",
+      "follow_up_date": "2026-06-30",
+      "delivery_note": null,
+      "source": "10-K 2025",
+      "source_doc": {
+        "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
+        "title": "KEYS 10-K 2025",
+        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
+      }
+    },
+    {
+      "commitment": "Execute a $100 million share buyback program over the next four quarters.",
+      "status": "pending",
+      "category": "Financial",
+      "confidence": "high",
+      "quarter_said": "Q4 2025",
+      "target_quarter": "Q4 2026",
+      "date_said": "2026-04-10",
+      "follow_up": "EN: Monitor quarterly cash flow statements and earnings calls for updates on share repurchase amounts.\n\nTH: สิ่งที่ต้องติดตาม: ติดตามงบกระแสเงินสดรายไตรมาสและการประชุมทางโทรศัพท์เพื่อหารายได้สำหรับการอัปเดตจำนวนการซื้อหุ้นคืน",
+      "follow_up_date": "2026-12-31",
+      "delivery_note": null,
+      "source": "10-K 2025",
+      "source_doc": {
+        "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
+        "title": "KEYS 10-K 2025",
+        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
+      }
+    },
+    {
+      "commitment": "Complete the SOC 2 Type II compliance certification by Q3 2026.",
+      "status": "pending",
+      "category": "Regulatory",
+      "confidence": "high",
+      "quarter_said": "Q4 2025",
+      "target_quarter": "Q3 2026",
+      "date_said": "2026-04-10",
+      "follow_up": "EN: Look for a company announcement or updated security documentation confirming SOC 2 Type II certification.\n\nTH: สิ่งที่ต้องติดตาม: ค้นหาประกาศของบริษัทหรือเอกสารความปลอดภัยที่อัปเดตซึ่งยืนยันการรับรอง SOC 2 Type II",
+      "follow_up_date": "2026-09-30",
+      "delivery_note": null,
+      "source": "10-K 2025",
+      "source_doc": {
+        "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
+        "title": "KEYS 10-K 2025",
+        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
+      }
+    },
+    {
+      "commitment": "Grow the engineering team by 200 heads in 2026.",
+      "status": "pending",
+      "category": "Operational",
+      "confidence": "high",
+      "quarter_said": "Q4 2025",
+      "target_quarter": "Q4 2026",
+      "date_said": "2026-04-10",
+      "follow_up": "EN: Review management commentary in quarterly reports on headcount growth in the engineering department.\n\nTH: สิ่งที่ต้องติดตาม: ตรวจสอบคำอธิบายของผู้บริหารในรายงานรายไตรมาสเกี่ยวกับการเติบโตของจำนวนพนักงานในแผนกวิศวกรรม",
+      "follow_up_date": "2026-12-31",
+      "delivery_note": null,
+      "source": "10-K 2025",
+      "source_doc": {
+        "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
+        "title": "KEYS 10-K 2025",
+        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
+      }
+    },
+    {
+      "commitment": "Increase gross margin to 65% over the next 18 months.",
+      "status": "pending",
+      "category": "Financial",
+      "confidence": "medium",
+      "quarter_said": "Q4 2025",
+      "target_quarter": "Q2 2027",
+      "date_said": "2026-04-10",
+      "follow_up": "EN: Check quarterly income statements for gross margin percentage trends.\n\nTH: สิ่งที่ต้องติดตาม: ตรวจสอบงบกำไรขาดทุนรายไตรมาสสำหรับแนวโน้มเปอร์เซ็นต์อัตรากำไรขั้นต้น",
+      "follow_up_date": "2027-06-30",
+      "delivery_note": null,
+      "source": "10-K 2025",
+      "source_doc": {
+        "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
+        "title": "KEYS 10-K 2025",
+        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
+      }
+    },
+    {
+      "commitment": "Achieve annual recurring revenue (ARR) of $500 million by Q4 2026.",
+      "status": "pending",
+      "category": "Financial",
+      "confidence": "high",
+      "quarter_said": "Q4 2025",
+      "target_quarter": "Q4 2026",
+      "date_said": "2026-04-10",
+      "follow_up": "EN: Monitor quarterly earnings reports for ARR figures approaching the $500M target.\n\nTH: สิ่งที่ต้องติดตาม: ติดตามรายงานผลประกอบการรายไตรมาสสำหรับตัวเลข ARR ที่เข้าใกล้เป้าหมาย 500 ล้านดอลลาร์",
+      "follow_up_date": "2026-12-31",
+      "delivery_note": null,
+      "source": "10-K 2025",
+      "source_doc": {
+        "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
+        "title": "KEYS 10-K 2025",
+        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
+      }
+    },
+    {
+      "commitment": "Expand operations to three new Southeast Asian markets by the end of 2026.",
+      "status": "pending",
+      "category": "Strategic",
+      "confidence": "medium",
+      "quarter_said": "Q4 2025",
+      "target_quarter": "Q4 2026",
+      "date_said": "2026-04-10",
+      "follow_up": "EN: Watch for press releases or regulatory filings announcing market entry in Vietnam, Indonesia, or the Philippines.\n\nTH: สิ่งที่ต้องติดตาม: ประกาศข่าวหรือการยื่นเอกสารกำกับดูแลประกาศการเข้าสู่ตลาดในเวียดนาม อินโดนีเซีย หรือฟิลิปปินส์",
+      "follow_up_date": "2026-12-31",
+      "delivery_note": null,
+      "source": "10-K 2025",
+      "source_doc": {
+        "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
+        "title": "KEYS 10-K 2025",
+        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
+      }
+    },
+    {
+      "commitment": "Launch the new AI-powered analytics platform in Q1 2026.",
+      "status": "pending",
+      "category": "Product",
+      "confidence": "high",
+      "quarter_said": "Q4 2025",
+      "target_quarter": "Q1 2026",
+      "date_said": "2026-04-10",
+      "follow_up": "EN: Watch Q1 2026 product announcement for the official launch of the AI analytics platform.\n\nTH: สิ่งที่ต้องติดตาม: ประกาศเปิดตัวผลิตภัณฑ์ใน Q1 2026 สำหรับการเปิดตัวแพลตฟอร์มวิเคราะห์ AI อย่างเป็นทางการ",
+      "follow_up_date": "2026-03-31",
+      "delivery_note": null,
+      "source": "10-K 2025",
+      "source_doc": {
+        "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
+        "title": "KEYS 10-K 2025",
+        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
+      }
+    },
     {
       "commitment": "Strategic deployment of capital balancing investment for organic growth, mergers and acquisitions, and return of capital to shareholders",
       "status": "pending",
@@ -641,294 +929,6 @@
       "delivery_note": null,
       "source": "FY2025 10-K",
       "source_doc": null
-    },
-    {
-      "commitment": "Form a strategic partnership with a major cloud provider by mid-2026.",
-      "status": "pending",
-      "category": "Strategic",
-      "confidence": "medium",
-      "quarter_said": "Q4 2025",
-      "target_quarter": "Q2 2026",
-      "date_said": "2026-04-10",
-      "follow_up": "EN: Watch for joint press releases or product integrations announced with AWS, Azure, or Google Cloud.\n\nTH: สิ่งที่ต้องติดตาม: ติดตามการแถลงข่าวร่วมหรือการบูรณาการผลิตภัณฑ์ที่ประกาศกับ AWS, Azure หรือ Google Cloud",
-      "follow_up_date": "2026-06-30",
-      "delivery_note": null,
-      "source": "10-K 2025",
-      "source_doc": {
-        "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
-        "title": "KEYS 10-K 2025",
-        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
-      }
-    },
-    {
-      "commitment": "Reduce net debt by 30% by the end of 2027.",
-      "status": "pending",
-      "category": "Financial",
-      "confidence": "medium",
-      "quarter_said": "Q4 2025",
-      "target_quarter": null,
-      "date_said": "2026-04-10",
-      "follow_up": "EN: Track the net debt figure on the quarterly balance sheet.\n\nTH: สิ่งที่ต้องติดตาม: ติดตามตัวเลขหนี้สุทธิในงบดุลรายไตรมาส",
-      "follow_up_date": null,
-      "delivery_note": null,
-      "source": "10-K 2025",
-      "source_doc": {
-        "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
-        "title": "KEYS 10-K 2025",
-        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
-      }
-    },
-    {
-      "commitment": "Complete the SOC 2 Type II compliance certification by Q3 2026.",
-      "status": "pending",
-      "category": "Regulatory",
-      "confidence": "high",
-      "quarter_said": "Q4 2025",
-      "target_quarter": "Q3 2026",
-      "date_said": "2026-04-10",
-      "follow_up": "EN: Look for a company announcement or updated security documentation confirming SOC 2 Type II certification.\n\nTH: สิ่งที่ต้องติดตาม: ค้นหาประกาศของบริษัทหรือเอกสารความปลอดภัยที่อัปเดตซึ่งยืนยันการรับรอง SOC 2 Type II",
-      "follow_up_date": "2026-09-30",
-      "delivery_note": null,
-      "source": "10-K 2025",
-      "source_doc": {
-        "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
-        "title": "KEYS 10-K 2025",
-        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
-      }
-    },
-    {
-      "commitment": "Expand operations to three new Southeast Asian markets by the end of 2026.",
-      "status": "pending",
-      "category": "Strategic",
-      "confidence": "medium",
-      "quarter_said": "Q4 2025",
-      "target_quarter": "Q4 2026",
-      "date_said": "2026-04-10",
-      "follow_up": "EN: Watch for press releases or regulatory filings announcing market entry in Vietnam, Indonesia, or the Philippines.\n\nTH: สิ่งที่ต้องติดตาม: ประกาศข่าวหรือการยื่นเอกสารกำกับดูแลประกาศการเข้าสู่ตลาดในเวียดนาม อินโดนีเซีย หรือฟิลิปปินส์",
-      "follow_up_date": "2026-12-31",
-      "delivery_note": null,
-      "source": "10-K 2025",
-      "source_doc": {
-        "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
-        "title": "KEYS 10-K 2025",
-        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
-      }
-    },
-    {
-      "commitment": "Deploy two new regional data centers in Europe in 2026.",
-      "status": "pending",
-      "category": "Operational",
-      "confidence": "high",
-      "quarter_said": "Q4 2025",
-      "target_quarter": "2027+",
-      "date_said": "2026-04-10",
-      "follow_up": "EN: Look for announcements of data center openings in cities like Frankfurt or Amsterdam.\n\nTH: สิ่งที่ต้องติดตาม: ค้นหาประกาศการเปิดศูนย์ข้อมูลในเมืองต่างๆ เช่น แฟรงก์เฟิร์ตหรืออัมสเตอร์ดัม",
-      "follow_up_date": "2027-12-31",
-      "delivery_note": null,
-      "source": "10-K 2025",
-      "source_doc": {
-        "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
-        "title": "KEYS 10-K 2025",
-        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
-      }
-    },
-    {
-      "commitment": "Acquire a complementary SaaS company in the cybersecurity space within the next 12 months.",
-      "status": "pending",
-      "category": "Strategic",
-      "confidence": "low",
-      "quarter_said": "Q4 2025",
-      "target_quarter": "Q4 2026",
-      "date_said": "2026-04-10",
-      "follow_up": "EN: Watch for M&A announcements or SEC filings related to cybersecurity acquisitions.\n\nTH: สิ่งที่ต้องติดตาม: ติดตามประกาศ M&A หรือการยื่นเอกสาร SEC ที่เกี่ยวข้องกับการเข้าซื้อกิจการด้านความปลอดภัยทางไซเบอร์",
-      "follow_up_date": "2026-12-31",
-      "delivery_note": null,
-      "source": "10-K 2025",
-      "source_doc": {
-        "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
-        "title": "KEYS 10-K 2025",
-        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
-      }
-    },
-    {
-      "commitment": "Achieve positive free cash flow for the full year 2026.",
-      "status": "pending",
-      "category": "Financial",
-      "confidence": "high",
-      "quarter_said": "Q4 2025",
-      "target_quarter": "Q4 2026",
-      "date_said": "2026-04-10",
-      "follow_up": "EN: Review the annual cash flow statement for 2026 to confirm positive FCF.\n\nTH: สิ่งที่ต้องติดตาม: ตรวจสอบงบกระแสเงินสดประจำปี 2026 เพื่อยืนยัน FCF ที่เป็นบวก",
-      "follow_up_date": "2026-12-31",
-      "delivery_note": null,
-      "source": "10-K 2025",
-      "source_doc": {
-        "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
-        "title": "KEYS 10-K 2025",
-        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
-      }
-    },
-    {
-      "commitment": "Increase gross margin to 65% over the next 18 months.",
-      "status": "pending",
-      "category": "Financial",
-      "confidence": "medium",
-      "quarter_said": "Q4 2025",
-      "target_quarter": "Q2 2027",
-      "date_said": "2026-04-10",
-      "follow_up": "EN: Check quarterly income statements for gross margin percentage trends.\n\nTH: สิ่งที่ต้องติดตาม: ตรวจสอบงบกำไรขาดทุนรายไตรมาสสำหรับแนวโน้มเปอร์เซ็นต์อัตรากำไรขั้นต้น",
-      "follow_up_date": "2027-06-30",
-      "delivery_note": null,
-      "source": "10-K 2025",
-      "source_doc": {
-        "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
-        "title": "KEYS 10-K 2025",
-        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
-      }
-    },
-    {
-      "commitment": "Launch a new mobile app for the consumer segment in Q2 2026.",
-      "status": "pending",
-      "category": "Product",
-      "confidence": "high",
-      "quarter_said": "Q4 2025",
-      "target_quarter": "Q2 2026",
-      "date_said": "2026-04-10",
-      "follow_up": "EN: Check the Apple App Store and Google Play Store for the official app release in Q2 2026.\n\nTH: สิ่งที่ต้องติดตาม: ตรวจสอบ Apple App Store และ Google Play Store สำหรับการเปิดตัวแอปอย่างเป็นทางการใน Q2 2026",
-      "follow_up_date": "2026-06-30",
-      "delivery_note": null,
-      "source": "10-K 2025",
-      "source_doc": {
-        "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
-        "title": "KEYS 10-K 2025",
-        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
-      }
-    },
-    {
-      "commitment": "Achieve annual recurring revenue (ARR) of $500 million by Q4 2026.",
-      "status": "pending",
-      "category": "Financial",
-      "confidence": "high",
-      "quarter_said": "Q4 2025",
-      "target_quarter": "Q4 2026",
-      "date_said": "2026-04-10",
-      "follow_up": "EN: Monitor quarterly earnings reports for ARR figures approaching the $500M target.\n\nTH: สิ่งที่ต้องติดตาม: ติดตามรายงานผลประกอบการรายไตรมาสสำหรับตัวเลข ARR ที่เข้าใกล้เป้าหมาย 500 ล้านดอลลาร์",
-      "follow_up_date": "2026-12-31",
-      "delivery_note": null,
-      "source": "10-K 2025",
-      "source_doc": {
-        "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
-        "title": "KEYS 10-K 2025",
-        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
-      }
-    },
-    {
-      "commitment": "Maintain the quarterly dividend at $0.25 per share through 2026.",
-      "status": "pending",
-      "category": "Financial",
-      "confidence": "high",
-      "quarter_said": "Q4 2025",
-      "target_quarter": "Q4 2026",
-      "date_said": "2026-04-10",
-      "follow_up": "EN: Verify dividend declarations in each quarterly earnings release for 2026.\n\nTH: สิ่งที่ต้องติดตาม: ยืนยันการประกาศเงินปันผลในแต่ละการประกาศผลประกอบการรายไตรมาสสำหรับปี 2026",
-      "follow_up_date": "2026-12-31",
-      "delivery_note": null,
-      "source": "10-K 2025",
-      "source_doc": {
-        "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
-        "title": "KEYS 10-K 2025",
-        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
-      }
-    },
-    {
-      "commitment": "Grow the engineering team by 200 heads in 2026.",
-      "status": "pending",
-      "category": "Operational",
-      "confidence": "high",
-      "quarter_said": "Q4 2025",
-      "target_quarter": "Q4 2026",
-      "date_said": "2026-04-10",
-      "follow_up": "EN: Review management commentary in quarterly reports on headcount growth in the engineering department.\n\nTH: สิ่งที่ต้องติดตาม: ตรวจสอบคำอธิบายของผู้บริหารในรายงานรายไตรมาสเกี่ยวกับการเติบโตของจำนวนพนักงานในแผนกวิศวกรรม",
-      "follow_up_date": "2026-12-31",
-      "delivery_note": null,
-      "source": "10-K 2025",
-      "source_doc": {
-        "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
-        "title": "KEYS 10-K 2025",
-        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
-      }
-    },
-    {
-      "commitment": "Increase R&D spending to 15% of revenue by 2027.",
-      "status": "pending",
-      "category": "Financial",
-      "confidence": "medium",
-      "quarter_said": "Q4 2025",
-      "target_quarter": "2027+",
-      "date_said": "2026-04-10",
-      "follow_up": "EN: Check the R&D expense line in quarterly income statements as a percentage of revenue.\n\nTH: สิ่งที่ต้องติดตาม: ตรวจสอบบรรทัดค่าใช้จ่าย R&D ในงบกำไรขาดทุนรายไตรมาสเป็นเปอร์เซ็นต์ของรายได้",
-      "follow_up_date": "2027-12-31",
-      "delivery_note": null,
-      "source": "10-K 2025",
-      "source_doc": {
-        "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
-        "title": "KEYS 10-K 2025",
-        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
-      }
-    },
-    {
-      "commitment": "Launch the new AI-powered analytics platform in Q1 2026.",
-      "status": "pending",
-      "category": "Product",
-      "confidence": "high",
-      "quarter_said": "Q4 2025",
-      "target_quarter": "Q1 2026",
-      "date_said": "2026-04-10",
-      "follow_up": "EN: Watch Q1 2026 product announcement for the official launch of the AI analytics platform.\n\nTH: สิ่งที่ต้องติดตาม: ประกาศเปิดตัวผลิตภัณฑ์ใน Q1 2026 สำหรับการเปิดตัวแพลตฟอร์มวิเคราะห์ AI อย่างเป็นทางการ",
-      "follow_up_date": "2026-03-31",
-      "delivery_note": null,
-      "source": "10-K 2025",
-      "source_doc": {
-        "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
-        "title": "KEYS 10-K 2025",
-        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
-      }
-    },
-    {
-      "commitment": "Execute a $100 million share buyback program over the next four quarters.",
-      "status": "pending",
-      "category": "Financial",
-      "confidence": "high",
-      "quarter_said": "Q4 2025",
-      "target_quarter": "Q4 2026",
-      "date_said": "2026-04-10",
-      "follow_up": "EN: Monitor quarterly cash flow statements and earnings calls for updates on share repurchase amounts.\n\nTH: สิ่งที่ต้องติดตาม: ติดตามงบกระแสเงินสดรายไตรมาสและการประชุมทางโทรศัพท์เพื่อหารายได้สำหรับการอัปเดตจำนวนการซื้อหุ้นคืน",
-      "follow_up_date": "2026-12-31",
-      "delivery_note": null,
-      "source": "10-K 2025",
-      "source_doc": {
-        "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
-        "title": "KEYS 10-K 2025",
-        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
-      }
-    },
-    {
-      "commitment": "Launch the next-generation enterprise API with enhanced security features in H2 2026.",
-      "status": "pending",
-      "category": "Product",
-      "confidence": "medium",
-      "quarter_said": "Q4 2025",
-      "target_quarter": "Q3 2026",
-      "date_said": "2026-04-10",
-      "follow_up": "EN: Monitor developer conference announcements or technical blog posts for the new API launch.\n\nTH: สิ่งที่ต้องติดตาม: ติดตามการประกาศในงานประชุมนักพัฒนาหรือโพสต์บล็อกทางเทคนิคสำหรับการเปิดตัว API ใหม่",
-      "follow_up_date": "2026-09-30",
-      "delivery_note": null,
-      "source": "10-K 2025",
-      "source_doc": {
-        "id": "33e104a0-c4b1-8147-8760-de50c13749e9",
-        "title": "KEYS 10-K 2025",
-        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf"
-      }
     }
   ],
   "sources": [
@@ -952,7 +952,7 @@
     "currency": "USD",
     "unit": "Million",
     "source": "EDGAR",
-    "last_updated": "2026-05-11",
+    "last_updated": "2026-05-12",
     "annual": {
       "periods": [
         "FY2020",

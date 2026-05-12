@@ -1,21 +1,88 @@
 [
   {
-    "title": "QUBT Q4 FY2025 Earnings Call",
-    "source_type": "Earnings Call",
-    "date": "2026-03-29",
+    "title": "KEYS 10-K 2025",
+    "source_type": "Annual Report",
+    "date": "2026-04-10",
     "quarter": "Q4 2025",
-    "url": null,
+    "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf",
     "analyzed_by": "DeepSeek",
     "status": "analyzed",
     "tags": [
-      "earnings",
-      "strategy",
-      "guidance"
+      "financials",
+      "strategy"
     ],
     "tickers": [
-      "QUBT"
+      "KEYS"
     ],
-    "notion_id": "33c104a0-c4b1-804e-a536-e324b74d317c"
+    "notion_id": "33e104a0-c4b1-8147-8760-de50c13749e9"
+  },
+  {
+    "title": "NVDA 10-K 2025",
+    "source_type": "Annual Report",
+    "date": "2026-04-10",
+    "quarter": "Q4 2025",
+    "url": "https://s201.q4cdn.com/141608511/files/doc_financials/2025/q4/177440d5-3b32-4185-8cc8-95500a9dc783.pdf",
+    "analyzed_by": "DeepSeek",
+    "status": "analyzed",
+    "tags": [
+      "financials",
+      "strategy"
+    ],
+    "tickers": [
+      "NVDA"
+    ],
+    "notion_id": "33e104a0-c4b1-81f6-8415-c54639843e8e"
+  },
+  {
+    "title": "NVDA 10-K 2025",
+    "source_type": "Annual Report",
+    "date": "2026-04-10",
+    "quarter": "Q4 2025",
+    "url": "https://s201.q4cdn.com/141608511/files/doc_financials/2025/q4/177440d5-3b32-4185-8cc8-95500a9dc783.pdf",
+    "analyzed_by": "DeepSeek",
+    "status": "extracting",
+    "tags": [
+      "financials",
+      "strategy"
+    ],
+    "tickers": [
+      "NVDA"
+    ],
+    "notion_id": "33e104a0-c4b1-8165-b1a6-f72fdcb3aa30"
+  },
+  {
+    "title": "GOOGL Annual Report 2025",
+    "source_type": "SEC Filing",
+    "date": null,
+    "quarter": "Q4 2025",
+    "url": "https://files.quartr.com/reports/84bed-2026-02-05-11-10-05.pdf?ref=UGVycGxleGl0eSBBSQ==",
+    "analyzed_by": "DeepSeek",
+    "status": "analyzed",
+    "tags": [
+      "financials",
+      "strategy"
+    ],
+    "tickers": [
+      "GOOGL"
+    ],
+    "notion_id": "33d104a0-c4b1-8183-9b0e-e850c23dc703"
+  },
+  {
+    "title": "GOOGL 10-K 2025",
+    "source_type": "Annual Report",
+    "date": null,
+    "quarter": "Q4 2025",
+    "url": "https://s206.q4cdn.com/479360582/files/doc_financials/2025/q4/2025q4-alphabet-earnings-release.pdf",
+    "analyzed_by": "DeepSeek",
+    "status": "analyzed",
+    "tags": [
+      "financials",
+      "strategy"
+    ],
+    "tickers": [
+      "GOOGL"
+    ],
+    "notion_id": "33d104a0-c4b1-8167-9569-eac66d4f38c3"
   },
   {
     "title": "MSFT Q2 FY2025 Earnings Call",
@@ -44,88 +111,21 @@
     "notion_id": "33c104a0-c4b1-80ef-b903-faf386854a38"
   },
   {
-    "title": "GOOGL 10-K 2025",
-    "source_type": "Annual Report",
-    "date": null,
+    "title": "QUBT Q4 FY2025 Earnings Call",
+    "source_type": "Earnings Call",
+    "date": "2026-03-29",
     "quarter": "Q4 2025",
-    "url": "https://s206.q4cdn.com/479360582/files/doc_financials/2025/q4/2025q4-alphabet-earnings-release.pdf",
+    "url": null,
     "analyzed_by": "DeepSeek",
     "status": "analyzed",
     "tags": [
-      "financials",
-      "strategy"
+      "earnings",
+      "strategy",
+      "guidance"
     ],
     "tickers": [
-      "GOOGL"
+      "QUBT"
     ],
-    "notion_id": "33d104a0-c4b1-8167-9569-eac66d4f38c3"
-  },
-  {
-    "title": "GOOGL Annual Report 2025",
-    "source_type": "SEC Filing",
-    "date": null,
-    "quarter": "Q4 2025",
-    "url": "https://files.quartr.com/reports/84bed-2026-02-05-11-10-05.pdf?ref=UGVycGxleGl0eSBBSQ==",
-    "analyzed_by": "DeepSeek",
-    "status": "analyzed",
-    "tags": [
-      "financials",
-      "strategy"
-    ],
-    "tickers": [
-      "GOOGL"
-    ],
-    "notion_id": "33d104a0-c4b1-8183-9b0e-e850c23dc703"
-  },
-  {
-    "title": "KEYS 10-K 2025",
-    "source_type": "Annual Report",
-    "date": "2026-04-10",
-    "quarter": "Q4 2025",
-    "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001601046/2b579e6f-3577-4267-a9f0-e03cf162cd17.pdf",
-    "analyzed_by": "DeepSeek",
-    "status": "analyzed",
-    "tags": [
-      "financials",
-      "strategy"
-    ],
-    "tickers": [
-      "KEYS"
-    ],
-    "notion_id": "33e104a0-c4b1-8147-8760-de50c13749e9"
-  },
-  {
-    "title": "NVDA 10-K 2025",
-    "source_type": "Annual Report",
-    "date": "2026-04-10",
-    "quarter": "Q4 2025",
-    "url": "https://s201.q4cdn.com/141608511/files/doc_financials/2025/q4/177440d5-3b32-4185-8cc8-95500a9dc783.pdf",
-    "analyzed_by": "DeepSeek",
-    "status": "extracting",
-    "tags": [
-      "financials",
-      "strategy"
-    ],
-    "tickers": [
-      "NVDA"
-    ],
-    "notion_id": "33e104a0-c4b1-8165-b1a6-f72fdcb3aa30"
-  },
-  {
-    "title": "NVDA 10-K 2025",
-    "source_type": "Annual Report",
-    "date": "2026-04-10",
-    "quarter": "Q4 2025",
-    "url": "https://s201.q4cdn.com/141608511/files/doc_financials/2025/q4/177440d5-3b32-4185-8cc8-95500a9dc783.pdf",
-    "analyzed_by": "DeepSeek",
-    "status": "analyzed",
-    "tags": [
-      "financials",
-      "strategy"
-    ],
-    "tickers": [
-      "NVDA"
-    ],
-    "notion_id": "33e104a0-c4b1-81f6-8415-c54639843e8e"
+    "notion_id": "33c104a0-c4b1-804e-a536-e324b74d317c"
   }
 ]
