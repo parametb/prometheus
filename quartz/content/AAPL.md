@@ -5,7 +5,7 @@ sector: "Technology"
 industry: "Consumer Electronics / Software Services"
 exchange: NASDAQ
 country: "US"
-date: 2026-05-13
+date: 2026-05-14
 tags:
   - company
   - technology
