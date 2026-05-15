@@ -7,7 +7,7 @@
   "exchange": "NASDAQ",
   "country": "US",
   "tradingview_symbol": "NASDAQ:NVDA",
-  "last_updated": "2026-05-14",
+  "last_updated": "2026-05-15",
   "description": "NVIDIA is a global leader in GPU, AI accelerators and high-performance computing. Founded in 1993 by Jensen Huang, now a data center-scale AI infrastructure company reshaping all industries.",
   "ceo": "Sundar Pichai",
   "employees": 180000,
@@ -1128,7 +1128,7 @@
     "currency": "USD",
     "unit": "Million",
     "source": "EDGAR",
-    "last_updated": "2026-05-14",
+    "last_updated": "2026-05-15",
     "annual": {
       "periods": [
         "FY2019",
