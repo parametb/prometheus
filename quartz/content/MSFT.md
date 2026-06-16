@@ -35,10 +35,6 @@ draft: false
 ★★★★★
 *#growth #strategy*
 
-Azure growth ยังแข็งแกร่งที่ 31% YoY โดยมี AI services เป็น tailwind สำคัญ
-Copilot 365 มีผู้ใช้งานเชิงพาณิชย์เพิ่มขึ้น 2x QoQ
-$80B AI capex commitment ใน FY2025 แสดงว่า MSFT ยอมรับว่า AI race ต้องลงทุน infra ก่อน short-term กระทบ FCF แต่ long-term build moat ที่คู่แข่งตามได้ยาก
-
 ## 💬 Management Quotes
 
 > Microsoft Cloud revenue was $40.9 billion, up 21 percent year-over-year. We are seeing healthy growth across all of our cloud offerings and continued strong adoption of our AI services.
