@@ -466,11 +466,14 @@ TH: สิ่งที่ต้องติดตาม: ติดตามร�
 
 TH: สิ่งที่ต้องติดตาม: ประกาศข่าวหรือการยื่นเอกสารกำกับดูแลประกาศการเข้าสู่ตลาดในเวียดนาม อินโดนีเซีย หรือฟิลิปปินส์
 
-⏳ **Launch the new AI-powered analytics platform in Q1 2026.**
+👁️ **Launch the new AI-powered analytics platform in Q1 2026.**
 *Said: Apr 10, 2026  ·  Target: Q1 2026  ·  10-K 2025  ·  Confidence: high*
   → **Outcome (Mar 31, 2026):** EN: Watch Q1 2026 product announcement for the official launch of the AI analytics platform.
 
 TH: สิ่งที่ต้องติดตาม: ประกาศเปิดตัวผลิตภัณฑ์ใน Q1 2026 สำหรับการเปิดตัวแพลตฟอร์มวิเคราะห์ AI อย่างเป็นทางการ
+  📌 The commitment was to launch the AI-powered analytics platform in Q1 2026. However, the recent quotes from Q2 2026 (April 10, 2026) do not mention this specific platform. Instead, they discuss other AI initiatives like 'Project Astra' and Gemini. There is no evidence of the platform's launch or delay.
+
+[TH] คำมั่นสัญญาคือการเปิดตัวแพลตฟอร์มวิเคราะห์ AI ใน Q1 2026 แต่คำพูดล่าสุดจาก Q2 2026 (10 เม.ย. 2026) ไม่ได้กล่าวถึงแพลตฟอร์มนี้โดยเฉพาะ กลับพูดถึงโครงการ AI อื่นๆ เช่น 'Project Astra' และ Gemini ไม่มีหลักฐานการเปิดตัวหรือความล่าช้า
 
 ⏳ **Strategic deployment of capital balancing investment for organic growth, mergers and acquisitions, and return of capital to shareholders**
 *FY2025 10-K*

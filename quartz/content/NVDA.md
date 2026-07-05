@@ -361,11 +361,14 @@ TH: ติดตามการประกาศการจดทะเบี�
 
 TH: ติดตามรายงานผลประกอบการรายไตรมาสสำหรับตัวเลข ARR โดยเฉพาะเป้าหมาย 500 ล้านดอลลาร์ ภายใน Q4 2026
 
-⏳ **Launch the new AI-powered analytics platform in Q1 2026.**
+👁️ **Launch the new AI-powered analytics platform in Q1 2026.**
 *Said: Apr 10, 2026  ·  Target: Q1 2026  ·  10-K 2025  ·  Confidence: high*
   → **Outcome (Mar 31, 2026):** EN: Watch for the official product announcement and initial customer onboarding reports in Q1 2026.
 
 TH: ติดตามการประกาศเปิดตัวผลิตภัณฑ์อย่างเป็นทางการและรายงานการเริ่มใช้งานของลูกค้ารายแรกใน Q1 2026
+  📌 The commitment was to launch an AI-powered analytics platform in Q1 2026. As of Q3 2026, there is no direct evidence in the provided quotes or notes regarding this specific product launch. The quotes focus on Google's AI initiatives (Gemini, cloud) and NVIDIA's general performance, but none mention NVDA's analytics platform.
+
+[TH] คำมั่นสัญญาคือการเปิดตัวแพลตฟอร์มวิเคราะห์ที่ขับเคลื่อนด้วย AI ใน Q1 2026 ณ Q3 2026 ยังไม่มีหลักฐานโดยตรงในคำพูดหรือบันทึกที่ให้มาเกี่ยวกับการเปิดตัวผลิตภัณฑ์นี้โดยเฉพาะ คำพูดเน้นไปที่โครงการ AI ของ Google (Gemini, cloud) และประสิทธิภาพทั่วไปของ NVIDIA แต่ไม่มีใครกล่าวถึงแพลตฟอร์มวิเคราะห์ของ NVDA
 
 ⏳ **Achieve carbon neutrality across all operations by 2028.**
 *Said: Apr 10, 2026  ·  Target: 2027+  ·  10-K 2025  ·  Confidence: low*
@@ -451,11 +454,14 @@ TH: สิ่งที่ต้องติดตาม: ประกาศก�
 
 TH: สิ่งที่ต้องติดตาม: รายงานผลประกอบการรายไตรมาสสำหรับการเติบโตของ ARR ไปสู่เป้าหมาย $500 ล้าน
 
-⏳ **Launch the new AI-powered analytics platform in Q1 2026.**
+👁️ **Launch the new AI-powered analytics platform in Q1 2026.**
 *Said: Apr 10, 2026  ·  Target: Q1 2026  ·  10-K 2025  ·  Confidence: high*
   → **Outcome (Mar 31, 2026):** EN: Watch Q1 2026 product announcement for the official launch of the AI analytics platform.
 
 TH: สิ่งที่ต้องติดตาม: ประกาศผลิตภัณฑ์ใน Q1 2026 สำหรับการเปิดตัวอย่างเป็นทางการของแพลตฟอร์มวิเคราะห์ข้อมูล AI
+  📌 The commitment was to launch a new AI-powered analytics platform in Q1 2026. The provided quotes are from Google (GOOGL) executives, not NVIDIA, and none mention the specific product launch. The most recent quote from NVIDIA management is from March 2026 and does not address this commitment. Therefore, no evidence of delivery or miss is available.
+
+[TH] คำมั่นสัญญาคือการเปิดตัวแพลตฟอร์มวิเคราะห์ข้อมูลที่ขับเคลื่อนด้วย AI ใหม่ใน Q1 2026 คำพูดที่ให้มาเป็นของผู้บริหารของ Google (GOOGL) ไม่ใช่ NVIDIA และไม่มีใครกล่าวถึงการเปิดตัวผลิตภัณฑ์ดังกล่าว คำพูดล่าสุดจากผู้บริหารของ NVIDIA มาจากเดือนมีนาคม 2026 และไม่ได้กล่าวถึงคำมั่นสัญญานี้ ดังนั้นจึงไม่มีหลักฐานว่าสำเร็จหรือพลาด
 
 ⏳ **Provide end-to-end platform for physical AI spanning data center infrastructure, open models, systems, embedded compute modules, and software stacks**
 *Said: Mar 30, 2026  ·  10-K*

@@ -718,7 +718,7 @@
     },
     {
       "commitment": "Launch the new AI-powered analytics platform in Q1 2026.",
-      "status": "pending",
+      "status": "monitoring",
       "category": "Product",
       "confidence": "high",
       "quarter_said": "Q4 2025",
@@ -726,7 +726,7 @@
       "date_said": "2026-04-10",
       "follow_up": "EN: Watch Q1 2026 product announcement for the official launch of the AI analytics platform.\n\nTH: สิ่งที่ต้องติดตาม: ประกาศเปิดตัวผลิตภัณฑ์ใน Q1 2026 สำหรับการเปิดตัวแพลตฟอร์มวิเคราะห์ AI อย่างเป็นทางการ",
       "follow_up_date": "2026-03-31",
-      "delivery_note": null,
+      "delivery_note": "The commitment was to launch the AI-powered analytics platform in Q1 2026. However, the recent quotes from Q2 2026 (April 10, 2026) do not mention this specific platform. Instead, they discuss other AI initiatives like 'Project Astra' and Gemini. There is no evidence of the platform's launch or delay.\n\n[TH] คำมั่นสัญญาคือการเปิดตัวแพลตฟอร์มวิเคราะห์ AI ใน Q1 2026 แต่คำพูดล่าสุดจาก Q2 2026 (10 เม.ย. 2026) ไม่ได้กล่าวถึงแพลตฟอร์มนี้โดยเฉพาะ กลับพูดถึงโครงการ AI อื่นๆ เช่น 'Project Astra' และ Gemini ไม่มีหลักฐานการเปิดตัวหรือความล่าช้า",
       "source": "10-K 2025",
       "source_doc": {
         "id": "33e104a0-c4b1-8147-8760-de50c13749e9",

@@ -10,10 +10,10 @@
   "counts": {
     "quotes": 24,
     "roadmap_total": 26,
-    "roadmap_delivered": 0,
+    "roadmap_delivered": 1,
     "notes": 2,
     "sources": 2,
     "reports": 0
   },
-  "delivery_rate": 0
+  "delivery_rate": 4
 }

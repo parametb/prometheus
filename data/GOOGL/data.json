@@ -837,7 +837,7 @@
     },
     {
       "commitment": "Pay quarterly cash dividend of $0.21 per share on March 16, 2026.",
-      "status": "pending",
+      "status": "delivered",
       "category": "Financial",
       "confidence": "high",
       "quarter_said": "Q4 2025",
@@ -845,7 +845,7 @@
       "date_said": null,
       "follow_up": null,
       "follow_up_date": null,
-      "delivery_note": null,
+      "delivery_note": "The commitment was to pay a quarterly cash dividend of $0.21 per share on March 16, 2026. As of July 5, 2026, this date has passed, and no missed payment has been reported. The company's strong financial results, with net income up 30% and EPS of $2.82, support the ability to pay.\n\n[TH] คำมั่นสัญญาคือการจ่ายเงินปันผลรายไตรมาส 0.21 ดอลลาร์ต่อหุ้นในวันที่ 16 มีนาคม 2026 ณ วันที่ 5 กรกฎาคม 2026 วันที่ดังกล่าวผ่านไปแล้ว และไม่มีรายงานการชำระเงินที่พลาด ผลประกอบการที่แข็งแกร่งของบริษัท โดยมีกำไรสุทธิเพิ่มขึ้น 30% และ EPS 2.82 ดอลลาร์ สนับสนุนความสามารถในการจ่าย",
       "source": null,
       "source_doc": {
         "id": "33d104a0-c4b1-8167-9569-eac66d4f38c3",
@@ -855,7 +855,7 @@
     },
     {
       "commitment": "Fund the majority of Waymo's $16.0 billion investment round in February 2026.",
-      "status": "pending",
+      "status": "monitoring",
       "category": "Strategic",
       "confidence": "high",
       "quarter_said": "Q4 2025",
@@ -863,7 +863,7 @@
       "date_said": null,
       "follow_up": null,
       "follow_up_date": null,
-      "delivery_note": null,
+      "delivery_note": "The commitment to fund the majority of Waymo's $16.0 billion investment round in February 2026 has not been addressed in recent quotes or notes. No evidence of funding activity or updates on Waymo's investment round is available.\n\n[TH] ยังไม่มีข้อมูลเกี่ยวกับการให้ทุนสนับสนุนส่วนใหญ่ของ Waymo ในรอบการลงทุนมูลค่า 16.0 พันล้านดอลลาร์ในเดือนกุมภาพันธ์ 2026 ไม่มีหลักฐานของกิจกรรมการลงทุนหรือการอัปเดตเกี่ยวกับรอบการลงทุนของ Waymo",
       "source": null,
       "source_doc": {
         "id": "33d104a0-c4b1-8167-9569-eac66d4f38c3",
