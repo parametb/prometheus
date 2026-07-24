@@ -7,7 +7,7 @@
   "exchange": "NYSE",
   "country": "US",
   "tradingview_symbol": "NYSE:NEM",
-  "last_updated": "2026-07-23",
+  "last_updated": "2026-07-24",
   "description": "World's largest gold mining company, founded in 1921 and headquartered in Denver, Colorado. Produces gold, silver, copper across North America, South America, Australia, and Africa.",
   "ceo": "Natascha Viljoen",
   "employees": 44100,
@@ -364,7 +364,7 @@
     "currency": "USD",
     "unit": "Million",
     "source": "EDGAR",
-    "last_updated": "2026-07-23",
+    "last_updated": "2026-07-24",
     "annual": {
       "periods": [
         "FY2020",
@@ -582,7 +582,8 @@
         "Q1 2025",
         "Q2 2025",
         "Q3 2025",
-        "Q1 2026"
+        "Q1 2026",
+        "Q2 2026"
       ],
       "period_ends": [
         "2023-03-31",
@@ -592,7 +593,8 @@
         "2025-03-31",
         "2024-06-30",
         "2024-09-30",
-        "2025-03-31"
+        "2025-03-31",
+        "2025-06-30"
       ],
       "metrics": [
         {
@@ -606,7 +608,8 @@
             1891,
             1023,
             1945,
-            1891
+            1891,
+            3952
           ],
           "chart": false,
           "growth": [
@@ -617,9 +620,11 @@
             184.8,
             -45.9,
             90.1,
-            -2.8
+            -2.8,
+            109
           ],
           "margin": [
+            null,
             null,
             null,
             null,
@@ -641,7 +646,8 @@
             1.68,
             0.89,
             1.69,
-            1.68
+            1.68,
+            3.53
           ],
           "chart": false,
           "growth": [
@@ -652,7 +658,8 @@
             100,
             -47,
             89.9,
-            -0.6
+            -0.6,
+            110.1
           ]
         },
         {
@@ -666,7 +673,8 @@
             2031,
             2204,
             3852,
-            2031
+            2031,
+            4415
           ],
           "chart": false
         },
@@ -681,7 +689,8 @@
             4698,
             2602,
             3016,
-            4698
+            4698,
+            6185
           ],
           "chart": false
         },
@@ -696,7 +705,8 @@
             5079,
             7132,
             5180,
-            5079
+            5079,
+            5083
           ],
           "chart": false
         }

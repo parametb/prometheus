@@ -5,7 +5,7 @@ sector: "Consumer"
 industry: "Automobiles / Energy Storage"
 exchange: NASDAQ
 country: "US"
-date: 2026-07-23
+date: 2026-07-24
 tags:
   - company
   - consumer
