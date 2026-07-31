@@ -5,7 +5,7 @@ sector: "Healthcare"
 industry: "Biotechnology / Gene Editing"
 exchange: NASDAQ
 country: "EU"
-date: 2026-07-30
+date: 2026-07-31
 tags:
   - company
   - healthcare
