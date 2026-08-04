@@ -7,7 +7,7 @@
   "exchange": "NASDAQ",
   "country": "EU",
   "tradingview_symbol": "NASDAQ:CRSP",
-  "last_updated": "2026-08-03",
+  "last_updated": "2026-08-04",
   "description": "CRISPR Therapeutics is a gene editing company focused on transformative gene-based medicines using CRISPR/Cas9. Its lead product Casgevy is the world's first CRISPR-based therapy approved by the FDA.",
   "ceo": "Samarth Kulkarni",
   "employees": 393,
@@ -378,7 +378,7 @@
     "currency": "USD",
     "unit": "Million",
     "source": "EDGAR",
-    "last_updated": "2026-08-03",
+    "last_updated": "2026-08-04",
     "annual": {
       "periods": [
         "FY2020",
@@ -706,7 +706,8 @@
         "Q1 2025",
         "Q2 2025",
         "Q3 2025",
-        "Q1 2026"
+        "Q1 2026",
+        "Q2 2026"
       ],
       "period_ends": [
         "2023-03-31",
@@ -716,6 +717,7 @@
         "2025-03-31",
         "2024-03-31",
         "2024-03-31",
+        "2025-03-31",
         "2025-03-31"
       ],
       "metrics": [
@@ -730,10 +732,12 @@
             -148.4,
             -291.8,
             -402,
-            -148.4
+            -148.4,
+            -377.7
           ],
           "chart": false,
           "margin": [
+            null,
             null,
             null,
             null,
@@ -755,10 +759,12 @@
             -143.7,
             -282.1,
             -387.6,
-            -143.7
+            -143.7,
+            -368.3
           ],
           "chart": false,
           "margin": [
+            null,
             null,
             null,
             null,
@@ -780,6 +786,7 @@
             -136,
             -116.6,
             -116.6,
+            -136,
             -136
           ],
           "chart": false,
@@ -791,9 +798,11 @@
             -156.1,
             14.3,
             0,
-            -16.6
+            -16.6,
+            0
           ],
           "margin": [
+            null,
             null,
             null,
             null,
@@ -815,7 +824,8 @@
             -1.58,
             -2.92,
             -3.92,
-            -1.58
+            -1.58,
+            -3.98
           ],
           "chart": false,
           "growth": [
@@ -826,7 +836,8 @@
             48.5,
             -84.8,
             -34.2,
-            59.7
+            59.7,
+            -151.9
           ]
         },
         {
@@ -840,7 +851,8 @@
             -53.9,
             14.2,
             -92.7,
-            -53.9
+            -53.9,
+            -167.8
           ],
           "chart": false
         },
@@ -855,7 +867,8 @@
             -0.2,
             -1.4,
             -1.6,
-            -0.2
+            -0.2,
+            -0.3
           ],
           "chart": false
         },
@@ -870,7 +883,8 @@
             -54.1,
             12.8,
             -94.3,
-            -54.1
+            -54.1,
+            -168.1
           ],
           "chart": false
         },
@@ -885,7 +899,8 @@
             235.2,
             484.5,
             225.7,
-            235.2
+            235.2,
+            193.6
           ],
           "chart": false
         },
@@ -900,6 +915,7 @@
             0,
             null,
             null,
+            0,
             0
           ],
           "chart": false
