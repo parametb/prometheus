@@ -5,7 +5,7 @@ sector: "Technology"
 industry: "Computer Hardware / Quantum Computing"
 exchange: NYSE
 country: "US"
-date: 2026-08-22
+date: 2026-08-23
 tags:
   - company
   - technology
