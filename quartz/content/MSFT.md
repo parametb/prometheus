@@ -5,7 +5,7 @@ sector: "Technology"
 industry: "Software / Cloud"
 exchange: NASDAQ
 country: "US"
-date: 2026-08-31
+date: 2026-09-01
 tags:
   - company
   - technology
