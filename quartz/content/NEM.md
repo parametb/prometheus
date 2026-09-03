@@ -5,7 +5,7 @@ sector: "Mining"
 industry: "Gold Mining"
 exchange: NYSE
 country: "US"
-date: 2026-09-02
+date: 2026-09-03
 tags:
   - company
   - mining
