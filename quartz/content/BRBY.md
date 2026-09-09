@@ -5,7 +5,7 @@ sector: "Consumer"
 industry: "Luxury Apparel & Accessories"
 exchange: LSE
 country: "UK"
-date: 2026-09-08
+date: 2026-09-09
 tags:
   - company
   - consumer
