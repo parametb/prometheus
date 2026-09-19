@@ -5,7 +5,7 @@ sector: "Technology"
 industry: "Quantum Computing Hardware"
 exchange: NASDAQ
 country: "US"
-date: 2026-09-18
+date: 2026-09-19
 tags:
   - company
   - technology
