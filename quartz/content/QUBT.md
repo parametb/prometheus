@@ -5,7 +5,7 @@ sector: "Technology"
 industry: "Computer Hardware / Photonics"
 exchange: NASDAQ
 country: "US"
-date: 2026-10-01
+date: 2026-10-02
 tags:
   - company
   - technology
