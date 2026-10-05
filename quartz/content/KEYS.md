@@ -37,6 +37,7 @@ TH: นักลงทุนระยะยาวควรถือหุ้น 
 | Research Notes | 5 |
 | Management Quotes | 21 |
 | Roadmap Items | 30 |
+| Delivery Rate | **0%** (0/1 concluded) |
 | Management Tone | bullish |
 
 ## 📁 Sources
@@ -376,17 +377,22 @@ TH: ผลกระทบต่อการลงทุน: บ่งชี้�
 
 ## 🗺️ Management Roadmap
 
+**Delivery Rate:** 0%  (0 delivered / 1 concluded / 30 total)
+
 ⏳ **Maintain the quarterly dividend at $0.25 per share through 2026.**
 *Said: Apr 10, 2026  ·  Target: Q4 2026  ·  10-K 2025  ·  Confidence: high*
   → **Outcome (Dec 31, 2026):** EN: Verify dividend declarations in each quarterly earnings release for 2026.
 
 TH: สิ่งที่ต้องติดตาม: ยืนยันการประกาศเงินปันผลในแต่ละการประกาศผลประกอบการรายไตรมาสสำหรับปี 2026
 
-⏳ **Launch a new mobile app for the consumer segment in Q2 2026.**
+👁️ **Launch a new mobile app for the consumer segment in Q2 2026.**
 *Said: Apr 10, 2026  ·  Target: Q2 2026  ·  10-K 2025  ·  Confidence: high*
   → **Outcome (Jun 30, 2026):** EN: Check the Apple App Store and Google Play Store for the official app release in Q2 2026.
 
 TH: สิ่งที่ต้องติดตาม: ตรวจสอบ Apple App Store และ Google Play Store สำหรับการเปิดตัวแอปอย่างเป็นทางการใน Q2 2026
+  📌 The commitment was to launch a new consumer mobile app in Q2 2026, but the provided recent quotes and notes contain no evidence of an app launch or related product announcement. The only product-related update is about 'Project Astra' for developers in Q3, which is unrelated to the consumer mobile app. Therefore, delivery cannot be confirmed or denied from the available information.
+
+[TH] คำมั่นสัญญาคือการเปิดตัวแอปมือถือสำหรับผู้บริโภคใหม่ในไตรมาสที่ 2 ปี 2026 แต่ข้อมูลล่าสุดที่ให้มาไม่มีหลักฐานการเปิดตัวแอปหรือประกาศผลิตภัณฑ์ที่เกี่ยวข้อง มีเพียงความคืบหน้าเกี่ยวกับ 'Project Astra' สำหรับนักพัฒนาในไตรมาสที่ 3 ซึ่งไม่เกี่ยวข้องกับแอปมือถือสำหรับผู้บริโภค ดังนั้นจึงไม่สามารถยืนยันหรือปฏิเสธการส่งมอบได้จากข้อมูลที่มี
 
 ⏳ **Acquire a complementary SaaS company in the cybersecurity space within the next 12 months.**
 *Said: Apr 10, 2026  ·  Target: Q4 2026  ·  10-K 2025  ·  Confidence: low*
@@ -424,11 +430,14 @@ TH: สิ่งที่ต้องติดตาม: ติดตามต�
 
 TH: สิ่งที่ต้องติดตาม: ค้นหาประกาศการเปิดศูนย์ข้อมูลในเมืองต่างๆ เช่น แฟรงก์เฟิร์ตหรืออัมสเตอร์ดัม
 
-⏳ **Form a strategic partnership with a major cloud provider by mid-2026.**
+❌ **Form a strategic partnership with a major cloud provider by mid-2026.**
 *Said: Apr 10, 2026  ·  Target: Q2 2026  ·  10-K 2025  ·  Confidence: medium*
   → **Outcome (Jun 30, 2026):** EN: Watch for joint press releases or product integrations announced with AWS, Azure, or Google Cloud.
 
 TH: สิ่งที่ต้องติดตาม: ติดตามการแถลงข่าวร่วมหรือการบูรณาการผลิตภัณฑ์ที่ประกาศกับ AWS, Azure หรือ Google Cloud
+  📌 The commitment to form a strategic partnership with a major cloud provider by mid-2026 has no supporting evidence in the recent quotes, which are from April 2026 and earlier. No joint press releases or product integrations with AWS, Azure, or Google Cloud were announced, and the target quarter (Q2 2026) has passed without delivery. The only cloud-related comment is about intensifying competition, not a partnership.
+
+[TH] คำมั่นที่จะจัดตั้งพันธมิตรเชิงกลยุทธ์กับผู้ให้บริการคลาวด์รายใหญ่ภายในกลางปี 2026 ไม่มีหลักฐานสนับสนุนในคำพูดล่าสุด ซึ่งเป็นข้อมูลจากเดือนเมษายน 2026 และก่อนหน้านั้น ไม่มีการประกาศข่าวร่วมหรือการบูรณาการผลิตภัณฑ์กับ AWS, Azure หรือ Google Cloud และไตรมาสเป้าหมาย (Q2 2026) ได้ผ่านไปแล้วโดยไม่มีการส่งมอบ ความคิดเห็นเกี่ยวกับคลาวด์เพียงอย่างเดียวคือการแข่งขันที่ทวีความรุนแรงขึ้น ไม่ใช่พันธมิตร
 
 ⏳ **Execute a $100 million share buyback program over the next four quarters.**
 *Said: Apr 10, 2026  ·  Target: Q4 2026  ·  10-K 2025  ·  Confidence: high*

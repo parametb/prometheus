@@ -301,11 +301,14 @@ TH: ติดตามรายการค่าใช้จ่าย R&D ใ�
 
 TH: ตรวจสอบรายงานความยั่งยืนประจำปีสำหรับข้อมูลการปล่อยก๊าซและการซื้อคาร์บอนเครดิต
 
-⏳ **Release the enterprise version of the mobile application in Q2 2026.**
+👁️ **Release the enterprise version of the mobile application in Q2 2026.**
 *Said: Apr 10, 2026  ·  Target: Q2 2026  ·  10-K 2025  ·  Confidence: high*
   → **Outcome (Jun 30, 2026):** EN: Watch for the app store listing and enterprise sales material for the new mobile app version.
 
 TH: ติดตามรายการในแอปสโตร์และสื่อการขายสำหรับองค์กรสำหรับเวอร์ชันแอปมือถือใหม่
+  📌 The commitment was for NVDA to release an enterprise version of its mobile application in Q2 2026, but the provided recent quotes are all from Google (Alphabet) executives and contain no information about NVIDIA's mobile app. No evidence of delivery or miss is available, so the commitment remains unverified.
+
+[TH] คำมั่นสัญญาคือ NVDA จะเปิดตัวแอปพลิเคชันมือถือเวอร์ชันองค์กรในไตรมาสที่ 2 ปี 2026 แต่คำพูดล่าสุดที่ให้มาทั้งหมดเป็นของผู้บริหาร Google (Alphabet) และไม่มีข้อมูลเกี่ยวกับแอปมือถือของ NVIDIA จึงไม่มีหลักฐานการส่งมอบหรือการพลาดเป้า คำมั่นสัญญานี้ยังไม่ได้รับการยืนยัน
 
 ⏳ **Reduce net debt by $50 million by the end of 2026.**
 *Said: Apr 10, 2026  ·  Target: Q4 2026  ·  10-K 2025  ·  Confidence: medium*
@@ -319,11 +322,14 @@ TH: ตรวจสอบงบดุลในรายงานรายไต�
 
 TH: ติดตามความคืบหน้าการก่อสร้างและการประกาศเปิดดำเนินการอย่างเป็นทางการสำหรับศูนย์ข้อมูลใหม่
 
-⏳ **Form a strategic partnership with a major cloud provider by mid-2026.**
+👁️ **Form a strategic partnership with a major cloud provider by mid-2026.**
 *Said: Apr 10, 2026  ·  Target: Q2 2026  ·  10-K 2025  ·  Confidence: medium*
   → **Outcome (Jun 30, 2026):** EN: Watch for a joint press release or announcement detailing the partnership terms and integrated offerings.
 
 TH: ติดตามข่าวประชาสัมพันธ์ร่วมหรือการประกาศที่ระบุรายละเอียดข้อตกลงความร่วมมือและข้อเสนอที่ผสานรวม
+  📌 The commitment was to form a strategic partnership with a major cloud provider by mid-2026, but the provided recent quotes are all from Google (Alphabet) executives and do not mention any NVDA partnership. No joint press release or announcement detailing partnership terms and integrated offerings has been observed. Therefore, delivery cannot be confirmed.
+
+[TH] คำมั่นสัญญาคือการสร้างพันธมิตรเชิงกลยุทธ์กับผู้ให้บริการคลาวด์รายใหญ่ภายในกลางปี 2026 แต่คำพูดล่าสุดที่ให้มาทั้งหมดมาจากผู้บริหารของ Google (Alphabet) และไม่ได้กล่าวถึงพันธมิตรกับ NVDA เลย ไม่พบข่าวประชาสัมพันธ์ร่วมหรือการประกาศที่ระบุรายละเอียดข้อตกลงความร่วมมือและข้อเสนอที่ผสานรวม ดังนั้นจึงยังไม่สามารถยืนยันการส่งมอบได้
 
 ⏳ **Execute a $100 million share buyback program in 2026.**
 *Said: Apr 10, 2026  ·  Target: Q4 2026  ·  10-K 2025  ·  Confidence: high*
@@ -331,11 +337,14 @@ TH: ติดตามข่าวประชาสัมพันธ์ร่�
 
 TH: ติดตามรายงานรายไตรมาสสำหรับรายละเอียดหุ้นที่ซื้อคืนและวงเงินที่เหลืออยู่ภายใต้โครงการซื้อหุ้นคืน
 
-⏳ **Complete the SOC 2 Type II compliance certification by Q2 2026.**
+👁️ **Complete the SOC 2 Type II compliance certification by Q2 2026.**
 *Said: Apr 10, 2026  ·  Target: Q2 2026  ·  10-K 2025  ·  Confidence: high*
   → **Outcome (Jun 30, 2026):** EN: Look for a public announcement or press release confirming the successful completion of the SOC 2 Type II audit.
 
 TH: ติดตามการประกาศต่อสาธารณะหรือข่าวประชาสัมพันธ์ที่ยืนยันการผ่านการตรวจสอบ SOC 2 Type II
+  📌 The commitment to complete SOC 2 Type II certification by Q2 2026 has no supporting evidence in the provided quotes or notes. The recent quotes are from Google/Alphabet executives and one NVIDIA quote about performance, none addressing SOC 2 compliance. With today being October 5, 2026, the target quarter has passed, but no confirmation or denial of delivery is available.
+
+[TH] คำมั่นที่จะเสร็จสิ้นการรับรอง SOC 2 Type II ภายในไตรมาสที่ 2 ปี 2026 ไม่มีหลักฐานสนับสนุนในคำพูดหรือบันทึกที่ให้มา คำพูดล่าสุดมาจากผู้บริหาร Google/Alphabet และคำพูดหนึ่งจาก NVIDIA เกี่ยวกับประสิทธิภาพ ไม่มีข้อความใดกล่าวถึงการปฏิบัติตาม SOC 2 เนื่องจากวันนี้คือวันที่ 5 ตุลาคม 2026 ไตรมาสเป้าหมายได้ผ่านไปแล้ว แต่ไม่มีข้อมูลยืนยันหรือปฏิเสธการส่งมอบ
 
 ⏳ **Hire 200 new engineers globally in 2026.**
 *Said: Apr 10, 2026  ·  Target: Q4 2026  ·  10-K 2025  ·  Confidence: high*
@@ -400,11 +409,14 @@ TH: สิ่งที่ต้องติดตาม: ประกาศ M&A 
 
 TH: สิ่งที่ต้องติดตาม: การอัปเดตงบดุลในงบการเงินรายไตรมาส
 
-⏳ **Launch mobile app version 3.0 with enhanced features in Q2 2026.**
+👁️ **Launch mobile app version 3.0 with enhanced features in Q2 2026.**
 *Said: Apr 10, 2026  ·  Target: Q2 2026  ·  10-K 2025  ·  Confidence: high*
   → **Outcome (Jun 30, 2026):** EN: Check app store releases for version 3.0 launch in Q2 2026.
 
 TH: สิ่งที่ต้องติดตาม: การเปิดตัวเวอร์ชัน 3.0 ในร้านค้าแอปใน Q2 2026
+  📌 The commitment was for NVIDIA to launch a mobile app version 3.0 in Q2 2026, but the provided recent quotes are all from Google/Alphabet executives and do not mention any NVIDIA mobile app. No evidence of delivery or non-delivery is available in the supplied data.
+
+[TH] คำมั่นสัญญาคือ NVIDIA จะเปิดตัวแอปมือถือเวอร์ชัน 3.0 ในไตรมาสที่ 2 ปี 2026 แต่คำพูดล่าสุดที่ให้มาทั้งหมดเป็นของผู้บริหาร Google/Alphabet และไม่ได้กล่าวถึงแอปมือถือของ NVIDIA เลย ไม่มีหลักฐานการส่งมอบหรือไม่ส่งมอบในข้อมูลที่ให้มา
 
 ⏳ **Achieve gross margin of 65% by the end of 2026.**
 *Said: Apr 10, 2026  ·  Target: Q4 2026  ·  10-K 2025  ·  Confidence: medium*
@@ -418,11 +430,14 @@ TH: สิ่งที่ต้องติดตาม: ตัวเลขอ�
 
 TH: สิ่งที่ต้องติดตาม: ประกาศโครงสร้างพื้นฐานสำหรับศูนย์ข้อมูลใหม่ในแฟรงก์เฟิร์ตและอัมสเตอร์ดัม
 
-⏳ **Form strategic partnership with a major cloud provider by mid-2026.**
+👁️ **Form strategic partnership with a major cloud provider by mid-2026.**
 *Said: Apr 10, 2026  ·  Target: Q2 2026  ·  10-K 2025  ·  Confidence: medium*
   → **Outcome (Jun 30, 2026):** EN: Watch for partnership announcement with AWS, Azure, or Google Cloud.
 
 TH: สิ่งที่ต้องติดตาม: ประกาศความร่วมมือกับ AWS, Azure หรือ Google Cloud
+  📌 The target quarter Q2 2026 has passed, but the provided evidence contains no NVIDIA partnership announcement with AWS, Azure, or Google Cloud. The only NVIDIA quote is a generic 10-K statement about performance leaps, and all other quotes are from Google executives discussing Google's own AI and cloud business. No confirmation or denial of the commitment is available.
+
+[TH] ไตรมาสเป้าหมาย Q2 2026 ได้ผ่านไปแล้ว แต่หลักฐานที่ให้มาไม่มีประกาศความร่วมมือของ NVIDIA กับ AWS, Azure หรือ Google Cloud เลย ข้อความเดียวของ NVIDIA เป็นเพียงคำกล่าวทั่วไปใน 10-K เกี่ยวกับการเพิ่มประสิทธิภาพ ขณะที่ข้อความอื่นทั้งหมดเป็นผู้บริหาร Google ซึ่งพูดถึงธุรกิจ AI และคลาวด์ของ Google เอง จึงยังไม่มีข้อมูลยืนยันหรือปฏิเสธความคืบหน้าของคำมั่นนี้
 
 ⏳ **Execute $100 million share buyback program over the next four quarters.**
 *Said: Apr 10, 2026  ·  Target: Q4 2026  ·  10-K 2025  ·  Confidence: high*
