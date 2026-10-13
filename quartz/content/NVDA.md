@@ -7,7 +7,7 @@ exchange: NASDAQ
 country: "US"
 conviction: "medium"
 last_analyzed: 2026-04-10
-date: 2026-10-12
+date: 2026-10-13
 tags:
   - company
   - semiconductors
