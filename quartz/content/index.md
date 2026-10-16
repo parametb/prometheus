@@ -9,7 +9,7 @@ draft: false
 
 > Investment research powered by Notion + AI — updated every 6 hours
 
-*Last generated: 2026-10-15  ·  16 companies tracked*
+*Last generated: 2026-10-16  ·  16 companies tracked*
 
 ## Companies
 
